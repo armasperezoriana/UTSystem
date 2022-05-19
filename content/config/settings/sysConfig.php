@@ -21,6 +21,9 @@
 	define("_DB_USER_", "root");									/* nombre del usuario de la BD */
 	define("_DB_PASS_", "");										/* contraseña de la base de datos  */
 	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
+
+	define("_REPORTS_" , "/dashboard/systemUT/controllers/reportes/");					/* reportes pdf del proyecto */
+
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
 
 	/* clase con el nombre config  */
@@ -48,6 +51,8 @@
 		protected function _DB_WEB_()		{return _DB_WEB_;}
 		protected function _HOST_()			{return _DB_WEB_;}
 		protected function _DB_USER_()		{return _DB_USER_;}
+
+		protected function _REPORTS_()		{return _REPORTS_;}
 		protected function _DB_PASS_()		{return _DB_PASS_;}
 
 	}

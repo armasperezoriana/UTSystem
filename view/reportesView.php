@@ -3,7 +3,9 @@
 
 <head>
     <title><?php echo _NAMESYSTEM_; ?> | <?php if(!empty($action)){echo $action; } ?> <?php if(!empty($url)){echo $url;} ?></title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -31,7 +33,8 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                        <center> <h1 class="h3 mb-0 text-gray-800">Gestión de Reportes</h1>
-                        <a href="Manual.pdf"  target="blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <a href="Manual.pdf"  target="blank" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50" ></i>Manual de Usuario</a>
                     </div>
 
@@ -40,11 +43,11 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-70 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="<?=_ROUTE_ ?>Vehiculos"><h5>Reporte de Vehiculos</h5></a>
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="<?=_REPORTS_?>Vehiculos"><h5>Reporte de Vehiculos</h5></a>
                                                 </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
@@ -58,12 +61,12 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card border-left-success shadow h-70 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                               <a href="<?=_ROUTE_ ?>Choferes"><h5>Reporte de Choferes</h5></a></div>
+                                               <a href="<?=_REPORTS_ ?>Choferes"><h5>Reporte de Choferes</h5></a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">
@@ -76,33 +79,27 @@
 
                         <!-- ALERTAS -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card border-left-info shadow h-70 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="<?=_ROUTE_ ?>Mantenimiento"><h5> Reporte de Mantenimientos</h5></a>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="<?=_REPORTS_?>Mantenimiento"><h5> Reporte de Mantenimientos</h5></a>
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                         
                                                 </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                          </div>
+                                   <div class="row">
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
@@ -110,7 +107,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                <a href="<?=_ROUTE_ ?>Rutas"><h5> Reporte de Rutas</h5></a></div>
+                                                <a href="<?=_REPORTS_?>Rutas"><h5> Reporte de Rutas</h5></a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">
@@ -120,7 +117,26 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-danger shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                <a href="<?=_REPORTS_ ?>Taller"><h5> Reporte de Talleres</h5></a></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         </div> 
 
 
                     
