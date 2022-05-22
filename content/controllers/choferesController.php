@@ -38,91 +38,82 @@
 
 	public function Mostrar($param)
     {
-        $chofer = $this->chofer->ObtenerOne($param);
+        $choferes = $this->chofer->ObtenerOne($param);
         http_response_code(200);
         echo json_encode([
-            'data' => $chofer
+            'data' => $choferes
         ]);
     }
 
 		
-		public function Registrar(){
-				if(!empty($_POST['nombre']) && !empty($_POST['apellido'])){
-				$nombre=$_POST['nombre'];
-				$apellido=$_POST['apellido'];
-				$cedula=$_POST['cedula'];
-				$telefono = $_POST['telefono'];
-				$unidad = $_POST['placa'];
+	public function Registrar(){
+		if(!empty($_POST['nombre']) && !empty($_POST['apellido'])){
+			$nombre=$_POST['nombre'];
+			$apellido=$_POST['apellido'];
+			$cedula=$_POST['cedula'];
+			$telefono = $_POST['telefono'];
+			$placa = $_POST['placa'];
+			$this->chofer->setNombre($nombre);
+			$this->chofer->setApellido($apellido);
+			$this->chofer->setCedula($cedula);
+			$this->chofer->setTelefono($telefono);
+			$this->chofer->setPlaca($placa);
+			// var_dump($vehiculos);
+			// Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 
-				$this->chofer->setNombre($nombre);
-				$this->chofer->setApellido($apellido);
-				$this->chofer->setCedula($cedula);
-				$this->chofer->setTelefono($telefono);
-				$this->chofer->setPlaca($placa);
-				var_dump($vehiculos);
-				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
-				$result = $this->chofer->ConsultarOne();
-				if($result['ejecucion']==true){
-					if(count($result)>1){
-						echo "3";
-					}else{
-						$execute = $this->chofer->Agregar();
-						//Codigo de bitacora sobre Agregar Usuario
-						if($execute['ejecucion']==true){
-							echo '1';
-						}else{
-							echo "2";
-						}
-					}
+			$result = $this->chofer->ConsultarOne();
+			// print_r($result);
+			if($result['ejecucion']==true){
+				if(count($result)>1){
+					echo "3";
 				}else{
-					echo "2";
+					$execute = $this->chofer->Agregar();
+					//Codigo de bitacora sobre Agregar Usuario
+					if($execute['ejecucion']==true){
+						echo '1';
+					}else{
+						echo "2";
+					}
 				}
+			}else{
+				echo "2";
 			}
 		}
+	}
 		
 
-		public function Modificar(){
-			$method = $_SERVER['REQUEST_METHOD'];
+	public function Modificar(){
+		$method = $_SERVER['REQUEST_METHOD'];
 		if ($method != 'POST') {
 			http_response_code(404);
 			return false;
 		}
-			if(!empty($_POST['nombre']) && !empty($_POST['apellido'])){
-				$nombre=$_POST['nombre'];
-				$apellido=$_POST['apellido'];
-				$cedula=$_POST['cedula'];
-				$telefono = $_POST['telefono'];
-				$placa = $_POST['id_vehiculo'];
+		if(!empty($_POST['nombre']) && !empty($_POST['apellido'])){
+			$idChofer=$_POST['id_choferes'];
+			$nombre=$_POST['nombre'];
+			$apellido=$_POST['apellido'];
+			$cedula=$_POST['cedula'];
+			$telefono = $_POST['telefono'];
+			$placa = $_POST['placa'];
 
-				$this->chofer->setNombre($nombre);
-				$this->chofer->setApellido($apellido);
-				$this->chofer->setCedula($cedula);
-				$this->chofer->setTelefono($telefono);
-				$this->chofer->setPlaca($placa);
-				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
-				$result = $this->chofer->ConsultarOne();
-				if($result['ejecucion']==true){
-					if(count($result)>1){
-						echo "3";
-					}else{
-						$execute = $this->chofer->Agregar();
-						//Codigo de bitacora sobre Agregar Usuario
-						if($execute['ejecucion']==true){
-							echo '1';
-						}else{
-							echo "2";
-						}
-					}
-				}else{
-					echo "2";
-				}
+			$this->chofer->setIdChofer($idChofer);
+			$this->chofer->setNombre($nombre);
+			$this->chofer->setApellido($apellido);
+			$this->chofer->setCedula($cedula);
+			$this->chofer->setTelefono($telefono);
+			$this->chofer->setPlaca($placa);
+			$execute = $this->chofer->Modificar();
+			// //Codigo de bitacora sobre Agregar Usuario
+			if($execute['ejecucion']==true){
+				echo '1';
+			}else{
+				echo "2";
 			}
-
-
+	
 		}
+	}
 
-			public function Inhabilitar($id)
-	{
+	public function Inhabilitar($id){
 		$method = $_SERVER['REQUEST_METHOD'];
 		if ($method != 'POST') {
 			http_response_code(404);
@@ -145,8 +136,7 @@
 		}
 	}
 
-	public function Habilitar($id)
-	{
+	public function Habilitar($id){
 		$method = $_SERVER['REQUEST_METHOD'];
 		if ($method != 'POST') {
 			http_response_code(404);

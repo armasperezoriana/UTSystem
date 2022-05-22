@@ -36,7 +36,7 @@
 		// }
 		public function Consultar(){
 			try {
-				$query = parent::prepare('SELECT * FROM roles WHERE status = 1');
+				$query = parent::prepare('SELECT * FROM roles');
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

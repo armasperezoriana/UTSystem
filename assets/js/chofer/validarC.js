@@ -9,8 +9,11 @@
                 var cedula =$("#AgregarChoferModal").find("#cedula").val();;
                 var telefono = $("#AgregarChoferModal").find("#telefono").val();
                 var placa = $("#AgregarChoferModal").find("#placa").val();
-            
-                // alert(pass);
+                // alert(nombre);
+                // alert(apellido);
+                // alert(cedula);
+                // alert(telefono);
+                // alert(placa);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -23,7 +26,7 @@
                 }).then((isConfirm) => {
                     if (isConfirm.value) {
                         $.ajax({
-                            url: './Chofer/Registrar',
+                            url: './choferes/Registrar',
                             type: 'POST',
                             data: {
                                 nombre: nombre,
@@ -39,7 +42,7 @@
                                         type: 'success',
                                         title: 'Registro guardado exitosamente',
                                     }).then((isConfirm) => {
-                                        location.href = './Chofer';
+                                        location.href = './choferes';
                                     });
                                 }
                                 if (respuesta == "2") {
@@ -73,22 +76,17 @@
 
         $(".ModificarChofer").click(function() {
             var valido = validar(true);
-               
             if (valido == true) {
 
-                var id_choferes = $("#modificarChofer").find("#id_choferes").val();
-                console.log($("#modificarChofer"))
-                console.log($("#modificarChofer").find("#nombre"));
-                var nombre = $("#modificarChofer").find("#nombre").val();
-                console.log($("#modificarChofer").find("#nombre").val());
-                console.log($("#modificarChofer").find("#apellido").val());
-                
-                var apellido = $("#modificarChofer").find("#apellido").val();
-                var cedula =$("#modificarChofer").find("#cedula").val();;
-                var telefono = $("#modificarChofer").find("#telefono").val();
-                var placa = $("#modificarChofer").find("placa").val();
+                // var id_choferes = $("#modificarChofer").find("#id_choferes").val();
+                var id_choferes = $(this).attr("id");
+
+                var nombre = $(".ModificarChoferModal").find(".nombre"+id_choferes).val();
+                var apellido = $(".ModificarChoferModal").find(".apellido"+id_choferes).val();
+                var cedula =$(".ModificarChoferModal").find(".cedula"+id_choferes).val();;
+                var telefono = $(".ModificarChoferModal").find(".telefono"+id_choferes).val();
+                var placa = $(".ModificarChoferModal").find(".placa"+id_choferes).val();
                
-                 alert(pass);
                 swal.fire({
                     title: "¿Desea modificar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -101,14 +99,14 @@
                 }).then((isConfirm) => {
                     if (isConfirm.value) {
                         $.ajax({
-                            url: './Chofer/Modificar',
+                            url: './choferes/Modificar',
                             type: 'POST',
                             data: {
                                 id_choferes: id_choferes,
                                 nombre: nombre,
                                 apellido: apellido,
                                 cedula: cedula,
-                               telefono: telefono,
+                                telefono: telefono,
                                 placa: placa,
                             },
                             success: function(respuesta) {
@@ -118,7 +116,7 @@
                                         type: 'success',
                                         title: 'Registro modificado exitosamente',
                                     }).then((isConfirm) => {
-                                        location.href = './Chofer';
+                                        location.href = './choferes';
                                     });
                                 }
                                 if (respuesta == "2") {
@@ -168,7 +166,7 @@
             Swal.fire({
                 title: '¿Está Seguro?',
                 text: "El chofer sera eliminado del sistema",
-                type: 'warning',
+                type: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -187,7 +185,7 @@
             Swal.fire({
                 title: '¿Está Seguro?',
                 text: "El chofer será habilitado en el sistema",
-                type: 'warning',
+                type: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -228,39 +226,45 @@
        
         if (nombre == "") {
             rnombre = false;
-            $(".errorNombre").html("Debe ingresar su nombre");
+            $(form).find(".errorNombre").html("Debe ingresar su nombre");
         } else {
             rnombre = true;
-            $(".errorNombre").html("");
+            $(form).find(".errorNombre").html("");
         }
         if (apellido == "") {
             rapellido = false;
-            $(".errorApellido").html("Debe ingresar su apellido");
+            $(form).find(".errorApellido").html("Debe ingresar su apellido");
         } else {
-            $(".errorApellido").html("");
+            $(form).find(".errorApellido").html("");
             rapellido = true;
         }
 
         if (cedula == "") {
             rcedula = false;
-            $(".errorCedula").html("Debe ingresar su cedula");
+            $(form).find(".errorCedula").html("Debe ingresar su cedula");
         } else {
-            $(".errorCedula").html("");
+            $(form).find(".errorCedula").html("");
             rcedula = true;
         }
         if (placa == "") {
             rplaca = false;
-            $(".errorPlaca").html("Debe seleccionar su placa");
+            $(form).find(".errorPlaca").html("Debe seleccionar su placa");
         } else {
-            $(".errorPlaca").html("");
+            $(form).find(".errorPlaca").html("");
             rplaca = true;
         }
         if (telefono == "") {
             rtelefono = false;
-            $(".errortelefono").html("Debe seleccionar su telefono");
+            $(form).find(".errortelefono").html("Debe seleccionar su telefono");
         } else {
-            $(".errortelefono").html("");
+            $(form).find(".errortelefono").html("");
             rtelefono = true;
+        }
+
+        if(rnombre==true && rapellido==true && rcedula==true && rplaca==true && rtelefono==true){
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -287,18 +291,18 @@
     const inhabilitar = (id) => {
         $.ajax({
             type: "POST",
-            url: "Chofer/Inhabilitar/" + id,
+            url: "choferes/Inhabilitar/" + id,
             success: function(response) {
                 const json = JSON.parse(response);
                 Swal.fire(
                     json.titulo,
                     json.mensaje,
                     json.tipo
-                )
-                if (json.tipo == 'success') {
-                    // table.ajax.reload();
-                    location.reload();
-                }
+                ).then((isConfirm) => {
+                    if (json.tipo == 'success') {
+                        location.reload();
+                    }
+                });
             },
             error: function(response) {
                 console.log(response);
@@ -308,18 +312,18 @@
     const habilitar = (id) => {
         $.ajax({
             type: "POST",
-            url: "Chofer/Habilitar/" + id,
+            url: "choferes/Habilitar/" + id,
             success: function(response) {
                 const json = JSON.parse(response);
                 Swal.fire(
                     json.titulo,
                     json.mensaje,
                     json.tipo
-                )
-                if (json.tipo == 'success') {
-                    // table.ajax.reload();
-                    location.reload();
-                }
+                ).then((isConfirm) => {
+                    if (json.tipo == 'success') {
+                        location.reload();
+                    }
+                });
             },
             error: function(response) {
                 console.log(response);

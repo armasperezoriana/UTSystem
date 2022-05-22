@@ -356,12 +356,12 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         
                                         <label for="placa"><b>Placa</b></label>
-                                        <input type="text" class="form-control-plaintext" name="placaM" id="placaM">
+                                        <input type="text" class="form-control-plaintext" disabled name="placaM" id="placaM">
                                         <span class="errorPlaca" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Modelo"><b>Modelo</b></label>
-                                        <select class="form-control-plaintext select2" name="modeloM" id="modeloM" >
+                                        <select class="form-control-plaintext select2" disabled name="modeloM" id="modeloM" >
                                                   <option value="">...</option>
                                                 <option value="Otro">Otro</option>
                                                 <option value="Encava">Encava</option>
@@ -378,7 +378,7 @@
                                
                                <div class="form-group col-sm-12 col-md-6">
                                         <label for="funcionamiento"><b>Funcionamiento</b></label>
-                                        <select class="form-control-plaintext select2" name="funcionamientoM" id="funcionamientoM">
+                                        <select class="form-control-plaintext select2" disabled name="funcionamientoM" id="funcionamientoM">
                                                   <option value="">...</option>
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>

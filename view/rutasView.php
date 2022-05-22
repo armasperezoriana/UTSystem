@@ -55,7 +55,7 @@
                                <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
-                                   <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarRutaModal" data-toggle="modal" data-target="#">
+                                   <a href="#" class="btn btn-success btn-icon-split" data-target=".AgregarRutaModal" data-toggle="modal" data-target="#">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
@@ -94,12 +94,70 @@
 
                          <div class="col-sm-7" style='text-align:right;'>
 
-                                                            <a href="#"  data-id="<?= $value['id_ruta'] ?>" class="btn btn-info btn-icon-split consultar" name="consultar" >
+                                                            <!-- <a href="#"  data-id="<?= $value['id_ruta'] ?>" class="btn btn-info btn-icon-split consultar" name="consultar" > -->
+                                                            <a href="#" data-id="<?=$value['id_ruta'];?>" class="btn btn-info btn-icon-split" data-target="#Consultar<?=$value['id_ruta'] ?>"  data-toggle="modal">
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-search"></i>
                                                                 </span>
                                                                 <span class="text">Consultar</span>
                                                             </a>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <style type="text/css"> .modal{ font-size:0.8em; } </style>
+    <div class="modal fade" id="Consultar<?=$value['id_ruta'] ?>"tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0;">
+        <div class="container ">
+            <div class="modal-dialog">
+                <div class="" role="document">
+                    <div id="" class="modal-content">
+                        <div class="modal-header bg-primary" style="color:#FFF">
+                            <h5 class="modal-title" id="exampleModalLabel">Consultar Ruta</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="placa"><b>Unidad</b></label>
+                                    <div class=" placa placa<?=$value['id_ruta'];?>" style="width:100%;text-align:left;" name="placa" id="placa">
+                                        <option><?=$value['placa'];?></option>
+                                    </div>
+                                    <span class="errorPlaca" style="color:red"></span>
+                                </div>
+                                
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="Modelo"><b>Dirección</b></label>
+                                      <input type="text" class="form-control direccion_ruta direccion_ruta<?=$value['id_ruta'];?>" style='background:none;border:none;' disabled value="<?=$value['direccion_ruta'];?>" name="direccion_ruta" id="direccion_ruta">
+                                    <span class="errorDireccion" style="color:red"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="nombrer"><b>Nombre de la Ruta</b></label>
+                                     <input type="text" class="form-control nombre_ruta nombre_ruta<?=$value['id_ruta'];?>" style='background:none;border:none;' disabled value="<?=$value['nombre_ruta'];?>" name="nombre_ruta" id="nombre_ruta">
+                                    <span class="errorNombre" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="hora"><b>Hora</b></label>
+                                    <br><br>
+                                    <input type="time" class="form-control hora_salida hora_salida<?=$value['id_ruta'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['hora_salida'];?>" name="hora_salida" id="hora_salida">
+                                    <span class="errorHora" style="color:red"></span>
+                                </div>
+                            </div> 
+                            <br><br>
+                        </div>
+                        <br>
+                        <div class="modal-footer">
+                            <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                                                         </div>
 
 
@@ -108,25 +166,97 @@
 
                                                         <div class="col-sm-7" style='text-align:right;'>
 
-                                                            <a href="#" data-id="<?= $value['id_ruta'] ?>" class="btn btn-warning btn-icon-split editar" name="editar" >
+                                                            <a href="#" data-id="<?=$value['id_ruta'];?>" class="btn btn-warning btn-icon-split" data-target="#ModificarvehiculoModal<?=$value['id_ruta'] ?>"  data-toggle="modal">
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-flag"></i>
                                                                 </span>
-                                                                <span class="text">Modificar</span>
+                                                                <span class="text" style="color:#FFF;">Modificar</span>
                                                             </a>
                                                         </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <style type="text/css"> .modal{ font-size:0.8em; } </style>
+    <div class="modal fade EditarRutaModal" id="ModificarvehiculoModal<?=$value['id_ruta'] ?>"tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0;">
+        <div class="container ">
+            <div class="modal-dialog">
+                <div class="" role="document">
+                    <div id="" class="modal-content">
+                        <div class="modal-header bg-primary" style="color:#FFF">
+                            <h5 class="modal-title" id="exampleModalLabel">Modificar Ruta</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="placa"><b>Unidad</b></label>
+                                    <select class="form-control select2 placa placa<?=$value['id_ruta'];?>" style="width:100%;" name="placa" id="placa">
+                                        <option></option>
+                                        <?php foreach ($vehiculo as $unidad) : ?>
+                                            <?php if (!empty($unidad['id_vehiculo'])) : ?>
+                                                <option <?php if($value['placa']==$unidad['placa']){ echo "selected"; } ?>><?= $unidad['placa'] ?></option>
+                                            <?php endif ?>
+                                        <?php endforeach ?>
+                                    </select>
+                                    <span class="errorPlaca" style="color:red"></span>
+                                </div>
+                                
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="Modelo"><b>Dirección</b></label>
+                                      <input type="text" class="form-control direccion_ruta direccion_ruta<?=$value['id_ruta'];?>" value="<?=$value['direccion_ruta'];?>" name="direccion_ruta" id="direccion_ruta">
+                                    <span class="errorDireccion" style="color:red"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="nombrer"><b>Nombre de la Ruta</b></label>
+                                     <input type="text" class="form-control nombre_ruta nombre_ruta<?=$value['id_ruta'];?>" value="<?=$value['nombre_ruta'];?>" name="nombre_ruta" id="nombre_ruta">
+                                    <span class="errorNombre" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="hora"><b>Hora</b></label>
+                                    <input type="time" class="form-control hora_salida hora_salida<?=$value['id_ruta'];?>" style="width:100%;" value="<?=$value['hora_salida'];?>" name="hora_salida" id="hora_salida">
+                                    <span class="errorHora" style="color:red"></span>
+                                </div>
+                            </div> 
+                            <br><br>
+                        </div>
+                        <br>
+                        <div class="modal-footer">
+                            <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="EnviarRutaEditar btn btn-primary" href="#" id="<?=$value['id_ruta'];?>">Guardar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>  
 
 
+                                                    <td>
+                                                        <div class="col-sm-7" style='text-align:right;'>
+                                                        <?php if ($value['status'] == 1) { ?>
+                                                            <a href="#" data-id="<?= $value['id_ruta'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
+                                                                <span class="icon text-white-50">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </span>
+                                                                <span class="text">Eliminar</span>
+                                                            </a>
+                                                        <?php } else { ?>
+                                                            <a href="#" data-id="<?= $value['id_ruta'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
+                                                                <span class="icon text-info-50">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                                </span>
+                                                                <span class="text">Habilitar</span>
+                                                            </a>
+                                                        <?php } ?>
+                                                        </div>
                                                     </td>
-                              <td> <div class="col-sm-7" style='text-align:right;'>
-
-                                  <a href="#" class="btn btn-danger btn-icon-split" data-toggle="modal" data-target="#EliminarUsuarioModal">
-                                        <span class="icon text-white-50" >
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Eliminar</span>
-                                    </a>
-                        </div></td>
                                         </tr>
 
                                             <?php endif ?>
@@ -163,61 +293,62 @@
             font-size:0.8em;
         }
     </style>
-    <div class="modal fade" id="AgregarRutaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0;">
+    <div class="modal fade AgregarRutaModal" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0;">
         <div class="container">
-                <div class="modal-dialog">
-                    <div class="" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary" style="color:#FFF">
-                                <h5 class="modal-title" id="exampleModalLabel">Registrar Ruta</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
+            <div class="modal-dialog">
+                <div class="" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary" style="color:#FFF">
+                            <h5 class="modal-title" id="exampleModalLabel">Registrar Ruta</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
 
-                            <div class="modal-body">
-                                <div class="row">
-                                   <div class="form-group col-sm-12 col-md-6">
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <label for="rol"><b>Unidad</b></label>
-                                        <select class="form-control select2" name="placa" id="placa">
-                                            <option></option>
-                                            <?php foreach ($vehiculo as $unidad) : ?>
-                                                <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option><?= $unidad['placa'] ?></option>
-                                                <?php endif ?>
-                                            <?php endforeach ?>
-                                        </select>
-                                        <span class="errorPlaca" style="color:red"></span>
-                                    </div>
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Modelo"><b>Dirección</b></label>
-                                          <input type="text" class="form-control" name="direccion_ruta" id="direccion_ruta">
-                                        <span class="errorDireccion" style="color:red"></span>
-                                    </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="rol"><b>Unidad</b></label>
+                                    <select class="form-control select2 placa" style="width:100%;" name="placa" id="placa">
+                                        <option></option>
+                                        <?php foreach ($vehiculo as $unidad) : ?>
+                                            <?php if (!empty($unidad['id_vehiculo'])) : ?>
+                                                <option><?= $unidad['placa'] ?></option>
+                                            <?php endif ?>
+                                        <?php endforeach ?>
+                                    </select>
+                                    <span class="errorPlaca" style="color:red"></span>
                                 </div>
-                                    
-                                        <label for="nombrer"><b>Nombre de la Ruta</b></label>
-                                         <input type="text" class="form-control" name="nombrer" id="nombre_ruta">
-                                        <span class="errorNombre" style="color:red"></span>
-                                         <div class="row">
-                                    <div class="form-group col-sm-12 col-md-6">
-                                        <label for="hora"><b>Hora</b></label>
-                                       <input type="time" class="form-control" name="hora_salida" id="hora_salida">
-                                    </div>
-                                   </div> 
-                                   <br>  <br>
-                            <div class="modal-footer">
-                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <a class="EnviarRutaRegistrar btn btn-primary" href="#">Agregar</a>
+                                
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="Modelo"><b>Dirección</b></label>
+                                      <input type="text" class="form-control direccion_ruta" name="direccion_ruta" id="direccion_ruta">
+                                    <span class="errorDireccion" style="color:red"></span>
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="nombrer"><b>Nombre de la Ruta</b></label>
+                                     <input type="text" class="form-control nombre_ruta" name="nombrer" id="nombre_ruta">
+                                    <span class="errorNombre" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="hora"><b>Hora</b></label>
+                                    <input type="time" class="form-control hora_salida"  style="width:100%;" name="hora_salida" id="hora_salida">
+                                    <span class="errorHora" style="color:red"></span>
+                                </div>
+                            </div> 
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="EnviarRutaRegistrar btn btn-primary" href="#" id="AgregarRutaModal">Agregar</a>
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
        </div>
-        </div>
+    </div>
          </div>  
 
 
@@ -225,71 +356,8 @@
 
 
 <!-- MODAL DE MODIFICAR-->
-                   <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-    <style type="text/css">
-        .modal{
-            font-size:0.8em;
-        }
-    </style>
-    <div class="modal fade" id="ModificarvehiculoModal" value="<?(!empty($unidad['id_vehiculo'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0;">
-        <div class="container">
-                <div class="modal-dialog">
-                    <div class="" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary" style="color:#FFF">
-                                <h5 class="modal-title" id="exampleModalLabel">Modificar Ruta</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
 
-                            <div class="modal-body">
-                                 <div class="row">
-                                   <div class="form-group col-sm-12 col-md-6">
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <label for="rol"><b>Unidad</b></label>
-                                        <select class="form-control select2" name="placa" id="placa">
-                                            <option></option>
-                                            <?php foreach ($vehiculo as $unidad) : ?>
-                                                <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option><?= $unidad['placa'] ?></option>
-                                                <?php endif ?>
-                                            <?php endforeach ?>
-                                        </select>
-                                        <span class="errorUnidad" style="color:red"></span>
-                                    </div>
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Modelo"><b>Dirección</b></label>
-                                          <input type="text" class="form-control" name="direccion" id="direccion">
-                                        <span class="errorModelo" style="color:red"></span>
-                                    </div>
-                                </div>
-                                    
-                                        <label for="nombrer"><b>Nombre de la Ruta</b></label>
-                                         <input type="text" class="form-control" name="nombrer" id="nombre_ruta
-                                         ">
-                                        <span class="errorNombreR" style="color:red"></span>
-                                         <div class="row">
-                                    <div class="form-group col-sm-12 col-md-6">
-                                        <label for="hora"><b>Hora</b></label>
-                                       <input type="time" class="form-control" name="hora" id="hora_salida">
-                                    </div>
-                                   </div> 
-                                   <br>  <br>
-                            <div class="modal-footer">
-                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-       </div>
-        </div>
-         </div>  
+
 
 
      </div>

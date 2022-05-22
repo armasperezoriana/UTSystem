@@ -314,24 +314,24 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="nombre"><b>Nombre</b></label>
-                                        <input type="text" class="form-control-plaintext" name="nombre" id="nombre">
+                                        <input type="text" class="form-control-plaintext" disabled name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="rif"><b>RIF</b></label>
-                                        <input type="text" class="form-control-plaintext"  name="rif" id="rif">
+                                        <input type="text" class="form-control-plaintext" disabled  name="rif" id="rif">
                                         <span class="errorRif" style="color:red"></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="cedula"><b>Direccion</b></label>
-                                        <input type="text" class="form-control-plaintext" name="direccion" id="direccion">
+                                        <input type="text" class="form-control-plaintext" disabled name="direccion" id="direccion">
                                         <span class="errorDireccion" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="contacto"><b>Informacion Contacto</b></label>
-                                        <input type="text" class="form-control-plaintext" name="informacion_contacto" id="informacion_contacto">
+                                        <input type="text" class="form-control-plaintext" disabled name="informacion_contacto" id="informacion_contacto">
                                         <span class="errorContacto" style="color:red"></span>
                                     </div>
                                 </div>

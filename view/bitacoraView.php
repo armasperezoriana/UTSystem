@@ -39,7 +39,7 @@
                     <div class="container-fluid">
 
                     <!-- LEYENDA DEL MODULO -->
-                    <p class="mb-4">En este módulo podrá visualizar todos los cambios registrados en el sistema a su vez registrar, eliminar y modificar de todos los módulos <a target="_blank"> 
+                    <p class="mb-4">En este módulo podrá visualizar todos los cambios registrados en el sistema y en cada uno de los módulos <a target="_blank"> 
                            </a></p>
 
                     <!-- DataTales Example -->
