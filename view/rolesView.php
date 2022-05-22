@@ -44,17 +44,16 @@
                     <div class="container-fluid">
 
                         <!-- LEYENDA DEL el MODULO -->
-                        <p class="mb-4">En este módulo podrá visualizar los usuarios que están registrados en el sistema a su vez registrar, eliminar y modificar <a target="_blank">
+                        <p class="mb-4">En este módulo podrá visualizar los roles y permisologias de los usuarios <a target="_blank">
                             </a></p>
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <center>
-                                    <h6 class="m-0 font-weight-bold text-primary">Módulo de Gestión Roles </h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Módulo de Gestión Roles</h6>
                                 </center>
                             </div>
-                          
                         </div>
                         <span class="icon text-white-50">
                             <i class="fas fa-check"></i>
@@ -74,57 +73,83 @@
                                 <table class="table table-striped datatable col-sm-12" id="">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>Identificador</th>
                                             <th>Rol</th>
-                                            <th>Descripcion</th>
+                                            <th>Descripción</th>
                                             <th>Permisos</th>
                                             <th>Acciones</th>
                                             <th></th>
-                                            <th>
-                                                </th>
+
                                             <th></th>
+                                            <th></th>
+                                            <th></th>
+                                     
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                              <?php foreach ($roles as $rols) : ?>
+                                            <?php foreach ($roles as $rols) : ?>
                                             <?php if (!empty($rols['id_rol'])) : ?>
                                                 <tr>
                                                     <td><?= $rols['id_rol'] ?></td>
                                                     <td><?= $rols['nombre_rol'] ?></td>
                                                     <td><?= $rols['descripcion'] ?></td>
-                                                     <td></td>
-                                                
-                                                      <td>    <div class="col-sm-7" style='text-align:right;'>
-
-                                                            <a  data-id="<?= $value['id_rol']?>" class="btn btn-info btn-icon-split permisos" name="permisos" id="$value['id_rol']" data-toggle="modal" data-target="#PermisosRolModal">
-                                                                <span class="icon text-white-50">
-                                                                <i class="fas fa-fw fa-wrench"></i>
-                                                                </span>
-                                                                <span class="text">Permisos</span></td>
+                                                   
                                                     <td>
+
+                                                    <div class="col-sm-7" style='text-align:right;'>
+
+                                                            <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-secondary btn-icon-split permisos" name="permisos" data-toggle="modal" data-target="#PermisosRolModal">
+
+                                                                <span class="icon text-white-50">
+                                                                   <i class="fas fa-fw fa-wrench"></i>
+                                                                </span>
+                                                                <span class="text"></span>
+                                                            </a>
+                                                        </div>   
+                                                    </td>
+                                                    <td>
+                                                          <div class="col-sm-7" style='text-align:right;'>
+
+                                                            <a href="#" data-id="<?= $value['id_usuario'] ?>" class="btn btn-info btn-icon-split consultar" name="consultar" >
+
+            
+                                                                <span class="icon text-white-50">
+                                                                    <i class="fas fa-search"></i>
+                                                                </span>
+                                                                <span class="text">Consultar</span>
+                                                            </a>
+                                                        </div>
+                                                        
+
+
+                                                    </td>
+                                                      <td>
 
                                                         <div class="col-sm-7" style='text-align:right;'>
 
-                                                            <a href="#" data-id="<?= $value['id_usuario']?>" class="btn btn-warning btn-icon-split editarbtn" name="editar" id="'$value['id_usuario']'" href="#" data-toggle="modal" data-target="#ModificarUsuarioModal">
+                                                            <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-warning btn-icon-split editar" name="editar" data-toggle="#ModificarRolModal">
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-flag"></i>
                                                                 </span>
                                                                 <span class="text">Modificar</span>
                                                             </a>
                                                         </div>
+
+
                                                     </td>
                                                     <td>
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                             <?php if ($rols['status'] == 1) { ?>
-                                                                <a href="#" data-id="<?= $value['id_rol'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
+                                                                <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
                                                                     <span class="icon text-white-50">
                                                                         <i class="fas fa-trash"></i>
                                                                     </span>
                                                                     <span class="text">Eliminar</span>
                                                                 </a>
                                                             <?php } else { ?>
-                                                                <a href="#" data-id="<?= $value['id_rol'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
+                                                                <a href="#" data-id="<?= $rol['id_rol'] ?>" class="btn btn-outline-info btn-icon-split habilitar
+                                                                    " data-toggle="modal" data-target="">
                                                                     <span class="icon text-info-50">
                                                                         <i class="fas fa-trash-alt"></i>
                                                                     </span>
@@ -143,15 +168,9 @@
                             </div>
                         </div>
                     </div>
-                    
+                </div>
+
             </div> <!-- MODAL DE ayuda-->
-
-
-                                                       
-
-
-
-
 
             <div class="col-sm-7" style='text-align:right;'>
                 <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
@@ -166,10 +185,71 @@
         </div>
         <!-- End of Page Wrapper -->
 
+        <!-- MODAL DE REGISTRARSE-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        <style type="text/css">
+            .modal {
+                font-size: 0.8em;
+            }
+        </style>
+        <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+            <div class="container">
+                <div class="modal-dialog">
+                    <div class="" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary" style="color:#FFF">
+                                <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                     <div class="form-group col-sm-12 col-md-6">
+                                        <label for="nombreRol"><b>Nombre del Rol</b></label>
+                                        <input type="text" class="form-control" name="nombreRol" id="nombreRol">
+                                        <span class="errornombreRol" style="color:red"></span>
+                                    </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                        <label for="descripcion"><b>Descripcion</b></label>
+                                        <input type="text" class="form-control" name="descripcion" id="descripcion">
+                                        <span class="errordescripcion" style="color:red"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="form-group col-sm-12 col-md-6">
+                                        <label for="estado"><b>Estado</b></label>
+                                         <select class="form-control select2" name="estado" id="estado">
+                                                  <option value="">...</option>
+                                                <option value="1">Activo</option>
+                                                <option value="0">Inactivo</option>
+                                            </select>
+                                         <span class="errorEstado" style="color:red"></span>
+                                    </div>
+                                    
+                                </div>
+    
+
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+          <!-- PERMISOS -->
        
-      <!-- PERMISOS -->
-       
-        <div class="modal fade" id="PermisosRolModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+        <div class="modal fade bd-example-modal-xl" id="PermisosRolModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;" data-targer=".bd-example-modal-xl">
             <div class="container">
                   <form action id="PermisosRolModal">
                 <div class="modal-dialog">
@@ -184,15 +264,341 @@
 
                             <div class="modal-body">
                                 <div class="row">
+
+                                     <div class="form-group col-sm-12 col-md-6">
+                                        <label for="nombreRol"><b>Nombre del Rol</b></label>
+                                        <input type="text" class="form-control" name="nombreRol" id="nombreRol">
+                                        <span class="errornombreRol" style="color:red"></span>
+                                    </div>
+                                    <table class="table table-responsive table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Módulo</th>
+                                            <th>Lectura</th>
+                                            <th></th>
+                                            <th>Todos los permisos</th>
+                                            <th></th>
+                                            <th>Restringido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Usuarios</td>
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vehiculos</td>
+                                               <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Chofer</td>
+                                               <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                          <tr>
+                                            <td>Ruta</td>
+                                              <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                          <tr>
+                                            <td>Taller</td>
+                                             <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mantenimiento</td>
+                                         <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                         <tr>
+                                            <td>Seguridad</td>
+                                             <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                         <tr>
+                                            <td>Reportes</td>
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                                  <td></td>
+
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                              <td></td>
+
+                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON
+                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                  <div class="modal-footer">
+                                                        <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                                        <a class="ModificarUsuarios btn btn-primary" href="#">Guardar Rol</a>
+                                                    </div>
+
                                   
                         </form>
                         </div>
                     </div>
-               </div>
-                  </div>
+              
 
-                    <!-- End of Content Wrapper -->
+       <!-- MODAL DE MODIFICAR-->
+
+        <div class="modal fade" id="ModificarRolModal" tabindex="-1" role="dialog" aria-hidden="true"  style="padding:0;">
+            <form id="modificarRol" method="POST">
+                <input type="hidden" id="id_rol" name="id_rol">
+                <div class="container">
+                    <div class="modal-dialog">
+                        <div class="" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary" style="color:#FFF">
+                                    <h5 class="modal-title">
+                                        <center>Modificar Rol</center>
+                                    </h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+
+                                <div class="col-sm-7" style='text-align:right;'>
+                                    <span href="#" data-toggle="modal" data-target="ModificarRolModal">
+
+                                    </span>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <div class="card-body">
+                                            <div class="row" style='font-size:0.9em;'>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-6">
+
+                                                            <label for="nombre"><b>Nombre</b></label>
+                                                            <input type="text" class="form-control" name="nombre" id="nombre">
+                                                            <span class="errorNombre" style="color:red"></span>
+                                                        </div>
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="apellido"><b>Apellido</b></label>
+                                                            <input type="text" class="form-control" name="apellido" id="apellido">
+                                                            <span class="errorApellido" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="cedula"><b>Cedula</b></label>
+                                                            <input type="text" class="form-control" name="cedula" id="cedula">
+                                                            <span class="errorCedula" style="color:red"></span>
+                                                        </div>
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="username"><b>Usuario</b></label>
+                                                            <input type="text" class="form-control" name="username" id="username">
+                                                            <span class="errorUsername" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-12">
+                                                            <label for="rol"><b>Roles</b></label>
+                                                            <select style="width: 100%;" class="form-control select2" name="rol" id="rol">
+                                                                <option></option>
+                                                                <?php foreach ($roles as $rols) : ?>
+                                                                    <?php if (!empty($rols['id_rol'])) : ?>
+                                                                        <option><?= $rols['nombre_rol'] ?></option>
+                                                                    <?php endif ?>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="errorRol" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="pass1"><b>Contraseña</b></label>
+                                                            <input type="password" class="form-control" name="pass1" id="pass1" value="" placeholder="Ingresa tu clave">
+                                                            <span class="errorPass1" style="color:red"></span>
+
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="form-group col-sm-12 col-md-6">
+                                                                <label for="pass2"><b> Repetir Contraseña</b></label>
+                                                                <input type="password" class="form-control" name="pass2" id="pass2" value="" placeholder="Ingresa tu clave">
+                                                                <span class="errorPass2" style="color:red"></span>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-12">
+                                                            <label for="correo"><b>Correo</b></label>
+                                                            <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo" value="<?= $value['correo'] ?>" placeholder="example@gmail.com">
+                                                            <span class="correo" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                                        <a class="ModificarUsuarios btn btn-primary" href="#">Guardar Datos</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </form>
+        </div>
+
+
+  <!-- MODAL DE CONSULTAR-->
+         
+        <div class="modal fade" id="ConsultarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
+" style="padding:0;">
+            <form id="consultarUsuario" method="POST">
+                <input type="hidden" id="id_usuario" name="id_usuario">
+                <div class="container">
+                    <div class="modal-dialog">
+                        <div class="" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary" style="color:#FFF">
+                                    <h5 class="modal-title">
+                                        <center>Consultar Usuario</center>
+                                    </h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+
+                                <div class="col-sm-7" style='text-align:right;'>
+                                    <span href="#" data-toggle="modal" data-target="ModificarUsuarioModal">
+
+                                    </span>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <div class="card-body">
+                                            <div class="row" style='font-size:0.9em;'>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-6">
+
+                                                            <label for="nombre"><b>Nombre</b></label>
+                                                            <input type="text" class="form-control-plaintext" disabled name="nombre" id="nombre">
+                                                            <span class="errorNombre" style="color:red"></span>
+                                                        </div>
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="apellido"><b>Apellido</b></label>
+                                                            <input type="text" class="form-control-plaintext" disabled name="apellido" id="apellido">
+                                                            <span class="errorApellido" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="cedula"><b>Cedula</b></label>
+                                                            <input type="text" class="form-control-plaintext" disabled name="cedula" id="cedula">
+                                                            <span class="errorCedula" style="color:red"></span>
+                                                        </div>
+                                                        <div class="form-group col-sm-12 col-md-6">
+                                                            <label for="username"><b>Usuario</b></label>
+                                                            <input type="text" class="form-control-plaintext" disabled name="username" id="username">
+                                                            <span class="errorUsername" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-12">
+                                                            <label for="rol"><b>Roles</b></label>
+                                                            <select style="width: 100%;" class="form-control-plaintext  disabled select2" name="rol" id="rol">
+                                                                <option></option>
+                                                                <?php foreach ($roles as $rols) : ?>
+                                                                    <?php if (!empty($rols['id_rol'])) : ?>
+                                                                        <option><?= $rols['nombre_rol'] ?></option>
+                                                                    <?php endif ?>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="errorRol" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="form-group col-sm-12 col-md-12">
+                                                            <label for="correo"><b>Correo</b></label> 
+                                                            <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo"  class="form-control-plaintext" disabled  placeholder="example@gmail.com">
+                                                            <span class="correo" style="color:red"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
 
 
     <!-- MODULo de AYUDA -->
@@ -229,19 +635,22 @@
 
                             <div class="modal-body">
                                 <p>
-                                    En este modulo podrá visualizar los usuarios que están registrados en el sistema a su vez registrar, eliminar y modificar
-                                    <br><br>
-                                    1. Para eliminar un usuario seleccione "eliminar" situada a la derecha del usuario
-                                    <br> <br>
-                                    2. Para modificar un usuario seleccione "modificar" situada a izquierda del usuario
-                                    <br><br>
-                                    3. Para registrar un usuario seleccione "registrar" que se muestra en el lado inferior derecho de la tabla
-                                    <br><br>
-                                    4. Para volver al menu principal presione "volver" situado en la parte inferior derecha
-                                    <br><br>
-                                    5. Para cerrar esta ventana emergente y seguir con el sistema presione e "cerrar"
-                                    <br><br>
-                                    6. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo del dato que desea Buscar.
+                                      En este modulo podrá visualizar los roles registrados en el sistema y registrar, eliminar y modificar. Estos roles son permitirán al usuario tener acceso total, solo lectura o tener acceso denegado a un modulo o conjunto de modulos
+                  <br><br>
+                  1. Para eliminar un rol seleccione "eliminar" situada a la derecha del rol del lado derecho de "modificar"
+                  <br> <br>
+                  2. Para modificar nombre y descripción de un rol seleccione "modificar" 
+                  <br><br>
+                  3. Para modificar los permisos asociados a un rol seleccione "permisos" situada a izquierda del rol al lado derecho de "eliminar"
+                  <br><br>
+                  4. Para registrar un rol seleccione "registrar" una vez dentro deberá llenar las casillas de nombre de rol, descripcion y seleccionar los permisos asignados ese rol con respecto a cada modulo 
+                  <br><br>
+                  5. Para volver al menu principal presione "volver" situado en la parte inferior derecha
+                  <br><br>
+                  6. Para cerrar esta ventana emergente y seguir con el sistema presione e "cerrar"
+                  <br><br>
+                  7. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo del dato que desea buscar
+
                                 </p>
                             </div>
                             <div class="modal-footer">
