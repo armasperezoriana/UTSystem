@@ -124,7 +124,7 @@
                 <div id="collapseSeguridad" class="collapse" aria-labelledby="headingSeguridad" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Seguridad del sistema</h6>
-                        <a class="collapse-item" href="buttons.php">Gestión de Esteganografia</a>
+                        <a class="collapse-item" href="<?=_ROUTE_ ?>Esteganografia">Gestión de Esteganografia</a>
                         <a class="collapse-item" href="cards.php">Respaldo de la BD</a>
                            <a class="collapse-item" href="<?=_ROUTE_ ?>Roles">Gestión de Roles</a>
                         <a class="collapse-item" href="<?=_ROUTE_ ?>Bitacora">Bitacora</a>
@@ -137,7 +137,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?=_ROUTE_ ?>Reportes">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Reportes Estadisticos</span></a>
+                    <span>Reportes</span></a>
             </li>
 
           
