@@ -56,7 +56,7 @@
                             </div>
                             <div class="imagenmodulo">
                                
-                                <img src="assets/img/undraw_profile.svg" class="img-profile rounded-circle" width="20%" float="right" ; display:block;>
+                                <img src="assets/img/undraw_profile.svg" class="img-profile rounded-circle" width="20%" float="right" ; display:flex;>
                             </div>
                         </div>
                         <span class="icon text-white-50">

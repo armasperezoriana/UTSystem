@@ -177,6 +177,9 @@
                     Ayuda
                 </span>
 
+                  <button class=" btn btn-warning" type="button" href="<?=_ROUTE_ ?>Esteganografia" data-dismiss="modal">Imagen de Seguridad</button>
+
+                  <button class=" btn btn-danger" type="button" href="<?=_ROUTE_ ?>Esteganografia" data-dismiss="modal">Respaldo de BD</button>
             </div>
 
 

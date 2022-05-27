@@ -30,7 +30,7 @@
             <!-- Nav Item - USUARIOS Menu -->
              <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Usuarios">
-                <!-- <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Usuarios" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> -->
+                <!-- <a class="nav-link collapsed" href="Usuarios" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> -->
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>Usuarios</span>
                 </a>
@@ -38,58 +38,49 @@
             </li>
             <!-- Nav Item - Vehiculos Menu -->
              <li class="nav-item">
-                <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Vehiculos" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Vehiculos">
                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>Vehiculos</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                     
-                        <a class="collapse-item" href="<?=_ROUTE_ ?>Vehiculos">Gestionar Vehiculos</a>
-                        
-                    </div>
+                   
                 </div>
             </li>
               <!-- Nav Item - Chofer Menu -->
              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseChofer"
-                    aria-expanded="true" aria-controls="collapseChofer">
+                <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Choferes"
+                    >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Chofer</span>
                 </a>
                 <div id="collapseChofer" class="collapse" aria-labelledby="headingChofer" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                         <a class="collapse-item" href="<?=_ROUTE_ ?>Choferes">Gestionar Chofer</a>
-                        
+                       
                         
                     </div>
                 </div>
             </li>
               <!-- Nav Item - Ruta Menu -->
              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRuta"
-                    aria-expanded="true" aria-controls="collapseRuta">
+                <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Ruta">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Ruta</span>
                 </a>
                 <div id="collapseRuta" class="collapse" aria-labelledby="headingRuta" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?=_ROUTE_ ?>Ruta">Gestionar Ruta</a>
-                        
+            
                     </div>
                 </div>
             </li>
               <!-- Nav Item - Taller Menu -->
              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTaller"
-                    aria-expanded="true" aria-controls="collapseTaller">
+                <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Taller">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>Taller</span>
                 </a>
                 <div id="collapseTaller" class="collapse" aria-labelledby="headingTaller" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?=_ROUTE_ ?>Taller">Gestionar Taller</a>
+                        <a class="collapse-item" ></a>
                        
                     </div>
                 </div>
@@ -124,9 +115,9 @@
                 <div id="collapseSeguridad" class="collapse" aria-labelledby="headingSeguridad" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Seguridad del sistema</h6>
-                        <a class="collapse-item" href="<?=_ROUTE_ ?>Esteganografia">Gestión de Esteganografia</a>
-                        <a class="collapse-item" href="cards.php">Respaldo de la BD</a>
-                           <a class="collapse-item" href="<?=_ROUTE_ ?>Roles">Gestión de Roles</a>
+                       <!--  <a class="collapse-item" href="<?=_ROUTE_ ?>Esteganografia">Gestión de Esteganografia</a>
+                        <a class="collapse-item" href="cards.php">Respaldo de la BD</a>-->
+                           <a class="collapse-item" href="<?=_ROUTE_ ?>Roles"> Roles</a>
                         <a class="collapse-item" href="<?=_ROUTE_ ?>Bitacora">Bitacora</a>
                     </div>
                 </div>
