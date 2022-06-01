@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-gradient-primary" style="display:flex;background-image: url(<?php echo _ROUTE_ ?>/assets/img/fondoUT.jpg);background-size: cover;">
+ 
 
     <div class="container" style="margin-top:auto;margin-bottom:auto">
 
@@ -60,7 +60,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="<?= _ROUTE_ ?>Recuperar">¿Datos olvidados?</a>
+                                        <a class="small" href="<?=_ROUTE_ ?>Recuperar">¿Datos olvidados?</a>
                                     </div>
 
                                 </div>

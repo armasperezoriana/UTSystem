@@ -563,7 +563,8 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+ position: absolute;
+
 }
 
 .img-thumbnail {
@@ -587,6 +588,13 @@ progress {
 .figure-caption {
   font-size: 0.875em;
   color: #6c757d;
+}
+
+.imagenmodulo{
+
+position: absolute;
+width: 50%;
+border-color:red;
 }
 
 .container,

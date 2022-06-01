@@ -49,7 +49,7 @@
                          <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Talleres</h6></center> 
                         </div>
                          
-                       <img src="assets/img/realizar.png" class="img-profile rounded-circle" width="20%" position: absolute; right:50%;>  
+            
 
                         </div>
                                <span class="icon text-white-50">

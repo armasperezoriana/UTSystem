@@ -17,7 +17,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
+<body class="bg-gradient-primary" style="display:flex;background-image: url(<?php echo _ROUTE_ ?>/assets/img/fondoUT.jpg);background-size: cover;">
 <body class="bg-gradient-primary">
 
     <div class="container">

@@ -65,6 +65,17 @@
                                 </a>
                             </div>
                             <br>
+                             <div class="col-sm-7" style='text-align:right;'>
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                <a href="#">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span class="text">Generar Orden de Servicio</span>
+                                </a>
+                            </div>
 
                             <div class="table-responsive">
                                 <div class="card-body" style='background:;'>
@@ -75,7 +86,7 @@
                                                     <th>ID</th>
                                                     <th>Vehiculo</th>
                                                     <th>Tipo de Mantenimiento</th>
-                                                    <th>Tiempo Meses</th>
+                                                    <th>Orden de Servicio</th>
                                                     <th>Taller</th>
                                                     <th></th>
                                                      <th></th>
@@ -130,7 +141,7 @@
                      <div class="modal-body">
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Nombre del Mantenimiento</b></label>
+                                        <label for="Nombre"><b>Kilometraje</b></label>
                                         <input type="text" class="form-control-plaintext" disabled  value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
@@ -183,7 +194,7 @@
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tiempo"><b>Cada cuantos meses se requiere</b></label>
+                                        <label for="tiempo"><b>Orden de Servicio</b></label>
                                         <input type="tiempo" class="form-control-plaintext" disabled  value="<?=$preventivo['tiempo']?>" name="tiempo" id="tiempo">
                                         <span class="errorTiempo" style="color:red"></span>
                                     </div>
@@ -218,7 +229,7 @@
                             <div class="modal-body">
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Nombre del Mantenimiento</b></label>
+                                        <label for="Nombre"><b>Kilometraje</b></label>
                                         <input type="text" class="form-control" value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
@@ -271,7 +282,7 @@
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tiempo"><b>Cada cuantos meses se requiere</b></label>
+                                        <label for="tiempo"><b>Orden de Servicio</b></label>
                                         <input type="tiempo" class="form-control" value="<?=$preventivo['tiempo']?>" name="tiempo" id="tiempo">
                                         <span class="errorTiempo" style="color:red"></span>
                                     </div>
@@ -357,7 +368,7 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Nombre del Mantenimiento</b></label>
+                                        <label for="Nombre"><b>Kilometraje</b></label>
                                         <input type="text" class="form-control nombre" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
@@ -408,7 +419,7 @@
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
                                      <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tiempo"><b>Cada cuantos meses se requiere</b></label>
+                                        <label for="tiempo"><b>Orden de Servicio</b></label>
                                         <input type="tiempo" class="form-control" name="tiempo" id="tiempo">
                                         <span class="errorTiempo" style="color:red"></span>
                                     </div>

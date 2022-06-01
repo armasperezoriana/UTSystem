@@ -9,7 +9,7 @@
                 var direccion_ruta = $(".AgregarRutaModal").find(".direccion_ruta").val();
                 var nombre_ruta =$(".AgregarRutaModal").find(".nombre_ruta").val();
                 var hora_salida = $(".AgregarRutaModal").find(".hora_salida").val();
-
+                var kilometraje = $(".AgregarRutaModal").find(".kilometraje").val();
 
 
                  // console.log("hay datos enviados");
@@ -32,6 +32,7 @@
                                 direccion_ruta: direccion_ruta,
                                 nombre_ruta: nombre_ruta,
                                 hora_salida: hora_salida,
+                                kilometraje: kilometraje,
                             },
                             success: function(respuesta) {
                                 // alert(respuesta);
@@ -80,7 +81,8 @@
                 var direccion_ruta = $(".EditarRutaModal").find(".direccion_ruta"+id).val();
                 var nombre_ruta = $(".EditarRutaModal").find(".nombre_ruta"+id).val();;
                 var hora_salida = $(".EditarRutaModal").find(".hora_salida"+id).val();
-                
+                var kilometraje = $(".EditarRutaModal").find(".kilometraje"+id).val();
+
                  // console.log("hay datos enviados");
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
@@ -102,6 +104,7 @@
                                 direccion_ruta: direccion_ruta,
                                 nombre_ruta: nombre_ruta,
                                 hora_salida: hora_salida,
+                                kilometraje: kilometraje,
                             },
                             success: function(respuesta) {
                                 if (respuesta == "1") {

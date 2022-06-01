@@ -12,6 +12,7 @@
 	    private $nombre_ruta; 
 	    private $direccion_ruta;
 	    private $hora_salida;
+	    private $kilometraje;
 	    private $status;
 
 		public function __construct(){
@@ -66,7 +67,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO rutas (id_ruta, placa, nombre_ruta, direccion_ruta, hora_salida, status) VALUES ($id, '{$this->placa}', '{$this->nombre_ruta}', '{$this->direccion_ruta}', '{$this->hora_salida}', 1)");
+				$query = parent::prepare("INSERT INTO rutas (id_ruta, placa, nombre_ruta, direccion_ruta, hora_salida, kilometraje, status) VALUES ($id, '{$this->placa}', '{$this->nombre_ruta}', '{$this->direccion_ruta}', '{$this->hora_salida}','{$this->kilometraje}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -82,7 +83,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE rutas SET placa='{$this->placa}', nombre_ruta='{$this->nombre_ruta}', direccion_ruta = '{$this->direccion_ruta}', hora_salida = '{$this->hora_salida}' WHERE id_ruta = {$this->id_ruta}");
+				$query = parent::prepare("UPDATE rutas SET placa='{$this->placa}', nombre_ruta='{$this->nombre_ruta}', direccion_ruta = '{$this->direccion_ruta}', hora_salida = '{$this->hora_salida}', kilometraje='{$this->kilometraje}' WHERE id_ruta = {$this->id_ruta}");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -139,7 +140,9 @@
 		public function setHoraSalida($horaSalida){
 			$this->hora_salida = $horaSalida;
 		}
-
+			public function setKilometraje($kilometraje){
+			$this->kilometraje = $kilometraje;
+		}
 	}
 
 ?>

@@ -75,6 +75,7 @@
                                             <th>Direccion</th>
                                             <th>Nombre Ruta</th>
                                             <th>Hora de Salida</th>
+                                            <th>Kilometraje</th>
                                              <th><center>Accion</center></th>
                                               <th></th>
                                                <th></th>
@@ -90,6 +91,7 @@
                                                <td><?=$value['nombre_ruta']?></td>
                                              <td><?=$value['direccion_ruta']?></td>
                                             <td><?=$value['hora_salida']?></td>
+                                            <td><?=$value['kilometraje']?></td>
                                             <td> 
 
                          <div class="col-sm-7" style='text-align:right;'>
@@ -147,6 +149,12 @@
                                     <span class="errorHora" style="color:red"></span>
                                 </div>
                             </div> 
+                             <div class="form-group col-sm-12 col-md-6">
+                                    <label for="kilometraje"><b>Kilometraje</b></label>
+                                    <br><br>
+                                    <input type="time" class="form-control kilometraje kilometraje<?=$value['kilometraje'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['kilometraje'];?>" name="kilometraje" id="kilometraje" placeholder="kilometros en metros">
+                                    <span class="errorKilometraje" style="color:red"></span>
+                                </div>
                             <br><br>
                         </div>
                         <br>
@@ -224,6 +232,13 @@
                                 </div>
                             </div> 
                             <br><br>
+                             <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="nombrer"><b>Kilometraje</b></label>
+                                       <input type="text" class="form-control kilometraje kilometraje<?=$value['id_ruta'];?>" value="<?=$value['kilometraje'];?>" name="kilometraje" id="kilometraje">
+                                    <span class="errorNombre" style="color:red"></span>
+                                </div>
+                               
                         </div>
                         <br>
                         <div class="modal-footer">
@@ -338,6 +353,14 @@
                                     <span class="errorHora" style="color:red"></span>
                                 </div>
                             </div> 
+
+                             <div class="row">
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="kilometraje"><b>Kilometraje</b></label>
+                                     <input type="number" class="form-control kilometraje" name="kiloemtraje" id="kilometraje">
+                                    <span class="kilometraje" style="color:red"></span>
+                                </div>
+                             
                             <br>
                         </div>
                         <div class="modal-footer">

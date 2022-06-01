@@ -54,10 +54,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Usuarios</h6>
                                 </center>
                             </div>
-                            <div class="imagenmodulo">
-                               
-                                <img src="assets/img/undraw_profile.svg" class="img-profile rounded-circle" width="20%" float="right" ; display:flex;>
-                            </div>
+                        
                         </div>
                         <span class="icon text-white-50">
                             <i class="fas fa-check"></i>

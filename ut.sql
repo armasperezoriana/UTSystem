@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2022 a las 18:29:45
+-- Tiempo de generación: 01-06-2022 a las 22:23:03
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -346,16 +346,195 @@ INSERT INTO `bitacora` (`id_bitacora`, `cedula`, `usuario`, `operacion`, `host`,
 (320, '$%%$%%%$', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-06', '16:18:25', 'Choferes', NULL),
 (321, '$%%$%$%$', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-06', '16:18:26', 'Choferes', NULL),
 (322, '$$%$$%%$', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-06', '16:18:26', 'Choferes', NULL),
-(323, '26561633', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-10', '15:28:43', 'Chofer', NULL),
-(324, '28946711', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-10', '15:37:41', 'Usuario', NULL),
-(325, '30868382', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-10', '15:44:49', 'Chofer', NULL),
-(326, 'KVT47V', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-10', '22:24:39', 'Ruta', NULL),
-(327, 'EAP685', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-10', '22:24:45', 'Ruta', NULL),
-(328, 'KVT47V', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-10', '22:24:52', 'Ruta', NULL),
-(329, 'VAS654', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-10', '22:24:59', 'Ruta', NULL),
-(330, 'EAP685', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-10', '22:25:05', 'Ruta', NULL),
-(331, '0101', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-12', '12:26:00', 'Usuario', NULL),
-(332, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-12', '12:28:14', 'Usuario', NULL);
+(323, '29398488', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-20', '09:19:23', 'Chofer', NULL),
+(324, '3333385', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-20', '09:35:41', 'Usuario', NULL),
+(325, '3333385', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-20', '09:35:45', 'Usuario', NULL),
+(326, '3333385', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-20', '09:35:51', 'Usuario', NULL),
+(327, '3333385', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-20', '09:35:54', 'Usuario', NULL),
+(328, '898PAJ4', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-20', '13:13:52', 'Ruta', NULL),
+(329, '898PAJ4', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-20', '13:14:14', 'Ruta', NULL),
+(330, '898PAJ4', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-20', '13:15:07', 'Ruta', NULL),
+(331, 'KVT47V', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-20', '13:15:27', 'Ruta', NULL),
+(332, 'EAP685', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-20', '13:15:29', 'Ruta', NULL),
+(333, 'KVT47V', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-20', '13:15:31', 'Ruta', NULL),
+(334, 'VAS654', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-20', '13:15:33', 'Ruta', NULL),
+(335, 'EAP685', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-20', '13:15:34', 'Ruta', NULL),
+(336, 'KOWP145', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '13:15:37', 'Ruta', NULL),
+(337, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:08:07', 'Chofer', NULL),
+(338, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:08:24', 'Chofer', NULL),
+(339, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:08:34', 'Chofer', NULL),
+(340, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:13:25', 'Chofer', NULL),
+(341, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:14:28', 'Chofer', NULL),
+(342, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:14:31', 'Chofer', NULL),
+(343, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:14:40', 'Chofer', NULL),
+(344, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:14:42', 'Chofer', NULL),
+(345, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:14:44', 'Chofer', NULL),
+(346, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:14:45', 'Chofer', NULL),
+(347, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:16:12', 'Chofer', NULL),
+(348, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:16:15', 'Chofer', NULL),
+(349, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:16:53', 'Chofer', NULL),
+(350, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:17:30', 'Chofer', NULL),
+(351, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:17:41', 'Chofer', NULL),
+(352, 'SANTI03', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-20', '22:46:28', 'Ruta', NULL),
+(353, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '22:55:01', 'Chofer', NULL),
+(354, '27290770', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-20', '22:58:55', 'Chofer', NULL),
+(359, '27290770', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '23:04:35', 'Chofer', NULL),
+(360, 'ROA126', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-20', '23:12:17', 'Ruta', NULL),
+(361, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:20:45', 'Ruta', NULL),
+(362, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:20:52', 'Ruta', NULL),
+(363, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:26:36', 'Ruta', NULL),
+(364, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:26:52', 'Ruta', NULL),
+(365, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:26:55', 'Ruta', NULL),
+(366, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:27:16', 'Ruta', NULL),
+(367, 'SANTI03', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-20', '23:27:24', 'Ruta', NULL),
+(368, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '23:28:15', 'Chofer', NULL),
+(369, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '23:28:17', 'Chofer', NULL),
+(370, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-20', '23:28:24', 'Chofer', NULL),
+(371, '20080946', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-20', '23:28:57', 'Chofer', NULL),
+(372, 'GAP173', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-20', '23:29:17', 'Ruta', NULL),
+(373, '3333385', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-21', '14:07:02', 'Usuario', NULL),
+(374, 'SANTI03', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-05-21', '19:50:31', 'Mantenimiento', NULL),
+(375, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:18', 'Mantenimiento', NULL),
+(376, 'EAP685', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:20', 'Mantenimiento', NULL),
+(377, 'EAP685', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:22', 'Mantenimiento', NULL),
+(378, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:23', 'Mantenimiento', NULL),
+(379, 'VAS654', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:24', 'Mantenimiento', NULL),
+(380, 'KVT47V', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:25', 'Mantenimiento', NULL),
+(381, 'YYLA891', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:26', 'Mantenimiento', NULL),
+(382, 'KOWP145', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:27', 'Mantenimiento', NULL),
+(383, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:45', 'Mantenimiento', NULL),
+(384, 'EAP685', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:51', 'Mantenimiento', NULL),
+(385, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:54', 'Mantenimiento', NULL),
+(386, 'EAP685', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:56', 'Mantenimiento', NULL),
+(387, 'VAS654', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:17:59', 'Mantenimiento', NULL),
+(388, 'KVT47V', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:18:02', 'Mantenimiento', NULL),
+(389, 'YYLA891', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:18:05', 'Mantenimiento', NULL),
+(390, 'KOWP145', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:18:08', 'Mantenimiento', NULL),
+(391, 'SANTI03', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:41:13', 'Mantenimiento', NULL),
+(392, 'SANTI03', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:41:22', 'Mantenimiento', NULL),
+(393, 'SANTI03', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:46:29', 'Mantenimiento', NULL),
+(394, 'SANTI03', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-21', '20:46:46', 'Mantenimiento', NULL),
+(395, 'OGA1703', 'root@localhost', 'Se registro una nueva reparacion', 'localhost', '2022-05-21', '21:53:09', 'Reparaciones', NULL),
+(396, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:04:56', 'Reparacion', NULL),
+(397, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:05:03', 'Reparacion', NULL),
+(398, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:05:37', 'Reparacion', NULL),
+(399, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:06:12', 'Reparacion', NULL),
+(400, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:06:15', 'Reparacion', NULL),
+(401, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:06:18', 'Reparacion', NULL),
+(402, '29398488', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-21', '22:06:33', 'Chofer', NULL),
+(403, '27290770', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-21', '22:06:39', 'Chofer', NULL),
+(404, '9243485', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-21', '22:07:06', 'Chofer', NULL),
+(405, '9243485', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-21', '22:07:13', 'Chofer', NULL),
+(406, 'GAP173', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-21', '22:07:32', 'Ruta', NULL),
+(407, 'GAP173', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-05-21', '22:07:36', 'Ruta', NULL),
+(408, 'ORIANA12', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-21', '22:07:59', 'Ruta', NULL),
+(409, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:15:57', 'Reparacion', NULL),
+(410, 'KOWP145', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:15:58', 'Reparacion', NULL),
+(411, 'KVT47V', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:16:00', 'Reparacion', NULL),
+(412, 'VAS654', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:16:01', 'Reparacion', NULL),
+(413, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-21', '22:16:02', 'Reparacion', NULL),
+(414, '29398488', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-21', '22:16:13', 'Choferes', NULL),
+(415, '27290770', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-21', '22:16:15', 'Choferes', NULL),
+(416, '9243485', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-21', '22:16:16', 'Choferes', NULL),
+(417, '20080946', 'root@localhost', 'Se elimino un Chofer del registro', 'localhost', '2022-05-21', '22:16:17', 'Choferes', NULL),
+(418, 'ROA126', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-21', '22:16:26', 'Ruta', NULL),
+(419, 'SANTI03', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-05-21', '22:16:29', 'Ruta', NULL),
+(420, 'KOWP145', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '12:07:39', 'Mantenimiento', NULL),
+(421, 'ORIANA12', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-05-22', '12:09:06', 'Mantenimiento', NULL),
+(422, '26561633', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-22', '12:14:49', 'Chofer', NULL),
+(423, '95589666', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-22', '12:15:02', 'Chofer', NULL),
+(424, '30', 'root@localhost', 'Se inserto un nuevo chofer', 'localhost', '2022-05-22', '12:15:42', 'Chofer', NULL),
+(425, '30', 'root@localhost', 'Se Modificaron los datos de un chofer', 'localhost', '2022-05-22', '12:16:04', 'Chofer', NULL),
+(426, 'YYLA891', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-05-22', '12:16:45', 'Ruta', NULL),
+(427, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '12:27:14', 'Reparacion', NULL),
+(428, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '12:33:39', 'Reparacion', NULL),
+(429, 'VAS654', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '12:40:07', 'Reparacion', NULL);
+INSERT INTO `bitacora` (`id_bitacora`, `cedula`, `usuario`, `operacion`, `host`, `fecha`, `hora`, `tabla`, `status`) VALUES
+(430, 'OGA1703', 'root@localhost', 'Se registro una nueva reparacion', 'localhost', '2022-05-22', '12:48:45', 'Reparaciones', NULL),
+(431, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:09:32', 'Reparacion', NULL),
+(432, 'KOWP145', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:10:15', 'Reparacion', NULL),
+(433, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:10:46', 'Reparacion', NULL),
+(434, 'VAS654', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:11:17', 'Reparacion', NULL),
+(435, 'KVT47V', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:11:53', 'Reparacion', NULL),
+(436, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:13:39', 'Reparacion', NULL),
+(437, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:13:59', 'Reparacion', NULL),
+(438, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:14:48', 'Reparacion', NULL),
+(439, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:20:25', 'Reparacion', NULL),
+(440, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:22:26', 'Reparacion', NULL),
+(441, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:22:39', 'Reparacion', NULL),
+(442, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:24:45', 'Reparacion', NULL),
+(443, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:25:52', 'Reparacion', NULL),
+(444, 'KVT47V', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:26:33', 'Reparacion', NULL),
+(445, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:28:05', 'Reparacion', NULL),
+(446, 'KOWP145', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:28:52', 'Reparacion', NULL),
+(447, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:29:08', 'Reparacion', NULL),
+(448, 'ROA126', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-05-22', '13:32:50', 'Mantenimiento', NULL),
+(449, 'SANTI03', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:36:19', 'Mantenimiento', NULL),
+(450, 'KOWP145', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:38:36', 'Mantenimiento', NULL),
+(451, 'YYLA891', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:38:57', 'Mantenimiento', NULL),
+(452, 'EAP685', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:40:11', 'Mantenimiento', NULL),
+(453, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:41:15', 'Mantenimiento', NULL),
+(454, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:49:32', 'Mantenimiento', NULL),
+(455, 'VAS654', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:50:00', 'Mantenimiento', NULL),
+(456, 'KVT47V', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:50:26', 'Mantenimiento', NULL),
+(457, 'SANTI03', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:51:26', 'Mantenimiento', NULL),
+(458, 'ROA126', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '13:52:11', 'Mantenimiento', NULL),
+(459, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '13:53:56', 'Reparacion', NULL),
+(460, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '14:11:00', 'Mantenimiento', NULL),
+(461, 'VAS654', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-22', '14:11:22', 'Mantenimiento', NULL),
+(462, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '14:31:14', 'Reparacion', NULL),
+(463, 'KVT47V', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '14:32:08', 'Reparacion', NULL),
+(464, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '14:55:36', 'Reparacion', NULL),
+(465, 'OGA1703', 'root@localhost', 'Se elimino una reparacion', 'localhost', '2022-05-22', '15:00:14', 'Reparaciones', NULL),
+(466, 'KVT47V', 'root@localhost', 'Se elimino una reparacion', 'localhost', '2022-05-22', '15:02:35', 'Reparaciones', NULL),
+(467, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '15:03:38', 'Reparacion', NULL),
+(468, 'YYLA891', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '15:04:41', 'Reparacion', NULL),
+(469, 'VAS654', 'root@localhost', 'Se elimino una reparacion', 'localhost', '2022-05-22', '15:05:37', 'Reparaciones', NULL),
+(470, 'KVT47V', 'root@localhost', 'Se elimino una reparacion', 'localhost', '2022-05-22', '15:06:01', 'Reparaciones', NULL),
+(471, 'OGA1703', 'root@localhost', 'Se modifico una reparacion', 'localhost', '2022-05-22', '15:06:43', 'Reparacion', NULL),
+(472, '4', 'root@localhost', 'Se elimino un rol', 'localhost', '2022-05-29', '12:29:28', 'Seguridad Roles', NULL),
+(473, '1', 'root@localhost', 'Se elimino un rol', 'localhost', '2022-05-29', '12:29:28', 'Seguridad Roles', NULL),
+(474, '2', 'root@localhost', 'Se elimino un rol', 'localhost', '2022-05-29', '12:29:28', 'Seguridad Roles', NULL),
+(475, '3', 'root@localhost', 'Se elimino un rol', 'localhost', '2022-05-29', '12:29:28', 'Seguridad Roles', NULL),
+(476, '95589666', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:04', 'Usuario', NULL),
+(477, '9558962', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:04', 'Usuario', NULL),
+(478, '30868382', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:04', 'Usuario', NULL),
+(479, '26561633', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:04', 'Usuario', NULL),
+(480, 'PRUEBA', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(481, 'HHHH', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(482, '26561631', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(483, '95589666', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(484, '28946711', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(485, '95589666', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(486, '3333385', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-05-29', '13:17:05', 'Usuario', NULL),
+(487, '0101', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-29', '13:18:16', 'Usuario', NULL),
+(488, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-29', '13:18:39', 'Usuario', NULL),
+(489, '10847107', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-29', '13:19:03', 'Usuario', NULL),
+(490, '365874', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-05-29', '13:19:32', 'Usuario', NULL),
+(491, 'OGA1703', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-05-29', '14:02:10', 'Mantenimiento', NULL),
+(495, '1', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-06-01', '09:53:08', ' Seguridad Roles', NULL),
+(496, '2', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-06-01', '09:53:08', ' Seguridad Roles', NULL),
+(498, '26577823', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-06-01', '10:04:25', 'Usuario', NULL),
+(499, '365874', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-06-01', '10:04:25', 'Usuario', NULL),
+(500, '10847107', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-06-01', '10:04:26', 'Usuario', NULL),
+(501, '0101', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-06-01', '10:05:23', 'Usuario', NULL),
+(502, '26561633', 'root@localhost', 'Se elimino un usuario', 'localhost', '2022-06-01', '10:05:23', 'Usuario', NULL),
+(503, '26561633', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-01', '10:07:09', 'Usuario', NULL),
+(504, '9601788', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-01', '10:25:01', 'Usuario', NULL),
+(505, '12345678', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-01', '10:25:42', 'Usuario', NULL),
+(506, '1', 'root@localhost', 'Se elimino un rol', 'localhost', '2022-06-01', '10:27:59', 'Seguridad Roles', NULL),
+(507, '2', 'root@localhost', 'Se elimino un rol', 'localhost', '2022-06-01', '10:27:59', 'Seguridad Roles', NULL),
+(508, '1', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-06-01', '10:35:46', ' Seguridad Roles', NULL),
+(509, '2', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-06-01', '10:35:46', ' Seguridad Roles', NULL),
+(510, '3', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-06-01', '10:36:35', ' Seguridad Roles', NULL),
+(511, '4', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-06-01', '10:36:35', ' Seguridad Roles', NULL),
+(512, '26561633', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-01', '11:17:47', 'Usuario', NULL),
+(513, '010101', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-01', '11:18:46', 'Usuario', NULL),
+(516, 'KVT47V', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-06-01', '16:12:18', 'Ruta', NULL),
+(517, 'KVT47V', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-06-01', '16:15:06', 'Ruta', NULL),
+(518, 'ROA126', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-06-01', '16:19:07', 'Ruta', NULL),
+(519, 'ROA126', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-06-01', '16:21:41', 'Ruta', NULL),
+(520, 'ROA126', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-06-01', '16:21:43', 'Ruta', NULL);
 
 -- --------------------------------------------------------
 
@@ -378,8 +557,9 @@ CREATE TABLE `choferes` (
 --
 
 INSERT INTO `choferes` (`id_choferes`, `placa`, `nombre`, `apellido`, `cedula`, `telefono`, `status`) VALUES
-(1, '445444zzz', 'Oriana ', 'Armas', '26561633', 'sssss', 1),
-(2, 'EAP685', 'Oriana ', 'Armas', '30868382', '0124563', 1);
+(1, 'EAP685', 'Oriana', 'Armas', '26561633', '04160360067', 1),
+(2, 'GAP173', 'ERWIN ELIAS', 'ARMAS GONZALEZ', '95589666', '04160360067', 1),
+(3, '898PAJ4', 'Elias', 'GOGOGOGOGOG', '308386512', '0412788593', 1);
 
 --
 -- Disparadores `choferes`
@@ -411,22 +591,26 @@ CREATE TABLE `mantenimientos` (
   `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
   `costo` varchar(30) COLLATE utf8_bin NOT NULL,
   `fecha` date DEFAULT NULL,
-  `status` int(11) DEFAULT NULL
+  `status` int(11) DEFAULT NULL,
+  `rif` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `mantenimientos`
 --
 
-INSERT INTO `mantenimientos` (`id_mantenimiento`, `nombre_tipo`, `tiempo`, `placa`, `nombre`, `costo`, `fecha`, `status`) VALUES
-(1, 'Cambio de aceite', '1', 'OGA1703', 'Fernandez ', '10,0', '2021-09-03', 1),
-(2, 'Chequeo', '3', 'EAP685', 'Mcqueen', '30,0', '2021-10-02', 1),
-(4, 'Frenos', '1', 'OGA1703', 'Mcqueen', '15,0', '2022-02-15', 1),
-(5, 'Cambio de aceite', '1', 'EAP685', 'Las Shakiras', '30,0', '2022-02-21', 1),
-(6, 'Cauchos', '3', 'VAS654', 'Michellin', '90,0', '2021-02-23', 1),
-(7, 'Chequeo', '3', 'KVT47V', 'Las Shakiras', '135,0', '2022-02-15', 1),
-(8, 'Preventivo', '2', 'YYLA891', 'Fernandez ', '150,0', '2020-01-01', 1),
-(9, 'Cambio de aceite', '1', 'KOWP145', 'Mcqueen', '60,0', '2022-03-23', 1);
+INSERT INTO `mantenimientos` (`id_mantenimiento`, `nombre_tipo`, `tiempo`, `placa`, `nombre`, `costo`, `fecha`, `status`, `rif`) VALUES
+(1, 'Cambio de aceite', '1', 'OGA1703', '3 kilometros', '10.0', '2021-09-03', 0, 'E-12348369'),
+(2, 'Chequeo', '3', 'EAP685', 'Mcqueen', '30.0', '2021-10-02', 1, 'E-12348369'),
+(4, 'Frenos', '1', 'OGA1703', 'Liga de frenos', '15.0', '2022-02-15', 1, 'E-12348369'),
+(5, 'Cambio de aceite', '1', 'EAP685', 'Amortiguador', '30.0', '2022-02-21', 1, 'E-9601788 '),
+(6, 'Cambio de cauchos', '3', 'VAS654', 'Cauchos', '90.0', '2021-02-23', 0, 'E-12348369'),
+(7, 'Chequeo', '3', 'KVT47V', 'Revision completa', '135.0', '2022-02-15', 1, 'E-12348369'),
+(8, 'Preventivo', '2', 'YYLA891', 'Fernandez ', '150.0', '2020-01-01', 1, 'J-78455133'),
+(9, 'Cambio de aceite', '1', 'KOWP145', 'Mcqueen', '60.0', '2022-03-23', 0, 'J-30868368'),
+(10, 'Bujias', '2', 'SANTI03', 'Mantenimiento Bujias', '15.50', '2022-03-21', 1, 'E-12348369'),
+(11, 'Cambio de pieza', '3', 'ORIANA123', 'Electroventilador', '9000', '2022-12-15', 1, 'J-26561633'),
+(12, 'Liga de frenos', '5', 'ROA126', 'Frenos', '9000', '2022-05-12', 1, 'J-30868368');
 
 --
 -- Disparadores `mantenimientos`
@@ -447,6 +631,55 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `permisos`
+--
+
+CREATE TABLE `permisos` (
+  `id_permisos` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_bin NOT NULL,
+  `status` int(11) NOT NULL,
+  `creado` date NOT NULL DEFAULT current_timestamp(),
+  `modificado` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `permisos`
+--
+
+INSERT INTO `permisos` (`id_permisos`, `nombre`, `status`, `creado`, `modificado`) VALUES
+(1, 'usuarios', 1, '2022-06-01', '2022-06-01'),
+(2, 'registrar usuario', 1, '2022-06-01', '2022-06-01'),
+(3, 'editar usuario', 1, '2022-06-01', '2022-06-01'),
+(4, 'eliminar usuario', 1, '2022-06-01', '2022-06-01'),
+(5, 'vehiculos', 1, '2022-06-01', '2022-06-01'),
+(6, 'registrar vehiculo', 1, '2022-06-01', '2022-06-01'),
+(7, 'eliminar vehiculo', 1, '2022-06-01', '2022-06-01'),
+(8, 'editar vehiculo', 1, '2022-06-01', '2022-06-01'),
+(9, 'chofer', 1, '2022-06-01', '2022-06-01'),
+(10, 'registrar chofer', 1, '2022-06-01', '2022-06-01'),
+(11, 'editar chofer', 1, '2022-06-01', '2022-06-01'),
+(12, 'eliminar chofer', 1, '2022-06-01', '2022-06-01'),
+(13, 'ruta', 1, '2022-06-01', '2022-06-01'),
+(14, 'registrar ruta', 1, '2022-06-01', '2022-06-01'),
+(15, 'editar ruta', 1, '2022-06-01', '2022-06-01'),
+(16, 'eliminar ruta', 1, '2022-06-01', '2022-06-01'),
+(18, 'taller', 1, '2022-06-01', '2022-06-01'),
+(19, 'registrar taller', 1, '2022-06-01', '2022-06-01'),
+(20, 'eliminar taller', 1, '2022-06-01', '2022-06-01'),
+(21, 'editar taller', 1, '2022-06-01', '2022-06-01'),
+(22, 'mantenimiento', 1, '2022-06-01', '2022-06-01'),
+(23, 'registrar mantenimiento', 1, '2022-06-01', '2022-06-01'),
+(24, 'editar mantenimiento', 1, '2022-06-01', '2022-06-01'),
+(25, 'eliminar mantenimiento', 1, '2022-06-01', '2022-06-01'),
+(26, 'seguridad', 1, '2022-06-01', '2022-06-01'),
+(27, 'editar seguridad', 1, '2022-06-01', '2022-06-01'),
+(28, 'registrar seguridad', 1, '2022-06-01', '2022-06-01'),
+(29, 'eliminar seguridad', 1, '2022-06-01', '2022-06-01'),
+(30, 'reportes', 1, '2022-06-01', '2022-06-01');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `reparaciones`
 --
 
@@ -457,19 +690,18 @@ CREATE TABLE `reparaciones` (
   `costo` varchar(30) COLLATE utf8_bin NOT NULL,
   `fecha` date DEFAULT NULL,
   `descripcion` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `status` int(11) DEFAULT NULL
+  `status` int(11) DEFAULT NULL,
+  `rif` varchar(10) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `reparaciones`
 --
 
-INSERT INTO `reparaciones` (`id_reparaciones`, `nombre`, `placa`, `costo`, `fecha`, `descripcion`, `status`) VALUES
-(1, 'Mcqueen', 'OGA1703', '50,0', '2021-09-03', 'Revision completa', 1),
-(2, 'Las Shakiras', 'KOWP145', '60,0', '2020-02-15', 'Revision completa', 1),
-(3, 'Kiara', 'KVT47V', '150,0', '2022-02-23', 'todo', 1),
-(4, 'Michellin', 'VAS654', '5,0', '2022-01-15', 'Aire en cauchos', 1),
-(5, 'Mcqueen', 'YYLA891', '180,0', '2019-02-17', 'Tren delantero', 1);
+INSERT INTO `reparaciones` (`id_reparaciones`, `nombre`, `placa`, `costo`, `fecha`, `descripcion`, `status`, `rif`) VALUES
+(1, 'Cauchos', 'OGA1703', '1245', '2021-09-03', 'Revision completa', 1, 'E-9601788 '),
+(2, 'Cambio de aceite', 'KOWP145', '15.00', '2020-02-15', 'Revision completa', 1, 'E-12348369'),
+(5, 'Balanceo', 'YYLA891', '1515', '2019-02-17', 'Tren delantero', 0, 'J-30868368');
 
 --
 -- Disparadores `reparaciones`
@@ -497,15 +729,6 @@ CREATE TABLE `roles` (
   `id_rol` int(11) NOT NULL,
   `nombre_rol` varchar(15) COLLATE utf8_bin NOT NULL,
   `descripcion` varchar(60) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_usuario` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permisos_vehiculos` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_choferes` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_rutas` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_taller` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_mantenimiento` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_bitacora` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_seguridad` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `permiso_reportes` varchar(12) COLLATE utf8_bin DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -513,11 +736,11 @@ CREATE TABLE `roles` (
 -- Volcado de datos para la tabla `roles`
 --
 
-INSERT INTO `roles` (`id_rol`, `nombre_rol`, `descripcion`, `permiso_usuario`, `permisos_vehiculos`, `permiso_choferes`, `permiso_rutas`, `permiso_taller`, `permiso_mantenimiento`, `permiso_bitacora`, `permiso_seguridad`, `permiso_reportes`, `status`) VALUES
-(4, 'Administrador', 'Permiso para todo', 'todo', 'todo', 'todo', NULL, 'todo', 'todo', 'todo', 'todo', 'todo', 1),
-(1, 'Root', 'Es el superusuario de este sistema.', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 'todo', 1),
-(2, 'Secretaria', 'Solo dispone de tres modulos', 'todo', 'todo', 'todo', NULL, 'lectura', 'lectura', 'lectura', 'restringido', 'restringido', 0),
-(3, 'UsuarioEstandar', 'Solo puede consultar', 'restringido', 'lectura', 'lectura', 'lectura', 'lectura', 'lectura', 'restringido', 'restringido', 'todo', 1);
+INSERT INTO `roles` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
+(1, 'Administrador', 'Es el superusuario de este sistema.', 1),
+(2, 'Secretaria', 'permiso para ver y editar menos la seguridad, incluye usuari', 1),
+(3, 'UsuarioEstandar', 'Solo puede consultar', 1),
+(4, 'Chofer', 'solo consulta rutas', 1);
 
 --
 -- Disparadores `roles`
@@ -538,6 +761,32 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `roles_permisos`
+--
+
+CREATE TABLE `roles_permisos` (
+  `rol_id` int(11) NOT NULL,
+  `permisos_id` int(11) NOT NULL,
+  `creado` date NOT NULL DEFAULT current_timestamp(),
+  `modificado` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `roles_permisos`
+--
+
+INSERT INTO `roles_permisos` (`rol_id`, `permisos_id`, `creado`, `modificado`) VALUES
+(1, 1, '0000-00-00', '0000-00-00'),
+(1, 4, '0000-00-00', '0000-00-00'),
+(1, 3, '0000-00-00', '0000-00-00'),
+(1, 4, '0000-00-00', '0000-00-00'),
+(2, 5, '0000-00-00', '0000-00-00'),
+(3, 9, '2022-06-01', '2022-06-01'),
+(3, 13, '2022-06-01', '2022-06-01');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `rutas`
 --
 
@@ -547,6 +796,7 @@ CREATE TABLE `rutas` (
   `nombre_ruta` varchar(50) COLLATE utf8_bin NOT NULL,
   `direccion_ruta` varchar(250) COLLATE utf8_bin DEFAULT NULL,
   `hora_salida` time DEFAULT NULL,
+  `kilometraje` int(11) NOT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -554,13 +804,14 @@ CREATE TABLE `rutas` (
 -- Volcado de datos para la tabla `rutas`
 --
 
-INSERT INTO `rutas` (`id_ruta`, `placa`, `nombre_ruta`, `direccion_ruta`, `hora_salida`, `status`) VALUES
-(5, 'KVT47V', 'BarrioUnion', 'calle 4 con 6 hasta la macias', '01:15:00', 1),
-(2, 'EAP685', 'Centro', 'av.20 hasta la vargas', '12:15:00', 1),
-(3, 'KVT47V', 'SantaIsabel', 'principal calle 1 con dos', '12:15:00', 1),
-(4, 'VAS654', 'SantaRosa', 'calle 1 con dos', '12:15:00', 1),
-(6, 'EAP685', 'ZonaEste', 'Av, Lara hasta el sambil', '07:35:00', 1),
-(1, 'KOWP145', 'ZonaNorte', 'Zona norte, Yucatan', '12:30:00', 0);
+INSERT INTO `rutas` (`id_ruta`, `placa`, `nombre_ruta`, `direccion_ruta`, `hora_salida`, `kilometraje`, `status`) VALUES
+(7, '898PAJ4', 'Barrio Union', 'calle 4 con 6 hasta la macias', '13:15:00', 0, 1),
+(10, 'GAP173', 'Corrido Rapido', 'Centro', '23:29:00', 0, 0),
+(12, 'YYLA891', 'UPTAEB', 'av la salle con corpahuaico', '12:15:00', 0, 1),
+(1, 'KOWP145', 'ZonaNorte', 'Zona norte, Yucatan', '12:30:00', 0, 1),
+(13, 'KVT47V', 'el espanto', 'calle 13 con carrera 43', '01:15:00', 300, 1),
+(14, 'ROA126', 'hno juan', 'av la salle con corpahuaico', '16:19:00', 0, 1),
+(11, 'ORIANA123', 'no se que mas', 'Oeste centro', '22:07:00', 0, 1);
 
 --
 -- Disparadores `rutas`
@@ -604,7 +855,8 @@ INSERT INTO `taller` (`id_taller`, `rif`, `nombre`, `direccion`, `informacion_co
 (4, 'J-17031998', 'Fernandez ', '60 con 13', '025144778869', 1),
 (6, 'J-30868368', 'Kiara', 'SantaIsabel', '02517786942', 1),
 (7, 'J-78455133', 'La Ingra', 'El araguaney', '04148756312', 1),
-(8, 'V-26561633', 'Las Shakiras', 'barrio Union', '04145448669', 1);
+(8, 'V-26561633', 'Las Shakiras', 'barrio Union', '04145448669', 0),
+(9, 'J-59745526', 'Twigns', 'Macias Mujica', '041454487922', 1);
 
 -- --------------------------------------------------------
 
@@ -661,7 +913,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
   `apellido` varchar(20) COLLATE utf8_bin NOT NULL,
   `contrasena` varchar(200) COLLATE utf8_bin DEFAULT NULL,
-  `rol` varchar(20) COLLATE utf8_bin NOT NULL,
+  `rol` int(11) NOT NULL,
   `status` int(11) DEFAULT NULL,
   `correo` varchar(30) COLLATE utf8_bin NOT NULL,
   `fechaRecuperacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -672,22 +924,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `cedula`, `usuario`, `nombre`, `apellido`, `contrasena`, `rol`, `status`, `correo`, `fechaRecuperacion`) VALUES
-(7, '0101', 'admin', 'admin', 'admin', '', 'Administrador', 0, 'administrador@gmail.com', '2022-05-12 16:26:00'),
-(8, '26577823', 'jesus', 'jesus', 'jesus', '$%%$%%%$%$%$%%%$$%%/%%$%$%$$%%$$%$%$%%%$', 'Administrador', 1, '', '2022-04-17 19:03:02'),
-(9, '365874', 'usuario', 'usuario', 'usuario', '$$%$%%%$$%$$%%$%$$%$%%%$$$$/%%%$%$%$%%%$$%%$%%%$%$%$%%$$', 'UsuarioEstandar', 1, '', '2022-04-17 19:04:00'),
-(10, '10847107', 'usuariog', 'usuario', 'usuario', '$%%$$%%$$%%$%$$/%%$$$%$$%%$$%$$', 'UsuarioEstandar', 0, '', '2022-05-01 21:25:41'),
-(11, '95589666', 'Moises_daza_20', 'Oriana', 'ArmasP', '1234', 'Administrador', 1, '', '2022-04-17 19:04:07'),
-(12, '9558962', 'root', 'Oriana', 'Armas', '1234', 'Root', 0, '', '2022-04-13 01:19:12'),
-(14, '30868382', 'eliasa', 'Elias', 'Armas', '', 'UsuarioEstandar', 0, '', '2022-04-24 14:18:09'),
-(15, '26561633', 'eliasA', 'Elias', 'Banderas', '1234', 'Administrador', 0, '', '2022-05-05 22:39:10'),
-(16, 'PRUEBA', 'PRUEBA', 'PRUEBA', 'PRUEBA', '', 'Administrador', 1, '', '2022-04-17 19:02:31'),
-(17, 'HHHH', 'rootHH', 'AntonioIH', 'HH', '1', 'Root', 0, '', '2022-04-14 01:59:37'),
-(18, '265616331', 'root', 'Oriana', 'Armas', '1234', 'Administrador', 0, '', '2022-05-12 16:28:14'),
-(19, '26561631', 'usuario', 'Ramirez', 'Armas', '0000', 'Root', 1, '', '2022-05-02 14:22:11'),
-(20, '955896661', 'samu', 'Rafael', 'Saml', '1234', 'Administrador', 1, '', '2022-05-02 14:09:45'),
-(21, '28946711', 'manuelita', 'Manuelita', 'Saenz', '1234', 'Administrador', 0, '', '2022-05-10 19:37:41'),
-(22, '955896667777', 'hhhh', 'Oneida', 'Banderas', '', 'Root', 1, 'armasoriana98@gmail.comddd', '2022-05-05 21:47:16'),
-(23, '3333385', 'hhhh', 'Pueblo', 'Nuevo', '1234', 'Administrador', 1, 'armasoriana98@gmail.com', '2022-05-05 21:48:59');
+(1, '26561633', 'admin', 'Oriana ', 'Armas', '1234', 1, 1, 'armasoriana98', '2022-06-01 15:17:47'),
+(2, '010101', 'usuario', 'usuario', 'usuario', 'usuario', 3, 1, 'usuario@gmail.com', '2022-06-01 15:18:46');
 
 --
 -- Disparadores `usuarios`
@@ -726,18 +964,17 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `placa`, `modelo`, `funcionamiento`, `nombre_tipo`, `id_mantenimiento`, `status`) VALUES
-(1, 'OGA1703', 'Encava', 'Operativo', NULL, NULL, 0),
-(6, 'EAP685', 'Dodge', 'Operativo', NULL, NULL, 0),
-(7, 'KVT47V', 'BEDFORD', 'Operativo', NULL, NULL, 0),
-(8, '898PAJ111111', 'Dodge', 'Operativo', NULL, NULL, 0),
-(9, 'VAS654', 'Caio', 'Inoperante', NULL, NULL, 0),
-(10, 'KOWP1456', 'Encava', 'Operativo', NULL, NULL, 1),
-(11, 'YYLA891', 'Kia', 'Operativo', NULL, NULL, 0),
+(1, 'OGA1703', 'Encava', 'Operativo', NULL, NULL, 1),
+(6, 'EAP685', 'Dodge', 'Operativo', NULL, NULL, 1),
+(7, 'KVT47V', 'BEDFORD', 'Operativo', NULL, NULL, 1),
+(8, '898PAJ4', 'Dodge', 'Operativo', NULL, NULL, 1),
+(9, 'VAS654', 'Caio', 'Inoperante', NULL, NULL, 1),
+(10, 'KOWP145', 'Encava', 'Operativo', NULL, NULL, 0),
+(11, 'YYLA891', 'Kia', 'Operativo', NULL, NULL, 1),
 (12, 'GAP173', 'BEDFORD', 'Operativo', NULL, NULL, 1),
-(13, 'ORIANA123', 'Encava', '1', NULL, NULL, 0),
-(14, 'SANTI03', 'Encava', 'Operativo', NULL, NULL, 1),
-(15, 'ROA126', 'BEDFORD', 'Operativo', NULL, NULL, 1),
-(16, '445444zzz', 'BEDFORD', 'Operativo', NULL, NULL, 0);
+(13, 'ORIANA123', 'Encava', '1', NULL, NULL, 1),
+(14, 'SANTI03', 'Kia', 'Operativo', NULL, NULL, 1),
+(15, 'ROA126', 'BEDFORD', 'Operativo', NULL, NULL, 1);
 
 --
 -- Índices para tablas volcadas
@@ -763,22 +1000,35 @@ ALTER TABLE `choferes`
 ALTER TABLE `mantenimientos`
   ADD PRIMARY KEY (`id_mantenimiento`),
   ADD KEY `fk_nombre_tipo` (`nombre_tipo`),
-  ADD KEY `fk1_nombre` (`nombre`),
-  ADD KEY `placa` (`placa`);
+  ADD KEY `placa` (`placa`),
+  ADD KEY `fk_rif_nombre` (`rif`);
+
+--
+-- Indices de la tabla `permisos`
+--
+ALTER TABLE `permisos`
+  ADD PRIMARY KEY (`id_permisos`);
 
 --
 -- Indices de la tabla `reparaciones`
 --
 ALTER TABLE `reparaciones`
   ADD PRIMARY KEY (`id_reparaciones`),
-  ADD KEY `fk_nombre` (`nombre`),
+  ADD UNIQUE KEY `rif` (`rif`),
   ADD KEY `placa` (`placa`);
 
 --
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`nombre_rol`);
+  ADD PRIMARY KEY (`id_rol`);
+
+--
+-- Indices de la tabla `roles_permisos`
+--
+ALTER TABLE `roles_permisos`
+  ADD KEY `fk_rol_idd` (`rol_id`),
+  ADD KEY `fk_permiso_id` (`permisos_id`);
 
 --
 -- Indices de la tabla `rutas`
@@ -792,7 +1042,8 @@ ALTER TABLE `rutas`
 --
 ALTER TABLE `taller`
   ADD PRIMARY KEY (`id_taller`),
-  ADD UNIQUE KEY `rif` (`rif`);
+  ADD UNIQUE KEY `rif` (`rif`),
+  ADD UNIQUE KEY `nombre` (`nombre`);
 
 --
 -- Indices de la tabla `tipos`
@@ -806,7 +1057,7 @@ ALTER TABLE `tipos`
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `cedula` (`cedula`),
-  ADD KEY `fk_rol` (`rol`);
+  ADD KEY `fk_rol_id` (`rol`);
 
 --
 -- Indices de la tabla `vehiculos`
@@ -823,7 +1074,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=521;
 
 --
 -- AUTO_INCREMENT de la tabla `choferes`
@@ -835,13 +1086,13 @@ ALTER TABLE `choferes`
 -- AUTO_INCREMENT de la tabla `mantenimientos`
 --
 ALTER TABLE `mantenimientos`
-  MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `reparaciones`
 --
 ALTER TABLE `reparaciones`
-  MODIFY `id_reparaciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_reparaciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
@@ -852,6 +1103,31 @@ ALTER TABLE `reparaciones`
 --
 ALTER TABLE `choferes`
   ADD CONSTRAINT `fk_placa` FOREIGN KEY (`placa`) REFERENCES `vehiculos` (`placa`);
+
+--
+-- Filtros para la tabla `mantenimientos`
+--
+ALTER TABLE `mantenimientos`
+  ADD CONSTRAINT `fk_rif_nombre` FOREIGN KEY (`rif`) REFERENCES `taller` (`rif`);
+
+--
+-- Filtros para la tabla `reparaciones`
+--
+ALTER TABLE `reparaciones`
+  ADD CONSTRAINT `fk_rif_taller` FOREIGN KEY (`rif`) REFERENCES `taller` (`rif`);
+
+--
+-- Filtros para la tabla `roles_permisos`
+--
+ALTER TABLE `roles_permisos`
+  ADD CONSTRAINT `fk_permiso_id` FOREIGN KEY (`permisos_id`) REFERENCES `permisos` (`id_permisos`),
+  ADD CONSTRAINT `fk_rol_idd` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id_rol`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `fk_rol_id` FOREIGN KEY (`rol`) REFERENCES `roles` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

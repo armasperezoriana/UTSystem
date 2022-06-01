@@ -38,11 +38,13 @@
 				$direccion = $_POST['direccion_ruta'];
 				$unidad = $_POST['placa'];
 				$hora_salida = $_POST['hora_salida'];
+				$kilometraje = $_POST['kilometraje'];
 
 				$this->ruta->setNombre_ruta($nombre_ruta);
 				$this->ruta->setPlaca($unidad);
 				$this->ruta->setDireccion($direccion);
 				$this->ruta->setHoraSalida($hora_salida);
+				$this->ruta->setKilometraje($kilometraje);
 
 				$result = $this->ruta->ConsultarOne();
 				// print_r($result);
@@ -73,12 +75,14 @@
 				$direccion = $_POST['direccion_ruta'];
 				$unidad = $_POST['placa'];
 				$hora_salida = $_POST['hora_salida'];
+				$kilometraje = $_POST['kilometraje'];
 
 				$this->ruta->setId_ruta($id_ruta);
 				$this->ruta->setNombre_ruta($nombre_ruta);
 				$this->ruta->setPlaca($unidad);
 				$this->ruta->setDireccion($direccion);
 				$this->ruta->setHoraSalida($hora_salida);
+				$this->ruta->setKilometraje($kilometraje);
 
 				$execute = $this->ruta->Modificar();
 				// print_r($result);

@@ -48,7 +48,7 @@
                         <div class="card-header py-3">
                          <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Vehiculos</h6></center> 
                         </div>
-                        <img src="assets/img/logo1.png" class="img-profile rounded-circle" width="20%"  right="100%">  
+                      
                         
     
                         <div class="col-sm-7" style='text-align:right;'>
