@@ -22,7 +22,7 @@
 	define("_DB_PASS_", "");										/* contraseña de la base de datos  */
 	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
 
-	define("_REPORTS_" , "/dashboard/systemUT/controllers/reportes/");					/* reportes pdf del proyecto */
+	define("_REPORTS_" , "/dashboard/systemUT/assets/reports/");					/* reportes pdf del proyecto */
 
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
 

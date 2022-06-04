@@ -15,7 +15,7 @@
 		private $status;
 
 		public function __construct(){
-			// $this->con = parent::__construct();
+	
 			parent::__construct();
 		}
 		public function Consultar(){

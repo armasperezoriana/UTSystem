@@ -11,7 +11,7 @@
                 var rol = $("#AgregarUsuarioModal").find("#rol").val();
                 var pass = $("#AgregarUsuarioModal").find("#pass2").val();
                  var correo = $("#AgregarUsuarioModal").find("#correo").val();
-                // alert(pass);
+                 alert(rol);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",

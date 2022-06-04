@@ -16,16 +16,11 @@ use content\modelo\talleresModel as talleresModel;
 
 	class reportesController{
 		private $url;
-
-
-
-
+	
 
 		function __construct($url){
 			$this->url = $url;
-				
-
-
+			
 		}
 
 		public function Consultar(){
@@ -35,6 +30,23 @@ use content\modelo\talleresModel as talleresModel;
 			
 			$url = $this->url;
 			require_once("view/reportesView.php");
+		}
+
+
+		public function vehiculosConsulta(){
+			
+			try {
+				$query = parent::prepare('SELECT * FROM vehiculos ');
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['estatus' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
 		}
 
 	}

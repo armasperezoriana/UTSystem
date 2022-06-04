@@ -51,10 +51,9 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Mantenimientos Correctivos</h6>
                                 </center> 
                             </div>
-                            <img src="assets/img/tipos.png" class="img-profile rounded-circle" width="20%"  right="100%">  
-                            
+                             
         
-                            <div class="col-sm-7" style='text-align:right;'>
+                            <div class="col-sm-2" style='text-align:right;'>
                                    <span class="icon text-white-50">
                                     <i class="fas fa-check"></i>
                                 </span>
@@ -62,10 +61,20 @@
                                     <span class="icon text-white-50">
                                         <i class="fas fa-check"></i>
                                     </span>
-                                    <span class="text">Registrar Mantenimiento Correctivo</span>
+                                    <span class="text">Registrar Reparación</span>
                                 </a>
                             </div>
-                            <br>
+                            <br><div class="col-sm-20" style='text-align:right;'>
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                <a href="#" class="btn btn-dark btn-icon-split" data-toggle="modal" data-target="#GenerarOrdenModal">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span class="text">Generar Orden de Servicio</span>
+                                </a>
+                            </div>
 
                             <div class="table-responsive">
                                 <div class="card-body" style='background:;'>

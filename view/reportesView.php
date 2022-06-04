@@ -66,7 +66,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                               <a href="<?=_REPORTS_ ?>Choferes"><h5>Reporte de Choferes</h5></a></div>
+                                               <a href="<?=_REPORTS_ ?>Choferes" target="blank" ><h5>Reporte de Choferes</h5></a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">
@@ -83,7 +83,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="<?=_REPORTS_?>Mantenimiento"><h5> Reporte de Mantenimientos</h5></a>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"><a href="<?=_REPORTS_?>Mantenimientos" target="blank"><h5> Reporte de Mantenimientos</h5></a>
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -107,7 +107,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                <a href="<?=_REPORTS_?>Rutas"><h5> Reporte de Rutas</h5></a></div>
+                                                <a  href="<?=_REPORTS_?>Rutas" target="blank"><h5> Reporte de Rutas</h5></a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">
@@ -126,7 +126,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                <a href="<?=_REPORTS_ ?>Taller"><h5> Reporte de Talleres</h5></a></div>
+                                                <a href="<?=_REPORTS_ ?>Taller" target="blank"><h5> Reporte de Talleres</h5></a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">

@@ -80,9 +80,9 @@
                                             <th>Apellido</th>
                                             <th></th>
                                             <th></th>
-                                                <center>Acción</center>
+                                            
 
-                                            <th></th>
+                                            <th> Acción</th>
                                             <th></th>
                                             <th></th>
                                      
@@ -224,7 +224,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-12">
-                                        <label for="rol"><b>Roles</b></label>
+                                        <label for="rol"><b>Rol</b></label>
                                         <select class="form-control select2" name="rol" id="rol">
                                             <option></option>
                                             <?php foreach ($roles as $rols) : ?>
@@ -334,7 +334,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="rol"><b>Roles</b></label>
+                                                            <label for="rol"><b>Rol</b></label>
                                                             <select style="width: 100%;" class="form-control select2" name="rol" id="rol">
                                                                 <option></option>
                                                                 <?php foreach ($roles as $rols) : ?>
@@ -444,8 +444,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="rol"><b>Roles</b></label>
-                                                            <select style="width: 100%;" class="form-control-plaintext  disabled select2" name="rol" id="rol">
+                                                            <label for="rol"><b>Rol</b></label>
+                                                            <select style="width: 100%;" class="form-control-plaintext select2" disabled name="rol" id="rol">
                                                                 <option></option>
                                                                 <?php foreach ($roles as $rols) : ?>
                                                                     <?php if (!empty($rols['id_rol'])) : ?>

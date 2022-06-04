@@ -48,7 +48,7 @@ class usuariosController
 		if (!empty($_POST['nombre']) && !empty($_POST['apellido'])) {
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
-			$cedula = $_POST['cedula'];
+			$this->encriptarS($cedula = $_POST['cedula']); 
 			$username = $_POST['username'];
 			$id_rol = $_POST['rol'];
 			$pass = $_POST['pass'];

@@ -150,5 +150,33 @@ public function Mostrar($param)
 			]);
 		}
 	}
+
+	public function setId($id){
+			$this->id_vehiculo = $id;
+		}
+		public function setPlaca($placa){
+			$this->placa = $placa;
+		}
+		public function setModelo($modelo){
+			$this->modelo = $modelo;
+		}
+		public function setFuncionamiento($funcionamiento){
+			$this->funcionamiento = $funcionamiento;
+		}
+
+
+		public function getId(){
+			return $this->id_vehiculo;
+		}
+		public function getPlaca(){
+			return $this->placa;
+		}
+		public function getModelo(){
+			return $this->modelo;
+		}
+		public function getFuncionamiento(){
+			return $this->funcionamiento;
+		}
+		
 }
 
