@@ -45,9 +45,12 @@ class loginController
 				$res = $result['resultado'];
 				if ($res) {
 					if($pass == $res['contrasena']){
+						$resultP = $this->usuario->ObtenerPermisos($res['rol']);
+						$permisos = $resultP['resultado'];
 						$_SESSION['ut_usuario'] = $res['usuario'];
 						$_SESSION['ut_id'] = $res['id_usuario'];
 						$_SESSION['ut_rol'] = $res['rol'];
+						$_SESSION['ut_permisos'] = $permisos;
 						echo json_encode([
 							'tipo' => 'success', 'mensaje' => 'Sesión Iniciada'
 						]); 

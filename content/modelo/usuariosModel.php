@@ -80,7 +80,28 @@
 				return $errorReturn;
 			}
 		}
-		
+		public function ObtenerPermisos($rol_id){
+			try {
+				$query = parent::prepare("SELECT p.nombre as permiso FROM roles r 
+					INNER JOIN roles_permisos rp ON r.id_rol=rp.rol_id INNER JOIN permisos p ON rp.permisos_id=p.id_permisos 
+					WHERE r.id_rol=$rol_id ORDER BY rp.permisos_id");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$res = $query->fetchAll(parent::FETCH_ASSOC);
+				$permisos = [];
+				foreach($res as $p){
+					array_push($permisos, $p['permiso']);
+				}
+				$respuestaArreglo = ['resultado' => $permisos];
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
 
 		public function Agregar(){
 			$id= 0;
