@@ -19,7 +19,7 @@ class loginController
 	public function Consultar()
 	{
 		if(!empty($_SESSION['ut_usuario'])) {
-			header('Location: home');
+			header('Location: Home');
 		}
 		$objModel = new loginModel;
 		$_css = new headElement;
@@ -28,6 +28,16 @@ class loginController
 		$url = $this->url;
 		$usuarios = $this->usuario->Consultar();
 		require_once("view/loginView.php");
+	}
+
+
+	public function OlvidoClave(){
+
+		if(empty($_SESSION['ut_usuario'])){
+		require_once("view/recuperarUsuarioView.php");
+
+		}
+
 	}
 
 

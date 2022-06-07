@@ -19,8 +19,8 @@
     <link href="<?php echo _ROUTE_ ?>/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
- 
+<body class="bg-gradient-primary" style="display:flex;background-image: url(<?php echo _ROUTE_ ?>/assets/img/fondoUT.jpg);background-size: cover;">
+<body class="bg-gradient-primary">
 
     <div class="container" style="margin-top:auto;margin-bottom:auto">
 
@@ -60,7 +60,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="<?=_ROUTE_ ?>Recuperar">¿Datos olvidados?</a>
+                                        <a class="small" value="1" href="<?=_ROUTE_ ?>Recuperar">¿Datos olvidados?</a>
                                     </div>
 
                                 </div>
@@ -78,6 +78,19 @@
     <!-- Bootstrap core JavaScript-->
     <script src="view/vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <script src="https://www.google.com/recaptcha/api.js?render=6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_"></script>
+<script>
+        
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_', {action: 'homepage'})
+                .then(function(token) {
+                    // Add your logic to submit to your backend server here.
+                 //   console.log(token);
+                    $('#token').val(token);
+                });
+            });
+    </script>
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
