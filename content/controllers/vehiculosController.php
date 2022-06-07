@@ -24,11 +24,19 @@ class vehiculosController
 		$objModel = new homeModel;
 		$_css = new headElement;
 		$_css->Heading();
-
+if (!in_array('vehiculo', $_SESSION['ut_permisos']))
+            {
 		$vehiculo = $this->vehiculo->Consultar();
 		$url = $this->url;
 		require_once("view/vehiculosView.php");
+		return false;
+	}else{
+		require_once("view/errorPermisoView.php");
+		return true;
+		}
 	}
+
+
 public function Mostrar($param)
     {
         $vehiculo = $this->vehiculo->ObtenerOne($param);

@@ -20,11 +20,17 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
+			if (!in_array('talleres', $_SESSION['ut_permisos'])){
 			$taller = $this->taller->Consultar();
 
 			$url = $this->url;
 			require_once("view/tallerView.php");
+		}else{
+				require_once("view/errorPermisoView.php");
+		return true;
 		}
+	}
+
 		
 		public function Mostrar($param)
     {

@@ -26,14 +26,19 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
-
+if (!in_array('choferes', $_SESSION['ut_permisos']))
+            {
 			$vehiculos = $this->vehiculo->Consultar();
 			$chofer = $this->chofer->Consultar();
 			
 			$url = $this->url;
 			//var_dump($vehiculos);
 			require_once("view/choferView.php");
+		}else{
+				require_once("view/errorPermisoView.php");
+		return true;
 		}
+	}
 
 
 	public function Mostrar($param)

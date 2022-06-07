@@ -64,7 +64,7 @@ class frontController extends sysConfig
 		}
 	}
 
-	function encriptarS($palabra){
+	public function encriptarS($palabra){
     $valor=unpack('H*',$palabra);
     $nivel1=base_convert($valor[1],16,2);
     $parte1="";
@@ -106,7 +106,7 @@ class frontController extends sysConfig
 
   }
 
-  function desencriptarS($palabra){
+  public function desencriptarS($palabra){
 
     $parte1="";
     $parte2="";

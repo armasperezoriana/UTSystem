@@ -11,7 +11,7 @@
                 var rol = $("#AgregarUsuarioModal").find("#rol").val();
                 var pass = $("#AgregarUsuarioModal").find("#pass2").val();
                  var correo = $("#AgregarUsuarioModal").find("#correo").val();
-                 alert(rol);
+               
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -36,7 +36,7 @@
                                 correo: correo,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                                 alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',

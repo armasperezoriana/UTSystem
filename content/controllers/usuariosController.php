@@ -27,12 +27,22 @@ class usuariosController
 		$objModel = new homeModel;
 		$_css = new headElement;
 		$_css->Heading();
-
-		$usuarios = $this->usuario->Consultar();
+		
+		 if (!in_array('usuarios', $_SESSION['ut_permisos']))
+            {
+	$usuarios = $this->usuario->Consultar();
 		$roles = $this->rol->Consultar();
 		$url = $this->url;
 		require_once("view/usuariosView.php");
+		
+		return false;
+	}else{
+			
+			require_once("view/errorPermisoView.php");
+		return true;
+		}
 	}
+	
 
 	public function Mostrar($param)
     {
@@ -48,7 +58,7 @@ class usuariosController
 		if (!empty($_POST['nombre']) && !empty($_POST['apellido'])) {
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
-			$this->encriptarS($cedula = $_POST['cedula']); 
+			$cedula = $_POST['cedula']; 
 			$username = $_POST['username'];
 			$id_rol = $_POST['rol'];
 			$pass = $_POST['pass'];

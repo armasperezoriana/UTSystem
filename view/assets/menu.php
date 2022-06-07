@@ -28,15 +28,29 @@
             </div>
 
             <!-- Nav Item - USUARIOS Menu -->
-             <li class="nav-item">
+            <?php
+               $_SESSION['ut_permisos'] = ['usuario', 'editar usuario', 'eliminar usuario'];
+                  if (!in_array('usuarios', $_SESSION['ut_permisos']))
+            {
+                 ?>
+                    <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Usuarios">
-                <!-- <a class="nav-link collapsed" href="Usuarios" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> -->
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>Usuarios</span>
                 </a>
             
             </li>
+              <?php } ?>
+
+
+
             <!-- Nav Item - Vehiculos Menu -->
+                 <?php
+               
+                 $_SESSION['ut_permisos'] = ['vehiculos', 'editar vehiculos', 'eliminar vehiculos'];
+                  if (!in_array('vehiculo', $_SESSION['ut_permisos']))
+            {
+                 ?>
              <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Vehiculos">
                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -46,7 +60,14 @@
                    
                 </div>
             </li>
+             <?php } ?>
+
               <!-- Nav Item - Chofer Menu -->
+               <?php
+                $_SESSION['ut_permisos'] = ['chofer', 'editar chofer', 'eliminar chofer'];
+                  if (!in_array('choferes', $_SESSION['ut_permisos']))
+            {
+                 ?>
              <li class="nav-item">
                 <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Choferes"
                     >
@@ -60,7 +81,14 @@
                     </div>
                 </div>
             </li>
+               <?php } ?>
               <!-- Nav Item - Ruta Menu -->
+
+              <?php
+                  $_SESSION['ut_permisos'] = ['ruta', 'editar ruta', 'eliminar ruta'];
+                  if (!in_array('rutas', $_SESSION['ut_permisos']))
+            {
+                 ?>
              <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Ruta">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -72,7 +100,14 @@
                     </div>
                 </div>
             </li>
+              <?php } ?>
+
               <!-- Nav Item - Taller Menu -->
+                  <?php
+                  $_SESSION['ut_permisos'] = ['talleres', 'editar taller', 'eliminar taller'];
+                  if (!in_array('taller', $_SESSION['ut_permisos']))
+            {
+                 ?>
              <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Taller">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -85,8 +120,14 @@
                     </div>
                 </div>
             </li>
-
+              <?php } ?>
+                
                 <!-- Nav Item - Mantenimiento Menu -->
+                <?php
+               $_SESSION['ut_permisos'] = ['mantenimimientos', 'editar mantenimimiento', 'eliminar mantenimimiento'];
+                  if (!in_array('mantenimimiento', $_SESSION['ut_permisos']))
+            {
+                 ?>
              <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMantenimientos"
                     aria-expanded="true" aria-controls="collapseMantenimientos">
@@ -101,10 +142,14 @@
                     </div>
                 </div>
    </li>
-
+        <?php } ?>
      <!-- Nav Item - SEGURIDAD Menu -->
 
-
+   <?php
+                  $_SESSION['ut_permisos'] = ['seguridad', 'editar seguridad', 'eliminar seguridad'];
+                  if (!in_array('seguridad', $_SESSION['ut_permisos']))
+            {
+                 ?>
          
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeguridad"
@@ -122,14 +167,20 @@
                     </div>
                 </div>
             </li>
-     
+       <?php } ?>
 
             <!-- Nav Item - Charts -->
+             <?php
+                 $_SESSION['ut_permisos'] = ['reportes'];
+                  if (!in_array('reportess', $_SESSION['ut_permisos']))
+            {
+                 ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?=_ROUTE_ ?>Reportes">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Reportes</span></a>
             </li>
+   <?php } ?>
 
           
            

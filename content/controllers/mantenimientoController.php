@@ -30,6 +30,8 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
+
+			if (!in_array('mantenimimientos', $_SESSION['ut_permisos'])){
 			$mantenimento = $this->mantenimento->Consultar();
 			$vehiculo = $this->vehiculo->Consultar();
 			$taller = $this->taller->Consultar();
@@ -37,7 +39,11 @@
 			
 			$url = $this->url;
 			require_once("view/PreventivoView.php");
+		}else{
+				require_once("view/errorPermisoView.php");
+		return true;
 		}
+	}
 		
 		
 		public function Registrar(){

@@ -23,12 +23,19 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
+	if (!in_array('rutas', $_SESSION['ut_permisos']))
+            {
 			$ruta = $this->ruta->Consultar();
 			$vehiculo = $this->vehiculo->Consultar();
 			
 			$url = $this->url;
-			require_once("view/rutasView.php");
+			require_once("view/errorPermisoView.php");
+			
+		}else{
+				require_once("view/rutasView.php");
+		return true;
 		}
+	}
 		
 		public function Registrar(){
 
