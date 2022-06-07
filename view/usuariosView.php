@@ -228,7 +228,7 @@
                                             <option></option>
                                             <?php foreach ($roles as $rols) : ?>
                                                 <?php if (!empty($rols['id_rol'])) : ?>
-                                                    <option><?= $rols['nombre_rol'] ?></option>
+                                                    <option value="<?= $rols['id_rol'] ?>"><?= $rols['nombre_rol'] ?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -338,7 +338,7 @@
                                                                 <option></option>
                                                                 <?php foreach ($roles as $rols) : ?>
                                                                     <?php if (!empty($rols['id_rol'])) : ?>
-                                                                        <option><?= $rols['nombre_rol'] ?></option>
+                                                                        <option value="<?= $rols['id_rol'] ?>"><?= $rols['nombre_rol'] ?></option>
                                                                     <?php endif ?>
                                                                 <?php endforeach ?>
                                                             </select>
@@ -448,7 +448,7 @@
                                                                 <option></option>
                                                                 <?php foreach ($roles as $rols) : ?>
                                                                     <?php if (!empty($rols['id_rol'])) : ?>
-                                                                        <option><?= $rols['nombre_rol'] ?></option>
+                                                                        <option value="<?= $rols['id_rol'] ?>"><?= $rols['nombre_rol'] ?></option>
                                                                     <?php endif ?>
                                                                 <?php endforeach ?>
                                                             </select>

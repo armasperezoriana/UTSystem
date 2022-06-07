@@ -63,7 +63,7 @@ class usuariosController
 			$id_rol = $_POST['rol'];
 			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
-
+			
 			$this->usuario->setNombre($nombre);
 			$this->usuario->setApellido($apellido);
 			$this->usuario->setCedula($cedula);
