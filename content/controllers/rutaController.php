@@ -23,12 +23,13 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
-	if (!in_array('rutas', $_SESSION['ut_permisos']))
-            {
-			$ruta = $this->ruta->Consultar();
+				$ruta = $this->ruta->Consultar();
 			$vehiculo = $this->vehiculo->Consultar();
 			
 			$url = $this->url;
+	if (!in_array('rutas', $_SESSION['ut_permisos']))
+            {
+		
 			require_once("view/errorPermisoView.php");
 			
 		}else{

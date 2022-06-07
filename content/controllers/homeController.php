@@ -13,6 +13,8 @@
 		}
 
 		public function Consultar(){
+			//var_dump($_SESSION);
+			//return 0;
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();

@@ -29,8 +29,8 @@
 
             <!-- Nav Item - USUARIOS Menu -->
             <?php
-               $_SESSION['ut_permisos'] = ['usuario', 'editar usuario', 'eliminar usuario'];
-                  if (!in_array('usuarios', $_SESSION['ut_permisos']))
+              
+                  if (in_array('usuarios', $_SESSION['ut_permisos']))
             {
                  ?>
                     <li class="nav-item">
@@ -47,8 +47,8 @@
             <!-- Nav Item - Vehiculos Menu -->
                  <?php
                
-                 $_SESSION['ut_permisos'] = ['vehiculos', 'editar vehiculos', 'eliminar vehiculos'];
-                  if (!in_array('vehiculo', $_SESSION['ut_permisos']))
+            
+                  if (in_array('vehiculos', $_SESSION['ut_permisos']))
             {
                  ?>
              <li class="nav-item">
@@ -64,8 +64,8 @@
 
               <!-- Nav Item - Chofer Menu -->
                <?php
-                $_SESSION['ut_permisos'] = ['chofer', 'editar chofer', 'eliminar chofer'];
-                  if (!in_array('choferes', $_SESSION['ut_permisos']))
+              
+                  if (in_array('chofer', $_SESSION['ut_permisos']))
             {
                  ?>
              <li class="nav-item">
@@ -85,8 +85,8 @@
               <!-- Nav Item - Ruta Menu -->
 
               <?php
-                  $_SESSION['ut_permisos'] = ['ruta', 'editar ruta', 'eliminar ruta'];
-                  if (!in_array('rutas', $_SESSION['ut_permisos']))
+               
+                  if (in_array('ruta', $_SESSION['ut_permisos']))
             {
                  ?>
              <li class="nav-item">
@@ -104,8 +104,8 @@
 
               <!-- Nav Item - Taller Menu -->
                   <?php
-                  $_SESSION['ut_permisos'] = ['talleres', 'editar taller', 'eliminar taller'];
-                  if (!in_array('taller', $_SESSION['ut_permisos']))
+                 
+                  if (in_array('taller', $_SESSION['ut_permisos']))
             {
                  ?>
              <li class="nav-item">
@@ -124,8 +124,8 @@
                 
                 <!-- Nav Item - Mantenimiento Menu -->
                 <?php
-               $_SESSION['ut_permisos'] = ['mantenimimientos', 'editar mantenimimiento', 'eliminar mantenimimiento'];
-                  if (!in_array('mantenimimiento', $_SESSION['ut_permisos']))
+              
+                  if (in_array('mantenimimiento', $_SESSION['ut_permisos']))
             {
                  ?>
              <li class="nav-item">
@@ -146,8 +146,8 @@
      <!-- Nav Item - SEGURIDAD Menu -->
 
    <?php
-                  $_SESSION['ut_permisos'] = ['seguridad', 'editar seguridad', 'eliminar seguridad'];
-                  if (!in_array('seguridad', $_SESSION['ut_permisos']))
+                
+                  if (in_array('seguridad', $_SESSION['ut_permisos']))
             {
                  ?>
          
@@ -171,8 +171,8 @@
 
             <!-- Nav Item - Charts -->
              <?php
-                 $_SESSION['ut_permisos'] = ['reportes'];
-                  if (!in_array('reportess', $_SESSION['ut_permisos']))
+              
+                  if (!in_array('reportes', $_SESSION['ut_permisos']))
             {
                  ?>
             <li class="nav-item">
