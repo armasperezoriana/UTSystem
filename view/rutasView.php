@@ -48,9 +48,12 @@
                         <div class="card-header py-3">
                          <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Rutas</h6></center> 
                         </div>
-                        <img src="assets/img/rutas.jpg" class="img-profile rounded-circle" width="20%"  right="100%">  
-                        
-    
+                      <!--   <img src="assets/img/rutas.jpg" class="img-profile rounded-circle" width="20%"  right="100%">  -->
+                           <?php
+       if (in_array('registrar ruta', $_SESSION['ut_permisos']))
+            {
+                 ?>  
+                     
                         <div class="col-sm-7" style='text-align:right;'>
                                <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
@@ -63,6 +66,7 @@
 
                                     </a>
                         </div>
+                        <?php } ?>
                         <br>
                         <div class="table-responsive">
                         <div class="card-body" style='background:;'>
@@ -106,6 +110,8 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
+    <!-- MODAL DE consultar-->
     <style type="text/css"> .modal{ font-size:0.8em; } </style>
     <div class="modal fade" id="Consultar<?=$value['id_ruta'] ?>"tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding:0;">
         <div class="container ">
@@ -171,7 +177,10 @@
 
                                                     </td>
                                                     <td>
-
+                                                         <?php
+                                                             if (in_array('editar ruta', $_SESSION['ut_permisos']))
+            {
+                 ?>  
                                                         <div class="col-sm-7" style='text-align:right;'>
 
                                                             <a href="#" data-id="<?=$value['id_ruta'];?>" class="btn btn-warning btn-icon-split" data-target="#ModificarvehiculoModal<?=$value['id_ruta'] ?>"  data-toggle="modal">
@@ -181,6 +190,13 @@
                                                                 <span class="text" style="color:#FFF;">Modificar</span>
                                                             </a>
                                                         </div>
+                                                        <?php } ?>
+
+
+
+
+
+    <!-- MODAL DE MODIFICAR-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
@@ -238,7 +254,13 @@
                                        <input type="text" class="form-control kilometraje kilometraje<?=$value['id_ruta'];?>" value="<?=$value['kilometraje'];?>" name="kilometraje" id="kilometraje">
                                     <span class="errorNombre" style="color:red"></span>
                                 </div>
-                               
+                                  <div class="form-group col-sm-12 col-md-6">
+                                    <label for="kilometraje"><b>Ruta:</b></label>
+                                    <a target="blank" href=" https://www.google.com/maps/dir//Barquisimeto+3001,+Lara/@10.0677719,-69.3473509,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e87671d783e8671:0x972fe1e11519c3db!2m2!1d-69.3473509!2d10.0677719">Cómo llegar?
+ </a>
+
+                                    
+                                </div>
                         </div>
                         <br>
                         <div class="modal-footer">
@@ -254,6 +276,10 @@
 
 
                                                     <td>
+                                                        <?php
+                                                             if (in_array('eliminar ruta', $_SESSION['ut_permisos']))
+            {
+                 ?>  
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                         <?php if ($value['status'] == 1) { ?>
                                                             <a href="#" data-id="<?= $value['id_ruta'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
@@ -271,6 +297,7 @@
                                                             </a>
                                                         <?php } ?>
                                                         </div>
+                                                         <?php } ?>
                                                     </td>
                                         </tr>
 
@@ -360,9 +387,19 @@
                                      <input type="number" class="form-control kilometraje" name="kiloemtraje" id="kilometraje">
                                     <span class="kilometraje" style="color:red"></span>
                                 </div>
-                             
+                             <div class="form-group col-sm-12 col-md-6">
+                                    <label for="kilometraje"><b>Ver ruta</b></label>
+                                    <a target="blank" href=" https://www.google.com/maps/dir//Barquisimeto+3001,+Lara/@10.0677719,-69.3473509,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e87671d783e8671:0x972fe1e11519c3db!2m2!1d-69.3473509!2d10.0677719">Cómo llegar?
+ </a>
+
+                                    
+                                </div>
                             <br>
+                            
+                                    <span class="kilometraje" style="color:red"></span>
                         </div>
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125710.5162316898!2d-69.36284785000001!3d10.061866349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e87671d783e8671%3A0x972fe1e11519c3db!2sBarquisimeto%203001%2C%20Lara!5e0!3m2!1ses!2sve!4v1654746367020!5m2!1ses!2sve" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                         <div class="modal-footer">
                             <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                             <a class="EnviarRutaRegistrar btn btn-primary" href="#" id="AgregarRutaModal">Agregar</a>
@@ -376,11 +413,6 @@
 
 
      </div>
-
-
-<!-- MODAL DE MODIFICAR-->
-
-
 
 
      </div>

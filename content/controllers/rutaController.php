@@ -27,13 +27,13 @@
 			$vehiculo = $this->vehiculo->Consultar();
 			
 			$url = $this->url;
-	if (!in_array('rutas', $_SESSION['ut_permisos']))
+	if (in_array('ruta', $_SESSION['ut_permisos']))
             {
-		
-			require_once("view/errorPermisoView.php");
+			require_once("view/rutasView.php");
+			
 			
 		}else{
-				require_once("view/rutasView.php");
+				require_once("view/errorPermisoView.php");
 		return true;
 		}
 	}

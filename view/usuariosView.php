@@ -59,6 +59,11 @@
                         <span class="icon text-white-50">
                             <i class="fas fa-check"></i>
                         </span>
+                          <?php
+              
+                  if (in_array('registrar usuario', $_SESSION['ut_permisos']))
+            {
+                 ?>
                         <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarUsuarioModal" data-toggle="modal" data-target="#AgregarUsuarioModal">
                             <span class="icon text-white-50">
                                 <i class="fas fa-check"></i>
@@ -66,6 +71,8 @@
                             <span class="text">Registrar</span>
 
                         </a>
+                         <?php } ?>
+
                     </div>
                     <br>
                     <div class="table-responsive">
@@ -115,6 +122,11 @@
 
                                                     </td>
                                                     <td>
+                                                       <?php
+              
+                  if (in_array('editar usuario', $_SESSION['ut_permisos']))
+            {
+                 ?>  
 
                                                         <div class="col-sm-7" style='text-align:right;'>
 
@@ -125,10 +137,15 @@
                                                                 <span class="text">Modificar</span>
                                                             </a>
                                                         </div>
-
+                                                            <?php } ?>
 
                                                     </td>
                                                     <td>
+                                                         <?php
+              
+                  if (in_array('eliminar usuario', $_SESSION['ut_permisos']))
+            {
+                 ?>  
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                             <?php if ($value['status'] == 1) { ?>
                                                                 <a href="#" data-id="<?= $value['id_usuario'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
@@ -147,6 +164,7 @@
                                                                 </a>
                                                             <?php } ?>
                                                         </div>
+                                                         <?php } ?>
                                                     </td>
                                                 </tr>
 

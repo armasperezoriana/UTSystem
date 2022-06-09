@@ -26,7 +26,7 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
-if (!in_array('choferes', $_SESSION['ut_permisos']))
+if (in_array('chofer', $_SESSION['ut_permisos']))
             {
 			$vehiculos = $this->vehiculo->Consultar();
 			$chofer = $this->chofer->Consultar();

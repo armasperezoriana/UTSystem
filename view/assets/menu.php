@@ -125,7 +125,7 @@
                 <!-- Nav Item - Mantenimiento Menu -->
                 <?php
               
-                  if (in_array('mantenimimiento', $_SESSION['ut_permisos']))
+                  if (in_array('mantenimiento', $_SESSION['ut_permisos']))
             {
                  ?>
              <li class="nav-item">
@@ -171,8 +171,8 @@
 
             <!-- Nav Item - Charts -->
              <?php
-              
-                  if (!in_array('reportes', $_SESSION['ut_permisos']))
+                
+                  if (in_array('reportes', $_SESSION['ut_permisos']))
             {
                  ?>
             <li class="nav-item">

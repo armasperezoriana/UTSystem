@@ -49,7 +49,11 @@
                          <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Vehiculos</h6></center> 
                         </div>
                       
-                        
+                         <?php
+              
+                  if (in_array('registrar vehiculo', $_SESSION['ut_permisos']))
+            {
+                 ?>  
     
                         <div class="col-sm-7" style='text-align:right;'>
                                <span class="icon text-white-50">
@@ -63,6 +67,7 @@
 
                                     </a>
                         </div>
+                          <?php } ?>
                         <br>
                         <div class="table-responsive">
                         <div class="card-body" style='background:;'>
@@ -108,7 +113,12 @@
 
                                                     </td>
                                                      <td>
-
+    <?php
+              
+                  if (in_array('editar vehiculo', $_SESSION['ut_permisos']))
+            {
+                 ?>  
+    
                                                         <div class="col-sm-7" style='text-align:right;'>
 
                                                               <a  data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-warning btn-icon-split editar" name="editar">
@@ -122,10 +132,15 @@
 
                                                             </a>
                                                         </div>
-
+ <?php } ?>
 
                                                     </td>
                                                     <td>
+                                                        <?php
+              
+                  if (in_array('eliminar vehiculo', $_SESSION['ut_permisos']))
+            {
+                 ?>  
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                             <?php if ($value['status'] == 1) { ?>
                                                                 <a href="#" data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
@@ -142,7 +157,9 @@
                                                                     <span class="text">Habilitar</span>
                                                                 </a>
                                                             <?php } ?>
+                                                      
                                                         </div>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
 
@@ -151,6 +168,7 @@
 
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                     </div>

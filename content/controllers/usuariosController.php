@@ -28,7 +28,7 @@ class usuariosController
 		$_css = new headElement;
 		$_css->Heading();
 		
-		 if (!in_array('usuarios', $_SESSION['ut_permisos']))
+		 if (in_array('usuarios', $_SESSION['ut_permisos']))
             {
 	$usuarios = $this->usuario->Consultar();
 		$roles = $this->rol->Consultar();

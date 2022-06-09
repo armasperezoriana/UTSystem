@@ -20,7 +20,7 @@
 			$objModel = new homeModel;
 			$_css = new headElement;
 			$_css->Heading();
-			if (!in_array('talleres', $_SESSION['ut_permisos'])){
+			if (in_array('taller', $_SESSION['ut_permisos'])){
 			$taller = $this->taller->Consultar();
 
 			$url = $this->url;

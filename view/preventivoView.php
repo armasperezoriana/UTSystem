@@ -101,10 +101,10 @@
                                                     <?php if (!empty($preventivo['id_mantenimiento'])): ?>
                                                 <tr>
                                                     <td><?=$preventivo['id_mantenimiento']?></td>
-                                                    <td><?=$preventivo['placa']?></td>
-                                                    <td><?=$preventivo['nombre_tipo']?></td>
+                                                    <td><?=$preventivo['id_vehiculo']?></td>
+                                                    <td><?=$preventivo['nombre']?></td>
                                                     <td><?=$preventivo['tiempo']?></td>
-                                                     <td><?=$preventivo['rif'];?></td>
+                                                     <td><?=$preventivo['id_taller'];?></td>
                                                     <td>
                                             
                                                     </td>
@@ -144,7 +144,7 @@
                      <div class="modal-body">
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Kilometraje</b></label>
+                                        <label for="Nombre"><b>Reparación:</b></label>
                                         <input type="text" class="form-control-plaintext" disabled  value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
@@ -157,8 +157,8 @@
                                 <br>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tipo"><b>Tipo de Mantenimiento</b></label>
-                                      <input type="text" class="form-control-plaintext" disabled value="<?=$preventivo['nombre_tipo']?>"  name="tipo" id="tipo">
+                                        <label for="tipo"><b>Kilometraje</b></label>
+                                      <input type="text" class="form-control-plaintext" disabled value="<?=$preventivo['kilometraje']?>"  name="tipo" id="tipo">
                                         <span class="errortipo" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">

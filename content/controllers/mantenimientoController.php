@@ -31,7 +31,7 @@
 			$_css = new headElement;
 			$_css->Heading();
 
-			if (!in_array('mantenimimientos', $_SESSION['ut_permisos'])){
+			if (in_array('mantenimiento', $_SESSION['ut_permisos'])){
 			$mantenimento = $this->mantenimento->Consultar();
 			$vehiculo = $this->vehiculo->Consultar();
 			$taller = $this->taller->Consultar();
