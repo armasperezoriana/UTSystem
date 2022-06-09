@@ -53,10 +53,12 @@ public function Mostrar($param)
 			$placa = $_POST['placa'];
 			$modelo = $_POST['modelo'];
 			$funcionamiento = $_POST['funcionamiento'];
+			$kilometraje = $_POST['kilometraje'];
 
 			$this->vehiculo->setPlaca($placa);
 			$this->vehiculo->setModelo($modelo);
 			$this->vehiculo->setFuncionamiento($funcionamiento);
+			$this->vehiculo->setKilometraje($kilometraje);
 			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 			// $result = $this->vehiculo->ConsultarOne();
 			// if ($result['ejecucion'] == true) {
@@ -93,12 +95,13 @@ public function Mostrar($param)
 			$placa = $_POST['placa'];
 			$modelo = $_POST['modelo'];
 			$funcionamiento = $_POST['funcionamiento'];
+			$kilometraje = $_POST['kilometraje'];
 
 			$this->vehiculo->setId($id_vehiculo);
 			$this->vehiculo->setPlaca($placa);
 			$this->vehiculo->setModelo($modelo);
 			$this->vehiculo->setFuncionamiento($funcionamiento);
-			
+			$this->vehiculo->setKilometraje($kilometraje);
 			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 			
 			$execute = $this->vehiculo->Modificar();
@@ -172,6 +175,9 @@ public function Mostrar($param)
 			$this->funcionamiento = $funcionamiento;
 		}
 
+		public function setKilometraje($kilometraje){
+			$this->kilometraje = $kilometraje;
+		}
 
 		public function getId(){
 			return $this->id_vehiculo;
@@ -184,6 +190,9 @@ public function Mostrar($param)
 		}
 		public function getFuncionamiento(){
 			return $this->funcionamiento;
+		}
+		public function getKilometraje(){
+			return $this->kilometraje;
 		}
 		
 }

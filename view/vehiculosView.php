@@ -55,7 +55,7 @@
             {
                  ?>  
     
-                        <div class="col-sm-7" style='text-align:right;'>
+                        <div class="col-sm-2" style='text-align:right;'>
                                <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
@@ -244,9 +244,13 @@
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
                                     </div>
-                                    
        
-                                         <div class="row">
+
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="tipo"><b>Kilometraje</b></label>
+                                     <input type="text" class="form-control" name="kilometraje" id="kilometraje">
+                                        <span class="errortipo" style="color:red"></span>
+                                    </div>
                                   
                             <div class="modal-footer">
                                 <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
@@ -322,7 +326,15 @@
                                                 <option value="Inoperativo">Inoperativo</option>
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
-                                         
+                                           </div>
+
+                                          <div class="form-group col-sm-12 col-md-6">
+                                        
+                                        <label for="kilometraje"><b>Kilometraje</b></label>
+                                        <input type="text" class="form-control" name="kilometrajeM
+                                        " id="kilometrajeM">
+                                        <span class="errorKilometraje" style="color:red"></span>
+                                    </div>
                                     </div>
                        
                             <div class="modal-footer">
@@ -403,6 +415,12 @@
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
                                          
+                                    </div>
+                                        <div class="form-group col-sm-12 col-md-6">
+                                        
+                                        <label for="placa"><b>Kilometraje</b></label>
+                                        <input type="text" class="form-control-plaintext" disabled name="kilometrajeM" id="kilometrajeM">
+                                        <span class="errorKilometraje" style="color:red"></span>
                                     </div>
                                     
                             <div class="modal-footer">

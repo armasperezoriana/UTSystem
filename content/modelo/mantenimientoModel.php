@@ -8,13 +8,12 @@
 	class mantenimientoModel extends database{
 
 		private $id_mantenimiento;
-		private $nombre_tipo;
-		private $tiempo;
-		private $placa;
 		private $nombre;
+		private $tiempo;
+		private $id_vehiculo;
 		private $costo;
 		private $fecha;
-		private $rif;
+		private $id_taller;
 		 private $status;
 
 
@@ -41,7 +40,7 @@
 
 		public function ConsultarOne(){
 			try {
-				$query = parent::prepare("SELECT * FROM mantenimientos WHERE nombre = '{$this->nombre}' and fecha = '{$this->fecha}' and rif = '{$this->rif}' and placa = '{$this->placa}'");
+				$query = parent::prepare("SELECT * FROM mantenimientos WHERE nombre = '{$this->nombre}' and fecha = '{$this->fecha}' and id_taller = '{$this->id_taller}' and id_vehiculo = '{$this->id_vehiculo}'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -69,7 +68,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre_tipo, tiempo, placa, nombre, costo, fecha, rif, status) VALUES ($id, '{$this->nombre_tipo}', '{$this->tiempo}', '{$this->placa}', '{$this->nombre}', '{$this->costo}', '{$this->fecha}', '{$this->rif}', 1)");
+				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, tiempo, id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}', '{$this->tiempo}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -85,7 +84,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE mantenimientos SET nombre_tipo = '{$this->nombre_tipo}', tiempo='$this->tiempo', placa='$this->placa', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', rif='$this->rif' WHERE id_mantenimiento = $this->id_mantenimiento");
+				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', tiempo ='$this->tiempo', id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller' WHERE id_mantenimiento = $this->id_mantenimiento");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

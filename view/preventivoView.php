@@ -144,7 +144,7 @@
                      <div class="modal-body">
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Reparación:</b></label>
+                                        <label for="Nombre"><b>Pieza reparada</b></label>
                                         <input type="text" class="form-control-plaintext" disabled  value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
@@ -232,7 +232,7 @@
                             <div class="modal-body">
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Kilometraje</b></label>
+                                        <label for="Nombre"><b>Pieza a modificar</b></label>
                                         <input type="text" class="form-control" value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
@@ -371,8 +371,34 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Nombre"><b>Kilometraje</b></label>
-                                        <input type="text" class="form-control nombre" name="nombre" id="nombre">
+                                        <label for="Nombre"><b>Mantenimiento de :</b></label>   <select class="form-control select2" name="nombre" id="nombre">
+                                                  <option value="">...</option>
+                                                <option value="Cambio de Aceite">Cambio de Aceite</option>
+                                                <option value="Bujias">Bujias</option>
+                                                <option value="Pastillas de freno">Pastillas de freno</option>
+                                                <option value="Filtro de Aceite">Filtro de Aceite</option>
+                                                <option value="antenimiento programado">Mantenimiento programado</option>
+                                                <option value="Cauchos">Cauchos</option>
+                                                <option value="Bateria">Bateria</option>
+                                                <option value="Anticongelante adicional">Anticongelante adicional</option>
+                                                <option value="Balanceo">Balanceo</option>
+                                                <option value="Alineación">Alineación</option>
+                                                <option value="Afinacion del motor">Afinacion del motor</option>
+                                                <option value="Cambio de las escobillas limpiaparabrisas">Cambio de las escobillas limpiaparabrisas</option>
+                                                <option value="Cambio del filtro de aire">Cambio del filtro de aire</option>
+                                                <option value="Brazos de suspensión">Brazos de suspensión</option>
+                                                <option value="Chasis/Dirección">Chasis/Dirección</option>
+                                                <option value="Amortiguadores">Amortiguadores</option>
+                                                <option value="Correa de distribución">Correa de distribución</option>
+                                                <option value="Luces">Luces</option>
+                                                  <option value="chequeo general">Chequeo general</option>
+                                                <option value="filtro de gasolina">Filtro de gasolina</option>
+                                                <option value="filtro de aire">Filtro de Aire</option>
+                                                 <option value="Frenos">Frenos</option>
+                                                <option value="Sistema de escape y catalizadores">Sistema de escape y catalizadores</option>
+                                                    <option value="Cables internos Bateria">Cables internos/Bateria</option>
+                                            </select>
+                                       
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
@@ -395,7 +421,8 @@
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
-                                                    <option value="<?=$ta['rif']?>"><?=$ta['nombre'];?></option>
+                                                    <option value="<?=$ta['rif']?>"><?=$ta['rif'];?>
+                                                     - <br value="<?=$ta['rif']?>"><?=$ta['nombre'];?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -407,9 +434,12 @@
                                       <label for="rol"><b>Unidad que se le realizo Mantenimiento</b></label>
                                         <select class="form-control select2" name="placa" id="placa">
                                             <option></option>
-                                            <?php foreach ($vehiculo as $unidad) : ?>
+                                           <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option><?= $unidad['placa'] ?></option>
+                                                    <option value="<?=$unidad['placa']?>"><?=$unidad['placa'];?>
+                                                     - <br value="<?=$unidad['placa']?>"><?=$unidad['modelo'];?></option>
+                                                 
+                                                    </option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>

@@ -8,7 +8,7 @@ $(document).ready(function () {
             var placa = $("#AgregarVehiculosModal").find("#placa").val();
             var modelo = $("#AgregarVehiculosModal").find("#modelo").val();
             var funcionamiento = $("#AgregarVehiculosModal").find("#funcionamiento").val();
-
+             var kilometraje = $("#AgregarVehiculosModal").find("#kilometraje").val();
 
             swal.fire({
                 title: "¿Desea guardar los datos del vehiculo ingresados?",
@@ -28,9 +28,11 @@ $(document).ready(function () {
                             placa: placa,
                             modelo: modelo,
                             funcionamiento: funcionamiento,
+                            kilometraje: kilometraje,
+
                         },
                         success: function (respuesta) {
-                            console.log(respuesta);
+                           // console.log(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -81,7 +83,7 @@ $(".ModificarVehiculos").click(function() {
 
                 var placa= $("#modificarVehiculo").find("#placaM").val();
                 var funcionamiento = $("#modificarVehiculo").find("#funcionamientoM").val();
-            
+               var kilometraje = $("#modificarVehiculo").find("#kilometrajeM").val();
                 // alert(pass)
 
                 swal.fire({
@@ -103,10 +105,10 @@ $(".ModificarVehiculos").click(function() {
                                 placa: placa, 
                                 modelo: modelo,
                                 funcionamiento: funcionamiento,
-                                
+                                 kilometraje: kilometraje,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                                 //alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -205,6 +207,12 @@ function validar(modificar = false) {
     var funcionamiento = $(form).find("#funcionamiento").val();
     var rfuncionamiento = false;
 
+    var funcionamiento = $(form).find("#funcionamiento").val();
+    var rfuncionamiento = false;
+
+    var kilometraje = $(form).find("#kilometraje").val();
+    var rkilometraje = false;
+
     if (placa == "") {
         validado = false;
         $(".errorPlaca").html("Debe ingresar su placa");
@@ -222,6 +230,12 @@ function validar(modificar = false) {
         $(".errorFuncionamiento").html("Debe seleccionar si esta funcionamiento");
     } else {
         $(".errorFuncionamiento").html("");
+    }
+    if (kilometraje == "") {
+        validado = false;
+        $(".errorKilometraje").html("Debe seleccionar si esta kilometraje");
+    } else {
+        $(".errorKilometraje").html("");
     }
     return validado;
 }
@@ -248,6 +262,7 @@ function validar(modificar = false) {
                 $(formulario).find("#placaM").val(vehiculo.placa);
                 $(formulario).find("#modeloM").val(vehiculo.modelo);
                 $(formulario).find("#funcionamientoM").val(vehiculo.funcionamiento);
+                $(formulario).find("#kilometrajeM").val(vehiculo.kilometraje);
                 $(modal).modal('show');
             },
             error: function (response) {

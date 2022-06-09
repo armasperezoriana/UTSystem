@@ -13,6 +13,7 @@
 		private $nombre_tipo;
 		private $id_mantenimiento;
 		private $status;
+		private $kilometraje;
 
 		public function __construct(){
 	
@@ -79,7 +80,7 @@ public function ObtenerOne($id){
 						$id++;
 					}
 				}
-						$query = parent::prepare("INSERT INTO vehiculos (id_vehiculo, placa, modelo, funcionamiento, status) VALUES ($id, '{$this->placa}', '{$this->modelo}', '{$this->funcionamiento}', 1)");
+						$query = parent::prepare("INSERT INTO vehiculos (id_vehiculo, placa, modelo, funcionamiento, kilometraje, status) VALUES ($id, '{$this->placa}', '{$this->modelo}', '{$this->funcionamiento}','{$this->kilometraje}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -96,7 +97,7 @@ public function ObtenerOne($id){
 public function Modificar(){
 			try{
 				$query = parent::prepare("UPDATE vehiculos SET placa = '$this->placa', modelo = '$this->modelo', 
-					funcionamiento = '$this->funcionamiento'
+					funcionamiento = '$this->funcionamiento', kilometraje ='$this->kilometraje'
 					WHERE id_vehiculo = $this->id_vehiculo");
 				$respuestaArreglo = '';
 				$query->execute();
@@ -116,7 +117,7 @@ public function Modificar(){
 public function Borrar(int $id){
 			try {
 
-				$query = parent::prepare("DELETE vehiculos WHERE id = :id VALUES ($id, '{$this->placa}', '{$this->modelo}', '{$this->funcionamiento}', 0)");
+				$query = parent::prepare("DELETE vehiculos WHERE id = :id VALUES ($id, '{$this->placa}', '{$this->modelo}', '{$this->funcionamiento}','{$this->kilometraje}', 0)");
 				
 				$respuestaArreglo = '';
 				$query->execute();
@@ -175,6 +176,10 @@ public function setId($id){
 			$this->funcionamiento = $funcionamiento;
 		}
 
+		public function setKilometraje($kilometraje){
+			$this->kilometraje = $kilometraje;
+		}
+
 
 		public function getId(){
 			return $this->id_vehiculo;
@@ -187,6 +192,9 @@ public function setId($id){
 		}
 		public function getFuncionamiento(){
 			return $this->funcionamiento;
+		}
+		public function getKilometraje(){
+			return $this->kilometraje;
 		}
 		
 }

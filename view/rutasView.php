@@ -54,7 +54,7 @@
             {
                  ?>  
                      
-                        <div class="col-sm-7" style='text-align:right;'>
+                        <div class="col-sm-2" style='text-align:right;'>
                                <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
@@ -454,17 +454,18 @@
                         </div>
 
                             <div class="modal-body">
-                   En este modulo podrá visualizar los vehiculos que están registrados en el sistema a su vez registrar, eliminar y modificar
+                  En este modulo podrá visualizar los rutas que están registrados en el sistema a su vez registrar, eliminar y modificar.
+                  Si necesitas colocar un kilometraje y no lo conoces, cuentas con la opción a google maps para saber sobre los recorridos.
                   <br><br>
-                  1. Para eliminar un vehiculo seleccione "eliminar" situada a la derecha del vehiculo
+                  1. Para eliminar una ruta seleccione "eliminar" situada a la derecha del ruta
                   <br> <br>
-                  2. Para modificar un vehiculo seleccione "modificar" situada a izquierda del vehiculo
+                  2. Para modificar una ruta seleccione "modificar" situada a izquierda del ruta
                   <br><br>
-                  3. Para registrar un vehiculo seleccione "registrar" que se muestra en el lado inferior derecho de la tabla
+                  3. Para registrar una ruta seleccione "registrar" que se muestra en el lado inferior derecho de la tabla
                   <br><br>
                   4. Para volver al menu principal presione "volver" situado en la parte inferior derecha
                   <br><br>
-                  5. Para cerrar esta ventana emergente y seguir con el sistema presione e "cerrar" 
+                  5. Para cerrar esta ventana emergente y seguir con el sistema presione e "cerrar"
                   <br><br>
                   6. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo del dato que desea buscar
 
