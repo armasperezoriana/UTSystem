@@ -7,8 +7,8 @@ $(document).ready(function () {
             var nombre = $("#AgregarMantenimientoModal").find("#nombre").val();
             var intervalo = $("#AgregarMantenimientoModal").find("#intervalo").val();
             var tipo = $("#AgregarMantenimientoModal").find("#tipo").val();
-            var taller = $("#AgregarMantenimientoModal").find("#taller").val();
-            var placa = $("#AgregarMantenimientoModal").find("#placa").val();
+            var taller = $("#AgregarMantenimientoModal").find("#id_taller").val();
+            var placa = $("#AgregarMantenimientoModal").find("#id_vehiculo").val();
             var costo = $("#AgregarMantenimientoModal").find("#costo").val();
             var tiempo = $("#AgregarMantenimientoModal").find("#tiempo").val();
 
@@ -82,8 +82,8 @@ $(document).ready(function () {
             var nombre = $("#ModificarMantenimientoModal"+id).find("#nombre").val();
             var intervalo = $("#ModificarMantenimientoModal"+id).find("#intervalo").val();
             var tipo = $("#ModificarMantenimientoModal"+id).find("#tipo").val();
-            var taller = $("#ModificarMantenimientoModal"+id).find("#taller").val();
-            var placa = $("#ModificarMantenimientoModal"+id).find("#placa").val();
+            var taller = $("#ModificarMantenimientoModal"+id).find("#id_taller").val();
+            var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculo").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costo").val();
             var tiempo = $("#ModificarMantenimientoModal"+id).find("#tiempo").val();
             swal.fire({
@@ -234,7 +234,7 @@ $(document).ready(function () {
         }
         if (tipo == "") {
             rtipo = false;
-            $(form+" .errorTipo").html("Debe ingresar el tipo de mantenimiento");
+            $(form+" .errorTipo").html("Debe escribir una breve descripcion del mantenimiento");
         } else {
             rtipo = true;
             $(form+" .errorTipo").html("");
@@ -248,7 +248,7 @@ $(document).ready(function () {
         }
         if (placa == "") {
             rplaca = false;
-            $(form+" .errorPlaca").html("Debe ingresar su placa");
+            $(form+" .errorPlaca").html("Debe ingresar la placa del vehiculo");
         } else {
             rplaca = true;
             $(form+" .errorPlaca").html("");
@@ -262,7 +262,7 @@ $(document).ready(function () {
         }
         if (tiempo == "") {
             rtiempo = false;
-            $(form+" .errorTiempo").html("Debe seleccionar meses para el proximo mantenimiento");
+            $(form+" .errorTiempo").html("Debe escribir el Nro para procesar la orden de servicio");
         } else {
             rtiempo = true;
             $(form+" .errorTiempo").html("");
@@ -294,8 +294,8 @@ $(document).ready(function () {
                 success: function (response) {
                     let json = JSON.parse(response);
                     let vehiculo = json.data;
-                    $(formulario).find("#id_vehiculo").val(vehiculo.id_vehiculo);
-                    $(formulario).find("#placaM").val(vehiculo.placa);
+                    $(formulario).find("#id_vehiculoM").val(vehiculo.id_vehiculo);
+                    $(formulario).find("#id_tallerM").val(vehiculo.id_taller);
                     $(formulario).find("#modeloM").val(vehiculo.modelo);
                     $(formulario).find("#funcionamientoM").val(vehiculo.funcionamiento);
                     $(modal).modal('show');

@@ -60,6 +60,10 @@ class loginController
 						$_SESSION['ut_usuario'] = $res['usuario'];
 						$_SESSION['ut_id'] = $res['id_usuario'];
 						$_SESSION['ut_rol'] = $res['rol'];
+						$_SESSION['ut_nombre'] = $res['nombre'];
+						$_SESSION['ut_apellido'] = $res['apellido'];
+						$_SESSION['ut_cedula'] = $res['cedula'];
+						$_SESSION['ut_correo'] = $res['correo'];
 						$_SESSION['ut_permisos'] = $permisos;
 						echo json_encode([
 							'tipo' => 'success', 'mensaje' => 'Sesión Iniciada'

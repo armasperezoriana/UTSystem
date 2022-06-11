@@ -135,8 +135,8 @@
 		public function setTiempo($tiempo){
 			$this->tiempo = $tiempo;
 		}
-		public function setPlaca($placa){
-			$this->placa = $placa;
+		public function setIdVehiculo($id_vehiculo){
+			$this->id_vehiculo = $id_vehiculo;
 		}
 		public function setNombre($nombre){
 			$this->nombre = $nombre;
@@ -147,8 +147,8 @@
 		public function setFecha($fecha){
 			$this->fecha = $fecha;
 		}
-		public function setRif($rif){
-			$this->rif = $rif;
+		public function setIdTaller($id_taller){
+			$this->id_taller = $id_taller;
 		}
 
 		public function getIdMantenimiento(){
@@ -160,8 +160,8 @@
 		public function getTiempo(){
 			return $this->tiempo;
 		}
-		public function getPlaca(){
-			return $this->placa;
+		public function getIdVehiculo(){
+			return $this->id_vehiculo;
 		}
 		public function getNombre(){
 			return $this->nombre;
@@ -172,8 +172,8 @@
 		public function getFecha(){
 			return $this->fecha;
 		}
-		public function getRif(){
-			return $this->rif;
+		public function getIdTaller(){
+			return $this->id_taller;
 		}
 	}
 

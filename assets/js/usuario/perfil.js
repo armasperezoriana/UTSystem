@@ -1,7 +1,13 @@
+  $('.consultar').click(function(e){
+            e.preventDefault();
+            mostrar($(this).attr('data-id'), "#consultarUsuario", "#ConsultarUsuarioModal");
+        })
+
+
  const mostrar = (id, formulario, modal) => {
         $.ajax({
             type: "POST",
-            url: "Perfil/Mostrar/"+id,
+            url: "./Perfil/Mostrar/"+id,
             success: function (response) {
                 let json = JSON.parse(response);
                 let usuario = json.data;

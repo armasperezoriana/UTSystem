@@ -163,11 +163,11 @@
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control-plaintext" disabled style="width:100%;" name="taller" id="taller">
+                                          <select class="form-control-plaintext" disabled style="width:100%;" name="tallerM" id="tallerM">
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
-                                                    <option value="<?=$ta['rif']?>" <?php if($ta['rif']==$preventivo['rif']){ echo "selected"; } ?> ><?=$ta['nombre']?></option>
+                                                    <option value="<?=$ta['id_vehiculo']?>" <?php if($ta['rif']==$preventivo['rif']){ echo "selected"; } ?> ><?=$ta['nombre']?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -178,11 +178,11 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control-plaintext" disabled style="width:100%;" name="placa" id="placa">
+                                        <select class="form-control-plaintext" disabled style="width:100%;" name="placaM" id="placaM">
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option <?php if($unidad['placa']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa'] ?></option>
+                                                    <option value="<?php if($unidad['placa']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa'] ?>"></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -245,17 +245,17 @@
                                 <br>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tipo"><b>Tipo de Mantenimiento</b></label>
-                                      <input type="text" class="form-control" value="<?=$preventivo['nombre_tipo']?>"  name="tipo" id="tipo">
+                                        <label for="tipo"><b>Kilometraje</b></label>
+                                      <input type="text" class="form-control" value="<?=$preventivo['kilometraje']?>"  name="tipo" id="tipo">
                                         <span class="errortipo" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control select2 text-left" style="width:100%;" name="taller" id="taller">
+                                          <select class="form-control select2 text-left" style="width:100%;" name="id_taller" id="id_taller">
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
-                                                    <option value="<?=$ta['rif']?>" <?php if($ta['rif']==$preventivo['rif']){ echo "selected"; } ?> ><?=$ta['nombre']?></option>
+                                                    <option value="<?=$ta['id_taller']?>" <?php if($ta['id_taller']==$preventivo['id_taller']){ echo "selected"; } ?> ><?=$ta['nombre']?> - <?=$ta['rif']?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -266,11 +266,11 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" style="width:100%;" name="placa" id="placa">
+                                        <select class="form-control select2" style="width:100%;" name="id_vehiculo" id="id_vehiculo'">
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option <?php if($unidad['placa']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa'] ?></option>
+                                                    <option value="<?php if($unidad['id_vehiculo']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa'] ?>  - <?=$unidad['modelo'];?>"></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -417,12 +417,12 @@
 
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control select2 taller" style="width:100%;" name="taller" id="taller">
+                                          <select class="form-control select2 taller" style="width:100%;" name="id_taller" id="id_taller">
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
-                                                    <option value="<?=$ta['rif']?>"><?=$ta['rif'];?>
-                                                     - <br value="<?=$ta['rif']?>"><?=$ta['nombre'];?></option>
+                                                    <option value="<?=$ta['id_taller']?>"><?=$ta['rif'];?>
+                                                     - <?=$ta['nombre'];?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -432,12 +432,12 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="rol"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" name="placa" id="placa">
+                                        <select class="form-control select2" name="id_vehiculo" id="id_vehiculo ">
                                             <option></option>
                                            <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option value="<?=$unidad['placa']?>"><?=$unidad['placa'];?>
-                                                     - <br value="<?=$unidad['placa']?>"><?=$unidad['modelo'];?></option>
+                                                    <option value="<?=$unidad['id_vehiculo']?>"><?=$unidad['placa'];?>
+                                                     - <?=$unidad['modelo'];?></option>
                                                  
                                                     </option>
                                                 <?php endif ?>

@@ -6,38 +6,16 @@
 
 	class rolesModel extends database{
 
-		private $cedula;
-	    private $nombre; 
-	    private $apellido;
-	    private $username;
-	    private $password;
-	    private $email;
 	    private $rol;
-	    private $fechaRecuperacion;
 	    private $id_rol;
 	    private $nombre_rol;
 	    private $descripcion;
 	    private $status;
 
 		public function __construct(){
-			// $this->con = parent::__construct();
 			parent::__construct();
 		}
-		// public function Consultar(){
-		// 	try {
-		// 		$query = parent::prepare('SELECT * FROM usuarios WHERE status = 0');
-		// 		$respuestaArreglo = '';
-		// 		$query->execute();
-		// 		$query->setFetchMode(parent::FETCH_ASSOC);
-		// 		$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-		// 		$respuestaArreglo += ['ejecucion' => true];
-		// 		return $respuestaArreglo;
-		// 	} catch (PDOException $e) {
-		// 		$errorReturn = ['ejecucion' => false];
-		// 		$errorReturn += ['info' => "error sql:{$e}"];
-		// 		return $errorReturn;
-		// 	}
-		// }
+
 		public function Consultar(){
 			try {
 				$query = parent::prepare('SELECT * FROM roles');
@@ -54,9 +32,9 @@
 			}
 		}
 
-		public function Agregar(){
+			public function ConsultarOne(){
 			try {
-				$query = parent::prepare("INSERT INTO usuarios (id_usuario, cedula, usuario, nombre, apellido, contrasena, rol, status, correo fechaRecuperacion) VALUES (DEFAULT, '{$this->cedula}', '{$this->username}', '{$this->nombre}', '{$this->apellido}', '{$this->password}', '{$this->rol}', 0, '{$this->email}', '{$this->fechaRecuperacion}')");
+				$query = parent::prepare("SELECT * FROM roles WHERE status = 1 ");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -68,6 +46,138 @@
 				$errorReturn += ['info' => "error sql:{$e}"];
 				return $errorReturn;
 			}
+		}
+
+
+public function ObtenerOne($id){
+			try {
+				$query = parent::prepare("SELECT * FROM roles WHERE id_rol = $id");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
+				return $respuesta;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+		
+			public function AgregarR(){
+				$id=0;
+			try {
+				$query = parent::prepare("INSERT INTO roles (id_rol, nombre_rol,descripcion, status) VALUES ($id, '{$this->nombre_rol}', '{$this->descripcion}', 1");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+
+
+		public function Modificar(){
+			try{
+				$query = parent::prepare("UPDATE roles SET id_rol = '$this->id_rol', descripcion = '$this->descripcion', 
+					status = '$this->status'
+					WHERE id_rol = $this->id_rol");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} 
+			 catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+
+
+
+
+public function Borrar(int $id){
+			try {
+
+				$query = parent::prepare("DELETE roles WHERE id = :id VALUES ($id, '{$this->nombre_rol}', '{$this->descripcion}', 0)");
+				
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+public function Inhabilitar($id){    //Método que elimina logicamente un registro
+			try{
+				$consulta = parent::prepare("UPDATE roles SET status=0 WHERE id_rol=$id");
+				$consulta->execute();
+				$respuestaArreglo = ['ejecucion' => true];
+				return $respuestaArreglo;
+	
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+		public function Habilitar($id){    //Método que habilita logicamente un registro
+			try{
+				$consulta = parent::prepare("UPDATE roles SET status=1 WHERE id_rol=$id");
+				$consulta->execute();
+				$respuestaArreglo = ['ejecucion' => true];
+				return $respuestaArreglo;
+	
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+
+
+		public function setId($id_rol){
+			$this->id_rol = $id_rol;
+		}
+		public function setNombreRol($nombre_rol){
+			$this->nombre_rol = $nombre_rol;
+		}
+		public function setDescripcion($descripcion){
+			$this->descripcion = $descripcion;
+		}
+		public function setStatus($status){
+			$this->status = $status;
+		}
+		
+
+
+		public function getId(){
+			return $this->id_rol;
+		}
+		public function getNombreRol(){
+			return $this->nombre_rol;
+		}
+		public function getDescripcion(){
+			return $this->descripcion;
+		}
+		public function getStatus(){
+			return $this->status;
 		}
 
 	}

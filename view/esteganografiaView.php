@@ -51,7 +51,10 @@
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <center>
-                                    <h6 class="m-0 font-weight-bold text-primary">Esteganografia</h6>
+                                 <div class="modal-header bg-primary" style="color:#FFF">
+                                <h5  id="exampleModalLabel">Pregunta de Seguridad</h5>
+                            
+                            </div>
                                 </center>
                             </div>
                          
@@ -59,27 +62,14 @@
                         <span class="icon text-white-50">
                             <i class="fas fa-check"></i>
                         </span>
-                        <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarUsuarioModal" data-toggle="modal" data-target="#AgregarUsuarioModal">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
-                            </span>
-                            <span class="text">Registrar</span>
+                       
 
                         </a>
                     </div>
                     <br>
                    
-            </div> <!-- MODAL DE ayuda-->
+            </div> 
 
-            <div class="col-sm-7" style='text-align:right;'>
-                <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
-                    Ayuda
-                </span>
-
-            </div>
-
-
-            <?php require_once 'view/assets/footer.php'; ?>
             <!-- End of Content Wrapper -->
         </div>
         <!-- End of Page Wrapper -->
@@ -93,19 +83,14 @@
                 font-size: 0.8em;
             }
         </style>
-        <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+        <div id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
             <div class="container">
-                <div class="modal-dialog">
+                <div >
                     <div class="" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary" style="color:#FFF">
-                                <h5 class="modal-title" id="exampleModalLabel">Pregunta de Seguridad</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
+                        <div >
+                          
 
-                            <div class="modal-body">
+                            <div >
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                             <div class="form__box">  
@@ -116,13 +101,13 @@
             <label id='imgSelecciona'>Seleccione o suba una imagen</label>
             <br>
 
-            <table div="imagenes" style="width:100%" >
+            <table border="2px black" div="imagenes" style="width:100%" >
               <tbody id='tbody1'>
                <tr>
-                <th style="width:200%" >Imagen 1 <img src="assets/img/seguridad/1.png" class="img-profile" width="100%" ></th>
-                <th style="width:25%" >Imagen 2 <img  onclick="change(this,'2')" class="imageStyle" src="<?php echo constant('URL')?>public/img/seguridad/2.jpg" width="100%" id='img2'></th>
-                <th style="width:25%" >Imagen 3  <img onclick="change(this,'3')"  class="imageStyle" src="<?php echo constant('URL')?>public/img/seguridad/3.jpg" width="100%" id='img3'></th>
-                <th style="width:25%" >Imagen 4  <img onclick="change(this,'4')"  class="imageStyle" src="<?php echo constant('URL')?>public/img/seguridad/4.jpg" width="100%" id='img4'></th>
+                <th style="width:50%" ><img src="assets/img/seguridad/1.png" class="img-profile" width="100%" ></th>
+                <th style="width:50%" ><img  onclick="change(this,'2')" class="imageStyle" src="assets/img/seguridad/2.png" width="100%" id='img3'></th>
+                 <th style="width:50%" ><img  onclick="change(this,'2')" class="imageStyle" src="assets/img/seguridad/3.png" width="100%" id='img4'></th>
+              <th style="width:50%" ><img  onclick="change(this,'2')" class="imageStyle" src="assets/img/seguridad/4.png" width="100%" id='img4'></th>
               </tr>
             </tbody>
             <tbody id='tbody2' style='display:none'>
@@ -181,113 +166,6 @@
 
 
        <!-- MODAL DE MODIFICAR-->
-
-        <div class="modal fade" id="ModificarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
-" style="padding:0;">
-            <form id="modificarUsuario" method="POST">
-                <input type="hidden" id="id_usuario" name="id_usuario">
-                <div class="container">
-                    <div class="modal-dialog">
-                        <div class="" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header bg-primary" style="color:#FFF">
-                                    <h5 class="modal-title">
-                                        <center>Modificar Usuario</center>
-                                    </h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-
-                                <div class="col-sm-7" style='text-align:right;'>
-                                    <span href="#" data-toggle="modal" data-target="ModificarUsuarioModal">
-
-                                    </span>
-                                </div>
-
-                                <div class="modal-body">
-                                    <div class="table-responsive">
-                                        <div class="card-body">
-                                            <div class="row" style='font-size:0.9em;'>
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-6">
-
-                                                            <label for="nombre"><b>Nombre</b></label>
-                                                            <input type="text" class="form-control" name="nombre" id="nombre">
-                                                            <span class="errorNombre" style="color:red"></span>
-                                                        </div>
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="apellido"><b>Apellido</b></label>
-                                                            <input type="text" class="form-control" name="apellido" id="apellido">
-                                                            <span class="errorApellido" style="color:red"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="cedula"><b>Cedula</b></label>
-                                                            <input type="text" class="form-control" name="cedula" id="cedula">
-                                                            <span class="errorCedula" style="color:red"></span>
-                                                        </div>
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="username"><b>Usuario</b></label>
-                                                            <input type="text" class="form-control" name="username" id="username">
-                                                            <span class="errorUsername" style="color:red"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="rol"><b>Roles</b></label>
-                                                            <select style="width: 100%;" class="form-control select2" name="rol" id="rol">
-                                                                <option></option>
-                                                                <?php foreach ($roles as $rols) : ?>
-                                                                    <?php if (!empty($rols['id_rol'])) : ?>
-                                                                        <option><?= $rols['nombre_rol'] ?></option>
-                                                                    <?php endif ?>
-                                                                <?php endforeach ?>
-                                                            </select>
-                                                            <span class="errorRol" style="color:red"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="pass1"><b>Contraseña</b></label>
-                                                            <input type="password" class="form-control" name="pass1" id="pass1" value="" placeholder="Ingresa tu clave">
-                                                            <span class="errorPass1" style="color:red"></span>
-
-                                                        </div>
-                                                        <br>
-                                                        <div class="row">
-                                                            <div class="form-group col-sm-12 col-md-6">
-                                                                <label for="pass2"><b> Repetir Contraseña</b></label>
-                                                                <input type="password" class="form-control" name="pass2" id="pass2" value="" placeholder="Ingresa tu clave">
-                                                                <span class="errorPass2" style="color:red"></span>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="correo"><b>Correo</b></label>
-                                                            <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo" value="<?= $value['correo'] ?>" placeholder="example@gmail.com">
-                                                            <span class="correo" style="color:red"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                                        <a class="ModificarUsuarios btn btn-primary" href="#">Guardar Datos</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
 
 
   <!-- MODAL DE CONSULTAR-->
@@ -423,20 +301,13 @@
                             </div>
 
                             <div class="modal-body">
-                                <p>
-                                    En este modulo podrá visualizar los usuarios que están registrados en el sistema a su vez registrar, eliminar y modificar
+                                <p>La imagen de seguridad es para cada usuario, es necesario para realizar algun cambio que seleccione un diseño o subir uno
                                     <br><br>
-                                    1. Para eliminar un usuario seleccione "eliminar" situada a la derecha del usuario
+                                    1. Para subir una imagen seleccione "agregar imagen" situada a la derecha solo acepta formatos png y jpg de 1 GB.
                                     <br> <br>
-                                    2. Para modificar un usuario seleccione "modificar" situada a izquierda del usuario
+                                    2. Para modificar un usuario seleccione "elegir" alguna de las imagenes prediseñadas conjunto a su palabra de seguridad para poder guardar los cambios
                                     <br><br>
-                                    3. Para registrar un usuario seleccione "registrar" que se muestra en el lado inferior derecho de la tabla
-                                    <br><br>
-                                    4. Para volver al menu principal presione "volver" situado en la parte inferior derecha
-                                    <br><br>
-                                    5. Para cerrar esta ventana emergente y seguir con el sistema presione e "cerrar"
-                                    <br><br>
-                                    6. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo del dato que desea Buscar.
+                                    
                                 </p>
                             </div>
                             <div class="modal-footer">
@@ -449,6 +320,16 @@
             </div>
 
             <!-- MODULo de ELIMINAR -->
+            <!-- MODAL DE ayuda-->
+
+   
+            <div class="col-sm-7" style='text-align:right;'>
+                <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
+                    Ayuda
+                </span>
+
+            <?php require_once 'view/assets/footer.php'; ?>
+            </div>
 
 </body>
 <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>

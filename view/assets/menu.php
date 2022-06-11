@@ -6,9 +6,17 @@
                 <div class="sidebar-brand-icon">
                     <img src="assets/img/logo3.png" style="width:50px;">
                 </div>
-                <div class="sidebar-brand-text mx-3">SUT-Admin-Usuario </div>
-            </a>
+                <div class="sidebar-brand-text mx-3">SUT - <?php 
 
+                    echo ucwords($_SESSION['ut_usuario'])." ".ucwords($_SESSION['ut_nombre']);
+
+
+                    ?>
+                   
+                    
+                </div>
+            </a>    
+                
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -29,7 +37,7 @@
 
             <!-- Nav Item - USUARIOS Menu -->
             <?php
-              
+         
                   if (in_array('usuarios', $_SESSION['ut_permisos']))
             {
                  ?>

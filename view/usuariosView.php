@@ -282,6 +282,12 @@
 
 
                             <div class="modal-footer">
+                                 <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Esteganografia"
+                    >
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Imagen de Seguridad</span>
+                </a>
+                            
                                 <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                                 <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
                             </div>
@@ -388,8 +394,16 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
+                                                         <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Esteganografia"
+                    >
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Imagen de Seguridad</span>
+                </a>
+                            
+                            
                                                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                                                         <a class="ModificarUsuarios btn btn-primary" href="#">Guardar Datos</a>
+
                                                     </div>
                                                 </div>
                                             </div>

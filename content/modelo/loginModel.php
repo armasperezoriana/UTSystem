@@ -60,6 +60,9 @@
           $_SESSION['usuario'] = ($row['usuario']);
           $_SESSION['nombre'] = ($row['nombre']);
           $_SESSION['apellido'] = ($row['apellido']);
+          $_SESSION['cedula'] = ($row['cedula']);
+          $_SESSION['correo'] = ($row['correo']);
+           $_SESSION['nombre_rol'] = ($row['nombre_rol']);
           $_SESSION['rol'] = ($row['rol']);
  
 
