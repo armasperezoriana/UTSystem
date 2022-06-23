@@ -51,15 +51,15 @@
 				$nombre = $_POST['nombre'];
 				$fecha = $_POST['intervalo'];
 				$tipo = $_POST['tipo'];
-				$rif = $_POST['id_taller'];
-				$placa = $_POST['id_vehiculo'];
+				$taller = $_POST['id_taller'];
+				$vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$tiempo = $_POST['tiempo'];
 				$this->mantenimento->setNombre($nombre);
 				$this->mantenimento->setFecha($fecha);
 				$this->mantenimento->setNombreTipo($tipo);
-				$this->mantenimento->setIdTaller($id_taller);
-				$this->mantenimento->setIdVehiculo($id_vehiculo);
+				$this->mantenimento->setIdTaller($taller);
+				$this->mantenimento->setIdVehiculo($vehiculo);
 				$this->mantenimento->setCosto($costo);
 				$this->mantenimento->setTiempo($tiempo);
 

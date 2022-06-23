@@ -6,7 +6,7 @@
 
                 var nombre = $("#AgregarUsuarioModal").find("#nombre").val();                
                 var apellido = $("#AgregarUsuarioModal").find("#apellido").val();
-                var cedula =$("#AgregarUsuarioModal").find("#cedula").val();;
+                var cedula =$("#AgregarUsuarioModal").find("#cedula").val();
                 var username = $("#AgregarUsuarioModal").find("#username").val();
                 var rol = $("#AgregarUsuarioModal").find("#rol").val();
                 var pass = $("#AgregarUsuarioModal").find("#pass2").val();

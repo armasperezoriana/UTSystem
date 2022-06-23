@@ -23,6 +23,7 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
+             //   alert(placa+" "+nombre+" "+intervalo+" "+tipo+" "+taller+" "+placa+" "+costo+" "+tiempo);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Registrar',
@@ -31,13 +32,13 @@ $(document).ready(function () {
                             nombre: nombre,
                             intervalo: intervalo,
                             tipo: tipo,
-                            taller: taller,
-                            placa: placa,
+                            id_taller: taller,
+                            id_vehiculo: placa,
                             costo: costo,
                             tiempo: tiempo,
                         },
                         success: function (respuesta) {
-                            alert(respuesta);
+                      //      alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -105,8 +106,8 @@ $(document).ready(function () {
                             nombre: nombre,
                             intervalo: intervalo,
                             tipo: tipo,
-                            taller: taller,
-                            placa: placa,
+                            id_taller: taller,
+                            id_vehiculo: placa,
                             costo: costo,
                             tiempo: tiempo,
                         },

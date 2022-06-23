@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="table-responsive">
-                                <div class="card-body" style='background:;'>
+                                <div class="card-body" >
                                     <div class="row" style='font-size:0.9em;'>
                                         <table class="table table-striped datatable col-sm-12" id="" >
                                             <thead>
@@ -266,11 +266,11 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" style="width:100%;" name="id_vehiculo" id="id_vehiculo'">
+                                        <select class="form-control select2" style="width:100%;" name="id_vehiculo" id="id_vehiculo">
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option value="<?php if($unidad['id_vehiculo']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa'] ?>  - <?=$unidad['modelo'];?>"></option>
+                                                    <option value="<?php echo $unidad['id_vehiculo'] ;?>" <?php if($unidad['id_vehiculo']==$preventivo['id_vehiculo']){echo "selected";} ?>><?php echo $unidad['placa']." - ".$unidad['modelo'];?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -330,7 +330,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>   
                 <!-- MODAL DE ayuda-->
                     
@@ -432,7 +431,7 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="rol"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" name="id_vehiculo" id="id_vehiculo ">
+                                        <select class="form-control select2" name="id_vehiculo" id="id_vehiculo">
                                             <option></option>
                                            <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>

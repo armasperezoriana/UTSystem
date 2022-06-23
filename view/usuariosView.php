@@ -287,7 +287,7 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Imagen de Seguridad</span>
                 </a>
-                            
+                       <!--  <?php require_once 'view/assets/cedula.php'; ?>-->
                                 <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                                 <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
                             </div>
