@@ -14,7 +14,8 @@
 		private $costo;
 		private $fecha;
 		private $id_taller;
-		 private $status;
+		private $status;
+		private $kilometraje;
 
 
 
@@ -68,7 +69,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, tiempo, id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}', '{$this->tiempo}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
+				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, kilometraje, tiempo, id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}','{$this->kilometraje}', '{$this->tiempo}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -84,7 +85,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', tiempo ='$this->tiempo', id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller' WHERE id_mantenimiento = $this->id_mantenimiento");
+				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', kilometraje = '$this->kilometraje',tiempo ='$this->tiempo', id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller' WHERE id_mantenimiento = $this->id_mantenimiento");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -150,6 +151,9 @@
 		public function setIdTaller($id_taller){
 			$this->id_taller = $id_taller;
 		}
+		public function setKilometraje($kilometraje){
+			$this->kilometraje = $kilometraje;
+		}
 
 		public function getIdMantenimiento(){
 			return $this->id_mantenimiento;
@@ -174,6 +178,9 @@
 		}
 		public function getIdTaller(){
 			return $this->id_taller;
+		}
+		public function getKilometraje(){
+			return $this->kilometraje;
 		}
 	}
 

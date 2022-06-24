@@ -187,6 +187,7 @@
 
         });
 
+
         //
         $('.editar').click(function(e){
             e.preventDefault();
@@ -241,13 +242,20 @@
 
     function validar(modificar = false) {
         var form = "";
+
+       var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expApellido = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expCedula =/^\d{7,14}$/;
+        var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        var expPass = /^.{4,12}$/;
+        var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
+
         if(!modificar){
             form = "#AgregarUsuarioModal";
         }
         else{
             form = "#modificarUsuario";
         }
-        var expNombre = /^[A-Za-z]{3,50}$/;
         var nombre = $(form).find("#nombre").val();
         var rnombre = false;
 
@@ -273,72 +281,77 @@
         var correo = $(form).find("#correo").val();
         var rcorreo = false;
 
-        if (nombre == "") {
-            rnombre = false;
-            $(".errorNombre").html("Debe ingresar su nombre");
-        } else {
-            rnombre = true;
-            $(".errorNombre").html("");
-        }
-        if (apellido == "") {
-            rapellido = false;
-            $(".errorApellido").html("Debe ingresar su apellido");
-        } else {
-            $(".errorApellido").html("");
-            rapellido = true;
-        }
+    if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""){
 
-        if (cedula == "") {
-            rcedula = false;
+        alert("Todos los campos son obligatorios");
+         $(".errorNombre").html("Debe ingresar su nombre");
+           $(".errorApellido").html("Debe ingresar su apellido");
             $(".errorCedula").html("Debe ingresar su cedula");
-        } else {
-            $(".errorCedula").html("");
-            rcedula = true;
-        }
-        if (username == "") {
-            rusername = false;
-            $(".errorUsername").html("Debe ingresar su nombre de usuario");
-        } else {
-            $(".errorUsername").html("");
-            rusername = true;
-        }
-        if (rol == "") {
-            rrol = false;
-            $(".errorRol").html("Debe seleccionar su rol");
-        } else {
-            $(".errorRol").html("");
-            rrol = true;
-        }
-        if (pass1 == "") {
-            rpass1 = false;
-            $(".errorPass1").html("Debe ingresar su Contraseña");
-        } else {
-            $(".errorPass1").html("");
-            rpass1 = true;
-        }
-        if (pass2 == "") {
-            rpass2 = false;
-            $(".errorPass2").html("Confirmar Contraseña");
-        } else {
-            $(".errorPass2").html("");
-            rpass2 = true;
-        }
-        if (pass2 != pass1) {
-            rpass2 = false;
-            $(".errorPass2").html("Las Contraseñas no coinciden");
-        } else {
-            $(".errorPass2").html("");
-            rpass2 = true;
-        }if (correo == "") {
-            rcorreo = false;
-            $(".errorCorreo").html("Debe ingresar un correo electronico");
-        } else {
-            $(".errorCorreo").html("");                                   
-            rcorreo = true;
-        }
+             $(".errorUsername").html("Debe ingresar su nombre de usuario");
+              $(".errorRol").html("Debe seleccionar su rol");
+                 $(".errorPass1").html("Debe ingresar su Contraseña");
+                   $(".errorPass2").html("Confirmar Contraseña");
+                      $(".errorCorreo").html("Debe ingresar un correo electronico valido");
+    }
 
+else{
+        if(!expNombre.test(nombre)){
+                $(".errorNombre").html("El campo nombre solo acepta caracteres");
+                    rnombre = false;
+                    preventDefault();
+        } else {
+                $(".errorNombre").html("Campo validado");
+                $(".errorNombre").attr("style", "color:green");
+                rnombre = true;
+            }
+             if(!expApellido.test(apellido)){
+                $(".errorApellido").html("El campo apellido solo acepta caracteres");
+                    rapellido = false;
+                    preventDefault();
+        } else {
+                $(".errorApellido").html("Campo validado");
+                $(".errorApellido").attr("style", "color:green");
+                rapellido = true;
+            }if(!expCedula.test(cedula)){
+                $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+                   rcedula = false;
+                   preventDefault();
+        } else {
+                $(".errorCedula").html("");
+               rcedula = true;
+                         $(".errorCedula").html("Cédula valida");
+                       $(".errorCedula").attr("style", "color:green");
 
+            }if(!expUsername.test(username)){
+                $(".errorUsername").html("Error el campo usuario acepta letras, numeros, guion y guion bajo");
+                   rusername = false;
+                   preventDefault();
+        } else {
+                $(".errorUsername").html("");
+               rusername = true;
+                $(".errorUsername").html("Usuario valido");
+                 $(".errorUsername").attr("style", "color:green");
+            }if(!expPass.test(pass1)){
+                $(".errorpass").html("La clave acepta de 4 a 12 digitos y solo numeros");
+                   rpass = false;
+                   preventDefault();
+        } else {
+                $(".errorpass").html("Contraseña valida");
+                 $(".errorpass").attr("style", "color:green");
+               rpass = true;
+            }if(!expCorreo.test(correo)){
+                $(".errorCorreo").html("El formato del correo no es valida");
+                   rcorreo = false;
+                    preventDefault();
+        } else {
+                $(".errorCorreo").html("Correo valido");
+                $(".errorCorreo").attr("style", "color:green");
+               rcorreo = true;
+            }
 
+     }
+
+        
         if (rpass1 == true && rpass2 == true) {
             rpassAp = true;
         }
@@ -349,6 +362,7 @@
         }
         return retorno;
     }
+
 
     const mostrar = (id, formulario, modal) => {
         $.ajax({

@@ -47,17 +47,17 @@
 		
 		
 		public function Registrar(){
-			if (!empty($_POST['nombre']) && !empty($_POST['intervalo'])  && !empty($_POST['tipo'])) {
+			if (!empty($_POST['nombre']) && !empty($_POST['intervalo'])  && !empty($_POST['kilometraje'])) {
 				$nombre = $_POST['nombre'];
 				$fecha = $_POST['intervalo'];
-				$tipo = $_POST['tipo'];
 				$taller = $_POST['id_taller'];
 				$vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$tiempo = $_POST['tiempo'];
+				$kilometraje  = $_POST['kilometraje'];
 				$this->mantenimento->setNombre($nombre);
 				$this->mantenimento->setFecha($fecha);
-				$this->mantenimento->setNombreTipo($tipo);
+				$this->mantenimento->setKilometraje($kilometraje);
 				$this->mantenimento->setIdTaller($taller);
 				$this->mantenimento->setIdVehiculo($vehiculo);
 				$this->mantenimento->setCosto($costo);
@@ -90,21 +90,21 @@
 				return false;
 			}
 			$id_mantenimiento = $_POST['id_mantenimiento'];
-			if (!empty($_POST['nombre']) && !empty($_POST['intervalo'])  && !empty($_POST['tipo'])) {
+			if (!empty($_POST['nombre']) && !empty($_POST['intervalo'])  && !empty($_POST['kilometraje'])) {
 				$nombre = $_POST['nombre'];
 				$fecha = $_POST['intervalo'];
-				$tipo = $_POST['tipo'];
-				$id_taller = $_POST['id_taller'];
-				$id_placa = $_POST['id_taller'];
+				$kilometraje = $_POST['kilometraje'];
+				$taller = $_POST['id_taller'];
+				$vehiculo= $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$tiempo = $_POST['tiempo'];
 
 				$this->mantenimento->setIdMantenimiento($id_mantenimiento);
 				$this->mantenimento->setNombre($nombre);
 				$this->mantenimento->setFecha($fecha);
-				$this->mantenimento->setNombreTipo($tipo);
-				$this->mantenimento->setIdVehiculo($id_vehiculo);
-				$this->mantenimento->setIdTaller($id_taller);
+				$this->mantenimento->setKilometraje($kilometraje);
+				$this->mantenimento->setIdTaller($taller);
+				$this->mantenimento->setIdVehiculo($vehiculo);
 				$this->mantenimento->setCosto($costo);
 				$this->mantenimento->setTiempo($tiempo);
 				

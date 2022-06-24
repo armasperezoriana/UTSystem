@@ -249,7 +249,7 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="tipo"><b>Kilometraje</b></label>
                                      <input type="text" class="form-control" name="kilometraje" id="kilometraje">
-                                        <span class="errortipo" style="color:red"></span>
+                                        <span class="errorKilometraje" style="color:red"></span>
                                     </div>
                                   
                             <div class="modal-footer">

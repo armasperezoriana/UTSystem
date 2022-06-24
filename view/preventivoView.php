@@ -158,12 +158,12 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="tipo"><b>Kilometraje</b></label>
-                                      <input type="text" class="form-control-plaintext" disabled value="<?=$preventivo['kilometraje']?>"  name="tipo" id="tipo">
+                                      <input type="text" class="form-control-plaintext" disabled value="<?=$preventivo['kilometraje']?>"  name="kilometraje" id="kilometraje">
                                         <span class="errortipo" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control-plaintext" disabled style="width:100%;" name="tallerM" id="tallerM">
+                                          <select class="form-control-plaintext" disabled style="width:100%;" name="taller" id="taller">
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
@@ -178,11 +178,11 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control-plaintext" disabled style="width:100%;" name="placaM" id="placaM">
+                                        <select class="form-control-plaintext" disabled style="width:100%;" name="vehiculo" id="id_vehiculo">
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option value="<?php if($unidad['placa']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa'] ?>"></option>
+                                                    <option value="<?php if($unidad['placa']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa']?>"></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
@@ -233,25 +233,25 @@
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Nombre"><b>Pieza a modificar</b></label>
-                                        <input type="text" class="form-control" value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
+                                        <input type="text" class="form-control" value="<?=$preventivo['nombre']?>" name="nombreM" id="nombreM">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="intervalo"><b>Fecha del último mantenimiento</b></label>
-                                        <input type="date" class="form-control" value="<?=$preventivo['fecha']?>" style="width:100%;" name="intervalo" id="intervalo">
+                                        <input type="date" class="form-control" value="<?=$preventivo['fecha']?>" style="width:100%;" name="intervaloM" id="intervaloM">
                                         <span class="errorIntervalo" style="color:red"></span>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tipo"><b>Kilometraje</b></label>
-                                      <input type="text" class="form-control" value="<?=$preventivo['kilometraje']?>"  name="tipo" id="tipo">
+                                        <label for="kilometraje"><b>Kilometraje</b></label>
+                                      <input type="text" class="form-control" value="<?=$preventivo['kilometraje']?>"  name="kilometrajeM" id="kilometrajeM">
                                         <span class="errortipo" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control select2 text-left" style="width:100%;" name="id_taller" id="id_taller">
+                                          <select class="form-control select2 text-left" style="width:100%;" name="id_tallerM" id="id_tallerM">
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
@@ -266,7 +266,7 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" style="width:100%;" name="id_vehiculo" id="id_vehiculo">
+                                        <select class="form-control select2" style="width:100%;" name="id_vehiculoM" id="id_vehiculoM">
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
@@ -281,12 +281,12 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="costo"><b>Costo</b></label>
-                                        <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control" name="costo" id="costo">
+                                        <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control" name="costoM" id="costoM">
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="tiempo"><b>Orden de Servicio</b></label>
-                                        <input type="tiempo" class="form-control" value="<?=$preventivo['tiempo']?>" name="tiempo" id="tiempo">
+                                        <input type="tiempo" class="form-control" value="<?=$preventivo['tiempo']?>" name="tiempoM" id="tiempoM">
                                         <span class="errorTiempo" style="color:red"></span>
                                     </div>
                                 </div>
@@ -408,8 +408,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="descripcion"><b>Descripcion</b></label>
-                                      <input type="text" class="form-control tipo" name="tipo" id="tipo">
+                                        <label for="descripcion"><b>Kilometraje</b></label>
+                                      <input type="text" class="form-control kilometraje" name="kilometraje" id="kilometraje">
                                         <span class="errortipo" style="color:red"></span>
                                     </div>
 

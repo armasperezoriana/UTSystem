@@ -218,31 +218,31 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="cedula"><b>Cédula</b></label>
-                                        <input type="text" class="form-control" name="cedula" id="cedula">
+                                        <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Ingrese su cedula" title="Solo puede ingresar de 7 a 10 numeros"  maxlength="9" required>
                                         <span class="errorCedula" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="nombre"><b>Nombre</b></label>
-                                        <input type="text" class="form-control" name="nombre" id="nombre">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" pattern="^[a-zA-Z]{3,20}$" placeholder="Ingrese su nombre" required>
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="apellido"><b>Apellido</b></label>
-                                        <input type="text" class="form-control" name="apellido" id="apellido">
+                                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
                                         <span class="errorApellido" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="username"><b>Usuario</b></label>
-                                        <input type="text" class="form-control" name="username" id="username">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" required>
                                         <span class="errorUsername" style="color:red"></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-12">
                                         <label for="rol"><b>Rol</b></label>
-                                        <select class="form-control select2" name="rol" id="rol">
+                                        <select class="form-control select2" name="rol" id="rol" placeholder="Selecciona un rol">
                                             <option></option>
                                             <?php foreach ($roles as $rols) : ?>
                                                 <?php if (!empty($rols['id_rol'])) : ?>
@@ -256,7 +256,7 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="pass1"><b>Contraseña</b></label>
-                                        <input type="password" class="form-control" name="pass1" id="pass1">
+                                        <input type="password" class="form-control" name="pass1" id="pass1" placeholder="Ingrese su contraseña"  required>
                                         <span class="errorPass1" style="color:red"></span>
                                         <div class="input-group-append">
                                             <center>
@@ -266,7 +266,7 @@
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="pass2"><b>Repite la Contraseña</b></label>
-                                        <input type="password" class="form-control" name="pass2" id="pass2">
+                                        <input type="password" class="form-control" name="pass2" id="pass2" placeholder="Repite tu clave" required>
                                         <span class="errorPass2" style="color:red"></span>
                                     </div>
                                 </div>
@@ -287,7 +287,7 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Imagen de Seguridad</span>
                 </a>
-                       <!--  <?php require_once 'view/assets/cedula.php'; ?>-->
+                     
                                 <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                                 <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
                             </div>

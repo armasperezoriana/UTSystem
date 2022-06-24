@@ -189,6 +189,11 @@ $('body').on('click', '.habilitar', function (e) {
 
 function validar(modificar = false) {
     var form = "";
+
+       var exkilometraje = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+       var expPlaca = /^[\w]+$/i;
+
+
     var validado = true;
     if (!modificar) {
         form = "#AgregarVehiculosModal";
@@ -198,7 +203,7 @@ function validar(modificar = false) {
     }
     var placa = $(form).find("#placa").val();
     var rplaca = false;
-    var patternPlaca = /^[\w]+$/i;
+   
 
 
     var modelo = $(form).find("#modelo").val();
@@ -213,31 +218,27 @@ function validar(modificar = false) {
     var kilometraje = $(form).find("#kilometraje").val();
     var rkilometraje = false;
 
-    if (placa == "") {
-        validado = false;
-        $(".errorPlaca").html("Debe ingresar su placa");
-    } else {
-        $(".errorPlaca").html("");
-    }
-    if (modelo == "") {
-        validado = false;
-        $(".errorModelo").html("Debe ingresar el modelo de la unidad");
-    } else {
-        $(".errorModelo").html("");
-    }
-    if (funcionamiento == "") {
-        validado = false;
-        $(".errorFuncionamiento").html("Debe seleccionar si esta funcionamiento");
-    } else {
-        $(".errorFuncionamiento").html("");
-    }
-    if (kilometraje == "") {
-        validado = false;
-        $(".errorKilometraje").html("Debe seleccionar si esta kilometraje");
-    } else {
-        $(".errorKilometraje").html("");
-    }
+    if (placa == ""| modelo== ""|kilometraje== "") {
+         validado = false;
+        alert("Todos los campos son obligatorios");
+    $(".errorPlaca").html("Debe ingresar su placa");
+   $(".errorModelo").html("Debe ingresar el modelo de la unidad");
+    $(".errorKilometraje").html("Debe ingresar el kilometraje del vehiculo");
+
+ } else{
+    if(!expModelo.test(Modelo)){
+                $(".errorModelo").html("El modelo nombre solo acepta caracteres");
+                    rnombre = false;
+                    preventDefault();
+        } else {
+                $(".errorNombre").html("Campo validado");
+                $(".errorNombre").attr("style", "color:green");
+                rnombre = true;
+            }
+
+      
     return validado;
+   }
 }
 
  $('.editar').click(function(e){
