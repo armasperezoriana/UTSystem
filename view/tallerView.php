@@ -189,24 +189,24 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="nombre"><b>Nombre</b></label>
-                                        <input type="text" class="form-control" name="nombre" id="nombre">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese nombre del taller">
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="rif"><b>RIF</b></label>
-                                        <input type="text" class="form-control" name="rif" id="rif">
+                                        <input type="text" class="form-control" name="rif" id="rif" placeholder="Ej: J-12345678-1">
                                         <span class="errorRif" style="color:red"></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="direccion"><b>Direccion</b></label>
-                                        <input type="text" class="form-control" name="direccion" id="direccion">
+                                        <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ingrese la direccion del taller">
                                         <span class="errorDireccion" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="contacto"><b>Informacion Contacto</b></label>
-                                        <input type="text" class="form-control" name="informacion_contacto" id="informacion_contacto">
+                                        <input type="text" class="form-control" name="informacion_contacto" id="informacion_contacto" placeholder="0424-000-000-0">
                                         <span class="errorContacto" style="color:red"></span>
                                     </div>
                                 </div>

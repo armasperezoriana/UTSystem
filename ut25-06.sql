@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2022 a las 22:19:38
+-- Tiempo de generación: 25-06-2022 a las 16:57:39
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -570,7 +570,23 @@ INSERT INTO `bitacora` (`id_bitacora`, `cedula`, `usuario`, `operacion`, `host`,
 (553, '1', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-06-11', '12:03:04', 'Seguridad Roles', NULL),
 (554, '4', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-06-11', '12:03:11', 'Seguridad Roles', NULL),
 (555, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-06-11', '14:25:20', 'Usuario', NULL),
-(556, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-06-11', '14:26:29', 'Usuario', NULL);
+(556, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-06-11', '14:26:29', 'Usuario', NULL),
+(557, '1', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-06-22', '20:14:49', 'Mantenimiento', NULL),
+(572, '8', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '10:10:46', 'Mantenimiento', NULL),
+(573, '8', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '10:11:03', 'Mantenimiento', NULL),
+(574, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '10:19:42', 'Mantenimiento', NULL),
+(575, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '10:23:44', 'Mantenimiento', NULL),
+(576, '8', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '10:29:41', 'Mantenimiento', NULL),
+(577, '8', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '10:30:54', 'Mantenimiento', NULL),
+(578, '6', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-06-23', '11:44:57', 'Mantenimiento', NULL),
+(579, '6', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '11:45:34', 'Mantenimiento', NULL),
+(580, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-06-23', '11:45:52', 'Mantenimiento', NULL),
+(581, 'cdfvdvgf', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-23', '20:15:51', 'Usuario', NULL),
+(582, 'papap', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-23', '21:24:44', 'Usuario', NULL),
+(583, '55856336', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-23', '21:31:09', 'Usuario', NULL),
+(584, '88998917', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-06-23', '21:34:52', 'Usuario', NULL),
+(585, '010101', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-06-23', '21:36:56', 'Usuario', NULL),
+(586, 'cdfvdvgf', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-06-23', '21:38:17', 'Usuario', NULL);
 
 -- --------------------------------------------------------
 
@@ -636,7 +652,9 @@ CREATE TABLE `mantenimientos` (
 --
 
 INSERT INTO `mantenimientos` (`id_mantenimiento`, `kilometraje`, `tiempo`, `id_vehiculo`, `nombre`, `costo`, `fecha`, `status`, `id_taller`) VALUES
-(1, 300, '1', 8, 'Bujias', '500', '2022-06-01', 1, 1);
+(1, 300, '1', 8, 'Bujias', '500', '2022-06-01', 1, 1),
+(2, 350, '1', 1, 'Pastillas de freno', '15', '2022-06-02', 1, 3),
+(3, 300, '7', 6, 'Cambio de Aceite', '15.0', '2022-02-15', 1, 2);
 
 --
 -- Disparadores `mantenimientos`
@@ -653,22 +671,6 @@ DELIMITER $$
 CREATE TRIGGER `mantenimientos_delete` AFTER DELETE ON `mantenimientos` FOR EACH ROW INSERT INTO bitacora (host,usuario, fecha, hora, cedula, tabla, operacion) VALUES (substring(USER(), (INSTR (USER(), '@')+1)),CURRENT_USER, NOW(), NOW(),OLD.id_vehiculo,'Mantenimientos', 'Se elimino un mantenimiento asociado a la placa señalada')
 $$
 DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `orden_servicio`
---
-
-CREATE TABLE `orden_servicio` (
-  `id_orden` int(11) NOT NULL,
-  `id_vehiculo` int(11) NOT NULL,
-  `id_taller` int(11) NOT NULL,
-  `nombre_taller` varchar(30) COLLATE utf8_bin NOT NULL,
-  `id_mantenimiento` int(11) NOT NULL,
-  `fecha` date NOT NULL DEFAULT current_timestamp(),
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -993,9 +995,13 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `cedula`, `usuario`, `nombre`, `apellido`, `contrasena`, `rol`, `status`, `correo`, `fechaRecuperacion`) VALUES
 (1, '26561633', 'ogap', 'Oriana ', 'Armas', '1234', 1, 1, 'armasoriana98', '2022-06-11 18:26:29'),
-(2, '010101', 'usuario', 'usuario', 'usuario', 'usuario', 3, 1, 'usuario@gmail.com', '2022-06-01 15:18:46'),
+(2, '154869364', 'usuario', 'usuario', 'usuario', '123456', 3, 1, 'usuario@gmail.com', '2022-06-24 01:36:56'),
 (3, '26561633aa', 'secretaria', 'Santiago', 'Rodriguez', '1234', 2, 1, 'armasoriana98@gmail.com', '2022-06-09 02:42:20'),
-(4, '10847103', 'usuario', 'Oriana', 'dxcvcv', 'usuario', 3, 1, 'administrador@gmail.com', '2022-06-09 02:27:36');
+(4, '10847103', 'usuario', 'Oriana', 'dxcvcv', 'usuario', 3, 1, 'administrador@gmail.com', '2022-06-09 02:27:36'),
+(5, '98657412', 'ogapcvc55', 'vcvc', 'cvcv', '141414', 1, 1, 'administrador@gmail.com', '2022-06-24 01:38:17'),
+(6, 'papap', '.', 'Juana ', 'Lacuaban a', '1234', 1, 1, 'Secretaria', '2022-06-24 01:24:44'),
+(7, '558563363', 'titimepregunto_', 'Mcqueen', 'GABRIELA', '123454', 1, 1, 'Secretaria@gmail.com', '2022-06-24 01:31:09'),
+(8, '88998917', 'titimepregunto_', 'Wayando', 'Bailalo', '123454', 1, 1, 'armasoriana107@gmail.com', '2022-06-24 01:34:52');
 
 --
 -- Disparadores `usuarios`
@@ -1078,15 +1084,6 @@ ALTER TABLE `mantenimientos`
   ADD UNIQUE KEY `id_placa` (`id_vehiculo`);
 
 --
--- Indices de la tabla `orden_servicio`
---
-ALTER TABLE `orden_servicio`
-  ADD PRIMARY KEY (`id_orden`),
-  ADD UNIQUE KEY `id_taller` (`id_taller`),
-  ADD UNIQUE KEY `id_vehiculo` (`id_vehiculo`),
-  ADD KEY `id_mantenimiento` (`id_mantenimiento`);
-
---
 -- Indices de la tabla `permisos`
 --
 ALTER TABLE `permisos`
@@ -1150,7 +1147,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=557;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=587;
 
 --
 -- AUTO_INCREMENT de la tabla `choferes`
@@ -1163,12 +1160,6 @@ ALTER TABLE `choferes`
 --
 ALTER TABLE `mantenimientos`
   MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT de la tabla `orden_servicio`
---
-ALTER TABLE `orden_servicio`
-  MODIFY `id_orden` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `reparaciones`
@@ -1192,14 +1183,6 @@ ALTER TABLE `choferes`
 ALTER TABLE `mantenimientos`
   ADD CONSTRAINT `fk_idtaller` FOREIGN KEY (`id_taller`) REFERENCES `taller` (`id_taller`),
   ADD CONSTRAINT `fk_idvehiculo` FOREIGN KEY (`id_vehiculo`) REFERENCES `vehiculos` (`id_vehiculo`);
-
---
--- Filtros para la tabla `orden_servicio`
---
-ALTER TABLE `orden_servicio`
-  ADD CONSTRAINT `fk_id_placa` FOREIGN KEY (`id_vehiculo`) REFERENCES `mantenimientos` (`id_vehiculo`),
-  ADD CONSTRAINT `fk_taller` FOREIGN KEY (`id_taller`) REFERENCES `mantenimientos` (`id_taller`),
-  ADD CONSTRAINT `id_mantenimiento` FOREIGN KEY (`id_mantenimiento`) REFERENCES `mantenimientos` (`id_mantenimiento`);
 
 --
 -- Filtros para la tabla `reparaciones`

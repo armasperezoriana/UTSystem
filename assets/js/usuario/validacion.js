@@ -283,7 +283,11 @@
 
     if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""){
 
-        alert("Todos los campos son obligatorios");
+         swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de llenar todos los campos',
+                                    });
          $(".errorNombre").html("Debe ingresar su nombre");
            $(".errorApellido").html("Debe ingresar su apellido");
             $(".errorCedula").html("Debe ingresar su cedula");

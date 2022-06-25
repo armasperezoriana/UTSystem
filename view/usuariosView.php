@@ -390,7 +390,7 @@
                                                         <div class="form-group col-sm-12 col-md-12">
                                                             <label for="correo"><b>Correo</b></label>
                                                             <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo" value="<?= $value['correo'] ?>" placeholder="example@gmail.com">
-                                                            <span class="correo" style="color:red"></span>
+                                                            <span class="errorcorreo" style="color:red"></span>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">

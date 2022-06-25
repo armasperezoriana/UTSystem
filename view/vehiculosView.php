@@ -222,7 +222,6 @@
                                         <label for="modelo"><b>Modelo</b></label>
                                         <select class="form-control select2" name="modelo" id="modelo">
                                                   <option value="">...</option>
-                                                <option value="Otro">Otro</option>
                                                 <option value="Encava">Encava</option>
                                                 <option value="BEDFORD">BEDFORD</option>
                                                 <option value="Caio">Caio</option>
@@ -231,6 +230,8 @@
                                                 <option value="Kia">Kia</option>
                                                 <option value="Iveco">Iveco</option>
                                                 <option value="Yutong">Yutong</option>
+                                                   <option value="Autopago">Autopago</option>
+                                                     <option value="Otro">Otro</option>
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
                                     </div>
@@ -242,7 +243,7 @@
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>
                                             </select>
-                                         <span class="errorModelo" style="color:red"></span>
+                                         <span class="errorFuncionamiento" style="color:red"></span>
                                     </div>
        
 
@@ -314,6 +315,9 @@
                                                 <option value="Kia">Kia</option>
                                                 <option value="Iveco">Iveco</option>
                                                 <option value="Yutong">Yutong</option>
+                                                    <option value="Microbús">Microbús</option>
+                                                     <option value="Freightliner">Freightliner</option>
+                                                      <option value="Kenworth">Kenworth</option>
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
                                     </div>

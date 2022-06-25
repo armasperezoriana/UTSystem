@@ -31,7 +31,7 @@ $(document).ready(function(){
                             informacion_contacto : informacion_contacto ,
                         },
                         success: function(respuesta){
-                            // alert(respuesta);
+                             //alert(respuesta);
                             if(respuesta=="1"){
                                 swal.fire({
                                     type: 'success',
@@ -83,7 +83,7 @@ $(document).ready(function(){
                 var direccion =$("#modificarTaller").find("#direccion").val();
                 var informacion_contacto = $("#modificarTaller").find("#informacion_contacto").val();
                
-                // alert(pass);
+            // alert(pass);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -106,7 +106,8 @@ $(document).ready(function(){
                             informacion_contacto : informacion_contacto ,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                         alert( nombre + ' ' + rif + ' ' + direccion + ' ' + informacion_contacto+' ' );
+       
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -145,8 +146,6 @@ $(document).ready(function(){
         });
 
 
-
-
 function validar(){
     var nombre = $("#nombre").val();
     var rnombre = false;
@@ -159,46 +158,64 @@ function validar(){
 
     var contacto = $("#informacion_contacto").val();
     var rcontacto = false;
+  
+     var expDireccion = /^[a-zA-ZÀ-ÿ\s]{5,40}$/; // Letras, mayusculas minisculas y acentos,
+     var expRif = /^[JGVEP][-][0-9]{8}[-][0-9]{1}$/;
+     var expContacto = /^\d{11,12}$/; // 04245448669 7 a 14 numeros
+     var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras y espacios, pueden llevar 
 
-
-    if(nombre==""){
-        rnombre = false;
-        $(".errorNombre").html("Debe ingresar su nombre");
-    var rol = $("#rol").val();
-    }else{
-        rnombre = true;
-        $(".errorNombre").html("");
-    }
-    if(rif==""){
-        rrif = false;
-        $(".errorRif").html("Debe ingresar el registro fiscal del taller");
-    }else{
-        $(".errorRif").html("");
-        rrif = true;
-    }
-
-    if(direccion==""){
-        rdireccion = false;
+    if(nombre==""|rif==""|direccion==""|contacto==""){
+      
+       swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de llenar todos los campos',
+                                    });
+        $(".errorNombre").html("Debe ingresar el nombre del taller");
         $(".errorDireccion").html("Debe ingresar la direccion del taller");
-    }else{
-        $(".errorDireccion").html("");
-        rdireccion = true;
+          $(".errorRif").html("Debe ingresar el registro fiscal del taller");
+             $(".errorContacto").html("Debe ingresar un numero de contacto");
+             return false;
     }
-    if(contacto==""){
-        rcontacto = false;
-        $(".errorContacto").html("Debe ingresar un numero de contacto");
-    }else{
-        $(".errorContacto").html("");
-        rcontacto = true;
-    }
-   
-    var retorno = false;
-    if(rnombre==true && rcontacto== true){
-        retorno=true;
-    }
-    return retorno;
+    else{
+           if(!expNombre.test(nombre)){
+                $(".errorNombre").html("Este campo solo acepta caracteres, minimo 3");
+                    rnombre = false;
+                            preventDefault();
+                }else{
+                        $(".errorNombre").html("Campo validado");
+                        $(".errorNombre").attr("style", "color:green");
+                         rnombre = true;
+            }if(!expRif.test(rif)){
+                        $(".errorRif").html("El formato aceptado es una letra mayuscula (JGVEP) - 8 digitos - y un nro final");
+                            rrif = false;
+                                    preventDefault();
+                        }else{
+                                $(".errorRif").html("Campo validado");
+                                $(".errorRif").attr("style", "color:green");
+                                rrif = true;
+                    }if(!expDireccion.test(direccion)){
+                        $(".errorDireccion").html("Solo se aceptan caracteres, minimo 5");
+                            rdireccion = false;
+                                  //  preventDefault();
+                            }else{
+                                                $(".errorDireccion").html("Campo validado");
+                                                $(".errorDireccion").attr("style", "color:green");
+                                                rdireccion = true;
+                                    }if(!expContacto.test(contacto)){
+                                        $(".errorContacto").html("Digite un numero de telefono valido, solo numeros");
+                                            rcontacto = false;
+                                                    preventDefault();
+                                        }else{
+                                                $(".errorContacto").html("Campo validado");
+                                                $(".errorContacto").attr("style", "color:green");
+                                                rrif = true;
+                                    }
+                        
+                    }
+     return true;  
+    
 }
-
   $('.editar').click(function(e){
             e.preventDefault();
             mostrar($(this).attr('data-id'), "#modificarTaller", "#ModificarTallerModal");

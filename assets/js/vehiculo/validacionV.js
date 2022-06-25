@@ -84,7 +84,7 @@ $(".ModificarVehiculos").click(function() {
                 var placa= $("#modificarVehiculo").find("#placaM").val();
                 var funcionamiento = $("#modificarVehiculo").find("#funcionamientoM").val();
                var kilometraje = $("#modificarVehiculo").find("#kilometrajeM").val();
-                // alert(pass)
+                 alert(pass)
 
                 swal.fire({
                     title: "¿Desea guardar los datos del vehiculo que han sido modificados?",
@@ -108,7 +108,7 @@ $(".ModificarVehiculos").click(function() {
                                  kilometraje: kilometraje,
                             },
                             success: function(respuesta) {
-                                 //alert(respuesta);
+                                 alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -190,8 +190,8 @@ $('body').on('click', '.habilitar', function (e) {
 function validar(modificar = false) {
     var form = "";
 
-       var exkilometraje = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
-       var expPlaca = /^[\w]+$/i;
+       var expKilometraje = /^[1-9]\d*(,\d+)?$/;// Numeros de 0 al 9 seguido de coma
+       var expPlaca = /^([A-Z]{2,3}[0-9]{3})$/;  // Dos o más letras seguidas por tres a cinco números
 
 
     var validado = true;
@@ -218,29 +218,41 @@ function validar(modificar = false) {
     var kilometraje = $(form).find("#kilometraje").val();
     var rkilometraje = false;
 
-    if (placa == ""| modelo== ""|kilometraje== "") {
+    if (placa ==""| modelo==""|kilometraje==""|funcionamiento=="") {
          validado = false;
-        alert("Todos los campos son obligatorios");
+       swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de llenar todos los campos',
+                                    });
     $(".errorPlaca").html("Debe ingresar su placa");
-   $(".errorModelo").html("Debe ingresar el modelo de la unidad");
+    $(".errorModelo").html("Debe seleccionar el modelo de la unidad");
+    $(".errorFuncionamiento").html("Debe indicar si la unidad esta operativa");
     $(".errorKilometraje").html("Debe ingresar el kilometraje del vehiculo");
 
- } else{
-    if(!expModelo.test(Modelo)){
-                $(".errorModelo").html("El modelo nombre solo acepta caracteres");
-                    rnombre = false;
+ }else{
+    if(!expKilometraje.test(kilometraje)){
+                $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
+                    rkilometraje = false;
                     preventDefault();
         } else {
-                $(".errorNombre").html("Campo validado");
-                $(".errorNombre").attr("style", "color:green");
-                rnombre = true;
+                $(".errorKilometraje").html("Campo validado");
+                $(".errorKilometraje").attr("style", "color:green");
+                rkilometraje = true;
             }
-
+            if(!expPlaca.test(placa)){
+                $(".errorPlaca").html("El campo placa acepta 3 letras mayusculas y 3 numeros maximo 6 digitos");
+                    rplaca = false;
+                    preventDefault();
+        } else {
+                $(".errorPlaca").html("Placa valida");
+                $(".errorPlaca").attr("style", "color:green");
+                rplaca = true;
+            }
       
     return validado;
    }
 }
-
  $('.editar').click(function(e){
     console.log("1");
             e.preventDefault();
