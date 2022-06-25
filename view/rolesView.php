@@ -264,8 +264,8 @@
                             <div class="modal-body">
                                 <div class="row">
 
-                                     <div class="form-group col-sm-12 col-md-6">
-                                  <div class="form-group col-sm-12 col-md-6">
+                                     <div class="form-group col-sm-12 col-md-12">
+                                  <div class="form-group col-sm-12 col-md-12">
                                         <label for="nombreRol"><b>Nombre del Rol</b></label>
                                         <input type="text" class="form-control" name="nombreRol" id="nombreRol">
                                         <span class="errornombreRol" style="color:red"></span>
