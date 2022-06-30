@@ -276,7 +276,7 @@ $(document).ready(function () {
             validado = true;
         }
         // alert(form+": "+validado);
-      //  return validado;
+      return true;
 
       }
     }
