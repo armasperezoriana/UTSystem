@@ -197,7 +197,7 @@ if (!modificar) {
     else {
         form = "#ModificarVehiculoModal";
     }
-       var expKilometraje = /^[1-9]\d*(,\d+)?$/;// Numeros de 0 al 9 seguido de coma
+       var expKilometraje = /^[1-9]\d*(,\d+)?{1,5}$/;// Numeros de 0 al 9 seguido de coma
        var expPlaca = /^([A-Z]{2,3}[0-9]{3})$/;  // Dos o más letras seguidas por tres a cinco números
 
 
@@ -232,7 +232,7 @@ if (!modificar) {
     if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros, incluyendo decimales y coma");
                     rkilometraje = false;
-                    preventDefault();
+                    //preventDefault();
         } else {
                 $(".errorKilometraje").html("Campo validado");
                 $(".errorKilometraje").attr("style", "color:green");

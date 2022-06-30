@@ -144,12 +144,12 @@
                                             <?php endif ?>
                                         <?php endforeach ?>
                                     </select>
-                                    <span class="errorPlaca" style="color:red"></span>
+                                
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="intervalo"><b>Fecha de la reparación</b></label>
                                     <input type="date" class="form-control-plaintext" disabled style="width:100%;" value="<?=$rep['fecha']?>" name="intervalo" id="intervalo">
-                                    <span class="errorIntervalo" style="color:red"></span>
+                                    
                                 </div>
                             </div>
                             <br>
@@ -162,7 +162,7 @@
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="costo"><b>Costo</b></label>
                                     <input type="number" step="0.1" class="form-control-plaintext" disabled style="width:100%;" value="<?=$rep['costo']?>" name="costo" id="costo">
-                                    <span class="errorcosto" style="color:red"></span>
+                            
                                 </div>
                             </div>
                             <br>
@@ -178,12 +178,11 @@
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
-                                    <span class="errorTaller" style="color:red"></span>
+                                 
                                 </div>
                                  <div class="form-group col-sm-12 col-md-6">
                                     <label for="descripcion"><b>Descripción</b></label>
                                     <input type="text" class="form-control-plaintext" disabled style="width:100%;" value="<?=$rep['descripcion']?>" name="descripcion" id="descripcion">
-                                    <span class="errorDescripcion" style="color:red"></span>
                                 </div>
                             </div>
                         </div>
@@ -374,7 +373,7 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="costo"><b>Costo</b></label>
-                                    <input type="number" step="0.1" class="form-control" name="costo" id="costo">
+                                    <input type="text" step="0.1" class="form-control" name="costo" id="costo">
                                     <span class="errorcosto" style="color:red"></span>
                                 </div>
                             </div>
