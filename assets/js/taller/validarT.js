@@ -106,7 +106,7 @@ $(document).ready(function(){
                             informacion_contacto : informacion_contacto ,
                             },
                             success: function(respuesta) {
-                         alert( nombre + ' ' + rif + ' ' + direccion + ' ' + informacion_contacto+' ' );
+                      alert( nombre + ' ' + rif + ' ' + direccion + ' ' + informacion_contacto+' ' );
        
                                 if (respuesta == "1") {
                                     swal.fire({
@@ -146,23 +146,32 @@ $(document).ready(function(){
         });
 
 
-function validar(){
-    var nombre = $("#nombre").val();
+function validar(modificar = false){
+    var form = "";
+      if(!modificar){
+            form = "#AgregarTallerModal";
+        }
+        else{
+            form = "#modificarTaller";
+        }
+    var nombre = $(form).find("#nombre").val();
     var rnombre = false;
 
-    var rif = $("#rif").val();
+    var rif = $(form).find("#rif").val();
     var rrif = false;
 
-    var direccion = $("#direccion").val();
+    var direccion = $(form).find("#direccion").val();
     var rdireccion = false;
 
-    var contacto = $("#informacion_contacto").val();
+    var contacto = $(form).find("#informacion_contacto").val();
     var rcontacto = false;
   
      var expDireccion = /^[a-zA-ZÀ-ÿ\s]{5,40}$/; // Letras, mayusculas minisculas y acentos,
      var expRif = /^[JGVEP][-][0-9]{8}[-][0-9]{1}$/;
      var expContacto = /^\d{11,12}$/; // 04245448669 7 a 14 numeros
      var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras y espacios, pueden llevar 
+
+   
 
     if(nombre==""|rif==""|direccion==""|contacto==""){
       

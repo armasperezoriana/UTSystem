@@ -84,7 +84,7 @@
                                         <table class="table table-striped datatable col-sm-12" id="" >
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                            
                                                     <th>Vehiculo</th>
                                                     <th>Tipo de Mantenimiento</th>
                                                     <th>Orden de Servicio</th>
@@ -100,7 +100,7 @@
                                                 <?php foreach ($mantenimento as $preventivo): ?>
                                                     <?php if (!empty($preventivo['id_mantenimiento'])): ?>
                                                 <tr>
-                                                    <td><?=$preventivo['id_mantenimiento']?></td>
+                                                   
                                                     <td><?=$preventivo['id_vehiculo']?></td>
                                                     <td><?=$preventivo['nombre']?></td>
                                                     <td><?=$preventivo['tiempo']?></td>
@@ -151,7 +151,7 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="intervalo"><b>Fecha del último mantenimiento</b></label>
                                         <input type="date" class="form-control-plaintext" disabled  value="<?=$preventivo['fecha']?>" style="width:100%;" name="intervalo" id="intervalo">
-                                        <span class="errorIntervalo" style="color:red"></span>
+                                
                                     </div>
                                 </div>
                                 <br>
@@ -162,31 +162,30 @@
                                         <span class="errortipo" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control-plaintext" disabled style="width:100%;" name="taller" id="taller">
+                                     <label for="taller"><b>Taller</b></label>
+                                          <select class="form-control select2 text-left" style="width:80%;" name="id_tallerM" id="id_tallerM" disabled>
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
-                                                    <option value="<?=$ta['id_vehiculo']?>" <?php if($ta['rif']==$preventivo['rif']){ echo "selected"; } ?> ><?=$ta['nombre']?></option>
+                                                    <option value="<?=$ta['id_taller']?>" <?php if($ta['id_taller']==$preventivo['id_taller']){ echo "selected"; } ?> ><?=$ta['nombre']?> - <?=$ta['rif']?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="errorTaller" style="color:red"></span>
+                                   
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
-                                    <div class="form-group col-sm-12">
+                                    <div class="form-group col-sm-8">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control-plaintext" disabled style="width:100%;" name="vehiculo" id="id_vehiculo">
+                                         <select class="form-control select2" style="width:60%;" name="id_vehiculoM" id="id_vehiculoM" disabled>
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option value="<?php if($unidad['placa']==$preventivo['placa']){ echo "selected"; } ?> ><?= $unidad['placa']?>"></option>
+                                                    <option value="<?php echo $unidad['id_vehiculo'] ;?>" <?php if($unidad['id_vehiculo']==$preventivo['id_vehiculo']){echo "selected";} ?>><?php echo $unidad['placa']." - ".$unidad['modelo'];?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="errorPlaca" style="color:red"></span>
                                     </div>
                                 </div>
                                     <br>
@@ -194,12 +193,12 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="costo"><b>Costo</b></label>
                                         <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control-plaintext" disabled name="costo" id="costo">
-                                        <span class="errorCosto" style="color:red"></span>
+                            
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="tiempo"><b>Orden de Servicio</b></label>
                                         <input type="tiempo" class="form-control-plaintext" disabled  value="<?=$preventivo['tiempo']?>" name="tiempo" id="tiempo">
-                                        <span class="errorTiempo" style="color:red"></span>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -376,7 +375,7 @@
                                                 <option value="Bujias">Bujias</option>
                                                 <option value="Pastillas de freno">Pastillas de freno</option>
                                                 <option value="Filtro de Aceite">Filtro de Aceite</option>
-                                                <option value="antenimiento programado">Mantenimiento programado</option>
+                                                <option value="Mantenimiento programado">Mantenimiento programado</option>
                                                 <option value="Cauchos">Cauchos</option>
                                                 <option value="Bateria">Bateria</option>
                                                 <option value="Anticongelante adicional">Anticongelante adicional</option>
@@ -410,7 +409,7 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="descripcion"><b>Kilometraje</b></label>
                                       <input type="text" class="form-control kilometraje" name="kilometraje" id="kilometraje">
-                                        <span class="errortipo" style="color:red"></span>
+                                        <span class="errorKilometraje" style="color:red"></span>
                                     </div>
 
 
@@ -430,24 +429,23 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12">
-                                      <label for="rol"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" name="id_vehiculo" id="id_vehiculo">
+                                      <label for="unidad"><b>Unidad que se le realizo Mantenimiento</b></label>
+                                        <select class="form-control select2" name="id_vehiculo" id="id_vehiculo"><span class="errorUnidad" style="color:red"></span>
                                             <option></option>
                                            <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
                                                     <option value="<?=$unidad['id_vehiculo']?>"><?=$unidad['placa'];?>
                                                      - <?=$unidad['modelo'];?></option>
-                                                 
                                                     </option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="errorPlaca" style="color:red"></span>
+                                        <span class="errorUnidad" style="color:red"></span>
                                     </div>
 
                                      <div class="form-group col-sm-12 col-md-6">
                                         <label for="costo"><b>Costo</b></label>
-                                        <input type="number" step="0.1" class="form-control" name="costo" id="costo">
+                                        <input type="text" step="0.1" class="form-control" name="costo" id="costo">
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
                                      <div class="form-group col-sm-12 col-md-6">

@@ -132,13 +132,11 @@
                                     <div class=" placa placa<?=$value['id_ruta'];?>" style="width:100%;text-align:left;" name="placa" id="placa">
                                         <option><?=$value['placa'];?></option>
                                     </div>
-                                    <span class="errorPlaca" style="color:red"></span>
                                 </div>
                                 
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="Modelo"><b>Dirección</b></label>
                                       <input type="text" class="form-control direccion_ruta direccion_ruta<?=$value['id_ruta'];?>" style='background:none;border:none;' disabled value="<?=$value['direccion_ruta'];?>" name="direccion_ruta" id="direccion_ruta">
-                                    <span class="errorDireccion" style="color:red"></span>
                                 </div>
                             </div>
                             <br>
@@ -146,20 +144,17 @@
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="nombrer"><b>Nombre de la Ruta</b></label>
                                      <input type="text" class="form-control nombre_ruta nombre_ruta<?=$value['id_ruta'];?>" style='background:none;border:none;' disabled value="<?=$value['nombre_ruta'];?>" name="nombre_ruta" id="nombre_ruta">
-                                    <span class="errorNombre" style="color:red"></span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="hora"><b>Hora</b></label>
                                     <br><br>
                                     <input type="time" class="form-control hora_salida hora_salida<?=$value['id_ruta'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['hora_salida'];?>" name="hora_salida" id="hora_salida">
-                                    <span class="errorHora" style="color:red"></span>
                                 </div>
                             </div> 
                              <div class="form-group col-sm-12 col-md-6">
                                     <label for="kilometraje"><b>Kilometraje</b></label>
                                     <br><br>
                                     <input type="text" class="form-control kilometraje kilometraje<?=$value['kilometraje'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['kilometraje'];?> kilometros" name="kilometraje" id="kilometraje" placeholder="kilometros en metros">
-                                    <span class="errorKilometraje" style="color:red"></span>
                                 </div>
                             <br><br>
                         </div>

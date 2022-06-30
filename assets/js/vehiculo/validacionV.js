@@ -190,30 +190,28 @@ $('body').on('click', '.habilitar', function (e) {
 function validar(modificar = false) {
     var form = "";
 
-       var expKilometraje = /^[1-9]\d*(,\d+)?$/;// Numeros de 0 al 9 seguido de coma
-       var expPlaca = /^([A-Z]{2,3}[0-9]{3})$/;  // Dos o más letras seguidas por tres a cinco números
 
-
-    var validado = true;
-    if (!modificar) {
+if (!modificar) {
         form = "#AgregarVehiculosModal";
     }
     else {
         form = "#ModificarVehiculoModal";
     }
+       var expKilometraje = /^[1-9]\d*(,\d+)?$/;// Numeros de 0 al 9 seguido de coma
+       var expPlaca = /^([A-Z]{2,3}[0-9]{3})$/;  // Dos o más letras seguidas por tres a cinco números
+
+
+    var validado = true;
+    
     var placa = $(form).find("#placa").val();
     var rplaca = false;
    
-
-
     var modelo = $(form).find("#modelo").val();
     var rmodelo = false;
 
     var funcionamiento = $(form).find("#funcionamiento").val();
     var rfuncionamiento = false;
 
-    var funcionamiento = $(form).find("#funcionamiento").val();
-    var rfuncionamiento = false;
 
     var kilometraje = $(form).find("#kilometraje").val();
     var rkilometraje = false;
@@ -232,7 +230,7 @@ function validar(modificar = false) {
 
  }else{
     if(!expKilometraje.test(kilometraje)){
-                $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
+                $(".errorKilometraje").html("El campo kilometraje solo acepta numeros, incluyendo decimales y coma");
                     rkilometraje = false;
                     preventDefault();
         } else {
@@ -254,7 +252,7 @@ function validar(modificar = false) {
    }
 }
  $('.editar').click(function(e){
-    console.log("1");
+   // console.log("1");
             e.preventDefault();
             mostrar($(this).attr('data-id'), "#modificarVehiculo", "#ModificarVehiculoModal");
         })
