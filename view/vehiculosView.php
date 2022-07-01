@@ -222,7 +222,6 @@
                                         <label for="modelo"><b>Modelo</b></label>
                                         <select class="form-control select2" name="modelo" id="modelo">
                                                   <option value="">...</option>
-                                                <option value="Otro">Otro</option>
                                                 <option value="Encava">Encava</option>
                                                 <option value="BEDFORD">BEDFORD</option>
                                                 <option value="Caio">Caio</option>
@@ -231,6 +230,8 @@
                                                 <option value="Kia">Kia</option>
                                                 <option value="Iveco">Iveco</option>
                                                 <option value="Yutong">Yutong</option>
+                                                   <option value="Autopago">Autopago</option>
+                                                     <option value="Otro">Otro</option>
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
                                     </div>
@@ -242,7 +243,7 @@
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>
                                             </select>
-                                         <span class="errorModelo" style="color:red"></span>
+                                         <span class="errorFuncionamiento" style="color:red"></span>
                                     </div>
        
 
@@ -314,6 +315,9 @@
                                                 <option value="Kia">Kia</option>
                                                 <option value="Iveco">Iveco</option>
                                                 <option value="Yutong">Yutong</option>
+                                                    <option value="Microbús">Microbús</option>
+                                                     <option value="Freightliner">Freightliner</option>
+                                                      <option value="Kenworth">Kenworth</option>
                                             </select>
                                          <span class="errorModelo" style="color:red"></span>
                                     </div>
@@ -387,7 +391,7 @@
                                         
                                         <label for="placa"><b>Placa</b></label>
                                         <input type="text" class="form-control-plaintext" disabled name="placaM" id="placaM">
-                                        <span class="errorPlaca" style="color:red"></span>
+                                        
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Modelo"><b>Modelo</b></label>
@@ -403,7 +407,7 @@
                                                 <option value="Iveco">Iveco</option>
                                                 <option value="Yutong">Yutong</option>
                                             </select>
-                                         <span class="errorModelo" style="color:red"></span>
+                                    
                                     </div>
                                
                                <div class="form-group col-sm-12 col-md-6">
@@ -412,15 +416,12 @@
                                                   <option value="">...</option>
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>
-                                            </select>
-                                         <span class="errorModelo" style="color:red"></span>
-                                         
+                                            </select>                                      
                                     </div>
                                         <div class="form-group col-sm-12 col-md-6">
                                         
                                         <label for="placa"><b>Kilometraje</b></label>
-                                        <input type="text" class="form-control-plaintext" disabled name="kilometrajeM" id="kilometrajeM">
-                                        <span class="errorKilometraje" style="color:red"></span>
+                                        <input type="text" class="form-control-plaintext" disabled name="kilometrajeM" id="kilometrajeM">kilometros
                                     </div>
                                     
                             <div class="modal-footer">

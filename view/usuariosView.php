@@ -390,7 +390,7 @@
                                                         <div class="form-group col-sm-12 col-md-12">
                                                             <label for="correo"><b>Correo</b></label>
                                                             <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo" value="<?= $value['correo'] ?>" placeholder="example@gmail.com">
-                                                            <span class="correo" style="color:red"></span>
+                                                            <span class="errorcorreo" style="color:red"></span>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -453,24 +453,24 @@
 
                                                             <label for="nombre"><b>Nombre</b></label>
                                                             <input type="text" class="form-control-plaintext" disabled name="nombre" id="nombre">
-                                                            <span class="errorNombre" style="color:red"></span>
+                                                           
                                                         </div>
                                                         <div class="form-group col-sm-12 col-md-6">
                                                             <label for="apellido"><b>Apellido</b></label>
                                                             <input type="text" class="form-control-plaintext" disabled name="apellido" id="apellido">
-                                                            <span class="errorApellido" style="color:red"></span>
+                                                           
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-sm-12 col-md-6">
                                                             <label for="cedula"><b>Cedula</b></label>
                                                             <input type="text" class="form-control-plaintext" disabled name="cedula" id="cedula">
-                                                            <span class="errorCedula" style="color:red"></span>
+                                                            
                                                         </div>
                                                         <div class="form-group col-sm-12 col-md-6">
                                                             <label for="username"><b>Usuario</b></label>
                                                             <input type="text" class="form-control-plaintext" disabled name="username" id="username">
-                                                            <span class="errorUsername" style="color:red"></span>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -484,7 +484,7 @@
                                                                     <?php endif ?>
                                                                 <?php endforeach ?>
                                                             </select>
-                                                            <span class="errorRol" style="color:red"></span>
+                                                            
                                                         </div>
                                                     </div>
                                                     
@@ -492,7 +492,7 @@
                                                         <div class="form-group col-sm-12 col-md-12">
                                                             <label for="correo"><b>Correo</b></label> 
                                                             <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo"  class="form-control-plaintext" disabled  placeholder="example@gmail.com">
-                                                            <span class="correo" style="color:red"></span>
+                                                           
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">

@@ -74,7 +74,7 @@
                                 <table class="table table-striped datatable col-sm-12" id="" >
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                         
                                             <th>Unidad</th>
                                             <th>Direccion</th>
                                             <th>Nombre Ruta</th>
@@ -90,10 +90,10 @@
                                         <?php foreach ($ruta as $value): ?>
                                             <?php if (!empty($value['id_ruta'])): ?>
                                         <tr>
-                                            <td><?=$value['id_ruta']?></td>
+                                        
                                                <td><?=$value['placa']?></td>
-                                               <td><?=$value['nombre_ruta']?></td>
-                                             <td><?=$value['direccion_ruta']?></td>
+                                               <td><?=$value['direccion_ruta']?></td>
+                                             <td><?=$value['nombre_ruta']?></td>
                                             <td><?=$value['hora_salida']?></td>
                                             <td><?=$value['kilometraje']?></td>
                                             <td> 
@@ -132,13 +132,11 @@
                                     <div class=" placa placa<?=$value['id_ruta'];?>" style="width:100%;text-align:left;" name="placa" id="placa">
                                         <option><?=$value['placa'];?></option>
                                     </div>
-                                    <span class="errorPlaca" style="color:red"></span>
                                 </div>
                                 
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="Modelo"><b>Dirección</b></label>
                                       <input type="text" class="form-control direccion_ruta direccion_ruta<?=$value['id_ruta'];?>" style='background:none;border:none;' disabled value="<?=$value['direccion_ruta'];?>" name="direccion_ruta" id="direccion_ruta">
-                                    <span class="errorDireccion" style="color:red"></span>
                                 </div>
                             </div>
                             <br>
@@ -146,20 +144,17 @@
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="nombrer"><b>Nombre de la Ruta</b></label>
                                      <input type="text" class="form-control nombre_ruta nombre_ruta<?=$value['id_ruta'];?>" style='background:none;border:none;' disabled value="<?=$value['nombre_ruta'];?>" name="nombre_ruta" id="nombre_ruta">
-                                    <span class="errorNombre" style="color:red"></span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="hora"><b>Hora</b></label>
                                     <br><br>
                                     <input type="time" class="form-control hora_salida hora_salida<?=$value['id_ruta'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['hora_salida'];?>" name="hora_salida" id="hora_salida">
-                                    <span class="errorHora" style="color:red"></span>
                                 </div>
                             </div> 
                              <div class="form-group col-sm-12 col-md-6">
                                     <label for="kilometraje"><b>Kilometraje</b></label>
                                     <br><br>
-                                    <input type="time" class="form-control kilometraje kilometraje<?=$value['kilometraje'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['kilometraje'];?>" name="kilometraje" id="kilometraje" placeholder="kilometros en metros">
-                                    <span class="errorKilometraje" style="color:red"></span>
+                                    <input type="text" class="form-control kilometraje kilometraje<?=$value['kilometraje'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['kilometraje'];?> kilometros" name="kilometraje" id="kilometraje" placeholder="kilometros en metros">
                                 </div>
                             <br><br>
                         </div>
@@ -250,12 +245,12 @@
                             <br><br>
                              <div class="row">
                                 <div class="form-group col-sm-12 col-md-6">
-                                    <label for="nombrer"><b>Kilometraje</b></label>
+                                    <label for="kilometrajer"><b>Kilometraje</b></label>
                                        <input type="text" class="form-control kilometraje kilometraje<?=$value['id_ruta'];?>" value="<?=$value['kilometraje'];?>" name="kilometraje" id="kilometraje">
-                                    <span class="errorNombre" style="color:red"></span>
+                                    <span class="errorKilometraje" style="color:red"></span>
                                 </div>
                                   <div class="form-group col-sm-12 col-md-6">
-                                    <label for="kilometraje"><b>Ruta:</b></label>
+                                    <label for="ruta"><b>Ruta:</b></label>
                                     <a target="blank" href=" https://www.google.com/maps/dir//Barquisimeto+3001,+Lara/@10.0677719,-69.3473509,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e87671d783e8671:0x972fe1e11519c3db!2m2!1d-69.3473509!2d10.0677719">Cómo llegar?
  </a>
 
@@ -364,14 +359,14 @@
                                 
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="Modelo"><b>Dirección</b></label>
-                                      <input type="text" class="form-control direccion_ruta" name="direccion_ruta" id="direccion_ruta">
+                                      <input type="text" class="form-control direccion_ruta" name="direccion_ruta" id="direccion_ruta" placeholder="Ingrese la direccion de la ruta">
                                     <span class="errorDireccion" style="color:red"></span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="nombrer"><b>Nombre de la Ruta</b></label>
-                                     <input type="text" class="form-control nombre_ruta" name="nombrer" id="nombre_ruta">
+                                     <input type="text" class="form-control nombre_ruta" name="nombrer" id="nombre_ruta" placeholder="Ingrese nombre de la ruta">
                                     <span class="errorNombre" style="color:red"></span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
@@ -384,8 +379,8 @@
                              <div class="row">
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="kilometraje"><b>Kilometraje</b></label>
-                                     <input type="number" class="form-control kilometraje" name="kiloemtraje" id="kilometraje">
-                                    <span class="kilometraje" style="color:red"></span>
+                                     <input type="text" class="form-control kilometraje" name="kilometraje" id="kilometraje" placeholder="Kilometraje del recorrido">
+                                    <span class="errorkilometraje" style="color:red"></span>
                                 </div>
                              <div class="form-group col-sm-12 col-md-6">
                                     <label for="kilometraje"><b>Ver ruta</b></label>

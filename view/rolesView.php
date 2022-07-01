@@ -273,111 +273,95 @@
                                     <table class="table table-responsive table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Módulo</th>
-                                            <th>Lectura</th>
-                                            <th></th>
-                                            <th>Todos los permisos</th>
-                                            <th></th>
-                                            <th>Restringido</th>
+                                            <th>Modulo</th>
+                                              <th>Consultar</th>
+                                            <th>Registrar</th>
+                                            <th>Modificar</th>
+                                            <th>Eliminar</th>
+
+                        
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>Usuarios</td>
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
+                                                     <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
 
-
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="2"></td>
                                               <td></td>
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                        
                                         </tr>
                                         <tr>
                                             <td>Vehiculos</td>
-                                               <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck3" value="3"></td>
+                                               <td><input type="checkbox" name="permisos[]" id="customCheck3" value="3"></td>
+                                        
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck4" value="4"></td>
+                                        
 
-
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                              <td></td>
-
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck5" value="5"></td>
                                             
                                         </tr>
                                         <tr>
                                             <td>Chofer</td>
-                                               <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck6" value="6"></td>
+                                               <td><input type="checkbox" name="permisos[]" id="customCheck6" value="6"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck6" value="6"></td>
 
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                              <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck7" value="7"></td>
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
                                         </tr>
                                           <tr>
                                             <td>Ruta</td>
-                                              <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck8" value="8"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck8" value="8"></td>
 
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                              <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck9" value="9"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck10" value="10"></td>
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
                                         </tr>
                                           <tr>
                                             <td>Taller</td>
-                                             <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
-
-
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                              <td></td>
-
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck12" value="12"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck13" value="13"></td>
                                         </tr>
                                         <tr>
                                             <td>Mantenimiento</td>
-                                         <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
+                                         <td><input type="checkbox" name="permisos[]" id="customCheck1" value="13"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck13" value="13"></td>
 
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                              <td></td>
-
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck14" value="14"></td>
+                                        
                                         </tr>
                                          <tr>
                                             <td>Seguridad</td>
-                                             <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                                  <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck1" value="15"></td>
 
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
-                                              <td></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck16" value="16"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck17" value="17"></td>
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
                                         </tr>
                                          <tr>
                                             <td>Reportes</td>
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button><button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck18" value="1"></td>
                                                   <td></td>
 
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON<button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+                                            <td></td>
                                               <td></td>
 
-                                            <td><button class=" btn btn-danger" type="button" data-dismiss="modal">ON</button>
-                                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">OFF</button></td>
+    
                                         </tr>
                                     </tbody>
                                 </table>

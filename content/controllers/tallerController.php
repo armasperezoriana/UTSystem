@@ -56,7 +56,7 @@
 				$this->taller->setDireccion($direccion);
 				$this->taller->setInformacion_contacto($informacion_contacto);
 	
-				var_dump($taller);
+				//var_dump($taller);
 				
 				$result = $this->taller->ConsultarOne();
 				if($result['ejecucion']==true){

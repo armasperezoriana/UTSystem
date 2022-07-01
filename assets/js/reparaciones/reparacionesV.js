@@ -10,7 +10,7 @@ $(document).ready(function () {
             var costo = $("#AgregarReparacionModal").find("#costo").val();
             var descripcion = $("#AgregarReparacionModal").find("#descripcion").val();
 
-            // alert( nombre + ' ' + intervalo + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + descripcion + ' ' );
+           // alert( nombre + ' ' + intervalo + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + descripcion + ' ' );
             swal.fire({
                 title: "¿Desea guardar los datos del vehiculo ingresados?",
                 text: "Estos datos serán guardados.",
@@ -34,7 +34,7 @@ $(document).ready(function () {
                             descripcion: descripcion,
                         },
                         success: function (respuesta) {
-                            // alert(respuesta);
+                            alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -107,7 +107,7 @@ $(document).ready(function () {
                             descripcion: descripcion,
                         },
                         success: function(respuesta) {
-                            alert(respuesta);
+                           // alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -183,7 +183,7 @@ $(document).ready(function () {
     });
 
 
-    function validar(modificar = false, id="") {
+    function validar(modificar = false, id=""){
         var form = "";
         if (!modificar) {
             form = "#AgregarReparacionModal";
@@ -191,6 +191,9 @@ $(document).ready(function () {
         else {
             form = "#ModificarReparacionesModal"+id;
         }
+        var expDescripcion = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expCosto = /^[1-9]\d*(,\d+)?$/;// Numeros de 0 al 9 seguido de coma
+       var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 
         var nombre = $(form).find("#nombre").val();
         var rnombre = false;
@@ -203,64 +206,60 @@ $(document).ready(function () {
 
         var placa = $(form).find("#placa").val();
         var rplaca = false;
-        var patternPlaca = /^[\w]+$/i;
 
         var costo = $(form).find("#costo").val();
         var rcosto = false;
 
         var descripcion = $(form).find("#descripcion").val();
         var rdescripcion = false;
+        if (nombre==""|intervalo==""|taller==""|placa==""|costo==""|descripcion==""){
+                swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de llenar todos los campos',
+                                    });
 
-        if (nombre == "") {
-            rnombre = false;
-            $(form+" .errorNombre").html("Debe ingresar el nombre de la reparacion");
-        } else {
-            rnombre = true;
-            $(form+" .errorNombre").html("");
-        }
-        if (intervalo == "") {
-            rintervalo = false;
-            $(form+" .errorIntervalo").html("Debe ingresar la fecha de la ultima reparacion");
-        } else {
-            rintervalo = true;
-            $(form+" .errorIntervalo").html("");
-        }
-        if (taller == "") {
-            rtaller = false;
-            $(form+" .errorTaller").html("Debe ingresar el taller de la reparacion");
-        } else {
-            rtaller = true;
-            $(form+" .errorTaller").html("");
-        }
-        if (placa == "") {
-            rplaca = false;
-            $(form+" .errorPlaca").html("Debe ingresar su placa");
-        } else {
-            rplaca = true;
-            $(form+" .errorPlaca").html("");
-        }
-        if (costo == "") {
-            rcosto = false;
-            $(form+" .errorCosto").html("Debe ingresar el costo de la reparacion");
-        } else {
-            rcosto = true;
-            $(form+" .errorCosto").html("");
-        }
-        if (descripcion == "") {
-            rdescripcion = false;
-            $(form+" .errorDescripcion").html("Agregar una descripcion a la reparacion");
-        } else {
-            rdescripcion = true;
-            $(form+" .errorDescripcion").html("");
-        }
-        var validado = false;
+            $(".errorNombre").html("Debe seleccionar el nombre de la reparacion");
+             $(".errorPlaca").html("Debe seleccionar la unidad reparada");
+            $(".errorTaller").html("Debe seleccionar el taller del mantenimiento");
+            $(".errorDescripcion").html("Agregar una descripcion a la reparacion");
+            $(".errorCosto").html("Debe ingresar el costo del mantenimiento");
+            $(" .errorIntervalo").html("Debe escribir la fecha del ultimo mantenimiento");
+                  return false;
+             
+        }else{
+            if(!expDescripcion.test(descripcion)){
+                $(".errorDescripcion").html("El campo descripcion solo acepta caracteres");
+                    rdescripcion = false;
+                           preventDefault();
+                }else{
+                        $(".errorDescripcion").html("Campo validado");
+                        $(".errorDescripcion").attr("style", "color:green");
+                        rdescripcion = true;
+            }if(!expCosto.test(costo)){
+                $(".errorCosto").html("El costo debe ser expresado en bolivares con una , 00");
+                    rcosto = false;
+                          preventDefault();
+                }else{
+                        $(".errorCosto").html("Campo validado");
+                        $(".errorCosto").attr("style", "color:green");
+                        rcosto = true;
+            }if(!expNombre.test(nombre)){
+                $(".errorNombre").html("Solo puede ingresar caracteres");
+                    rnombre = false;
+                         preventDefault();
+                }else{
+                        $(".errorNombre").html("Campo validado");
+                        $(".errorNombre").attr("style", "color:green");
+                        rnombre = true;
+            }
         
         if(rnombre == true && rintervalo == true && rtaller == true && rplaca == true && rcosto == true && rdescripcion == true){
             validado = true;
         }
-        // alert(form+": "+validado);
-        return validado;
+        return true;
     }
+}
 
      $('.editar').click(function(e){
         console.log("1");
