@@ -87,12 +87,14 @@
 		}
 
 		if(!empty($_POST['nombre']) && !empty($_POST['rif'])){
+				$id = $_POST['id_taller'];
 				$nombre = $_POST['nombre'];
 				$rif = $_POST['rif'];
 				$direccion = $_POST['direccion'];
 				$informacion_contacto = $_POST['informacion_contacto'];
 			
 
+				$this->taller->setId($id);
 				$this->taller->setNombre($nombre);
 				$this->taller->setRif($rif);
 				$this->taller->setDireccion($direccion);
