@@ -90,7 +90,7 @@ public function ObtenerOne($id){
 					WHERE id_rol = $this->id_rol");
 				$query->execute();
 				
-				$queryD = parent::prepare("DELETE roles_permisos WHERE rol_id = $this->id_rol");
+				$queryD = parent::prepare("DELETE FROM roles_permisos WHERE rol_id = $this->id_rol");
 				$queryD->execute();
 
 				foreach ($this->permisos as $permiso) {

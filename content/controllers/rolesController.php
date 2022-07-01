@@ -74,7 +74,7 @@ public function Mostrar($param)
 	{
 		if (!empty($_POST['nombreRol']) && count($_POST['permisos']) > 0) {
 			$id = $_POST['id_rol'];
-			$nombre_rol = $_POST['nombre_rol'];
+			$nombre_rol = $_POST['nombreRol'];
 			$descripcion = $_POST['descripcion'];
 			$permisos = $_POST['permisos'];
 			
