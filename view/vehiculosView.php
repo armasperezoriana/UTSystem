@@ -150,7 +150,7 @@
                                                                     <span class="text">Eliminar</span>
                                                                 </a>
                                                             <?php } else { ?>
-                                                                <a href="#" data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
+                                                                <a href="#" data-id="<?= $value['id_vehiculo']?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
                                                                     <span class="icon text-info-50">
                                                                         <i class="fas fa-trash-alt"></i>
                                                                     </span>

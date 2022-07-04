@@ -1,5 +1,4 @@
   $(document).ready(function() {
-
         $(".EnviarChoferRegistrar").click(function() {
             var valido = validar();
             if (valido == true) {
@@ -9,8 +8,7 @@
                 var cedula =$("#AgregarVehiculosModal").find("#cedula").val();;
                 var unidad = $("#AgregarVehiculosModal").find("#unidad").val();
                 var telefono = $("#AgregarVehiculosModal").find("#telefono").val();
-             
-                // alert(pass);
+           alert(pass);
                 swal.fire({
                     title: "¿Desea guardar los datos del conductor ingresados?",
                     text: "Estos datos serán guardados.",
@@ -34,13 +32,13 @@
                     
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                                alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
                                         title: 'Registro del conductor guardado exitosamente',
                                     }).then((isConfirm) => {
-                                        location.href = './Usuarios';
+                                        location.href = './Chofer';
                                     });
                                 }
                                 if (respuesta == "2") {
@@ -102,17 +100,16 @@
                 }).then((isConfirm) => {
                     if (isConfirm.value) {
                         $.ajax({
-                            url: './Usuarios/Modificar',
+                            url: './Chofer/Modificar',
                             type: 'POST',
                             data: {
-                                id_usuario: id_usuario,
-                                nombre: nombre,
+                                id_chofer: id_chofer,
+                               nombre: nombre,
                                 apellido: apellido,
                                 cedula: cedula,
-                                username: username,
-                                rol: rol,
-                                pass: pass,
-                                correo: correo,
+                                unidad: unidad,
+                                telefono: telefono,
+                             
                             },
                             success: function(respuesta) {
                                 // alert(respuesta);

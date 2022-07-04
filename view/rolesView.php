@@ -286,75 +286,75 @@
                                         <tr>
                                             <td>Usuarios</td>
                                             <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
-                                                  <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
-                                                     <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck1" value="2"></td>
+                                                     <td><input type="checkbox" name="permisos[]" id="customCheck1" value="3"></td>
 
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="2"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck1" value="4"></td>
                                               <td></td>
 
                         
                                         </tr>
                                         <tr>
                                             <td>Vehiculos</td>
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck3" value="3"></td>
-                                               <td><input type="checkbox" name="permisos[]" id="customCheck3" value="3"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="5"></td>
+                                               <td><input type="checkbox" name="permisos[]" id="customCheck2" value="6"></td>
                                         
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck4" value="4"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="8"></td>
                                         
 
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck5" value="5"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="7"></td>
                                             
                                         </tr>
                                         <tr>
                                             <td>Chofer</td>
-                                             <td><input type="checkbox" name="permisos[]" id="customCheck6" value="6"></td>
-                                               <td><input type="checkbox" name="permisos[]" id="customCheck6" value="6"></td>
-                                                  <td><input type="checkbox" name="permisos[]" id="customCheck6" value="6"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck3" value="9"></td>
+                                               <td><input type="checkbox" name="permisos[]" id="customCheck3" value="10"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck3" value="11"></td>
 
 
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck7" value="7"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck3" value="12"></td>
 
                                         </tr>
                                           <tr>
                                             <td>Ruta</td>
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck8" value="8"></td>
-                                              <td><input type="checkbox" name="permisos[]" id="customCheck8" value="8"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck4" value="13"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck4" value="14"></td>
 
 
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck9" value="9"></td>
-                                              <td><input type="checkbox" name="permisos[]" id="customCheck10" value="10"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck4" value="15"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck4" value="16"></td>
 
                                         </tr>
                                           <tr>
                                             <td>Taller</td>
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
-                                             <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
-                                                  <td><input type="checkbox" name="permisos[]" id="customCheck12" value="12"></td>
-                                              <td><input type="checkbox" name="permisos[]" id="customCheck13" value="13"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck5" value="18"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck5" value="19"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck5" value="21"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck5" value="20"></td>
                                         </tr>
                                         <tr>
                                             <td>Mantenimiento</td>
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
-                                         <td><input type="checkbox" name="permisos[]" id="customCheck1" value="13"></td>
-                                                  <td><input type="checkbox" name="permisos[]" id="customCheck13" value="13"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck6" value="22"></td>
+                                         <td><input type="checkbox" name="permisos[]" id="customCheck6" value="23"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck6" value="24"></td>
 
 
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck14" value="14"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck6" value="25"></td>
                                         
                                         </tr>
                                          <tr>
                                             <td>Seguridad</td>
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck11" value="11"></td>
-                                             <td><input type="checkbox" name="permisos[]" id="customCheck1" value="15"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck7" value="26"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck7" value="27"></td>
 
 
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck16" value="16"></td>
-                                              <td><input type="checkbox" name="permisos[]" id="customCheck17" value="17"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck7" value="28"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck7" value="29"></td>
 
                                         </tr>
                                          <tr>
                                             <td>Reportes</td>
-                                            <td><input type="checkbox" name="permisos[]" id="customCheck18" value="1"></td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck8" value="30"></td>
                                                   <td></td>
 
 

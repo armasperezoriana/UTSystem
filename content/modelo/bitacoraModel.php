@@ -13,7 +13,7 @@
 		}
 		public function Consultar(){
 			try {
-				$query = parent::prepare('SELECT * FROM bitacora ORDER BY fecha DESC  LIMIT 30 ');
+				$query = parent::prepare('SELECT * FROM bitacora ORDER BY fecha DESC  LIMIT 100 ');
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

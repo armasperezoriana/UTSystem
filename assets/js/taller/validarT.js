@@ -106,8 +106,8 @@ $(document).ready(function(){
                             informacion_contacto : informacion_contacto ,
                             },
                             success: function(respuesta) {
-                      alert( nombre + ' ' + rif + ' ' + direccion + ' ' + informacion_contacto+' ' );
-       
+                      //alert( nombre + ' ' + rif + ' ' + direccion + ' ' + informacion_contacto+' ' );
+                                alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -206,7 +206,7 @@ function validar(modificar = false){
                     }if(!expDireccion.test(direccion)){
                         $(".errorDireccion").html("Solo se aceptan caracteres, minimo 5");
                             rdireccion = false;
-                                  //  preventDefault();
+                                   preventDefault();
                             }else{
                                                 $(".errorDireccion").html("Campo validado");
                                                 $(".errorDireccion").attr("style", "color:green");
