@@ -136,8 +136,58 @@
             }
 
         });
-
-
+        $("#PermisosRolForm").submit(function(e) {
+            e.preventDefault();
+            var ba = false;
+            var permisos = $(this).find('input[name="permisos[]"]');                  
+            $.each(permisos, function (j, element) {             
+                if(element.checked==true){
+                    ba = true;
+                }
+            });
+            if (!ba) {
+                Swal.fire(
+                    'Indique los Permisos',
+                    'Debe seleccionar al menos 1 permiso',
+                    'warning'
+                );
+                return false;
+            }
+            let datos = new FormData(document.querySelector('#PermisosRolForm'));
+            $.ajax({
+                type: "POST",
+                url: "./Roles/Modificar",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (respuesta) {
+                    console.log(respuesta);
+                    if (respuesta == "1") {
+                        swal.fire({
+                            type: 'success',
+                            title: 'Registro modificado exitosamente',
+                        }).then((isConfirm) => {
+                            location.href = './Roles';
+                        });
+                    }
+                    else {
+                        swal.fire({
+                            type: 'error',
+                            title: 'Error al modificar los datos',
+                            text: 'Contacte con el soporte',
+                        });
+                    }                    
+                },
+                error: (response) => {
+                    console.log(response);
+                    swal.fire({
+                        type: 'error',
+                        title: '¡Ocurrió un error!',
+                    });
+                }
+            });
+        });
         //
         $('.editar').click(function(e){
             e.preventDefault();

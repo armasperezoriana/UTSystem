@@ -201,6 +201,12 @@
 
     function validar(modificar = false) {
         var form = "";
+
+        var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expApellido = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expCedula =/^\d{7,14}$/;
+        var expTelefono = /^.{4,12}$/;
+        
         if(!modificar){
             form = "#AgregarChoferModal";
         }
@@ -224,49 +230,60 @@
         var rplaca = false;
 
        
-        if (nombre == "") {
-            rnombre = false;
+        if (nombre == ""|apellido == ""|cedula == ""|placa == ""|telefono == "") {
+       swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de llenar todos los campos',
+                                    });
             $(form).find(".errorNombre").html("Debe ingresar su nombre");
-        } else {
-            rnombre = true;
-            $(form).find(".errorNombre").html("");
-        }
-        if (apellido == "") {
-            rapellido = false;
             $(form).find(".errorApellido").html("Debe ingresar su apellido");
-        } else {
-            $(form).find(".errorApellido").html("");
-            rapellido = true;
-        }
-
-        if (cedula == "") {
-            rcedula = false;
             $(form).find(".errorCedula").html("Debe ingresar su cedula");
-        } else {
-            $(form).find(".errorCedula").html("");
-            rcedula = true;
-        }
-        if (placa == "") {
-            rplaca = false;
             $(form).find(".errorPlaca").html("Debe seleccionar su placa");
-        } else {
-            $(form).find(".errorPlaca").html("");
-            rplaca = true;
-        }
-        if (telefono == "") {
-            rtelefono = false;
-            $(form).find(".errortelefono").html("Debe seleccionar su telefono");
-        } else {
-            $(form).find(".errortelefono").html("");
-            rtelefono = true;
-        }
+            $(form).find(".errortelefono").html("Debe ingresar un telefono");
+               return false;
 
-        if(rnombre==true && rapellido==true && rcedula==true && rplaca==true && rtelefono==true){
-            return true;
         }else{
-            return false;
-        }
+               if(!expNombre.test(nombre)){
+                        $(".errorNombre").html("El campo nombre solo acepta caracteres");
+                            rnombre = false;
+                            preventDefault();
+                } else {
+                        $(".errorNombre").html("Campo validado");
+                        $(".errorNombre").attr("style", "color:green");
+                        rnombre = true;
+                    } if(!expApellido.test(apellido)){
+                $(".errorApellido").html("El campo apellido solo acepta caracteres");
+                    rapellido = false;
+                    preventDefault();
+        } else {
+                $(".errorApellido").html("Campo validado");
+                $(".errorApellido").attr("style", "color:green");
+                rapellido = true;
+            }if(!expCedula.test(cedula)){
+                $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+                   rcedula = false;
+                   preventDefault();
+        } else {
+                $(".errorCedula").html("");
+               rcedula = true;
+                         $(".errorCedula").html("Cédula valida");
+                       $(".errorCedula").attr("style", "color:green");
+
+            }if(!expTelefono.test(telefono)){
+                $(".errorTelefono").html("El campo telefono solo acepta al menos 10 numeros");
+                   rtelefono = false;
+                   preventDefault();
+        } else {
+                $(".errorTelefono").html("");
+               rtelefono = true;
+                         $(".errorTelefono").html("Telefono valido");
+                       $(".errorTelefono").attr("style", "color:green");
+
+            }
+        return true;
     }
+ }
 
     const mostrar = (id, formulario, modal) => {
         $.ajax({

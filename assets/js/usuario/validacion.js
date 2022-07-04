@@ -296,6 +296,7 @@
                  $(".errorPass1").html("Debe ingresar su Contraseña");
                    $(".errorPass2").html("Confirmar Contraseña");
                       $(".errorCorreo").html("Debe ingresar un correo electronico valido");
+                   
     }
 
 else{

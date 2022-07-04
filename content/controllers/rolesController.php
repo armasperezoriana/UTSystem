@@ -70,6 +70,27 @@ public function Mostrar($param)
 			}
 		}
 	}
+	public function Modificar()
+	{
+		if (!empty($_POST['nombreRol']) && count($_POST['permisos']) > 0) {
+			$id = $_POST['id_rol'];
+			$nombre_rol = $_POST['nombreRol'];
+			$descripcion = $_POST['descripcion'];
+			$permisos = $_POST['permisos'];
+			
+			$this->rol->setId($id);
+			$this->rol->setNombreRol($nombre_rol);
+			$this->rol->setDescripcion($descripcion);
+			$this->rol->setPermisos($permisos);
+
+			$execute = $this->rol->Modificar();
+			if ($execute['ejecucion'] == true) {
+				echo '1';
+			} else {
+				echo "2";
+			}
+		}
+	}
 
 
 	public function Inhabilitar($id)

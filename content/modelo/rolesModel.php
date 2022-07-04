@@ -10,6 +10,7 @@
 	    private $id_rol;
 	    private $nombre_rol;
 	    private $descripcion;
+	    private $permisos;
 	    private $status;
 
 		public function __construct(){
@@ -85,12 +86,19 @@ public function ObtenerOne($id){
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE roles SET id_rol = '$this->id_rol', descripcion = '$this->descripcion', 
-					status = '$this->status'
+				$query = parent::prepare("UPDATE roles SET nombre_rol = '$this->nombre_rol', descripcion = '$this->descripcion' 
 					WHERE id_rol = $this->id_rol");
-				$respuestaArreglo = '';
 				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
+				
+				$queryD = parent::prepare("DELETE FROM roles_permisos WHERE rol_id = $this->id_rol");
+				$queryD->execute();
+
+				foreach ($this->permisos as $permiso) {
+					$queryP = parent::prepare("INSERT INTO roles_permisos(rol_id, permisos_id) "
+						. "VALUES ($this->id_rol, $permiso)");
+					$queryP->execute();
+            	}
+				$respuestaArreglo = '';
 				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
 				$respuestaArreglo += ['ejecucion' => true];
 				return $respuestaArreglo;
@@ -164,6 +172,9 @@ public function Inhabilitar($id){    //Método que elimina logicamente un regist
 		public function setStatus($status){
 			$this->status = $status;
 		}
+		public function setPermisos($permisos){
+			$this->permisos = $permisos;
+		}
 		
 
 
@@ -179,7 +190,8 @@ public function Inhabilitar($id){    //Método que elimina logicamente un regist
 		public function getStatus(){
 			return $this->status;
 		}
+		public function getPermisos(){
+			return $this->permisos;
+		}
 
 	}
-
-?>
