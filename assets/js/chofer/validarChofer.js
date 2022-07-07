@@ -36,7 +36,7 @@
                                 placa: placa,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                               //  alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -110,7 +110,7 @@
                                 placa: placa,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                              //   alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -205,7 +205,7 @@
         var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
         var expApellido = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
         var expCedula =/^\d{7,14}$/;
-        var expTelefono = /^.{4,12}$/;
+        var expTelefono = /^\d{11,12}$/;
         
         if(!modificar){
             form = "#AgregarChoferModal";

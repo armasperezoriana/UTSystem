@@ -4,10 +4,8 @@
             var valido = validar();
             if (valido == true) {
 
-                var nombre_rol = $("#AgregarUsuarioModal").find("#ombre_rol").val();                
-                var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();
-                var status = $("#AgregarUsuarioModal").find("#status").val();
-                   console.log($("#AgregarUsuarioModal").find("#nombre_rol"));             
+                var nombre_rol = $("#AgregarUsuarioModal").find("#nombre_rol").val();                
+                var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();    
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -25,7 +23,6 @@
                             data: {
                                 nombre_rol: nombre_rol,
                                 descripcion: descripcion,
-                               status: status,
                                
                             },
                             success: function(respuesta) {
@@ -72,11 +69,8 @@
             if (valido == true) {
 
                var nombre_rol = $("#ModificarRolModal").find("#nombre_rol").val();
-                console.log($("#ModificarRolModal").find("#nombre_rol"));
                 var descripcion = $("#ModificarRolModal").find("#descripcion").val();
                 console.log($("#ModificarRolModal").find("#descripcion").val());
-                var status = $("#ModificarRolModal").find("#status").val();
-                 console.log($("#ModificarRolModal").find("#status").val());
                 // alert(pass);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
@@ -95,7 +89,6 @@
                             data: {
                                 nombre_rol: nombre_rol,
                                 descripcion: descripcion,
-                               status: status,
                                
                             },
                             success: function(respuesta) {
@@ -166,7 +159,7 @@
                     if (respuesta == "1") {
                         swal.fire({
                             type: 'success',
-                            title: 'Registro modificado exitosamente',
+                            title: 'Registro modificado exitosamente. Ahora debe agregar los permisos de este usuario',
                         }).then((isConfirm) => {
                             location.href = './Roles';
                         });
@@ -196,6 +189,10 @@
         $('.consultar').click(function(e){
             e.preventDefault();
             mostrar($(this).attr('data-id'), "#consultarRol", "#ConsultarRolModal");
+        })
+         $('.permisos').click(function(e){
+            e.preventDefault();
+            mostrar($(this).attr('data-id'), "#PermisosRolForm", "#PermisosRolModal");
         })
 
 
@@ -240,46 +237,56 @@
 
     });
 
-    function validar(modificar = false) {
+    function validar(modificar = false){
         var form = "";
+        var expDescripcion = /^[a-zA-ZÀ-ÿ\s]{6,40}$/;
+        var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
         if(!modificar){
             form = "#AgregarUsuarioModal";
         }
         else{
             form = "#modificarRol";
         }
-        var expNombre = /^[A-Za-z]{3,50}$/;
-        var nombre_rol = $(form).find("#nombre_rol").val();
+        var nombre_rol = $(form).find("nombre_rol").val();
         var rnombre = false;
 
         var descripcion = $(form).find("#descripcion").val();
         var rdescripcion = false;
 
-        var status = $(form).find("#status").val();
-        var rstatus = false;
 
-        if (nombre_rol == "") {
-            rnombre = false;
+        if (nombre_rol == ""|descripcion == "") {
+            swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de completar todos los campos',
+                                    });
             $(".errorNombre").html("Debe ingresar el nombre del rol");
+                $(".errorDescripcion").html("Debe ingresar la descripcion del rol");
+                return false;
+
+        }else{
+    if(!expNombre.test(nombre_rol)){
+                $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4 caracteres");
+                    rnombre = false;
+                    //preventDefault();
+        }else{
+                $(".errorNombre").html("Campo validado");
+                $(".errorNombre").attr("style", "color:green");
+                rnombre = true;
+            }
+        if (!expDescripcion.test(descripcion)) {
+            $(".errorDescripcion").html("Ingrese una descripcion mas detallada, mayor a 6 caracteres. No se aceptan numeros");
+        rdescripcion = false;
+         //preventDefault();
         } else {
-            rnombre = true;
-            $(".errorNombre").html("");
-        }
-        if (descripcion == "") {
-            rdescripcion = false;
-            $(".errorDescripcion").html("Debe ingresar la descripcion del rol");
-        } else {
-            $(".errorDescripcion").html("");
+            $(".errorDescripcion").html("Campo validado");
+            $(".errorDescripcion").attr("style", "color:green");
             rdescripcion = true;
         }
-         if (status == "") {
-            rstatus = false;
-            $(".errorStatus").html("Debe seleccionar el estado del rol");
-        } else {
-            $(".errorStatus").html("");
-            rdescripcion = true;
-        }
+         
     }
+    return true;
+}
 
     const mostrar = (id, formulario, modal) => {
         $.ajax({
@@ -290,7 +297,6 @@
                 let rol = json.data;
                 $(formulario).find("#nombre_rol").val(rol.nombre_rol);
                 $(formulario).find("#descripcion").val(rol.descripcion);
-                $(formulario).find("#status").val(rol.status);
                 $(modal).modal('show');
             },
             error: function (response) {

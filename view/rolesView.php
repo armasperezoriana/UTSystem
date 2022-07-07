@@ -128,7 +128,15 @@
                                                     </td>
                                                       <td>
 
-        
+                                                          <div class="col-sm-7" style='text-align:right;'>
+
+                                                            <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-warning btn-icon-split editar" name="editar" >
+                                                                <span class="icon text-white-50">
+                                                                    <i class="fas fa-flag"></i>
+                                                                </span>
+                                                                <span class="text">Modificar</span>
+                                                            </a>
+                                                        </div>
 
                                                     </td>
                                                     <td>
@@ -220,19 +228,6 @@
                                         <span class="errorDescripcion" style="color:red"></span>
                                     </div>
                                 </div>
-                                <div class="row">
-                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="status"><b>Estado</b></label>
-                                         <select class="form-control select2" name="status" id="status">
-                                                  <option value="">...</option>
-                                                <option value="1">Activo</option>
-                                                <option value="0">Inactivo</option>
-                                            </select>
-                                         <span class="errorStatus" style="color:red"></span>
-                                    </div>
-                                    
-                                </div>
-    
 
                             </div>
 
@@ -252,7 +247,8 @@
        
         <div class="modal fade bd-example-modal-xl" id="PermisosRolModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;" data-targer=".bd-example-modal-xl">
             <div class="container">
-                  <form action id="PermisosRolModal">
+                  <form action id="PermisosRolForm" method="POST">
+                <input type="hidden" id="id_rol" name="id_rol">
                 <div class="modal-dialog">
                     <div class="" role="document">
                         <div class="modal-content">
@@ -267,11 +263,17 @@
                                 <div class="row">
 
                                      <div class="form-group col-sm-12 col-md-12">
-                                  <div class="form-group col-sm-12 col-md-12">
+                                  <div class="form-group col-sm-12 col-md-8">
                                         <label for="nombreRol"><b>Nombre del Rol</b></label>
-                                        <input type="text" class="form-control" name="nombreRol" id="nombreRol">
-                                        <span class="errornombreRol" style="color:red"></span>
+                                        <input type="text" class="form-control" name="nombre_rol" id="nombre_rol" disabled>
+                                        <span class="errorNombre" style="color:red"></span>
                                     </div>
+                                            <div class="form-group col-sm-12 col-md-10">
+                                        <label for="descripcion"><b>Descripcion</b></label>
+                                        <input type="text" class="form-control" name="descripcion" id="descripcion" disabled>
+                                        <span class="errorDescripcion" style="color:red"></span>
+                                    </div>
+                                </div>
                                     <table class="table table-responsive table-striped">
                                     <thead>
                                         <tr>
@@ -420,32 +422,17 @@
                                                         <div class="form-group col-sm-12 col-md-6">
 
                                                             <label for="nombre"><b>Nombre Rol</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled name="nombre" id="nombre">
-                                                            <span class="errorNombre" style="color:red"></span>
+                                                            <input type="text" class="form-control-plaintext" disabled name="nombre_rol" id="nombre_rol">
+                                                           
                                                         </div>
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="apellido"><b>Descripcion</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled name="apellido" id="apellido">
-                                                            <span class="errorApellido" style="color:red"></span>
+                                                        <div class="form-group col-sm-12 col-md-12">
+                                                            <label for="descripcion"><b>Descripcion</b></label>
+                                                            <input type="text" class="form-control-plaintext" disabled name="descripcion" id="descripcion">
+                                                           
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="cedula"><b>Permisos</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled name="cedula" id="cedula">
-                                                            <span class="errorCedula" style="color:red"></span>
-                                                        </div>
-                                                    
                                                     </div>
                                                   
                                                     
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="correo"><b>Estado</b></label> 
-                                                            <input style="width: 100%;" type="email" class="form-control" name="correo" id="correo"  class="form-control-plaintext" disabled  placeholder="example@gmail.com">
-                                                            <span class="correo" style="color:red"></span>
-                                                        </div>
-                                                    </div>
                                                     <div class="modal-footer">
                                                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                                                     </div>
@@ -467,7 +454,145 @@
     </div>
 
 
+  <!-- MODAL DE MODIFICAR-->
+          
+        <div class="modal fade" id="ModificarRolModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+            <form id="modificarRol" method="POST">
+                <input type="hidden" id="id_rol" name="id_rol">
+                <div class="container">
+                    <div class="modal-dialog">
+                        <div class="" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary" style="color:#FFF">
+                                    <h5 class="modal-title">
+                                        <center>Modificar Rol</center>
+                                         </div>
+                                     <div class="form-group col-sm-12 col-md-12">
+                                  <div class="form-group col-sm-12 col-md-8">
+                                        <label for="nombre_rol"><b>Nombre del Rol</b></label>
+                                        <input type="text" class="form-control" name="nombre_rol" id="nombre_rol">
+                                        <span class="errorNombre" style="color:red"></span>
+                                    </div>
+                                            <div class="form-group col-sm-12 col-md-10">
+                                        <label for="descripcion"><b>Descripcion</b></label>
+                                        <input type="text" class="form-control" name="descripcion" id="descripcion">
+                                        <span class="errorDescripcion" style="color:red"></span>
+                                    </div>
+                                </div>
+                                    <table class="table table-responsive table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Modulo</th>
+                                              <th>Consultar</th>
+                                            <th>Registrar</th>
+                                            <th>Modificar</th>
+                                            <th>Eliminar</th>
 
+                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Usuarios</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck1" value="1"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck1" value="2"></td>
+                                                     <td><input type="checkbox" name="permisos[]" id="customCheck1" value="3"></td>
+
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck1" value="4"></td>
+                                              <td></td>
+
+                        
+                                        </tr>
+                                        <tr>
+                                            <td>Vehiculos</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="5"></td>
+                                               <td><input type="checkbox" name="permisos[]" id="customCheck2" value="6"></td>
+                                        
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="8"></td>
+                                        
+
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck2" value="7"></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Chofer</td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck3" value="9"></td>
+                                               <td><input type="checkbox" name="permisos[]" id="customCheck3" value="10"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck3" value="11"></td>
+
+
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck3" value="12"></td>
+
+                                        </tr>
+                                          <tr>
+                                            <td>Ruta</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck4" value="13"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck4" value="14"></td>
+
+
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck4" value="15"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck4" value="16"></td>
+
+                                        </tr>
+                                          <tr>
+                                            <td>Taller</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck5" value="18"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck5" value="19"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck5" value="21"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck5" value="20"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mantenimiento</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck6" value="22"></td>
+                                         <td><input type="checkbox" name="permisos[]" id="customCheck6" value="23"></td>
+                                                  <td><input type="checkbox" name="permisos[]" id="customCheck6" value="24"></td>
+
+
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck6" value="25"></td>
+                                        
+                                        </tr>
+                                         <tr>
+                                            <td>Seguridad</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck7" value="26"></td>
+                                             <td><input type="checkbox" name="permisos[]" id="customCheck7" value="27"></td>
+
+
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck7" value="28"></td>
+                                              <td><input type="checkbox" name="permisos[]" id="customCheck7" value="29"></td>
+
+                                        </tr>
+                                         <tr>
+                                            <td>Reportes</td>
+                                            <td><input type="checkbox" name="permisos[]" id="customCheck8" value="30"></td>
+                                                  <td></td>
+
+
+                                            <td></td>
+                                              <td></td>
+
+    
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            
+                                                             <div class="modal-footer">
+                                                        <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                                        <a class="ModificarPermiso btn btn-primary" href="#">Modificar Permisos</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+                                            
 
     <!-- MODULo de AYUDA -->
 

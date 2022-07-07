@@ -46,16 +46,14 @@ public function Mostrar($param)
 		if (!empty($_POST['nombre_rol']) && !empty($_POST['descripcion'])) {
 			$nombre_rol = $_POST['nombre_rol'];
 			$descripcion = $_POST['descripcion'];
-			$status = $_POST['status']; 
 			
 			$this->rol->setNombreRol($nombre_rol);
 			$this->rol->setDescripcion($descripcion);
-			$this->rol->setStatus($status);
 			
 			$result = $this->rol->ConsultarOne();
 			if ($result['ejecucion'] == true) {
 				if (count($result) > 1) {
-					echo "3";
+					echo "2";
 				} else {
 					$execute = $this->rol->AgregarR();
 					//Codigo de bitacora sobre Agregar Usuario
