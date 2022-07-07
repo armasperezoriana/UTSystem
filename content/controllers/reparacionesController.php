@@ -26,6 +26,16 @@
 
 		}
 
+public function Mostrar($param)
+    {
+        $reparaciones = $this->reparaciones->ObtenerOne($param);
+        http_response_code(200);
+        echo json_encode([
+            'data' => $reparaciones
+        ]);
+    }
+
+
 		public function Consultar(){
 			$objModel = new homeModel;
 			$_css = new headElement;
@@ -44,16 +54,16 @@
 			if (!empty($_POST['nombre']) && !empty($_POST['intervalo'])  && !empty($_POST['descripcion'])) {
 				$nombre = $_POST['nombre'];
 				$fecha = $_POST['intervalo'];
-				$placa = $_POST['placa'];
+				$id_vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$descripcion = $_POST['descripcion'];
-				$rif = $_POST['taller'];
+				$id_taller = $_POST['id_taller'];
 				$this->reparaciones->setNombre($nombre);
 				$this->reparaciones->setFecha($fecha);
-				$this->reparaciones->setPlaca($placa);
+				$this->reparaciones->setIdVehiculo($id_vehiculo);
 				$this->reparaciones->setCosto($costo);
 				$this->reparaciones->setDescripcion($descripcion);
-				$this->reparaciones->setRif($rif);
+				$this->reparaciones->setIdTaller($id_taller);
 
 				$result = $this->reparaciones->ConsultarOne();
 				if ($result['ejecucion'] == true) {
@@ -84,19 +94,18 @@
 			$id_reparaciones = $_POST['id_reparaciones'];
 			if (!empty($_POST['nombre']) && !empty($_POST['placa'])  && !empty($_POST['descripcion'])) {
 				$nombre = $_POST['nombre'];
-				$placa = $_POST['placa'];
+				$id_vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$fecha = $_POST['intervalo'];
 				$descripcion = $_POST['descripcion'];
-				$rif = $_POST['taller'];
-
-				$this->reparaciones->setIdReparaciones($id_reparaciones);
+				$id_taller = $_POST['id_taller'];
+				
 				$this->reparaciones->setNombre($nombre);
-				$this->reparaciones->setPlaca($placa);
-				$this->reparaciones->setCosto($costo);
 				$this->reparaciones->setFecha($fecha);
+				$this->reparaciones->setIdVehiculo($id_vehiculo);
+				$this->reparaciones->setCosto($costo);
 				$this->reparaciones->setDescripcion($descripcion);
-				$this->reparaciones->setRif($rif);
+				$this->reparaciones->setIdTaller($id_taller);
 				
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				

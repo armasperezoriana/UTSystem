@@ -8,11 +8,11 @@
 
 		private $id_reparaciones;
 		private $nombre;
-		private $placa;
+		private $id_vehiculo;
 		private $costo;
 		private $fecha;
 		private $descripcion;
-		private $rif;
+		private $id_taller;
 		private $status;
 
 		public function __construct(){
@@ -33,10 +33,24 @@
 				return $errorReturn;
 			}
 		}
+		public function ObtenerOne($id){
+			try {
+				$query = parent::prepare("SELECT * FROM reparaciones WHERE id_reparaciones = $id");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
+				return $respuesta;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
 
 		public function ConsultarOne(){
 			try {
-				$query = parent::prepare("SELECT * FROM reparaciones WHERE nombre = '{$this->nombre}' and fecha = '{$this->fecha}' and rif = '{$this->rif}' and placa = '{$this->placa}'");
+				$query = parent::prepare("SELECT * FROM reparaciones WHERE nombre = '{$this->nombre}' and fecha = '{$this->fecha}' and id_taller = '{$this->id_taller}' and id_vehiculo = '{$this->id_vehiculo}'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -64,7 +78,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO reparaciones (id_reparaciones, nombre, placa, costo, fecha, descripcion, rif, status) VALUES ($id, '{$this->nombre}', '{$this->placa}', '{$this->costo}', '{$this->fecha}', '{$this->descripcion}', '{$this->rif}', 1)");
+				$query = parent::prepare("INSERT INTO reparaciones (id_reparaciones, nombre, id_vehiculo, costo, fecha, descripcion, id_taller, status) VALUES ($id, '{$this->nombre}', '{$this->id_vehiculo}', '{$this->costo}', '{$this->fecha}', '{$this->descripcion}', '{$this->id_taller}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -80,7 +94,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE reparaciones SET nombre = '{$this->nombre}', placa='$this->placa', costo='$this->costo', fecha='$this->fecha', descripcion='$this->descripcion', rif='$this->rif' WHERE id_reparaciones = $this->id_reparaciones");
+				$query = parent::prepare("UPDATE reparaciones SET nombre = '{$this->nombre}', id_vehiculo='$this->id_vehiculo', costo='$this->costo', fecha='$this->fecha', descripcion='$this->descripcion', id_taller='$this->id_taller' WHERE id_reparaciones = $this->id_reparaciones");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -128,8 +142,8 @@
 		public function setNombre($nombre){
 			$this->nombre = $nombre;
 		}
-		public function setPlaca($placa){
-			$this->placa = $placa;
+		public function setIdVehiculo($id_vehiculo){
+			$this->id_vehiculo = $id_vehiculo;
 		}
 		public function setCosto($costo){
 			$this->costo = $costo;
@@ -140,8 +154,8 @@
 		public function setDescripcion($descripcion){
 			$this->descripcion = $descripcion;
 		}
-		public function setRif($rif){
-			$this->rif = $rif;
+		public function setIdTaller($id_taller){
+			$this->id_taller = $id_taller;
 		}
 
 		public function getIdReparaciones(){
@@ -150,8 +164,8 @@
 		public function getNombre(){
 			return $this->nombre;
 		}
-		public function getPlaca(){
-			return $this->placa;
+		public function getIdVehiculo(){
+			return $this->id_vehiculo;
 		}
 		public function getCosto(){
 			return $this->costo;
@@ -162,8 +176,8 @@
 		public function getDescripcion(){
 			return $this->descripcionpcion;
 		}
-		public function getRif(){
-			return $this->rif;
+		public function getIdTaller(){
+			return $this->id_taller;
 		}
 	}
 ?>

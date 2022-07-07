@@ -5,8 +5,8 @@ $(document).ready(function () {
         if (valido == true) {
             var nombre = $("#AgregarReparacionModal").find("#nombre").val();
             var intervalo = $("#AgregarReparacionModal").find("#intervalo").val();
-            var taller = $("#AgregarReparacionModal").find("#taller").val();
-            var placa = $("#AgregarReparacionModal").find("#placa").val();
+            var id_taller = $("#AgregarReparacionModal").find("#id_taller").val();
+            var id_vehiculo = $("#AgregarReparacionModal").find("#id_vehiculo").val();
             var costo = $("#AgregarReparacionModal").find("#costo").val();
             var descripcion = $("#AgregarReparacionModal").find("#descripcion").val();
 
@@ -23,13 +23,13 @@ $(document).ready(function () {
             }).then((isConfirm) => {
                 if (isConfirm.value) {
                     $.ajax({
-                        url: './reparaciones/Registrar',
+                        url: './Reparaciones/Registrar',
                         type: 'POST',
                         data: {
                             nombre: nombre,
                             intervalo: intervalo,
-                            taller: taller,
-                            placa: placa,
+                            id_taller: id_taller,
+                            id_vehiculo: id_vehiculo,
                             costo: costo,
                             descripcion: descripcion,
                         },
@@ -40,7 +40,7 @@ $(document).ready(function () {
                                     type: 'success',
                                     title: 'Registro guardado exitosamente',
                                 }).then((isConfirm) => {
-                                    location.href = './reparaciones';
+                                    location.href = './Reparaciones';
                                 });
                             }
                             if (respuesta == "2") {
@@ -78,8 +78,8 @@ $(document).ready(function () {
 
             var nombre = $("#ModificarReparacionesModal"+id).find("#nombre").val();
             var intervalo = $("#ModificarReparacionesModal"+id).find("#intervalo").val();
-            var taller = $("#ModificarReparacionesModal"+id).find("#taller").val();
-            var placa = $("#ModificarReparacionesModal"+id).find("#placa").val();
+            var id_taller = $("#ModificarReparacionesModal"+id).find("#id_taller").val();
+            var id_vehiculo = $("#ModificarReparacionesModal"+id).find("#id_vehiculo").val();
             var costo = $("#ModificarReparacionesModal"+id).find("#costo").val();
             var descripcion = $("#ModificarReparacionesModal"+id).find("#descripcion").val();
 
@@ -101,19 +101,20 @@ $(document).ready(function () {
                             id_reparaciones: id,
                             nombre: nombre,
                             intervalo: intervalo,
-                            taller: taller,
-                            placa: placa,
+                            id_taller: id_taller,
+                            id_vehiculo: id_vehiculo,
                             costo: costo,
                             descripcion: descripcion,
                         },
                         success: function(respuesta) {
-                           // alert(respuesta);
+                         alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
+                          // alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
                                 }).then((isConfirm) => {
-                                    location.href = './reparaciones';
+                                    location.href = './Reparaciones';
                                 });
                             }
                             if (respuesta == "2") {
@@ -201,11 +202,13 @@ $(document).ready(function () {
         var intervalo = $(form).find("#intervalo").val();
         var rintervalo = false;
 
-        var taller = $(form).find("#taller").val();
+        var taller = $(form).find("#id_taller").val();
+    
         var rtaller = false;
 
-        var placa = $(form).find("#placa").val();
+        var placa = $(form).find("#id_vehiculo").val();
         var rplaca = false;
+
 
         var costo = $(form).find("#costo").val();
         var rcosto = false;
@@ -264,29 +267,33 @@ $(document).ready(function () {
      $('.editar').click(function(e){
         console.log("1");
                 e.preventDefault();
-                mostrar($(this).attr('data-id'), "#modificarVehiculo", "#ModificarVehiculoModal");
+                mostrar($(this).attr('data-id'), "#modificareparcion", "#ModificarReparacionesModal");
             })
             $('.consultar').click(function(e){
                  
                 e.preventDefault();
-                mostrar($(this).attr('data-id'), "#consultarVehiculo", "#ConsultarVehiculoModal");
+                mostrar($(this).attr('data-id'), "#consultarReparacion", "#ConsultarReparacionModal");
             })
 
       const mostrar = (id, formulario, modal) => {
             $.ajax({
                 type: "POST",
-                url: "Vehiculos/Mostrar/"+id,
+                url: "Reparaciones/Mostrar/"+id,
                 success: function (response) {
                     let json = JSON.parse(response);
-                    let vehiculo = json.data;
-                    $(formulario).find("#id_vehiculo").val(vehiculo.id_vehiculo);
-                    $(formulario).find("#placaM").val(vehiculo.placa);
-                    $(formulario).find("#modeloM").val(vehiculo.modelo);
-                    $(formulario).find("#funcionamientoM").val(vehiculo.funcionamiento);
+                    let reparaciones = json.data;
+                    $(formulario).find("#id_vehiculo").val(reparaciones.id_vehiculo);
+                    $(formulario).find("#id_taller").val(reparaciones.id_taller);
+                    $(formulario).find("#intervalo").val(reparaciones.intervalo);
+                    $(formulario).find("#costo").val(reparaciones.costo);
+                    $(formulario).find("#descripcion").val(reparaciones.descripcion);
+                    $(formulario).find("#intervalo").val(reparaciones.intervalo);
                     $(modal).modal('show');
                 },
                 error: function (response) {
+
                     console.log(response.getAllResponseHeaders())
+                     //alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
                 }
             });
         }
