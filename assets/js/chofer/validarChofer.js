@@ -229,7 +229,7 @@
         var placa = $(form).find("#placa").val();
         var rplaca = false;
 
-       
+       //revisar errores
         if (nombre == ""|apellido == ""|cedula == ""|placa == ""|telefono == "") {
        swal.fire({
                                         type: 'warning',

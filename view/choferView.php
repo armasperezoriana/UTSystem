@@ -438,7 +438,7 @@
 
 </body>
 
-<script type="text/javascript" src="'../../assets/js/chofer/validarC.js"></script>
+<script type="text/javascript" src="'../../assets/js/chofer/validarChofer.js"></script>
  
 
 </script> 
