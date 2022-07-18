@@ -13,7 +13,10 @@
 	    private $direccion_ruta;
 	    private $hora_salida;
 	    private $kilometraje;
-	    private $status;
+		private $cantidad;
+		private $fecha_inicio;
+		private $fecha_fin;
+		private $status;
 
 		public function __construct(){
 			// $this->con = parent::__construct();
@@ -67,7 +70,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO rutas (id_ruta, placa, nombre_ruta, direccion_ruta, hora_salida, kilometraje, status) VALUES ($id, '{$this->placa}', '{$this->nombre_ruta}', '{$this->direccion_ruta}', '{$this->hora_salida}','{$this->kilometraje}', 1)");
+				$query = parent::prepare("INSERT INTO rutas (id_ruta, placa, nombre_ruta, direccion_ruta, hora_salida, kilometraje, cantidad, fecha_fin, fecha_inicio, status) VALUES ('$id', '{$this->placa}', '{$this->nombre_ruta}', '{$this->direccion_ruta}', '{$this->hora_salida}','{$this->kilometraje}','{$this->cantidad}','{$this->fecha_fin}','{$this->fecha_inicio}',1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -83,7 +86,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE rutas SET placa='{$this->placa}', nombre_ruta='{$this->nombre_ruta}', direccion_ruta = '{$this->direccion_ruta}', hora_salida = '{$this->hora_salida}', kilometraje='{$this->kilometraje}' WHERE id_ruta = {$this->id_ruta}");
+				$query = parent::prepare("UPDATE rutas SET placa='{$this->placa}', nombre_ruta='{$this->nombre_ruta}', direccion_ruta = '{$this->direccion_ruta}', hora_salida = '{$this->hora_salida}', kilometraje='{$this->kilometraje}',cantidad='{$this->cantidad}',fecha_inicio='{$this->fecha_inicio}',fecha_fin='{$this->fecha_fin}'  WHERE id_ruta = {$this->id_ruta}");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -142,6 +145,15 @@
 		}
 			public function setKilometraje($kilometraje){
 			$this->kilometraje = $kilometraje;
+		}
+		public function setCantidad($cantidad){
+			$this->cantidad = $cantidad;
+		}
+		public function setFechafin($fecha_fin){
+			$this->fecha_fin = $fecha_fin;
+		}
+		public function setFechainicio($fecha_inicio){
+			$this->fecha_inicio = $fecha_inicio;
 		}
 	}
 

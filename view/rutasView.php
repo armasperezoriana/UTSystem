@@ -156,6 +156,22 @@
                                     <br><br>
                                     <input type="text" class="form-control kilometraje kilometraje<?=$value['kilometraje'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['kilometraje'];?> kilometros" name="kilometraje" id="kilometraje" placeholder="kilometros en metros">
                                 </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="cantidad"><b>Cantidad de veces que recorre la ruta</b></label>
+                                    <input type="number" class="form-control cantidad"  style="width:100%;" name="cantidad" id="cantidad">
+                                    <span class="errorCantidad" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="date"><b>Fecha de asignación de la ruta</b></label>
+                                    <input type="date" class="form-control fecha_salida"  style="width:100%;" name="fecha_inicio" id="fecha_inicio">
+                                    <span class="errorDate" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="date"><b>Fecha de culminacion de la ruta</b></label>
+                                    <input type="date" class="form-control fecha_fin"  style="width:100%;" name="fecha_fin" id="fecha_fin">
+                                    <span class="errorDate" style="color:red"></span>
+                                </div>
+                                
                             <br><br>
                         </div>
                         <br>
@@ -249,6 +265,22 @@
                                        <input type="text" class="form-control kilometraje kilometraje<?=$value['id_ruta'];?>" value="<?=$value['kilometraje'];?>" name="kilometraje" id="kilometraje">
                                     <span class="errorKilometraje" style="color:red"></span>
                                 </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="date"><b>Fecha de asignación de la ruta</b></label>
+                                    <input type="date" class="form-control fecha_salida"  style="width:100%;" name="fecha_inicio" id="fecha_inicio">
+                                    <span class="errorDate" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="date"><b>Fecha de culminacion de la ruta</b></label>
+                                    <input type="date" class="form-control fecha_fin"  style="width:100%;" name="fecha_fin" id="fecha_fin">
+                                    <span class="errorDate" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="cantidad"><b>Cantidad de veces que recorre la ruta</b></label>
+                                    <input type="number" class="form-control cantidad"  style="width:100%;" name="cantidad" id="cantidad">
+                                    <span class="errorCantidad" style="color:red"></span>
+                                </div>
+                            <br><br>
                                   <div class="form-group col-sm-12 col-md-6">
                                     <label for="ruta"><b>Ruta:</b></label>
                                     <a target="blank" href=" https://www.google.com/maps/dir//Barquisimeto+3001,+Lara/@10.0677719,-69.3473509,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e87671d783e8671:0x972fe1e11519c3db!2m2!1d-69.3473509!2d10.0677719">Cómo llegar?
@@ -382,6 +414,23 @@
                                      <input type="text" class="form-control kilometraje" name="kilometraje" id="kilometraje" placeholder="Kilometraje del recorrido">
                                     <span class="errorkilometraje" style="color:red"></span>
                                 </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="date"><b>Fecha de asignación de la ruta</b></label>
+                                    <input type="date" class="form-control fecha_inicio"  style="width:100%;" name="fecha_inicio" id="fecha_inicio">
+                                    <span class="errorDate" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="cantidad"><b>Cantidad de veces que recorre la ruta</b></label>
+                                    <input type="number" class="form-control cantidad"  style="width:100%;" name="cantidad" id="cantidad">
+                                    <span class="errorCantidad" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                    <label for="date"><b>Fecha de culminacion de la ruta</b></label>
+                                    <input type="date" class="form-control fecha_fin"  style="width:100%;" name="fecha_fin" id="fecha_fin">
+                                    <span class="errorDate" style="color:red"></span>
+                                </div>
+                                
+                            <br><br>
                              <div class="form-group col-sm-12 col-md-6">
                                     <label for="kilometraje"><b>Ver ruta</b></label>
                                     <a target="blank" href=" https://www.google.com/maps/dir//Barquisimeto+3001,+Lara/@10.0677719,-69.3473509,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e87671d783e8671:0x972fe1e11519c3db!2m2!1d-69.3473509!2d10.0677719">Cómo llegar?

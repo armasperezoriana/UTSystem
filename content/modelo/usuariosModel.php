@@ -103,6 +103,74 @@
 			}
 		}
 
+		public function encriptarS($palabra){
+			$valor=unpack('H*',$palabra);
+			$nivel1=base_convert($valor[1],16,2);
+			$parte1="";
+			$parte2="";
+		
+			for($n=0;$n<strlen($nivel1);$n++){
+			  if($n<(strlen($nivel1)/2)){
+				$parte1.=$nivel1[$n];
+			  }
+			  else{
+				$parte2.=$nivel1[$n];
+			  }
+			}
+		
+			$parte1Encriptada="";
+			for($n=0;$n<strlen($parte1);$n++){
+			  if($parte1[$n]==1){
+				$parte1Encriptada.="%";
+			  }
+			  else{
+				$parte1Encriptada.="$";
+			  }
+			}
+		
+			$parte2Encriptada="";
+			for($n=0;$n<strlen($parte2);$n++){
+			  if($parte2[$n]==1){
+				$parte2Encriptada.="%";
+			  }
+			  else{
+				$parte2Encriptada.="$";
+			  }
+			}
+		
+			$nivel2=$parte2Encriptada."/".$parte1Encriptada;
+		
+			return $nivel2;
+		
+		
+		  }
+		
+		  public function desencriptarS($palabra){
+		
+			$parte1="";
+			$parte2="";
+			$part2Decode="";
+		
+			for($n=0;$n<strlen($palabra);$n++){
+		
+			  if($palabra[$n]!="/"){
+		
+				$palabra[$n]=="$"?$palabra[$n]=0:$palabra[$n]=1;
+		
+			  }
+			}
+		
+			$palabraDesencriptada=explode("/",$palabra);
+		
+			$part2=$palabraDesencriptada[0];
+		
+			$part1=$palabraDesencriptada[1];
+		
+			$completado= pack('H*', base_convert($part1.$part2, 2, 16));
+		
+			return $completado;
+		  }
+
 		public function Agregar(){
 			$id= 0;
 			try {

@@ -50,7 +50,8 @@ class loginController
 	{
 		if (!empty($_POST['username']) || !empty($_POST['pass'])) {
 			$username = $_POST['username'];
-			$pass = $_POST['pass'];
+			$pass = $this->usuario->encriptarS($_POST['pass']);
+
 
 			// $this->usuario->setPassword($pass);
 			//Agregar un Consultar para ver si existe el registro; 

@@ -10,7 +10,9 @@
                 var nombre_ruta =$(".AgregarRutaModal").find(".nombre_ruta").val();
                 var hora_salida = $(".AgregarRutaModal").find(".hora_salida").val();
                 var kilometraje = $(".AgregarRutaModal").find(".kilometraje").val();
-
+                var cantidad = $(".AgregarRutaModal").find(".cantidad").val();
+                var fecha_inicio = $(".AgregarRutaModal").find(".fecha_inicio").val();
+                var fecha_fin = $(".AgregarRutaModal").find(".fecha_fin").val();
 
                  // console.log("hay datos enviados");
                 swal.fire({
@@ -33,9 +35,12 @@
                                 nombre_ruta: nombre_ruta,
                                 hora_salida: hora_salida,
                                 kilometraje: kilometraje,
+                                cantidad: cantidad,
+                                fecha_fin: fecha_fin,
+                                fecha_inicio: fecha_inicio,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                                 alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -82,8 +87,11 @@
                 var nombre_ruta = $(".EditarRutaModal").find(".nombre_ruta"+id).val();;
                 var hora_salida = $(".EditarRutaModal").find(".hora_salida"+id).val();
                 var kilometraje = $(".EditarRutaModal").find(".kilometraje"+id).val();
+                var cantidad = $(".EditarRutaModal").find(".cantidad"+id).val();
+                var fecha_fin = $(".EditarRutaModal").find(".fecha_fin"+id).val();
+                var fecha_inicio = $(".EditarRutaModal").find(".fecha_inicio"+id).val();
 
-                 console.log("hay datos enviados");
+                /// console.log("hay datos enviados");
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -105,6 +113,9 @@
                                 nombre_ruta: nombre_ruta,
                                 hora_salida: hora_salida,
                                 kilometraje: kilometraje,
+                                cantidad: cantidad,
+                                fecha_fin: fecha_fin,
+                                fecha_inicio: fecha_inicio,
                             },
                             success: function(respuesta) {
                                 if (respuesta == "1") {
@@ -173,7 +184,7 @@
             var rkilometraje = false;
 
 
-            if (placa == ""|direccion_ruta == ""|hora_salida == ""|nombre_ruta== ""|kilometraje== ""){
+            if (placa == ""|direccion_ruta == ""|hora_salida == ""|nombre_ruta== ""|kilometraje== ""|cantidad== ""|fecha_inicio== ""|fecha_fin== ""){
                   swal.fire({
                                         type: 'warning',
                                         title: 'Campos obligatorios',
@@ -184,14 +195,17 @@
                   $(namemodal+" .errorNombre").html("Ingrese el nombre de la ruta");
                  $(namemodal+" .errorHora").html("Elige la hora de salida asignada");
                 $(namemodal+" .errorKilometraje").html("Debe ingresar el kilometraje de esta ruta");
-                  return false;
+                $(namemodal+" .errorCantidad").html("Debe ingresar la cantidad de veces que recorre esta ruta");
+                $(namemodal+" .errorDate").html("Debe ingresar una fecha");
+                  
+                return false;
                   preventDefault();
             }       
             else{
                 if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
                     rkilometraje = false;
-                           preventDefault();
+                         //   preventDefault();
                 }else{
                         $(".errorKilometraje").html("Campo validado");
                         $(".errorKilometraje").attr("style", "color:green");
@@ -199,7 +213,7 @@
             }if(!expDireccion.test(direccion_ruta)){
                 $(".errorDireccion").html("Solo se aceptan caracteres, minimo 5");
                     rdireccion = false;
-                            preventDefault();
+                           //  preventDefault();
                 }else{
                         $(".errorDireccion").html("Campo validado");
                         $(".errorDireccion").attr("style", "color:green");
@@ -207,7 +221,7 @@
             }if(!expNombreR.test(nombre_ruta)){
                 $(".errorNombre").html("Solo puede agregar caracteres en este campo");
                     rnombre = false;
-                           preventDefault();
+                         //  preventDefault();
                 }else{
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");

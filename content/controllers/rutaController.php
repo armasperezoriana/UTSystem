@@ -47,13 +47,19 @@
 				$unidad = $_POST['placa'];
 				$hora_salida = $_POST['hora_salida'];
 				$kilometraje = $_POST['kilometraje'];
+				$cantidad = $_POST['cantidad'];
+				$fecha_fin = $_POST['fecha_fin'];
+				$fecha_inicio = $_POST['fecha_inicio'];
 
 				$this->ruta->setNombre_ruta($nombre_ruta);
 				$this->ruta->setPlaca($unidad);
 				$this->ruta->setDireccion($direccion);
 				$this->ruta->setHoraSalida($hora_salida);
 				$this->ruta->setKilometraje($kilometraje);
-
+				$this->ruta->setCantidad($cantidad);
+				$this->ruta->setFechafin($fecha_fin);
+				$this->ruta->setFechainicio($fecha_inicio);
+				
 				$result = $this->ruta->ConsultarOne();
 				// print_r($result);
 				if ($result['ejecucion'] == true) {
@@ -84,6 +90,10 @@
 				$unidad = $_POST['placa'];
 				$hora_salida = $_POST['hora_salida'];
 				$kilometraje = $_POST['kilometraje'];
+				$cantidad = $_POST['cantidad'];
+				$fecha_fin = $_POST['fecha_fin'];
+				$fecha_inicio = $_POST['fecha_inicio'];
+
 
 				$this->ruta->setId_ruta($id_ruta);
 				$this->ruta->setNombre_ruta($nombre_ruta);
@@ -91,6 +101,9 @@
 				$this->ruta->setDireccion($direccion);
 				$this->ruta->setHoraSalida($hora_salida);
 				$this->ruta->setKilometraje($kilometraje);
+				$this->ruta->setCantidad($cantidad);
+				$this->ruta->setFechafin($fecha_fin);
+				$this->ruta->setFechainicio($fecha_inicio);
 
 				$execute = $this->ruta->Modificar();
 				// print_r($result);
