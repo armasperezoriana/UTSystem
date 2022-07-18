@@ -20,8 +20,6 @@
 
 </head>
 <body class="bg-gradient-primary" style="display:flex;background-image: url(<?php echo _ROUTE_ ?>/assets/img/fondoUT.jpg);background-size: cover;">
-<body class="bg-gradient-primary">
-
     <div class="container" style="margin-top:auto;margin-bottom:auto">
 
         <!-- Outer Row -->
@@ -64,8 +62,9 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" value="1" href="<?=_ROUTE_ ?>Recuperar">¿Datos olvidados?</a>
-                                    </div>
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                                                      Recuperar
+                                                    </button>
 
                                 </div>
                             </div>
@@ -79,6 +78,56 @@
 
     </div>
 
+
+<!-- MODAL DE RECUPERAR-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+ 
+            <div class="container">
+                <div class="modal-dialog">
+                    <div class="" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary" style="color:#FFF">
+                               <div class="card o-hidden border-0 shadow-lg my-5">
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                    <div class="col-lg-6 d-none d-lg-block"><img src="assets/img/uptaeb.png" class="img" width="100%" ></div>
+                                    <div class="col-lg-6">
+                                        <div class="p-5">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-2">
+                                                 ¿Olvidaste tu clave?</h1>
+                                                    <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos algunos datos</p>
+                                            </div>
+                                                <form class="user">
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control form-control-user"
+                                                            id="exampleInputEmail" aria-describedby="emailHelp"
+                                                            placeholder="Enter Email Address...">
+                                                    </div>
+                                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                                       Recuperar Contraseña
+                                                    </a>
+                                                </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="<?=_ROUTE_ ?>Login">¿Ya tienes una? Inicia Sesion!</a>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
     <!-- Bootstrap core JavaScript-->
     <script src="view/vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

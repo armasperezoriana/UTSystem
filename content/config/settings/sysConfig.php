@@ -23,7 +23,7 @@
 	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
 
 	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
-
+		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelos/estadisticos/");					/* reportes estadisticos del proyecto */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
 
 	/* clase con el nombre config  */
@@ -53,6 +53,7 @@
 		protected function _DB_USER_()		{return _DB_USER_;}
 
 		protected function _REPORTS_()		{return _REPORTS_;}
+		protected function _ESTADISTICOS_()		{return _ESTADISTICOS_;}
 		protected function _DB_PASS_()		{return _DB_PASS_;}
 
 	}

@@ -34,7 +34,7 @@ class loginController
 	public function OlvidoClave(){
 
 		if(empty($_SESSION['ut_usuario'])){
-			alert ("Vamos a recuperar el usuario");
+			echo ("Vamos a recuperar el usuario");
 		require_once("view/recuperarUsuarioView.php");
 
 		}else{
