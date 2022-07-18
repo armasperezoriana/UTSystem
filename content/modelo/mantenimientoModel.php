@@ -55,6 +55,22 @@
 			}
 		}
 
+		public function ConsultarVehiculo($id_vehiculo){
+			try {
+				$query = parent::prepare("SELECT MAX(fecha) FROM mantenimientos WHERE id_vehiculo=".$id_vehiculo.";");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
 		public function Agregar(){
 			$id= 0;
 			try {
@@ -183,5 +199,3 @@
 			return $this->kilometraje;
 		}
 	}
-
-?>

@@ -83,6 +83,26 @@
 			}
 		}
 
+		public function notificaciones(){
+			$tiempo_aceite_filtro=4500; //Km
+			$tiempo_frenos_refri_electro=9500; //Km
+			$tiempo_suspension=19500; //Km
+			$tiempo_llantas=29500; //Km
+			$vehiculos=$this->vehiculo->Consultar();
+            $vehiculos_sin_mantenimiento=[];
+			$vehiculos_mantenimiento=[];	
+			foreach ($vehiculos as $v){
+            $ultimo_mantenimiento=$this->mantenimento->ConsultarVehiculo($v['id_vehiculo']);
+			if(count($ultimo_mantenimiento)==0){
+				$vehiculos_sin_mantenimiento[]=$v;
+			}
+			else{
+				$v['fecha_mantenimiento']=$ultimo_mantenimiento[0]['MAX(fecha)'];
+				$vehiculos_mantenimiento[]=$v;
+			}
+			}
+		}
+
 		public function Modificar(){
 			$method = $_SERVER['REQUEST_METHOD'];
 			if ($method != 'POST') {

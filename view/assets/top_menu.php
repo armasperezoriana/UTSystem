@@ -104,4 +104,6 @@
 
     </ul>
 
+    <script src="assets/js/notificaciones/verificar-notificaciones.js"></script>
+
 </nav>
