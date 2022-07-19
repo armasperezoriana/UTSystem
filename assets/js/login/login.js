@@ -43,3 +43,26 @@ $(document).ready(function() {
         showConfirmButton: false,
       });
 });
+
+
+  function mostrarPassword() {
+        var cambio = document.getElementById("pass");
+
+        if (cambio.type == "password") {
+            cambio.type = "text";
+            $('.password').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        } else {
+            cambio.type = "password";
+            $('.password').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        }
+
+      }
+
+           function Mostrar(){
+                                        document.getElementById("recuperar").style.display="block";
+                                        document.getElementById("login").style.display="none";
+                                      }
+                                       function Ocultar(){
+                                        document.getElementById("recuperar").style.display="none";
+                                          document.getElementById("login").style.display="block";
+                                      }

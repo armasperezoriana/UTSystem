@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--fororo-->
 <head>
 
     <meta charset="utf-8">
@@ -27,7 +26,7 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div id="login" class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -44,15 +43,12 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="pass" name="pass" placeholder="Contraseña" required>
                                             <center>
-                                                <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon password"></span> </button>
+                                                <button id="show_password" class="btn btn-primary" style="position: absolute;top: 40%; width:40px; height:40px; right:15%;" type="button"  onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon password"></span> </button>
                                             <div class="input-group-append">
                                             
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Recuerdame</label>
-                                            </div>
+                                    
                                         </div>
                                         <button class="btn btn-primary btn-user btn-block">
                                             Iniciar Sesión
@@ -60,11 +56,10 @@
                                         <hr>
 
                                     </form>
+
                                     <hr>
                                     <div class="text-center">
-                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                                                      Recuperar
-                                                    </button>
+                                            <input type="button" value="Recuperar" onclick="Mostrar()" class="btn btn-secondary"/>
 
                                 </div>
                             </div>
@@ -75,102 +70,65 @@
             </div>
 
         </div>
-
-    </div>
-
-
+         </div>
+        </div>
 <!-- MODAL DE RECUPERAR-->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
- 
-            <div class="container">
-                <div class="modal-dialog">
-                    <div class="" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary" style="color:#FFF">
-                               <div class="card o-hidden border-0 shadow-lg my-5">
-                                <div class="card-body p-0">
-                                    <div class="row">
-                                    <div class="col-lg-6 d-none d-lg-block"><img src="assets/img/uptaeb.png" class="img" width="100%" ></div>
-                                    <div class="col-lg-6">
-                                        <div class="p-5">
-                                            <div class="text-center">
-                                                <h1 class="h4 text-gray-900 mb-2">
-                                                 ¿Olvidaste tu clave?</h1>
-                                                    <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos algunos datos</p>
-                                            </div>
-                                                <form class="user">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control form-control-user"
-                                                            id="exampleInputEmail" aria-describedby="emailHelp"
-                                                            placeholder="Enter Email Address...">
-                                                    </div>
-                                                    <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                                       Recuperar Contraseña
-                                                    </a>
-                                                </form>
-                                    <hr>
+<div class="modal-dialog" style="display: none" id="recuperar" role="document" style="position: relative;top: 100%; width:400%; height:800%; right:8%;"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Recuperar Cuenta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Ocultar()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
                                     <div class="text-center">
-                                        <a class="small" href="<?=_ROUTE_ ?>Login">¿Ya tienes una? Inicia Sesion!</a>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-    <!-- Bootstrap core JavaScript-->
+                                        <h1 class="h4 text-gray-900 mb-2">
+                                        ¿Olvidaste tu clave?</h1>
+                                          <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos algunos datos</p>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                 aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address...">
+                                        </div>
+                                         <br>
+                                        <a class="btn btn-primary btn-user btn-block">
+                                           Recuperar Contraseña
+                                        </a>
+                                    </form>
+                                    <hr>
+                                    <br>  <br> 
+                                    <div class="text-center">
+                                        <a class="small" onclick="Ocultar()">¿Ya tienes una? Inicia Sesion!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ <!-- Bootstrap core JavaScript-->
     <script src="view/vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
  <script src="https://www.google.com/recaptcha/api.js?render=6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_"></script>
-<script>
-        
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_', {action: 'homepage'})
-                .then(function(token) {
-                    // Add your logic to submit to your backend server here.
-                 //   console.log(token);
-                    $('#token').val(token);
-                });
-            });
-    </script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
     <script src="view/vendor/plugins/sweetalert/sweet-alert.js"></script>
     <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
+    <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+
+
+
 </body>
-<script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
 
-<script type="text/javascript">
-    function mostrarPassword() {
-        var cambio = document.getElementById("pass");
-
-        if (cambio.type == "password") {
-            cambio.type = "text";
-            $('.password').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-        } else {
-            cambio.type = "password";
-            $('.password').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-        }
-    }
-
-   
-</script>
 
 
 </html>
+
+
