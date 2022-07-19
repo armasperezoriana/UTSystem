@@ -77,7 +77,7 @@
 <div class="modal-dialog" style="display: none" id="recuperar" role="document" style="position: relative;top: 100%; width:400%; height:800%; right:8%;"> 
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Recuperar Cuenta</h5>
+        <center><h5>Recuperar Cuenta</h5></center>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Ocultar()">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -88,11 +88,13 @@
                                         ¿Olvidaste tu clave?</h1>
                                           <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos algunos datos</p>
                                     </div>
-                                    <form class="user">
+                                    <form class="recuperarClave" id="recuperarClave">
                                         <div class="form-group">
+                                          <div class="form-group">
+                                         
                                             <input type="email" class="form-control form-control-user"
                                                  aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Ingresa el correo registrado...">
                                         </div>
                                          <br>
                                         <a class="btn btn-primary btn-user btn-block">
