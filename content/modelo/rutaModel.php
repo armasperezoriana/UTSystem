@@ -86,7 +86,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE rutas SET placa='{$this->placa}', nombre_ruta='{$this->nombre_ruta}', direccion_ruta = '{$this->direccion_ruta}', hora_salida = '{$this->hora_salida}', kilometraje='{$this->kilometraje}',cantidad='{$this->cantidad}',fecha_inicio='{$this->fecha_inicio}',fecha_fin='{$this->fecha_fin}'  WHERE id_ruta = {$this->id_ruta}");
+				$query = parent::prepare("UPDATE rutas SET placa ='{$this->placa}', nombre_ruta='{$this->nombre_ruta}', direccion_ruta = '{$this->direccion_ruta}', hora_salida = '{$this->hora_salida}', kilometraje='{$this->kilometraje}',cantidad='{$this->cantidad}',fecha_inicio='{$this->fecha_inicio}',fecha_fin='{$this->fecha_fin}'  WHERE id_ruta = {$this->id_ruta}");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

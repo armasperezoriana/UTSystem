@@ -90,8 +90,9 @@
                 var cantidad = $(".EditarRutaModal").find(".cantidad"+id).val();
                 var fecha_fin = $(".EditarRutaModal").find(".fecha_fin"+id).val();
                 var fecha_inicio = $(".EditarRutaModal").find(".fecha_inicio"+id).val();
-
-                /// console.log("hay datos enviados");
+                 alert( nombre_ruta + ' ' + placa+ ' ' + kilometraje + ' ' + direccion_ruta + ' ' + cantidad + ' ' + fecha_fin + ' '+ fecha_inicio + ' ' );
+                console.log("hay datos enviados");
+                alert(cantidad);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -118,7 +119,8 @@
                                 fecha_inicio: fecha_inicio,
                             },
                             success: function(respuesta) {
-                                if (respuesta == "1") {
+                                alert(respuesta);
+                                    if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
                                         title: 'Registro modificado exitosamente',
@@ -183,6 +185,14 @@
             var kilometraje= $(namemodal+" .kilometraje"+id).val();
             var rkilometraje = false;
 
+            var cantidad= $(namemodal+" .cantidad"+id).val();
+            var rcantidad = false;
+
+            var fecha_inicio= $(namemodal+" .fecha_inicio"+id).val();
+            var rfecha_inicio= false;
+
+            var fecha_fin= $(namemodal+" .fecha_fin"+id).val();
+            var rfecha_inicio= false;
 
             if (placa == ""|direccion_ruta == ""|hora_salida == ""|nombre_ruta== ""|kilometraje== ""|cantidad== ""|fecha_inicio== ""|fecha_fin== ""){
                   swal.fire({
