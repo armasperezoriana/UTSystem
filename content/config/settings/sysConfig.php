@@ -23,7 +23,7 @@
 	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
 
 	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
-		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelos/estadisticos/");					/* reportes estadisticos del proyecto */
+		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
 
 	/* clase con el nombre config  */
