@@ -46,8 +46,29 @@
                             <!-- REPORTES PDF -->
                             <div class="row">
 
-                                <!-- Earnings (Monthly) Card Example -->
+                                <!-- REPORTE DE VEHICULOS -->
                                 <div class="col-xl-3 col-md-30 mb-30">
+                                    <div class="card border-left-primary shadow h-70 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        <a href="Manual.pdf" target="blank">
+                                                            <h5>Manual de Usuario PDF</h5>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-800"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <!-- REPORTE DE VEHICULOS -->
+                                    <div class="col-xl-3 col-md-30 mb-30">
                                     <div class="card border-left-primary shadow h-70 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -67,6 +88,7 @@
                                         </div>
                                     </div>
                                 </div>
+
 
                             
                                 <!-- REPORTE CHOFERES-->
@@ -120,7 +142,7 @@
                             </div>
 
                             <div class="row">
-                                <!-- Pending Requests Card Example -->
+                                <!-- REPORTE DE RUTAS -->
                                 <div class="col-xl-3 col-md-6 mb-4">
                                     <div class="card border-left-warning shadow h-100 py-2">
                                         <div class="card-body">
@@ -141,7 +163,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                  <!-- Pending Requests Card Example -->
+                                  <!-- REPORTE DE TALLERES -->
                                   <div class="col-xl-3 col-md-6 mb-4">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">

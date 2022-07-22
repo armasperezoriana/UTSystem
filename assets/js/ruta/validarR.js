@@ -90,8 +90,8 @@
                 var cantidad = $(".EditarRutaModal").find(".cantidad"+id).val();
                 var fecha_fin = $(".EditarRutaModal").find(".fecha_fin"+id).val();
                 var fecha_inicio = $(".EditarRutaModal").find(".fecha_inicio"+id).val();
-                 alert( nombre_ruta + ' ' + placa+ ' ' + kilometraje + ' ' + direccion_ruta + ' ' + cantidad + ' ' + fecha_fin + ' '+ fecha_inicio + ' ' );
-                console.log("hay datos enviados");
+               //  alert( nombre_ruta + ' ' + placa+ ' ' + kilometraje + ' ' + direccion_ruta + ' ' + cantidad + ' ' + fecha_fin + ' '+ fecha_inicio + ' ' );
+               // console.log("hay datos enviados");
                 alert(cantidad);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
