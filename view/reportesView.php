@@ -34,14 +34,10 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
+                    
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <center>
                             <h1 class="h3 mb-0 text-gray-800">Gestión de Reportes</h1>
-                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                <a href="Manual.pdf" target="blank"
-                                    class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"><i
-                                        class="fas fa-download fa-sm text-white-50"></i>Manual de Usuario</a>
-                            </div>
 
                             <!-- REPORTES PDF -->
                             <div class="row">
@@ -55,7 +51,7 @@
                                                     <div
                                                         class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                         <a href="Manual.pdf" target="blank">
-                                                            <h5>Manual de Usuario PDF</h5>
+                                                            <h5>Manual de Usuario</h5>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -75,7 +71,7 @@
                                                 <div class="col mr-2">
                                                     <div
                                                         class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                        <a href="<?=_REPORTS_?>Vehiculos">
+                                                        <a href="<?=_REPORTS_?>Vehiculos" target="blank" >
                                                             <h5>Vehiculos PDF</h5>
                                                         </a>
                                                     </div>

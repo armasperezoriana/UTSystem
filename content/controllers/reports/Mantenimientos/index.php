@@ -19,23 +19,25 @@ function Header()
     // Logo
    $this->Image('../../../../assets/img/logo1.png',10,8,33);
     // Arial bold 15
-    $this->SetFont('Arial','B',15);
+      $this->SetFont('Arial','B',13);
     // Movernos a la derecha
     $this->Cell(80);
-    $this->SetLeftMargin($this->GetPageWidth() / 2 - 63);
+    $this->SetLeftMargin($this->GetPageWidth() / 2 - 80);
     $this->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
-    $this->Ln(10);//salto de linea
+    $this->Cell(160, 10,  'SISTEMA UT',2, 0,'C', 0);
+    $this->Ln(15);//salto de linea
     // Título
-    $this->Cell(130, 10,  'MANTENIMIENTO',2, 0,'C', 0);
+    $this->Cell(160, 10,  'REGISTRO DE MANTENIMIENTOS',2, 0,'C', 0);
         $this->Ln(10);
 
         $this->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
 
-        $this->Cell(8, 10,  'Nro',1, 0,'C', 0);
-        $this->Cell(40, 10, 'Mantenimimiento',1, 0,'C', 0);
-        $this->Cell(25, 10, 'Placa',1, 0,'C', 0);
-        $this->Cell(30, 10, 'Taller',1, 0,'C', 0);
-        $this->Cell(30, 10, 'Costo',1, 0,'C', 0);
+        $this->Cell(10, 10,  'Nro',1, 0,'C', 0);
+         $this->Cell(30, 10, 'Placa',1, 0,'C', 0);
+        $this->Cell(45, 10, 'Mantenimimiento',1, 0,'C', 0);
+        $this->Cell(20, 10, 'Costo',1, 0,'C', 0);
+        $this->Cell(25, 10, 'Taller',1, 0,'C', 0);
+        $this->Cell(25, 10, 'Rif',1, 0,'C', 0);
         $this->Cell(25, 10, 'Fecha',1, 0,'C', 0);
 
         $this->Ln(10);
@@ -44,7 +46,6 @@ function Header()
 
         $this->SetFont('Arial','',10);//Tipo de letra, negrita, tamaño
     // Salto de línea
-    $this->Ln(20);
 }
 
 // Pie de página
@@ -63,22 +64,25 @@ function Footer()
 
 }
 
-$pdf = new PDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
-    
-    //$pdf = $pdf->reportesVehiculos();
-//require_once("../../../content/modelo/vehiculosModel.php");
-//require_once("../../../content/controllers/vehiculosController.php");
+$mysqli = new mysqli("localhost", "root", "", "ut");
+        $resultado = $mysqli->query('SELECT mantenimientos.id_mantenimiento AS id, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS PLACA, mantenimientos.costo AS costo_mantenimiento, mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.kilometraje AS mante_kilometraje, mantenimientos.fecha AS mante_fecha FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON mantenimientos.id_taller= taller.id_taller');
+        //$placa = $mysqli->query('SELECT placa FROM vehiculos');
+        //$rif = $mysqli->query('SELECT rif, nombre FROM rif WHERE id_mantenimiento=id_mantenimiento');
 
-                //$query = 'SELECT * FROM vehiculos';
-            //  $row = $query;
-        
-        //$pdf->Cell(10,10, $row->setId(), 1, 0,'C', 0);
-        //  $pdf->Cell(25,10, $row->getPlaca(), 1, 0,'C', 0);
-        //  $pdf->Cell(40,10, $row->getModelo(), 1, 0,'C', 0);
-        //  $pdf->Cell(50,10, $row->getFuncionamiento(), 1, 0,'C', 0);
-         //   $pdf->Ln(10);//salto de linea
+        $pdf = new PDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',12);
+    
+        while ($row = $resultado->fetch_assoc()){
+        $pdf->Cell(10,10, $row['id'], 1, 0,'C', 0);
+        $pdf->Cell(30,10, $row['PLACA'], 1, 0,'C', 0);
+         $pdf->Cell(45,10, $row['nombre_mantenimiento'], 1, 0,'C', 0);
+        $pdf->Cell(20,10, $row['costo_mantenimiento'], 1, 0,'C', 0);
+         $pdf->Cell(25,10, $row['nombre_taller'], 1, 0,'C', 0);
+         $pdf->Cell(25,10, $row['rif'], 1, 0,'C', 0);
+        $pdf->Cell(25,10, $row['mante_fecha'], 1, 0,'C', 0);
+         $pdf->Ln(10);//salto de linea
+        }
         
 $pdf->Output();
 

@@ -22,20 +22,24 @@ function Header()
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
     $this->Cell(80);
-    $this->SetLeftMargin($this->GetPageWidth() / 2 - 63);
+    $this->SetLeftMargin($this->GetPageWidth() / 2 - 90);
 	$this->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
 	$this->Ln(10);//salto de linea
+	$this->Cell(160, 10,  'SISTEMA UT',2, 0,'C', 0);
+	$this->Ln(10);//salto de linea
     // Título
-    $this->Cell(130, 10,  'RUTAS',2, 0,'C', 0);
+    // Título
+    $this->Cell(160, 10,  'REGISTRO DE RUTAS',2, 0,'C', 0);
 		$this->Ln(10);
 
 		$this->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
 
 		$this->Cell(8, 10,  'ID',1, 0,'C', 0);
 		$this->Cell(25, 10, 'Placa',1, 0,'C', 0);
-		$this->Cell(35, 10, 'Nombre',1, 0,'C', 0);
-		$this->Cell(30, 10, 'Hora Salida',1, 0,'C', 0);
-		$this->Cell(60, 10, 'Direccion',1, 0,'C', 0);
+		$this->Cell(40, 10, 'Nombre',1, 0,'C', 0);
+		$this->Cell(70, 10, 'Direccion',1, 0,'C', 0);
+		$this->Cell(25, 10, 'Hora Salida',1, 0,'C', 0);
+		$this->Cell(20, 10, 'Km',1, 0,'C', 0);
 		$this->Ln(10);
 
 		$this->SetFont('Arial','',10);//Tipo de letra, negrita, tamaño
@@ -49,31 +53,30 @@ function Footer()
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Número de página
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,'Page '.$this->PageNo(),0,0,'C');
 }
 
 
 
 
 }
+$mysqli = new mysqli("localhost", "root", "", "ut");
+		$resultado = $mysqli->query('SELECT * FROM rutas');
 
-$pdf = new PDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
-	
-	//$pdf = $pdf->reportesVehiculos();
-//require_once("../../../content/modelo/vehiculosModel.php");
-//require_once("../../../content/controllers/vehiculosController.php");
+		$pdf = new PDF();
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','B',12);
 
-				//$query = 'SELECT * FROM vehiculos';
-			//	$row = $query;
-		
-		//$pdf->Cell(10,10, $row->setId(), 1, 0,'C', 0);
-		//	$pdf->Cell(25,10, $row->getPlaca(), 1, 0,'C', 0);
-		//	$pdf->Cell(40,10, $row->getModelo(), 1, 0,'C', 0);
-		//	$pdf->Cell(50,10, $row->getFuncionamiento(), 1, 0,'C', 0);
-		 //   $pdf->Ln(10);//salto de linea
-		
+		while ($row = $resultado->fetch_assoc()) {
+
+			$pdf->Cell(8,10, $row['id_ruta'], 1, 0,'C', 0);
+			$pdf->Cell(25,10, $row['placa'], 1, 0,'C', 0);
+			$pdf->Cell(40,10, $row['nombre_ruta'], 1, 0,'C', 0);
+			$pdf->Cell(70,10, $row['direccion_ruta'], 1, 0,'C', 0);
+			$pdf->Cell(25,10, $row['hora_salida'], 1, 0,'C', 0);
+			$pdf->Cell(20,10, $row['kilometraje'], 1, 0,'C', 0);
+		   $pdf->Ln(10);//salto de linea
+		}
 $pdf->Output();
 
 ?>

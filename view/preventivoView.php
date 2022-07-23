@@ -375,15 +375,14 @@
                                                 <option value="Bujias">Bujias</option>
                                                 <option value="Pastillas de freno">Pastillas de freno</option>
                                                 <option value="Filtro de Aceite">Filtro de Aceite</option>
-                                                <option value="Mantenimiento programado">Mantenimiento programado</option>
+                                                <option value="Mant. programado">Mant. programado</option>
                                                 <option value="Cauchos">Cauchos</option>
                                                 <option value="Bateria">Bateria</option>
                                                 <option value="Anticongelante adicional">Anticongelante adicional</option>
                                                 <option value="Balanceo">Balanceo</option>
                                                 <option value="Alineación">Alineación</option>
                                                 <option value="Afinacion del motor">Afinacion del motor</option>
-                                                <option value="Cambio de las escobillas limpiaparabrisas">Cambio de las escobillas limpiaparabrisas</option>
-                                                <option value="Cambio del filtro de aire">Cambio del filtro de aire</option>
+                                                <option value="Limpiaparabrisas">Limpiaparabrisas</option>
                                                 <option value="Brazos de suspensión">Brazos de suspensión</option>
                                                 <option value="Chasis/Dirección">Chasis/Dirección</option>
                                                 <option value="Amortiguadores">Amortiguadores</option>
@@ -393,7 +392,7 @@
                                                 <option value="filtro de gasolina">Filtro de gasolina</option>
                                                 <option value="filtro de aire">Filtro de Aire</option>
                                                  <option value="Frenos">Frenos</option>
-                                                <option value="Sistema de escape y catalizadores">Sistema de escape y catalizadores</option>
+                                                <option value="Sistema de escape y catalizadores">Sist. de escape y catalizadores</option>
                                                     <option value="Cables internos Bateria">Cables internos/Bateria</option>
                                             </select>
                                        
