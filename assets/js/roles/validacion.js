@@ -305,6 +305,14 @@
                         permiso.click()
                     });
                 }
+                else{
+                    $('#listaPermisos').html('');
+                    $.each(json.data, function (j, element) { 
+                        var li = $('<li>');
+                        li.text(element.permiso);
+                        $('#listaPermisos').append(li);
+                    });
+                }
                 $(modal).modal('show');
             },
             error: function (response) {

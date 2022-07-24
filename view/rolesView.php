@@ -431,7 +431,10 @@
                                                         </div>
                                                     </div>
                                                   
-                                                    
+                                                    <div>
+                                                        <ul id="listaPermisos" class="m-2 p-2">
+                                                        </ul>
+                                                    </div>
                                                     <div class="modal-footer">
                                                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                                                     </div>
