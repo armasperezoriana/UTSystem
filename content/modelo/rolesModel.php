@@ -50,7 +50,7 @@
 		}
 
 
-public function ObtenerOne($id){
+		public function ObtenerOne($id){
 			try {
 				$query = parent::prepare("SELECT * FROM roles WHERE id_rol = $id");
 				$respuestaArreglo = '';
@@ -65,6 +65,24 @@ public function ObtenerOne($id){
 			}
 		}
 		
+		public function ObtenerRol($id){
+			try {
+				$query = parent::prepare("SELECT r.id_rol, r.nombre_rol AS rol, r.descripcion, p.id_permisos, p.nombre AS permiso FROM `roles` r 
+					INNER JOIN roles_permisos rp ON r.id_rol = rp.rol_id 
+					INNER JOIN permisos p ON rp.permisos_id = p.id_permisos WHERE r.id_rol = $id");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuesta = $query->fetchAll(parent::FETCH_ASSOC); 
+				return $respuesta;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+
 			public function AgregarR(){
 				$id=0;
 			try {

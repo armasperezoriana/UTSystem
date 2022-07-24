@@ -576,7 +576,7 @@
                             
                                                              <div class="modal-footer">
                                                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                                        <a class="ModificarPermiso btn btn-primary" href="#">Modificar Permisos</a>
+                                                        <button class="ModificarPermiso btn btn-primary" type="submit">Modificar Permisos</button>
                                                     </div>
                                                 </div>
                                             </div>

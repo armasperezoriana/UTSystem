@@ -129,7 +129,7 @@
             }
 
         });
-        $("#PermisosRolForm").submit(function(e) {
+        $("#modificarRol").submit(function(e) {
             e.preventDefault();
             var ba = false;
             var permisos = $(this).find('input[name="permisos[]"]');                  
@@ -146,7 +146,7 @@
                 );
                 return false;
             }
-            let datos = new FormData(document.querySelector('#PermisosRolForm'));
+            let datos = new FormData(document.querySelector('#modificarRol'));
             $.ajax({
                 type: "POST",
                 url: "./Roles/Modificar",
@@ -295,8 +295,16 @@
             success: function (response) {
                 let json = JSON.parse(response);
                 let rol = json.data;
-                $(formulario).find("#nombre_rol").val(rol.nombre_rol);
-                $(formulario).find("#descripcion").val(rol.descripcion);
+                $(formulario).trigger('reset');
+                $(formulario).find("#nombre_rol").val(rol[0].rol);
+                $(formulario).find("#descripcion").val(rol[0].descripcion);
+                if(modal == '#ModificarRolModal'){
+                    $(formulario).find('input#id_rol').val(rol[0].id_rol); 
+                    $.each(rol, function (j, element) { 
+                        var permiso = $(formulario).find('input[value="'+element.id_permisos+'"]');
+                        permiso.click()
+                    });
+                }
                 $(modal).modal('show');
             },
             error: function (response) {

@@ -32,7 +32,7 @@
 
 public function Mostrar($param)
     {
-        $rol = $this->rol->ObtenerOne($param);
+        $rol = $this->rol->ObtenerRol($param);
         http_response_code(200);
         echo json_encode([
             'data' => $rol
@@ -70,9 +70,9 @@ public function Mostrar($param)
 	}
 	public function Modificar()
 	{
-		if (!empty($_POST['nombreRol']) && count($_POST['permisos']) > 0) {
+		if (!empty($_POST['nombre_rol']) && count($_POST['permisos']) > 0) {
 			$id = $_POST['id_rol'];
-			$nombre_rol = $_POST['nombreRol'];
+			$nombre_rol = $_POST['nombre_rol'];
 			$descripcion = $_POST['descripcion'];
 			$permisos = $_POST['permisos'];
 			
