@@ -159,7 +159,7 @@
                     if (respuesta == "1") {
                         swal.fire({
                             type: 'success',
-                            title: 'Registro modificado exitosamente. Ahora debe agregar los permisos de este usuario',
+                            title: 'Haz agregado los permisos de este usuario',
                         }).then((isConfirm) => {
                             location.href = './Roles';
                         });

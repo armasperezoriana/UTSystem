@@ -24,9 +24,10 @@ function Header()
     $this->Cell(80);
     $this->SetLeftMargin($this->GetPageWidth() / 2 - 63);
 	$this->SetFont('Helvetica','B',15);//Tipo de letra, negrita, tamaño
+	$this->Cell(160, 10,  'SISTEMA UT',2, 0,'C', 0);
 	$this->Ln(10);//salto de linea
     // Título
-    $this->Cell(130, 10,  'TALLER',2, 0,'C', 0);;
+    $this->Cell(130, 10,  'REGISTRO DE TALLERES',2, 0,'C', 0);;
 
 
 		 $this->Ln(10);
@@ -46,11 +47,10 @@ function Header()
 		$this->Ln(10);
 
 		$this->SetFont('Arial','',10);
-		$this->Ln(10);
+		//$this->Ln(10);
 
 		$this->SetFont('Arial','',10);//Tipo de letra, negrita, tamaño
     // Salto de línea
-    $this->Ln(20);
 }
 
 // Pie de página
@@ -64,28 +64,25 @@ function Footer()
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 
-
-
-
 }
+
+$mysqli = new mysqli("localhost", "root", "", "ut");
+		$resultado = $mysqli->query('SELECT * FROM taller');
+
 
 $pdf = new PDF();
 $pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
+$pdf->SetFont('Arial','B',12);
+	while ($row = $resultado->fetch_assoc()) {
 	
-	//$pdf = $pdf->reportesVehiculos();
-//require_once("../../../content/modelo/vehiculosModel.php");
-//require_once("../../../content/controllers/vehiculosController.php");
-
-				//$query = 'SELECT * FROM vehiculos';
-			//	$row = $query;
-		
-		//$pdf->Cell(10,10, $row->setId(), 1, 0,'C', 0);
-		//	$pdf->Cell(25,10, $row->getPlaca(), 1, 0,'C', 0);
-		//	$pdf->Cell(40,10, $row->getModelo(), 1, 0,'C', 0);
-		//	$pdf->Cell(50,10, $row->getFuncionamiento(), 1, 0,'C', 0);
-		 //   $pdf->Ln(10);//salto de linea
-		
+		$pdf->Cell(10,10, $row['id_taller'], 1, 0,'C', 0);
+		$pdf->Cell(30,10, $row['rif'], 1, 0,'C', 0);
+			$pdf->Cell(30,10, $row['nombre'], 1, 0,'C', 0);
+	
+			$pdf->Cell(35,10, $row['informacion_contacto'], 1, 0,'C', 0);
+		$pdf->Cell(50,10, $row['direccion'], 1, 0,'C', 0);
+		   $pdf->Ln(10);//salto de linea
+		}
 $pdf->Output();
 
 ?>

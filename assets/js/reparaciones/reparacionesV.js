@@ -234,7 +234,7 @@ $(document).ready(function () {
             if(!expDescripcion.test(descripcion)){
                 $(".errorDescripcion").html("El campo descripcion solo acepta caracteres");
                     rdescripcion = false;
-                           preventDefault();
+                          // preventDefault();
                 }else{
                         $(".errorDescripcion").html("Campo validado");
                         $(".errorDescripcion").attr("style", "color:green");
@@ -242,7 +242,7 @@ $(document).ready(function () {
             }if(!expCosto.test(costo)){
                 $(".errorCosto").html("El costo debe ser expresado en bolivares con una , 00");
                     rcosto = false;
-                          preventDefault();
+                        //  preventDefault();
                 }else{
                         $(".errorCosto").html("Campo validado");
                         $(".errorCosto").attr("style", "color:green");
@@ -250,7 +250,7 @@ $(document).ready(function () {
             }if(!expNombre.test(nombre)){
                 $(".errorNombre").html("Solo puede ingresar caracteres");
                     rnombre = false;
-                         preventDefault();
+                        // preventDefault();
                 }else{
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");

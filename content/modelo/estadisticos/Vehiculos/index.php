@@ -1,11 +1,4 @@
-<?php 
-   //include ("../conex.php");
-   //$link = Conectarse();
-   
-	use content\config\conection\database as database;
-   $con = ("SELECT * FROM vehiculos");
 
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -40,7 +33,7 @@
         type: 'column'
     },
     title: {
-        text: 'Vehiculos con mayor kilomitraje recorrido'
+        text: 'Vehiculos con mayor kilometraje recorrido '
     },
     xAxis: {
         categories: ['Modelo', 'Funcionamiento', 'Kilometraje']
@@ -49,17 +42,27 @@
         enabled: false
     },
     series: [{
-        name: 'Unidad',
+        name: 'Unidad', 
         data: [
             <?php
-                while ($row = $query->setFetchMode(parent::FETCH_ASSOC)){
+                use content\config\conection\database as database;
+$mysqli = new mysqli("localhost", "root", "", "ut");
+        $resultado = $mysqli->query('SELECT * FROM Vehiculos WHERE kilometraje > 300');
 
-                    echo "['".$row["modelo"]."',".$row["funcionamiento"]."',".$row["kilometraje"]."],";
+               while($row=$resultado->fetch_assoc()){
+
+                    //echo "['".$row["modelo"]."',".$row["funcionamiento"]."',".$row["kilometraje"]."],";
+                $row['id_vehiculo'];
+                $row['placa'];
+                $row['modelo'];
+                $row['funcionamiento'];
+
 
                 }
                  
                 ?>
         ]
+
     }]
 });
 

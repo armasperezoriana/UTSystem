@@ -65,7 +65,7 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
 
 		$pdf = new PDF();
 		$pdf->AddPage();
-		$pdf->SetFont('Arial','B',12);
+		$pdf->SetFont('Arial','B',10);
 
 		while ($row = $resultado->fetch_assoc()) {
 

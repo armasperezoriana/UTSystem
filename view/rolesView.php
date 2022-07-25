@@ -10,9 +10,10 @@
                                                         echo $url;
                                                     } ?></title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -78,12 +79,10 @@
                                             <th>Identificador</th>
                                             <th>Rol</th>
                                             <th>Descripción</th>
-                                            <th>Permisos</th>
+                                        
+                                            <th></th>
+                                            <th></th>
                                             <th>Acciones</th>
-                                            <th></th>
-
-                                            <th></th>
-                                            <th></th>
                                             <th></th>
                                      
                                         </tr>
@@ -99,16 +98,7 @@
                                                    
                                                     <td>
 
-                                                    <div class="col-sm-7" style='text-align:right;'>
-
-                                                            <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-secondary btn-icon-split permisos" name="permisos" data-toggle="modal" data-target="#PermisosRolModal">
-
-                                                                <span class="icon text-white-50">
-                                                                   <i class="fas fa-fw fa-wrench"></i>
-                                                                </span>
-                                                                <span class="text"></span>
-                                                            </a>
-                                                        </div>   
+                                                    
                                                     </td>
                                                     <td>
                                                           <div class="col-sm-7" style='text-align:right;'>
@@ -432,6 +422,7 @@
                                                     </div>
                                                   
                                                     <div>
+                                                    <label for="descripcion"><b>Listado de permisos</b></label>
                                                         <ul id="listaPermisos" class="m-2 p-2">
                                                         </ul>
                                                     </div>
