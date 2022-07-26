@@ -230,7 +230,7 @@ if (!modificar) {
     if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros, incluyendo decimales y coma");
                     rkilometraje = false;
-                    preventDefault();
+                   // preventDefault();
         } else {
                 $(".errorKilometraje").html("Campo validado");
                 $(".errorKilometraje").attr("style", "color:green");
@@ -239,7 +239,7 @@ if (!modificar) {
             if(!expPlaca.test(placa)){
                 $(".errorPlaca").html("El campo placa acepta 3 letras mayusculas y 3 numeros maximo 6 digitos");
                     rplaca = false;
-                    preventDefault();
+                  //  preventDefault();
         } else {
                 $(".errorPlaca").html("Placa valida");
                 $(".errorPlaca").attr("style", "color:green");

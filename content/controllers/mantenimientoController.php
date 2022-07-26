@@ -7,23 +7,25 @@
 	use content\modelo\homeModel as homeModel;
 	use content\modelo\mantenimientoModel as mantenimientoModel;
 	use content\modelo\vehiculosModel as vehiculosModel;
-		use content\modelo\talleresModel as talleresModel;
+	use content\modelo\talleresModel as talleresModel;
 	use content\modelo\tiposModel as tiposModel;
+	use content\modelo\rutaModel as rutaModel;
 
 
 	class mantenimientoController{
 		private $url;
-		private $mantenimento;
+		private $mantenimiento;
 		private $vehiculo;
 		private $taller;
 		private $tipo;
 
 		function __construct($url){
 			$this->url = $url;
-			$this->mantenimento = new mantenimientoModel();
+			$this->mantenimiento = new mantenimientoModel();
 			$this->vehiculo = new vehiculosModel();
 			$this->taller = new talleresModel();
 			$this->tipos = new tiposModel();
+			$this->rutas= new rutaModel();
 		}
 		
 		public function Consultar(){
@@ -32,7 +34,7 @@
 			$_css->Heading();
 
 			if (in_array('mantenimiento', $_SESSION['ut_permisos'])){
-			$mantenimento = $this->mantenimento->Consultar();
+			$mantenimiento = $this->mantenimiento->Consultar();
 			$vehiculo = $this->vehiculo->Consultar();
 			$taller = $this->taller->Consultar();
 			$tipos = $this->tipos->Consultar();
@@ -55,20 +57,20 @@
 				$costo = $_POST['costo'];
 				$tiempo = $_POST['tiempo'];
 				$kilometraje  = $_POST['kilometraje'];
-				$this->mantenimento->setNombre($nombre);
-				$this->mantenimento->setFecha($fecha);
-				$this->mantenimento->setKilometraje($kilometraje);
-				$this->mantenimento->setIdTaller($taller);
-				$this->mantenimento->setIdVehiculo($vehiculo);
-				$this->mantenimento->setCosto($costo);
-				$this->mantenimento->setTiempo($tiempo);
+				$this->mantenimiento->setNombre($nombre);
+				$this->mantenimiento->setFecha($fecha);
+				$this->mantenimiento->setKilometraje($kilometraje);
+				$this->mantenimiento->setIdTaller($taller);
+				$this->mantenimiento->setIdVehiculo($vehiculo);
+				$this->mantenimiento->setCosto($costo);
+				$this->mantenimiento->setTiempo($tiempo);
 
-				$result = $this->mantenimento->ConsultarOne();
+				$result = $this->mantenimiento->ConsultarOne();
 				if ($result['ejecucion'] == true) {
 					if (count($result) > 1) {
 						echo "3";
 					} else {
-						$execute = $this->mantenimento->Agregar();
+						$execute = $this->mantenimiento->Agregar();
 
 				// 		//Codigo de bitacora sobre Agregar Usuario
 						if ($execute['ejecucion'] == true) {
@@ -89,20 +91,46 @@
 			$tiempo_suspension=19500; //Km
 			$tiempo_llantas=29500; //Km
 			$vehiculos=$this->vehiculo->Consultar();
+			$rutas=$this->rutas->Consultar();
             $vehiculos_sin_mantenimiento=[];
 			$vehiculos_mantenimiento=[];	
 			foreach ($vehiculos as $v){
-            $ultimo_mantenimiento=$this->mantenimento->ConsultarVehiculo($v['id_vehiculo']);
+            $ultimo_mantenimiento=$this->mantenimiento->ConsultarVehiculo($v['id_vehiculo']);
 			if(count($ultimo_mantenimiento)==0){
 				$vehiculos_sin_mantenimiento[]=$v;
 			}
 			else{
-				$v['fecha_mantenimiento']=$ultimo_mantenimiento[0]['MAX(fecha)'];
+				$v['fecha_mantenimiento']=$ultimo_mantenimiento[0]['fecha'];
+				$v['kilometraje_mantenimiento']=$ultimo_mantenimiento[0]['kilometraje'];
 				$vehiculos_mantenimiento[]=$v;
 			}
 			}
+             
+			foreach($rutas as $r){
+                for($i=0;$i<count($vehiculos_sin_mantenimiento);$i++){
+                     if($vehiculos_sin_mantenimiento[$i]['placa']==$r['placa']){
+						$vehiculos_sin_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_sin_mantenimiento[$i]['kilometraje']) + floatval($r['kilometraje']);
+					 }
+					 else{
+						$vehiculos_sin_mantenimiento[$i]['kilometraje_notificacion']=$vehiculos_sin_mantenimiento[$i]['kilometraje'];
+					 }
+				}
+			}
 
-			
+
+			foreach($rutas as $r){
+                for($i=0;$i<count($vehiculos_mantenimiento);$i++){
+                     if($vehiculos_mantenimiento[$i]['placa']==$r['placa']){
+						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + floatval($r['kilometraje']);
+					 }
+					 else{
+					 	$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']);
+					  }
+				}
+			}
+
+			echo json_encode($vehiculos_mantenimiento);
+
 		}
 
 		public function Modificar(){
@@ -121,18 +149,18 @@
 				$costo = $_POST['costo'];
 				$tiempo = $_POST['tiempo'];
 
-				$this->mantenimento->setIdMantenimiento($id_mantenimiento);
-				$this->mantenimento->setNombre($nombre);
-				$this->mantenimento->setFecha($fecha);
-				$this->mantenimento->setKilometraje($kilometraje);
-				$this->mantenimento->setIdTaller($taller);
-				$this->mantenimento->setIdVehiculo($vehiculo);
-				$this->mantenimento->setCosto($costo);
-				$this->mantenimento->setTiempo($tiempo);
+				$this->mantenimiento->setIdMantenimiento($id_mantenimiento);
+				$this->mantenimiento->setNombre($nombre);
+				$this->mantenimiento->setFecha($fecha);
+				$this->mantenimiento->setKilometraje($kilometraje);
+				$this->mantenimiento->setIdTaller($taller);
+				$this->mantenimiento->setIdVehiculo($vehiculo);
+				$this->mantenimiento->setCosto($costo);
+				$this->mantenimiento->setTiempo($tiempo);
 				
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				
-				$execute = $this->mantenimento->Modificar();
+				$execute = $this->mantenimiento->Modificar();
 				//Codigo de bitacora sobre Agregar Usuario
 				if ($execute['ejecucion'] == true) {
 					echo '1';
@@ -149,17 +177,17 @@
 				return false;
 			}
 
-			$result = $this->mantenimento->Inhabilitar($id);
+			$result = $this->mantenimiento->Inhabilitar($id);
 			if ($result['ejecucion'] == true) {
 				echo json_encode([
-					'titulo' => 'Registro del mantenimento eliminado!',
+					'titulo' => 'Registro del mantenimiento eliminado!',
 					'mensaje' => 'Registro eliminado en nuestro sistema',
 					'tipo' => 'success'
 				]);
 			} else {
 				echo json_encode([
 					'titulo' => 'Ocurrió un error!',
-					'mensaje' => 'No se pudo eliminar el registro del mantenimento',
+					'mensaje' => 'No se pudo eliminar el registro del mantenimiento',
 					'tipo' => 'error'
 				]);
 			}
@@ -172,7 +200,7 @@
 				return false;
 			}
 
-			$result = $this->mantenimento->Habilitar($id);
+			$result = $this->mantenimiento->Habilitar($id);
 			if ($result['ejecucion'] == true) {
 				echo json_encode([
 					'titulo' => 'Registro habilitado!',

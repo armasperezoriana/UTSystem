@@ -57,12 +57,11 @@
 
 		public function ConsultarVehiculo($id_vehiculo){
 			try {
-				$query = parent::prepare("SELECT MAX(fecha) FROM mantenimientos WHERE id_vehiculo=".$id_vehiculo.";");
+				$query = parent::prepare("SELECT kilometraje,fecha FROM mantenimientos WHERE fecha=( SELECT MAX(fecha) FROM mantenimientos WHERE id_vehiculo=".$id_vehiculo." );");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-				$respuestaArreglo += ['ejecucion' => true];
 				return $respuestaArreglo;
 			} catch (PDOException $e) {
 				$errorReturn = ['ejecucion' => false];
