@@ -5,6 +5,8 @@ function consulta_alertas(){
         type:"POST",
         url: './Mantenimiento/notificaciones',
     }).done(function(result){
-            console.log(result);
+           var arreglo=JSON.parse(result);
+           console.log(arreglo[0]['titulo']);
+
     })
 }

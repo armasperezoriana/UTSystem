@@ -39,6 +39,22 @@
 			}
 		}
 
+		public function Consultar_notificaciones(){
+			
+			try {
+				$query = parent::prepare('SELECT * FROM notificaciones');
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['status' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
 		public function ConsultarOne(){
 			try {
 				$query = parent::prepare("SELECT * FROM mantenimientos WHERE nombre = '{$this->nombre}' and fecha = '{$this->fecha}' and id_taller = '{$this->id_taller}' and id_vehiculo = '{$this->id_vehiculo}'");
@@ -85,6 +101,22 @@
 					}
 				}
 				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, kilometraje, tiempo, id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}','{$this->kilometraje}', '{$this->tiempo}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+		public function Agregar_notificacion($datos){
+			try {
+				$query = parent::prepare("INSERT INTO notificaciones (estado, fecha, titulo, contenido,id_vehiculo) VALUES (0,'".$datos['fecha']."','".$datos['titulo']."', '".$datos['contenido']."', '".$datos['id_vehiculo']."')");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

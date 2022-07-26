@@ -92,8 +92,10 @@
 			$tiempo_llantas=29500; //Km
 			$vehiculos=$this->vehiculo->Consultar();
 			$rutas=$this->rutas->Consultar();
+			$notificaciones=$this->mantenimiento->Consultar_notificaciones();
             $vehiculos_sin_mantenimiento=[];
 			$vehiculos_mantenimiento=[];	
+			$vehiculos_notificacion=[];
 			foreach ($vehiculos as $v){
             $ultimo_mantenimiento=$this->mantenimiento->ConsultarVehiculo($v['id_vehiculo']);
 			if(count($ultimo_mantenimiento)==0){
@@ -129,7 +131,83 @@
 				}
 			}
 
-			echo json_encode($vehiculos_mantenimiento);
+			foreach($vehiculos_mantenimiento as $vm){
+				$vehiculos_notificacion[]=$vm;
+			}
+			foreach($vehiculos_sin_mantenimiento as $vsm){
+				$vehiculos_notificacion[]=$vsm;
+			}
+
+           for($i=0;$i<count($vehiculos_notificacion);$i++){
+			$texto="El vehículo ".$vehiculos_notificacion[$i]['placa']." necesita mantenimiento de: ";
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=60){
+				$texto.="filtro de aceite, ";
+			}
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=$tiempo_frenos_refri_electro){
+				$texto.="frenos, refrigeración, electroventilador, ";
+			}
+
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=$tiempo_suspension){
+				$texto.="suspensión, ";
+			}
+
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=$tiempo_llantas){
+				$texto.="cauchos, ";
+			}
+
+			$texto.="y chequeo general.";
+
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])<60){
+				$texto="";
+			}
+
+			$vehiculos_notificacion[$i]['texto_notificacion']=$texto;
+		   }
+
+		   if(count($notificaciones)==0){
+                     foreach($vehiculos_notificacion as $vn){
+						if($vn['texto_notificacion']!=""){
+							$hoy = getdate();
+                            $hoy=$hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+						    $this->mantenimiento->Agregar_notificacion([
+								"fecha"=>$hoy,
+								"titulo"=>"Mantenimiento preventivo ".$vn['placa'],
+								"contenido"=>$vn['texto_notificacion'],
+								"id_vehiculo"=>$vn['id_vehiculo']
+							]);
+						}
+					 }
+		   }
+		   else{
+			foreach($vehiculos_notificacion as $vn){
+				if($vn['texto_notificacion']!=""){
+					$hoy = getdate();
+					$cont=0;
+					foreach($notificaciones as $n){
+						if($n['id_vehiculo']==$vn['id_vehiculo']){
+
+							$fecha_notificacion=explode("-",$n['fecha']);
+							if($fecha_notificacion[1]==$hoy['mon'] && $fecha_notificacion[0]==$hoy['year']){
+                               $cont++;
+							}
+
+						}
+					}
+					if($cont==0){
+						$this->mantenimiento->Agregar_notificacion([
+						"fecha"=>$hoy['year']."-".$hoy['mon']."-".$hoy['mday'],
+						"titulo"=>"Mantenimiento preventivo ".$vn['placa'],
+						"contenido"=>$vn['texto_notificacion'],
+						"id_vehiculo"=>$vn['id_vehiculo']
+					]);
+					}
+					
+				}
+			 }
+		   }
+
+		   $notificaciones=$this->mantenimiento->Consultar_notificaciones();
+		   echo json_encode($notificaciones);
 
 		}
 
@@ -217,6 +295,3 @@
 		}
 
 	}
-		
-
-?>
