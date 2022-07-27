@@ -10,7 +10,7 @@ $(document).ready(function () {
             var costo = $("#AgregarReparacionModal").find("#costo").val();
             var descripcion = $("#AgregarReparacionModal").find("#descripcion").val();
 
-           // alert( nombre + ' ' + intervalo + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + descripcion + ' ' );
+           alert( nombre + ' ' + intervalo + ' ' + id_taller + ' ' + id_vehiculo + ' ' + costo + ' ' + descripcion + ' ' );
             swal.fire({
                 title: "¿Desea guardar los datos del vehiculo ingresados?",
                 text: "Estos datos serán guardados.",
@@ -293,7 +293,7 @@ $(document).ready(function () {
                 error: function (response) {
 
                     console.log(response.getAllResponseHeaders())
-                     //alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
+                    alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
                 }
             });
         }

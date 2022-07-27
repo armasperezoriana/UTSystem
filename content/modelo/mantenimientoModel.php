@@ -27,6 +27,8 @@
 			
 			try {
 				$query = parent::prepare('SELECT * FROM mantenimientos');
+				////$query = parent::prepare('SELECT id_taller AS taller, nombre AS nombre_taller, rif AS rif, nombre AS nombre_mantenimiento, placa AS placa, id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON id_vehiculo = id_vehiculo INNER JOIN taller ON id_taller= id_taller WHERE id_taller=".$id_taler"');
+				//SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON mantenimientos.id_taller= taller.id_taller WHERE mantenimientos.id_taller= taller.id_taller;
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

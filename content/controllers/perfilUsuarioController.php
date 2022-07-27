@@ -42,22 +42,6 @@ use content\modelo\rolesModel as rolesModel;
         ]);
     }
 
-public function ObtenerOne($id){
-			try {
-				$query = parent::prepare("SELECT * FROM usuarios WHERE id_usuario = $id");
-				$respuestaArreglo = '';
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
-				return $respuesta;
-			} catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-
-
 	}
 		
 

@@ -23,10 +23,7 @@
             <!-- Main Content -->
             <div id="content">
 	</script>
-	    <!-- 404 Error Text -->
-                    <div class="text-center">
-                        <div class="error mx-auto" data-text="404">404</div>
-                        <p class="lead text-gray-800 mb-5">Ha ocurrido un error!</p>
+	
 	<style>
 
 	body{
@@ -34,7 +31,7 @@
 		bottom:80%;
 		background-image: url('._ROUTE_.'assets/img/undraw_posting_photo.svg);
 		background-repeat: no-repeat;
-		background-size: 70% 80%;
+		background-size: 50% 50%;
 		background-position: center;
 	}
 
@@ -42,13 +39,15 @@
 
 
 
-                        <p class="text-gray-500 mb-0">Lo sentimos la pagina que busca no existe!...</p>
-                        <a href="index.php">&larr; <h2>Volver</h2> </a>
-                    </div>
 
                 </div>
+               
 
-	';
+    <p class="text-gray-500 mb-0"><center>Lo sentimos la pagina que busca no existe!...</p>
+    <a href="index.php">&larr; <h2>Volver</h2> </center></a>
+</div>
+';
+
 		// margin-top:100px;
 		// background-size: cover;
 

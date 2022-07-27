@@ -67,16 +67,49 @@
                             <br>
                              
                             <div class="col-sm-20" style='text-align:right;'>
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                                <a href="#" class="btn btn-dark btn-icon-split" data-toggle="modal" data-target="#GenerarOrdenModal">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                    <span class="text">Generar Orden de Servicio</span>
-                                </a>
+                                    
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        <a href="<?=_REPORTS_?>Orden" target="blank"  >
+                                                            <h6>Orden de Servicio General</h6>
+                                                        </a>
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-check fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                              
+                                </div>
+                              
+                                     
+                            <div class="col-sm-20" style='text-align:right;'>
+
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div
+                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    <a href="<?=_REPORTS_?>Orden/ordentaller.php" target="blank"  >
+                                                        <h6>Orden de Servicio por taller</h6>
+                                                    </a>
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-check fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                          
                             </div>
+
+
 
                             <div class="table-responsive">
                                 <div class="card-body" >
@@ -97,15 +130,16 @@
                                             </thead>
                                   
                                             <tbody>
-                                                <?php foreach ($mantenimento as $preventivo): ?>
+                                                <?php foreach ($mantenimiento as $preventivo): ?>
                                                     <?php if (!empty($preventivo['id_mantenimiento'])): ?>
                                                 <tr>
                                                    
                                                     <td><?=$preventivo['id_vehiculo']?></td>
                                                     <td><?=$preventivo['nombre']?></td>
-                                                    <td><?=$preventivo['tiempo']?></td>
+                                                    <td><?=$preventivo['id_mantenimiento']?></td>
                                                      <td><?=$preventivo['id_taller'];?></td>
                                                     <td>
+                                                        
                                             
                                                     </td>
                                                     <td>
@@ -191,18 +225,39 @@
                                     <br>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="costo"><b>Costo</b></label>
+                                        <label for="costo"><b>Costo en Bs.</b></label>
                                         <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control-plaintext" disabled name="costo" id="costo">
                             
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="tiempo"><b>Orden de Servicio</b></label>
-                                        <input type="tiempo" class="form-control-plaintext" disabled  value="<?=$preventivo['tiempo']?>" name="tiempo" id="tiempo">
+                                        <input type="tiempo" class="form-control-plaintext" disabled  value="Nro.   <?=$preventivo['id_mantenimiento']?>" name="tiempo" id="tiempo">
                                       
                                     </div>
                                 </div>
                             </div>
                     <div class="modal-footer">
+                    <div class="col-sm-20" style='text-align:right;'>
+                                    
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div
+                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    <input type="hidden" id="id_mostrar" name="id_mostrar">
+                                                    <a href="<?=_REPORTS_?>Orden/mantenimiento_indiv.php" value="<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
+                                                        <h6>IMPRIMIR ORDEN</h6>
+                                                    </a>
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-check fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                          
+                            </div>
                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
@@ -283,11 +338,7 @@
                                         <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control" name="costoM" id="costoM">
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
-                                    <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tiempo"><b>Orden de Servicio</b></label>
-                                        <input type="tiempo" class="form-control" value="<?=$preventivo['tiempo']?>" name="tiempoM" id="tiempoM">
-                                        <span class="errorTiempo" style="color:red"></span>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -447,11 +498,7 @@
                                         <input type="text" step="0.1" class="form-control" name="costo" id="costo">
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
-                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="tiempo"><b>Orden de Servicio</b></label>
-                                        <input type="tiempo" class="form-control" name="tiempo" id="tiempo">
-                                        <span class="errorTiempo" style="color:red"></span>
-                                    </div>
+                                 
                                 </div>
                             </div>
                             <div class="modal-footer">

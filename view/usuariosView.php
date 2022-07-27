@@ -405,9 +405,9 @@
                                                                 <span class="errorPass1" style="color:red"></span>
 
                                                             </div>
-                                                            <br>
+                                                            <br> <br>
                                                             <div class="row">
-                                                                <div class="form-group col-sm-12 col-md-6">
+                                                                <div class="form-group col-sm-12 col-md-10">
                                                                     <label for="pass2"><b> Repetir
                                                                             Contraseña</b></label>
                                                                     <input type="password" class="form-control"

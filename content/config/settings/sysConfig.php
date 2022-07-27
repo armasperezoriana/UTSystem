@@ -19,11 +19,13 @@
 	define("_DB_WEB_" , "ut");								/* nombre de la base de datos */
 	define('_HOST_', 		'localhost');							/* nombre del host */
 	define("_DB_USER_", "root");									/* nombre del usuario de la BD */
-	define("_DB_PASS_", "root");										/* contraseña de la base de datos  */
+	define("_DB_PASS_", "");										/* contraseña de la base de datos  */
 	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
 
 	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
+	define("_IMG_SEGURIDAD_" , "/dashboard/systemUT/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
 		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
+		define("_DIR_" , "/dashboard/systemUT/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
 
 	/* clase con el nombre config  */

@@ -117,7 +117,7 @@
                                 correo: correo,
                             },
                             success: function(respuesta) {
-                                // alert(respuesta);
+                                alert(pass);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -155,37 +155,6 @@
 
         });
 
-        //VALIDANDO QUE LAS CONTRASEÑAS SEAN IGUALES
-
-        $("#pass1").keyup(function() {
-            var p1 = $("#pass1").val();
-            var p2 = $("#pass2").val();
-            $(".errorPass2").attr("style", "color:red");
-            if (p1 != "" && p2 != "") {
-                if (p1 == p2) {
-                    $(".errorPass2").html("Contraseñas coinciden");
-                    $(".errorPass2").attr("style", "color:green");
-                } else {
-                    $(".errorPass2").html("Contraseñas no coinciden");
-                }
-            }
-
-        });
-        $("#pass2").keyup(function() {
-            var p1 = $("#pass1").val();
-            var p2 = $("#pass2").val();
-            $(".errorPass2").attr("style", "color:red");
-            if (p1 != "" && p2 != "") {
-
-                if (p1 == p2) {
-                    $(".errorPass2").html("Contraseñas coinciden");
-                    $(".errorPass2").attr("style", "color:green");
-                } else {
-                    $(".errorPass2").html("Contraseñas no coinciden");
-                }
-            }
-
-        });
 
 
         //
@@ -355,8 +324,7 @@ else{
             }
 
      }
-
-        
+     
         if (rpass1 == true && rpass2 == true) {
             rpassAp = true;
         }
@@ -367,6 +335,39 @@ else{
         }
         return retorno;
     }
+
+       //VALIDANDO QUE LAS CONTRASEÑAS SEAN IGUALES
+
+       $("#pass1").keyup(function() {
+        var p1 = $("#pass1").val();
+        var p2 = $("#pass2").val();
+        $(".errorPass2").attr("style", "color:red");
+        if (p1 != "" && p2 != "") {
+            if (p1 == p2) {
+                $(".errorPass2").html("Contraseñas coinciden");
+                $(".errorPass2").attr("style", "color:green");
+            } else {
+                $(".errorPass2").html("Contraseñas no coinciden");
+            }
+        }
+
+    });
+    $("#pass2").keyup(function() {
+        var p1 = $("#pass1").val();
+        var p2 = $("#pass2").val();
+        $(".errorPass2").attr("style", "color:red");
+        if (p1 != "" && p2 != "") {
+
+            if (p1 == p2) {
+                $(".errorPass2").html("Contraseñas coinciden");
+                $(".errorPass2").attr("style", "color:green");
+            } else {
+                $(".errorPass2").html("Contraseñas no coinciden");
+                preventDefault();
+            }
+        }
+
+    });
 
 
     const mostrar = (id, formulario, modal) => {
