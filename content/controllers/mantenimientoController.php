@@ -140,7 +140,7 @@
 
            for($i=0;$i<count($vehiculos_notificacion);$i++){
 			$texto="El vehículo ".$vehiculos_notificacion[$i]['placa']." necesita mantenimiento de: ";
-			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=60){
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=45){
 				$texto.="filtro de aceite, ";
 			}
 			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=$tiempo_frenos_refri_electro){
@@ -157,7 +157,7 @@
 
 			$texto.="y chequeo general.";
 
-			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])<60){
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])<45){
 				$texto="";
 			}
 

@@ -244,8 +244,8 @@
                                             <div class="col mr-2">
                                                 <div
                                                     class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    <input type="hidden" id="id_mostrar" name="id_mostrar">
-                                                    <a href="<?=_REPORTS_?>Orden/mantenimiento_indiv.php" value="<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
+                                                    <input type="hidden" id="id_mantenimiento" name="id_mantenimiento">
+                                                    <a href="<?=_REPORTS_?>Orden/mantenimiento_indiv.php?id=<?=$preventivo['id_mantenimiento'] ?>" value="<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
                                                         <h6>IMPRIMIR ORDEN</h6>
                                                     </a>
                                                 </div>

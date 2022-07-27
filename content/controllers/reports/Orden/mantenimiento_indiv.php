@@ -64,21 +64,21 @@ function Footer()
 
 }
 
-$mysqli = new mysqli("localhost", "root", "", "ut");
-    $id=$_POST['id_mantenimiento'];
-        $resultado = $mysqli->query('SELECT * FROM `mantenimientos` WHERE `id_mantenimiento`='$id';');
+$mysqli = new mysqli("localhost", "root", "root", "ut");
+    $id=$_GET['id'];
+        //$resultado = $mysqli->query('SELECT * FROM `mantenimientos` WHERE `id_mantenimiento`='.$id.';');
         //$placa = $mysqli->query('SELECT placa FROM vehiculos');
         //$rif = $mysqli->query('SELECT rif, nombre FROM rif WHERE id_mantenimiento=id_mantenimiento');
-
+        $resultado = $mysqli->query('SELECT m.id_mantenimiento AS id, m.nombre AS nombre, v.placa AS placa, m.costo AS costo, m.id_taller AS taller, t.nombre AS nombre_taller, t.rif AS rif, m.kilometraje AS mante_kilometraje, m.fecha AS mante_fecha FROM mantenimientos m, vehiculos v, taller t WHERE m.id_mantenimiento='.$id.' AND m.id_vehiculo = v.id_vehiculo AND m.id_taller= t.id_taller;');
         $pdf = new PDF();
         $pdf->AddPage();
         $pdf->SetFont('Arial','B',12);
     
         while ($row = $resultado->fetch_assoc()){
-        $pdf->Cell(10,10, $row['id_mantenimiento'], 1, 0,'C', 0);
-        $pdf->Cell(30,10, $row['PLACA'], 1, 0,'C', 0);
-         $pdf->Cell(45,10, $row['nombre_mantenimiento'], 1, 0,'C', 0);
-        $pdf->Cell(20,10, $row['costo_mantenimiento'], 1, 0,'C', 0);
+            $pdf->Cell(10,10, $row['id'], 1, 0,'C', 0);
+        $pdf->Cell(30,10, $row['placa'], 1, 0,'C', 0);
+         $pdf->Cell(45,10, $row['nombre'], 1, 0,'C', 0);
+        $pdf->Cell(20,10, $row['costo'], 1, 0,'C', 0);
          $pdf->Cell(25,10, $row['nombre_taller'], 1, 0,'C', 0);
          $pdf->Cell(25,10, $row['rif'], 1, 0,'C', 0);
         $pdf->Cell(25,10, $row['mante_fecha'], 1, 0,'C', 0);

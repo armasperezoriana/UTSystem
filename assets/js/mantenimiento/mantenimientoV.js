@@ -10,7 +10,7 @@ $(document).ready(function () {
             var taller = $("#AgregarMantenimientoModal").find("#id_taller").val();
             var placa = $("#AgregarMantenimientoModal").find("#id_vehiculo").val();
             var costo = $("#AgregarMantenimientoModal").find("#costo").val();
-            var tiempo = $("#AgregarMantenimientoModal").find("#tiempo").val();
+        
 
             // alert( nombre + ' ' + intervalo + ' ' + kilometraje + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + tiempo + ' ' );
             swal.fire({
@@ -23,7 +23,7 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
-               alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
+              // alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Registrar',
@@ -35,7 +35,7 @@ $(document).ready(function () {
                             id_taller: taller,
                             id_vehiculo: placa,
                             costo: costo,
-                            tiempo: tiempo,
+                        
                         },
                         success: function (respuesta){
                            alert(respuesta);
@@ -97,7 +97,7 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
-                  alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
+                 // alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Modificar',
@@ -303,7 +303,7 @@ $(document).ready(function () {
                     $(formulario).find("#id_taller").val(mantenimiento.taller);
                     $(formulario).find("#modelo").val(mantenimiento.modelo);
                     $(formulario).find("#tipo").val(mantenimiento.tipo);
-                     $(formulario).find("#tiempo").val(mantenimiento.tiempo);
+                   //  $(formulario).find("#tiempo").val(mantenimiento.tiempo);
                     $(formulario).find("#funcionamientoM").val(mantenimiento.funcionamiento);
                     $(modal).modal('show');
                 },
