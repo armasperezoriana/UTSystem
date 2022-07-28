@@ -141,7 +141,7 @@
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                    <option value="<?php echo $unidad['id_vehiculo'] ;?>" <?php if($unidad['id_vehiculo']==$rep['id_vehiculo']){echo "selected";} ?>><?php echo $unidad['placa']." - ".$unidad['modelo'];?></option>
+                                                    <option value="<?php echo $rep['id_vehiculo'] ;?>" <?php if($unidad['id_vehiculo']==$rep['id_vehiculo']){echo "selected";} ?>><?php echo $unidad['placa']." - ".$unidad['modelo'];?></option>
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                 
@@ -216,7 +216,7 @@
 
                         <div class="modal-body">
                             <div class="row">
-                                <div class="form-group col-sm-12 col-md-9">
+                                <div class="form-group col-sm-12 col-md-8">
                                     <label for="placa"><b>Unidad Reparada</b></label>
                                   <select class="form-control select2" style="width:60%;" name="id_vehiculo" id="id_vehiculo">
                                             <option></option>
@@ -228,7 +228,7 @@
                                         </select>
                                     <span class="errorPlaca" style="color:red"></span>
                                 </div>
-                                <div class="form-group col-sm-12 col-md-6">
+                                <div class="form-group col-sm-12 col-md-4">
                                     <label for="intervalo"><b>Fecha de la reparación</b></label>
                                     <input type="date" class="form-control" style="width:100%;" value="<?=$rep['fecha']?>" name="intervalo" id="intervalo">
                                     <span class="errorIntervalo" style="color:red"></span>
@@ -250,7 +250,7 @@
                             <br>
 
                             <div class="row">
-                                <div class="form-group col-sm-12 col-md-7">
+                                <div class="form-group col-sm-12 col-md-6">
                                                 <label for="taller"><b>Taller</b></label>
                                           <select class="form-control select2 text-left" style="width:100%;" name="id_taller" id="id_taller">
                                             <option></option>
@@ -356,7 +356,7 @@
                                         <option></option>
                                         <?php foreach ($vehiculo as $unidad) : ?>
                                             <?php if (!empty($unidad['id_vehiculo'])) : ?>
-                                                <option><?= $unidad['placa'] ?></option>
+                                                <option value="<?= $unidad['id_vehiculo'] ?>"><?= $unidad['placa'] ?></option>
                                             <?php endif ?>
                                         <?php endforeach ?>
                                     </select>
@@ -389,7 +389,7 @@
                                         <option></option>
                                         <?php foreach ($taller as $ta) : ?>
                                             <?php if (!empty($ta['id_taller'])) : ?>
-                                                <option value="<?=$ta['rif']?>"><?= $ta['nombre'] ?></option>
+                                                <option value="<?=$ta['id_taller']?>"><?= $ta['nombre'] ?></option>
                                             <?php endif ?>
                                         <?php endforeach ?>
                                     </select>

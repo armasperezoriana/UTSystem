@@ -10,13 +10,12 @@ $(document).ready(function () {
             var costo = $("#AgregarReparacionModal").find("#costo").val();
             var descripcion = $("#AgregarReparacionModal").find("#descripcion").val();
 
-           alert( nombre + ' ' + intervalo + ' ' + id_taller + ' ' + id_vehiculo + ' ' + costo + ' ' + descripcion + ' ' );
+          // alert( nombre + ' ' + intervalo + ' ' + id_taller + ' ' + id_vehiculo + ' ' + costo + ' ' + descripcion + ' ' );
             swal.fire({
                 title: "¿Desea guardar los datos del vehiculo ingresados?",
                 text: "Estos datos serán guardados.",
                 type: "question",
                 showCancelButton: true,
-                // confirmButtonColor: "#DD6B55",
                 confirmButtonText: "Guardar",
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
@@ -108,7 +107,7 @@ $(document).ready(function () {
                         },
                         success: function(respuesta) {
                          alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
-                          // alert(respuesta);
+                           alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -293,7 +292,7 @@ $(document).ready(function () {
                 error: function (response) {
 
                     console.log(response.getAllResponseHeaders())
-                    alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
+                    //alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
                 }
             });
         }

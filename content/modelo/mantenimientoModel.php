@@ -9,7 +9,6 @@
 
 		private $id_mantenimiento;
 		private $nombre;
-		private $tiempo;
 		private $id_vehiculo;
 		private $costo;
 		private $fecha;
@@ -102,7 +101,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, kilometraje, tiempo, id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}','{$this->kilometraje}', '{$this->tiempo}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
+				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, kilometraje,  id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}','{$this->kilometraje}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -134,7 +133,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', kilometraje = '$this->kilometraje',tiempo ='$this->tiempo', id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller' WHERE id_mantenimiento = $this->id_mantenimiento");
+				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', kilometraje = '$this->kilometraje',id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller' WHERE id_mantenimiento = $this->id_mantenimiento");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -210,9 +209,7 @@
 		public function getNombreTipo(){
 			return $this->nombre_tipo;
 		}
-		public function getTiempo(){
-			return $this->tiempo;
-		}
+
 		public function getIdVehiculo(){
 			return $this->id_vehiculo;
 		}

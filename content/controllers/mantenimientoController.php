@@ -55,7 +55,6 @@
 				$taller = $_POST['id_taller'];
 				$vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
-				$tiempo = $_POST['tiempo'];
 				$kilometraje  = $_POST['kilometraje'];
 				$this->mantenimiento->setNombre($nombre);
 				$this->mantenimiento->setFecha($fecha);
@@ -63,7 +62,6 @@
 				$this->mantenimiento->setIdTaller($taller);
 				$this->mantenimiento->setIdVehiculo($vehiculo);
 				$this->mantenimiento->setCosto($costo);
-				$this->mantenimiento->setTiempo($tiempo);
 
 				$result = $this->mantenimiento->ConsultarOne();
 				if ($result['ejecucion'] == true) {
@@ -196,7 +194,7 @@
 					if($cont==0){
 						$this->mantenimiento->Agregar_notificacion([
 						"fecha"=>$hoy['year']."-".$hoy['mon']."-".$hoy['mday'],
-						"titulo"=>"Mantenimiento preventivo ".$vn['placa'],
+						"titulo"=>"Nuevo Mantenimiento preventivo requerido para ".$vn['placa'],
 						"contenido"=>$vn['texto_notificacion'],
 						"id_vehiculo"=>$vn['id_vehiculo']
 					]);
@@ -225,7 +223,6 @@
 				$taller = $_POST['id_taller'];
 				$vehiculo= $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
-				$tiempo = $_POST['tiempo'];
 
 				$this->mantenimiento->setIdMantenimiento($id_mantenimiento);
 				$this->mantenimiento->setNombre($nombre);
@@ -234,7 +231,6 @@
 				$this->mantenimiento->setIdTaller($taller);
 				$this->mantenimiento->setIdVehiculo($vehiculo);
 				$this->mantenimiento->setCosto($costo);
-				$this->mantenimiento->setTiempo($tiempo);
 				
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				

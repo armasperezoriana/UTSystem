@@ -160,8 +160,7 @@
                                     <label for="cantidad"><b>Cantidad de veces que recorre la ruta</b></label>
                                     <input type="number"  disabled  class="form-control cantidad<?=$value['id_ruta'];?>"  value="<?=$value['cantidad'];?>"  style="width:100%;" name="cantidad" id="cantidad">
                                     <span class="errorCantidad" style="color:red"></span>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-6">
+                               
                                     <label for="date"><b>Fecha de asignación de la ruta</b></label>
                                     <input type="date"  disabled  class="form-control fecha_inicio<?=$value['id_ruta'];?>" value="<?=$value['fecha_inicio'];?>"  style="width:100%;" name="fecha_inicio" id="fecha_inicio">
                                     <span class="errorDate" style="color:red"></span>
@@ -283,7 +282,7 @@
                                     <span class="errorDate" style="color:red"></span>
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
-                                    <label for="cantidad"><b>Cantidad de veces que recorre la ruta</b></label>
+                                    <label for="cantidad"><b>Cantidad de veces que recorre la ruta a la semana</b></label>
                                     <input type="number" class="form-control cantidad<?=$value['id_ruta'];?>"  value="<?=$value['cantidad'];?> style="width:100%;" name="cantidad" id="cantidad">
                                     <span class="errorCantidad" style="color:red"></span>
                                 </div>

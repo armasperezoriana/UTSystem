@@ -244,9 +244,9 @@
                                             <div class="col mr-2">
                                                 <div
                                                     class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    <input type="hidden" id="id_mantenimiento" name="id_mantenimiento">
-                                                    <a href="<?=_REPORTS_?>Orden/mantenimiento_indiv.php?id=<?=$preventivo['id_mantenimiento'] ?>" value="<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
-                                                        <h6>IMPRIMIR ORDEN</h6>
+                                                    <input type="hidden" id="id_vehiculo" name="id_vehiculo">
+                                                    <a href="<?=_REPORTS_?>Orden/ordenservicio_unidad.php?id=<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
+                                                        <h6>IMPRIMIR ESTA ORDEN</h6>
                                                     </a>
                                                 </div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
@@ -258,6 +258,28 @@
                                     </div>
                           
                             </div>
+                            <!-- MODAL DE MODIFICAR
+                            <div class="col-sm-20" style='text-align:right;'>
+                                    
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div
+                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    <input type="hidden" id="id_matenimiento" name="id_matenimiento">
+                                                    <a href="<?=_REPORTS_?>Orden/mantenimiento_unidad.php?id=<?=$preventivo['id_matenimiento'] ?>" target="blank"  >
+                                                        <h6>ORDENES DE SERVICIO DE ESTA UNIDAD</h6>
+                                                    </a>
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-check fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                          -->
+                            </div>
                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
@@ -265,6 +287,7 @@
         </div>
     </div>
 </div>
+
 <!-- MODAL DE MODIFICAR-->
 
     <a class="scroll-to-top rounded" href="#page-top">

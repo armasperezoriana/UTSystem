@@ -86,7 +86,6 @@ $(document).ready(function () {
             var taller = $("#ModificarMantenimientoModal"+id).find("#id_tallerM").val();
             var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculoM").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costoM").val();
-            var tiempo = $("#ModificarMantenimientoModal"+id).find("#tiempoM").val();
             swal.fire({
                 title: "¿Desea guardar los datos del mantenimiento que han sido modificados?",
                 text: "Estos datos serán guardados.",
@@ -110,10 +109,11 @@ $(document).ready(function () {
                             id_taller: taller,
                             id_vehiculo: placa,
                             costo: costo,
-                            tiempo: tiempo,
+            
                         },
                         success: function(respuesta) {
-                        //    alert(respuesta);
+                           // alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo);
+                            alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',

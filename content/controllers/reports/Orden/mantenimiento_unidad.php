@@ -27,7 +27,7 @@ function Header()
     $this->Cell(160, 10,  'SISTEMA UT',2, 0,'C', 0);
     $this->Ln(15);//salto de linea
     // Título
-    $this->Cell(160, 10,  'ORDEN DE SERVICIO',2, 0,'C', 0);
+    $this->Cell(160, 10,  'LISTADO DE MANTENIMEINTOS DE ESTA UNIDAD',2, 0,'C', 0);
         $this->Ln(10);
 
         $this->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
@@ -64,7 +64,7 @@ function Footer()
 
 }
 
-$mysqli = new mysqli("localhost", "root", "root", "ut");
+$mysqli = new mysqli("localhost", "root", "", "ut");
     $id=$_GET['id'];
         //$resultado = $mysqli->query('SELECT * FROM `mantenimientos` WHERE `id_mantenimiento`='.$id.';');
         //$placa = $mysqli->query('SELECT placa FROM vehiculos');

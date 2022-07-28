@@ -40,7 +40,7 @@
                                 fecha_inicio: fecha_inicio,
                             },
                             success: function(respuesta) {
-                                 alert(respuesta);
+                                 //alert(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -92,7 +92,7 @@
                 var fecha_inicio = $(".EditarRutaModal").find(".fecha_inicio"+id).val();
                //  alert( nombre_ruta + ' ' + placa+ ' ' + kilometraje + ' ' + direccion_ruta + ' ' + cantidad + ' ' + fecha_fin + ' '+ fecha_inicio + ' ' );
                // console.log("hay datos enviados");
-                alert(cantidad);
+                //alert(cantidad);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
