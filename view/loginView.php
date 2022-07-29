@@ -90,11 +90,14 @@
                                     </div>
                                     <form class="recuperarClave" id="recuperarClave">
                                         <div class="form-group">
-                                          <div class="form-group">
-                                         
-                                            <input type="email" class="form-control form-control-user"
-                                                 aria-describedby="emailHelp"
-                                                placeholder="Ingresa el correo registrado...">
+                                            <label>Pregunta de seguridad</label>
+                                          <input type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Responde la pregunta la pregunta de seguridad...">
+                                                <br>
+                                          <input type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Responde la pregunta la pregunta de seguridad...">
                                         </div>
                                          <br>
                                         <a class="btn btn-primary btn-user btn-block">

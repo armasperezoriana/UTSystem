@@ -86,7 +86,7 @@
 			public function AgregarR(){
 				$id=0;
 			try {
-				$query = parent::prepare("INSERT INTO roles (id_rol, nombre_rol,descripcion, status) VALUES ($id, '{$this->nombre_rol}', '{$this->descripcion}', 1");
+				$query = parent::prepare("INSERT INTO roles (id_rol, nombre_rol,descripcion, status) VALUES ('{$this->id_rol}', '{$this->nombre_rol}', '{$this->descripcion}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

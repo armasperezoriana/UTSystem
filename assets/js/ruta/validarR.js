@@ -215,7 +215,7 @@
                 if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
                     rkilometraje = false;
-                         //   preventDefault();
+                          preventDefault();
                 }else{
                         $(".errorKilometraje").html("Campo validado");
                         $(".errorKilometraje").attr("style", "color:green");
@@ -223,7 +223,7 @@
             }if(!expDireccion.test(direccion_ruta)){
                 $(".errorDireccion").html("Solo se aceptan caracteres, minimo 5");
                     rdireccion = false;
-                           //  preventDefault();
+                             preventDefault();
                 }else{
                         $(".errorDireccion").html("Campo validado");
                         $(".errorDireccion").attr("style", "color:green");
@@ -231,7 +231,7 @@
             }if(!expNombreR.test(nombre_ruta)){
                 $(".errorNombre").html("Solo puede agregar caracteres en este campo");
                     rnombre = false;
-                         //  preventDefault();
+                         preventDefault();
                 }else{
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");

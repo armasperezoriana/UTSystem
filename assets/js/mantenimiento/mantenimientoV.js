@@ -76,6 +76,7 @@ $(document).ready(function () {
     // Modificar Vehiculo
 
     $(".EnviarMantenimientoModificar").click(function() {
+      
         var id = $(this).attr("id");
         var valido = validar(true, id);
         if (valido == true) {
@@ -248,7 +249,7 @@ $(document).ready(function () {
             if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
                     rtipo = false;
-                           //preventDefault();
+                           preventDefault();
                 }else{
                         $(".errorKilometraje").html("Campo validado");
                         $(".errorKilometraje").attr("style", "color:green");
@@ -256,7 +257,7 @@ $(document).ready(function () {
             }if(!expCosto.test(costo)){
                 $(".errorCosto").html("El costo debe ser expresado en bolivares con una , 00");
                     rCosto = false;
-                        //   preventDefault();
+                          preventDefault();
                 }else{
                         $(".errorCosto").html("Campo validado");
                         $(".errorCosto").attr("style", "color:green");
@@ -264,7 +265,7 @@ $(document).ready(function () {
             }if(!expOrden.test(tiempo)){
                 $(".errorTiempo").html("Solo puede ingresar numeros");
                     rtiempo = false;
-                      //     preventDefault();
+                      preventDefault();
                 }else{
                         $(".errorTiempo").html("Campo validado");
                         $(".errorTiempo").attr("style", "color:green");

@@ -5,7 +5,9 @@
             if (valido == true) {
 
                 var nombre_rol = $("#AgregarUsuarioModal").find("#nombre_rol").val();                
-                var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();    
+                var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();
+                var id_rol = $("#AgregarUsuarioModal").find("#id_rol").val();
+                    alert(nombre_rol+""+descripcion+ ""+id_rol)
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -23,6 +25,7 @@
                             data: {
                                 nombre_rol: nombre_rol,
                                 descripcion: descripcion,
+                                id_rol: id_rol,
                                
                             },
                             success: function(respuesta) {
@@ -63,6 +66,7 @@
             }
 
         });
+        
         $(".ModificarRolModal").click(function() {
             var valido = validar(true);
                
@@ -240,7 +244,7 @@
     function validar(modificar = false){
         var form = "";
         var expDescripcion = /^[a-zA-ZÀ-ÿ\s]{6,40}$/;
-        var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
+        var expNombre = /^[a-zA-ZÀ-ÿ\s]{,40}$/;
         if(!modificar){
             form = "#AgregarUsuarioModal";
         }
@@ -249,12 +253,11 @@
         }
         var nombre_rol = $(form).find("nombre_rol").val();
         var rnombre = false;
+        var id_rol=$(form).find("id_rol").val();
 
         var descripcion = $(form).find("#descripcion").val();
         var rdescripcion = false;
-
-
-        if (nombre_rol == ""|descripcion == "") {
+        if (nombre_rol == ""|descripcion == ""|id_rol == ""){
             swal.fire({
                                         type: 'warning',
                                         title: 'Campos obligatorios',
@@ -262,14 +265,16 @@
                                     });
             $(".errorNombre").html("Debe ingresar el nombre del rol");
                 $(".errorDescripcion").html("Debe ingresar la descripcion del rol");
+                $(".errorRol").html("Debe ingresar un numero en rol, que no este registrado previamente");
                 return false;
 
         }else{
+
     if(!expNombre.test(nombre_rol)){
                 $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4 caracteres");
                     rnombre = false;
-                    //preventDefault();
-        }else{
+                  //  preventDefault();
+     }else{
                 $(".errorNombre").html("Campo validado");
                 $(".errorNombre").attr("style", "color:green");
                 rnombre = true;
@@ -277,7 +282,7 @@
         if (!expDescripcion.test(descripcion)) {
             $(".errorDescripcion").html("Ingrese una descripcion mas detallada, mayor a 6 caracteres. No se aceptan numeros");
         rdescripcion = false;
-         //preventDefault();
+         preventDefault();
         } else {
             $(".errorDescripcion").html("Campo validado");
             $(".errorDescripcion").attr("style", "color:green");

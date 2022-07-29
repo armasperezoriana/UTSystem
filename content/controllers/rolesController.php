@@ -46,16 +46,21 @@ public function Mostrar($param)
 		if (!empty($_POST['nombre_rol']) && !empty($_POST['descripcion'])) {
 			$nombre_rol = $_POST['nombre_rol'];
 			$descripcion = $_POST['descripcion'];
+			$id_rol = $_POST['id_rol'];
+	
 			
 			$this->rol->setNombreRol($nombre_rol);
 			$this->rol->setDescripcion($descripcion);
+			$this->rol->setId($id_rol);
 			
 			$result = $this->rol->ConsultarOne();
 			if ($result['ejecucion'] == true) {
 				if (count($result) > 1) {
-					echo "2";
+					//echo "3";
+					//$execute = $this->usuario->AgregarR();
+						echo '3';
 				} else {
-					$execute = $this->rol->AgregarR();
+					$execute = $this->usuario->AgregarR();
 					//Codigo de bitacora sobre Agregar Usuario
 					if ($execute['ejecucion'] == true) {
 						echo '1';
@@ -67,6 +72,7 @@ public function Mostrar($param)
 				echo "2";
 			}
 		}
+		
 	}
 	public function Modificar()
 	{

@@ -56,7 +56,7 @@
 
                 </div>
 
-                <a class="dropdown-item text-center small text-gray-500" href="#">Ver todas las notificaciones</a>
+                <a class="dropdown-item text-center small text-gray-500" href="<?= _ROUTE_ ?>notificaciones">Ver todas las notificaciones</a>
             </div>
         </li>
 
@@ -74,7 +74,7 @@
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= _ROUTE_ ?>PerfilUsuario">
+                <a class="dropdown-item" href="<?= _ROUTE_ ?>Notificaciones">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Perfil Usuario
                 </a>

@@ -194,7 +194,7 @@
 					if($cont==0){
 						$this->mantenimiento->Agregar_notificacion([
 						"fecha"=>$hoy['year']."-".$hoy['mon']."-".$hoy['mday'],
-						"titulo"=>"Nuevo Mantenimiento preventivo requerido para ".$vn['placa'],
+						"titulo"=>"Mantenimiento preventivo requerido para ".$vn['placa'],
 						"contenido"=>$vn['texto_notificacion'],
 						"id_vehiculo"=>$vn['id_vehiculo']
 					]);

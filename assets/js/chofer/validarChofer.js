@@ -202,7 +202,7 @@
     function validar(modificar = false) {
         var form = "";
 
-        var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,12}$/;
         var expApellido = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
         var expCedula =/^\d{7,14}$/;
         var expTelefono = /^\d{11,12}$/;

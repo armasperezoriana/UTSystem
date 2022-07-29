@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,17 +65,27 @@
                                     <span class="text">Registrar Reparación</span>
                                 </a>
                             </div>
-                            <br><div class="col-sm-20" style='text-align:right;'>
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                                <a href="#" class="btn btn-dark btn-icon-split" data-toggle="modal" data-target="#GenerarOrdenModal">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                    <span class="text">Generar Orden de Servicio</span>
-                                </a>
-                            </div>
+                            <br>  <div class="col-sm-20" style='text-align:right;'>
+                                    
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        <a href="<?=_REPORTS_?>Reparaciones" target="blank"  >
+                                                            <h6>Orden de Servicio General</h6>
+                                                        </a>
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-check fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                              
+                                </div>
+                              
 
                             <div class="table-responsive">
                                 <div class="card-body" style='background:;'>
@@ -157,6 +168,7 @@
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="nombre"><b>Nombre del mantenimiento</b></label>
                                     <input type="text" class="form-control-plaintext" disabled style="width:100%;" value="<?=$rep['nombre']?>" name="nombre" id="nombre">
+                                
                                  
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
@@ -187,6 +199,31 @@
                             </div>
                         </div>
                     <div class="modal-footer">
+                               
+                            <div class="col-sm-20" style='text-align:right;'>
+                                    
+                                   <div class="col-sm-20" style='text-align:right;'>
+                                    
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div
+                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    <input type="hidden" id="id_vehiculo" name="id_vehiculo">
+                                                    <a href="<?=_REPORTS_?>Orden/ordenservicio_unidad.php?id=<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
+                                                        <h6>IMPRIMIR ESTA ORDEN</h6>
+                                                    </a>
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-check fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                          
+                            </div>
+                          
                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
@@ -208,7 +245,7 @@
                 <input type="hidden" id="id_reparaciones" name="id_reparaciones">
                     <div class="modal-content">
                         <div class="modal-header bg-primary" style="color:#FFF">
-                            <h5 class="modal-title" id="exampleModalLabel">Modificar Mantenimiento Preventivo</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Modificar Reparación</h5>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
@@ -369,11 +406,38 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-group col-sm-12 col-md-6">
-                                    <label for="nombre"><b>Nombre de Mantenimiento</b></label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre">
-                                    <span class="errorNombre" style="color:red"></span>
-                                </div>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="Nombre"><b>Reparación de :</b></label>   <select class="form-control select2" name="nombre" id="nombre">
+                                                  <option value="">...</option>
+                                                <option value="Bujias">Bujias</option>
+                                                <option value="Pastillas de freno">Pastillas de freno</option>
+                                                <option value="Filtro de Aceite">Filtro de Aceite</option>
+                                                <option value="Cauchos">Cauchos</option>
+                                                <option value="Bateria">Bateria</option>
+                                                <option value="Anticongelante adicional">Anticongelante adicional</option>
+                                                <option value="Balanceo">Balanceo</option>
+                                                <option value="Alineación">Alineación</option>
+                                                <option value="Afinacion del motor">Afinacion del motor</option>
+                                                <option value="Limpiaparabrisas">Limpiaparabrisas</option>
+                                                <option value="Brazos de suspensión">Brazos de suspensión</option>
+                                                <option value="Chasis/Dirección">Chasis/Dirección</option>
+                                                <option value="Amortiguadores">Amortiguadores</option>
+                                                <option value="Correa de distribución">Correa de distribución</option>
+                                                <option value="Luces">Luces</option>
+                                                  <option value="Chequeo general">Chequeo general por fallo</option>
+                                                <option value="filtro de gasolina">Filtro de gasolina</option>
+                                                <option value="filtro de aire">Filtro de Aire</option>
+                                                 <option value="Frenos">Frenos</option>
+                                                 <option value="Averia">Averia</option>
+                                                   <option value="Dano inesperado">Dano inesperado</option>
+                                                   <option value="Otro">Otro</option>
+                                                <option value="Sistema de escape y catalizadores">Sist. de escape y catalizadores</option>
+                                                    <option value="Cables internos Bateria">Cables internos/Bateria</option>
+                                            </select>
+                                       
+                                        <span class="errorNombre" style="color:red"></span>
+                                    </div>
+                            
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="costo"><b>Costo</b></label>
                                     <input type="text" step="0.1" class="form-control" name="costo" id="costo">

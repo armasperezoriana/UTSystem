@@ -204,12 +204,11 @@
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-
                             <div class="modal-body">
                                 <div class="row">
                                      <div class="form-group col-sm-12 col-md-6">
                                         <label for="nombreRol"><b>Nombre del Rol</b></label>
-                                        <input type="text" class="form-control" name="nombre_rol" id="nombre_rol">
+                                        <input type="text" class="form-control" name="nombre_rol" id="nombre_rol" minlength="4">
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
                                 <div class="form-group col-sm-12 col-md-6">
@@ -218,6 +217,11 @@
                                         <span class="errorDescripcion" style="color:red"></span>
                                     </div>
                                 </div>
+                                <div class="form-group col-sm-12 col-md-6">
+                                        <label for="descripcion"><b>Nro de Rol</b></label>
+                                        <input type="number" class="form-control" name="id_rol" id="id_rol">
+                                        <span class="errorRol" style="color:red"></span>
+                                    </div>
 
                             </div>
 

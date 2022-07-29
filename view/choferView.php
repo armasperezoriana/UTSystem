@@ -50,7 +50,7 @@
                             </div>
                          <!--  <img src="assets/img/conductor.png" class="img-profile rounded-circle" width="20%"  right="100%">  DataTales Example -->  
                             
-                            <div class="col-sm-7" style='text-align:right;'>
+                            <div class="col-sm-3" style='text-align:right;'>
                                 <span class="icon text-white-50"><i class="fas fa-check"></i></span>
                                 <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarChoferModal" data-toggle="modal" >
                                     <span class="icon text-white-50">
