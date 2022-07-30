@@ -94,7 +94,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE reparaciones SET nombre = '{$this->nombre}', id_vehiculo='$this->id_vehiculo', costo='$this->costo', fecha='$this->fecha', descripcion='$this->descripcion', id_taller='$this->id_taller' WHERE id_reparaciones = $this->id_reparaciones");
+				$query = parent::prepare("UPDATE reparaciones SET nombre = '{$this->nombre}', id_vehiculo='{$this->id_vehiculo}', costo='{$this->costo}', fecha='{$this->fecha}', descripcion='{$this->descripcion}', id_taller='{$this->id_taller}' WHERE id_reparaciones = {$this->id_reparaciones}");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

@@ -38,7 +38,6 @@ $(document).ready(function () {
                         
                         },
                         success: function (respuesta){
-                           alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -243,33 +242,25 @@ $(document).ready(function () {
             $(".errorCosto").html("Debe ingresar el costo del mantenimiento");
             $(" .errorTiempo").html("Debe escribir el Nro para procesar la orden de servicio");
             $(" .errorIntervalo").html("Debe escribir la fecha del ultimo mantenimiento");
-                  return false;
+            return false;
              
         }else{
             if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
                     rtipo = false;
-                           preventDefault();
-                }else{
+                    return false;
+            }else{
                         $(".errorKilometraje").html("Campo validado");
                         $(".errorKilometraje").attr("style", "color:green");
                         rkilometraje = true;
             }if(!expCosto.test(costo)){
                 $(".errorCosto").html("El costo debe ser expresado en bolivares con una , 00");
                     rCosto = false;
-                          preventDefault();
-                }else{
+                    return false;
+            }else{
                         $(".errorCosto").html("Campo validado");
                         $(".errorCosto").attr("style", "color:green");
                         rcosto = true;
-            }if(!expOrden.test(tiempo)){
-                $(".errorTiempo").html("Solo puede ingresar numeros");
-                    rtiempo = false;
-                      preventDefault();
-                }else{
-                        $(".errorTiempo").html("Campo validado");
-                        $(".errorTiempo").attr("style", "color:green");
-                        rtiempo = true;
             }
 
         
@@ -277,7 +268,7 @@ $(document).ready(function () {
             validado = true;
         }
         // alert(form+": "+validado);
-      return true;
+        return true;
 
       }
     }

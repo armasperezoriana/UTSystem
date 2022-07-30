@@ -74,7 +74,6 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         var valido = validar(true, id);
         if (valido == true) {
-
             var nombre = $("#ModificarReparacionesModal"+id).find("#nombre").val();
             var intervalo = $("#ModificarReparacionesModal"+id).find("#intervalo").val();
             var id_taller = $("#ModificarReparacionesModal"+id).find("#id_taller").val();
@@ -106,8 +105,7 @@ $(document).ready(function () {
                             descripcion: descripcion,
                         },
                         success: function(respuesta) {
-                         alert(id_vehiculo+" "+nombre+" "+intervalo+" "+id_taller+" "+costo+" "+descripcion);
-                           alert(respuesta);
+                            console.log(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -263,8 +261,8 @@ $(document).ready(function () {
     }
 }
 
-     $('.editar').click(function(e){
-        console.log("1");
+            $('.editar').click(function(e){
+            console.log("1");
                 e.preventDefault();
                 mostrar($(this).attr('data-id'), "#modificareparcion", "#ModificarReparacionesModal");
             })
@@ -279,6 +277,7 @@ $(document).ready(function () {
                 type: "POST",
                 url: "Reparaciones/Mostrar/"+id,
                 success: function (response) {
+                    console.log(response);
                     let json = JSON.parse(response);
                     let reparaciones = json.data;
                     $(formulario).find("#id_vehiculo").val(reparaciones.id_vehiculo);

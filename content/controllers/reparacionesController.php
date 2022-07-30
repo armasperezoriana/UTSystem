@@ -92,20 +92,21 @@ public function Mostrar($param)
 				return false;
 			}
 			$id_reparaciones = $_POST['id_reparaciones'];
-			if (!empty($_POST['nombre']) && !empty($_POST['placa'])  && !empty($_POST['descripcion'])) {
+			if (isset($_POST['nombre']) && isset($_POST['costo'])  && isset($_POST['intervalo']) && isset($_POST['id_vehiculo'])&& isset($_POST['descripcion']) ) {
 				$nombre = $_POST['nombre'];
 				$id_vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$fecha = $_POST['intervalo'];
 				$descripcion = $_POST['descripcion'];
 				$id_taller = $_POST['id_taller'];
-				
+				$id_reparaciones = $_POST["id_reparaciones"];
 				$this->reparaciones->setNombre($nombre);
 				$this->reparaciones->setFecha($fecha);
 				$this->reparaciones->setIdVehiculo($id_vehiculo);
 				$this->reparaciones->setCosto($costo);
 				$this->reparaciones->setDescripcion($descripcion);
 				$this->reparaciones->setIdTaller($id_taller);
+				$this->reparaciones->setIdReparaciones($id_reparaciones);
 				
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				
