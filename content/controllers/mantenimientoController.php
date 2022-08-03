@@ -56,12 +56,14 @@
 				$vehiculo = $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
 				$kilometraje  = $_POST['kilometraje'];
+				$estado = $_POST['estado'];
 				$this->mantenimiento->setNombre($nombre);
 				$this->mantenimiento->setFecha($fecha);
 				$this->mantenimiento->setKilometraje($kilometraje);
 				$this->mantenimiento->setIdTaller($taller);
 				$this->mantenimiento->setIdVehiculo($vehiculo);
 				$this->mantenimiento->setCosto($costo);
+				$this->mantenimiento->setEstado($estado);
 
 				$result = $this->mantenimiento->ConsultarOne();
 				if ($result['ejecucion'] == true) {
@@ -223,6 +225,7 @@
 				$taller = $_POST['id_taller'];
 				$vehiculo= $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
+				$estado = $_POST['estado'];
 
 				$this->mantenimiento->setIdMantenimiento($id_mantenimiento);
 				$this->mantenimiento->setNombre($nombre);
@@ -231,7 +234,7 @@
 				$this->mantenimiento->setIdTaller($taller);
 				$this->mantenimiento->setIdVehiculo($vehiculo);
 				$this->mantenimiento->setCosto($costo);
-				
+				$this->mantenimiento->setEstado($estado);
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				
 				$execute = $this->mantenimiento->Modificar();

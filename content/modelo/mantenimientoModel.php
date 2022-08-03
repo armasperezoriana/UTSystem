@@ -15,7 +15,7 @@
 		private $id_taller;
 		private $status;
 		private $kilometraje;
-
+		private $estado;
 
 
 		public function __construct(){
@@ -26,8 +26,10 @@
 			
 			try {
 				$query = parent::prepare('SELECT * FROM mantenimientos');
-				////$query = parent::prepare('SELECT id_taller AS taller, nombre AS nombre_taller, rif AS rif, nombre AS nombre_mantenimiento, placa AS placa, id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON id_vehiculo = id_vehiculo INNER JOIN taller ON id_taller= id_taller WHERE id_taller=".$id_taler"');
-				//SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON mantenimientos.id_taller= taller.id_taller WHERE mantenimientos.id_taller= taller.id_taller;
+				//$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
+				//ON mantenimientos.id_taller= taller.id_taller');
+				//$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
+				//ON mantenimientos.id_taller= taller.id_taller WHERE id_mantenimiento ='.$id.');');
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -74,7 +76,8 @@
 
 		public function ConsultarVehiculo($id_vehiculo){
 			try {
-				$query = parent::prepare("SELECT kilometraje,fecha FROM mantenimientos WHERE fecha=( SELECT MAX(fecha) FROM mantenimientos WHERE id_vehiculo=".$id_vehiculo." );");
+				$query = parent::prepare("SELECT kilometraje,fecha FROM mantenimientos WHERE 
+				fecha=( SELECT MAX(fecha) FROM mantenimientos WHERE id_vehiculo=".$id_vehiculo." );");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -101,7 +104,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, kilometraje,  id_vehiculo,costo, fecha, id_taller, status) VALUES ($id, '{$this->nombre}','{$this->kilometraje}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}', 1)");
+				$query = parent::prepare("INSERT INTO mantenimientos (id_mantenimiento, nombre, kilometraje,  id_vehiculo,costo, fecha, id_taller, estado, status) VALUES ($id, '{$this->nombre}','{$this->kilometraje}', '{$this->id_vehiculo}','{$this->costo}', '{$this->fecha}', '{$this->id_taller}','{$this->estado}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -202,6 +205,9 @@
 		public function setKilometraje($kilometraje){
 			$this->kilometraje = $kilometraje;
 		}
+		public function setEstado($estado){
+			$this->estado = $estado;
+		}
 
 		public function getIdMantenimiento(){
 			return $this->id_mantenimiento;
@@ -227,5 +233,8 @@
 		}
 		public function getKilometraje(){
 			return $this->kilometraje;
+		}
+		public function getEstado(){
+			return $this->estado;
 		}
 	}

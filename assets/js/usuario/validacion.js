@@ -272,7 +272,7 @@ else{
         if(!expNombre.test(nombre)){
                 $(".errorNombre").html("El campo nombre solo acepta caracteres");
                     rnombre = false;
-                    preventDefault();
+                    return false;
         } else {
                 $(".errorNombre").html("Campo validado");
                 $(".errorNombre").attr("style", "color:green");
@@ -281,7 +281,7 @@ else{
              if(!expApellido.test(apellido)){
                 $(".errorApellido").html("El campo apellido solo acepta caracteres");
                     rapellido = false;
-                    preventDefault();
+                    return false;
         } else {
                 $(".errorApellido").html("Campo validado");
                 $(".errorApellido").attr("style", "color:green");
@@ -289,7 +289,7 @@ else{
             }if(!expCedula.test(cedula)){
                 $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
                    rcedula = false;
-                   preventDefault();
+                   return false;
         } else {
                 $(".errorCedula").html("");
                rcedula = true;
@@ -299,7 +299,7 @@ else{
             }if(!expUsername.test(username)){
                 $(".errorUsername").html("Error el campo usuario acepta letras, numeros, guion y guion bajo");
                    rusername = false;
-                   preventDefault();
+                   return false;
         } else {
                 $(".errorUsername").html("");
                rusername = true;
@@ -308,7 +308,7 @@ else{
             }if(!expPass.test(pass1)){
                 $(".errorpass").html("La clave acepta de 4 a 12 digitos y solo numeros");
                    rpass = false;
-                   preventDefault();
+                   return false;
         } else {
                 $(".errorpass").html("Contraseña valida");
                  $(".errorpass").attr("style", "color:green");
@@ -316,7 +316,7 @@ else{
             }if(!expCorreo.test(correo)){
                 $(".errorCorreo").html("El formato del correo no es valida");
                    rcorreo = false;
-                    preventDefault();
+                   return false;
         } else {
                 $(".errorCorreo").html("Correo valido");
                 $(".errorCorreo").attr("style", "color:green");

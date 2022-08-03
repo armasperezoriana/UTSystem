@@ -43,15 +43,16 @@ public function Mostrar($param)
 	public function RegistrarRol()
 	{
 		
-		if (!empty($_POST['nombre_rol']) && !empty($_POST['descripcion'])) {
+		if (!empty($_POST['nombre_rol'])) {
+			$id = $_POST['id_rol'];
 			$nombre_rol = $_POST['nombre_rol'];
 			$descripcion = $_POST['descripcion'];
-			$id_rol = $_POST['id_rol'];
-	
 			
+			
+			$this->rol->setId($id);
 			$this->rol->setNombreRol($nombre_rol);
 			$this->rol->setDescripcion($descripcion);
-			$this->rol->setId($id_rol);
+			
 			
 			$result = $this->rol->ConsultarOne();
 			if ($result['ejecucion'] == true) {

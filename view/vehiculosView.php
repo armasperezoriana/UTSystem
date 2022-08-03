@@ -300,7 +300,7 @@
                                         
                                         <label for="placa"><b>Placa</b></label>
                                         <input type="text" class="form-control" name="placa" id="placaM">
-                                        <span class="errorPlaca" style="color:red"></span>
+                                        <span class="errorPlacaM" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Modelo"><b>Modelo</b></label>
@@ -319,7 +319,7 @@
                                                      <option value="Freightliner">Freightliner</option>
                                                       <option value="Kenworth">Kenworth</option>
                                             </select>
-                                         <span class="errorModelo" style="color:red"></span>
+                                         <span class="errorModeloM" style="color:red"></span>
                                     </div>
                                
                                <div class="form-group col-sm-12 col-md-6">
@@ -329,7 +329,7 @@
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>
                                             </select>
-                                         <span class="errorModelo" style="color:red"></span>
+                                         <span class="errorModeloM" style="color:red"></span>
                                            </div>
 
                                           <div class="form-group col-sm-12 col-md-6">
@@ -337,7 +337,7 @@
                                         <label for="kilometraje"><b>Kilometraje</b></label>
                                         <input type="text" class="form-control" name="kilometrajeM
                                         " id="kilometrajeM">
-                                        <span class="errorKilometraje" style="color:red"></span>
+                                        <span class="errorKilometrajeM" style="color:red"></span>
                                     </div>
                                     </div>
                        

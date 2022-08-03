@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -521,6 +524,19 @@
                                         <input type="text" step="0.1" class="form-control" name="costo" id="costo">
                                         <span class="errorCosto" style="color:red"></span>
                                     </div>
+                                                    
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="Estado"><b>Estado de la orden :</b></label>   <select class="form-control select2" name="estado" id="estado">
+                                                  <option value="">...</option>
+                                                <option value="1">Generada</option>
+                                                <option value="2">En proceso</option>
+                                                <option value="3">Cancelada</option>
+                                                
+                                            </select>
+                                       
+                                        <span class="errorEstado" style="color:red"></span>
+                                    </div>
+                                
                                  
                                 </div>
                             </div>

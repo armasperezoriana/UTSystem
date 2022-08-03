@@ -199,19 +199,16 @@
                             </div>
                         </div>
                     <div class="modal-footer">
-                               
-                            <div class="col-sm-20" style='text-align:right;'>
                                     
-                                   <div class="col-sm-20" style='text-align:right;'>
+                    <div class="col-sm-20" style='text-align:right;'>
                                     
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div
                                                     class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    <input type="hidden" id="id_vehiculo" name="id_vehiculo">
-                                                    <a href="<?=_REPORTS_?>Orden/ordenservicio_unidad.php?id=<?=$preventivo['id_mantenimiento'] ?>" target="blank"  >
-                                                        <h6>IMPRIMIR ESTA ORDEN</h6>
+                                                    <a href="<?=_REPORTS_?>Reparaciones/ordenindividual.php?id=<?=$rep['id_reparaciones'] ?>" target="blank"  >
+                                                        <h6>iMPRIMIR ORDEN DE REPARACION</h6>
                                                     </a>
                                                 </div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
@@ -224,6 +221,7 @@
                           
                             </div>
                           
+                            </div>                          
                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>

@@ -10,9 +10,9 @@ $(document).ready(function () {
             var taller = $("#AgregarMantenimientoModal").find("#id_taller").val();
             var placa = $("#AgregarMantenimientoModal").find("#id_vehiculo").val();
             var costo = $("#AgregarMantenimientoModal").find("#costo").val();
-        
+             var estado = $("#AgregarMantenimientoModal").find("#estado").val();
 
-            // alert( nombre + ' ' + intervalo + ' ' + kilometraje + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + tiempo + ' ' );
+            alert( nombre + ' ' + intervalo + ' ' + kilometraje + ' ' + estado + ' ' + placa + ' ' + costo + ' ' + tiempo + ' ' );
             swal.fire({
                 title: "¿Desea guardar los datos del vehiculo ingresados?",
                 text: "Estos datos serán guardados.",
@@ -35,6 +35,8 @@ $(document).ready(function () {
                             id_taller: taller,
                             id_vehiculo: placa,
                             costo: costo,
+                            estado: estado,
+                        
                         
                         },
                         success: function (respuesta){
@@ -86,6 +88,7 @@ $(document).ready(function () {
             var taller = $("#ModificarMantenimientoModal"+id).find("#id_tallerM").val();
             var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculoM").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costoM").val();
+            var estado = $("#ModificarMantenimientoModal"+id).find("#estado").val();
             swal.fire({
                 title: "¿Desea guardar los datos del mantenimiento que han sido modificados?",
                 text: "Estos datos serán guardados.",
@@ -96,7 +99,7 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
-                 // alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
+                 alert(placa+" "+nombre+" "+intervalo+" "+estado+""+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Modificar',
@@ -109,6 +112,7 @@ $(document).ready(function () {
                             id_taller: taller,
                             id_vehiculo: placa,
                             costo: costo,
+                            estado
             
                         },
                         success: function(respuesta) {
@@ -242,9 +246,31 @@ $(document).ready(function () {
             $(".errorCosto").html("Debe ingresar el costo del mantenimiento");
             $(" .errorTiempo").html("Debe escribir el Nro para procesar la orden de servicio");
             $(" .errorIntervalo").html("Debe escribir la fecha del ultimo mantenimiento");
+            $(" .errorEstado").html("Es necesario definir el estado de la orden de este mantenimiento");
             return false;
              
         }else{
+            // if(nombre!=""){
+            //     $(".errorNombre").html("Campo validado");
+            //     $(".errorNombre").attr("style", "color:green");
+            //     return true;
+            //     rnombre = true;
+
+            // }
+            // if(unidad!=""){
+            //     $(".errorUnidad").html("Campo validado");
+            //     $(".errorUnidad").attr("style", "color:green");
+            //     return true;
+            //     runidad = true;
+
+            // }
+            // if(taller!=""){
+            //     $(".errorTaller").html("Campo validado");
+            //     $(".errorTaller").attr("style", "color:green");
+            //     return true;
+            //     rtaller = true;
+
+            // }
             if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
                     rtipo = false;
@@ -262,7 +288,7 @@ $(document).ready(function () {
                         $(".errorCosto").attr("style", "color:green");
                         rcosto = true;
             }
-
+            
         
         if(rnombre == true && rintervalo == true && rkilometraje == true && rtaller == true && rplaca == true && rcosto == true && rtiempo == true){
             validado = true;
