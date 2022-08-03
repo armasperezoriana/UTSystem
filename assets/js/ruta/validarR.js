@@ -162,7 +162,7 @@
             var namemodal = "";
              var expKilometraje = /^[1-9]\d*(,\d+)?$/;
              var expDireccion = /^[a-zA-ZÀ-ÿ\s]{5,40}$/; // Letras, mayusculas minisculas y acentos,
-             var expNombreR = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+             var expNombreR = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
 
             if(!modificar){
                 namemodal = ".AgregarRutaModal";
@@ -209,13 +209,13 @@
                 $(namemodal+" .errorDate").html("Debe ingresar una fecha");
                   
                 return false;
-                  preventDefault();
+                
             }       
             else{
                 if(!expKilometraje.test(kilometraje)){
                 $(".errorKilometraje").html("El campo kilometraje solo acepta numeros");
                     rkilometraje = false;
-                          preventDefault();
+                    return false;
                 }else{
                         $(".errorKilometraje").html("Campo validado");
                         $(".errorKilometraje").attr("style", "color:green");
@@ -223,20 +223,51 @@
             }if(!expDireccion.test(direccion_ruta)){
                 $(".errorDireccion").html("Solo se aceptan caracteres, minimo 5");
                     rdireccion = false;
-                             preventDefault();
+                            return false;
                 }else{
                         $(".errorDireccion").html("Campo validado");
                         $(".errorDireccion").attr("style", "color:green");
                         rdireccion = true;
             }if(!expNombreR.test(nombre_ruta)){
-                $(".errorNombre").html("Solo puede agregar caracteres en este campo");
+                $(".errorNombre").html("Solo puede agregar caracteres en este campo, minimo 4");
                     rnombre = false;
-                         preventDefault();
+                    return false;
                 }else{
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");
                         rnombre = true;
             } 
+
+            if(placa =! ""){
+                $(".errorPlaca").html("Campo placa validado");
+                 $(".errorPlaca").attr("style", "color:green");
+                 return true;
+
+            }
+            if(hora_salida =! ""){
+                
+                $(".errorHora").html("Campo hora validado");
+                $(".errorHora").attr("style", "color:green");
+                return true;
+            }
+            if(cantidad=! ""){
+                
+                $(".errorCantidad").html("Campo validado");
+                $(".errorCantidad").attr("style", "color:green");
+                return true;
+            }
+            if(fecha_inicio=! ""){
+                
+                $(".errorDate").html("Campo fecha de inicio validado");
+                $(".errorDate").attr("style", "color:green");
+                return true;
+            }
+            if(fecha_fin=! ""){
+                
+                $(".errorDate").html("Campo fecha de fin validado");
+                $(".errorDate").attr("style", "color:green");
+                return true;
+            }
  
               return true;
      }

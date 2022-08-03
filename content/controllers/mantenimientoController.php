@@ -211,6 +211,56 @@
 
 		}
 
+
+		
+		public function InhabilitarOrden($id)
+	{
+		$method = $_SERVER['REQUEST_METHOD'];
+		if ($method != 'POST') {
+			http_response_code(404);
+			return false;
+		}
+
+		$result = $this->notificaciones->InhabilitarOrden($id);
+		if ($result['ejecucion'] == true) {
+			echo json_encode([
+				'titulo' => 'Mantenimiento Cancelado!',
+				'mensaje' => 'Eliminando notificacion',
+				'tipo' => 'success'
+			]);
+		} else {
+			echo json_encode([
+				'titulo' => 'Ocurrió un error!',
+				'mensaje' => 'No se pudo eliminar el registro',
+				'tipo' => 'error'
+			]);
+		}
+	}
+
+	public function HabilitarOrden($id)
+	{
+		$method = $_SERVER['REQUEST_METHOD'];
+		if ($method != 'POST') {
+			http_response_code(404);
+			return false;
+		}
+
+		$result = $this->notificaciones->HabilitarOrden($id);
+		if ($result['ejecucion'] == true) {
+			echo json_encode([
+				'titulo' => 'Mantenimiento Generado!',
+				'mensaje' => 'Alerta de mantenimiento con su estado en proceso pasa a Generado',
+				'tipo' => 'success'
+			]);
+		} else {
+			echo json_encode([
+				'titulo' => 'Ocurrió un error!',
+				'mensaje' => 'No se pudo habilitar el registro',
+				'tipo' => 'error'
+			]);
+		}
+	}
+
 		public function Modificar(){
 			$method = $_SERVER['REQUEST_METHOD'];
 			if ($method != 'POST') {
@@ -225,7 +275,7 @@
 				$taller = $_POST['id_taller'];
 				$vehiculo= $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
-				$estado = $_POST['estado'];
+				//$estado = $_POST['estado'];
 
 				$this->mantenimiento->setIdMantenimiento($id_mantenimiento);
 				$this->mantenimiento->setNombre($nombre);
@@ -234,7 +284,7 @@
 				$this->mantenimiento->setIdTaller($taller);
 				$this->mantenimiento->setIdVehiculo($vehiculo);
 				$this->mantenimiento->setCosto($costo);
-				$this->mantenimiento->setEstado($estado);
+				//$this->mantenimiento->setEstado($estado);
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				
 				$execute = $this->mantenimiento->Modificar();

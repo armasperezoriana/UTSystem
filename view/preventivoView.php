@@ -9,7 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -127,6 +126,7 @@
                                                     <th>Taller</th>
                                                     <th></th>
                                                      <th></th>
+                                                     <th></th>
                                                      <th><center>Acción</center></th>
                                                       <th></th>
                                                 </tr>
@@ -148,20 +148,43 @@
                                                     <td>
                                                             <div class="col-sm-7" style='text-align:right;'>
                                                             <a href="#" data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-info btn-icon-split consultar" name="consultar" data-target="#ConsultarMantenimientoModal<?=$preventivo['id_mantenimiento'] ?>"  data-toggle="modal">
-                                                                <span class="icon text-white-50">
+                                                                <span class="icon text-white-40">
                                                                     <i class="fas fa-search"></i>
                                                                 </span>
-                                                                <span class="text">Consultar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         </div></td>
                                                     <td> 
-                                                        <div class="col-sm-7" style='text-align:right;'>
+                                                        <div class="col-sm-4" style='text-align:right;'>
                                                             <a href="#" class="btn btn-warning btn-icon-split editarbtn" name="editar" id="'$value['id_vehiculo']'" href="#" data-toggle="modal" data-target="#ModificarMantenimientoModal<?=$preventivo['id_mantenimiento']?>">
-                                                                <span class="icon text-white-50" >
-                                                                    <i class="fas fa-flag"></i>
+                                                                <span class="icon text-white-40" >
+                                                                    <i class="fas fa-edit"></i>
                                                                 </span>
-                                                                <span class="text">Modificar</span>
+                                                                <span class="text"></span>
                                                             </a>
+                                                    </td>
+                                                     <td>  
+                                                            <div class="col-sm-7" style='text-align:right;'>
+                                                            <?php if ($preventivo['estado'] == 1) { ?>
+                                                                <a href="#" data-id="<?= $preventivo['id_notificacion'] ?>" class="btn btn-success btn-icon-split inhabilitar" data-toggle="modal" data-target="">
+                                                                    <span class="icon-check-white-50">
+                                                                        <i class="fas fa-check "></i>
+                                                                    </span>
+                                                                    <span class="text"></span>
+                                                                </a>
+                                                            <?php } else { ?>
+                                                                <a href="#" data-id="<?= $preventivo['id_notificacion'] ?>" class="btn btn-outline-info btn-icon-split habilitar
+                                                                    " data-toggle="modal" data-target="">
+                                                                    <span class="icon text-info-50">
+                                                                        <i class="fas fa-sign-out-alt"></i>
+                                                                    </span>
+                                                                    <span class="text"></span>
+                                                                </a>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </td>
+                                                
+
 
 
 
@@ -229,7 +252,7 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="costo"><b>Costo en Bs.</b></label>
-                                        <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control-plaintext" disabled name="costo" id="costo">
+                                        <input type="text" step="0.1" value="<?=$preventivo['costo']?>" class="form-control-plaintext" disabled name="costo" id="costo">
                             
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
@@ -237,6 +260,19 @@
                                         <input type="tiempo" class="form-control-plaintext" disabled  value="Nro.   <?=$preventivo['id_mantenimiento']?>" name="tiempo" id="tiempo">
                                       
                                     </div>
+
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="Estado"><b>Estado de la orden :</b></label>   <select class="form-control select2" name="estado" id="estado">
+                                                  <option value="">...</option>
+                                                <option value="1">Generada</option>
+                                                <option value="2">En proceso</option>
+                                                <option value="3">Cancelada</option>
+                                                
+                                            </select>
+                                       
+                                        <span class="errorEstado" style="color:red"></span>
+                                    </div>
+                                
                                 </div>
                             </div>
                     <div class="modal-footer">
@@ -261,27 +297,6 @@
                                     </div>
                           
                             </div>
-                            <!-- MODAL DE MODIFICAR
-                            <div class="col-sm-20" style='text-align:right;'>
-                                    
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div
-                                                    class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                    <input type="hidden" id="id_matenimiento" name="id_matenimiento">
-                                                    <a href="<?=_REPORTS_?>Orden/mantenimiento_unidad.php?id=<?=$preventivo['id_matenimiento'] ?>" target="blank"  >
-                                                        <h6>ORDENES DE SERVICIO DE ESTA UNIDAD</h6>
-                                                    </a>
-                                                </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="fas fa-check fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                          -->
                             </div>
                         <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     </div>
@@ -313,12 +328,12 @@
                                 <div class="row" style="width:100%;">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Nombre"><b>Pieza a modificar</b></label>
-                                        <input type="text" class="form-control" value="<?=$preventivo['nombre']?>" name="nombreM" id="nombreM">
+                                        <input type="text" class="form-control" value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
                                         <span class="errorNombre" style="color:red;"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="intervalo"><b>Fecha del último mantenimiento</b></label>
-                                        <input type="date" class="form-control" value="<?=$preventivo['fecha']?>" style="width:100%;" name="intervaloM" id="intervaloM">
+                                        <input type="date" class="form-control" value="<?=$preventivo['fecha']?>" style="width:100%;" name="intervalo" id="intervalo">
                                         <span class="errorIntervalo" style="color:red"></span>
                                     </div>
                                 </div>
@@ -326,12 +341,12 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="kilometraje"><b>Kilometraje</b></label>
-                                      <input type="text" class="form-control" value="<?=$preventivo['kilometraje']?>"  name="kilometrajeM" id="kilometrajeM">
-                                        <span class="errortipo" style="color:red"></span>
+                                      <input type="text" class="form-control" value="<?=$preventivo['kilometraje']?>"  name="kilometraje" id="kilometraje">
+                                      <span class="errortipo" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control select2 text-left" style="width:100%;" name="id_tallerM" id="id_tallerM">
+                                          <select class="form-control select2 text-left" style="width:100%;" name="id_taller" id="id_taller">
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
@@ -346,7 +361,7 @@
                                 <div class="row">
                                     <div class="form-group col-sm-12">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                        <select class="form-control select2" style="width:100%;" name="id_vehiculoM" id="id_vehiculoM">
+                                        <select class="form-control select2" style="width:100%;" name="id_vehiculo" id="id_vehiculo">
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
@@ -358,14 +373,12 @@
                                     </div>
                                 </div>
                                     <br>
-                                <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="costo"><b>Costo</b></label>
-                                        <input type="number" step="0.1" value="<?=$preventivo['costo']?>" class="form-control" name="costoM" id="costoM">
+                                        <input type="text" step="0.1" class="form-control" name="costo" id="costo" value="<?=$preventivo['costo']?>">
                                         <span class="errorCosto" style="color:red"></span>
-                                    </div>
                                     
-                                </div>
+                                    </div>
                             </div>
                             <div class="modal-footer">
                                 <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
@@ -382,17 +395,17 @@
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                         <?php if ($preventivo['status'] == 1) { ?>
                                                             <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
-                                                                <span class="icon text-white-50">
+                                                                <span class="icon text-white-40">
                                                                     <i class="fas fa-trash"></i>
                                                                 </span>
-                                                                <span class="text">Eliminar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } else { ?>
                                                             <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
                                                                 <span class="icon text-info-50">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </span>
-                                                                <span class="text">Habilitar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } ?>
                                                         </div>
@@ -485,7 +498,7 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="descripcion"><b>Kilometraje</b></label>
                                       <input type="text" class="form-control kilometraje" name="kilometraje" id="kilometraje">
-                                        <span class="errorKilometraje" style="color:red"></span>
+                                        <span class="errortipo" style="color:red"></span>
                                     </div>
 
 
@@ -516,7 +529,7 @@
                                                 <?php endif ?>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="errorUnidad" style="color:red"></span>
+                                        <span class="errorPlaca" style="color:red"></span>
                                     </div>
 
                                      <div class="form-group col-sm-12 col-md-6">
@@ -612,12 +625,14 @@
 
  <!-- MODULo de ELIMINAR
 
+ <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js">
     ype="text/javascript" src="'../../assets/js/vehiculo/validacionV.js -->
 
      
 </body>
-
 <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js">
+
+  
  
 </script> 
 

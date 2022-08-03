@@ -9,11 +9,7 @@
                 var cedula =$("#AgregarChoferModal").find("#cedula").val();;
                 var telefono = $("#AgregarChoferModal").find("#telefono").val();
                 var placa = $("#AgregarChoferModal").find("#placa").val();
-                // alert(nombre);
-                // alert(apellido);
-                // alert(cedula);
-                // alert(telefono);
-                // alert(placa);
+        
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -75,10 +71,10 @@
         });
 
         $(".ModificarChofer").click(function() {
-            var valido = validar(true);
+           var valido = validarM(true);
             if (valido == true) {
 
-                // var id_choferes = $("#modificarChofer").find("#id_choferes").val();
+                 var id_choferes = $("#modificarChofer").find("#id_choferes").val();
                 var id_choferes = $(this).attr("id");
 
                 var nombre = $(".ModificarChoferModal").find(".nombre"+id_choferes).val();
@@ -110,7 +106,7 @@
                                 placa: placa,
                             },
                             success: function(respuesta) {
-                              //   alert(respuesta);
+                               //  alert(nombre+""+apellido+""+cedula+""+telefono+""+unidad+""+placa+"");
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -142,9 +138,7 @@
                         });
                     }
                 });
-
-
-            }
+           }
 
         });
 
@@ -202,8 +196,8 @@
     function validar(modificar = false) {
         var form = "";
 
-        var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,12}$/;
-        var expApellido = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+        var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,12}$/;
+        var expApellido = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
         var expCedula =/^\d{7,14}$/;
         var expTelefono = /^\d{11,12}$/;
         
@@ -245,9 +239,9 @@
 
         }else{
                if(!expNombre.test(nombre)){
-                        $(".errorNombre").html("El campo nombre solo acepta caracteres");
+                        $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4");
                             rnombre = false;
-                            preventDefault();
+                            return false;
                 } else {
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");
@@ -255,7 +249,7 @@
                     } if(!expApellido.test(apellido)){
                 $(".errorApellido").html("El campo apellido solo acepta caracteres");
                     rapellido = false;
-                    preventDefault();
+                    return false;
         } else {
                 $(".errorApellido").html("Campo validado");
                 $(".errorApellido").attr("style", "color:green");
@@ -263,7 +257,7 @@
             }if(!expCedula.test(cedula)){
                 $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
                    rcedula = false;
-                   preventDefault();
+                   return false;
         } else {
                 $(".errorCedula").html("");
                rcedula = true;
@@ -271,9 +265,9 @@
                        $(".errorCedula").attr("style", "color:green");
 
             }if(!expTelefono.test(telefono)){
-                $(".errorTelefono").html("El campo telefono solo acepta al menos 10 numeros");
+                $(".errorTelefono").html("El campo telefono solo acepta numeros, al menos 10");
                    rtelefono = false;
-                   preventDefault();
+                   return false;
         } else {
                 $(".errorTelefono").html("");
                rtelefono = true;
@@ -281,10 +275,99 @@
                        $(".errorTelefono").attr("style", "color:green");
 
             }
+            if(placa!=""){
+                $(".errorPlaca").html("Placa valida");
+                $(".errorPlaca").attr("style", "color:green");
+                return rplaca;
+
+            }
         return true;
     }
  }
+ 
 
+ function validarM(modificar = true) {
+    var form = "";
+
+    var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,12}$/;
+    var expApellido = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
+    var expCedula =/^\d{7,14}$/;
+    var expTelefono = /^\d{11,12}$/;
+    
+        form = "#modificarChofer";
+
+    var expNombre = /^[A-Za-z]{3,50}$/;
+    var nombre = $(form).find("#nombre").val();
+    var rnombreM = false;
+
+    var apellido = $(form).find("#apellido").val();
+    var rapellido = false;
+
+    var cedula = $(form).find("#cedula").val();
+    var rcedulaM = false;
+
+    var telefono = $(form).find("#telefono").val();
+    var rtelefonoM = false;
+
+    var placa = $(form).find("#placa").val();
+    var rplacaM = false;
+
+   //revisar errores
+    if (nombre == ""|apellido == ""|cedula == ""|placa == ""|telefono == "") {
+   swal.fire({
+                                    type: 'warning',
+                                    title: 'Campos obligatorios',
+                                    text: 'Asegurate de llenar todos los campos',
+                                });
+        $(form).find(".errorNombreM").html("Debe ingresar su nombre");
+        $(form).find(".errorApellidoM").html("Debe ingresar su apellido");
+        $(form).find(".errorCedulaM").html("Debe ingresar su cedula");
+        $(form).find(".errorPlacaM").html("Debe seleccionar su placa");
+        $(form).find(".errortelefonoM").html("Debe ingresar un telefono");
+           return false;
+
+    }else{
+           if(!expNombre.test(nombre)){
+                    $(".errorNombreM").html("El campo nombre solo acepta caracteres, minimo 4");
+                        rnombreM = false;
+                        return false;
+            } else {
+                    $(".errorNombreM").html("Campo validado");
+                    $(".errorNombreM").attr("style", "color:green");
+                    rnombreM = true;
+                } if(!expApellido.test(apellido)){
+            $(".errorApellidoM").html("El campo apellido solo acepta caracteres");
+                rapellidoM = false;
+                return false;
+    } else {
+            $(".errorApellidoM").html("Campo validado");
+            $(".errorApellidoM").attr("style", "color:green");
+            rapellidoM = true;
+        }if(!expCedula.test(cedula)){
+            $(".errorCedulaM").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+               rcedulaM = false;
+               return false;
+    } else {
+            $(".errorCedulaM").html("");
+           rcedulaM = true;
+                     $(".errorCedulaM").html("Cédula valida");
+                   $(".errorCedulaM").attr("style", "color:green");
+
+        }if(!expTelefono.test(telefono)){
+            $(".errorTelefonoM").html("El campo telefono solo acepta numeros, al menos 10");
+               rtelefonoM = false;
+               return false;
+    } else {
+            $(".errorTelefonoM").html("");
+           rtelefonoM = true;
+                     $(".errorTelefonoM").html("Telefono valido");
+                   $(".errorTelefonoM").attr("style", "color:green");
+
+        }
+        return true;
+    }
+}
+ 
     const mostrar = (id, formulario, modal) => {
         $.ajax({
             type: "POST",
@@ -293,11 +376,11 @@
                 let json = JSON.parse(response);
                 let chofer = json.data; 
                 $(formulario).find("#id_choferes").val(chofer.id_choferes);
-                $(formulario).find("#nombre").val(chofer.nombre);
-                $(formulario).find("#apellido").val(chofer.apellido);
-                $(formulario).find("#telefono").val(chofer.telefono);
-                $(formulario).find("#cedula").val(chofer.cedula);
-                $(formulario).find("#telefono").val(chofer.telefono);
+                $(formulario).find("#nombreM").val(chofer.nombre);
+                $(formulario).find("#apellidoM").val(chofer.apellido);
+                $(formulario).find("#telefonoM").val(chofer.telefono);
+                $(formulario).find("#cedulaM").val(chofer.cedula);
+                $(formulario).find("#telefonoM").val(chofer.telefono);
                 $(modal).modal('show');
             },
             error: function (response) {

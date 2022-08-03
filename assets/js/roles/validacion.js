@@ -25,11 +25,11 @@
                             data: {
                                 nombre_rol: nombre_rol,
                                 descripcion: descripcion,
-                                id_rol: id_rol,
+                               // id_rol: id_rol,
                                
                             },
                             success: function(respuesta) {
-                                 alert(respuesta);
+                                 alert(nombre_rol+" "+descripcion+" "+" ");
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',

@@ -106,7 +106,7 @@
                         <span class="icon text-white-50">
                             <i class="fas fa-search"></i>
                         </span>
-                        <span class="text">Consultar</span>
+                        <span class="text"></span>
                     </a>
                 </div>
 
@@ -122,10 +122,10 @@
                                                         <div class="col-sm-7" style='text-align:right;'>
 
                                                               <a  data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-warning btn-icon-split editar" name="editar">
-
-                                                                    <i class="fas fa-flag"></i>
+                                                              <span class="icon text-white-50">
+                                                                    <i class="fas fa-edit"></i>
                                                                 </span>
-                                                                <span class="text">Modificar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         </div>
 
@@ -147,14 +147,14 @@
                                                                     <span class="icon text-white-50">
                                                                         <i class="fas fa-trash"></i>
                                                                     </span>
-                                                                    <span class="text">Eliminar</span>
+                                                                    <span class="text"></span>
                                                                 </a>
                                                             <?php } else { ?>
                                                                 <a href="#" data-id="<?= $value['id_vehiculo']?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
                                                                     <span class="icon text-info-50">
                                                                         <i class="fas fa-trash-alt"></i>
                                                                     </span>
-                                                                    <span class="text">Habilitar</span>
+                                                                    <span class="text"></span>
                                                                 </a>
                                                             <?php } ?>
                                                       
@@ -299,12 +299,12 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         
                                         <label for="placa"><b>Placa</b></label>
-                                        <input type="text" class="form-control" name="placa" id="placaM">
+                                        <input type="text" class="form-control" name="placaM" id="placaM">
                                         <span class="errorPlacaM" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Modelo"><b>Modelo</b></label>
-                                        <select class="form-control select2" name="modelo" id="modeloM" >
+                                        <select class="form-control select2" name="modeloM" id="modeloM" >
                                                   <option value="">...</option>
                                                 <option value="Otro">Otro</option>
                                                 <option value="Encava">Encava</option>
@@ -324,12 +324,12 @@
                                
                                <div class="form-group col-sm-12 col-md-6">
                                         <label for="funcionamiento"><b>Funcionamiento</b></label>
-                                        <select class="form-control select2" name="funcionamiento" id="funcionamientoM">
+                                        <select class="form-control select2" name="funcionamientoM" id="funcionamientoM">
                                                   <option value="">...</option>
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>
                                             </select>
-                                         <span class="errorModeloM" style="color:red"></span>
+                                         <span class="errorFuncionamientoM" style="color:red"></span>
                                            </div>
 
                                           <div class="form-group col-sm-12 col-md-6">

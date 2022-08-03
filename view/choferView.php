@@ -66,7 +66,7 @@
                                         <table class="table table-striped datatable col-sm-12" id="" >
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                                    <th></th>
                                                     <th>Nombre</th>
                                                     <th>Apellido</th>
                                                     <th>Cédula</th>
@@ -82,7 +82,7 @@
                                             <?php foreach ($chofer as $value): ?>
                                                 <?php if (!empty($value['id_choferes'])): ?>
                                                 <tr>
-                                                    <td><?=$value['id_choferes']?></td>
+                                                    <td></td>
                                                     <td><?=$value['nombre']?></td>
                                                     <td><?=$value['apellido']?></td>
                                                     <td><?=$value['cedula']?></td>
@@ -94,7 +94,7 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-search"></i>
                                                                 </span>
-                                                                <span class="text">Consultar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         </div>
 <!-- MODAL DE CONSULTAR-->
@@ -118,12 +118,12 @@
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="nombre"><b>Nombre</b></label>
                                 <input type="text" class="form-control-plaintext" disabled value="<?=$value['nombre'] ?>" name="nombre" id="nombre">
-                                <span class="errorNombre" style="color:red"></span>
+                               
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="apellido"><b>Apellido</b></label>
                                 <input type="text" class="form-control-plaintext" disabled value="<?=$value['apellido'] ?>" name="apellido" id="apellido">
-                                <span class="errorApellido" style="color:red"></span>
+                                
                             </div>
                         </div>
                         <br>
@@ -131,12 +131,12 @@
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="cedula"><b>Cedula</b></label>
                                 <input type="text" class="form-control-plaintext" disabled style="border:none;" value="<?=$value['cedula'] ?>" name="cedula" id="cedula">
-                                <span class="errorCedula" style="color:red"></span>
+                               
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
                                 <label for="username"><b>Telefono</b></label>
                                 <input type="text" class="form-control-plaintext" disabled style="border:none;" value="<?=$value['telefono'] ?>" name="username" id="telefono">
-                                <span class="errorUsername" style="color:red"></span>
+                               
                             </div>
                         </div>
                         <br>
@@ -146,7 +146,7 @@
                                 <div class="" style="width:100%;" class="form-control-plaintext" disabled name="unidad" id="unidad">
                                     <span><?=$value['placa']?></span>
                                 </div>
-                                <span class="errorRol" style="color:red"></span>
+                                
                             </div>
                         </div>
                     </div>
@@ -163,9 +163,9 @@
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                             <a href="#" data-id="<?=$value['id_choferes'] ?>" data-toggle="modal" data-target="#ModificarChoferModal<?=$value['id_choferes'] ?>" class="btn btn-warning btn-icon-split editar" name="editar">
                                                                 <span class="icon text-white-50">
-                                                                    <i class="fas fa-flag"></i>
+                                                                    <i class="fas fa-edit"></i>
                                                                 </span>
-                                                                <span class="text" style="color:#FFF;">Modificar</span>
+                                                                <span class="text" style="color:#FFF;"></span>
                                                             </a>
                                                         </div>
 
@@ -192,12 +192,12 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="nombre"><b>Nombre</b></label>
                                         <input type="text" class="form-control nombre<?=$value['id_choferes'];?>" value="<?=$value['nombre'];?>" name="nombre" id="nombre">
-                                        <span class="errorNombre" style="color:red"></span>
+                                        <span class="errorNombreM" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="apellido"><b>Apellido</b></label>
                                         <input type="text" class="form-control apellido<?=$value['id_choferes'];?>" value="<?=$value['apellido'];?>" name="apellido" id="apellido">
-                                        <span class="errorApellido" style="color:red"></span>
+                                        <span class="errorApellidoM" style="color:red"></span>
                                     </div>
                                 </div>
                                 <br>
@@ -205,12 +205,12 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="cedula"><b>Cedula</b></label>
                                         <input type="text" class="form-control cedula<?=$value['id_choferes'];?>" value="<?=$value['cedula'];?>" name="cedula" id="cedula">
-                                        <span class="errorCedula" style="color:red"></span>
+                                        <span class="errorCedulaM" style="color:red"></span>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="telefono"><b>Telefono</b></label>
                                         <input type="text" class="form-control telefono<?=$value['id_choferes'];?>" value="<?=$value['telefono'];?>" name="telefono" id="telefono">
-                                        <span class="errortelefono" style="color:red"></span>
+                                        <span class="errorTelefonoM" style="color:red"></span>
                                     </div>
                                 </div>
                                 <br>
@@ -225,7 +225,7 @@
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </select>
-                                        <span class="errorPlaca" style="color:red"></span>
+                                        <span class="errorPlacaM" style="color:red"></span>
                                     </div>
                                 </div>
                             </div>
@@ -248,14 +248,14 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-trash"></i>
                                                                 </span>
-                                                                <span class="text">Eliminar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } else { ?>
                                                             <a href="#" data-id="<?= $value['id_choferes'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
                                                                 <span class="icon text-info-50">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </span>
-                                                                <span class="text">Habilitar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } ?>
                                                         </div>

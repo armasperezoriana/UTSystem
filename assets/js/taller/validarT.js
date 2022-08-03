@@ -190,7 +190,7 @@ function validar(modificar = false){
            if(!expNombre.test(nombre)){
                 $(".errorNombre").html("Este campo solo acepta caracteres, minimo 3");
                     rnombre = false;
-                            preventDefault();
+                           return false;
                 }else{
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");
@@ -198,7 +198,7 @@ function validar(modificar = false){
             }if(!expRif.test(rif)){
                         $(".errorRif").html("El formato aceptado es una letra mayuscula (JGVEP) - 8 digitos - y un nro final");
                             rrif = false;
-                                    preventDefault();
+                            return false;
                         }else{
                                 $(".errorRif").html("Campo validado");
                                 $(".errorRif").attr("style", "color:green");
@@ -206,7 +206,7 @@ function validar(modificar = false){
                     }if(!expDireccion.test(direccion)){
                         $(".errorDireccion").html("Solo se aceptan caracteres, minimo 5");
                             rdireccion = false;
-                                   preventDefault();
+                            return false;
                             }else{
                                                 $(".errorDireccion").html("Campo validado");
                                                 $(".errorDireccion").attr("style", "color:green");
@@ -214,7 +214,7 @@ function validar(modificar = false){
                                     }if(!expContacto.test(contacto)){
                                         $(".errorContacto").html("Digite un numero de telefono valido, solo numeros");
                                             rcontacto = false;
-                                                    preventDefault();
+                                            return false;
                                         }else{
                                                 $(".errorContacto").html("Campo validado");
                                                 $(".errorContacto").attr("style", "color:green");

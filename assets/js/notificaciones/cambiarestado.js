@@ -1,8 +1,8 @@
-         $('body').on('click', '.inhabilitar', function(e) {
+         $('body').on('click', '.inhabilitarOrden', function(e) {
             e.preventDefault();
 
             Swal.fire({
-                title: '¿Desea cambiar el estado de la alerta?',
+                title: '¿Desea cambiar el estado de la orden de servicio?',
                 text: "El estado del mantenimiento cambiara su estado a: en proceso",
                 type: 'warning',
                 showCancelButton: true,
@@ -12,16 +12,16 @@
                 confirmButtonText: 'Si, cambiar!'
             }).then((result) => {
                 if (result.value) {
-                    inhabilitar($(this).attr('data-id'));
+                    inhabilitarOrden($(this).attr('data-id'));
                 }
             })
         });
      
 
-     const inhabilitar = (id) => {
+     const inhabilitarOrden = (id) => {
         $.ajax({
             type: "POST",
-            url: "notificaciones/Inhabilitar/" + id,
+            url: "notificaciones/InhabilitarOrden/" + id,
             success: function(response) {
                 const json = JSON.parse(response);
                 Swal.fire(
@@ -39,7 +39,7 @@
             }
         });
     }
-     const habilitar = (id) => {
+     const habilitarOrden = (id) => {
         $.ajax({
             type: "POST",
             url: "notificaciones/Habilitar/" + id,
@@ -65,8 +65,8 @@
             e.preventDefault();
 
             Swal.fire({
-                title: '¿Desea cambiar el estado de la alerta?',
-                text: "El estado del mantenimiento cambiara en el en el sistema",
+                title: '¿Desea cambiar el estado de la orden de servicio?',
+                text: "El estado de la orden de servicio cambiara en el en el sistema a: Generada",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -75,7 +75,7 @@
                 confirmButtonText: 'Si!'
             }).then((result) => {
                 if (result.value) {
-                    habilitar($(this).attr('data-id'));
+                    habilitarOrden($(this).attr('data-id'));
                 }
             })
         });

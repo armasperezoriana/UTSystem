@@ -212,8 +212,8 @@
     function validar(modificar = false) {
         var form = "";
 
-       var expNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
-        var expApellido = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+       var expNombre = /^[a-zA-ZÀ-ÿ\s]{5,40}$/;
+        var expApellido = /^[a-zA-ZÀ-ÿ\s]{5,40}$/;
         var expCedula =/^\d{7,14}$/;
         var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
         var expPass = /^.{4,12}$/;
@@ -262,15 +262,25 @@
             $(".errorCedula").html("Debe ingresar su cedula");
              $(".errorUsername").html("Debe ingresar su nombre de usuario");
               $(".errorRol").html("Debe seleccionar su rol");
-                 $(".errorPass1").html("Debe ingresar su Contraseña");
+                 $(".errorPass1").html("La clave acepta de 4 a 12 digitos y solo numeros");
                    $(".errorPass2").html("Confirmar Contraseña");
                       $(".errorCorreo").html("Debe ingresar un correo electronico valido");
                    
     }
 
 else{
-        if(!expNombre.test(nombre)){
-                $(".errorNombre").html("El campo nombre solo acepta caracteres");
+    if(!expCedula.test(cedula)){
+        $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+           rcedula = false;
+           return false;
+} else {
+        $(".errorCedula").html("");
+       rcedula = true;
+                 $(".errorCedula").html("Cédula valida");
+               $(".errorCedula").attr("style", "color:green");
+
+    }if(!expNombre.test(nombre)){
+                $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4");
                     rnombre = false;
                     return false;
         } else {
@@ -279,25 +289,15 @@ else{
                 rnombre = true;
             }
              if(!expApellido.test(apellido)){
-                $(".errorApellido").html("El campo apellido solo acepta caracteres");
+                $(".errorApellido").html("El campo apellido solo acepta caracteres,  minimo 4");
                     rapellido = false;
                     return false;
         } else {
                 $(".errorApellido").html("Campo validado");
                 $(".errorApellido").attr("style", "color:green");
                 rapellido = true;
-            }if(!expCedula.test(cedula)){
-                $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
-                   rcedula = false;
-                   return false;
-        } else {
-                $(".errorCedula").html("");
-               rcedula = true;
-                         $(".errorCedula").html("Cédula valida");
-                       $(".errorCedula").attr("style", "color:green");
-
             }if(!expUsername.test(username)){
-                $(".errorUsername").html("Error el campo usuario acepta letras, numeros, guion y guion bajo");
+                $(".errorUsername").html("Error el campo usuario acepta letras, numeros, guion y guion bajo, minimo 4 caracteres");
                    rusername = false;
                    return false;
         } else {
@@ -363,7 +363,7 @@ else{
                 $(".errorPass2").attr("style", "color:green");
             } else {
                 $(".errorPass2").html("Contraseñas no coinciden");
-                preventDefault();
+                return false;
             }
         }
 

@@ -36,7 +36,7 @@
     }
 
 
-		public function Inhabilitar($id)
+		public function InhabilitarOrden($id)
 	{
 		$method = $_SERVER['REQUEST_METHOD'];
 		if ($method != 'POST') {
@@ -44,7 +44,7 @@
 			return false;
 		}
 
-		$result = $this->notificaciones->Inhabilitar($id);
+		$result = $this->notificaciones->InhabilitarOrden($id);
 		if ($result['ejecucion'] == true) {
 			echo json_encode([
 				'titulo' => 'Mantenimiento Cancelado!',
@@ -60,7 +60,7 @@
 		}
 	}
 
-	public function Habilitar($id)
+	public function HabilitarOrden($id)
 	{
 		$method = $_SERVER['REQUEST_METHOD'];
 		if ($method != 'POST') {
@@ -68,7 +68,7 @@
 			return false;
 		}
 
-		$result = $this->notificaciones->Habilitar($id);
+		$result = $this->notificaciones->HabilitarOrden($id);
 		if ($result['ejecucion'] == true) {
 			echo json_encode([
 				'titulo' => 'Mantenimiento Generado!',
