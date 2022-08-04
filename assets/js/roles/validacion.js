@@ -1,13 +1,13 @@
   $(document).ready(function() {
 
         $(".EnviarUsuariosRegistrar").click(function() {
-            var valido = validar();
-            if (valido == true) {
+          //  var valido = validar();
+           // if (valido == true) {
 
                 var nombre_rol = $("#AgregarUsuarioModal").find("#nombre_rol").val();                
                 var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();
-                var id_rol = $("#AgregarUsuarioModal").find("#id_rol").val();
-                    alert(nombre_rol+""+descripcion+ ""+id_rol)
+                 var id_rol = $("#AgregarUsuarioModal").find("#id_rol").val();
+                    alert(id_rol+""+nombre_rol+"- "+descripcion+ " -" +id_rol);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -25,11 +25,11 @@
                             data: {
                                 nombre_rol: nombre_rol,
                                 descripcion: descripcion,
-                               // id_rol: id_rol,
+                                 id_rol: id_rol,
                                
                             },
                             success: function(respuesta) {
-                                 alert(nombre_rol+" "+descripcion+" "+" ");
+                                 alert(nombre_rol+" "+descripcion+" "+" "+id_rol);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -61,9 +61,7 @@
                         });
                     }
                 });
-
-
-            }
+          //  }
 
         });
         
@@ -273,7 +271,7 @@
     if(!expNombre.test(nombre_rol)){
                 $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4 caracteres");
                     rnombre = false;
-                  //  preventDefault();
+                  return false;
      }else{
                 $(".errorNombre").html("Campo validado");
                 $(".errorNombre").attr("style", "color:green");
@@ -282,7 +280,7 @@
         if (!expDescripcion.test(descripcion)) {
             $(".errorDescripcion").html("Ingrese una descripcion mas detallada, mayor a 6 caracteres. No se aceptan numeros");
         rdescripcion = false;
-         preventDefault();
+        return false;
         } else {
             $(".errorDescripcion").html("Campo validado");
             $(".errorDescripcion").attr("style", "color:green");

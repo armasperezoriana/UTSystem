@@ -117,16 +117,16 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-search"></i>
                                                                 </span>
-                                                                <span class="text">Consultar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         </div></td>
                                                     <td> 
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                             <a href="#" class="btn btn-warning btn-icon-split editarbtn" name="editar" id="'$value['id_vehiculo']'" href="#" data-toggle="modal" data-target="#ModificarReparacionesModal<?=$rep['id_reparaciones']?>">
                                                                 <span class="icon text-white-50" >
-                                                                    <i class="fas fa-flag"></i>
+                                                                    <i class="fas fa-edit"></i>
                                                                 </span>
-                                                                <span class="text">Modificar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                                 <a class="scroll-to-top rounded" href="#page-top">
                                                             <i class="fas fa-angle-up"></i>
@@ -323,14 +323,14 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-trash"></i>
                                                                 </span>
-                                                                <span class="text">Eliminar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } else { ?>
                                                             <a href="#" data-id="<?= $rep['id_reparaciones'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
                                                                 <span class="icon text-info-50">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </span>
-                                                                <span class="text">Habilitar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } ?>
                                                         </div>

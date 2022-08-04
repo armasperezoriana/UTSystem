@@ -83,22 +83,22 @@
 		}
 
 
-			public function AgregarR(){
-			
-			try {
-				$query = parent::prepare("INSERT INTO roles (id_rol, nombre_rol,descripcion, status) VALUES ('{$this->id_rol}', '{$this->nombre_rol}', '{$this->descripcion}', 1)");
-				$respuestaArreglo = '';
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-				$respuestaArreglo += ['ejecucion' => true];
-				return $respuestaArreglo;
-			} catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
+		public function AgregarR(){
+		
+		try {
+			$query = parent::prepare("INSERT INTO roles (id_rol, nombre_rol,descripcion, status) VALUES ('{$this->id_rol}', '{$this->nombre_rol}', '{$this->descripcion}', 1)");
+			$respuestaArreglo = '';
+		$query->execute();
+		$query->setFetchMode(parent::FETCH_ASSOC);
+			$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+			$respuestaArreglo += ['ejecucion' => true];
+			return $respuestaArreglo;
+		} catch (PDOException $e) {
+			$errorReturn = ['ejecucion' => false];
+			$errorReturn += ['info' => "error sql:{$e}"];
+			return $errorReturn;
+	}
+}
 
 
 

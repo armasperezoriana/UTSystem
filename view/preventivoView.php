@@ -137,10 +137,11 @@
                                                     <?php if (!empty($preventivo['id_mantenimiento'])): ?>
                                                 <tr>
                                                    
-                                                    <td><?=$preventivo['id_vehiculo']?></td>
-                                                    <td><?=$preventivo['nombre']?></td>
-                                                    <td><?=$preventivo['id_mantenimiento']?></td>
-                                                     <td><?=$preventivo['id_taller'];?></td>
+                                                    <td><? echo $preventivo['placa'] ?></td>
+                                                    <td><?=$preventivo['nombre_taller']?></td>
+                                                    <td><?=$preventivo['rif']?></td>
+                                                     <td><?=$preventivo['orden'];?></td>
+                                                     <td><? echo ['placa']?> </td>
                                                     <td>
                                                         
                                             

@@ -25,9 +25,9 @@
 		public function Consultar(){
 			
 			try {
-				$query = parent::prepare('SELECT * FROM mantenimientos');
-				//$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
-				//ON mantenimientos.id_taller= taller.id_taller');
+				//$query = parent::prepare('SELECT * FROM mantenimientos');
+				$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
+				ON mantenimientos.id_taller= taller.id_taller');
 				//$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
 				//ON mantenimientos.id_taller= taller.id_taller WHERE id_mantenimiento ='.$id.');');
 				$respuestaArreglo = '';

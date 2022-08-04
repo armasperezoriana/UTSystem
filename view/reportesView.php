@@ -225,7 +225,7 @@
                                                     <div
                                                         class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                         <a href="<?=_ESTADISTICOS_ ?>Choferes" target="blank">
-                                                            <h5>Choferes</h5>
+                                                            <h5>Reparaciones</h5>
                                                         </a>
                                                     </div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800"></div>

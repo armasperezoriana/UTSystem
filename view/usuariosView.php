@@ -304,10 +304,10 @@
 
 
                                 <div class="modal-footer">
-                                    <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Esteganografia">
-                                        <i class="fas fa-fw fa-cog"></i>
+                                  <!--   <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Esteganografia">MODAL DE MODIFICAR--> 
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">       <i class="fas fa-fw fa-cog"></i>
                                         <span>Imagen de Seguridad</span>
-                                    </a>
+                                    </button>
 
                                     <button class=" btn btn-secondary" type="button"
                                         data-dismiss="modal">Cancelar</button>
@@ -563,6 +563,35 @@
 
         </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><center>Imagen de Seguridad</center></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+               <div class="form-group">
+            <label for="message-text" class="col-form-label">Seleccione su imagen de Seguridad</label>
+                <datatable></datatable>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Ingrese su respuesta de seguridad</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+       
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Verificar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

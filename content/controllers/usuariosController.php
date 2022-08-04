@@ -53,6 +53,17 @@ class usuariosController
         ]);
     }
 
+
+
+	public function Seguridad($param)
+    {
+        $usuario = $this->usuario->ObtenerOne($param);
+        http_response_code(200);
+        echo json_encode([
+            'data' => $usuario
+        ]);
+    }
+
     public function encriptarS($palabra){
     $valor=unpack('H*',$palabra);
     $nivel1=base_convert($valor[1],16,2);
@@ -131,7 +142,10 @@ class usuariosController
 			$username = $_POST['username'];
 			$id_rol = $_POST['rol'];
 			$pass = $this->encriptarS($_POST['pass']);
+			//$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
+
+			 //$pass_cifrado = password_hash("rasmuslerdorf", PASSWORD_BCRYPT,$pass);
 			
 			$this->usuario->setNombre($nombre);
 			$this->usuario->setApellido($apellido);

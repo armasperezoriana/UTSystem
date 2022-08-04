@@ -109,7 +109,7 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-search"></i>
                                                                 </span>
-                                                                <span class="text">Consultar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         </div>
                                                         
@@ -122,9 +122,9 @@
 
                                                             <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-warning btn-icon-split editar" name="editar" >
                                                                 <span class="icon text-white-50">
-                                                                    <i class="fas fa-flag"></i>
+                                                                    <i class="fas fa-edit"></i>
                                                                 </span>
-                                                                <span class="text">Modificar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         </div>
 
@@ -136,7 +136,7 @@
                                                                     <span class="icon text-white-50">
                                                                         <i class="fas fa-trash"></i>
                                                                     </span>
-                                                                    <span class="text">Eliminar</span>
+                                                                    <span class="text"></span>
                                                                 </a>
                                                             <?php } else { ?>
                                                                 <a href="#" data-id="<?= $rols['id_rol'] ?>" class="btn btn-outline-info btn-icon-split habilitar
@@ -144,7 +144,7 @@
                                                                     <span class="icon text-info-50">
                                                                         <i class="fas fa-trash-alt"></i>
                                                                     </span>
-                                                                    <span class="text">Habilitar</span>
+                                                                    <span class="text"></span>
                                                                 </a>
                                                             <?php } ?>
                                                         </div>
@@ -196,6 +196,7 @@
         <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
             <div class="container">
                 <div class="modal-dialog">
+                <input type="hidden" id="id_rol" name="id_rol">
                     <div class="" role="document">
                         <div class="modal-content">
                             <div class="modal-header bg-primary" style="color:#FFF">
@@ -208,7 +209,8 @@
                                 <div class="row">
                                      <div class="form-group col-sm-12 col-md-6">
                                         <label for="nombreRol"><b>Nombre del Rol</b></label>
-                                        <input type="text" class="form-control" name="nombre_rol" id="nombre_rol" minlength="4">
+                                        <input type="text" class="form-control" name="nombre_rol" id="nombre_rol" minlength="4" >
+                                        <input type="hidden" class="form-control" id="id_rol" name="id_rol">
                                         <span class="errorNombre" style="color:red"></span>
                                     </div>
                                 <div class="form-group col-sm-12 col-md-6">
@@ -216,8 +218,13 @@
                                         <input type="text" class="form-control" name="descripcion" id="descripcion">
                                         <span class="errorDescripcion" style="color:red"></span>
                                     </div>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="descripcion"><b>Nro. del rol</b></label>
+                                        <input type="text" class="form-control" name="id_rol" id="id_rol">
+                                        <span class="errorRol" style="color:red"></span>
+                                    </div>
                                 </div>
-                                    
+                            
 
                             </div>
 

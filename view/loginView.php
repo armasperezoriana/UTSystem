@@ -1,3 +1,20 @@
+
+<?php
+use content\config\conection\database as database;
+
+$mysqli = new mysqli("localhost", "root", "", "ut");
+
+//$query = prepare("SELECT * FROM usuarios");
+//$query->bindParam("correo",$correo, PDO::PARAM_STR);
+//$query->bindParam("contrasena", $contrasena, PDO::PARAM_STR);
+  //  $query->execute();
+    //$registro = $query->fetch(FETCH_ASSOC);
+
+//    print_r($registro);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,11 +109,11 @@
                                         <div class="form-group">
                                             <label>Pregunta de seguridad</label>
                                           <input type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Responde la pregunta la pregunta de seguridad...">
+                                                id="correo" aria-describedby="emailHelp"
+                                                placeholder="Ingresa tu correo..">
                                                 <br>
                                           <input type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                id="pregunta" aria-describedby="emailHelp"
                                                 placeholder="Responde la pregunta la pregunta de seguridad...">
                                         </div>
                                          <br>

@@ -18,6 +18,8 @@ class loginController
 
 	public function Consultar()
 	{
+
+    
 		if(!empty($_SESSION['ut_usuario'])) {
 			header('Location: Home');
 		}
@@ -27,7 +29,9 @@ class loginController
 
 		$url = $this->url;
 		$usuarios = $this->usuario->Consultar();
+
 		require_once("view/loginView.php");
+
 	}
 
 

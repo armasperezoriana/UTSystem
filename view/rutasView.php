@@ -105,7 +105,7 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-search"></i>
                                                                 </span>
-                                                                <span class="text">Consultar</span>
+                                                                <span class="text"></span>
                                                             </a>
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -195,9 +195,9 @@
 
                                                             <a href="#" data-id="<?=$value['id_ruta'];?>" class="btn btn-warning btn-icon-split" data-target="#ModificarvehiculoModal<?=$value['id_ruta'] ?>"  data-toggle="modal">
                                                                 <span class="icon text-white-50">
-                                                                    <i class="fas fa-flag"></i>
+                                                                    <i class="fas fa-edit"></i>
                                                                 </span>
-                                                                <span class="text" style="color:#FFF;">Modificar</span>
+                                                                <span class="text" style="color:#FFF;"></span>
                                                             </a>
                                                         </div>
                                                         <?php } ?>
@@ -313,14 +313,14 @@
                                                                 <span class="icon text-white-50">
                                                                     <i class="fas fa-trash"></i>
                                                                 </span>
-                                                                <span class="text">Eliminar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } else { ?>
                                                             <a href="#" data-id="<?= $value['id_ruta'] ?>" class="btn btn-outline-info btn-icon-split habilitar" data-toggle="modal" data-target="">
                                                                 <span class="icon text-info-50">
                                                                     <i class="fas fa-trash-alt"></i>
                                                                 </span>
-                                                                <span class="text">Habilitar</span>
+                                                                <span class="text"></span>
                                                             </a>
                                                         <?php } ?>
                                                         </div>

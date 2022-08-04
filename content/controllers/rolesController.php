@@ -44,12 +44,11 @@ public function Mostrar($param)
 	{
 		
 		if (!empty($_POST['nombre_rol'])) {
-			$id = $_POST['id_rol'];
 			$nombre_rol = $_POST['nombre_rol'];
 			$descripcion = $_POST['descripcion'];
+			$id_rol = $_POST['id_rol'];
 			
-			
-			$this->rol->setId($id);
+			$this->rol->setId($id_rol);
 			$this->rol->setNombreRol($nombre_rol);
 			$this->rol->setDescripcion($descripcion);
 			
