@@ -33,15 +33,21 @@
 			}
 		}
 
-			public function ConsultarOne(){
+			public function ConsultarOne($nombre_rol){
+
 			try {
+				$cont=0;
 				$query = parent::prepare("SELECT * FROM roles WHERE status = 1 ");
 				$respuestaArreglo = '';
 				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
+			//	$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-				$respuestaArreglo += ['ejecucion' => true];
-				return $respuestaArreglo;
+				foreach($respuestaArreglo as $ra){
+					if(strtolower($nombre_rol)==strtolower($ra['nombre_rol'])){
+						$cont++;
+					}
+				}
+				return $cont;
 			} catch (PDOException $e) {
 				$errorReturn = ['ejecucion' => false];
 				$errorReturn += ['info' => "error sql:{$e}"];
@@ -70,7 +76,7 @@
 				$query = parent::prepare("SELECT r.id_rol, r.nombre_rol AS rol, r.descripcion, p.id_permisos, p.nombre AS permiso FROM `roles` r 
 					INNER JOIN roles_permisos rp ON r.id_rol = rp.rol_id 
 					INNER JOIN permisos p ON rp.permisos_id = p.id_permisos WHERE r.id_rol = $id");
-				$respuestaArreglo = '';
+				$respuesta = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuesta = $query->fetchAll(parent::FETCH_ASSOC); 
@@ -86,7 +92,7 @@
 		public function AgregarR(){
 		
 		try {
-			$query = parent::prepare("INSERT INTO roles (id_rol, nombre_rol,descripcion, status) VALUES ('{$this->id_rol}', '{$this->nombre_rol}', '{$this->descripcion}', 1)");
+			$query = parent::prepare("INSERT INTO roles (nombre_rol,descripcion, status) VALUES ('{$this->nombre_rol}', '{$this->descripcion}', 1)");
 			$respuestaArreglo = '';
 		$query->execute();
 		$query->setFetchMode(parent::FETCH_ASSOC);

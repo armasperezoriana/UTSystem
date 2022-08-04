@@ -218,11 +218,7 @@
                                         <input type="text" class="form-control" name="descripcion" id="descripcion">
                                         <span class="errorDescripcion" style="color:red"></span>
                                     </div>
-                                    <div class="form-group col-sm-12 col-md-6">
-                                        <label for="descripcion"><b>Nro. del rol</b></label>
-                                        <input type="text" class="form-control" name="id_rol" id="id_rol">
-                                        <span class="errorRol" style="color:red"></span>
-                                    </div>
+                        
                                 </div>
                             
 

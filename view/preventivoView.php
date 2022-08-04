@@ -126,7 +126,6 @@
                                                     <th>Taller</th>
                                                     <th></th>
                                                      <th></th>
-                                                     <th></th>
                                                      <th><center>Acción</center></th>
                                                       <th></th>
                                                 </tr>
@@ -134,7 +133,7 @@
                                   
                                             <tbody>
                                                 <?php foreach ($mantenimiento as $preventivo): ?>
-                                                    <?php if (!empty($preventivo['id_mantenimiento'])): ?>
+                                                    <?php if (!empty($preventivo['orden'])): ?>
                                                 <tr>
                                                    
                                                     <td><? echo $preventivo['placa'] ?></td>
@@ -142,6 +141,9 @@
                                                     <td><?=$preventivo['rif']?></td>
                                                      <td><?=$preventivo['orden'];?></td>
                                                      <td><? echo ['placa']?> </td>
+                                                     <td> </td>
+                                                     <td> </td>
+                                                     <td> </td>
                                                     <td>
                                                         
                                             

@@ -34,9 +34,7 @@ public function Mostrar($param)
     {
         $rol = $this->rol->ObtenerRol($param);
         http_response_code(200);
-        echo json_encode([
-            'data' => $rol
-        ]);
+        echo json_encode($rol);
     }
 
 
@@ -46,34 +44,23 @@ public function Mostrar($param)
 		if (!empty($_POST['nombre_rol'])) {
 			$nombre_rol = $_POST['nombre_rol'];
 			$descripcion = $_POST['descripcion'];
-			$id_rol = $_POST['id_rol'];
-			
-			$this->rol->setId($id_rol);
 			$this->rol->setNombreRol($nombre_rol);
 			$this->rol->setDescripcion($descripcion);
-			
-			
-			$result = $this->rol->ConsultarOne();
-			if ($result['ejecucion'] == true) {
-				if (count($result) > 1) {
-					//echo "3";
-					//$execute = $this->usuario->AgregarR();
+						
+		 	$result = $this->rol->ConsultarOne($nombre_rol);
+
+			if ($result>0) {
 						echo '3';
-				} else {
-					$execute = $this->usuario->AgregarR();
-					//Codigo de bitacora sobre Agregar Usuario
-					if ($execute['ejecucion'] == true) {
-						echo '1';
-					} else {
-						echo "2";
-					}
+			} else {
+					$execute = $this->rol->AgregarR();
+					echo "1";
+					
 				}
 			} else {
 				echo "2";
 			}
 		}
 		
-	}
 	public function Modificar()
 	{
 		if (!empty($_POST['nombre_rol']) && count($_POST['permisos']) > 0) {

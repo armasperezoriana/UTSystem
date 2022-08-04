@@ -6,8 +6,6 @@
 
                 var nombre_rol = $("#AgregarUsuarioModal").find("#nombre_rol").val();                
                 var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();
-                 var id_rol = $("#AgregarUsuarioModal").find("#id_rol").val();
-                    alert(id_rol+""+nombre_rol+"- "+descripcion+ " -" +id_rol);
                 swal.fire({
                     title: "¿Desea guardar los datos ingresados?",
                     text: "Estos datos serán guardados.",
@@ -25,11 +23,10 @@
                             data: {
                                 nombre_rol: nombre_rol,
                                 descripcion: descripcion,
-                                 id_rol: id_rol,
                                
                             },
                             success: function(respuesta) {
-                                 alert(nombre_rol+" "+descripcion+" "+" "+id_rol);
+                                console.log(respuesta);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -298,25 +295,26 @@
             success: function (response) {
                 let json = JSON.parse(response);
                 let rol = json.data;
-                $(formulario).trigger('reset');
-                $(formulario).find("#nombre_rol").val(rol[0].rol);
-                $(formulario).find("#descripcion").val(rol[0].descripcion);
-                if(modal == '#ModificarRolModal'){
-                    $(formulario).find('input#id_rol').val(rol[0].id_rol); 
-                    $.each(rol, function (j, element) { 
-                        var permiso = $(formulario).find('input[value="'+element.id_permisos+'"]');
-                        permiso.click()
-                    });
-                }
-                else{
-                    $('#listaPermisos').html('');
-                    $.each(json.data, function (j, element) { 
-                        var li = $('<li>');
-                        li.text(element.permiso);
-                        $('#listaPermisos').append(li);
-                    });
-                }
-                $(modal).modal('show');
+                console.log(response);
+                // $(formulario).trigger('reset');
+                // $(formulario).find("#nombre_rol").val(rol[0].rol);
+                // $(formulario).find("#descripcion").val(rol[0].descripcion);
+                // if(modal == '#ModificarRolModal'){
+                //     $(formulario).find('input#id_rol').val(rol[0].id_rol); 
+                //     $.each(rol, function (j, element) { 
+                //         var permiso = $(formulario).find('input[value="'+element.id_permisos+'"]');
+                //         permiso.click()
+                //     });
+                // }
+                // else{
+                //     $('#listaPermisos').html('');
+                //     $.each(json.data, function (j, element) { 
+                //         var li = $('<li>');
+                //         li.text(element.permiso);
+                //         $('#listaPermisos').append(li);
+                //     });
+                // }
+                // $(modal).modal('show');
             },
             error: function (response) {
                 console.log(response.getAllResponseHeaders())
