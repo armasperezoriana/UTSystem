@@ -168,7 +168,7 @@
                      foreach($vehiculos_notificacion as $vn){
 						if($vn['texto_notificacion']!=""){
 							$hoy = getdate();
-                            $hoy=$hoy['year']."-".$hoy['mon']."-".$hoy['mday'];
+                            $hoy=$hoy['year']."-".$hoy['mday']."-".$hoy['mon'];
 						    $this->mantenimiento->Agregar_notificacion([
 								"fecha"=>$hoy,
 								"titulo"=>"Mantenimiento preventivo ".$vn['placa'],

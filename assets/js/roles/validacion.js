@@ -295,26 +295,26 @@
             success: function (response) {
                 let json = JSON.parse(response);
                 let rol = json.data;
-                console.log(response);
-                // $(formulario).trigger('reset');
-                // $(formulario).find("#nombre_rol").val(rol[0].rol);
-                // $(formulario).find("#descripcion").val(rol[0].descripcion);
-                // if(modal == '#ModificarRolModal'){
-                //     $(formulario).find('input#id_rol').val(rol[0].id_rol); 
-                //     $.each(rol, function (j, element) { 
-                //         var permiso = $(formulario).find('input[value="'+element.id_permisos+'"]');
-                //         permiso.click()
-                //     });
-                // }
-                // else{
-                //     $('#listaPermisos').html('');
-                //     $.each(json.data, function (j, element) { 
-                //         var li = $('<li>');
-                //         li.text(element.permiso);
-                //         $('#listaPermisos').append(li);
-                //     });
-                // }
-                // $(modal).modal('show');
+                console.log(json);  
+                $(formulario).find("#nombre_rol").val(json[0]['rol']);      
+                $(formulario).find("#descripcion").val(json[0]['descripcion']); 
+            
+                if(modal == '#ModificarRolModal'){
+                    $(formulario).find('input#id_rol').val(json[0]['id_rol']); 
+                    $.each(json, function (j, element) { 
+                        var permiso = $(formulario).find('input[value="'+element.id_permisos+'"]');
+                        permiso.click()
+                    });
+                }
+                else{
+                    $('#listaPermisos').html('');
+                    $.each(json, function (j, element) { 
+                        var li = $('<li>');
+                        li.text(element.permiso);
+                        $('#listaPermisos').append(li);
+                    });
+                }
+                $(modal).modal('show');
             },
             error: function (response) {
                 console.log(response.getAllResponseHeaders())

@@ -110,7 +110,8 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE roles SET nombre_rol = '$this->nombre_rol', descripcion = '$this->descripcion' 
+   
+     			$query = parent::prepare("UPDATE roles SET nombre_rol = '$this->nombre_rol', descripcion = '$this->descripcion' 
 					WHERE id_rol = $this->id_rol");
 				$query->execute();
 				
@@ -118,8 +119,9 @@
 				$queryD->execute();
 
 				foreach ($this->permisos as $permiso) {
-					$queryP = parent::prepare("INSERT INTO roles_permisos(rol_id, permisos_id) "
-						. "VALUES ($this->id_rol, $permiso)");
+					$queryText="INSERT INTO roles_permisos(rol_id, permisos_id,creado, modificado) "
+					. "VALUES (".$this->id_rol.", ".$permiso.",".date('Y/m/d').",".date('Y/m/d').")";
+					$queryP = parent::prepare($queryText);
 					$queryP->execute();
             	}
 				$respuestaArreglo = '';
