@@ -119,31 +119,32 @@
                                         <table class="table table-striped datatable col-sm-12" id="" >
                                             <thead>
                                                 <tr>
-                                            
+                                                <th>Orden Nro.</th>
                                                     <th>Vehiculo</th>
                                                     <th>Tipo de Mantenimiento</th>
-                                                    <th>Orden de Servicio</th>
                                                     <th>Taller</th>
-                                                    <th></th>
+                                                     <th>Rif</th>
                                                      <th></th>
-                                                     <th><center>Acción</center></th>
+                                                      <th></th>
+                                                      <th><center>Acción</center></th>
+                                                      <th></th>
                                                       <th></th>
                                                 </tr>
                                             </thead>
                                   
                                             <tbody>
                                                 <?php foreach ($mantenimiento as $preventivo): ?>
-                                                    <?php if (!empty($preventivo['orden'])): ?>
+                                                    <?php if (!empty($preventivo['id_mantenimiento'])): ?>
                                                 <tr>
                                                    
-                                                    <td><? echo $preventivo['placa'] ?></td>
-                                                    <td><?=$preventivo['nombre_taller']?></td>
-                                                    <td><?=$preventivo['rif']?></td>
-                                                     <td><?=$preventivo['orden'];?></td>
-                                                     <td><? echo ['placa']?> </td>
-                                                     <td> </td>
-                                                     <td> </td>
-                                                     <td> </td>
+                                                <td><?=$preventivo['id_mantenimiento'];?></td>
+                                                    <td><?=$preventivo['placa'] ?></td>
+                                                    <td><?=$preventivo['nombre']?></td>
+                                                    <td><?=$preventivo['nombre_t']?></td>
+                                                     <td><?=$preventivo['rif']?></td>
+
+    
+                                                  
                                                     <td>
                                                         
                                             
@@ -209,7 +210,7 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="Nombre"><b>Pieza reparada</b></label>
                                         <input type="text" class="form-control-plaintext" disabled  value="<?=$preventivo['nombre']?>" name="nombre" id="nombre">
-                                        <span class="errorNombre" style="color:red;"></span>
+                                        
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="intervalo"><b>Fecha del último mantenimiento</b></label>
@@ -222,7 +223,7 @@
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="tipo"><b>Kilometraje</b></label>
                                       <input type="text" class="form-control-plaintext" disabled value="<?=$preventivo['kilometraje']?>"  name="kilometraje" id="kilometraje">
-                                        <span class="errortipo" style="color:red"></span>
+                                       
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                      <label for="taller"><b>Taller</b></label>
@@ -241,7 +242,7 @@
                                 <div class="row">
                                     <div class="form-group col-sm-8">
                                       <label for="placa"><b>Unidad que se le realizo Mantenimiento</b></label>
-                                         <select class="form-control select2" style="width:60%;" name="id_vehiculoM" id="id_vehiculoM" disabled>
+                                         <select class="form-control select2" style="width:60%;" name="id_vehiculo" id="id_vehiculo" disabled>
                                             <option></option>
                                             <?php foreach ($vehiculo as $unidad) : ?>
                                                 <?php if (!empty($unidad['id_vehiculo'])) : ?>
@@ -265,15 +266,13 @@
                                     </div>
 
                                     <div class="form-group col-sm-12 col-md-6">
-                                        <label for="Estado"><b>Estado de la orden :</b></label>   <select class="form-control select2" name="estado" id="estado">
-                                                  <option value="">...</option>
-                                                <option value="1">Generada</option>
-                                                <option value="2">En proceso</option>
-                                                <option value="3">Cancelada</option>
+                                        <label for="Estado"><b>Estado de la orden :</b></label>   <input type="text" class="form-control select2" name="estado" id="estado" value="<?=$preventivo['estado']?>" disabled>
+                                               
+                                       
                                                 
                                             </select>
                                        
-                                        <span class="errorEstado" style="color:red"></span>
+                                        
                                     </div>
                                 
                                 </div>

@@ -94,8 +94,8 @@
 		try {
 			$query = parent::prepare("INSERT INTO roles (nombre_rol,descripcion, status) VALUES ('{$this->nombre_rol}', '{$this->descripcion}', 1)");
 			$respuestaArreglo = '';
-		$query->execute();
-		$query->setFetchMode(parent::FETCH_ASSOC);
+			$query->execute();
+			$query->setFetchMode(parent::FETCH_ASSOC);
 			$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
 			$respuestaArreglo += ['ejecucion' => true];
 			return $respuestaArreglo;

@@ -26,8 +26,7 @@
 			
 			try {
 				//$query = parent::prepare('SELECT * FROM mantenimientos');
-				$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden, mantenimientos.estado AS estado, mantenimientos.status AS status FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
-				ON mantenimientos.id_taller= taller.id_taller');
+				$query = parent::prepare('SELECT mantenimientos.id_taller AS id_taller, mantenimientos.estado as estado, mantenimientos.status as status, taller.nombre AS nombre_t, vehiculos.modelo as modelo, taller.rif AS rif, mantenimientos.nombre AS nombre, mantenimientos.fecha as fecha, mantenimientos.id_vehiculo = vehiculos.id_vehiculo, mantenimientos.kilometraje as kilometraje,vehiculos.id_vehiculo AS id_vehiculo, vehiculos.modelo as modelo, vehiculos.placa AS placa, mantenimientos.costo AS costo, vehiculos.placa as placa, mantenimientos.id_mantenimiento AS id_mantenimiento FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON mantenimientos.id_taller= taller.id_taller');
 				//$query = parent::prepare('SELECT mantenimientos.id_taller AS taller, taller.nombre AS nombre_taller, taller.rif AS rif, mantenimientos.nombre AS nombre_mantenimiento, vehiculos.placa AS placa, mantenimientos.id_mantenimiento AS orden FROM mantenimientos INNER JOIN vehiculos ON mantenimientos.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller 
 				//ON mantenimientos.id_taller= taller.id_taller WHERE id_mantenimiento ='.$id.');');
 				$respuestaArreglo = '';
