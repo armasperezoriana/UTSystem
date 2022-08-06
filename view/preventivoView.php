@@ -170,14 +170,14 @@
                                                      <td>  
                                                             <div class="col-sm-7" style='text-align:right;'>
                                                             <?php if ($preventivo['estado'] == 1) { ?>
-                                                                <a href="#" data-id="<?= $preventivo['id_notificacion'] ?>" class="btn btn-success btn-icon-split inhabilitar" data-toggle="modal" data-target="">
+                                                                <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-success btn-icon-split inhabilitarN" data-toggle="modal" data-target="">
                                                                     <span class="icon-check-white-50">
                                                                         <i class="fas fa-check "></i>
                                                                     </span>
                                                                     <span class="text"></span>
                                                                 </a>
                                                             <?php } else { ?>
-                                                                <a href="#" data-id="<?= $preventivo['id_notificacion'] ?>" class="btn btn-outline-info btn-icon-split habilitar
+                                                                <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-outline-info btn-icon-split habilitarN
                                                                     " data-toggle="modal" data-target="">
                                                                     <span class="icon text-info-50">
                                                                         <i class="fas fa-sign-out-alt"></i>
@@ -633,7 +633,7 @@
      
 </body>
 <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js">
-
+<script type="text/javascript" src="../../assets/js/notificaciones/cambiarestado.js"></script>
   
  
 </script> 

@@ -21,7 +21,7 @@
 		}
 		public function Consultar(){
 			try {
-				$query = parent::prepare('SELECT * FROM reparaciones');
+				$query = parent::prepare('SELECT r.id_taller AS id_taller, r.status as status, taller.nombre AS nombre_t, vehiculos.modelo as modelo, taller.rif AS rif, r.nombre AS nombre, r.fecha as fecha,r.descripcion as descripcion, r.id_vehiculo = r.id_vehiculo, vehiculos.id_vehiculo AS id_vehiculo, vehiculos.modelo as modelo, vehiculos.placa AS placa, r.costo AS costo, vehiculos.placa as placa, r.id_reparaciones as id_reparaciones FROM reparaciones as r INNER JOIN vehiculos ON r.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON r.id_taller= taller.id_taller');
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

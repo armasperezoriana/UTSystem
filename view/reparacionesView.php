@@ -108,9 +108,9 @@
                                                     <?php if (!empty($rep['id_reparaciones'])): ?>
                                                 <tr>
                                                     <td><?=$rep['id_reparaciones']?></td>
-                                                    <td><?=$rep['id_vehiculo']?></td>
+                                                    <td><?=$rep['placa']?></td>
                                                     <td><?=$rep['nombre']?></td>
-                                                    <td><?=$rep['id_taller']?></td>
+                                                    <td><?=$rep['rif']?></td>
                                                     <td>
                                                             <div class="col-sm-7" style='text-align:right;'>
                                                             <a href="#" data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-info btn-icon-split consultar" name="consultar" data-target="#ConsultarMantenimientoModal<?=$rep['id_reparaciones'] ?>"  data-toggle="modal">
@@ -278,7 +278,7 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="costo"><b>Costo</b></label>
-                                    <input type="number" step="0.1" class="form-control" style="width:100%;" value="<?=$rep['costo']?>" name="costo" id="costo">
+                                    <input type="text" step="0.1" class="form-control" style="width:100%;" value="<?=$rep['costo']?>" name="costo" id="costo">
                                     <span class="errorcosto" style="color:red"></span>
                                 </div>
                             </div>

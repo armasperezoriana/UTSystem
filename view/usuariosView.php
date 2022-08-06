@@ -95,7 +95,7 @@
                                                 </th>
                                                 <th></th>
 
-                                                          <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
 
@@ -108,7 +108,7 @@
                                                 <td><?= $value['nombre'].' '.$value['apellido']?></td>
                                                 <td></td>
                                                 <td></td>
-                                                   <td></td>
+                                                <td></td>
                                                 <td>
 
                                                     <div class="col-sm-7" style='text-align:right;'>
@@ -304,14 +304,21 @@
 
 
                                 <div class="modal-footer">
-                                  <!--   <a class="nav-link collapsed" href="<?=_ROUTE_ ?>Esteganografia">MODAL DE MODIFICAR--> 
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">       <i class="fas fa-fw fa-cog"></i>
+                                   <a class="nav-link collapsed" href="<?=_ROUTE_?>Esteganografia">
+                                        <i class="fas fa-fw fa-cog"></i>
                                         <span>Imagen de Seguridad</span>
-                                    </button>
+                                    
+                                        <!-- Button trigger modal 
+                                        ?id=<?=$preventivo['id_usuario'] ?>"
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModalLong">
+                                            <i class="fas fa-fw fa-cog"></i>
+                                        <span>Imagen de Seguridad</span>
+                                        </button>-->
 
-                                    <button class=" btn btn-secondary" type="button"
-                                        data-dismiss="modal">Cancelar</button>
-                                    <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
+                                        <button class=" btn btn-secondary" type="button"
+                                            data-dismiss="modal">Cancelar</button>
+                                        <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
                                 </div>
                             </div>
                         </div>
@@ -429,8 +436,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <a class="nav-link collapsed"
-                                                                href="<?=_ROUTE_ ?>Esteganografia">
+                                                            <a class="nav-link collapsed">
+                    
+
+                                                                <a class="nav-link collapsed" href="<?=_ROUTE_?>Esteganografia">
                                                                 <i class="fas fa-fw fa-cog"></i>
                                                                 <span>Imagen de Seguridad</span>
                                                             </a>
@@ -562,36 +571,120 @@
 
 
         </div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><center>Imagen de Seguridad</center></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Preguntas de seguridad
         </button>
-      </div>
-      <div class="modal-body">
-        <form>
-               <div class="form-group">
-            <label for="message-text" class="col-form-label">Seleccione su imagen de Seguridad</label>
-                <datatable></datatable>
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Ingrese su respuesta de seguridad</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-       
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Verificar</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary" style="color:#FFF">
+                    <h5 id="exampleModalLabel">Preguntas de Seguridad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+            <style type="text/css">
+            .modal {
+                font-size: 0.8em;
+            }
+            </style>
+            <div id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+                <div class="container">
+                    <div>
+                        <div class="" role="document">
+                            <div>
+
+
+                                <div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-12 col-md-6">
+                                            <div class="form__pr">
+                                            <!--- PREGUNTA 1 --->
+                                                    <label for="pregunta"><b>Pregunta 1:</b></label>
+                                                    <select class="form-control select2" name="pregunta" id="preguntauno">
+                                                        <option value="">...</option>
+                                                        <option value="¿Cuál era el nombre de tu mejor amigo?">¿Cuál era el nombre de tu mejor amigo?
+                                                        </option>
+                                                        <option value="¿Cuál es tu color favorito?">¿Cuál es tu color favorito?</option>
+                                                        <option value="¿Cómo se llama tu perro?">¿Cómo se llama tu perro?</option>
+
+                                                    </select>
+                                                    <span class="errorPreguntauno" style="color:red"></span>
+                                                </div>
+
+                                                <label for="respuesta"><b>Respuesta</b></label>
+                                                <input type="text" class="form-control" name="respuestauno" id="respuestauno">
+                                                <span class="errorrespuesta" style="color:red"></span>
+                                            </div>
+                                            
+
+
+                                            <!--- PREGUNTA 2 --->
+                                            <br><br>
+                                            <div class="form-group col-sm-12 col-md-6">
+                                            <label for="pregunta2"><b>Pregunta 2:</b></label>
+                                            <select class="form-control select2" name="preguntados" id="preguntados">
+                                                <option value="">...</option>
+                                                <option value="¿Donde estudiaste?">¿Donde estudiaste?</option>
+                                                <option value="¿Donde naciste?">¿Donde naciste?</option>
+                                                <option value="¿Cuál es tu apodo?">¿Cuál es tu apodo?</option>
+
+                                            </select>
+                                            <span class="errorPreguntados" style="color:red"></span>
+                                            
+                                        
+                                            <label for="respuesta"><b>Respuesta</b></label>
+                                            <input type="text" class="form-control" name="respuestados" id="respuestados">
+                                            <span class="errorrespuesta" style="color:red"></span>
+                                            </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-12 col-md-6">
+                                            <div class="form__box">
+                                            <!--- PREGUNTA 3 --->
+                                                    <label for="pregunta"><b>Pregunta 3:</b></label>
+                                                    <select class="form-control select2" name="preguntatres" id="preguntatres">
+                                                        <option value="">...</option>
+                                                        <option value="¿Pelicula favorita?">¿Pelicula favorita?
+                                                        </option>
+                                                        <option value="¿Comida que te recuerda a tu hogar?">¿Comida que te recuerda a tu hogar?</option>
+                                                        <option value="¿Segundo nombre de tu padre?">¿Segundo nombre de tu padre?</option>
+
+                                                    </select>
+                                                    <span class="errorPreguntatres" style="color:red"></span>
+                                                </div>
+
+                                                <label for="respuesta"><b>Respuesta</b></label>
+                                                <input type="text" class="form-control" name="respuestatres" id="respuestatres">
+                                                <span class="errorRespuesta" style="color:red"></span>
+                                            </div>
+                                    </div>
+
+
+                                    <div class="modal-footer">
+                                
+                                        <a class="EnviarPreguntasRegistrar btn btn-primary" href="#">Guardar respuestas</a>
+                                        <button class=" btn btn-secondary" type="button"
+                                            data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                           
+                </div>
+            </div>
+        </div>
 
 
 
@@ -666,7 +759,7 @@
 
     </body>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
-
+     <!--  <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script> -->
     <script type="text/javascript">
 function mostrarPassword() {
     var cambio = document.getElementById("pass1");

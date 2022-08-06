@@ -1,4 +1,4 @@
-         $('body').on('click', '.inhabilitarOrden', function(e) {
+         $('body').on('click', '.inhabilitarN', function(e) {
             e.preventDefault();
 
             Swal.fire({
@@ -12,16 +12,16 @@
                 confirmButtonText: 'Si, cambiar!'
             }).then((result) => {
                 if (result.value) {
-                    inhabilitarOrden($(this).attr('data-id'));
+                    inhabilitarN($(this).attr('data-id'));
                 }
             })
         });
      
 
-     const inhabilitarOrden = (id) => {
+     const inhabilitarN= (id) => {
         $.ajax({
             type: "POST",
-            url: "notificaciones/InhabilitarOrden/" + id,
+            url: "mantenimientos/InhabilitarN/" + id,
             success: function(response) {
                 const json = JSON.parse(response);
                 Swal.fire(
@@ -39,10 +39,10 @@
             }
         });
     }
-     const habilitarOrden = (id) => {
+     const habilitarN = (id) => {
         $.ajax({
             type: "POST",
-            url: "notificaciones/Habilitar/" + id,
+            url: "mantenimientos/HabilitarN/" + id,
             success: function(response) {
                 const json = JSON.parse(response);
                 Swal.fire(
@@ -61,7 +61,7 @@
         });
     }
         // Habilitar alerta
-        $('body').on('click', '.habilitar', function(e) {
+        $('body').on('click', '.habilitarN', function(e) {
             e.preventDefault();
 
             Swal.fire({
@@ -75,7 +75,7 @@
                 confirmButtonText: 'Si!'
             }).then((result) => {
                 if (result.value) {
-                    habilitarOrden($(this).attr('data-id'));
+                    habilitarN($(this).attr('data-id'));
                 }
             })
         });

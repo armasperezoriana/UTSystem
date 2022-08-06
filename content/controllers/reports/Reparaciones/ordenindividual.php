@@ -30,14 +30,13 @@ function Header()
     $this->Cell(160, 10, utf8_decode('REPARACIÓN INDIVIDUAL') ,2, 0,'C', 0);
         $this->Ln(10);
 
-        $this->SetFont('Arial','B',12);//Tipo de letra, negrita, tamaño
+        $this->SetFont('Arial','B',10);//Tipo de letra, negrita, tamaño
 
         $this->Cell(10, 10,  'Nro',1, 0,'C', 0);
-         $this->Cell(30, 10, 'Placa',1, 0,'C', 0);
-        $this->Cell(45, 10, 'Reparacion',1, 0,'C', 0);
+         $this->Cell(20, 10, 'Placa',1, 0,'C', 0);
+        $this->Cell(30, 10,  utf8_decode('Reparación'),1, 0,'C', 0);
         $this->Cell(20, 10, 'Costo',1, 0,'C', 0);
-        $this->Cell(25, 10, 'Taller',1, 0,'C', 0);
-        $this->Cell(25, 10, 'Rif',1, 0,'C', 0);
+        $this->Cell(50, 10,  utf8_decode('Descripción'),1, 0,'C', 0);
         $this->Cell(25, 10, 'Fecha',1, 0,'C', 0);
 
         $this->Ln(10);
@@ -66,27 +65,28 @@ function Footer()
 
 $mysqli = new mysqli("localhost", "root", "", "ut");
 $id=$_GET['id'];
-        $resultado = $mysqli->query('SELECT r.id_reparaciones AS
-         id, r.nombre AS nombre_reparaciones, vehiculos.placa AS 
-         PLACA, r.costo AS costo_r, r.id_taller AS taller, r.nombre AS 
-         nombre_taller, taller.rif AS rif, r.fecha AS r_fecha
-          FROM reparaciones as r INNER JOIN vehiculos
-           ON r.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON r.id_taller= taller.id_taller');
+        $resultado = $mysqli->query('SELECT r.id_taller AS id_taller, r.status as status, taller.nombre AS nombre_t, vehiculos.modelo as modelo,
+         taller.rif AS rif, r.nombre AS nombre, r.fecha as 
+         fecha,r.descripcion as descripcion, r.id_reparaciones as id_reparaciones, r.id_vehiculo = r.id_vehiculo,
+         vehiculos.id_vehiculo AS id_vehiculo, vehiculos.modelo as modelo, 
+         vehiculos.placa AS placa, r.costo AS costo, vehiculos.placa as placa, 
+         r.id_reparaciones as id_reparaciones FROM reparaciones 
+         as r INNER JOIN vehiculos ON r.id_vehiculo = vehiculos.id_vehiculo 
+         INNER JOIN taller ON r.id_taller= taller.id_taller WHERE id_reparaciones = '.$id.')');
         //$placa = $mysqli->query('SELECT placa FROM vehiculos');
         //$rif = $mysqli->query('SELECT rif, nombre FROM rif WHERE id_mantenimiento=id_mantenimiento');
 
         $pdf = new PDF();
         $pdf->AddPage();
-        $pdf->SetFont('Arial','B',12);
+        $pdf->SetFont('Arial','B',10);
     
         while ($row = $resultado->fetch_assoc()){
-        $pdf->Cell(10,10, $row['id'], 1, 0,'C', 0);
-        $pdf->Cell(30,10, $row['PLACA'], 1, 0,'C', 0);
-         $pdf->Cell(45,10, $row['nombre_reparaciones'], 1, 0,'C', 0);
-        $pdf->Cell(20,10, $row['costo_r'], 1, 0,'C', 0);
-         $pdf->Cell(25,10, $row['nombre_taller'], 1, 0,'C', 0);
-         $pdf->Cell(25,10, $row['rif'], 1, 0,'C', 0);
-        $pdf->Cell(25,10, $row['r_fecha'], 1, 0,'C', 0);
+        $pdf->Cell(10,10, $row['id_taller'], 1, 0,'C', 0);
+        $pdf->Cell(20,10, $row['placa'], 1, 0,'C', 0);
+         $pdf->Cell(30,10, $row['nombre'], 1, 0,'C', 0);
+        $pdf->Cell(20,10, $row['costo'], 1, 0,'C', 0);
+         $pdf->Cell(50,10, $row['descripcion'], 1, 0,'C', 0);
+        $pdf->Cell(25,10, $row['fecha'], 1, 0,'C', 0);
          $pdf->Ln(10);//salto de linea
         }
         

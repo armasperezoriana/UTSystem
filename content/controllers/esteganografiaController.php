@@ -1,171 +1,76 @@
 <?php 
 
-
-//require_once 'http://'.$_SERVER['HTTP_HOST'].'/UT/vendor/autoload.php';
 namespace content\controllers;
 
 use config\settings\sysConfig as sysConfig;
 use content\component\headElement as headElement;
+use content\modelo\homeModel as homeModel;
 use content\modelo\esteganografiaModel as esteganografiaModel;
 
 require_once ('./vendor/autoload.php');
 
-/**
- * 
- */
-class EsteganografiaController
-{   
-    // Todas las propiedades las declaré en los métodos
+	class esteganografiaController{
+		private $url;
+		private $esteganografia;
+		
+		function __construct($url){
+			$this->url = $url;
+			$this->esteganografia = new esteganografiaModel();
+		}
 
-    // Recibir la imágen y la palabra o frase, procesarla y guardarla en carpeta del sistema
-  static public function encriptarImg($archivo,$palabra)
-  {
-        // Si existen las variables post, asignarlas a variables.
-        //if (isset($_POST['guardar'])) {
-    $temporal = $archivo["tmp_name"];
-    $palabraS = $palabra;
-    $nombre = $archivo["name"];
-            //}
-
-
-
-//    $directorio = __DIR__.'/../../../public/img/securityEncripted/';
-$directorio = '<?=IMG_SEGURIDAD?>/securityEncripted/';
-
-        // Renombrar las imágenes con números aleatorios desde el 100 hasta 999
-    $letraAleatoria = chr(rand(ord("A"), ord("Z")));
-
-    $numeroAleatorio = rand(1, 2000);
-
-    $aleatorio = $letraAleatoria.$numeroAleatorio.$letraAleatoria;
-
-        // procesar la imágen
-        // creo un nuevo objeto de la clase que se instaló con composer 
-    $procesar = new KzykHys\Steganography\Processor();
-    if (isset($temporal) && isset($palabraS)) {
-      $imgProcesada = $procesar->encode( $temporal, $palabraS);
-            // var_dump($imgProcesada);    
-      $imgProcesada->write($directorio.$aleatorio.".png");
-      echo '<script>
-      swal({
-        type: "success",
-        title: "¡Imágen de seguridad elegida correctamente!",
-        showConfirmButton: true,
-        confirmButtonText: "Cerrar"
-
-        }).then(function(result){
-          if(result.value){                                                   
-            window.location = "?url=seguridad&opcion=imagenSeguridad";
-          }
-
-          }); 
-
-          </script>';
-        }
-      }
-
-    // listar las imágenes guardadas con o sin palabra o frase secreta.
-      static public function listarImg()
-      {
-
-       // $ruta = "views/public/img/seguridad/"; // Indicar la ruta
-        $ruta = "../../assets/img/seguridad"; // Indicar la ruta
-                $filehandle = opendir($ruta); // Abrir archivos de la carpeta
-                while ($file = readdir($filehandle)) {
-                  if ($file != "." && $file != "..") {
-                        // var_dump($ruta.$file);
-                        // $tamanyo = GetImageSize($ruta . $file);
-                    echo "<div class='row card'><img src='$ruta$file' width='100' class='materialbox responsive-img card'><p style='font-weight: bold;'><label><input class='with-gap' name='imagenes' type='radio' value='$file' required /><span>Seleccione su imágen</span></label></p></div>";
-                  } 
-                } 
-                    closedir($filehandle); // Fin lectura archivos
-                  }
+		public function Consultar(){
+			$objModel = new homeModel;
+			$_css = new headElement;
+			$_css->Heading();
+			
+			$url = $this->url;
+			require_once("view/esteganografiaView.php");
+		}
 
 
-                  static public function desencriptarImg()
-                  {    
-        // Si existen las variables post, asignarlas a variables.    
-                    if (isset($_POST["acceder"])) {
-                      $imagen = $_POST["imagenes"];
-                      $palabraSecreta = $_POST["palabra"];
-              // var_dump($imagen);
-              // var_dump($palabraSecreta);
-                    }
+    public function RegistrarPregunta()
+	{
+		if (!empty($_POST['preguntauno']) && !empty($_POST['preguntados']) && !empty($_POST['preguntatres'])&&(!empty($_POST['respuestauno']) && !empty($_POST['respuestados']) && !empty($_POST['respuestatres'])))
+		//if (!empty($_POST['respuestauno']) && !empty($_POST['respuestados']) && !empty($_POST['respuestatres'])) 
+		{
+			$preguntauno = $_POST['preguntauno'];
+			$preguntados = $_POST['preguntados'];
+			$preguntatres = $_POST['preguntatres']; 
+			$respuestauno = $_POST['respuestauno'];
+			$respuestados= $_POST['respuestados'];
+      		$respuestatres= $_POST['respuestatres'];
 
-        // Directorio de las imagenes
-        $directorio = "../../assets/img/seguridad";
-                   // $directorio = 'views/public/img/seguridad/';
-        // Instanciar la clase
-                    $procesar = new KzykHys\Steganography\Processor();
+			 //$pass_cifrado = password_hash("rasmuslerdorf", PASSWORD_BCRYPT,$pass);
+			
+			$this->esteganografia->setPreguntaUno($preguntauno);
+			$this->esteganografia->setPreguntaDos($preguntados);
+			$this->esteganografia->setPreguntaTres($preguntatres);
+			$this->esteganografia->setRespuestaUno($respuestauno);
+			$this->esteganografia->setRespuestaDos($respuestados);
+			$this->esteganografia->setRespuestaTres($respuestatres);
 
-        // Se usa try porque hay una excepción que bloquea el programa, aparece al elegir una
-        // imágen sin palabra secreta
-                    try{
-            // Decodificar la imágen
-                      if (isset($imagen)) {
-               // echo $imagen;
-                       $mensaje = $procesar->decode($directorio.$imagen);           
-               // var_dump($procesar);
-               // echo $mensaje;
-               // var_dump($mensaje);            
-                       if(isset($mensaje) && $palabra == $mensaje){
-                    // echo $palabraSecreta.'</br>';
-                    // echo $mensaje;
-                        echo '<script>
-                        swal({
-                          type: "success",
-                          title: "¡Imágen y palabra secreta guardada correctamente!",
-                          showConfirmButton: true,
-                          confirmButtonText: "Cerrar"},
+			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
+			$result = $this->esteganografia->ConsultarOne();
+			if ($result['ejecucion'] == true) {
+				if (count($result) > 1) {
+					echo "3";
+				} else {
+					$execute = $this->esteganografia->AgregarRespuestas();
+					$execute = $this->esteganografia->Agregar();
+					//Codigo de bitacora sobre Agregar Usuario
+					if ($execute['ejecucion'] == true) {
+						echo '1';
+					} else {
+						echo "2";
+					}
+				}
+			} else {
+				echo "2";
+			}
+		}
+	}
 
-                          function(isConfirm){   
-                            if (isConfirm) {    
-                              window.location="?url=seguridad&opcion=inicioAdminUsuarios";
-                            }
-                            });
-                            </script>';
-                          }elseif($mensaje != $palabra){
-                            echo'<script>
-                            swal({
-                              type: "error",
-                              title: "¡No coincide su imágen o palabra de seguridad!",
-                              showConfirmButton: true,
-                              confirmButtonText: "Cerrar"
-                              }).then(function(result){
-                                if (result.value) {
-
-                                 window.location = "?url=seguridad&opcion=imagenSeguridad";
-
-                               }
-                               })
-
-                               </script>';
-                             }
-                             else{
-                              throw new OutOfBoundsException("La imágen no contiene palabra o frase secreta");
-                            }            
-                          }
-                        }catch(OutOfBoundsException $ex){
-                          echo '<script>
-                          swal({
-                            type: "error",
-                            title: "La imágen no contiene palabra de seguridad!",
-                            showConfirmButton: true,
-                            confirmButtonText: "Cerrar"
-                            }).then(function(result){
-                              if (result.value) {
-
-                               window.location = "?url=seguridad&opcion=imagenSeguridad";
-
-                             }
-                             })
-
-                             </script>';
-                           }
-
-                         }
-
-                       }
-
+	}
+		
 
 ?>
