@@ -76,9 +76,9 @@
                                         <tr>
                                          
                                             <th>Unidad</th>
-                                            <th>Direccion</th>
+                                            <th>Dirección</th>
                                             <th>Nombre Ruta</th>
-                                            <th>Hora de Salida</th>
+                                           
                                             <th>Kilometraje</th>
                                              <th><center>Accion</center></th>
                                               <th></th>
@@ -94,8 +94,8 @@
                                                <td><?=$value['placa']?></td>
                                                <td><?=$value['direccion_ruta']?></td>
                                              <td><?=$value['nombre_ruta']?></td>
-                                            <td><?=$value['hora_salida']?></td>
-                                            <td><?=$value['kilometraje']?></td>
+                                           
+                                            <td><?=$value['kilometraje']?>Km.</td>
                                             <td> 
 
                          <div class="col-sm-7" style='text-align:right;'>

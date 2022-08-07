@@ -1,3 +1,8 @@
+<?php  
+    $mysqli = new mysqli("localhost", "root", "", "ut");
+    $mant = $mysqli->query('SELECT rutas.id_ruta AS id_ruta, rutas.direccion_ruta AS direccion_ruta, rutas.nombre_ruta AS nombre_ruta, vehiculos.placa AS placa, rutas.kilometraje AS kilometraje FROM rutas INNER JOIN vehiculos ON rutas.placa = vehiculos.placa');
+  //SELECT * FROM mantenimientos, vehiculos WHERE mantenimientos.kilometraje> vehiculos.kilometraje;  
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -37,14 +42,14 @@ title: {
 },
 
 xAxis: {
-    categories: ['Nombre de la Ruta', 'Kilometraje', 'Duracion de la ruta']
+    categories: ['Ruta Asignada', 'Kilometraje']
 },
 
 yAxis: {
     allowDecimals: false,
     min: 0,
     title: {
-        text: 'Number of fruits'
+        text: 'Rutas y kilometrajes por unidad'
     }
 },
 
@@ -62,23 +67,36 @@ plotOptions: {
     }
 },
 
-series: [{
-    name: 'John',
-    data: [5, 3, 4, 7, 2],
-    stack: 'male'
-}, {
-    name: 'Joe',
-    data: [3, 4, 4, 2, 5],
-    stack: 'male'
-}, {
-    name: 'Jane',
-    data: [2, 5, 6, 2, 1],
-    stack: 'female'
-}, {
-    name: 'Janet',
-    data: [3, 0, 4, 4, 3],
-    stack: 'female'
-}]
+series: [
+
+    <?php 
+        foreach ($mant as $key) {
+
+    ?> 
+    {
+        name: <?php echo "'".$key['nombre_ruta']. " - " .$key['placa']. "'," ?>
+        data: [<?php echo $key['kilometraje']. "," ?>]
+
+},
+<?php
+        }
+    ?> 
+    ],
+    series: [
+
+<?php 
+    foreach ($mant as $key) {
+
+?> 
+{
+    name: <?php echo "'".$key['nombre_ruta']. " - " .$key['direccion_ruta']. "'," ?>
+    data: [<?php echo $key['kilometraje']. "," ?>]
+
+},
+<?php
+    }
+?> 
+]
 });
           
     </script>

@@ -1,3 +1,7 @@
+<?php  
+    $mysqli = new mysqli("localhost", "root", "", "ut");
+    $vehiculo = $mysqli->query('SELECT * FROM vehiculos WHERE status = 1 AND KILOMETRAJE>1500 ORDER BY KILOMETRAJE');
+?>
 
 
 <!DOCTYPE html>
@@ -33,37 +37,38 @@
         type: 'column'
     },
     title: {
-        text: 'Vehiculos con mayor kilometraje recorrido '
+        text: 'Vehiculos con kilometraje por encima de los 1500k, que ameritan proximos mantenimientos'
     },
     xAxis: {
-        categories: ['Modelo', 'Funcionamiento', 'Kilometraje']
+        categories: ['Modelo - Placa -Kilometraje' ]
     },
+    yAxis: {
+    allowDecimals: false,
+    min: 0,
+    title: {
+        text: 'Escala de Kilometrajes por Vehiculo'
+    }
+},
     credits: {
         enabled: false
     },
-    series: [{
-        name: 'Unidad', 
-        data: [
-            <?php
-                use content\config\conection\database as database;
-$mysqli = new mysqli("localhost", "root", "", "ut");
-        $resultado = $mysqli->query('SELECT * FROM Vehiculos WHERE kilometraje > 300');
+    series: [
+    
+    <?php 
+        foreach ($vehiculo as $key) {
 
-               while($row=$resultado->fetch_assoc()){
+    ?> 
+        
+{
+        name: <?php echo "'".$key['modelo']. " - " .$key['placa']. "'," ?>
+        data: [<?php echo $key['kilometraje']. "," ?>]
 
-                    //echo "['".$row["modelo"]."',".$row["funcionamiento"]."',".$row["kilometraje"]."],";
-                $row['id_vehiculo'];
-                $row['placa'];
-                $row['modelo'];
-                $row['funcionamiento'];
+},
 
-
-                }
-                 
-                ?>
-        ]
-
-    }]
+    <?php
+        }
+    ?> 
+]
 });
 
     </script>

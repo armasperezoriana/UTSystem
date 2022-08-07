@@ -70,6 +70,37 @@ require_once ('./vendor/autoload.php');
 		}
 	}
 
+
+//Cambiar esta ruta al colocarlo en tu pc o en el host
+
+ // $direccion = __DIR__.'/../../../public/img/securityEncripted/';
+
+//$direccion = '<?=IMG_SEGURIDAD/';
+
+$text=[];
+
+$text2='';
+
+$array=scandir($direccion);
+
+foreach ($array as $a) {
+if($a!='.' && $a!='..'){
+   
+   $separado=explode("_",$a);
+
+
+   if(strlen($separado[0])>1){
+   	$text2.="<td><img src='public/img/securityEncripted/".$separado[0]."' onclick='changeImg(this,`".$separado[0]."`)' class='imgSeguridad'></td><td></td>";
+   }  
+
+
+}
+}
+
+echo $text2."</tr></table>";
+
+?>
+
 	}
 		
 
