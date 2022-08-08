@@ -5,6 +5,7 @@
 	use config\settings\sysConfig as sysConfig;
 	use content\component\headElement as headElement;
 	use content\modelo\recuperarModel as recuperarModel;
+	use content\modelo\usuariosModel as usuariosModel;
 
 	class recuperarController{
 		private $url;

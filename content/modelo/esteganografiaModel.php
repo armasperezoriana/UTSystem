@@ -66,7 +66,7 @@
 					}
 				}
 
-				$query = parent::prepare("INSERT INTO seguridad_preguntas (preguntauno, respuestauno) VALUES ('{$this->preguntauno}', '{$this->respuestauno}')");
+				$query = parent::prepare("INSERT INTO seguridad_preguntas (id_usuario, preguntauno, respuestauno) VALUES ('{$this->id}','{$this->preguntauno}', '{$this->respuestauno}')");
        // $query = parent::prepare("INSERT INTO seguridad_respuestas (respuestauno, respuestados, respuestatres) VALUES ('{$this->respuestauno}', '{$this->respuestados}', '{$this->respuestatres}')");
         $respuestaArreglo = '';
 				$query->execute();
@@ -81,36 +81,7 @@
 			}
 		}
 
-    public function AgregarRespuestas(){
-      $id=0;
-			try {
-				$query = parent::prepare('SELECT MAX(id_s_respuestas) as max FROM seguridad_respuestas WHERE id_s_respuestas');
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$result = $query->fetchAll(parent::FETCH_ASSOC); 
-				foreach($result as $row){
-					if(!empty($row['max'])){
-						$id = $row['max']+1;
-					}else{
-						$id++;
-					}
-				}
-
-				//$query = parent::prepare("INSERT INTO seguridad_preguntas (preguntauno, preguntados, preguntatres) VALUES ('{$this->preguntauno}', '{$this->preguntados}', '{$this->preguntatres}')");
-        $query = parent::prepare("INSERT INTO seguridad_respuestas (respuestauno, respuestados, respuestatres) VALUES ('{$this->respuestauno}', '{$this->respuestados}', '{$this->respuestatres}')");
-        $respuestaArreglo = '';
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-				$respuestaArreglo += ['ejecucion' => true];
-				return $respuestaArreglo;
-			} catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-
+   
   public function encriptar($palabra,$dirImg,$name){
       $msg = $palabra; //To encrypt
       $src = $dirImg; //Start image
@@ -242,7 +213,9 @@ public function desencriptar($imgSrc){
         }
         
   }
-
+  public function setIdUsuario($id){
+    $this->id = $id;
+  }
   public function setPreguntaUno($preguntauno){
     $this->preguntauno = $preguntauno;
   }

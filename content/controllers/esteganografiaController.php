@@ -6,16 +6,20 @@ use config\settings\sysConfig as sysConfig;
 use content\component\headElement as headElement;
 use content\modelo\homeModel as homeModel;
 use content\modelo\esteganografiaModel as esteganografiaModel;
+use content\modelo\usuariosModel as usuariosModel;
 
 require_once ('./vendor/autoload.php');
 
 	class esteganografiaController{
 		private $url;
 		private $esteganografia;
+		private $usuario;
 		
 		function __construct($url){
 			$this->url = $url;
 			$this->esteganografia = new esteganografiaModel();
+			$this->usuario = new usuariosModel();
+
 		}
 
 		public function Consultar(){
@@ -27,12 +31,12 @@ require_once ('./vendor/autoload.php');
 			require_once("view/esteganografiaView.php");
 		}
 
-
     public function RegistrarPregunta()
 	{
+
 		if (!empty($_POST['preguntauno'])&&(!empty($_POST['respuestauno']) ))
 		//if (!empty($_POST['respuestauno']) && !empty($_POST['respuestados']) && !empty($_POST['respuestatres'])) 
-		{
+		{ 
 			$preguntauno = $_POST['preguntauno'];
 			//$preguntados = $_POST['preguntados'];
 			//$preguntatres = $_POST['preguntatres']; 
@@ -46,6 +50,7 @@ require_once ('./vendor/autoload.php');
 			//$this->esteganografia->setPreguntaDos($preguntados);
 			//$this->esteganografia->setPreguntaTres($preguntatres);
 			$this->esteganografia->setRespuestaUno($respuestauno);
+			$this->esteganografia->setIdUsuario($this->usuario->ConsultarUsuarioId());
 			//$this->esteganografia->setRespuestaDos($respuestados);
 			//$this->esteganografia->setRespuestaTres($respuestatres);
 

@@ -69,6 +69,26 @@
 			}
 		}
 
+		public function ConsultarUsuarioId(){
+			try {
+				$query = parent::prepare("SELECT MAX(id_usuario) FROM usuarios");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$id="";
+				foreach($respuestaArreglo as $r){
+						$id=$r['MAX(id_usuario)'];
+				}
+				return $id;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+
+	
+		}
 
 
 
