@@ -84,8 +84,7 @@
                                                     <label for="pregunta"><b>Pregunta 1:</b></label>
                                                     <select class="form-control select2" name="pregunta" id="preguntauno">
                                                         <option value="">...</option>
-                                                        <option value="¿Cuál era el nombre de tu mejor amigo?">¿Cuál era el nombre de tu mejor amigo?
-                                                        </option>
+                                                        <option value="¿Cuál era el nombre de tu mejor amigo?">¿Cuál era el nombre de tu mejor amigo?</option>
                                                         <option value="¿Cuál es tu color favorito?">¿Cuál es tu color favorito?</option>
                                                         <option value="¿Cómo se llama tu perro?">¿Cómo se llama tu perro?</option>
 
@@ -100,7 +99,7 @@
                                             
 
 
-                                            <!--- PREGUNTA 2 --->
+                                            <!--- PREGUNTA 2 
                                             <br><br>
                                             <div class="form-group col-sm-12 col-md-6">
                                             <label for="pregunta2"><b>Pregunta 2:</b></label>
@@ -123,7 +122,7 @@
                                     <div class="row">
                                         <div class="form-group col-sm-12 col-md-6">
                                             <div class="form__box">
-                                            <!--- PREGUNTA 3 --->
+                                            <!--- PREGUNTA 3
                                                     <label for="pregunta"><b>Pregunta 3:</b></label>
                                                     <select class="form-control select2" name="preguntatres" id="preguntatres">
                                                         <option value="">...</option>
@@ -141,7 +140,7 @@
                                                 <span class="errorRespuesta" style="color:red"></span>
                                             </div>
                                     </div>
-
+                                 --->
 
                                     <div class="modal-footer">
                                 

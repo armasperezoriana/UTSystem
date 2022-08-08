@@ -13,13 +13,13 @@
 	define("_MODEL_" , "content/modelo/");							/* direccion de los modelos */
 	define("_CONTROLLER_" , "Controller.php");						/* complemento para la llamada de controladores */
 	
-	define("_DB_SERVER_" , "http://localhost/");					/* nombre del servidor */
+	define("_DB_SERVER_" , "ftpupload.net");					/* nombre del servidor */
 
 	define('_DB_MANAGER_', 	'mysql');						        /* manejador de base de datos */
 	define("_DB_WEB_" , "id16202188_utsystem");								/* nombre de la base de datos */
 	define('_HOST_', 		'localhost');							/* nombre del host */
-	define("_DB_USER_", "id16202188_root");									/* nombre del usuario de la BD */
-	define("_DB_PASS_", "SISTEMAUT2022");										/* contraseña de la base de datos  */
+	define("_DB_USER_", "b17_32333882");									/* nombre del usuario de la BD */
+	define("_DB_PASS_", "oriana2022");										/* contraseña de la base de datos  */
 	define("_COMPLEMENT_" , "/systemUT/view/assets/");					/* direccion del proyecto */
 
 	define("_REPORTS_" , "/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */

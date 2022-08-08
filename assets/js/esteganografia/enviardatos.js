@@ -5,11 +5,11 @@ $(document).ready(function() {
       //  if (valido == true) {
 
             var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();                
-            var preguntados = $("#AgregarUsuarioModal").find("#preguntados").val();
-            var preguntatres =$("#AgregarUsuarioModal").find("#preguntatres").val();
+          //  var preguntados = $("#AgregarUsuarioModal").find("#preguntados").val();
+          //  var preguntatres =$("#AgregarUsuarioModal").find("#preguntatres").val();
             var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();                
-            var respuestados = $("#AgregarUsuarioModal").find("#respuestados").val();
-            var respuestatres =$("#AgregarUsuarioModal").find("#respuestatres").val();
+            //var respuestados = $("#AgregarUsuarioModal").find("#respuestados").val();
+            //var respuestatres =$("#AgregarUsuarioModal").find("#respuestatres").val();
 
             swal.fire({
                 title: "¿Desea guardar las preguntas y respuestas?",
@@ -27,11 +27,11 @@ $(document).ready(function() {
                         type: 'POST',
                         data: {
                             preguntauno: preguntauno,
-                            preguntados: preguntados,
-                            preguntatres: preguntatres,
+                            //preguntados: preguntados,
+                            //preguntatres: preguntatres,
                             respuestauno: respuestauno,
-                            respuestados: respuestados,
-                            respuestatres: respuestatres,
+                            //respuestados: respuestados,
+                            //respuestatres: respuestatres,
                         },
                         success: function(respuesta) {
                             console.log(respuesta);

@@ -49,8 +49,8 @@
                             </div>
                         </div>
                         <div>
-                            <div class="small text-gray-500">fecha</div>
-                            <span class="font-weight-bold">Titulo de notificacion</span>
+                            <div class="small text-gray-500">Fecha</div>
+                            <span class="font-weight-bold">Sin notificaciones</span>
                         </div>
                     </a>
 

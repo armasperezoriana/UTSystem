@@ -51,6 +51,27 @@
 				return $errorReturn;
 			}
 		}
+		//sql para consultar el correo del usuario y las respuesta de seguridad por id con su respuesta
+//SELECT usuarios.id_usuario AS id_usuario, usuarios.correo as correo, usuarios.usuario, seguridad_preguntas.preguntauno as preguntauno, seguridad_preguntas.respuestauno as respuestauno FROM usuarios INNER JOIN seguridad_preguntas ON seguridad_preguntas.id_usuario = usuarios.id_usuario;
+		public function buscarCorreo(){
+			try {
+				$query = parent::prepare("SELECT id_usuario, correo, usuario FROM usuarios WHERE status = 1 and correo = correo");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+
+
+
 		public function ObtenerOne($id){
 			try {
 				$query = parent::prepare("SELECT * FROM usuarios WHERE id_usuario = $id");

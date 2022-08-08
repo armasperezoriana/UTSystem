@@ -36,14 +36,14 @@
                                 correo: correo,
                             },
                             success: function(respuesta) {
-                                alert(respuesta);
+                                //alert(respuesta);
                                 if (respuesta == "1") {
-                                    swal.fire({
-                                        type: 'success',
-                                        title: 'Registro guardado exitosamente',
-                                    }).then((isConfirm) => {
-                                        location.href = './Usuarios';
-                                    });
+                                            swal.fire({
+                                                type: 'success',
+                                                title: 'Registro guardado exitosamente',
+                                            }).then((isConfirm) => {
+                                                location.href = './Usuarios';
+                                            });
                                 }
                                 if (respuesta == "2") {
                                     swal.fire({
@@ -89,7 +89,9 @@
                 var cedula =$("#modificarUsuario").find("#cedula").val();;
                 var username = $("#modificarUsuario").find("#username").val();
                 var rol = $("#modificarUsuario").find("#rol").val();
-                var pass = $("#modificarUsuario").find("#pass2").val();
+                //var pass = $("#modificarUsuario").find("#pass").val();
+                var pass = $("#modificarUsuario").find("#pass1").val();
+                var pass2= $("#modificarUsuario").find("#pass2").val();
                   var correo = $("#modificarUsuario").find("#correo").val();
                 // alert(pass);
                 swal.fire({
@@ -114,10 +116,11 @@
                                 username: username,
                                 rol: rol,
                                 pass: pass,
+                                pass2: pass,
                                 correo: correo,
                             },
                             success: function(respuesta) {
-                                alert(pass);
+                                //alert(pass+pass2);
                                 if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',
@@ -181,6 +184,7 @@
                     $(formulario).find("#cedula").val(usuario.cedula);
                     $(formulario).find("#rol").val(usuario.rol);
                     $(formulario).find("#correo").val(usuario.correo);
+                   
                     $(modal).modal('show');
                 },
                 error: function (response) {
@@ -237,8 +241,8 @@
     function validar(modificar = false) {
         var form = "";
 
-       var expNombre = /^[a-zA-ZÀ-ÿ\s]{5,40}$/;
-        var expApellido = /^[a-zA-ZÀ-ÿ\s]{5,40}$/;
+       var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
+        var expApellido = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
         var expCedula =/^\d{7,14}$/;
         var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
         var expPass = /^.{4,12}$/;

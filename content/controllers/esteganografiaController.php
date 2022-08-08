@@ -30,24 +30,24 @@ require_once ('./vendor/autoload.php');
 
     public function RegistrarPregunta()
 	{
-		if (!empty($_POST['preguntauno']) && !empty($_POST['preguntados']) && !empty($_POST['preguntatres'])&&(!empty($_POST['respuestauno']) && !empty($_POST['respuestados']) && !empty($_POST['respuestatres'])))
+		if (!empty($_POST['preguntauno'])&&(!empty($_POST['respuestauno']) ))
 		//if (!empty($_POST['respuestauno']) && !empty($_POST['respuestados']) && !empty($_POST['respuestatres'])) 
 		{
 			$preguntauno = $_POST['preguntauno'];
-			$preguntados = $_POST['preguntados'];
-			$preguntatres = $_POST['preguntatres']; 
+			//$preguntados = $_POST['preguntados'];
+			//$preguntatres = $_POST['preguntatres']; 
 			$respuestauno = $_POST['respuestauno'];
-			$respuestados= $_POST['respuestados'];
-      		$respuestatres= $_POST['respuestatres'];
+			//$respuestados= $_POST['respuestados'];
+      		//$respuestatres= $_POST['respuestatres'];
 
 			 //$pass_cifrado = password_hash("rasmuslerdorf", PASSWORD_BCRYPT,$pass);
 			
 			$this->esteganografia->setPreguntaUno($preguntauno);
-			$this->esteganografia->setPreguntaDos($preguntados);
-			$this->esteganografia->setPreguntaTres($preguntatres);
+			//$this->esteganografia->setPreguntaDos($preguntados);
+			//$this->esteganografia->setPreguntaTres($preguntatres);
 			$this->esteganografia->setRespuestaUno($respuestauno);
-			$this->esteganografia->setRespuestaDos($respuestados);
-			$this->esteganografia->setRespuestaTres($respuestatres);
+			//$this->esteganografia->setRespuestaDos($respuestados);
+			//$this->esteganografia->setRespuestaTres($respuestatres);
 
 			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 			$result = $this->esteganografia->ConsultarOne();
@@ -55,7 +55,7 @@ require_once ('./vendor/autoload.php');
 				if (count($result) > 1) {
 					echo "3";
 				} else {
-					$execute = $this->esteganografia->AgregarRespuestas();
+					//$execute = $this->esteganografia->AgregarRespuestas();
 					$execute = $this->esteganografia->Agregar();
 					//Codigo de bitacora sobre Agregar Usuario
 					if ($execute['ejecucion'] == true) {
@@ -69,39 +69,6 @@ require_once ('./vendor/autoload.php');
 			}
 		}
 	}
-
-
-//Cambiar esta ruta al colocarlo en tu pc o en el host
-
- // $direccion = __DIR__.'/../../../public/img/securityEncripted/';
-
-//$direccion = '<?=IMG_SEGURIDAD/';
-
-$text=[];
-
-$text2='';
-
-$array=scandir($direccion);
-
-foreach ($array as $a) {
-if($a!='.' && $a!='..'){
-   
-   $separado=explode("_",$a);
-
-
-   if(strlen($separado[0])>1){
-   	$text2.="<td><img src='public/img/securityEncripted/".$separado[0]."' onclick='changeImg(this,`".$separado[0]."`)' class='imgSeguridad'></td><td></td>";
-   }  
-
-
 }
-}
-
-echo $text2."</tr></table>";
-
-?>
-
-	}
-		
 
 ?>

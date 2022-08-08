@@ -76,7 +76,6 @@ $(document).ready(function () {
     // Modificar Vehiculo
 
     $(".EnviarMantenimientoModificar").click(function() {
-      
         var id = $(this).attr("id");
         var valido = validar(true, id);
        if (valido == true) {
@@ -153,6 +152,33 @@ $(document).ready(function () {
         }
     });
 
+    $.ajax({
+        type:"POST",
+        url: './esteganografia/desencriptarAllImg',
+        data:{"usuario":document.getElementById("user").value}
+    }).done(function(result){
+        console.log(result);
+         var separado= result.split("-");
+         var content="<br>Imagen de seguridad:<br><img src='../public/img/securityEncripted/"+separado[1]+"' style='width:50%;border-radius:20px;'><br><br>";
+         content+="Palabra de seguridad: <h3>"+separado[0]+"</h3><br>";
+         document.getElementById("show_results").innerHTML=content;
+         document.getElementById("img_actual").value=separado[1];
+    });
+    
+    
+    
+    document.getElementById("editarbtn").onclick=function(){
+        if(document.getElementById("editarbtn").innerHTML=="Modificar"){
+            document.getElementById("editarbtn").innerHTML="Cancelar";
+            $("#show_results").hide(1000);
+            $("#nuevo").show(1000);
+        }
+        else{
+            document.getElementById("editarbtn").innerHTML="Modificar";
+            $("#nuevo").hide(1000);
+            $("#show_results").show(1000);
+        }
+    }
 
     // Inhabilitar Vehiculo
     $('body').on('click', '.inhabilitar', function (e) {

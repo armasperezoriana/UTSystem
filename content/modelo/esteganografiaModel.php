@@ -66,7 +66,7 @@
 					}
 				}
 
-				$query = parent::prepare("INSERT INTO seguridad_preguntas (preguntauno, preguntados, preguntatres) VALUES ('{$this->preguntauno}', '{$this->preguntados}', '{$this->preguntatres}')");
+				$query = parent::prepare("INSERT INTO seguridad_preguntas (preguntauno, respuestauno) VALUES ('{$this->preguntauno}', '{$this->respuestauno}')");
        // $query = parent::prepare("INSERT INTO seguridad_respuestas (respuestauno, respuestados, respuestatres) VALUES ('{$this->respuestauno}', '{$this->respuestados}', '{$this->respuestatres}')");
         $respuestaArreglo = '';
 				$query->execute();
