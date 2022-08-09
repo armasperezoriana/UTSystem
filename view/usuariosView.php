@@ -1,12 +1,12 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
         <title><?php echo _NAMESYSTEM_; ?> | <?php if (!empty($action)) {
-                                                    echo $action;
-                                                } ?> <?php if (!empty($url)) {
-                    echo $url;
-                } ?></title>
+            echo $action;
+        } ?> <?php if (!empty($url)) {
+            echo $url;
+        } ?></title>
 
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -62,9 +62,10 @@
                                 <i class="fas fa-check"></i>
                             </span>
                             <?php
-
-                            if (in_array('registrar usuario', $_SESSION['ut_permisos'])) {
-                            ?>
+                            
+                            if (in_array('registrar usuario', $_SESSION['ut_permisos']))
+                            {
+                               ?>
                             <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarUsuarioModal"
                                 data-toggle="modal" data-target="#AgregarUsuarioModal">
                                 <span class="icon text-white-50">
@@ -94,7 +95,7 @@
                                                 </th>
                                                 <th></th>
 
-                                                <th></th>
+                                                          <th></th>
                                             </tr>
                                         </thead>
 
@@ -104,10 +105,10 @@
                                             <tr>
                                                 <td><?= $value['cedula'] ?></td>
                                                 <td><?= $value['usuario'] ?></td>
-                                                <td><?= $value['nombre'] . ' ' . $value['apellido'] ?></td>
+                                                <td><?= $value['nombre'].' '.$value['apellido']?></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td></td>
+                                                   <td></td>
                                                 <td>
 
                                                     <div class="col-sm-7" style='text-align:right;'>
@@ -128,8 +129,9 @@
                                                 </td>
                                                 <td>
                                                     <?php
-
-                                                            if (in_array('editar usuario', $_SESSION['ut_permisos'])) {
+                                                         
+                                                         if (in_array('editar usuario', $_SESSION['ut_permisos']))
+                                                         {
                                                             ?>
 
                                                     <div class="col-sm-7" style='text-align:right;'>
@@ -147,9 +149,10 @@
                                                 </td>
                                                 <td>
                                                     <?php
-
-                                                            if (in_array('eliminar usuario', $_SESSION['ut_permisos'])) {
-                                                            ?>
+                                                       
+                                                       if (in_array('eliminar usuario', $_SESSION['ut_permisos']))
+                                                       {
+                                                        ?>
                                                     <div class="col-sm-7" style='text-align:right;'>
                                                         <?php if ($value['status'] == 1) { ?>
                                                         <a href="#" data-id="<?= $value['id_usuario'] ?>"
@@ -199,56 +202,53 @@
             </div>
             <!-- End of Page Wrapper -->
 
-            <!-- MODAL DE REGISTRARSE-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-            <style type="text/css">
-            .modal {
-                font-size: 0.8em;
-            }
-            </style>
-            <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true"
-                style="padding:0;">
-                <div class="container">
-                    <div class="modal-dialog">
-                        <div class="" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header bg-primary" style="color:#FFF">
-                                    <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
+                    <!-- MODAL DE REGISTRARSE-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <style type="text/css">
+    .modal {
+        font-size: 0.8em;
+    }
+    </style>
+    <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+        <div class="container">
+            <div class="modal-dialog">
+                <div class="" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary" style="color:#FFF">
+                            <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div style="width:100%">
+                                    <center>
+                                        <table style="width:60%">
+                                            <tr>
+                                                <td style="width:50%; text-align:left;">
+                                                    <div id="numerouno"
+                                                        style="width:25px; height:25px; border-radius:30px;color:aliceblue; background:#3498DB; text-align:center; font-weight:bold;">
+                                                        1</div>
+                                                </td>
+                                                <td style="width:50%;">
+                                                    <div id="numerodos"
+                                                        style="width:25px; margin-left:80%; height:25px; border-radius:30px; background:#154360; color:#AAB7B8; text-align:center; font-weight:bold;">
+                                                        2</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </center>
                                 </div>
-
-                                <div class="modal-body">
-                                    <div style="width:100%">
-                                        <center>
-                                            <table style="width:60%">
-                                                <tr>
-                                                    <td style="width:50%; text-align:left;">
-                                                        <div id="numerouno"
-                                                            style="width:25px; height:25px; border-radius:30px;color:aliceblue; background:#3498DB; text-align:center; font-weight:bold;">
-                                                            1</div>
-                                                    </td>
-                                                    <td style="width:50%;">
-                                                        <div id="numerodos"
-                                                            style="width:25px; margin-left:80%; height:25px; border-radius:30px; background:#154360; color:#AAB7B8; text-align:center; font-weight:bold;">
-                                                            2</div>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </center>
-                                    </div>
-                                    <br>
-                                    <div class="contenedor" id="pasouno">
+                                <br>
+                                <div class="contenedor" id="pasouno">
                                         <div class="row">
                                             <div class="form-group col-sm-12 col-md-6">
                                                 <label for="cedula"><b>Cédula</b></label>
                                                 <input type="text" class="form-control" name="cedula" id="cedula"
                                                     placeholder="Ingrese su cedula"
-                                                    title="Solo puede ingresar de 7 a 10 numeros" maxlength="9"
-                                                    required>
+                                                    title="Solo puede ingresar de 7 a 10 numeros" maxlength="9" required>
                                                 <span class="errorCedula" style="color:red"></span>
                                             </div>
                                             <div class="form-group col-sm-12 col-md-6">
@@ -312,148 +312,127 @@
                                         <div class="row">
                                             <div class="form-group col-sm-12 col-md-12">
                                                 <label for="correo"><b>Correo</b></label>
-                                                <input style="width: 100%;" type="email" class="form-control"
-                                                    name="correo" id="correo" value="" placeholder="example@gmail.com">
+                                                <input style="width: 100%;" type="email" class="form-control" name="correo"
+                                                    id="correo" value="" placeholder="example@gmail.com">
                                                 <span class="errorCorreo" style="color:red"></span>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
+                                    <div class="modal-footer">
 
                                         <a class="nav-link collapsed" href="<?= _ROUTE_ ?>Esteganografia">
                                             <i class="fas fa-fw fa-cog"></i>
-                                            <span>Imagen de Seguridad</span>
-                                            <!--
-                                       ?id=<?= $value['id_usuario'] ?>"
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModalLong">
-                                            <i class="fas fa-fw fa-cog"></i>
-                                        <span>Imagen de Seguridad</span> -->
-                                            </button>
+                                            <span>Imagen de Seguridad</span></a>
+
+                                        <button class=" btn btn-secondary" type="button"
+                                            data-dismiss="modal">Cancelar</button>
+                                        <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
                                     </div>
-                                    <button class=" btn btn-secondary" type="button"
-                                        data-dismiss="modal">Cancelar</button>
-                                    <a class="EnviarUsuariosRegistrar btn btn-primary" href="#">Agregar</a>
-                                </div>
+                            </div>
+                            <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
+                            <div id="pasodos" style="display:none;">
 
+                                <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-secondary" style="color:#FFF">
+                                        <h5 id="exampleModalLabel">Preguntas de Seguridad</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                    <!-- Modal -->
-                                    <div id="pasodos" style="display:none;">
-                                    
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header bg-secondary" style="color:#FFF">
-                                                        <h5 id="exampleModalLabel">Preguntas de Seguridad</h5>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <a class="scroll-to-top rounded" href="#page-top">
-                                                            <i class="fas fa-angle-up"></i>
-                                                        </a>
-                                                        <style type="text/css">
-                                                        .modal {
-                                                            font-size: 0.8em;
-                                                        }
-                                                        </style>
-                                                        <div id="AgregarUsuarioModal" tabindex="-1" role="dialog"
-                                                            aria-hidden="true" style="padding:0;">
-                                                            <div class="container">
-                                                                <div>
-                                                                    <div class="" role="document">
-                                                                        <div>
+                                    <div class="modal-body">
+                                        <a class="scroll-to-top rounded" href="#page-top">
+                                            <i class="fas fa-angle-up"></i>
+                                        </a>
+                                        <style type="text/css">
+                                        .modal {
+                                    font-size: 0.8em;
+                                }
+                                </style>
+                                <div id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true"
+                                    style="padding:0;">
+                                    <div class="container">
+                                        <div>
+                                            <div class="" role="document">
+                                                <div>
 
 
-                                                                            <div>
-                                                                                <div class="row">
-                                                                                    <div
-                                                                                        class="form-group col-sm-12 col-md-6">
-                                                                                        <div class="form__pr">
-                                                                                            <!--- PREGUNTA 1 --->
-                                                                                            <label for="pregunta"><b>Pregunta
-                                                                                                    1:</b></label>
-                                                                                            <select
-                                                                                                class="form-control select2"
-                                                                                                name="pregunta"
-                                                                                                id="preguntauno">
-                                                                                                <option value="">...
-                                                                                                </option>
-                                                                                                <option
-                                                                                                    value="¿Cuál era el nombre de tu mejor amigo?">
-                                                                                                    ¿Cuál era el nombre
-                                                                                                    de tu mejor amigo?
-                                                                                                </option>
-                                                                                                <option
-                                                                                                    value="¿Cuál es tu color favorito?">
-                                                                                                    ¿Cuál es tu color
-                                                                                                    favorito?</option>
-                                                                                                <option
-                                                                                                    value="¿Cómo se llama tu perro?">
-                                                                                                    ¿Cómo se llama tu
-                                                                                                    perro?</option>
-                                                                                                <option
-                                                                                                    value="¿Donde estudiaste?">
-                                                                                                    ¿Donde estudiaste?
-                                                                                                </option>
-                                                                                                <option
-                                                                                                    value="¿Donde naciste?">
-                                                                                                    ¿Donde naciste?
-                                                                                                </option>
-                                                                                                <option
-                                                                                                    value="¿Cuál es tu apodo?">
-                                                                                                    ¿Cuál es tu apodo?
-                                                                                                </option>
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="form-group col-sm-12 col-md-6">
+                                                                <div class="form__pr">
+                                                                    <!--- PREGUNTA 1 --->
+                                                                    <label for="pregunta"><b>Pregunta
+                                                                            1:</b></label>
+                                                                    <select class="form-control select2"
+                                                                        name="pregunta" id="preguntauno">
+                                                                        <option value="">...
+                                                                        </option>
+                                                                        <option
+                                                                            value="¿Cuál era el nombre de tu mejor amigo?">
+                                                                            ¿Cuál era el nombre
+                                                                            de tu mejor amigo?
+                                                                        </option>
+                                                                        <option
+                                                                            value="¿Cuál es tu color favorito?">
+                                                                            ¿Cuál es tu color
+                                                                            favorito?</option>
+                                                                        <option
+                                                                            value="¿Cómo se llama tu perro?">
+                                                                            ¿Cómo se llama tu
+                                                                            perro?</option>
+                                                                        <option value="¿Donde estudiaste?">
+                                                                            ¿Donde estudiaste?
+                                                                        </option>
+                                                                        <option value="¿Donde naciste?">
+                                                                            ¿Donde naciste?
+                                                                        </option>
+                                                                        <option value="¿Cuál es tu apodo?">
+                                                                            ¿Cuál es tu apodo?
+                                                                        </option>
 
-                                                                                            </select>
-                                                                                            <span
-                                                                                                class="errorPreguntauno"
-                                                                                                style="color:red"></span>
-                                                                                        </div>
-
-                                                                                        <label
-                                                                                            for="respuesta"><b>Respuesta</b></label>
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            name="respuestauno"
-                                                                                            id="respuestauno">
-                                                                                        <span class="errorrespuesta"
-                                                                                            style="color:red"></span>
-                                                                                    </div>
-
-
-
-                                                                                    <!--- PREGUNTA 2 --->
-                                                                                    <br><br>
-
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-
-                                                                        <a class="EnviarPreguntasRegistrar btn btn-primary"
-                                                                            href="#">Guardar respuestas</a>
-                                                                        <button class=" btn btn-secondary" type="button"
-                                                                            data-dismiss="modal">Cancelar</button>
-                                                                    </div>
+                                                                    </select>
+                                                                    <span class="errorPreguntauno"
+                                                                        style="color:red"></span>
                                                                 </div>
+
+                                                                <label
+                                                                    for="respuesta"><b>Respuesta</b></label>
+                                                                <input type="text" class="form-control"
+                                                                    name="respuestauno" id="respuestauno">
+                                                                <span class="errorrespuesta"
+                                                                    style="color:red"></span>
                                                             </div>
+
+
+
+                                                            <!--- PREGUNTA 2 --->
+                                                            <br><br>
+
                                                         </div>
                                                     </div>
+
                                                 </div>
-
                                             </div>
-                                        
-                                    </div>
+                                            <div class="modal-footer">
 
-                            </div>
+                                                <a class="EnviarPreguntasRegistrar btn btn-primary"
+                                                    href="#">Guardar respuestas</a>
+                                                <button class=" btn btn-secondary" type="button"
+                                                    data-dismiss="modal">Cancelar</button>
+                                            </div>
+                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
 
 
 
@@ -541,17 +520,6 @@
 
                                                             </div>
                                                             <br> <br>
-                                                            <div class="row">
-                                                                <div class="form-group col-sm-12 col-md-10">
-                                                                    <label for="pass2"><b> Repetir
-                                                                            Contraseña</b></label>
-                                                                    <input type="password" class="form-control"
-                                                                        name="pass2" id="pass2" value=""
-                                                                        placeholder="Ingresa tu clave">
-                                                                    <span class="errorPass2" style="color:red"></span>
-
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="form-group col-sm-12 col-md-12">
@@ -564,21 +532,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <a class="nav-link collapsed">
-
-
-                                                                <a class="nav-link collapsed"
-                                                                    href="<?= _ROUTE_ ?>Esteganografia">
-                                                                    <i class="fas fa-fw fa-cog"></i>
-                                                                    <span>Imagen de Seguridad</span>
-                                                                </a>
-
-
-                                                                <button class=" btn btn-secondary" type="button"
-                                                                    data-dismiss="modal">Cancelar</button>
-                                                                <a class="ModificarUsuarios btn btn-primary"
-                                                                    href="#">Guardar Datos</a>
-
+                                                        <button class=" btn btn-secondary" type="button"
+                                                                data-dismiss="modal">Cancelar</button>
+                                                            <a class="ModificarUsuarios btn btn-primary"
+                                                                href="#">Guardar Datos</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -700,10 +657,37 @@
 
 
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-            Preguntas de seguridad
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><center>Imagen de Seguridad</center></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+      <div class="modal-body">
+        <form>
+               <div class="form-group">
+            <label for="message-text" class="col-form-label">Seleccione su imagen de Seguridad</label>
+                <datatable></datatable>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Ingrese su respuesta de seguridad</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+       
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Verificar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
         <!-- MODULo de AYUDA -->
@@ -777,7 +761,7 @@
 
     </body>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
- <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
+    <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
     <script type="text/javascript">
 function mostrarPassword() {
     var cambio = document.getElementById("pass1");

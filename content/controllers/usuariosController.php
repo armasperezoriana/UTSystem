@@ -64,6 +64,9 @@ class usuariosController
         ]);
     }
 
+
+
+
     public function encriptarS($palabra){
     $valor=unpack('H*',$palabra);
     $nivel1=base_convert($valor[1],16,2);
@@ -132,6 +135,33 @@ class usuariosController
     return $completado;
   }
 
+  public function encriptar($cadena)
+  {
+	  $salida = FALSE;
+	  $password = hash('sha256', CODIGO_PASSWORD); //Genera Valor Cifrado en base a un string
+	  $vectorInicializacion = substr(hash('sha256', CODIGO_VECTOR), 0, 16);
+	  $salida = openssl_encrypt($cadena, METODO, $password, 0, $vectorInicializacion);
+	  $salida = base64_encode($salida);
+	  return $salida;
+  }
+
+  public function desencriptar($cadena)
+  {
+	  $password = hash('sha256', CODIGO_PASSWORD);
+	  $vectorInicializacion = substr(hash('sha256', CODIGO_VECTOR), 0, 16);
+	  $salida = openssl_decrypt(base64_decode($cadena), METODO, $password, 0, $vectorInicializacion);
+	  return $salida;
+  }
+  public function encriptarContrasena($password)
+  {
+	  $salida = password_hash($password, PASSWORD_DEFAULT, ['cost' => 8]);
+	  return $salida;
+  }
+  public function verificarContrasena($password_verificar, $password)
+  {
+	  $salida = password_verify($password_verificar, $password);
+	  return $salida;
+  }
 
 	public function Registrar()
 	{
@@ -141,11 +171,13 @@ class usuariosController
 			$cedula = $_POST['cedula']; 
 			$username = $_POST['username'];
 			$id_rol = $_POST['rol'];
-			$pass = $this->encriptarS($_POST['pass']);
-			//$pass = $_POST['pass'];
+			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
+			//$correo = $this->encriptarS($_POST['correo']);
 
-			 //$pass_cifrado = password_hash("rasmuslerdorf", PASSWORD_BCRYPT,$pass);
+			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+			//echo $pass;
+			//cadena que encripta
 			
 			$this->usuario->setNombre($nombre);
 			$this->usuario->setApellido($apellido);
@@ -189,9 +221,11 @@ class usuariosController
 			$cedula = $_POST['cedula'];
 			$username = $_POST['username'];
 			$id_rol = $_POST['rol'];
-			$pass = $this->encriptarS($_POST['pass']);
+			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
-
+		
+			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+			
 			$this->usuario->setId($id_usuario);
 			$this->usuario->setNombre($nombre);
 			$this->usuario->setApellido($apellido);

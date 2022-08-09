@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     $(".EnviarPreguntasRegistrar").click(function() {
-        //var valido = validar();
-      //  if (valido == true) {
+        var valido = validar();
+        if (valido == true) {
 
             var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();                
           //  var preguntados = $("#AgregarUsuarioModal").find("#preguntados").val();
@@ -12,7 +12,7 @@ $(document).ready(function() {
             //var respuestatres =$("#AgregarUsuarioModal").find("#respuestatres").val();
 
             swal.fire({
-                title: "¿Desea guardar las preguntas y respuestas?",
+                title: "¿Desea guardar la pregunta y respuesta de seguridad?",
                 text: "Estos datos serán guardados como seguridad del usuario.",
                 type: "question",
                 showCancelButton: true,
@@ -38,7 +38,7 @@ $(document).ready(function() {
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
-                                    title: 'Preguntas de seguridad guardadas',
+                                    title: 'Pregunta de seguridad guardada',
                                 }).then((isConfirm) => {
                                     location.href = './Usuarios';
                                 });
@@ -66,8 +66,45 @@ $(document).ready(function() {
                     });
                 }
             });
-
-
-    //}
+        }
     });
+
+
 });
+function validar(){
+    var form = "";
+    var respuesta = $(form).find("#respuestauno").val();
+    var rrespuesta = false;
+    var pregunta = $(form).find("#pregunta").val();
+    var img = $(form).find("#img").val();
+    var rimg = false;
+
+     var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{5,40}$/; // Letras, mayusculas minisculas y acentos
+   
+
+    if(respuesta==""|pregunta==""|img==""){
+      
+       swal.fire({
+                                        type: 'warning',
+                                        title: 'Campos obligatorios',
+                                        text: 'Asegurate de llenar todos los campos',
+                                    });
+        $(".errorRespuesta").html("Debe responder la pregunta");
+        $(".errorPregunta").html("Debe seleccionar la pregunta");
+          $(".errorImg").html("Debe ingresar la imagen de seguridad");
+             return false;
+    }
+    else{
+           if(!expRespuesta.test(respuesta)){
+                $(".errorRespuesta").html("Este campo solo acepta caracteres, minimo 3");
+                    rnombre = false;
+                           return false;
+                }else{
+                        $(".errorRespuesta").html("Campo validado");
+                        $(".errorRespuesta").attr("style", "color:green");
+                         rnombre = true;
+            }
+     return true;  
+    
+}
+}

@@ -97,11 +97,10 @@ $(document).ready(function() {
             var cedula =$("#modificarUsuario").find("#cedula").val();;
             var username = $("#modificarUsuario").find("#username").val();
             var rol = $("#modificarUsuario").find("#rol").val();
-            var pass = $("#modificarUsuario").find("#pass").val();
+            var pass = $("#modificarUsuario").find("#pass1").val();
            // var pass = $("#modificarUsuario").find("#pass1").val();
-            var pass2= $("#modificarUsuario").find("#pass2").val();
               var correo = $("#modificarUsuario").find("#correo").val();
-            // alert(pass);
+            console.log(pass);
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
@@ -124,7 +123,6 @@ $(document).ready(function() {
                             username: username,
                             rol: rol,
                             pass: pass,
-                            pass2: pass,
                             correo: correo,
                         },
                         success: function(respuesta) {
@@ -165,9 +163,6 @@ $(document).ready(function() {
         }
 
     });
-
-
-
     //
     $('.editar').click(function(e){
         e.preventDefault();
@@ -249,11 +244,11 @@ $(document).ready(function() {
 function validar(modificar = false) {
     var form = "";
 
-   var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
-    var expApellido = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
+   var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,20}$/;
+    var expApellido = /^[a-zA-ZÀ-ÿ\s]{4,20}$/;
     var expCedula =/^\d{7,14}$/;
     var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    var expPass = /^.{4,12}$/;
+    var expPass = /^.{6,12}$/;
     var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
 
     if(!modificar){
@@ -299,7 +294,7 @@ if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|c
         $(".errorCedula").html("Debe ingresar su cedula");
          $(".errorUsername").html("Debe ingresar su nombre de usuario");
           $(".errorRol").html("Debe seleccionar su rol");
-             $(".errorPass1").html("La clave acepta de 4 a 12 digitos y solo numeros");
+             $(".errorPass1").html("La clave acepta de 6 a 12 digitos y solo numeros");
                $(".errorPass2").html("Confirmar Contraseña");
                   $(".errorCorreo").html("Debe ingresar un correo electronico valido");
                
@@ -343,7 +338,7 @@ if(!expCedula.test(cedula)){
             $(".errorUsername").html("Usuario valido");
              $(".errorUsername").attr("style", "color:green");
         }if(!expPass.test(pass1)){
-            $(".errorpass").html("La clave acepta de 4 a 12 digitos y solo numeros");
+            $(".errorpass").html("La clave acepta de 6 a 12 digitos y solo numeros");
                rpass = false;
                return false;
     } else {
