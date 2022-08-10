@@ -178,33 +178,6 @@
 			}
 		}
 
-		public function InhabilitarN($id){    //Método que cambia el estado de una notificacion viene en proceso 0
-			try{
-				$consulta = parent::prepare("UPDATE notificaciones SET estatus=0 WHERE id_notificacion=$id");
-				$consulta->execute();
-				$respuestaArreglo = ['ejecucion' => true];
-				return $respuestaArreglo;
-	
-			} catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-		public function HabilitarN($id){    //Método que  cambia el estado de una notificacion a generada
-			try{
-				$consulta = parent::prepare("UPDATE notificaciones SET estatus=1 WHERE id_notificacion=$id");
-				$consulta->execute();
-				$respuestaArreglo = ['ejecucion' => true];
-				return $respuestaArreglo;
-	
-			} catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-
 		
 		public function setIdMantenimiento($id_mantenimiento){
 			$this->id_mantenimiento = $id_mantenimiento;

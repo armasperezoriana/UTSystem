@@ -66,7 +66,7 @@ function Footer()
 
 $mysqli = new mysqli("localhost", "root", "", "ut");
     $id=$_GET['id'];
-        //$resultado = $mysqli->query('SELECT * FROM `mantenimientos` WHERE `id_mantenimiento`='.$id.';');
+        //$resultado = $mysqli->query('SELECT r.id_taller AS id_taller, r.status as status, taller.nombre AS nombre_t, vehiculos.modelo as modelo, taller.rif AS rif, r.nombre AS nombre, r.fecha as fecha,r.descripcion as descripcion, r.id_reparaciones as id_reparaciones, r.id_vehiculo = r.id_vehiculo, vehiculos.id_vehiculo AS id_vehiculo, vehiculos.modelo as modelo, vehiculos.placa AS placa, r.costo AS costo, vehiculos.placa as placa, r.id_reparaciones as id_reparaciones FROM reparaciones as r INNER JOIN vehiculos ON r.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON r.id_taller= taller.id_taller WHERE id_reparaciones AND r.id_vehiculo = vehiculos.id_vehiculo');
         //$placa = $mysqli->query('SELECT placa FROM vehiculos');
         //$rif = $mysqli->query('SELECT rif, nombre FROM rif WHERE id_mantenimiento=id_mantenimiento');
         $resultado = $mysqli->query('SELECT m.id_mantenimiento AS id, m.nombre AS nombre, v.placa AS placa,

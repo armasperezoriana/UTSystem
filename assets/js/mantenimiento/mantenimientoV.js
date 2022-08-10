@@ -73,7 +73,7 @@ $(document).ready(function () {
 
         }
     });
-    // Modificar Vehiculo
+    // Modificar mantenimiento
 
     $(".EnviarMantenimientoModificar").click(function() {
         var id = $(this).attr("id");
@@ -151,35 +151,6 @@ $(document).ready(function () {
             });
         }
     });
-
-    $.ajax({
-        type:"POST",
-        url: './esteganografia/desencriptarAllImg',
-        data:{"usuario":document.getElementById("user").value}
-    }).done(function(result){
-        console.log(result);
-         var separado= result.split("-");
-         var content="<br>Imagen de seguridad:<br><img src='../public/img/securityEncripted/"+separado[1]+"' style='width:50%;border-radius:20px;'><br><br>";
-         content+="Palabra de seguridad: <h3>"+separado[0]+"</h3><br>";
-         document.getElementById("show_results").innerHTML=content;
-         document.getElementById("img_actual").value=separado[1];
-    });
-    
-    
-    
-    document.getElementById("editarbtn").onclick=function(){
-        if(document.getElementById("editarbtn").innerHTML=="Modificar"){
-            document.getElementById("editarbtn").innerHTML="Cancelar";
-            $("#show_results").hide(1000);
-            $("#nuevo").show(1000);
-        }
-        else{
-            document.getElementById("editarbtn").innerHTML="Modificar";
-            $("#nuevo").hide(1000);
-            $("#show_results").show(1000);
-        }
-    }
-
     // Inhabilitar Vehiculo
     $('body').on('click', '.inhabilitar', function (e) {
         e.preventDefault();
@@ -218,91 +189,6 @@ $(document).ready(function () {
             }
         })
     });
-
-    $('body').on('click', '.inhabilitarOrden', function(e) {
-        e.preventDefault();
-
-        Swal.fire({
-            title: '¿Desea cambiar el estado de la orden de servicio?',
-            text: "El estado del mantenimiento cambiara su estado a: en proceso",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Si, cambiar!'
-        }).then((result) => {
-            if (result.value) {
-                inhabilitarOrden($(this).attr('data-id'));
-            }
-        })
-    });
- 
-
- const inhabilitarOrden = (id) => {
-    $.ajax({
-        type: "POST",
-        url: "mantenimientos/InhabilitarOrden/" + id,
-        success: function(response) {
-            const json = JSON.parse(response);
-            Swal.fire(
-                json.titulo,
-                json.mensaje,
-                json.tipo
-            )
-            if (json.tipo == 'success') {
-                // table.ajax.reload();
-                location.reload();
-            }
-        },
-        error: function(response) {
-            console.log(response);
-        }
-    });
-}
- const habilitarOrden = (id) => {
-    $.ajax({
-        type: "POST",
-        url: "mantenimientos/Habilitar/" + id,
-        success: function(response) {
-            const json = JSON.parse(response);
-            Swal.fire(
-                json.titulo,
-                json.mensaje,
-                json.tipo
-            )
-            if (json.tipo == 'success') {
-                // table.ajax.reload();
-                location.reload();
-            }
-        },
-        error: function(response) {
-            console.log(response);
-        }
-    });
-}
-    // Habilitar alerta
-    $('body').on('click', '.habilitarOrden', function(e) {
-        e.preventDefault();
-
-        Swal.fire({
-            title: '¿Desea cambiar el estado de la orden de servicio?',
-            text: "El estado de la orden de servicio cambiara en el en el sistema a: Generada",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Si!'
-        }).then((result) => {
-            if (result.value) {
-                habilitarOrden($(this).attr('data-id'));
-            }
-        })
-    });
-
-
-
 
     function validar(modificar = false, id="") {
         var form = "";
@@ -441,7 +327,7 @@ $(document).ready(function () {
                     $(formulario).find("#id_taller").val(mantenimiento.taller);
                     $(formulario).find("#modelo").val(mantenimiento.modelo);
                     $(formulario).find("#tipo").val(mantenimiento.tipo);
-                   //  $(formulario).find("#tiempo").val(mantenimiento.tiempo);
+                     $(formulario).find("#estado").val(mantenimiento.estado);
                     $(formulario).find("#funcionamientoM").val(mantenimiento.funcionamiento);
                     $(modal).modal('show');
                 },

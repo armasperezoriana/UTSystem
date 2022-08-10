@@ -87,7 +87,7 @@
                                                                 <label for="pregunta"><b>Elije una pregunta:</b></label>
                                                                 <select class="form-control select2" name="pregunta"
                                                                     id="preguntauno">
-                                                                    <option value="">...</option>
+                                                                    <option value=""></option>
                                                                     <option
                                                                         value="¿Cuál era el nombre de tu mejor amigo?">
                                                                         ¿Cuál era el nombre de tu mejor amigo?</option>
@@ -118,7 +118,7 @@
                                                             <label for="respuesta"><b>Respuesta</b></label>
                                                             <input type="text" class="form-control" name="respuestauno"
                                                                 id="respuestauno">
-                                                            <span class="errorrespuesta" style="color:red"></span>
+                                                            <span class="errorRespuesta" style="color:red"></span>
                                                         </div>
 
 
@@ -165,17 +165,13 @@
                                             </div>
                                     </div>
                                  --->
-                                                        <a class="nav-link collapsed"
-                                                            href="<?=_ROUTE_ ?>Esteganografia">
-                                                            <i class="fas fa-fw fa-cog"></i>
-                                                            <span>Imagen de Seguridad</span>
-                                                        </a>
+                                
                                                     </div>
 
 
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
                                                         data-target="#exampleModal">
-                                                        Esteganografia
+                                                        Imagen de Seguridad
                                                     </button>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModal" tabindex="-1"

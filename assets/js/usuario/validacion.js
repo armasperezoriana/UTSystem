@@ -98,7 +98,6 @@ $(document).ready(function() {
             var username = $("#modificarUsuario").find("#username").val();
             var rol = $("#modificarUsuario").find("#rol").val();
             var pass = $("#modificarUsuario").find("#pass1").val();
-           // var pass = $("#modificarUsuario").find("#pass1").val();
               var correo = $("#modificarUsuario").find("#correo").val();
             console.log(pass);
             swal.fire({
@@ -126,7 +125,7 @@ $(document).ready(function() {
                             correo: correo,
                         },
                         success: function(respuesta) {
-                            //alert(pass+pass2);
+                           // alert(pass);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -295,6 +294,7 @@ if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|c
          $(".errorUsername").html("Debe ingresar su nombre de usuario");
           $(".errorRol").html("Debe seleccionar su rol");
              $(".errorPass1").html("La clave acepta de 6 a 12 digitos y solo numeros");
+             $(".errorpass").html("La clave acepta de 6 a 12 digitos y solo numeros");
                $(".errorPass2").html("Confirmar Contraseña");
                   $(".errorCorreo").html("Debe ingresar un correo electronico valido");
                
@@ -338,7 +338,7 @@ if(!expCedula.test(cedula)){
             $(".errorUsername").html("Usuario valido");
              $(".errorUsername").attr("style", "color:green");
         }if(!expPass.test(pass1)){
-            $(".errorpass").html("La clave acepta de 6 a 12 digitos y solo numeros");
+            $(".errorpass").html("La clave acepta de 6 a 12 digitos,pueden ser numeros, signos especiales y letras");
                rpass = false;
                return false;
     } else {

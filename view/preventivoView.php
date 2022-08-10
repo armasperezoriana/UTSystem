@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <link href="../../assets/css/select2.min.css" rel="stylesheet" />
+    <script src="../../assets/js/select2.min.js"></script>
+
 
 </head>
 
@@ -42,7 +45,7 @@
                     <div class="container-fluid">
 
                         <!-- LEYENDA DEL MODULO -->
-                        <p class="mb-4">En este módulo podrá visualizar los mantenimientos preventivos <a target="_blank"> 
+                        <p class="mb-4">En este módulo podrá visualizar los mantenimientos preventivos de los vehiculos, relacionados con el kilometraje, es necesario que dicho vehiculo este previamente registrado al igual que el taller<a target="_blank"> 
                                </a></p>
 
                         <!-- DataTales Example -->
@@ -144,7 +147,7 @@
                                                      <td><?=$preventivo['rif']?></td>
 
     
-                                                  
+                                        
                                                     <td>
                                                         
                                             
@@ -167,26 +170,8 @@
                                                                 <span class="text"></span>
                                                             </a>
                                                     </td>
-                                                     <td>  
-                                                            <div class="col-sm-7" style='text-align:right;'>
-                                                            <?php if ($preventivo['estado'] == 1) { ?>
-                                                                <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-success btn-icon-split inhabilitarN" data-toggle="modal" data-target="">
-                                                                    <span class="icon-check-white-50">
-                                                                        <i class="fas fa-check "></i>
-                                                                    </span>
-                                                                    <span class="text"></span>
-                                                                </a>
-                                                            <?php } else { ?>
-                                                                <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-outline-info btn-icon-split habilitarN
-                                                                    " data-toggle="modal" data-target="">
-                                                                    <span class="icon text-info-50">
-                                                                        <i class="fas fa-sign-out-alt"></i>
-                                                                    </span>
-                                                                    <span class="text"></span>
-                                                                </a>
-                                                            <?php } ?>
-                                                        </div>
-                                                    </td>
+                                                    
+                                                    
                                                 
 
 
@@ -227,7 +212,7 @@
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                      <label for="taller"><b>Taller</b></label>
-                                          <select class="form-control select2 text-left" style="width:80%;" name="id_tallerM" id="id_tallerM" disabled>
+                                          <select class="js-example-basic-single" style="width:80%;" name="id_tallerM" id="id_tallerM" disabled>
                                             <option></option>
                                             <?php foreach ($taller as $ta) : ?>
                                                 <?php if (!empty($ta['id_taller'])) : ?>
@@ -308,6 +293,8 @@
     </div>
 </div>
 
+ </td>
+                                                    
 <!-- MODAL DE MODIFICAR-->
 
     <a class="scroll-to-top rounded" href="#page-top">
@@ -379,7 +366,19 @@
                                         <label for="costo"><b>Costo</b></label>
                                         <input type="text" step="0.1" class="form-control" name="costo" id="costo" value="<?=$preventivo['costo']?>">
                                         <span class="errorCosto" style="color:red"></span>
-                                    
+                        
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="Estado"><b>Estado de la orden :</b></label>   <select class="form-control select2" name="estado" id="estado">
+                                                  <option value="">...</option>
+                                                <option value="1">Generada</option>
+                                                <option value="2">En proceso</option>
+                                                <option value="3">Cancelada</option>
+    
+                                                
+                                            </select>
+                                       
+                                        <span class="errorEstado" style="color:red"></span>
                                     </div>
                             </div>
                             <div class="modal-footer">
@@ -397,7 +396,7 @@
                                                         <div class="col-sm-7" style='text-align:right;'>
                                                         <?php if ($preventivo['status'] == 1) { ?>
                                                             <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>" class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal" data-target="">
-                                                                <span class="icon text-white-40">
+                                                                <span class="icon text-white-50">
                                                                     <i class="fas fa-trash"></i>
                                                                 </span>
                                                                 <span class="text"></span>
@@ -422,6 +421,7 @@
                                 </div>
                             </div>
                         </div>   
+                                                 
                 <!-- MODAL DE ayuda-->
                     
                              <div class="col-sm-7" style='text-align:right;'>
@@ -551,8 +551,7 @@
                                        
                                         <span class="errorEstado" style="color:red"></span>
                                     </div>
-                                
-                                 
+                                    
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -624,18 +623,12 @@
                                 </div>  
                             </div>
                               </div>
-
- <!-- MODULo de ELIMINAR
-
- <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js">
-    ype="text/javascript" src="'../../assets/js/vehiculo/validacionV.js -->
-
-     
+   
 </body>
-<script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js">
-<script type="text/javascript" src="../../assets/js/notificaciones/cambiarestado.js"></script>
-  
- 
-</script> 
-
+<script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js"></script>
+<script>
+$(document).ready(function() {
+    $('id_taller').select2();
+});
+</script>
 </html>

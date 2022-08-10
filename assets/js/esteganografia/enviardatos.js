@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 });
 function validar(){
-    var form = "";
+    var form = "#AgregarUsuarioModal";
     var respuesta = $(form).find("#respuestauno").val();
     var rrespuesta = false;
     var pregunta = $(form).find("#pregunta").val();
@@ -82,7 +82,7 @@ function validar(){
      var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{5,40}$/; // Letras, mayusculas minisculas y acentos
    
 
-    if(respuesta==""|pregunta==""|img==""){
+    if(respuesta==""|pregunta==""){
       
        swal.fire({
                                         type: 'warning',
@@ -90,21 +90,23 @@ function validar(){
                                         text: 'Asegurate de llenar todos los campos',
                                     });
         $(".errorRespuesta").html("Debe responder la pregunta");
-        $(".errorPregunta").html("Debe seleccionar la pregunta");
-          $(".errorImg").html("Debe ingresar la imagen de seguridad");
+        $(".errorPreguntauno").html("Debe seleccionar una pregunta");
              return false;
-    }
-    else{
-           if(!expRespuesta.test(respuesta)){
+    }else{
+         if(!expRespuesta.test(respuesta)){
                 $(".errorRespuesta").html("Este campo solo acepta caracteres, minimo 3");
-                    rnombre = false;
+                
                            return false;
                 }else{
                         $(".errorRespuesta").html("Campo validado");
                         $(".errorRespuesta").attr("style", "color:green");
-                         rnombre = true;
             }
-     return true;  
-    
-}
-}
+            if(pregunta !=""){
+                $(".errorPreguntauno").html("Campo validado");
+                $(".errorPreguntauno").attr("style", "color:green");
+                return true;
+            }
+        return true;     
+    }
+  }
+

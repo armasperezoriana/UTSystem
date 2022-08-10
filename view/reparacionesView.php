@@ -75,12 +75,29 @@
                                                         <a href="<?=_REPORTS_?>Reparaciones" target="blank"  >
                                                             <h6>Orden de Servicio General</h6>
                                                         </a>
+                            
                                                     </div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                                 </div>
                                                 <div class="col-auto">
                                                     <i class="fas fa-check fa-2x text-gray-300"></i>
                                                 </div>
+
+                                                <div class="col mr-2">
+                                                    <div
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        <a href="<?=_REPORTS_?>Reparaciones/taller.php" target="blank"  >
+                                                            <h6>Orden de Servicio Talleres</h6>
+                                                        </a>
+                                                        
+                                                    </div>
+
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-check fa-2x text-gray-300"></i>
+                                                </div>
+
                                             </div>
                                         </div>
                               
@@ -207,6 +224,7 @@
                                             <div class="col mr-2">
                                                 <div
                                                     class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    <input type="hidden" id="id_reparaciones" name="id_reparaciones">
                                                     <a href="<?=_REPORTS_?>Reparaciones/ordenindividual.php?id=<?=$rep['id_reparaciones'] ?>" target="blank"  >
                                                         <h6>iMPRIMIR ORDEN DE REPARACION</h6>
                                                     </a>

@@ -19,7 +19,7 @@ function Header()
     // Logo
    $this->Image('../../../../assets/img/logo1.png',10,8,33);
     // Arial bold 15
-      $this->SetFont('Arial','B',13);
+      $this->SetFont('Arial','B',12);
     // Movernos a la derecha
     $this->Cell(80);
     $this->SetLeftMargin($this->GetPageWidth() / 2 - 80);
@@ -27,7 +27,7 @@ function Header()
     $this->Cell(160, 10,  'SISTEMA UT',2, 0,'C', 0);
     $this->Ln(25);//salto de linea
     // Título
-    $this->Cell(160, 10, utf8_decode('REPARACIÓN INDIVIDUAL') ,2, 0,'C', 0);
+    $this->Cell(160, 10, utf8_decode('REPARACIONES CON DATOS DE LOS TALLERES') ,2, 0,'C', 0);
         $this->Ln(10);
 
         $this->SetFont('Arial','B',10);//Tipo de letra, negrita, tamaño
@@ -59,8 +59,7 @@ function Footer()
 }
 }
 $mysqli = new mysqli("localhost", "root", "", "ut");
-$id=$_GET['id'];
-        $resultado = $mysqli->query('SELECT r.id_reparaciones as id_reparaciones, r.id_vehiculo = r.id_vehiculo, taller.nombre AS nombre_t, vehiculos.modelo as modelo, taller.rif AS rif, r.nombre AS nombre, r.fecha as fecha,r.descripcion as descripcion, vehiculos.placa AS placa, r.costo AS costo FROM reparaciones as r INNER JOIN vehiculos ON r.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON r.id_taller= taller.id_taller WHERE id_reparaciones = '.$id.' AND r.id_vehiculo = vehiculos.id_vehiculo');
+        $resultado = $mysqli->query('SELECT r.id_reparaciones as id_reparaciones, r.id_vehiculo = r.id_vehiculo, taller.nombre AS nombre_t, vehiculos.modelo as modelo, taller.rif AS rif, r.nombre AS nombre, r.fecha as fecha,r.descripcion as descripcion, vehiculos.placa AS placa, r.costo AS costo FROM reparaciones as r INNER JOIN vehiculos ON r.id_vehiculo = vehiculos.id_vehiculo INNER JOIN taller ON r.id_taller= taller.id_taller WHERE id_reparaciones  AND r.id_vehiculo = vehiculos.id_vehiculo');
         $pdf = new PDF();
         $pdf->AddPage();
         $pdf->SetFont('Arial','B',10);
