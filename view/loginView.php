@@ -100,6 +100,27 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
         </button>
       </div>
       <div class="modal-body">
+      <div style="width:100%">
+                                    <center>
+                                        <table style="width:60%">
+                                            <tr>
+                                                <td style="width:50%; text-align:left;">
+                                                    <div id="numerouno"
+                                                        style="width:25px; height:25px; border-radius:30px;color:aliceblue; background:#3498DB; text-align:center; font-weight:bold;">
+                                                        1</div>
+                                                </td>
+                                                <td style="width:50%;">
+                                                    <div id="numerodos"
+                                                        style="width:25px; margin-left:80%; height:25px; border-radius:30px; background:#154360; color:#AAB7B8; text-align:center; font-weight:bold;">
+                                                        2
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </center>
+                                </div>
+                                <br>
+                            <div class="contenedor" id="pasouno">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">
                                         ¿Olvidaste tu clave?</h1>
@@ -107,13 +128,65 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
                                     </div>
                                     <form class="recuperarClave" id="recuperarClave">
                                         <div class="form-group">
-                                            <label>Pregunta de seguridad</label>
+                                            <label>Ingresa tu usuario</label>
                                           <input type="text" class="form-control form-control-user"
-                                                id="correo" aria-describedby="emailHelp"
-                                                placeholder="Ingresa tu correo..">
+                                                id="usuario" aria-describedby="usuario"
+                                                placeholder="Digita tu nombre de usuario..">
                                                 <br>
-                                          <input type="text" class="form-control form-control-user"
-                                                id="pregunta" aria-describedby="emailHelp"
+                                                <label for="pregunta"><b>Selecciona tu pregunta de seguridad y respondela correctamente</b></label>
+                                                                                    <select class="form-control select2"
+                                                                                        name="pregunta"
+                                                                                        id="preguntauno">
+                                                                                        <option value="">...
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Cuál era el nombre de tu mejor amigo?">
+                                                                                            ¿Cuál era el nombre
+                                                                                            de tu mejor amigo?
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Cuál es tu color favorito?">
+                                                                                            ¿Cuál es tu color
+                                                                                            favorito?</option>
+                                                                                        <option
+                                                                                            value="¿Cómo se llama tu perro?">
+                                                                                            ¿Cómo se llama tu
+                                                                                            perro?</option>
+                                                                                        <option
+                                                                                            value="¿Donde estudiaste?">
+                                                                                            ¿Donde estudiaste?
+                                                                                        </option>
+                                                                                        <option value="¿Donde naciste?">
+                                                                                            ¿Donde naciste?
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Cuál es tu apodo?">
+                                                                                            ¿Cuál es tu apodo?
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Segundo nombre de tu padre?">
+                                                                                            ¿Segundo nombre de tu padre?
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Dulce favorito?">
+                                                                                            ¿Dulce Favorito?
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Donde estudiaste?">
+                                                                                            ¿Donde estudiaste?
+                                                                                        </option>
+                                                                                        <option
+                                                                                            value="¿Gatos o perros?">
+                                                                                            ¿Gatos o perros?
+                                                                                        </option>
+                                                                                    </select>
+                                                                                    <span class="errorPreguntauno"
+                                                                                        style="color:red"></span>
+                                                                                </div>
+
+                                                                    
+                                                <input type="text" class="form-control form-control-user"
+                                                id="respuesta" aria-describedby="emailHelp"
                                                 placeholder="Responde la pregunta la pregunta de seguridad...">
                                         </div>
                                          <br>
@@ -125,10 +198,11 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
                                     <br>  <br> 
                                     <div class="text-center">
                                         <a class="small" onclick="Ocultar()">¿Ya tienes una? Inicia Sesion!</a>
-      </div>
-    </div>
-  </div>
-</div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
 
 
 
@@ -139,11 +213,24 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
  <script src="https://www.google.com/recaptcha/api.js?render=6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="view/vendor/plugins/sweetalert/sweet-alert.js"></script>
     <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+    <script >
+
+function Mostrar(){
+                                        document.getElementById("recuperar").style.display="block";
+                                        document.getElementById("login").style.display="none";
+                                      }
+                                       function Ocultar(){
+                                        document.getElementById("recuperar").style.display="none";
+                                          document.getElementById("login").style.display="block";
+                                      }
+                                      
+
+
+    </script>
 
 
 

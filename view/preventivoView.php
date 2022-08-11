@@ -131,7 +131,7 @@
                                                       <th></th>
                                                       <th><center>Acción</center></th>
                                                       <th></th>
-                                                      <th></th>
+                                                     
                                                 </tr>
                                             </thead>
                                   

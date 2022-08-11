@@ -56,7 +56,7 @@ class loginController
 			$username = $_POST['username'];
 			$pass= $_POST['pass'];
 			$pass = $this->usuario->encriptarS($_POST['pass']);
-			//$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+			//$pass = password_verify(PASSWORD_BCRYPT,$pass);
 
 
 			 $this->usuario->setPassword($pass);
