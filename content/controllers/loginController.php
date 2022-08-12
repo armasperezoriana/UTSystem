@@ -55,7 +55,7 @@ class loginController
 		if (!empty($_POST['username']) || !empty($_POST['pass'])) {
 			$username = $_POST['username'];
 			$pass= $_POST['pass'];
-			$pass = $this->usuario->encriptarS($_POST['pass']);
+			// $pass = $this->usuario->encriptarS($_POST['pass']);
 			//$pass = password_verify(PASSWORD_BCRYPT,$pass);
 
 
@@ -66,7 +66,7 @@ class loginController
 			if ($result['ejecucion'] == true) {
 				$res = $result['resultado'];
 				if ($res) {
-					if($pass == $res['contrasena']){
+					if(password_verify($pass, $res['contrasena'])){
 						$resultP = $this->usuario->ObtenerPermisos($res['rol']);
 						$permisos = $resultP['resultado'];
 						$_SESSION['ut_usuario'] = $res['usuario'];
