@@ -1,8 +1,9 @@
 $(document).ready(function() {
-
+    var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".EnviarUsuariosRegistrar").click(function() {
         var valido = validar();
-        if (valido == true) {
+        var validarS = validarSeguridad();
+        if (valido == true && validarS == true) {
 
             var nombre = $("#AgregarUsuarioModal").find("#nombre").val();                
             var apellido = $("#AgregarUsuarioModal").find("#apellido").val();
@@ -11,7 +12,17 @@ $(document).ready(function() {
             var rol = $("#AgregarUsuarioModal").find("#rol").val();
             var pass = $("#AgregarUsuarioModal").find("#pass2").val();
              var correo = $("#AgregarUsuarioModal").find("#correo").val();
-           
+             if(seguridadImg == ""){
+                swal.fire({
+                    type: 'warning',
+                    title: 'Seleccione una imagen de seguridad',
+                    text: 'Imagen obligatoria',
+                });
+                return 0;
+            }
+            var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
+          //  var preguntatres =$("#AgregarUsuarioModal").find("#preguntatres").val();
+            var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();        
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
@@ -34,6 +45,9 @@ $(document).ready(function() {
                             rol: rol,
                             pass: pass,
                             correo: correo,
+                            preguntauno: preguntauno,
+                            img: seguridadImg,
+                            respuestauno: respuestauno,
                         },
                         success: function(respuesta) {
                             console.log(respuesta);
@@ -81,6 +95,19 @@ $(document).ready(function() {
         }
 
     });
+
+        //Selección de imagen de seguridad
+        $('.card-seguridad-img').on('click', function (e) {
+            if ($(this).attr('data-action') == "registrar") {
+                seguridadImg = $(this).attr('data-img');
+            }
+            else {
+                seguridadImgActu = $(this).attr('data-img');
+            }
+            console.log($(this).attr('data-img'))
+            $('.card-seguridad-img').removeClass('bg-primary');
+            $(this).addClass('bg-primary');
+        })
     $(".ModificarUsuarios").click(function() {
         var valido = validar(true);
            

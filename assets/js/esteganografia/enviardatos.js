@@ -1,11 +1,19 @@
 $(document).ready(function() {
-
+    var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".EnviarPreguntasRegistrar").click(function() {
-        var valido = validar();
-        if (valido == true) {
-
-            var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();                
-          //  var preguntados = $("#AgregarUsuarioModal").find("#preguntados").val();
+        var valido = validarSeguridad();
+        if (valido) {
+            console.log(typeof seguridadImg)
+        // if (valido == true) {
+            if(seguridadImg == ""){
+                swal.fire({
+                    type: 'warning',
+                    title: 'Seleccione una imagen de seguridad',
+                    text: 'Imagen obligatoria',
+                });
+                return 0;
+            }
+            var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
           //  var preguntatres =$("#AgregarUsuarioModal").find("#preguntatres").val();
             var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();                
             //var respuestados = $("#AgregarUsuarioModal").find("#respuestados").val();
@@ -27,8 +35,7 @@ $(document).ready(function() {
                         type: 'POST',
                         data: {
                             preguntauno: preguntauno,
-                            //preguntados: preguntados,
-                            //preguntatres: preguntatres,
+                            img: seguridadImg,
                             respuestauno: respuestauno,
                             //respuestados: respuestados,
                             //respuestatres: respuestatres,
@@ -68,10 +75,11 @@ $(document).ready(function() {
             });
         }
     });
-
-
+    
+   
 });
-function validar(){
+function validarSeguridad(){
+    console.log("funciono");
     var form = "#AgregarUsuarioModal";
     var respuesta = $(form).find("#respuestauno").val();
     var rrespuesta = false;

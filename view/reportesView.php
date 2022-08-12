@@ -224,7 +224,7 @@
                                                 <div class="col mr-2">
                                                     <div
                                                         class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                        <a href="<?=_ESTADISTICOS_ ?>Choferes" target="blank">
+                                                        <a href="<?=_ESTADISTICOS_ ?>Reparaciones" target="blank">
                                                             <h5>Reparaciones</h5>
                                                         </a>
                                                     </div>

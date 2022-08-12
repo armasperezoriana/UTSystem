@@ -27,7 +27,13 @@
 		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
 		define("_DIR_" , "/dashboard/systemUT/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
-
+   
+	/* Imagenes de seguridad */		
+	const SECURITY_IMGS =  [
+		'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 
+		'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png', 'ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png'
+	];
+	
 	/* clase con el nombre config  */
 	class sysConfig{
 

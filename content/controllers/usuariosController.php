@@ -7,18 +7,24 @@ use content\component\headElement as headElement;
 use content\modelo\homeModel as homeModel;
 use content\modelo\usuariosModel as usuariosModel;
 use content\modelo\rolesModel as rolesModel;
+use content\modelo\esteganografiaModel as esteganografiaModel;
+use content\traits\Utility;
 
 class usuariosController
 {
+	use Utility;
+
 	private $url;
 	private $usuario;
 	private $rol;
+	private $esteganografia;
 
 	function __construct($url)
 	{
 
 		$this->url = $url;
 		$this->usuario = new usuariosModel();
+		$this->esteganografia = new esteganografiaModel();
 		$this->rol = new rolesModel();
 	}
 
@@ -167,6 +173,19 @@ class usuariosController
 					$execute = $this->usuario->Agregar();
 					//Codigo de bitacora sobre Agregar Usuario
 					if ($execute['ejecucion'] == true) {
+						$usu = $this->usuario->ObtenerUsuario($username);
+						$id = $usu['resultado']['id_usuario'];
+						$respuestauno = $_POST['respuestauno'];
+						$preguntauno = $_POST['preguntauno'];
+						$img = $_POST['img'];
+						$img_encriptada = $this->cifrarEnImagen($respuestauno, $img, $id);
+						$this->esteganografia->setPreguntaUno($preguntauno);
+						$this->esteganografia->setRespuestaUno($respuestauno);
+						$this->esteganografia->setImg($img);
+						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
+						//$this->esteganografia->setImgEncriptada($ImgEncriptada);
+						$this->esteganografia->setIdUsuario($id);
+						$execute = $this->esteganografia->Agregar();
 						echo '1';
 					} else {
 						echo "2";
@@ -266,6 +285,7 @@ class usuariosController
 			]);
 		}
 	}
+
 }
 
 

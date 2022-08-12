@@ -15,6 +15,8 @@
     private $respuestauno;
     private $respuestados;
     private $respuestatres;
+    private $img;
+    private $img_encriptada;
 
 		public function __construct(){
 			$this->con = parent::__construct();
@@ -66,7 +68,8 @@
 					}
 				}
 
-				$query = parent::prepare("INSERT INTO seguridad_preguntas (id_usuario, preguntauno, respuestauno) VALUES ('{$this->id}','{$this->preguntauno}', '{$this->respuestauno}')");
+				$query = parent::prepare("INSERT INTO seguridad_preguntas (id_usuario, preguntauno, respuestauno, img, img_encriptada) 
+          VALUES ('{$this->id}','{$this->preguntauno}', '{$this->respuestauno}', '{$this->img}', '{$this->img_encriptada}')");
        // $query = parent::prepare("INSERT INTO seguridad_respuestas (respuestauno, respuestados, respuestatres) VALUES ('{$this->respuestauno}', '{$this->respuestados}', '{$this->respuestatres}')");
         $respuestaArreglo = '';
 				$query->execute();
@@ -219,22 +222,16 @@ public function desencriptar($imgSrc){
   public function setPreguntaUno($preguntauno){
     $this->preguntauno = $preguntauno;
   }
-  public function setPreguntaDos($preguntados){
-    $this->preguntados = $preguntados;
+  public function setImg($img){
+    $this->img = $img;
   }
-  public function setPreguntaTres($preguntatres){
-    $this->preguntatres = $preguntatres;
+  public function setImg_encriptada($img_encriptada){
+    $this->img_encriptada = $img_encriptada;
   }
-
   public function setRespuestaUno($respuestauno){
     $this->respuestauno = $respuestauno;
   }
-  public function setRespuestaDos($respuestados){
-    $this->respuestados = $respuestados;
-  }
-  public function setRespuestaTres($respuestatres){
-    $this->respuestatres = $respuestatres;
-  }
+  
 }
 
 ?>

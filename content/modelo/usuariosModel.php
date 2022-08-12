@@ -254,12 +254,11 @@
 						$id++;
 					}
 				}
-
 				$query = parent::prepare("INSERT INTO usuarios (id_usuario, cedula, usuario, nombre, apellido, contrasena, rol, correo, status) VALUES ($id, '{$this->cedula}', '{$this->username}', '{$this->nombre}', '{$this->apellido}', '{$this->password}', '{$this->rol}', '{$this->correo}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo = ['resultado' => $query->fetchAll(parent::FETCH_ASSOC)];
 				$respuestaArreglo += ['ejecucion' => true];
 				return $respuestaArreglo;
 			} catch (PDOException $e) {

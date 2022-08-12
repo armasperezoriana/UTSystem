@@ -10,12 +10,19 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css" >
+    <link rel="stylesheet" href="../../assets/css/select2.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
 </head>
 
 <body id="page-top">
+    <style>
+        .card-seguridad-img:hover, .card-seguridad-img-autenticar:hover{
+            background: gray;
+        }
+    </style>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -278,7 +285,7 @@
                                     <div class="row">
                                         <div class="form-group col-sm-12 col-md-12">
                                             <label for="rol"><b>Rol</b></label>
-                                            <select class="form-control select2" name="rol" id="rol"
+                                            <select class="form-control select" name="rol" id="rol"
                                                 placeholder="Selecciona un rol">
                                                 <option></option>
                                                 <?php foreach ($roles as $rols) : ?>
@@ -327,7 +334,7 @@
                                     </div>
                                 </div>
                                 <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
-                                <div id="pasodos" style="display:none;">
+                                <div id="pasodos" style="">
 
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -357,6 +364,26 @@
                                                                         <div class="row">
                                                                             <div class="form-group col-sm-12 col-md-6">
                                                                                 <div class="form__pr">
+                                                                                <table class="table">
+                                                                        <tr>
+                                                                            <th>Imagen 1</th>
+                                                                            <th>Imagen 2</th>
+                                                                            <th>Imagen 3</th>
+                                                                            <th>Imagen 4</th>
+                                                                            
+                                                                        </tr>
+                                                                        <tr>
+                                                                        <td>
+                                                                            
+                                                                            <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" class="card p-2 card-seguridad-img" data-action="registrar" data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" style="width:100%; height:100%;"></td>
+                                                                            <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" class="card p-2 card-seguridad-img" data-action="registrar" data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" style="width:100%; height:100%;"></td>
+                                                                            <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png" class="card p-2 card-seguridad-img" data-action="registrar" data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png" style="width:100%; height:100%;"></td>
+                                                                            <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" class="card p-2 card-seguridad-img" data-action="registrar" data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" style="width:100%; height:100%;"></td>
+                                                                        
+                                                                      
+                                                                        </tr>
+                                                                      
+                                                                    </table>
                                                                                     <!--- PREGUNTA 1 --->
                                                                                     <label for="pregunta"><b>Pregunta
                                                                                             1:</b></label>
@@ -430,10 +457,10 @@
                                                                     <i class="fas fa-fw fa-cog"></i>
                                                                     Seguridad
                                                                 </button>
-                                                                <a class="EnviarPreguntasRegistrar btn btn-primary"
+                                                                <!--<a class="EnviarPreguntasRegistrar btn btn-primary"
                                                                     href="#">Guardar respuestas</a>
                                                                 <button class=" btn btn-secondary" type="button"
-                                                                    data-dismiss="modal">Cancelar</button>
+                                                                    data-dismiss="modal">Cancelar</button>!--->
                                                             </div>
 
                                                         </div>
@@ -473,10 +500,12 @@
                                                                             
                                                                         </tr>
                                                                         <tr>
-                                                                            <td><img src="assets/img/seguridad/1.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/2.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/3.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/4.png" style="width:100%; height:100%;"></td>
+                                                                        <td><img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" style="width:100%; height:100%;"></td>
+                                                                            <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" style="width:100%; height:100%;"></td>
+                                                                            <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png" style="width:100%; height:100%;"></td>
+                                                                            <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" style="width:100%; height:100%;"></td>
+                                                                        
+                                                                      
                                                                         </tr>
                                                                       
                                                                     </table>
@@ -974,7 +1003,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                                      
+                                </div>  
+    <script type="text/javascript" src="'../../assets/js/select2.min.js"></script>   
+    <!-- <script type="text/javascript">
+        $(document).ready(function() {
+            $('.select2').select2();
+        }); 
+    </script>                                                  -->
 </body>
 <script type="text/javascript">
 function mostrarPassword() {
