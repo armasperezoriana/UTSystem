@@ -71,8 +71,8 @@
                             </div>
                             <br>
                              
-                            <div class="col-sm-20" style='text-align:right;'>
-                                    
+                            <div class="col-sm-20" style='text-align:right; '>
+                            <table id="filtro de pdf" style="border-color:blue, 13px;">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
@@ -94,7 +94,7 @@
                               
                                      
                             <div class="col-sm-20" style='text-align:right;'>
-
+                                   
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
@@ -111,7 +111,7 @@
                                             </div>
                                         </div>
                                     </div>
-                          
+                                </table>
                             </div>
 
 
@@ -173,8 +173,6 @@
                                                     
                                                     
                                                 
-
-
 
 
 <!-- MODAL DE CONSULTAR-->
@@ -623,6 +621,9 @@
                                 </div>  
                             </div>
                               </div>
+
+
+
    
 </body>
 <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js"></script>

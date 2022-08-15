@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".EnviarUsuariosRegistrar").click(function() {
-        var valido = validar();
+        var valido = validarM();
         var validarS = validarSeguridad();
         if (valido == true && validarS == true) {
 
@@ -21,14 +21,13 @@ $(document).ready(function() {
                 return 0;
             }
             var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
-          //  var preguntatres =$("#AgregarUsuarioModal").find("#preguntatres").val();
+          
             var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();        
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
                 type: "question",
                 showCancelButton: true,
-                // confirmButtonColor: "#DD6B55",
                 confirmButtonText: "Guardar",
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
@@ -53,18 +52,12 @@ $(document).ready(function() {
                             console.log(respuesta);
                             if (respuesta == "1") {
 
-                                document.getElementById('numerodos').style.color="aliceblue";
-                                document.getElementById('numerodos').style.background="#3498DB";
-                                document.getElementById('numerouno').style.color="#AAB7B8";
-                                document.getElementById('numerouno').style.background="#154360";
-                                document.getElementById('pasouno').style.display="none";
-                                document.getElementById('pasodos').style.display="block";
-                            // swal.fire({
-                            //     type: 'success',
-                            //     title: 'Registro guardado exitosamente',
-                            // }).then((isConfirm) => {
-                            //     location.href = './Usuarios';
-                            // });
+                            swal.fire({
+                                 type: 'success',
+                                title: 'Registro guardado exitosamente',
+                             }).then((isConfirm) => {
+                                location.href = './Usuarios';
+                             });
 
                             }
                             if (respuesta == "2") {
@@ -109,24 +102,31 @@ $(document).ready(function() {
             $(this).addClass('bg-primary');
         })
     $(".ModificarUsuarios").click(function() {
-        var valido = validar(true);
+        var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
+       // var valido = validarM(true);
            
         if (valido == true) {
 
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
-            console.log($("#modificarUsuario"))
-            console.log($("#modificarUsuario").find("#nombre"));
             var nombre = $("#modificarUsuario").find("#nombre").val();
-            console.log($("#modificarUsuario").find("#nombre").val());
-            console.log($("#modificarUsuario").find("#apellido").val());
-            
             var apellido = $("#modificarUsuario").find("#apellido").val();
             var cedula =$("#modificarUsuario").find("#cedula").val();;
             var username = $("#modificarUsuario").find("#username").val();
             var rol = $("#modificarUsuario").find("#rol").val();
             var pass = $("#modificarUsuario").find("#pass1").val();
               var correo = $("#modificarUsuario").find("#correo").val();
-            console.log(pass);
+
+              if(seguridadImg == ""){
+                swal.fire({
+                    type: 'warning',
+                    title: 'Seleccione una imagen de seguridad',
+                    text: 'Imagen obligatoria',
+                });
+                return 0;
+            }
+            var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
+          
+            var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val(); 
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
@@ -150,9 +150,12 @@ $(document).ready(function() {
                             rol: rol,
                             pass: pass,
                             correo: correo,
+                            preguntauno: preguntauno,
+                            img: seguridadImg,
+                            respuestauno: respuestauno,
                         },
                         success: function(respuesta) {
-                           // alert(pass);
+                            alert(pass);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -267,11 +270,135 @@ $(document).ready(function() {
 
 
 
+function validarM(modificar = true) {
+    var form = "";
+
+   var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
+    var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
+    var expCedula =/^\d{7,14}$/;
+    var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    var expPass = /^.{6,12}$/;
+    var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
+    
+        form = "#modificarUsuario";
+
+    var nombre = $(form).find("#nombre").val();
+    var rnombre = false;
+
+    var apellido = $(form).find("#apellido").val();
+    var rapellido = false;
+
+    var cedula = $(form).find("#cedula").val();
+    var rcedula = false;
+
+    var username = $(form).find("#username").val();
+    var rusername = false;
+
+    var rol = $(form).find("#rol").val();
+    var rrol = false;
+
+    var pass1 = $(form).find("#pass1").val();
+    var rpass1 = false;
+
+    var pass2 = $(form).find("#pass2").val();
+    var rpass2 = false;
+
+
+    var correo = $(form).find("#correo").val();
+    var rcorreo = false;
+
+if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""){
+
+     swal.fire({
+                                    type: 'warning',
+                                    title: 'Campos obligatorios',
+                                    text: 'Asegurate de llenar todos los campos',
+                                });
+     $(".errorNombre").html("Debe ingresar su nombre");
+       $(".errorApellido").html("Debe ingresar su apellido");
+        $(".errorCedula").html("Debe ingresar su cedula");
+         $(".errorUsername").html("Debe ingresar su nombre de usuario");
+          $(".errorRol").html("Debe seleccionar su rol");
+             $(".errorPass1").html("La clave acepta de 6 a 12 digitos y solo numeros");
+             $(".errorpass").html("La clave acepta de 6 a 12 digitos y solo numeros");
+               $(".errorPass2").html("Confirmar Contraseña");
+                  $(".errorCorreo").html("Debe ingresar un correo electronico valido");
+               
+}
+
+else{
+if(!expCedula.test(cedula)){
+    $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+       rcedula = false;
+       return false;
+} else {
+    $(".errorCedula").html("");
+   rcedula = true;
+             $(".errorCedula").html("Cédula valida");
+           $(".errorCedula").attr("style", "color:green");
+
+}if(!expNombre.test(nombre)){
+            $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4");
+                rnombre = false;
+                return false;
+    } else {
+            $(".errorNombre").html("Campo validado");
+            $(".errorNombre").attr("style", "color:green");
+            rnombre = true;
+        }
+         if(!expApellido.test(apellido)){
+            $(".errorApellido").html("El campo apellido solo acepta caracteres,  minimo 4");
+                rapellido = false;
+                return false;
+    } else {
+            $(".errorApellido").html("Campo validado");
+            $(".errorApellido").attr("style", "color:green");
+            rapellido = true;
+        }if(!expUsername.test(username)){
+            $(".errorUsername").html("Error el campo usuario acepta letras, numeros, guion y guion bajo, minimo 4 caracteres");
+               rusername = false;
+               return false;
+    } else {
+            $(".errorUsername").html("");
+           rusername = true;
+            $(".errorUsername").html("Usuario valido");
+             $(".errorUsername").attr("style", "color:green");
+        }if(!expPass.test(pass1)){
+            $(".errorpass").html("La clave acepta de 6 a 12 digitos,pueden ser numeros, signos especiales y letras");
+               rpass = false;
+               return false;
+    } else {
+            $(".errorpass").html("Contraseña valida");
+             $(".errorpass").attr("style", "color:green");
+           rpass = true;
+        }if(!expCorreo.test(correo)){
+            $(".errorCorreo").html("El formato del correo no es valida");
+               rcorreo = false;
+               return false;
+    } else {
+            $(".errorCorreo").html("Correo valido");
+            $(".errorCorreo").attr("style", "color:green");
+           rcorreo = true;
+        }
+
+ }
+ 
+    if (rpass1 == true && rpass2 == true) {
+        rpassAp = true;
+    }
+
+    var retorno = false;
+    if (rnombre == true && rapellido == true) {
+        retorno = true;
+    }
+    return retorno;
+}
+
 function validar(modificar = false) {
     var form = "";
 
-   var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,20}$/;
-    var expApellido = /^[a-zA-ZÀ-ÿ\s]{4,20}$/;
+   var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
+    var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
     var expCedula =/^\d{7,14}$/;
     var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     var expPass = /^.{6,12}$/;

@@ -14,11 +14,9 @@ $(document).ready(function() {
                 return 0;
             }
             var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
-          //  var preguntatres =$("#AgregarUsuarioModal").find("#preguntatres").val();
-            var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();                
-            //var respuestados = $("#AgregarUsuarioModal").find("#respuestados").val();
-            //var respuestatres =$("#AgregarUsuarioModal").find("#respuestatres").val();
 
+            var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();                
+            
             swal.fire({
                 title: "¿Desea guardar la pregunta y respuesta de seguridad?",
                 text: "Estos datos serán guardados como seguridad del usuario.",
@@ -79,7 +77,7 @@ $(document).ready(function() {
    
 });
 function validarSeguridad(){
-    console.log("funciono");
+    console.log("validacion de seguridad");
     var form = "#AgregarUsuarioModal";
     var respuesta = $(form).find("#respuestauno").val();
     var rrespuesta = false;
@@ -87,7 +85,7 @@ function validarSeguridad(){
     var img = $(form).find("#img").val();
     var rimg = false;
 
-     var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{5,40}$/; // Letras, mayusculas minisculas y acentos
+     var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
    
 
     if(respuesta==""|pregunta==""){

@@ -231,7 +231,21 @@ class usuariosController
 			$execute = $this->usuario->Modificar();
 			//Codigo de bitacora sobre Agregar Usuario
 			if ($execute['ejecucion'] == true) {
+				$usu = $this->usuario->ObtenerUsuario($username);
+						$id = $usu['resultado']['id_usuario'];
+						$respuestauno = $_POST['respuestauno'];
+						$preguntauno = $_POST['preguntauno'];
+						$img = $_POST['img'];
+						$img_encriptada = $this->cifrarEnImagen($respuestauno, $img, $id);
+						$this->esteganografia->setPreguntaUno($preguntauno);
+						$this->esteganografia->setRespuestaUno($respuestauno);
+						$this->esteganografia->setImg($img);
+						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
+						//$this->esteganografia->setImgEncriptada($ImgEncriptada);
+						$this->esteganografia->setIdUsuario($id);
+						$execute = $this->esteganografia->Agregar();
 				echo '1';
+
 			} else {
 				echo "2";
 			}
