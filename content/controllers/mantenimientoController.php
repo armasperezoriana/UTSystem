@@ -86,6 +86,7 @@
 		}
 
 		public function notificaciones(){
+			//definimos las variables para las alertas en kilometraje
 			$tiempo_aceite_filtro=4500; //Km
 			$tiempo_frenos_refri_electro=9500; //Km
 			$tiempo_suspension=19500; //Km
@@ -155,7 +156,7 @@
 				$texto.="cauchos, ";
 			}
 
-			$texto.="y chequeo general.";
+			$texto.="se sugiere chequeo general.";
 
 			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])<45){
 				$texto="";

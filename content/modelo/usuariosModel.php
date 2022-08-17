@@ -14,7 +14,7 @@
 	    private $rol;
 	    private $password;
 	    private $correo;
-	    private $fechaRecuperacion;
+
 
 		public function __construct(){
 			// $this->con = parent::__construct();

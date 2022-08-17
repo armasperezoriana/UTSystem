@@ -67,6 +67,8 @@
                                     </a>
                         </div>
                         <?php } ?>
+                       
+                    
                         <br>
                         <div class="table-responsive">
                         <div class="card-body" style='background:;'>
@@ -78,7 +80,8 @@
                                             <th>Unidad</th>
                                             <th>Dirección</th>
                                             <th>Nombre Ruta</th>
-                                           
+                                            <th>Fecha Inicio</th>
+                                            <th>Fecha Fin</th>
                                             <th>Kilometraje</th>
                                              <th><center>Accion</center></th>
                                               <th></th>
@@ -94,7 +97,8 @@
                                                <td><?=$value['placa']?></td>
                                                <td><?=$value['direccion_ruta']?></td>
                                              <td><?=$value['nombre_ruta']?></td>
-                                           
+                                             <td><?=$value['fecha_inicio']?></td>
+                                             <td><?=$value['fecha_fin']?></td>
                                             <td><?=$value['kilometraje']?>Km.</td>
                                             <td> 
 

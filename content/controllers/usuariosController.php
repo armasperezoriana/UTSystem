@@ -215,6 +215,7 @@ class usuariosController
 			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
 		
+		
 			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
 			
 			$this->usuario->setId($id_usuario);
@@ -224,26 +225,11 @@ class usuariosController
 			$this->usuario->setUsername($username);
 			$this->usuario->setRol($id_rol);
 			$this->usuario->setPassword($pass);
-			$this->usuario->setCorreo($correo);
-			
-			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
-			// $result = $this->usuario->ConsultarOne();
+			$this->usuario->setCorreo($correo);		
 			$execute = $this->usuario->Modificar();
-			//Codigo de bitacora sobre Agregar Usuario
 			if ($execute['ejecucion'] == true) {
 				$usu = $this->usuario->ObtenerUsuario($username);
-						$id = $usu['resultado']['id_usuario'];
-						$respuestauno = $_POST['respuestauno'];
-						$preguntauno = $_POST['preguntauno'];
-						$img = $_POST['img'];
-						$img_encriptada = $this->cifrarEnImagen($respuestauno, $img, $id);
-						$this->esteganografia->setPreguntaUno($preguntauno);
-						$this->esteganografia->setRespuestaUno($respuestauno);
-						$this->esteganografia->setImg($img);
-						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
-						//$this->esteganografia->setImgEncriptada($ImgEncriptada);
-						$this->esteganografia->setIdUsuario($id);
-						$execute = $this->esteganografia->Agregar();
+					
 				echo '1';
 
 			} else {

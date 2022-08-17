@@ -239,6 +239,7 @@
                                <div class="form-group col-sm-12 col-md-6">
                                         <label for="funcionamiento"><b>Funcionamiento</b></label>
                                         <select class="form-control select2" name="funcionamiento" id="funcionamiento">
+                        
                                                   <option value="">...</option>
                                                 <option value="Operativo">Operativo</option>
                                                 <option value="Inoperativo">Inoperativo</option>

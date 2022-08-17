@@ -83,6 +83,59 @@
                                                     <div class="row">
                                                         <div class="form-group col-sm-12 col-md-6">
                                                             <div class="form__pr">
+                                                            <div>
+                                                                            <div class="" role="document">
+                                                                                <div>
+                                                                                    <div>
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="form-group col-sm-12 col-md-6">
+                                                                                                <div class="form__pr">
+                                                                                                    <table
+                                                                                                        class="table">
+                                                                                                        <tr>
+                                                                                                            <th>Imagen 1
+                                                                                                            </th>
+                                                                                                            <th>Imagen 2
+                                                                                                            </th>
+                                                                                                            <th>Imagen 3
+                                                                                                            </th>
+                                                                                                            <th>Imagen 4
+                                                                                                            </th>
+
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                            <td>
+
+                                                                                                                <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                                                                                    class="card p-2 card-seguridad-img"
+                                                                                                                    data-action="registrar"
+                                                                                                                    data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                                                                                    style="width:300%; height:300%;">
+                                                                                                            </td>
+                                                                                                            <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                                                                                    class="card p-2 card-seguridad-img"
+                                                                                                                    data-action="registrar"
+                                                                                                                    data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                                                                                    style="width:300%; height:300%;">
+                                                                                                            </td>
+                                                                                                            <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                                                                                    class="card p-2 card-seguridad-img"
+                                                                                                                    data-action="registrar"
+                                                                                                                    data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                                                                                    style="width:300%; height:300%;">
+                                                                                                            </td>
+                                                                                                            <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                                                                                    class="card p-2 card-seguridad-img"
+                                                                                                                    data-action="registrar"
+                                                                                                                    data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                                                                                    style="width:300%; height:300%;">
+                                                                                                            </td>
+
+
+                                                                                                        </tr>
+
+                                                                                                    </table>
                                                                 <!--- PREGUNTA 1 --->
                                                                 <label for="pregunta"><b>Elije una pregunta:</b></label>
                                                                 <select class="form-control select2" name="pregunta"

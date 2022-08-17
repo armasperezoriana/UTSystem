@@ -1,9 +1,9 @@
 $(document).ready(function() {
     var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".EnviarUsuariosRegistrar").click(function() {
-        var valido = validarM();
-        var validarS = validarSeguridad();
-        if (valido == true && validarS == true) {
+        var valido = validar();
+        var validarS= validarSeguridad();
+       if (valido == true && validarS== true) {
 
             var nombre = $("#AgregarUsuarioModal").find("#nombre").val();                
             var apellido = $("#AgregarUsuarioModal").find("#apellido").val();
@@ -71,7 +71,7 @@ $(document).ready(function() {
                                 swal.fire({
                                     type: 'warning',
                                     title: 'Datos repetidos',
-                                    text: 'Vuelva a intentar',
+                                    text: 'Cédula y/o correo ya existen',
                                 });
                             }
                         }
@@ -89,24 +89,11 @@ $(document).ready(function() {
 
     });
 
-        //Selección de imagen de seguridad
-        $('.card-seguridad-img').on('click', function (e) {
-            if ($(this).attr('data-action') == "registrar") {
-                seguridadImg = $(this).attr('data-img');
-            }
-            else {
-                seguridadImgActu = $(this).attr('data-img');
-            }
-            console.log($(this).attr('data-img'))
-            $('.card-seguridad-img').removeClass('bg-primary');
-            $(this).addClass('bg-primary');
-        })
     $(".ModificarUsuarios").click(function() {
-        var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
-       // var valido = validarM(true);
-           
-        if (valido == true) {
-
+        var seguridadImg = "";
+      var valido = validarM(true);
+      var validarS = validarSeguridadM();
+        if (validarM == true && validarS==true ) {
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
             var nombre = $("#modificarUsuario").find("#nombre").val();
             var apellido = $("#modificarUsuario").find("#apellido").val();
@@ -114,25 +101,25 @@ $(document).ready(function() {
             var username = $("#modificarUsuario").find("#username").val();
             var rol = $("#modificarUsuario").find("#rol").val();
             var pass = $("#modificarUsuario").find("#pass1").val();
-              var correo = $("#modificarUsuario").find("#correo").val();
-
-              if(seguridadImg == ""){
+            var correo = $("#modificarUsuario").find("#correo").val();
+            if(seguridadImg == ""){
                 swal.fire({
                     type: 'warning',
                     title: 'Seleccione una imagen de seguridad',
-                    text: 'Imagen obligatoria',
+                    text: 'Datos de seguridad obligatorios',
                 });
                 return 0;
             }
-            var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
-          
-            var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val(); 
-            swal.fire({
+            var preguntauno= $("#modificarUsuario").find("#preguntauno").val();
+            var respuestauno= $("#modificarUsuario").find("#respuestauno").val();
+
+               //console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+              swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
                 type: "question",
                 showCancelButton: true,
-                // confirmButtonColor: "#DD6B55",
+               
                 confirmButtonText: "Guardar",
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
@@ -150,13 +137,15 @@ $(document).ready(function() {
                             rol: rol,
                             pass: pass,
                             correo: correo,
-                            preguntauno: preguntauno,
+                            preguntauno:preguntauno,
+                            respuestauno:respuestauno,
                             img: seguridadImg,
-                            respuestauno: respuestauno,
+                       
                         },
                         success: function(respuesta) {
-                            alert(pass);
+                           
                             if (respuesta == "1") {
+                                console.log(respuesta);
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
@@ -187,12 +176,119 @@ $(document).ready(function() {
                     });
                 }
             });
-
-
-        }
+         }
 
     });
     //
+      //Selección de imagen de seguridad
+      $('.card-seguridad-img').on('click', function (e) {
+        if ($(this).attr('data-action') == "registrar") {
+            seguridadImg = $(this).attr('data-img');
+        }
+        else {
+            seguridadImgActu = $(this).attr('data-img');
+        }
+        console.log($(this).attr('data-img'))
+        $('.card-seguridad-img').removeClass('bg-primary');
+        $(this).addClass('bg-primary');
+    })
+
+    function validarSeguridad(modificar = false){
+        var form = "";
+
+        if(!modificar){
+            form = "#AgregarUsuarioModal";
+        }
+        else{
+            form = "#modificarUsuario";
+        }
+
+        var respuesta = $(form).find("#respuestauno").val();
+        var rrespuesta = false;
+        var pregunta = $(form).find("#pregunta").val();
+        var img = $(form).find("#img").val();
+        var rimg = false;
+    
+         var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
+       
+    
+        if(respuesta==""|pregunta==""){
+          
+           swal.fire({
+                                            type: 'warning',
+                                            title: 'Campos obligatorios',
+                                            text: 'Asegurate de llenar todos los campos',
+                                        });
+            $(".errorRespuesta").html("Debe responder la pregunta");
+            $(".errorPreguntauno").html("Debe seleccionar una pregunta");
+                 return false;
+        }else{
+             if(!expRespuesta.test(respuesta)){
+                    $(".errorRespuesta").html("Este campo solo acepta caracteres, minimo 3");
+                    
+                               return false;
+                    }else{
+                            $(".errorRespuesta").html("Campo validado");
+                            $(".errorRespuesta").attr("style", "color:green");
+                }
+                if(pregunta !=""){
+                    $(".errorPreguntauno").html("Campo validado");
+                    $(".errorPreguntauno").attr("style", "color:green");
+                    return true;
+                }
+            return true;     
+        }
+      }
+     
+      function validarSeguridadM(modificar=true){
+
+        var form = "";
+
+        if(!modificar){
+            form = "#AgregarUsuarioModal";
+        }
+        else{
+            form = "#modificarUsuario";
+        }
+        
+
+        var respuesta = $(form).find("#respuestauno").val();
+        var rrespuesta = false;
+        var pregunta = $(form).find("#pregunta").val();
+        var img = $(form).find("#img").val();
+        var rimg = false;
+    
+         var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
+       
+    
+        if(respuesta==""|pregunta==""|seguridadImg==""){
+                swal.fire({
+                    type: 'warning',
+                    title: 'Seleccione una imagen de seguridad',
+                    text: 'Imagen y pregunta obligatoria',
+                });
+       
+            $(".errorRespuesta").html("Debe responder la pregunta");
+            $(".errorPreguntauno").html("Debe seleccionar una pregunta");
+                 return false;
+        }else{
+             if(!expRespuesta.test(respuesta)){
+                    $(".errorRespuesta").html("Este campo solo acepta caracteres, minimo 3");
+                    
+                               return false;
+                    }else{
+                            $(".errorRespuesta").html("Campo validado");
+                            $(".errorRespuesta").attr("style", "color:green");
+                }
+                if(pregunta !=""){
+                    $(".errorPreguntauno").html("Campo validado");
+                    $(".errorPreguntauno").attr("style", "color:green");
+                    return true;
+                }
+            return true;     
+        }
+      }
+      
     $('.editar').click(function(e){
         e.preventDefault();
         mostrar($(this).attr('data-id'), "#modificarUsuario", "#ModificarUsuarioModal");
@@ -215,6 +311,7 @@ $(document).ready(function() {
                 $(formulario).find("#username").val(usuario.usuario);
                 $(formulario).find("#cedula").val(usuario.cedula);
                 $(formulario).find("#rol").val(usuario.rol);
+                $(formulario).find("#pass1").val(usuario.pass);
                 $(formulario).find("#correo").val(usuario.correo);
                
                 $(modal).modal('show');
@@ -265,23 +362,18 @@ $(document).ready(function() {
     });
 
 });
-
-
-
-
-
-function validarM(modificar = true) {
-    var form = "";
-
+function validar(modificar = false) {
+        form = "#AgregarUsuarioModal";
+   
    var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
     var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
     var expCedula =/^\d{7,14}$/;
     var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     var expPass = /^.{6,12}$/;
     var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
-    
-        form = "#modificarUsuario";
 
+        form = "#AgregarUsuarioModal";
+  
     var nombre = $(form).find("#nombre").val();
     var rnombre = false;
 
@@ -394,8 +486,10 @@ if(!expCedula.test(cedula)){
     return retorno;
 }
 
-function validar(modificar = false) {
-    var form = "";
+function validarM(modificar = true) {
+   
+        form = "#modificarUsuario";
+
 
    var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
     var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
@@ -404,12 +498,8 @@ function validar(modificar = false) {
     var expPass = /^.{6,12}$/;
     var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
 
-    if(!modificar){
-        form = "#AgregarUsuarioModal";
-    }
-    else{
         form = "#modificarUsuario";
-    }
+    
     var nombre = $(form).find("#nombre").val();
     var rnombre = false;
 
@@ -442,70 +532,69 @@ if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|c
                                     title: 'Campos obligatorios',
                                     text: 'Asegurate de llenar todos los campos',
                                 });
-     $(".errorNombre").html("Debe ingresar su nombre");
-       $(".errorApellido").html("Debe ingresar su apellido");
-        $(".errorCedula").html("Debe ingresar su cedula");
-         $(".errorUsername").html("Debe ingresar su nombre de usuario");
-          $(".errorRol").html("Debe seleccionar su rol");
-             $(".errorPass1").html("La clave acepta de 6 a 12 digitos y solo numeros");
-             $(".errorpass").html("La clave acepta de 6 a 12 digitos y solo numeros");
-               $(".errorPass2").html("Confirmar Contraseña");
-                  $(".errorCorreo").html("Debe ingresar un correo electronico valido");
+     $(".errorNombreM").html("Debe ingresar su nombre");
+       $(".errorApellidoM").html("Debe ingresar su apellido");
+        $(".errorCedulaM").html("Debe ingresar su cedula");
+         $(".errorUsernameM").html("Debe ingresar su nombre de usuario");
+          $(".errorRolM").html("Debe seleccionar su rol");
+               $(".errorPassM").html("Confirmar Contraseña");
+                  $(".errorCorreoM").html("Debe ingresar un correo electronico valido");
+                  
                
 }
 
 else{
 if(!expCedula.test(cedula)){
-    $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+    $(".errorCedulaM").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
        rcedula = false;
        return false;
 } else {
-    $(".errorCedula").html("");
+    $(".errorCedulaM").html("");
    rcedula = true;
-             $(".errorCedula").html("Cédula valida");
-           $(".errorCedula").attr("style", "color:green");
+             $(".errorCedulaM").html("Cédula valida");
+           $(".errorCedulaM").attr("style", "color:green");
 
 }if(!expNombre.test(nombre)){
             $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 4");
                 rnombre = false;
                 return false;
     } else {
-            $(".errorNombre").html("Campo validado");
-            $(".errorNombre").attr("style", "color:green");
+            $(".errorNombreM").html("Campo validado");
+            $(".errorNombreM").attr("style", "color:green");
             rnombre = true;
         }
          if(!expApellido.test(apellido)){
-            $(".errorApellido").html("El campo apellido solo acepta caracteres,  minimo 4");
+            $(".errorApellidoM").html("El campo apellido solo acepta caracteres,  minimo 4");
                 rapellido = false;
                 return false;
     } else {
-            $(".errorApellido").html("Campo validado");
-            $(".errorApellido").attr("style", "color:green");
+            $(".errorApellidoM").html("Campo validado");
+            $(".errorApellidoM").attr("style", "color:green");
             rapellido = true;
         }if(!expUsername.test(username)){
-            $(".errorUsername").html("Error el campo usuario acepta letras, numeros, guion y guion bajo, minimo 4 caracteres");
+            $(".errorUsernameM").html("Error el campo usuario acepta letras, numeros, guion y guion bajo, minimo 4 caracteres");
                rusername = false;
                return false;
     } else {
             $(".errorUsername").html("");
            rusername = true;
-            $(".errorUsername").html("Usuario valido");
-             $(".errorUsername").attr("style", "color:green");
+            $(".errorUsernameM").html("Usuario valido");
+             $(".errorUsernameM").attr("style", "color:green");
         }if(!expPass.test(pass1)){
-            $(".errorpass").html("La clave acepta de 6 a 12 digitos,pueden ser numeros, signos especiales y letras");
+            $(".errorPassM").html("La clave acepta de 6 a 12 digitos,pueden ser numeros, signos especiales y letras");
                rpass = false;
                return false;
     } else {
-            $(".errorpass").html("Contraseña valida");
-             $(".errorpass").attr("style", "color:green");
+            $(".errorPassM").html("Contraseña valida");
+             $(".errorPassM").attr("style", "color:green");
            rpass = true;
         }if(!expCorreo.test(correo)){
-            $(".errorCorreo").html("El formato del correo no es valida");
+            $(".errorCorreoM").html("El formato del correo no es valida");
                rcorreo = false;
                return false;
     } else {
-            $(".errorCorreo").html("Correo valido");
-            $(".errorCorreo").attr("style", "color:green");
+            $(".errorCorreoM").html("Correo valido");
+            $(".errorCorreoM").attr("style", "color:green");
            rcorreo = true;
         }
 

@@ -84,6 +84,22 @@
 			}
 		}
 
+    public function Modificar(){
+			try {
+				$query = parent::prepare("UPDATE seguridad_preguntas SET id_s_pregunta = '$this->id_s_pregunta', preguntauno = '$this->preguntauno', respuestauno = '$this->respuestauno', img ='$this->img', img_encriptada ='$this->img_encriptada')");
+        $respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
    
   public function encriptar($palabra,$dirImg,$name){
       $msg = $palabra; //To encrypt
