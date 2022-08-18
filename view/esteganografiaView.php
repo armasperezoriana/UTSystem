@@ -94,14 +94,14 @@
                                                                                                     <table
                                                                                                         class="table">
                                                                                                         <tr>
-                                                                                                            <th>Imagen 1
-                                                                                                            </th>
+                                                                                                            <th>Imagen 1</th>
+                                                                                                            <th></th><th></th>
                                                                                                             <th>Imagen 2
-                                                                                                            </th>
+                                                                                                            </th><th></th><th></th>
                                                                                                             <th>Imagen 3
-                                                                                                            </th>
+                                                                                                            </th><th></th><th></th>
                                                                                                             <th>Imagen 4
-                                                                                                            </th>
+                                                                                                            </th><th></th><th></th>
 
                                                                                                         </tr>
                                                                                                         <tr>
@@ -113,18 +113,25 @@
                                                                                                                     data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                                                                                                     style="width:300%; height:300%;">
                                                                                                             </td>
+                                                                                                            <td></td>
+                                                                                                            <td></td>
+                                                                                                            
                                                                                                             <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
                                                                                                                     data-action="registrar"
                                                                                                                     data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     style="width:300%; height:300%;">
                                                                                                             </td>
+                                                                                                            <td></td>
+                                                                                                            <td></td>
                                                                                                             <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
                                                                                                                     data-action="registrar"
                                                                                                                     data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     style="width:300%; height:300%;">
                                                                                                             </td>
+                                                                                                            <td></td>
+                                                                                                            <td></td>
                                                                                                             <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
                                                                                                                     data-action="registrar"
@@ -173,109 +180,13 @@
                                                                 id="respuestauno">
                                                             <span class="errorRespuesta" style="color:red"></span>
                                                         </div>
-
-
-
-                                                        <!--- PREGUNTA 2 
-                                            <br><br>
-                                            <div class="form-group col-sm-12 col-md-6">
-                                            <label for="pregunta2"><b>Pregunta 2:</b></label>
-                                            <select class="form-control select2" name="preguntados" id="preguntados">
-                                                <option value="">...</option>
-                                                <option value="¿Donde estudiaste?">¿Donde estudiaste?</option>
-                                                <option value="¿Donde naciste?">¿Donde naciste?</option>
-                                                <option value="¿Cuál es tu apodo?">¿Cuál es tu apodo?</option>
-
-                                            </select>
-                                            <span class="errorPreguntados" style="color:red"></span>
-                                            
-                                        
-                                            <label for="respuesta"><b>Respuesta</b></label>
-                                            <input type="text" class="form-control" name="respuestados" id="respuestados">
-                                            <span class="errorrespuesta" style="color:red"></span>
-                                            </div>
-                                    </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <div class="form__box">
-                                            <!--- PREGUNTA 3
-                                                    <label for="pregunta"><b>Pregunta 3:</b></label>
-                                                    <select class="form-control select2" name="preguntatres" id="preguntatres">
-                                                        <option value="">...</option>
-                                                        <option value="¿Pelicula favorita?">¿Pelicula favorita?
-                                                        </option>
-                                                        <option value="¿Comida que te recuerda a tu hogar?">¿Comida que te recuerda a tu hogar?</option>
-                                                        <option value="¿Segundo nombre de tu padre?">¿Segundo nombre de tu padre?</option>
-
-                                                    </select>
-                                                    <span class="errorPreguntatres" style="color:red"></span>
-                                                </div>
-
-                                                <label for="respuesta"><b>Respuesta</b></label>
-                                                <input type="text" class="form-control" name="respuestatres" id="respuestatres">
-                                                <span class="errorRespuesta" style="color:red"></span>
-                                            </div>
-                                    </div>
-                                 --->
-                                
+                        
                                                     </div>
 
-
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#exampleModal">
-                                                        Imagen de Seguridad
-                                                    </button>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                        role="dialog" aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header bg-secondary" style="color:#FFF">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Elige
-                                                                        tu imagen de seguridad:</h5>
-                                                                    <button type="button" class="close"
-                                                                        data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Imagen 1</th>
-                                                                            <th>Imagen 2</th>
-                                                                            <th>Imagen 3</th>
-                                                                            <th>Imagen 4</th>
-                                                                            
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/img/seguridad/1.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/2.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/3.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/4.png" style="width:100%; height:100%;"></td>
-                                                                        </tr>
-                                                                      
-                                                                    </table>
-
-                                                                    <input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Digita tu palabra de seguridad">
-
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Cerrar</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary">Guardar cambios</button>
-                                                                                                        <!-- Button trigger modal -->
-                                                                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">
-                                                                        Subir imagen de seguridad
-                                                                        </button>
-
-                                                                </div>
-                                                            </div>
+                                                    
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer">
+                                                       </div>
+                                                      <div class="modal-footer">
 
                                                         <a class="EnviarPreguntasRegistrar btn btn-primary"
                                                             href="#">Guardar respuestas</a>

@@ -1,73 +1,45 @@
-$(document).ready(function () {
-
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'bottom-start',
-        showConfirmButton: true,
-    });
-
-    const ToastAlert = Swal.mixin({
-        toast: true,
-        position: 'bottom-start',
-        timer: 2000,
-        showConfirmButton: false,
-    });
-
-    $('#formularioRecuperarContrasena').on('submit', function (e) {
+$(document).ready(function() {
+    $("#recuperar").on("submit", function (e) {
         e.preventDefault();
-
-        let newPass = $("[name='password']").val()
-        let confirmPass = $("[name='password_confirm']").val()
-
-        if (newPass == confirmPass) {
-            let datos = new FormData(document.querySelector('#formularioRecuperarContrasena'));
-    
-            recuperarContrasena(datos);
-        } else {
-            ToastAlert.fire("¡Error!", "Contraseñas no coinciden", "error");
-        }
-
-    })
-
-    const recuperarContrasena = (datos) => {
-        cambioUrl = baseURL + 'Login/cambioContrasena';
+        //let data = new FormData(this);
         $.ajax({
-            type: "POST",
-            url: cambioUrl,
-            data: datos,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                let json = JSON.parse(response);
-  
-                console.log(json);
-                
-                if(!json.error){
-                    ToastAlert.fire({
-                        icon: 'success',
-                        title: json.titulo,
-                        html: json.mensaje,
-                        allowOutsideClick: false,
-                    })
-                    .then(function () {
-                        console.log('redireccion..')
-                        window.location.replace(baseURL);
-                    });
-                }else{
-                    Swal.fire(
-                        json.titulo,
-                        json.mensaje,
-                        json.tipo
-                    );
-                }
-  
-            },
-            error: (response) => {
-                console.log(response);
-                
+          type: "POST",
+          url: "login/recuperarClave",
+          cache: false,
+         // data: data,
+          contentType: false,
+          processData: false,
+          success: function (response) {
+            let res = JSON.parse(response);
+            if (res.tipo == 'danger') {
+              window.location.reload();
             }
+            else {
+              Swal.fire(
+                res.titulo,
+                res.mensaje,
+                res.tipo
+              );
+            }
+          },
+          error: (response) => {
+            console.log(response);
+            Swal.fire("¡Error!", "Ocurrió un problema al verificar su correo", "error");
+          },
         });
-    }
-
-});
+        Toast.fire({
+          title: 'Espere!',
+          html: 'Se estan verificando los datos con los registrados en el sistema',// add html attribute if you want or remove
+          allowOutsideClick: false,
+          onBeforeOpen: () => {
+            Swal.showLoading()
+          },
+        });
+      });
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-start',
+        showConfirmButton: false,
+      });
+  });
+  

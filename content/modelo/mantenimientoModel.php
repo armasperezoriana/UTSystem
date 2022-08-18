@@ -56,6 +56,46 @@
 				return $errorReturn;
 			}
 		}
+		function fechanormal($fecha){
+			$nfecha=date('d/m/Y',strtotime($fecha));
+			return $nfecha;
+
+		}
+
+		public function allReport(){
+			try {
+				$query = parent::prepare("SELECT * FROM mantenimientos ORDER by fecha DESC");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+
+
+		}
+		public function buscarReportFecha(){
+			try {
+				$query = parent::prepare('SELECT * FROM `mantenimientos` WHERE fecha BETWEEN '.$desde.' AND '.$hasta.' ORDER BY id_mantenimiento DESC');
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+
+
+		}
 
 		public function ConsultarOne(){
 			try {

@@ -33,7 +33,7 @@ $(document).ready(function () {
                             descripcion: descripcion,
                         },
                         success: function (respuesta) {
-                            alert(respuesta);
+                          //  alert(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',
@@ -105,7 +105,7 @@ $(document).ready(function () {
                             descripcion: descripcion,
                         },
                         success: function(respuesta) {
-                            console.log(respuesta);
+                            //console.log(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',

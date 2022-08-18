@@ -58,10 +58,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Mantenimientos</h6>
                                 </center>
                             </div>
-
-
-
-                            <div class="col-sm-4" style='text-align:right;top:400px;'>
+                            <div class="col-sm-4" style='text-align:right;top:100px;'>
                                 <span class="icon text-white-50">
                                     <i class="fas fa-check"></i>
                                 </span>
@@ -76,55 +73,16 @@
                             <br>
                         
                        <div class="card-body">
+                        
                             <div class="col-sm-20" style='text-align:right; '>
 
-                                <table id="filtro de pdf" style="border-color:blue, 13px;">
-                                    <div class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div >
-                                                <form >
-                                                
-                                                    <div id="busqueda" class="table-responsive">
+                                
+                            
+                              
 
-
-                                                        <div class="form-group col-sm-12 col-md-3"  style="position:absolute;  right:10px; top:25px;">
-                                                            
-                                                            <label for="date"><b>Desde</b></label>
-                                                            <input type="date"
-                                                                class="form-control fecha_inicio<?=$value['id_ruta'];?>"
-                                                                value="<?=$value['fecha_inicio'];?>" style="width:100%;"
-                                                                name="fecha_inicio" id="fecha_inicio">
-                                                            <span class="errorDate" style="color:red"></span>
-                                                        </div>
-                                                        <div class="form-group col-sm-12 col-md-3" style="position:absolute; right:10px; top:100px;">
-                                                            <label for="date"><b>Hasta
-                                                  </b></label>
-                                                            <input type="date"
-                                                                class="form-control fecha_fin<?=$value['id_ruta'];?>"
-                                                                value="<?=$value['fecha_fin'];?>" style="width:100%;"
-                                                                name="fecha_fin" id="fecha_fin">
-                                                            <span class="errorDate" style="color:red"></span>
-                                                            <div class="modal-footer">
-                                                            <button class=" btn btn-secondary"
-                                                                type="submit">Buscar
-                                                                <i class="fas fa-search fa-1x text-gray-250"></i> </button>
-                                                        </div>
-                                                        </div>
-                                                        </br></br> </br></br>
-                                                        
-                                                    </div>
-                                                    </form>
-                                                    </a>
-                                                </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
 
                             </div>
-                          <br>                       <br>                       <br>                       <br>                       <br>
+                               <!--      
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -138,10 +96,10 @@
                                         <i class="fas fa-check fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                         </div>
-
+                       
 
                         <div class="col-sm-20" style='text-align:right;'>
 
@@ -149,17 +107,18 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            <a href="<?=_REPORTS_?>Orden/ordentaller.php" target="blank">
-                                                <h6>Orden de Servicio por taller</h6>
-                                            </a>
+                                        <button class="btn btn-secondary" type="submit"> <a href="<?=_REPORTS_?>Orden/ordentaller.php" target="blank">
+                                                <h6"><font color="white">Orden de Servicio por taller</font></h6>
+                                            </a>  <i class="fas fa-check fa-1x text-gray-250"></i></button>
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-check fa-2x text-gray-300"></i>
-                                    </div>
+                                    
                                 </div>
                             </div>
+                            <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
+                            <font color="white">Exportar PDF</font></a>
+                                                                <i class="fas fa-check fa-1x text-gray-250"></i> </button
                             </table>
                         </div>
 
@@ -173,14 +132,15 @@
                                             <tr>
                                                 <th>Orden Nro.</th>
                                                 <th>Vehiculo</th>
-                                                <th>Tipo de Mantenimiento</th>
+                                                <th>Mantenimiento</th>
                                                 <th>Taller</th>
                                                 <th>Rif</th>
-                                                <th></th>
+                                                <th>Fecha</th>
                                                 <th></th>
                                                 <th>
                                                     <center>Acción</center>
                                                 </th>
+                                                <th></th>
                                                 <th></th>
 
                                             </tr>
@@ -196,6 +156,7 @@
                                                 <td><?=$preventivo['nombre']?></td>
                                                 <td><?=$preventivo['nombre_t']?></td>
                                                 <td><?=$preventivo['rif']?></td>
+                                                <td><?=$preventivo['fecha']?></td>
 
 
 

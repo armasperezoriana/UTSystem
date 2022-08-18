@@ -6,6 +6,9 @@ use config\settings\sysConfig as sysConfig;
 use content\component\headElement as headElement;
 use content\modelo\loginModel as loginModel;
 use content\modelo\usuariosModel as usuariosModel;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 class loginController
 {
@@ -14,6 +17,7 @@ class loginController
 	{
 		$this->url = $url;
 		$this->usuario = new usuariosModel();
+		$this->login = new loginModel();
 	}
 
 	public function Consultar()
@@ -104,6 +108,90 @@ class loginController
 			}
 		}
 	}
+
+	
+	public function recuperarClave()
+	{
+		if (!empty($_POST['username']) || !empty($_POST['correo'])) {
+			$username = $_POST['username'];
+			$correo= $_POST['correo'];
+			
+			 $this->usuario->setCorreoPassword($correo);
+			$result = $this->usuario->ObtenerUsuario($username);
+			
+			if ($result['ejecucion'] == true) {
+				$res = $result['resultado'];
+				if ($res) {
+					if($result==true){
+					$correo = $this->usuario->buscarCorreo($correo);
+					//$execute = $this->usuario->Recuperar();
+						echo json_encode([
+							'tipo' => 'success', 'mensaje' => 'Datos verficados'
+						]); 
+
+						$res = true;
+					}
+					else{
+						echo json_encode([
+							'titulo' => '¡Ha ocurrido un error!',
+							'mensaje' => 'Los datos no existen en el resgistro',
+							'tipo' => 'error',
+						]);
+						$res = true;
+					}
+				} else {
+					echo json_encode([
+						'titulo' => '¡Usuario incorrecto!',
+						'mensaje' => 'Por favor verifique el usuario',
+						'tipo' => 'error',
+					]);
+				}
+			} else {
+				echo json_encode([
+					'titulo' => '¡Error! Usuario o correo invalidos',
+					'mensaje' => 'Intente nuevamente',
+					'tipo' => 'error',
+				]);
+			}
+	}
+}
+
+public function mailReset(){
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'armasoriana98@gmail.com';                     //SMTP username
+    $mail->Password   = 'santiagorafael01.';                               //SMTP password
+    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('armasoriana98@gmail.com', 'Mailer');
+    $mail->addAddress('armasoriana98@gmail.com', 'Oriana');     //a quien se le va enviar
+    
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Restablecer password SISTEMA UT';
+    $mail->Body    = 'Correo de prueba <b>in bold!</b>';
+
+    $mail->send();
+    echo 'Mensaje enviado correctamente';
+} catch (Exception $e) {
+    echo "Message no pudo enviarse. Error: {$mail->ErrorInfo}";
+}
+}
 
 
 	public function Iniciar($username, $pass)

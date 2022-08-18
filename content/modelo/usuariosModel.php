@@ -51,11 +51,9 @@
 				return $errorReturn;
 			}
 		}
-		//sql para consultar el correo del usuario y las respuesta de seguridad por id con su respuesta
-//SELECT usuarios.id_usuario AS id_usuario, usuarios.correo as correo, usuarios.usuario, seguridad_preguntas.preguntauno as preguntauno, seguridad_preguntas.respuestauno as respuestauno FROM usuarios INNER JOIN seguridad_preguntas ON seguridad_preguntas.id_usuario = usuarios.id_usuario;
-		public function buscarCorreo(){
+		public function buscarCorreo($correo){
 			try {
-				$query = parent::prepare("SELECT id_usuario, correo, usuario FROM usuarios WHERE status = 1 and correo = correo");
+				$query = parent::prepare("SELECT * FROM usuarios WHERE usuario = '$username' AND correo = '$correo' LIMIT 1");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -269,6 +267,51 @@
 		}
 
 
+		public function AgregarNewPass(){
+			$id= 0;
+			try {
+				$query = parent::prepare('SELECT MAX(id_usuario) as max FROM usuarios');
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$result = $query->fetchAll(parent::FETCH_ASSOC); 
+				foreach($result as $row){
+					if(!empty($row['max'])){
+						$id = $row['max']+1;
+					}else{
+						$id++;
+					}
+				}
+				$query = parent::prepare("UPDATE usuarios SET contrasena = '$this->password' WHERE id_usuario = $this->id_usuario)");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = ['resultado' => $query->fetchAll(parent::FETCH_ASSOC)];
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+		public function ModificarPassword(){
+			try{
+				$query = parent::prepare("UPDATE usuarios SET  usuario = '$this->username', contrasena = '$this->password'
+					WHERE id_usuario = $this->id_usuario");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} 
+			 catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
 
 		public function Modificar(){
 			try{

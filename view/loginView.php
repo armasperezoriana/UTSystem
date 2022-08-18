@@ -36,16 +36,16 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
 
 </head>
 <body class="bg-gradient-primary" style="display:flex;background-image: url(<?php echo _ROUTE_ ?>/assets/img/fondoUT.jpg);background-size: cover;">
-    <div class="container" style="margin-top:auto;margin-bottom:auto">
+   <div class="container" style="margin-top:auto;margin-bottom:auto">
 
-        <!-- Outer Row -->
+        
         <div class="row justify-content-center" >
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div id="login" class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
+                       
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-login-"> <img src="assets/img/logo.png" style="width: 300px;display: flex;margin-top: 73px;margin-left: auto;margin-bottom: auto;margin-right: auto;" class="img"> </div>
                             <div class="col-lg-6">
@@ -91,7 +91,7 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
         </div>
 <!-- MODAL DE RECUPERAR-->
 
-<div class="modal-dialog" style="display: none" id="recuperar" role="document" style="position: relative;top: 100%; width:400%; height:800%; right:8%;"> 
+<div class="modal-dialog" style="display:none" id="recuperar" role="document" style="position: relative;top: 100%; width:400%; height:800%; right:8%;"> 
     <div class="modal-content">
       <div class="modal-header">
         <center><h5>Recuperar Cuenta</h5></center>
@@ -105,71 +105,22 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
                                         ¿Olvidaste tu clave?</h1>
                                           <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos algunos datos</p>
                                     </div>
-                                    <form class="recuperarClave" id="recuperarClave">
+                                    <form class="recuperar" id="recuperar">
                                         <div class="form-group">
-                                            <label>Pregunta de seguridad</label>
-                                          <input type="text" class="form-control form-control-user"
+                                            <label>Ingresa tu usuario</label>
+                                          <input type="text" class="form-control form-control-user" required
+                                                id="username" aria-describedby="emailHelp"
+                                                placeholder="Ingresa tu usuario asociado a tu cuenta..">
+                                                <br>
+                                                <br>
+                                                <input type="text" class="form-control form-control-email" required
                                                 id="correo" aria-describedby="emailHelp"
-                                                placeholder="Ingresa tu correo..">
+                                                placeholder="Ingresa el correo asociado a tu cuenta..">
                                                 <br>
-                                                <br>
-                                                <label for="pregunta"><b>Selecciona tu pregunta de seguridad y respondela correctamente</b></label>
-                                                                                    <select class="form-control select2"
-                                                                                        name="pregunta"
-                                                                                        id="preguntauno">
-                                                                                        <option value="">...
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Cuál era el nombre de tu mejor amigo?">
-                                                                                            ¿Cuál era el nombre
-                                                                                            de tu mejor amigo?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Cuál es tu color favorito?">
-                                                                                            ¿Cuál es tu color
-                                                                                            favorito?</option>
-                                                                                        <option
-                                                                                            value="¿Cómo se llama tu perro?">
-                                                                                            ¿Cómo se llama tu
-                                                                                            perro?</option>
-                                                                                        <option
-                                                                                            value="¿Donde estudiaste?">
-                                                                                            ¿Donde estudiaste?
-                                                                                        </option>
-                                                                                        <option value="¿Donde naciste?">
-                                                                                            ¿Donde naciste?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Cuál es tu apodo?">
-                                                                                            ¿Cuál es tu apodo?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Segundo nombre de tu padre?">
-                                                                                            ¿Segundo nombre de tu padre?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Dulce favorito?">
-                                                                                            ¿Dulce Favorito?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Donde estudiaste?">
-                                                                                            ¿Donde estudiaste?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Gatos o perros?">
-                                                                                            ¿Gatos o perros?
-                                                                                        </option>
-                                                                                    </select>
-                                                                                    <span class="errorPreguntauno"
-                                                                                        style="color:red"></span>
-                                                                                </div>
-                                                                        <input type="text" class="form-control form-control-user"
-                                                                                id="pregunta" aria-describedby="emailHelp"
-                                                                                placeholder="Responde la pregunta la pregunta de seguridad...">
-                                                                                <br>
-                                        <a class="btn btn-primary btn-user btn-block">
-                                           Recuperar Contraseña
-                                        </a>
+                                                <button class="btn btn-secondary btn-user btn-block">
+                                            Recuperar
+                                        </button>
+
                                             </div>
                                          
                                     </form>
@@ -194,10 +145,10 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="view/vendor/plugins/sweetalert/sweet-alert.js"></script>
-    <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
-    <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+   <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
+ <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
 
-
+ <script type="text/javascript" src="'../../assets/js/login/olvido.js"></script>
 
 </body>
 

@@ -71,19 +71,8 @@
 
                         <div class="col-sm-15" style='text-align:right;'>
                         <a class="nav-link collapsed" class="card shadow mb-4"  href="<?=_ROUTE_ ?>Esteganografia">
-                                                            <i class="fas fa-fw fa-cog"></i>
-                                                            <span>Preguntas de Seguridad</span>
-                                                        </a>
-                                                        <br>
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#exampleModal">
-                                                        Imagen de Seguridad
-                                                    </button>
-                                                    <br><br>
-                                                    <button type="button" class="btn btn-secondary" data-toggle="modal"
-                                                        data-target="#exampleModal">
-                                                       Respaldo de la BD
-                                                    </button>
+                                                         
+                                    
                         </div>
                     </div>
                     <br>

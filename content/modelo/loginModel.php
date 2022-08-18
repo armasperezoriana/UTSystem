@@ -8,27 +8,25 @@
 	class loginModel extends database{
 
 		private $con;
+		private $username;
+		private $correo;
+		private $pass;
 
 		public function __construct(){
 			$this->con = parent::__construct();
 		}
 
 
-public function recuperarClave(){
+public function Recuperar(){
+	try {
+        $query = parent::prepare('SELECT * FROM usuarios WHERE usuario = :usuario AND correo = :correo AND status = 1');
+        $query->execute(['username' => $usuario, 'correo' => $correo]);
 
-$correo=$_POST['correo'];
-$pass=$_POST['pass'];
-
-$query = prepare("SELECT * FROM usuarios WHERE status = 1 and correo = '{$this->correo}' and pass='{$this->pass}'");
-$query->bindParam("correo",$correo, PDO::PARAM_STR);
-$query->bindParam("pass", $pass, PDO::PARAM_STR);
-    $query->execute();
-    $registro = $query->fetch(FETCH_ASSOC);
-
-    print_r($registro);
-
-}
-
+        return $query->rowCount();
+      } catch(PDOException $e) {
+        return false;
+      }
+    }
 
 			public function ConsultarIniciar(){
 		try{

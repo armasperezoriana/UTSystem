@@ -578,6 +578,74 @@
         </div>
     </div>
     <!-- MODALES -->
+       <!-- MODULo de AYUDA -->
+
+       <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        <style type="text/css">
+        .modal {
+            font-size: 0.8em;
+        }
+        </style>
+        <div class="modal fade" id="AyudaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" style="padding:0;">
+            <div class="container">
+                <div class="modal-dialog">
+                    <div class="" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary" style="color:#FFF">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        <center>Módulo de ayuda</center>
+                                    </h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+
+                                <div class="col-sm-7" style='text-align:right;'>
+                                    <span href="#" data-toggle="modal" data-target="#AyudaModal">
+
+                                    </span>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>
+                                        En este modulo podrá visualizar los usuarios que están registrados en el sistema
+                                        a su vez registrar, eliminar y modificar
+                                        <br><br>
+                                        1. Para eliminar un usuario seleccione "eliminar" situada a la derecha del
+                                        usuario
+                                        <br> <br>
+                                        2. Para modificar un usuario seleccione "modificar" situada a izquierda del
+                                        usuario
+                                        <br><br>
+                                        3. Para registrar un usuario seleccione "registrar" que se muestra en el lado
+                                        inferior derecho de la tabla
+                                        <br><br>
+                                        4. Para volver al menu principal presione "volver" situado en la parte inferior
+                                        derecha
+                                        <br><br>
+                                        5. Para cerrar esta ventana emergente y seguir con el sistema presione e
+                                        "cerrar"
+                                        <br><br>
+                                        6. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo
+                                        del dato que desea Buscar.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class=" btn btn-secondary" type="button"
+                                        data-dismiss="modal">Cancelar</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- MODAL DE MODIFICAR-->
     <div class="modal fade" id="ModificarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
 " style="padding:0;">

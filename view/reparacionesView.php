@@ -114,6 +114,7 @@
                                                     <th>Vehiculo</th>
                                                     <th>Tipo de reparación</th>
                                                     <th>Taller-Rif</th>
+                                                    <th>Fecha</th>
                                                     <th></th>
                                                     <th><center>Acción</center></th>
                                                     <th></th>
@@ -128,6 +129,7 @@
                                                     <td><?=$rep['placa']?></td>
                                                     <td><?=$rep['nombre']?></td>
                                                     <td><?=$rep['rif']?></td>
+                                                    <td><?=$rep['fecha']?></td>
                                                     <td>
                                                             <div class="col-sm-7" style='text-align:right;'>
                                                             <a href="#" data-id="<?= $value['id_vehiculo'] ?>" class="btn btn-info btn-icon-split consultar" name="consultar" data-target="#ConsultarMantenimientoModal<?=$rep['id_reparaciones'] ?>"  data-toggle="modal">
@@ -405,7 +407,7 @@
                             <div class="row">
                                 <div class="form-group col-sm-12 col-md-6">
                                     <label for="placa"><b>Unidad Reparada</b></label>
-                                     <select class="form-control select2" style="width:100%;" name="id_vehiculo" id="id_vehiculo">
+                                     <select class="form-control select2 text-left" name="id_vehiculo" id="id_vehiculo">
                                         <option></option>
                                         <?php foreach ($vehiculo as $unidad) : ?>
                                             <?php if (!empty($unidad['id_vehiculo'])) : ?>

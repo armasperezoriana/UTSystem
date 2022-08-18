@@ -597,6 +597,15 @@ if(!expCedula.test(cedula)){
             $(".errorCorreoM").attr("style", "color:green");
            rcorreo = true;
         }
+        if(nombre !==""){
+            $(".errorNombre").html("Campo validado");
+            $(".errorNombre").attr("style", "color:green");
+            rnombre= true;
+        }if(apellido!==""){
+            $(".errorApellido").html("Campo validado");
+            $(".errorApellido").attr("style", "color:green");
+            rnapellido= true;
+        }
 
  }
  

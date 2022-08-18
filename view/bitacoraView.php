@@ -52,7 +52,15 @@
                                <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
-                                   <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarUsuarioModal" data-toggle="modal" data-target="#AgregarUsuarioModal">
+                                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                                        data-target="#exampleModal">
+                                                       Respaldo de la BD
+                                                    </button>
+                                                    <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Esteganografia"
+                    >
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Imagen de Seguridad</span>
+                </a>
                                         
                                     </a>
                         </div>
