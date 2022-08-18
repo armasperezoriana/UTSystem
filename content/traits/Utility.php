@@ -85,20 +85,6 @@ trait Utility
     {
     }
 
-    /**
-     * *********
-     */
-    /**
-     * DOCUMENTOS
-     */
-    // public function crearPDF($html)
-    // {
-
-    //     $html2pdf = new Html2Pdf('P', 'A4', 'fr', true, 'UTF-8');
-    //     $html2pdf->setDefaultFont('Arial');
-    //     $html2pdf->writeHTML($html);
-    //     $html2pdf->output();
-    // }
     /*
         ESTEGANOGRAFÍA
     */

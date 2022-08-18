@@ -12,6 +12,8 @@ $(document).ready(function() {
             var rol = $("#AgregarUsuarioModal").find("#rol").val();
             var pass = $("#AgregarUsuarioModal").find("#pass2").val();
              var correo = $("#AgregarUsuarioModal").find("#correo").val();
+             
+
              if(seguridadImg == ""){
                 swal.fire({
                     type: 'warning',
@@ -23,6 +25,8 @@ $(document).ready(function() {
             var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
           
             var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();        
+           //console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
@@ -88,12 +92,11 @@ $(document).ready(function() {
         }
 
     });
-
+  var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".ModificarUsuarios").click(function() {
-        var seguridadImg = "";
-     var valido = validarM(true);
+   //  var valido = validarM();
       var validarS = validarSeguridadM();
-        if (validarM == true && validarS==true ) {
+        if (validarS == true ) {
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
             var nombre = $("#modificarUsuario").find("#nombre").val();
             var apellido = $("#modificarUsuario").find("#apellido").val();
@@ -102,6 +105,8 @@ $(document).ready(function() {
             var rol = $("#modificarUsuario").find("#rol").val();
             var pass = $("#modificarUsuario").find("#pass1").val();
             var correo = $("#modificarUsuario").find("#correo").val();
+    
+                           
             if(seguridadImg == ""){
                 swal.fire({
                     type: 'warning',
@@ -110,10 +115,10 @@ $(document).ready(function() {
                 });
                 return 0;
             }
-            var preguntauno= $("#modificarUsuario").find("#preguntauno").val();
+           var preguntauno= $("#modificarUsuario").find("#preguntauno").val();
             var respuestauno= $("#modificarUsuario").find("#respuestauno").val();
-
-               //console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+             var img=$(this).attr('data-img');
+            // console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
               swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
@@ -137,15 +142,15 @@ $(document).ready(function() {
                             rol: rol,
                             pass: pass,
                             correo: correo,
-                            preguntauno:preguntauno,
-                            respuestauno:respuestauno,
+                            preguntauno: preguntauno,
                             img: seguridadImg,
+                            respuestauno: respuestauno,
                        
                         },
                         success: function(respuesta) {
-                           console.log(respuesta);
+                          // console.log(respuesta);
                             if (respuesta == "1") {
-                                console.log(respuesta);
+                               // console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
@@ -188,11 +193,23 @@ $(document).ready(function() {
         else {
             seguridadImgActu = $(this).attr('data-img');
         }
-       // console.log($(this).attr('data-img'))
+        console.log($(this).attr('data-img'))
         $('.card-seguridad-img').removeClass('bg-primary');
         $(this).addClass('bg-primary');
     })
 
+ //Selección de imagen de seguridad MODIFICAR
+      $('.card-seguridad-img').on('click', function (e) {
+        if ($(this).attr('data-action') == "modificar") {
+            seguridadImg = $(this).attr('data-img');
+        }
+        else {
+            seguridadImgActu = $(this).attr('data-img');
+        }
+        console.log($(this).attr('data-img'))
+        $('.card-seguridad-img').removeClass('bg-primary');
+        $(this).addClass('bg-primary');
+    })
 
  
 
@@ -609,6 +626,8 @@ if(!expCedula.test(cedula)){
             $(".errorApellido").attr("style", "color:green");
             rnapellido= true;
         }
+
+        return true;
 
  }
  

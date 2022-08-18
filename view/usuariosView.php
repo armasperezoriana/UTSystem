@@ -230,7 +230,7 @@
                             </div>
                             <div class="modal-body">
                                 <div style="width:100%">
-                                   
+
                                 </div>
                                 <br>
                                 <div class="contenedor" id="pasouno">
@@ -578,73 +578,72 @@
         </div>
     </div>
     <!-- MODALES -->
-       <!-- MODULo de AYUDA -->
+    <!-- MODULo de AYUDA -->
 
-       <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-        <style type="text/css">
-        .modal {
-            font-size: 0.8em;
-        }
-        </style>
-        <div class="modal fade" id="AyudaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true" style="padding:0;">
-            <div class="container">
-                <div class="modal-dialog">
-                    <div class="" role="document">
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <style type="text/css">
+    .modal {
+        font-size: 0.8em;
+    }
+    </style>
+    <div class="modal fade" id="AyudaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="padding:0;">
+        <div class="container">
+            <div class="modal-dialog">
+                <div class="" role="document">
+                    <div class="modal-content">
+
                         <div class="modal-content">
+                            <div class="modal-header bg-primary" style="color:#FFF">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <center>Módulo de ayuda</center>
+                                </h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
 
-                            <div class="modal-content">
-                                <div class="modal-header bg-primary" style="color:#FFF">
-                                    <h5 class="modal-title" id="exampleModalLabel">
-                                        <center>Módulo de ayuda</center>
-                                    </h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="col-sm-7" style='text-align:right;'>
+                                <span href="#" data-toggle="modal" data-target="#AyudaModal">
 
-                                <div class="col-sm-7" style='text-align:right;'>
-                                    <span href="#" data-toggle="modal" data-target="#AyudaModal">
+                                </span>
+                            </div>
 
-                                    </span>
-                                </div>
+                            <div class="modal-body">
+                                <p>
+                                    En este modulo podrá visualizar los usuarios que están registrados en el sistema
+                                    a su vez registrar, eliminar y modificar
+                                    <br><br>
+                                    1. Para eliminar un usuario seleccione "eliminar" situada a la derecha del
+                                    usuario
+                                    <br> <br>
+                                    2. Para modificar un usuario seleccione "modificar" situada a izquierda del
+                                    usuario
+                                    <br><br>
+                                    3. Para registrar un usuario seleccione "registrar" que se muestra en el lado
+                                    inferior derecho de la tabla
+                                    <br><br>
+                                    4. Para volver al menu principal presione "volver" situado en la parte inferior
+                                    derecha
+                                    <br><br>
+                                    5. Para cerrar esta ventana emergente y seguir con el sistema presione e
+                                    "cerrar"
+                                    <br><br>
+                                    6. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo
+                                    del dato que desea Buscar.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
 
-                                <div class="modal-body">
-                                    <p>
-                                        En este modulo podrá visualizar los usuarios que están registrados en el sistema
-                                        a su vez registrar, eliminar y modificar
-                                        <br><br>
-                                        1. Para eliminar un usuario seleccione "eliminar" situada a la derecha del
-                                        usuario
-                                        <br> <br>
-                                        2. Para modificar un usuario seleccione "modificar" situada a izquierda del
-                                        usuario
-                                        <br><br>
-                                        3. Para registrar un usuario seleccione "registrar" que se muestra en el lado
-                                        inferior derecho de la tabla
-                                        <br><br>
-                                        4. Para volver al menu principal presione "volver" situado en la parte inferior
-                                        derecha
-                                        <br><br>
-                                        5. Para cerrar esta ventana emergente y seguir con el sistema presione e
-                                        "cerrar"
-                                        <br><br>
-                                        6. Para hacer una busqueda dentro del modulo debe ingresar el nombre completo
-                                        del dato que desea Buscar.
-                                    </p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class=" btn btn-secondary" type="button"
-                                        data-dismiss="modal">Cancelar</button>
-
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <!-- MODAL DE MODIFICAR-->
     <div class="modal fade" id="ModificarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
@@ -663,7 +662,7 @@
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                           
+
                             <div class="col-sm-7" style='text-align:right;'>
                                 <span href="#" data-toggle="modal" data-target="ModificarUsuarioModal">
 
@@ -707,8 +706,8 @@
                                                 <div class="row">
                                                     <div class="form-group col-sm-12 col-md-12">
                                                         <label for="rol"><b>Rol</b></label>
-                                                        <select style="width: 100%;" class="form-control select2" disabled
-                                                            name="rol" id="rol">
+                                                        <select style="width: 100%;" class="form-control select2"
+                                                            disabled name="rol" id="rol">
                                                             <option></option>
                                                             <?php foreach ($roles as $rols) : ?>
                                                             <?php if (!empty($rols['id_rol'])) : ?>
@@ -717,7 +716,7 @@
                                                             <?php endif ?>
                                                             <?php endforeach ?>
                                                         </select>
-                                                       <!-- <span class="errorRoLM" style="color:red"></span>
+                                                        <!-- <span class="errorRoLM" style="color:red"></span>
                                                        --->
                                                     </div>
                                                 </div>
@@ -789,25 +788,25 @@
 
                                                                                                                 <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="registrar"
+                                                                                                                    data-action="modificar"
                                                                                                                     data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
                                                                                                             <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="registrar"
+                                                                                                                    data-action="modificar"
                                                                                                                     data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
                                                                                                             <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="registrar"
+                                                                                                                    data-action="modificar"
                                                                                                                     data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
                                                                                                             <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="registrar"
+                                                                                                                    data-action="modificar"
                                                                                                                     data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
@@ -816,107 +815,118 @@
                                                                                                         </tr>
 
                                                                                                     </table>
+
                                                                                                     <!--- PREGUNTA 1 --->
                                                                                                     <label
                                                                                                         for="pregunta"><b>Pregunta
                                                                                                             1:</b></label>
-                                                                                                            <div class="form-group col-sm-12 col-md-12">
-                                                                                                            <select class="form-control select2"
-                                                                                                        name="pregunta"
-                                                                                                        id="preguntauno">
-                                                                                                     
-                                                                                                        <option
-                                                                                                            value="">...
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Cuál era el nombre de tu mejor amigo?">
-                                                                                                            ¿Cuál era el
-                                                                                                            nombre
-                                                                                                            de tu mejor
-                                                                                                            amigo?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Cuál es tu color favorito?">
-                                                                                                            ¿Cuál es tu
-                                                                                                            color
-                                                                                                            favorito?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Cómo se llama tu perro?">
-                                                                                                            ¿Cómo se
-                                                                                                            llama tu
-                                                                                                            perro?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Donde estudiaste?">
-                                                                                                            ¿Donde
-                                                                                                            estudiaste?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Donde naciste?">
-                                                                                                            ¿Donde
-                                                                                                            naciste?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Cuál es tu apodo?">
-                                                                                                            ¿Cuál es tu
-                                                                                                            apodo?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Segundo nombre de tu padre?">
-                                                                                                            ¿Segundo
-                                                                                                            nombre de tu
-                                                                                                            padre?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Dulce favorito?">
-                                                                                                            ¿Dulce
-                                                                                                            Favorito?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Donde estudiaste?">
-                                                                                                            ¿Donde
-                                                                                                            estudiaste?
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="¿Gatos o perros?">
-                                                                                                            ¿Gatos o
-                                                                                                            perros?
-                                                                                                        </option>
-                                                                                                    </select>
+                                                                                                    <div
+                                                                                                        class="form-group col-sm-12 col-md-12">
+                                                                                                        <select
+                                                                                                            class="form-control select2"
+                                                                                                            name="pregunta"
+                                                                                                            id="preguntauno">
+
+                                                                                                            <option
+                                                                                                                value="">
+                                                                                                                ...
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Cuál era el nombre de tu mejor amigo?">
+                                                                                                                ¿Cuál
+                                                                                                                era el
+                                                                                                                nombre
+                                                                                                                de tu
+                                                                                                                mejor
+                                                                                                                amigo?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Cuál es tu color favorito?">
+                                                                                                                ¿Cuál es
+                                                                                                                tu
+                                                                                                                color
+                                                                                                                favorito?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Cómo se llama tu perro?">
+                                                                                                                ¿Cómo se
+                                                                                                                llama tu
+                                                                                                                perro?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Donde estudiaste?">
+                                                                                                                ¿Donde
+                                                                                                                estudiaste?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Donde naciste?">
+                                                                                                                ¿Donde
+                                                                                                                naciste?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Cuál es tu apodo?">
+                                                                                                                ¿Cuál es
+                                                                                                                tu
+                                                                                                                apodo?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Segundo nombre de tu padre?">
+                                                                                                                ¿Segundo
+                                                                                                                nombre
+                                                                                                                de tu
+                                                                                                                padre?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Dulce favorito?">
+                                                                                                                ¿Dulce
+                                                                                                                Favorito?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Donde estudiaste?">
+                                                                                                                ¿Donde
+                                                                                                                estudiaste?
+                                                                                                            </option>
+                                                                                                            <option
+                                                                                                                value="¿Gatos o perros?">
+                                                                                                                ¿Gatos o
+                                                                                                                perros?
+                                                                                                            </option>
+                                                                                                        </select>
+                                                                                                        <span
+                                                                                                            class="errorPreguntauno"
+                                                                                                            style="color:red"></span>
+                                                                                                    </div>
+
+                                                                                                    <label
+                                                                                                        for="respuesta"><b>Respuesta</b></label>
+                                                                                                    <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        name="respuestauno"
+                                                                                                        id="respuestauno">
                                                                                                     <span
-                                                                                                        class="errorPreguntauno"
+                                                                                                        class="errorrespuesta"
                                                                                                         style="color:red"></span>
                                                                                                 </div>
 
-                                                                                                <label
-                                                                                                    for="respuesta"><b>Respuesta</b></label>
-                                                                                                <input type="text"
-                                                                                                    class="form-control"
-                                                                                                    name="respuestauno"
-                                                                                                    id="respuestauno">
-                                                                                                <span
-                                                                                                    class="errorrespuesta"
-                                                                                                    style="color:red"></span>
                                                                                             </div>
-
                                                                                         </div>
+
                                                                                     </div>
-
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="modal-footer">
-
-                                                                                <!--ESTE BOTON ENVIA TODO!--->
                                                                                 <div class="modal-footer">
-                                                                                    <button class=" btn btn-secondary"
-                                                                                        type="button"
-                                                                                        data-dismiss="modal">Cancelar</button>
-                                                                                    <a class="ModificarUsuarios btn btn-primary"
-                                                                                        href="#">Agregar</a>
-                                                                                </div>
-                                                                            </div>
 
+                                                                                    <!--ESTE BOTON ENVIA TODO!--->
+                                                                                    <div class="modal-footer">
+                                                                                        <button
+                                                                                            class=" btn btn-secondary"
+                                                                                            type="button"
+                                                                                            data-dismiss="modal">Cancelar</button>
+                                                                                        <a class="ModificarUsuarios btn btn-primary"
+                                                                                            href="#">Agregar</a>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -925,7 +935,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
         </form>
     </div>
 

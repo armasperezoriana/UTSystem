@@ -85,8 +85,21 @@
 		}
 
     public function Modificar(){
+      $id=0;
 			try {
-				$query = parent::prepare("UPDATE seguridad_preguntas SET id_s_pregunta = '$this->id_s_pregunta', preguntauno = '$this->preguntauno', respuestauno = '$this->respuestauno', img ='$this->img', img_encriptada ='$this->img_encriptada')");
+				$query = parent::prepare('SELECT MAX(id_s_pregunta) as max FROM seguridad_preguntas WHERE id_s_pregunta');
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$result = $query->fetchAll(parent::FETCH_ASSOC); 
+				foreach($result as $row){
+					if(!empty($row['max'])){
+						$id = $row['max']+1;
+					}else{
+						$id++;
+					}
+				}
+        $query = parent::prepare("UPDATE seguridad_preguntas SET preguntauno = '$this->preguntauno', respuestauno = '$this->respuestauno', 
+        img = '$this->img', img_encriptada = '$this->img_encriptada'  WHERE id_usuario = '$this->id_usuario'");
         $respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

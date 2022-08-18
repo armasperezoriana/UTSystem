@@ -228,8 +228,10 @@ class usuariosController
 			$this->usuario->setCorreo($correo);		
 			$execute = $this->usuario->Modificar();
 			if ($execute['ejecucion'] == true) {
-			//	$usu = $this->usuario->ObtenerUsuario($username);
-						//$id = $usu['resultado']['id_usuario'];
+				$usu = $this->usuario->ObtenerUsuario($username);
+						$id = $usu['resultado']['id_usuario'];
+						$usu = $this->usuario->ObtenerUsuario($username);
+						$id = $usu['resultado']['id_usuario'];
 						$respuestauno = $_POST['respuestauno'];
 						$preguntauno = $_POST['preguntauno'];
 						$img = $_POST['img'];
@@ -238,7 +240,9 @@ class usuariosController
 						$this->esteganografia->setRespuestaUno($respuestauno);
 						$this->esteganografia->setImg($img);
 						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
+						//$this->esteganografia->setImgEncriptada($ImgEncriptada);
 						$this->esteganografia->setIdUsuario($id);
+						//$execute = $this->esteganografia->Agregar();
 						$execute = $this->esteganografia->Modificar();
 				echo '1';
 
