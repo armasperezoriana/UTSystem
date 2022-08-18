@@ -228,8 +228,18 @@ class usuariosController
 			$this->usuario->setCorreo($correo);		
 			$execute = $this->usuario->Modificar();
 			if ($execute['ejecucion'] == true) {
-				$usu = $this->usuario->ObtenerUsuario($username);
-					
+			//	$usu = $this->usuario->ObtenerUsuario($username);
+						//$id = $usu['resultado']['id_usuario'];
+						$respuestauno = $_POST['respuestauno'];
+						$preguntauno = $_POST['preguntauno'];
+						$img = $_POST['img'];
+						$img_encriptada = $this->cifrarEnImagen($respuestauno, $img, $id);
+						$this->esteganografia->setPreguntaUno($preguntauno);
+						$this->esteganografia->setRespuestaUno($respuestauno);
+						$this->esteganografia->setImg($img);
+						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
+						$this->esteganografia->setIdUsuario($id);
+						$execute = $this->esteganografia->Modificar();
 				echo '1';
 
 			} else {

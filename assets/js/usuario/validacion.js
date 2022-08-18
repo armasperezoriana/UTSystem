@@ -91,7 +91,7 @@ $(document).ready(function() {
 
     $(".ModificarUsuarios").click(function() {
         var seguridadImg = "";
-      var valido = validarM(true);
+     var valido = validarM(true);
       var validarS = validarSeguridadM();
         if (validarM == true && validarS==true ) {
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
@@ -143,7 +143,7 @@ $(document).ready(function() {
                        
                         },
                         success: function(respuesta) {
-                           
+                           console.log(respuesta);
                             if (respuesta == "1") {
                                 console.log(respuesta);
                                 swal.fire({
@@ -188,10 +188,13 @@ $(document).ready(function() {
         else {
             seguridadImgActu = $(this).attr('data-img');
         }
-        console.log($(this).attr('data-img'))
+       // console.log($(this).attr('data-img'))
         $('.card-seguridad-img').removeClass('bg-primary');
         $(this).addClass('bg-primary');
     })
+
+
+ 
 
     function validarSeguridad(modificar = false){
         var form = "";
@@ -261,7 +264,7 @@ $(document).ready(function() {
          var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
        
     
-        if(respuesta==""|pregunta==""|seguridadImg==""){
+        if(respuesta==""|pregunta==""){
                 swal.fire({
                     type: 'warning',
                     title: 'Seleccione una imagen de seguridad',

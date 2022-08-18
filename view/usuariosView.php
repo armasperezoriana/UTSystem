@@ -645,7 +645,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     <!-- MODAL DE MODIFICAR-->
     <div class="modal fade" id="ModificarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
 " style="padding:0;">
