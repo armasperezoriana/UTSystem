@@ -53,11 +53,16 @@
 		}
 		public function buscarCorreo($correo){
 			try {
-				$query = parent::prepare("SELECT * FROM usuarios WHERE usuario = '$username' AND correo = '$correo' LIMIT 1");
+				$query = parent::prepare("SELECT * FROM usuarios WHERE correo = '$correo' LIMIT 1");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+				$res = $query->fetchAll(parent::FETCH_ASSOC); 
+				$correo = [];
+				foreach($res as $p){
+					array_push($correo, $p['correo']);
+				}
+				$respuestaArreglo = ['resultado' => $correo];
 				$respuestaArreglo += ['ejecucion' => true];
 				return $respuestaArreglo;
 			} catch (PDOException $e) {
@@ -92,7 +97,7 @@
 
 		public function ObtenerOne($id){
 			try {
-				$query = parent::prepare("SELECT * FROM usuarios WHERE id_usuario = $id");
+				$query = parent::prepare("SELECT * FROM usuarios WHERE id_usuario = '$id'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -104,9 +109,27 @@
 				return $errorReturn;
 			}
 		}
+
+
 		public function ObtenerUsuario($usuario){
 			try {
 				$query = parent::prepare("SELECT * FROM usuarios WHERE usuario = '$usuario' LIMIT 1");
+				$respuestaArreglo = '';
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = ['resultado' => $query->fetch(parent::FETCH_ASSOC)];
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+		public function BuscarDatos(){
+			try {
+				$query = parent::prepare("SELECT  usuario, correo FROM usuarios WHERE id_usuario = '$this->id_usuario' LIMIT 1");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -267,38 +290,10 @@
 		}
 
 
-		public function AgregarNewPass(){
-			$id= 0;
-			try {
-				$query = parent::prepare('SELECT MAX(id_usuario) as max FROM usuarios');
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$result = $query->fetchAll(parent::FETCH_ASSOC); 
-				foreach($result as $row){
-					if(!empty($row['max'])){
-						$id = $row['max']+1;
-					}else{
-						$id++;
-					}
-				}
-				$query = parent::prepare("UPDATE usuarios SET contrasena = '$this->password' WHERE id_usuario = $this->id_usuario)");
-				$respuestaArreglo = '';
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = ['resultado' => $query->fetchAll(parent::FETCH_ASSOC)];
-				$respuestaArreglo += ['ejecucion' => true];
-				return $respuestaArreglo;
-			} catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-
 		public function ModificarPassword(){
 			try{
 				$query = parent::prepare("UPDATE usuarios SET  usuario = '$this->username', contrasena = '$this->password'
-					WHERE id_usuario = $this->id_usuario");
+					WHERE id_usuario = '$this->id_usuario'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -317,7 +312,7 @@
 			try{
 				$query = parent::prepare("UPDATE usuarios SET cedula = '$this->cedula', usuario = '$this->username', 
 					nombre = '$this->nombre', apellido = '$this->apellido', contrasena = '$this->password', rol = '$this->rol', correo = '$this->correo'
-					WHERE id_usuario = $this->id_usuario");
+					WHERE id_usuario = '$this->id_usuario'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -374,6 +369,37 @@
 				$errorReturn = ['ejecucion' => false];
 				$errorReturn += ['info' => "error sql:{$e}"];
 				return $errorReturn;
+			}
+		}
+		public function CambiarPassword(){
+
+			$method = $_SERVER['REQUEST_METHOD'];
+			if ($method != 'POST') {
+				http_response_code(404);
+				return false;
+			}
+			if (!empty($_POST['correo'])) {
+				$correo = $_POST['correo'];
+				//$pass = $_POST['pass'];
+	
+				//$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+				
+				//$this->usuario->setPassword($pass);
+				$this->usuario->setCorreo($correo);		
+				//$this->usuario->setUsername($username);
+	
+				$execute = $this->login->ModificarPassword();
+				if ($execute['ejecucion'] == true) {
+					$usu = $this->usuario->ObtenerUsuario($username);
+							$id = $usu['resultado']['id_usuario'];
+							$usu = $this->usuario->ObtenerUsuario($username);
+							$id = $usu['resultado']['id_usuario'];
+							$pass = $_POST['pass'];
+							$execute = $this->usuario->Modificar();
+							echo '1';
+				} else {
+					echo "2";
+				}
 			}
 		}
 

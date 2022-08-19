@@ -39,19 +39,6 @@ class loginController
 	}
 
 
-	public function OlvidoClave(){
-
-		if(empty($_SESSION['ut_usuario'])){
-			echo ("Vamos a recuperar el usuario");
-		require_once("view/recuperarUsuarioView.php");
-
-		}else{
-
-		require_once("view/loginView.php");
-	
-		}
-
-	}
 
 
 	public function IniciarSesion()
@@ -59,10 +46,6 @@ class loginController
 		if (!empty($_POST['username']) || !empty($_POST['pass'])) {
 			$username = $_POST['username'];
 			$pass= $_POST['pass'];
-			// $pass = $this->usuario->encriptarS($_POST['pass']);
-			//$pass = password_verify(PASSWORD_BCRYPT,$pass);
-
-
 			 $this->usuario->setPassword($pass);
 			//Agregar un Consultar para ver si existe el registro; 
 			$result = $this->usuario->ObtenerUsuario($username);
@@ -108,60 +91,67 @@ class loginController
 			}
 		}
 	}
+	public function CambiarPassword(){
 
-	
-	public function recuperarClave()
-	{
-		if (!empty($_POST['username']) || !empty($_POST['correo'])) {
-			$username = $_POST['username'];
-			$correo= $_POST['correo'];
-			
-			 $this->usuario->setCorreoPassword($correo);
-			$result = $this->usuario->ObtenerUsuario($username);
-			
-			if ($result['ejecucion'] == true) {
-				$res = $result['resultado'];
-				if ($res) {
-					if($result==true){
-					$correo = $this->usuario->buscarCorreo($correo);
-					//$execute = $this->usuario->Recuperar();
-						echo json_encode([
-							'tipo' => 'success', 'mensaje' => 'Datos verficados'
-						]); 
+		$method = $_SERVER['REQUEST_METHOD'];
+		if ($method != 'POST') {
+			http_response_code(404);
+			return false;
+		}
+		if (!empty($_POST['correo'])) {
+			$correo = $_POST['correo'];
+			//$usuario = $_POST['usuario'];
+			//$id = $_POST['id_usuario'];
+		
+			$this->usuario->setCorreo($correo);		
+			//$this->usuario->setUsername($usuario);
+			//$this->usuario->setId($id);
+			$execute = $this->usuario->buscarCorreo($correo);
+			if ($execute['ejecucion'] == true) {
+						echo '1';
+						
+						} else {
+							
+						echo "2";
+					}
+		}
+	}
 
-						$res = true;
-					}
-					else{
-						echo json_encode([
-							'titulo' => '¡Ha ocurrido un error!',
-							'mensaje' => 'Los datos no existen en el resgistro',
-							'tipo' => 'error',
-						]);
-						$res = true;
-					}
-				} else {
-					echo json_encode([
-						'titulo' => '¡Usuario incorrecto!',
-						'mensaje' => 'Por favor verifique el usuario',
-						'tipo' => 'error',
-					]);
-				}
-			} else {
-				echo json_encode([
-					'titulo' => '¡Error! Usuario o correo invalidos',
-					'mensaje' => 'Intente nuevamente',
-					'tipo' => 'error',
-				]);
-			}
+public function codigoAleatori(){
+$caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
+//$logitud ='10';
+for ($i =0; $i<7; $i++ ){
+echo substr(($caracteres), rand (0,65), 1);
 	}
 }
-
 public function mailReset(){
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
 require 'vendor/autoload.php';
+
+$longitud ='7';
+$caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
+$miclave = substr(($caracteres), rand (0,65), $longitud);
+$clave = $miclave;
+
+$correo = trim($_REQUEST['correo']);
+$consulta = ("SELECT * FROM usuarios WHERE correo = '$correo' LIMIT 1");
+$queryConsulta   = mysqli_query($con, $consulta);
+$cantidadConsulta   = mysqli_num_rows($queryConsulta);
+$queryResult      = mysqli_fetch_array($queryConsulta);
+
+if($cantidadConsulta == 0){
+	echo 'Los datos no coinciden con los registrados en el sistema. </br>';
+        echo 'Intente nuevamente';
+		exit();
+}else{
+
+	$updateClave = ("UPDATE usuarios SET contrasena = '.$clave.' WHERE correo ='.$correo.'");
+	echo    mysqli_query($con, $updateClave);
+
+}
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -173,27 +163,49 @@ try {
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'armasoriana98@gmail.com';                     //SMTP username
-    $mail->Password   = 'santiagorafael01.';                               //SMTP password
+    $mail->Password   = 'tljsgfwvgglekuwl';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('armasoriana98@gmail.com', 'Mailer');
-    $mail->addAddress('armasoriana98@gmail.com', 'Oriana');     //a quien se le va enviar
+    $mail->setFrom('armasoriana98@gmail.com', 'SISTEMA UT');
+    $mail->addAddress('armasoriana98@gmail.com', 'Usuario ');     //a quien se le va enviar
     
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Restablecer password SISTEMA UT';
-    $mail->Body    = 'Correo de prueba <b>in bold!</b>';
+    $mail->Body    = '<b>SISTEMA UNIDAD DE TRANSPORTE-RECUPERACIÓN DE USUARIO</b>
+		<center>Correo automático de recuperación</center>
+	Si solicitaste la recuperación de acceso para tu usuario, usa el codigo que aparece a 
+                    continuación 
+					<b>Nueva clave:.'.$clave.'</b>
+					para completar el proceso. Esta es una clave temporal y te recomendamos modificarla al ingresar al sistema.<br>
+					Si no solicitaste esto, puedes ignorar este correo. <br>
+                   <br>';
+	
 
-    $mail->send();
-    echo 'Mensaje enviado correctamente';
+   // $mail->send();
+    echo 'Correo enviado.';
+	require_once("view/recuperarUsuarioView.php");
+	
 } catch (Exception $e) {
     echo "Message no pudo enviarse. Error: {$mail->ErrorInfo}";
 }
 }
 
 
+public function OlvidoClave(){
+
+	if(empty($_SESSION['ut_usuario'])){
+	require_once("view/recuperarUsuarioView.php");
+	//echo mailReset();	
+	}else{
+
+	require_once("view/loginView.php");
+
+	}
+
+}
 	public function Iniciar($username, $pass)
 	{
 

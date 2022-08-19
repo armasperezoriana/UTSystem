@@ -76,7 +76,7 @@ $(document).ready(function() {
                                 swal.fire({
                                     type: 'warning',
                                     title: 'Datos repetidos',
-                                    text: 'Cédula y/o correo ya existen',
+                                    text: 'Cédula, correo y/o nombre de usuario ya existen',
                                 });
                             }
                         }
@@ -168,7 +168,7 @@ $(document).ready(function() {
                                 swal.fire({
                                     type: 'warning',
                                     title: 'Datos repetidos',
-                                    text: 'Vuelva a intentar',
+                                    text: 'Cédula, correo y/o nombre de usuario ya existen',
                                 });
                             }
                         }

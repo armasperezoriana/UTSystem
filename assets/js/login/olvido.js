@@ -10,8 +10,9 @@ $(document).ready(function() {
           contentType: false,
           processData: false,
           success: function (response) {
+            console.log("paso");
             let res = JSON.parse(response);
-            if (res.tipo == 'danger') {
+            if (res.tipo == 'success') {
               window.location.reload();
             }
             else {

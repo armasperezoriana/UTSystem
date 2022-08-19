@@ -78,8 +78,8 @@ $(document).ready(function () {
     $(".EnviarMantenimientoModificar").click(function() {
         var id = $(this).attr("id");
         var valido = validar(true, id);
-        var validarS = validarSeguridad();
-       if (valido == true && validarS) {
+       // var validarS = validarSeguridad();
+       if (valido == true) {
 
             var nombre = $("#ModificarMantenimientoModal"+id).find("#nombre").val();
             var intervalo = $("#ModificarMantenimientoModal"+id).find("#intervalo").val();
@@ -304,53 +304,6 @@ $(document).ready(function () {
       }
     }
     
-    function validarSeguridad(modificar=true){
-        
-        Swal.fire({
-            title: 'Confirme la acción',
-            input: 'password',
-            inputPlaceholder: 'Contraseña',
-            inputAttributes: {
-                autocapitalize: 'off'
-            },
-            showCancelButton: true,
-            confirmButtonText: 'Confirmar',
-            cancelButtonText: 'Cancelar',
-            showLoaderOnConfirm: true,
-            preConfirm: (login) => {
-                Toast.fire({
-                    title: 'Espere!',
-                    html: 'Los datos están siendo procesados',// add html attribute if you want or remove
-                    allowOutsideClick: false,
-                    onBeforeOpen: () => {
-                        Swal.showLoading()
-                    },
-                });
-                $.ajax({
-                    type: "POST",
-                    url: "Usuarios/verificarPassword",
-                    data: { 'password': login },
-                    success: function (response) {
-                        console.log(response);
-                        if (response.success) {
-                            respaldar();
-                        }
-                        else {
-                            Swal.fire(
-                                "Incorrecto!",
-                                "Contraseña incorrecta",
-                                "warning"
-                            );
-                            $('#respaldar').click();
-                            Swal.showValidationMessage(
-                                `Contraseña Incorrecta`
-                            )
-                        }
-                    },
-                )};
-        }
-        )
-    }
 
      $('.editar').click(function(e){
         console.log("1");

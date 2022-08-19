@@ -37,8 +37,6 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
 </head>
 <body class="bg-gradient-primary" style="display:flex;background-image: url(<?php echo _ROUTE_ ?>/assets/img/fondoUT.jpg);background-size: cover;">
    <div class="container" style="margin-top:auto;margin-bottom:auto">
-
-        
         <div class="row justify-content-center" >
 
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -103,21 +101,18 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">
                                         ¿Olvidaste tu clave?</h1>
-                                          <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos algunos datos</p>
+                                          <p class="mb-4">Restauremos tu cuenta!. Para eso necesitaremos ingreses el correo que registraste en el sistema</p>
                                     </div>
                                     <form class="recuperar" id="recuperar">
+                                    <input type="hidden" id="id_usuario" name="id_usuario">
                                         <div class="form-group">
-                                            <label>Ingresa tu usuario</label>
-                                          <input type="text" class="form-control form-control-user" required
-                                                id="username" aria-describedby="emailHelp"
-                                                placeholder="Ingresa tu usuario asociado a tu cuenta..">
-                                                <br>
-                                                <br>
-                                                <input type="text" class="form-control form-control-email" required
+                            
+                                               
+                                                <input type="email" class="form-control form-control-email" required
                                                 id="correo" aria-describedby="emailHelp"
                                                 placeholder="Ingresa el correo asociado a tu cuenta..">
                                                 <br>
-                                                <button class="btn btn-secondary btn-user btn-block">
+                                                <button class="btn btn-secondary btn-user btn-block" type="submit">
                                             Recuperar
                                         </button>
 
@@ -148,7 +143,7 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
    <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
  <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
 
- <script type="text/javascript" src="'../../assets/js/login/olvido.js"></script>
+ <script type="text/javascript" src="'../../assets/js/login/recuperar.js"></script>
 
 </body>
 

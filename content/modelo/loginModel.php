@@ -8,25 +8,14 @@
 	class loginModel extends database{
 
 		private $con;
-		private $username;
-		private $correo;
+		public $usuario;
+		public $correo;
 		private $pass;
 
 		public function __construct(){
 			$this->con = parent::__construct();
 		}
 
-
-public function Recuperar(){
-	try {
-        $query = parent::prepare('SELECT * FROM usuarios WHERE usuario = :usuario AND correo = :correo AND status = 1');
-        $query->execute(['username' => $usuario, 'correo' => $correo]);
-
-        return $query->rowCount();
-      } catch(PDOException $e) {
-        return false;
-      }
-    }
 
 			public function ConsultarIniciar(){
 		try{
@@ -87,6 +76,39 @@ public function Recuperar(){
 				return $errorReturn;
 		}
 
+	}
+
+	public function CambiarPassword(){
+
+		$method = $_SERVER['REQUEST_METHOD'];
+		if ($method != 'POST') {
+			http_response_code(404);
+			return false;
+		}
+		if (!empty($_POST['correo'])) {
+			$correo = $_POST['correo'];
+			//$pass = $_POST['pass'];
+
+			//$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+			
+			//$this->usuario->setPassword($pass);
+			$this->usuario->setCorreo($correo);		
+	
+			//$this->usuario->setUsername($username);
+
+			$execute = $this->login->ModificarPassword();
+			if ($execute['ejecucion'] == true) {
+				$usu = $this->usuario->ObtenerUsuario($username);
+						$id = $usu['resultado']['id_usuario'];
+					//	$usu = $this->usuario->ObtenerUsuario($username);
+					//	$id = $usu['resultado']['id_usuario'];
+					//	$pass = $_POST['pass'];
+						//$execute = $this->usuario->Modificar();
+						echo '1';
+			} else {
+				echo "2";
+			}
+		}
 	}
 
 	}
