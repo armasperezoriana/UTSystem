@@ -280,26 +280,22 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <label for="pass1"><b>Contraseña</b></label>
-                                            <input type="password" class="form-control" name="pass1" id="pass1"
-                                                placeholder="Ingrese su contraseña" required>
-                                            <span class="errorPass1" style="color:red"></span>
-                                            <div class="input-group-append">
-                                                <center>
-                                                    <button id="show_password" class="btn btn-primary" type="button"
-                                                        onclick="mostrarPassword()"> <span
-                                                            class="fa fa-eye-slash icon password"></span> </button>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <label for="pass2"><b>Repite la Contraseña</b></label>
-                                            <input type="password" class="form-control" name="pass2" id="pass2"
-                                                placeholder="Repite tu clave" required>
-                                            <span class="errorPass2" style="color:red"></span>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="pass1"><b>Contraseña</b></label>
+                                        <input type="password" class="form-control" name="pass1" id="pass1" placeholder="Ingrese su contraseña"  required>
+                                        <span class="errorPass1" style="color:red"></span>
+                                        <div class="input-group-append">
+                                            <center>
+                                                <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon password"></span> </button>
+                                            </center>
                                         </div>
                                     </div>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="pass2"><b>Repite la Contraseña</b></label>
+                                        <input type="password" class="form-control" name="pass2" id="pass2" placeholder="Repite tu clave" required>
+                                        <span class="errorPass2" style="color:red"></span>
+                                    </div>
+                                </div>
                                     <div class="row">
                                         <div class="form-group col-sm-12 col-md-12">
                                             <label for="correo"><b>Correo</b></label>

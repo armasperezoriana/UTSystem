@@ -5,27 +5,35 @@
 
 	/* Definimos las constantes que usaremos */
 	
-	define("_ROUTE_" , "/systemUT/");					/* direccion del proyecto */
-	define("_THEME_" , "/systemUT/assets");			/* Direccion de recursos y estilos */
-	define("_INDEX_FILE_" , "/systemUT/index.php");	/* direccion del archivo index */
+	define("_ROUTE_" , "/dashboard/systemUT/");					/* direccion del proyecto */
+	define("_THEME_" , "/dashboard/systemUT/assets");			/* Direccion de recursos y estilos */
+	define("_INDEX_FILE_" , "/dashboard/systemUT/index.php");	/* direccion del archivo index */
 
 	define('_DIRECTORY_', 'content/controllers/'); 					/* Direccion de controladores */
 	define("_MODEL_" , "content/modelo/");							/* direccion de los modelos */
 	define("_CONTROLLER_" , "Controller.php");						/* complemento para la llamada de controladores */
 	
-	define("_DB_SERVER_" , "ftpupload.net");					/* nombre del servidor */
+	define("_DB_SERVER_" , "http://localhost/");					/* nombre del servidor */
 
 	define('_DB_MANAGER_', 	'mysql');						        /* manejador de base de datos */
-	define("_DB_WEB_" , "id16202188_utsystem");								/* nombre de la base de datos */
-	define('_HOST_', 		'localhost');							/* nombre del host */
+	define("_DB_WEB_" , "b17_32333882_ut");								/* nombre de la base de datos */
+	define('_HOST_', 		'ftp.byethost17.com');							/* nombre del host */
 	define("_DB_USER_", "b17_32333882");									/* nombre del usuario de la BD */
 	define("_DB_PASS_", "oriana2022");										/* contraseña de la base de datos  */
-	define("_COMPLEMENT_" , "/systemUT/view/assets/");					/* direccion del proyecto */
+	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
 
-	define("_REPORTS_" , "/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
+	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
+	define("_IMG_SEGURIDAD_" , "/dashboard/systemUT/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
 		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
+		define("_DIR_" , "/dashboard/systemUT/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
-
+   
+	/* Imagenes de seguridad */		
+	const SECURITY_IMGS =  [
+		'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 
+		'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png', 'ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png'
+	];
+	
 	/* clase con el nombre config  */
 	class sysConfig{
 

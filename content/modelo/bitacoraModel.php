@@ -27,6 +27,16 @@
 			}
 		}
 
+		
+    // RESPALDO DE LA BASE DE DATOS
+   // public function index(){
+     
+  //      if ($_SESSION['rol']!=1) {
+  //          header("Location: ".ROOT);
+  //          return false;
+  //      }
+    //    return View::getView('Respaldo.index');
+   // }
 
 	}
 

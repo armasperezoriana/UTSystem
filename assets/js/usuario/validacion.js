@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".EnviarUsuariosRegistrar").click(function() {
@@ -94,9 +95,9 @@ $(document).ready(function() {
     });
   var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
     $(".ModificarUsuarios").click(function() {
-   //  var valido = validarM();
+    var valido = validarM();
       var validarS = validarSeguridadM();
-        if (validarS == true ) {
+        if (validarS == true && valido == true) {
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
             var nombre = $("#modificarUsuario").find("#nombre").val();
             var apellido = $("#modificarUsuario").find("#apellido").val();
@@ -105,13 +106,11 @@ $(document).ready(function() {
             var rol = $("#modificarUsuario").find("#rol").val();
             var pass = $("#modificarUsuario").find("#pass1").val();
             var correo = $("#modificarUsuario").find("#correo").val();
-    
-                           
             if(seguridadImg == ""){
                 swal.fire({
                     type: 'warning',
                     title: 'Seleccione una imagen de seguridad',
-                    text: 'Datos de seguridad obligatorios',
+                    text: 'Imagen obligatoria para modificar',
                 });
                 return 0;
             }
@@ -150,7 +149,7 @@ $(document).ready(function() {
                         success: function(respuesta) {
                           // console.log(respuesta);
                             if (respuesta == "1") {
-                               // console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+                         console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
@@ -281,11 +280,11 @@ $(document).ready(function() {
          var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
        
     
-        if(respuesta==""|pregunta==""){
+        if(respuesta==""|pregunta==""|seguridadImg == ""){
                 swal.fire({
                     type: 'warning',
                     title: 'Seleccione una imagen de seguridad',
-                    text: 'Imagen y pregunta obligatoria',
+                    text: 'Imagen, pregunta y respuesta obligatorias',
                 });
        
             $(".errorRespuesta").html("Debe responder la pregunta");
@@ -480,8 +479,8 @@ if(!expCedula.test(cedula)){
                rpass = false;
                return false;
     } else {
-            $(".errorpass").html("Contraseña valida");
-             $(".errorpass").attr("style", "color:green");
+            $(".errorPass").html("Contraseña valida");
+             $(".errorPass").attr("style", "color:green");
            rpass = true;
         }if(!expCorreo.test(correo)){
             $(".errorCorreo").html("El formato del correo no es valida");
@@ -507,10 +506,8 @@ if(!expCedula.test(cedula)){
 }
 
 function validarM(modificar = true) {
-   
         form = "#modificarUsuario";
-
-
+    
    var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
     var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,20}$/;
     var expCedula =/^\d{7,14}$/;
@@ -518,7 +515,6 @@ function validarM(modificar = true) {
     var expPass = /^.{6,12}$/;
     var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
 
-        form = "#modificarUsuario";
     
     var nombre = $(form).find("#nombre").val();
     var rnombre = false;
@@ -617,17 +613,7 @@ if(!expCedula.test(cedula)){
             $(".errorCorreoM").attr("style", "color:green");
            rcorreo = true;
         }
-        if(nombre !==""){
-            $(".errorNombre").html("Campo validado");
-            $(".errorNombre").attr("style", "color:green");
-            rnombre= true;
-        }if(apellido!==""){
-            $(".errorApellido").html("Campo validado");
-            $(".errorApellido").attr("style", "color:green");
-            rnapellido= true;
-        }
-
-        return true;
+ return true;
 
  }
  

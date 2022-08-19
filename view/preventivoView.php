@@ -768,11 +768,6 @@
 
 
 </body>
+<script type="text/javascript" src="'../../assets/js/seguridad/modalseguridad.js"></script>
 <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js"></script>
-<script>
-$(document).ready(function() {
-    $('id_taller').select2();
-});
-</script>
-
 </html>

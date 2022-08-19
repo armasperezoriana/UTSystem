@@ -100,13 +100,16 @@ if (in_array('chofer', $_SESSION['ut_permisos']))
 			$cedula=$_POST['cedula'];
 			$telefono = $_POST['telefono'];
 			$placa = $_POST['placa'];
-
+			//$telefono = (md5($_POST['telefono']));
 			$this->chofer->setIdChofer($idChofer);
 			$this->chofer->setNombre($nombre);
 			$this->chofer->setApellido($apellido);
 			$this->chofer->setCedula($cedula);
 			$this->chofer->setTelefono($telefono);
 			$this->chofer->setPlaca($placa);
+
+	
+
 			$execute = $this->chofer->Modificar();
 			// //Codigo de bitacora sobre Agregar Usuario
 			if($execute['ejecucion']==true){
