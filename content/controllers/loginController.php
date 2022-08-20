@@ -15,6 +15,8 @@ class loginController
 {
 	use Utility;
 	private $url;
+	private $login;
+
 	function __construct($url)
 	{
 		$this->url = $url;
@@ -135,46 +137,16 @@ class loginController
 			$this->usuario->setCorreo($correo);		
 		
 			$execute = $this->usuario->buscarCorreo($correo);
-			if ($execute['ejecucion'] == true) {
-						echo '1';
+			if ($execute['ejecucion'] == false) {
+						echo '2';
 						
 						} else {
 						
-						echo "2";
+						echo "1";
 					}
 		}
 	}
 
-	public function CambiarP($param){
-
-		$token = $this->encriptar($param);
-	
-		if($token == $_SESSION['RC']['token']){
-			$objModel = new loginModel;
-		$_css = new headElement;
-		$_css->Heading();
-
-		$url = $this->url;
-		echo "1";
-		require_once("view/recuperarView.php");
-		}
-		else{
-			if($_POST){
-				if(isset($_POST['recuperar']) && isset ($_POST['pass']))
-				{
-				$exec = $this->login->recuperarPass($_SESSION['RC']['correo'], $_POST['pass']);
-				//$exec = $this->login->recuperarPass($_POST['pass']);
-				//echo json_enconde($exec);
-				echo "2";
-			}
-			else{
-				echo "3";
-				//require_once("view/error404.php");
-			}
-		}
-
-	}
-}
 
 public function codigoAleatorio(){
 $caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
@@ -182,6 +154,22 @@ $caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-
 for ($i =0; $i<7; $i++ ){
 echo substr(($caracteres), rand (0,65), 1);
 	}
+}
+
+public function emailValidation(){
+	//header('Content-Type: application/json; charset=utf-8');
+	$correo = isset($_REQUEST['correo']) ? $_REQUEST['correo'] : null;
+	$response =	$this->login->buscarCorreo($correo);
+	// var_dump($response);
+	if(!empty($response)){
+		http_response_code(200);	
+		
+	}else{
+
+		http_response_code(404);
+	}
+
+
 }
 
 
@@ -198,31 +186,20 @@ $caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-
 $miclave = substr(($caracteres), rand (0,65), $longitud);
 $clave = $miclave;
 
-//unset($_SESSION['RC']);
-//$this->usuario->setCorreo($this->encriptar(strtoupper($this->limpiaCadena($_POST['correo']))));
-//$response = $this->usuario->ObtenerId($this->usuario);
 
-//if ($response) {
-	//$usuario = $this->usuario->getId('usuarios', $response->id);
-	//$usuario->correo = $this->desencriptar($usuario->correo);
-	//$usuario->img = $this->desencriptar($usuario->seguridad_img);
-	//$usuario->respuesta = $this->desencriptar($usuario->seguridad_respuesta);
-	//$token = bin2hex(random_bytes(10));
+$correo = isset($_REQUEST['correo']) ? $_REQUEST['correo'] : null;
+echo $correo;
 
-$correo = trim($_REQUEST['correo']);
-$consulta = ("SELECT * FROM usuarios WHERE correo = '$correo' LIMIT 1");
-$queryConsulta   = mysqli_query($con, $consulta);
-$cantidadConsulta   = mysqli_num_rows($queryConsulta);
-$queryResult      = mysqli_fetch_array($queryConsulta);
-
-if($cantidadConsulta == 0){
+$cantidadConsulta   = ("SELECT * FROM usuarios WHERE correo = '.$correo.' LIMIT 1");
+ var_dump($cantidadConsulta);
+if($cantidadConsulta ==0){
+	$updateClave = ("UPDATE usuarios SET contrasena = '.$clave.' WHERE correo = correo");
+	
+}else{
 	echo 'Los datos no coinciden con los registrados en el sistema. </br>';
         echo 'Intente nuevamente';
 		exit();
-}else{
-
-	$updateClave = ("UPDATE usuarios SET contrasena = '.$clave.' WHERE correo ='.$correo.'");
-	echo    mysqli_query($con, $updateClave);
+	
 
 }
 
@@ -273,7 +250,6 @@ public function OlvidoClave(){
 
 	if(empty($_SESSION['ut_usuario'])){
 	require_once("view/recuperarUsuarioView.php");
-	//echo mailReset();	
 	}else{
 
 	require_once("view/loginView.php");

@@ -3,7 +3,8 @@
 	namespace content\modelo;
 
 	use content\config\conection\database as database;
-use content\traits\Utility;
+	use content\traits\Utility;
+	use Exception;
 
 	class loginModel extends database{
 
@@ -34,28 +35,8 @@ use content\traits\Utility;
 				return $errorReturn;
 			}
 		}
-		public function recuperarPass($usuario,$pass){
-			try{
-				//encriptar la clave QUE SE MODIFICARA
-				$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
-			
-					$sql= "UPDATE usuarios  SET contrasena =  '{$this->pass}' WHERE status = 1 AND usuario = '{$this->usuario}' AND cedula = '{$this->cedula}'";
-					$query = parent::prepare($sql);
-					$respuestaArreglo = '';
-					$query->execute();
-					$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-					$respuestaArreglo += ['ejecucion' => true];
-					return $respuestaArreglo;
-				} catch (PDOException $e) {
-					$errorReturn = ['ejecucion' => false];
-					$errorReturn += ['info' => "error sql:{$e}"];
-					return $errorReturn;
-				}
-			}
 
-
-
-		function usuarioExiste ( $usuario, $contrasena ) {
+	function usuarioExiste ( $usuario, $contrasena ) {
 
       try {
         $query = parent::prepare('SELECT * FROM usuarios WHERE usuario = :usuario AND contrasena = :contrasena AND status = 1');
@@ -66,10 +47,6 @@ use content\traits\Utility;
         return false;
       }
     }
-
-
-
-
 		function usuario_sesion($usuario){
 
 			try{
@@ -85,8 +62,6 @@ use content\traits\Utility;
           $_SESSION['correo'] = ($row['correo']);
            $_SESSION['nombre_rol'] = ($row['nombre_rol']);
           $_SESSION['rol'] = ($row['rol']);
- 
-
         }
          return $query->rowCount();
 			}catch(PDOException $e) {
@@ -98,25 +73,11 @@ use content\traits\Utility;
 	}
 	public function buscarCorreo($correo){
 		try {
-			$query = parent::prepare("SELECT usuario, contrasena FROM usuarios WHERE correo = :correo");
+			$query = parent::prepare("SELECT 1 FROM usuarios WHERE correo = :correo");
 			$query->execute(['correo' => $correo]);
-			$respuestaArreglo = '';
-			$query->execute(['correo'=>$correo]);
-			$query->setFetchMode(parent::FETCH_ASSOC);
-			$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-			//$respuestaArreglo += ['ejecucion' => true];
-			if(count($respuestaArreglo)>0){
-				$result['data'] = $respuestaArreglo;
-			}
-			if($respuestaArreglo += ['estatus' =>true]){
-				$result['msj'] = "1";
-				echo "1";
-			}
-			return $respuestaArreglo;
-		} catch (PDOException $e) {
-			$errorReturn = ['estatus' => false];
-			$errorReturn += ['info' => "error sql:{$e}"];
-			return $errorReturn;
+			return $query->fetchAll(parent::FETCH_OBJ); 
+		} catch (Exception $e) {
+			return $e->getMessage();
 		}
 	}
 
