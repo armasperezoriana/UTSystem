@@ -3,7 +3,7 @@
 	namespace content\modelo;
 
 	use content\config\conection\database as database;
-
+use content\traits\Utility;
 
 	class loginModel extends database{
 
@@ -13,6 +13,7 @@
 		private $pass;
 
 		public function __construct(){
+			
 			$this->con = parent::__construct();
 		}
 
@@ -33,6 +34,24 @@
 				return $errorReturn;
 			}
 		}
+		public function recuperarPass($usuario,$pass){
+			try{
+				//encriptar la clave QUE SE MODIFICARA
+				$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+			
+					$sql= "UPDATE usuarios  SET contrasena =  '{$this->pass}' WHERE status = 1 AND usuario = '{$this->usuario}' AND cedula = '{$this->cedula}'";
+					$query = parent::prepare($sql);
+					$respuestaArreglo = '';
+					$query->execute();
+					$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+					$respuestaArreglo += ['ejecucion' => true];
+					return $respuestaArreglo;
+				} catch (PDOException $e) {
+					$errorReturn = ['ejecucion' => false];
+					$errorReturn += ['info' => "error sql:{$e}"];
+					return $errorReturn;
+				}
+			}
 
 
 
@@ -77,39 +96,57 @@
 		}
 
 	}
-
-	public function CambiarPassword(){
-
-		$method = $_SERVER['REQUEST_METHOD'];
-		if ($method != 'POST') {
-			http_response_code(404);
-			return false;
-		}
-		if (!empty($_POST['correo'])) {
-			$correo = $_POST['correo'];
-			//$pass = $_POST['pass'];
-
-			//$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
-			
-			//$this->usuario->setPassword($pass);
-			$this->usuario->setCorreo($correo);		
-	
-			//$this->usuario->setUsername($username);
-
-			$execute = $this->login->ModificarPassword();
-			if ($execute['ejecucion'] == true) {
-				$usu = $this->usuario->ObtenerUsuario($username);
-						$id = $usu['resultado']['id_usuario'];
-					//	$usu = $this->usuario->ObtenerUsuario($username);
-					//	$id = $usu['resultado']['id_usuario'];
-					//	$pass = $_POST['pass'];
-						//$execute = $this->usuario->Modificar();
-						echo '1';
-			} else {
-				echo "2";
+	public function buscarCorreo($correo){
+		try {
+			$query = parent::prepare("SELECT usuario, contrasena FROM usuarios WHERE correo = :correo");
+			$query->execute(['correo' => $correo]);
+			$respuestaArreglo = '';
+			$query->execute(['correo'=>$correo]);
+			$query->setFetchMode(parent::FETCH_ASSOC);
+			$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+			//$respuestaArreglo += ['ejecucion' => true];
+			if(count($respuestaArreglo)>0){
+				$result['data'] = $respuestaArreglo;
 			}
+			if($respuestaArreglo += ['estatus' =>true]){
+				$result['msj'] = "1";
+				echo "1";
+			}
+			return $respuestaArreglo;
+		} catch (PDOException $e) {
+			$errorReturn = ['estatus' => false];
+			$errorReturn += ['info' => "error sql:{$e}"];
+			return $errorReturn;
 		}
 	}
+
+	
+	public function setId($id){
+		$this->id_usuario = $id;
+	}
+	public function setNombre($nombre){
+		$this->nombre = $nombre;
+	}
+	public function setApellido($apellido){
+		$this->apellido = $apellido;
+	}
+	public function setCedula($cedula){
+		$this->cedula = $cedula;
+	}
+	public function setUsername($username){
+		$this->username = $username;
+	}
+	public function setRol($rol){
+		$this->rol = $rol;
+	}
+	public function setPassword($pass){
+		$this->password = $pass;
+	}
+	public function setCorreo($correo){
+		$this->correo = $correo;
+	}
+
+
 
 	}
 ?>

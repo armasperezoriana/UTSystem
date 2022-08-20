@@ -20,7 +20,7 @@
 		public function Consultar(){
 			
 			try {
-				$query = parent::prepare('SELECT * FROM taller');
+				$query = parent::prepare("SELECT * FROM taller WHERE status ='1' ");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

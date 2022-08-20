@@ -74,6 +74,7 @@ $mysqli = new mysqli("localhost", "root", "", "ut");
 
                                     <hr>
                                     <div class="text-center">
+                                    <input type="hidden" name="token-r" id="token-r">
                                             <input type="button" value="Recuperar" onclick="Mostrar()" class="btn btn-secondary"/>
 
                                 </div>
