@@ -69,6 +69,7 @@ class usuariosController
             'data' => $usuario
         ]);
     }
+<<<<<<< HEAD
 public function encriptarS($palabra){
 			$valor=unpack('H*',$palabra);
 			$nivel1=base_convert($valor[1],16,2);
@@ -110,6 +111,9 @@ public function encriptarS($palabra){
 		
 		
 		  }
+=======
+
+>>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
 
 	public function Registrar()
 	{
