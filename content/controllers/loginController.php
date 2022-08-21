@@ -191,7 +191,7 @@ $correo = isset($_REQUEST['correo']) ? $_REQUEST['correo'] : null;
 echo $correo;
 
 $cantidadConsulta   = ("SELECT * FROM usuarios WHERE correo = '.$correo.' LIMIT 1");
- var_dump($cantidadConsulta);
+// var_dump($cantidadConsulta);
 if($cantidadConsulta ==0){
 	$updateClave = ("UPDATE usuarios SET contrasena = '.$clave.' WHERE correo = correo");
 	
@@ -220,8 +220,8 @@ try {
 
     //Recipients
     $mail->setFrom($mail->Username, 'SISTEMA UT');
-   // $mail->addAddress('armasoriana98@gmail.com', 'Usuario ');     //a quien se le va enviar
-	$mail->addAddress($usuario['correo']);    
+   $mail->addAddress('armasoriana98@gmail.com', 'Usuario ');     //a quien se le va enviar
+	//$mail->addAddress($usuario['correo']);    
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Restablecer password SISTEMA UT';
@@ -235,7 +235,7 @@ try {
                    <br>';
 	
 
-   // $mail->send();
+   $mail->send();
     echo 'Correo enviado.';
 	require_once("view/recuperarUsuarioView.php");
 	

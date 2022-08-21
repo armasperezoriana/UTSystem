@@ -3,9 +3,6 @@ $(document).ready(function() {
         e.preventDefault();
     
              var correo = $("#recuperar").find("#correo").val();
-            // var usuario = $("#recuperar").find("#usuario").val();
-             //var id_usuario = $("#recuperar").find("#id_usuario").val();
-           //  console.log(id_usuario+""+correo+""+usuario);
                     $.ajax({
                         url: './Login/emailValidation',
                         type: 'POST',
@@ -19,7 +16,7 @@ $(document).ready(function() {
                                 type: 'success',
                                title: 'Correo Verificado',
                             }).then((isConfirm) => {
-                              // location.href = './Login/mailReset';
+                               location.href = './Login/mailReset';
                             });
                         },
                         error: (response) => {

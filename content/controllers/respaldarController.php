@@ -42,7 +42,7 @@
                 http_response_code(404);
                 return false;
             }
-            $dir = "../assets/respaldo/";
+            $dir = "/assets/respaldo/";
             $day=date("d");
             $mont=date("m");
             $year=date("Y");
@@ -185,8 +185,8 @@
         }
         public function verificarPassword()
         {
-            $usuario = new Usuario();
-            $usuario->setUsuario($this->limpiaCadena($_SESSION['usuario']));
+            $usuario = new usuariosModel();
+            $usuario->setUsername($this->limpiaCadena($_SESSION['usuario']));
            // $pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
            $usuario->setPassword($this->encriptar($this->limpiaCadena($_POST['contrasena'])));
            // $usuario->setPassword($this->limpiaCadena($_POST['contrasena']));
@@ -211,7 +211,7 @@
     
         public function controlarMax()
         {
-            $ruta="../assets/respaldo/";
+            $ruta="/assets/respaldo/";
             $nArchivos = 0;
             $maxArchivos = 10;
             if(is_dir($ruta)){
