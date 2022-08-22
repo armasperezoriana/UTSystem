@@ -31,7 +31,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <center><h5>Recuperar Cuenta</h5></center>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Ocultar()">
+        <button type="button"  data-dismiss="modal"  >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -51,7 +51,7 @@
                                                  
                                                                     <br>
                                                 <input type="text" class="form-control form-control-user"
-                                                id="respuesta" aria-describedby="emailHelp"
+                                                id="pass" aria-describedby="emailHelp" required
                                                 placeholder="Ingrese una contrasena nueva..">
                                         
                                          <br>
@@ -63,7 +63,7 @@
                                     <hr>
                                     <br>  <br> 
                                     <div class="text-center">
-                                        <a class="small" onclick="Ocultar()" href="<?= _ROUTE_ ?>Login">¿Ya tienes una? Inicia Sesion!</a>
+                                        <a class="small" href="<?= _ROUTE_ ?>Login">¿Ya tienes una? Inicia Sesion!</a>
                             </div>
                             </div>
                         </div>
@@ -81,8 +81,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
     <script src="view/vendor/plugins/sweetalert/sweet-alert.js"></script>
-    <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
-    <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+    <script type="text/javascript" src="'../../assets/js/login/olvido.js"></script>
     <script >
 
 function Mostrar(){

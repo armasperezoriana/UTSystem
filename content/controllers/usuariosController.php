@@ -69,7 +69,7 @@ class usuariosController
             'data' => $usuario
         ]);
     }
-<<<<<<< HEAD
+
 public function encriptarS($palabra){
 			$valor=unpack('H*',$palabra);
 			$nivel1=base_convert($valor[1],16,2);
@@ -111,9 +111,7 @@ public function encriptarS($palabra){
 		
 		
 		  }
-=======
 
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
 
 	public function Registrar()
 	{
@@ -223,38 +221,6 @@ public function encriptarS($palabra){
 
 			} else {
 				echo "2";
-			}
-		}
-	}
-	public function CambiarPassword(){
-
-		$method = $_SERVER['REQUEST_METHOD'];
-		if ($method != 'POST') {
-			http_response_code(404);
-			return false;
-		}
-		if (!empty($_POST['correo'])) {
-			$correo = $_POST['correo'];
-			//$pass = $_POST['pass'];
-
-			//$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
-			
-			//$this->usuario->setPassword($pass);
-			$this->usuario->setCorreo($correo);		
-	
-			//$this->usuario->setUsername($username);
-
-			$execute = $this->usuario->ModificarPassword();
-			if ($execute['ejecucion'] == true) {
-				$usu = $this->usuario->ObtenerUsuario($username);
-						$id = $usu['resultado']['id_usuario'];
-						$usu = $this->usuario->ObtenerUsuario($username);
-						$id = $usu['resultado']['id_usuario'];
-					//	$pass = $_POST['pass'];
-						$execute = $this->usuario->Modificar();
-						echo '1';
-			} else {
-				echo "3";
 			}
 		}
 	}

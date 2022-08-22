@@ -26,8 +26,6 @@ class loginController
 
 	public function Consultar()
 	{
-
-    
 		if(!empty($_SESSION['ut_usuario'])) {
 			header('Location: Home');
 		}
@@ -41,9 +39,6 @@ class loginController
 		require_once("view/loginView.php");
 
 	}
-
-
-
 
 	public function IniciarSesion()
 	{
@@ -96,57 +91,6 @@ class loginController
 		}
 	}
 
-	public function cambioContrasena () {
-        $method = $_SERVER['REQUEST_METHOD'];
-
-        if( $method != 'POST'){
-            http_response_code(404);
-            return false;
-        }
-		
-        $this->usuario->setPassword($this->encriptarContrasena($this->limpiaCadena($_POST['contrasena'])));
-        $this->usuario->setUsuario($this->limpiaCadena($_POST['usuario']));
-        $this->usuario->setId($this->limpiaCadena($_POST['id_usuario']));
-        $response = $this->usuario->CambiarPassword($this->usuario);
-        unset($_SESSION['id']);
-        if ($response) {
-            unset($_SESSION['RC']);
-            echo json_encode([
-                'tipo' => 'success',
-                'titulo' => 'Contraseña actualizada.',
-                'mensaje' => 'La contraseña asociada a su cuenta ha sido actualizada.',
-            ]);
-        } else {
-            echo json_encode([
-                'tipo' => 'error',
-                'titulo' => 'Contraseña no actualizada.',
-                'mensaje' => 'Ha ocurrido un problema al actualizar su contraseña.',
-            ]);
-        }
-    }
-	public function CambiarPassword(){
-
-		$method = $_SERVER['REQUEST_METHOD'];
-		if ($method != 'POST') {
-			http_response_code(404);
-			return false;
-		}
-		if (!empty($_POST['correo'])) {
-			$correo = $_POST['correo'];
-		
-			$this->usuario->setCorreo($correo);		
-		
-			$execute = $this->usuario->buscarCorreo($correo);
-			if ($execute['ejecucion'] == false) {
-						echo '2';
-						
-						} else {
-						
-						echo "1";
-					}
-		}
-	}
-
 
 public function codigoAleatorio(){
 $caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
@@ -162,14 +106,30 @@ public function emailValidation(){
 	$response =	$this->login->buscarCorreo($correo);
 	// var_dump($response);
 	if(!empty($response)){
-		http_response_code(200);	
-		
+		http_response_code(200);
 	}else{
 
 		http_response_code(404);
 	}
 
 
+}
+
+public function modificarClaveUsuario(){
+	if(isset($_POST['pass']))
+{
+$clave =  $this->encriptar($_POST['pass']);
+if(isset($_COOKIE['pass'])==$clave){
+	if(!empty($response)){
+		//http_response_code(200);
+		echo 'Cambio de clave exitosa';
+	}else{
+      echo "Error";
+		//http_response_code(404);
+	}
+
+	}
+}
 }
 
 
@@ -185,28 +145,13 @@ $longitud ='7';
 $caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
 $miclave = substr(($caracteres), rand (0,65), $longitud);
 $clave = $miclave;
+$value = $clave;
 
 
-$correo = isset($_REQUEST['correo']) ? $_REQUEST['correo'] : null;
-echo $correo;
+setcookie("pass", $value, time()+3600);  /* expira en 1 hora */
+$value = $this->encriptar($clave);
 
-$cantidadConsulta   = ("SELECT * FROM usuarios WHERE correo = '.$correo.' LIMIT 1");
-// var_dump($cantidadConsulta);
-if($cantidadConsulta ==0){
-	$updateClave = ("UPDATE usuarios SET contrasena = '.$clave.' WHERE correo = correo");
-	
-}else{
-	echo 'Los datos no coinciden con los registrados en el sistema. </br>';
-        echo 'Intente nuevamente';
-		exit();
-	
-
-}
-
-//Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-//$link = _ROUTE_ .'Login/recuperarAcceso'.$token;
-
 try {
     //Server settings
     $mail->SMTPDebug = 0;                      //Enable verbose debug output
@@ -229,21 +174,21 @@ try {
 		<center>Correo automático de recuperación</center>
 	Si solicitaste la recuperación de acceso para tu usuario, usa el codigo que aparece a 
                     continuación 
-					<b>Nueva clave:.'.$clave.'</b>
+					<b>Nueva clave: '.$clave.'</b>
 					para completar el proceso. Esta es una clave temporal y te recomendamos modificarla al ingresar al sistema.<br>
 					Si no solicitaste esto, puedes ignorar este correo. <br>
                    <br>';
 	
-
+		
    $mail->send();
+   require_once("view/recuperarUsuarioView.php");
     echo 'Correo enviado.';
-	require_once("view/recuperarUsuarioView.php");
+	
 	
 } catch (Exception $e) {
-    echo "Message no pudo enviarse. Error: {$mail->ErrorInfo}";
+    echo "Message no pudo enviarse.Intentelo nuevamente. Error: {$mail->ErrorInfo}";
 	}
 }
-
 
 
 public function OlvidoClave(){

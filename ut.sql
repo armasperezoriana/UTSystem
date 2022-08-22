@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-08-2022 a las 23:42:30
+-- Tiempo de generación: 22-08-2022 a las 15:13:00
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -294,7 +294,12 @@ INSERT INTO `bitacora` (`id_bitacora`, `cedula`, `usuario`, `operacion`, `host`,
 (1064, '88665742', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-19', '17:44:35', 'Usuario', NULL),
 (1065, '88665742', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-19', '17:46:42', 'Usuario', NULL),
 (1066, '2', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-08-19', '20:33:59', 'taller', NULL),
-(1067, '3', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-08-19', '20:35:02', 'taller', NULL);
+(1067, '3', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-08-19', '20:35:02', 'taller', NULL),
+(1068, '7', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-08-20', '23:17:08', ' Seguridad Roles', NULL),
+(1069, '6', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-08-20', '23:17:20', 'Seguridad Roles', NULL),
+(1070, '5', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-08-20', '23:17:44', 'Seguridad Roles', NULL),
+(1071, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-20', '23:20:11', 'Mantenimiento', NULL),
+(1072, '35457852', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-08-21', '23:58:57', 'Usuario', NULL);
 
 -- --------------------------------------------------------
 
@@ -317,19 +322,17 @@ CREATE TABLE `choferes` (
 --
 
 INSERT INTO `choferes` (`id_choferes`, `placa`, `nombre`, `apellido`, `cedula`, `telefono`, `status`) VALUES
-(1, 'KOWP145', 'Oriana', 'Armas', '895666222', '816ad8b0b70', 1),
+(1, 'VAS654', 'Oriana', 'Armas', '16857400', '02514423626', 1),
 (2, 'GAP173', 'ERWIN ELIAS', 'ARMAS GONZALEZ', '95589666', '04160360067', 1),
-(3, '898PAJ4', 'Elias', '5654545', '200998899', '0412788593', 1),
-(4, 'KOWP145', 'Luisa', 'loca', '1234545578', '7985252332', 1),
-(5, 'KVT47V', 'zzzzz', 'sdszz6', '0123456789', '05485452854', 1),
-(6, 'KOWP145', 'ccc', 'ccc', '0101084844', '04160360044', 1),
-(7, 'KVT47V', 'xcxc', 'xccx', '12345667896', '89988888585', 1),
-(8, 'ALA147', 'Juan', 'Jose Perez', '1223555', '2cdcad1ce1e', 1),
-(9, 'ALA147', 'Mariana', 'Martinez', '145789653', '14555896666', 1),
-(10, '117788232', 'PETRONILO', 'PEREZ', '5956955', '04125547889', 1),
+(3, 'SAN103', 'Elias', 'Perez', '200998899', '0412788593', 1),
+(4, 'SAN103', 'Luisa', 'loca', '123454578', '7985252332', 1),
+(5, 'YYY444', 'Antonio', 'Sanchez', '25477003', '02514557789', 1),
+(6, 'YYA891', 'Carlos', 'Yepez', '0101084844', '04160360044', 1),
+(8, 'ALA147', 'Juan', 'Jose Perez', '122355500', '04243235569', 1),
+(9, 'ALA147', 'Mariana', 'Martinez', '145789653', '145558966', 1),
+(10, 'ANL123', 'PETRONILO', 'PEREZ', '5956955', '04125547889', 1),
 (11, 'VAS654', 'Oriana', 'Armas', '26561633', '04160360067', 1),
 (12, 'VAS654', 'Oriana', 'Armas', '26561600', '04160360067', 1),
-(13, 'EAP685', 'Oriana', 'Armas', '695565265', '04160360067', 1),
 (14, 'EAP685', 'Ana', 'Armas', '26561444', '89865555552', 1);
 
 -- --------------------------------------------------------
@@ -356,7 +359,7 @@ CREATE TABLE `mantenimientos` (
 --
 
 INSERT INTO `mantenimientos` (`id_mantenimiento`, `kilometraje`, `tiempo`, `id_vehiculo`, `nombre`, `costo`, `fecha`, `status`, `id_taller`, `estado`) VALUES
-(1, 300, '1', 6, 'Bujias', '5000', '2022-06-01', 1, 1, 0),
+(1, 300, '1', 40, 'Bujias', '5000', '2022-06-01', 1, 1, 0),
 (2, 3500, '1', 15, 'Pastillas', '1000', '2022-06-02', 1, 3, 1),
 (3, 300, '7', 9, 'Cambio de Aceite', '1500', '2022-02-15', 1, 2, 0),
 (4, 16, '9', 35, 'Mant. programado', '4000', '2022-06-15', 1, 15, 0),
@@ -412,60 +415,30 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id_notificacion`, `estado`, `fecha`, `titulo`, `contenido`, `id_vehiculo`) VALUES
-(124, 0, '2022-10-08', 'Mantenimiento preventivo EAP685', 'El vehículo EAP685 necesita mantenimiento de: filtro de aceite, y chequeo general.', 6),
-(125, 0, '2022-10-08', 'Mantenimiento preventivo KVT47V', 'El vehículo KVT47V necesita mantenimiento de: filtro de aceite, y chequeo general.', 7),
-(126, 0, '2022-10-08', 'Mantenimiento preventivo 898PAJ4', 'El vehículo 898PAJ4 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, y chequeo general.', 8),
-(127, 0, '2022-10-08', 'Mantenimiento preventivo VAS654', 'El vehículo VAS654 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, y chequeo general.', 9),
-(128, 0, '2022-10-08', 'Mantenimiento preventivo KOWP145', 'El vehículo KOWP145 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 10),
-(129, 0, '2022-10-08', 'Mantenimiento preventivo YYA891', 'El vehículo YYA891 necesita mantenimiento de: filtro de aceite, y chequeo general.', 11),
-(130, 0, '2022-10-08', 'Mantenimiento preventivo GAP173', 'El vehículo GAP173 necesita mantenimiento de: filtro de aceite, y chequeo general.', 12),
-(131, 0, '2022-10-08', 'Mantenimiento preventivo ANA123', 'El vehículo ANA123 necesita mantenimiento de: filtro de aceite, y chequeo general.', 13),
-(132, 0, '2022-10-08', 'Mantenimiento preventivo SANTI03', 'El vehículo SANTI03 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 14),
-(133, 0, '2022-10-08', 'Mantenimiento preventivo ROA126', 'El vehículo ROA126 necesita mantenimiento de: filtro de aceite, y chequeo general.', 15),
-(134, 0, '2022-10-08', 'Mantenimiento preventivo 6265541', 'El vehículo 6265541 necesita mantenimiento de: filtro de aceite, y chequeo general.', 30),
-(135, 0, '2022-10-08', 'Mantenimiento preventivo LALI2300', 'El vehículo LALI2300 necesita mantenimiento de: filtro de aceite, y chequeo general.', 31),
-(136, 0, '2022-10-08', 'Mantenimiento preventivo LALI23001', 'El vehículo LALI23001 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 32),
-(137, 1, '2022-10-08', 'Mantenimiento preventivo 117788232', 'El vehículo 117788232 necesita mantenimiento de: filtro de aceite, y chequeo general.', 33),
-(138, 0, '2022-10-08', 'Mantenimiento preventivo ALA147', 'El vehículo ALA147 necesita mantenimiento de: filtro de aceite, y chequeo general.', 34),
-(139, 0, '2022-10-08', 'Mantenimiento preventivo PAP555', 'El vehículo PAP555 necesita mantenimiento de: filtro de aceite, y chequeo general.', 35),
-(140, 0, '2022-10-08', 'Mantenimiento preventivo HAN788', 'El vehículo HAN788 necesita mantenimiento de: filtro de aceite, y chequeo general.', 36),
-(141, 0, '2022-10-08', 'Mantenimiento preventivo QQQ778', 'El vehículo QQQ778 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 37),
-(142, 0, '2022-10-08', 'Mantenimiento preventivo ELI778', 'El vehículo ELI778 necesita mantenimiento de: filtro de aceite, y chequeo general.', 39),
-(143, 0, '2022-10-08', 'Mantenimiento preventivo 445444', 'El vehículo 445444 necesita mantenimiento de: filtro de aceite, y chequeo general.', 40),
-(144, 0, '2022-10-08', 'Mantenimiento preventivo 699PAV', 'El vehículo 699PAV necesita mantenimiento de: filtro de aceite, y chequeo general.', 41),
-(145, 0, '2022-10-08', 'Mantenimiento preventivo 555TRB', 'El vehículo 555TRB necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, y chequeo general.', 42),
-(146, 0, '2022-10-08', 'Mantenimiento preventivo DFGDF', 'El vehículo DFGDF necesita mantenimiento de: filtro de aceite, y chequeo general.', 43),
-(147, 0, '2022-10-08', 'Mantenimiento preventivo AKA878', 'El vehículo AKA878 necesita mantenimiento de: filtro de aceite, y chequeo general.', 44),
-(148, 1, '2022-10-08', 'Mantenimiento preventivo PPA990', 'El vehículo PPA990 necesita mantenimiento de: filtro de aceite, y chequeo general.', 45),
-(149, 0, '2022-10-08', 'Mantenimiento preventivo RTS000', 'El vehículo RTS000 necesita mantenimiento de: filtro de aceite, y chequeo general.', 46),
-(150, 0, '2022-10-08', 'Mantenimiento preventivo PPO777', 'El vehículo PPO777 necesita mantenimiento de: filtro de aceite, y chequeo general.', 47),
-(151, 0, '2022-08-10', 'Mantenimiento preventivo requerido para EAP685', 'El vehículo EAP685 necesita mantenimiento de: filtro de aceite, y chequeo general.', 6),
-(152, 0, '2022-08-10', 'Mantenimiento preventivo requerido para KVT47V', 'El vehículo KVT47V necesita mantenimiento de: filtro de aceite, y chequeo general.', 7),
-(153, 0, '2022-08-10', 'Mantenimiento preventivo requerido para 898PAJ4', 'El vehículo 898PAJ4 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, y chequeo general.', 8),
-(154, 0, '2022-08-10', 'Mantenimiento preventivo requerido para VAS654', 'El vehículo VAS654 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, y chequeo general.', 9),
-(155, 0, '2022-08-10', 'Mantenimiento preventivo requerido para KOWP145', 'El vehículo KOWP145 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 10),
-(156, 0, '2022-08-10', 'Mantenimiento preventivo requerido para YYA891', 'El vehículo YYA891 necesita mantenimiento de: filtro de aceite, y chequeo general.', 11),
-(157, 0, '2022-08-10', 'Mantenimiento preventivo requerido para GAP173', 'El vehículo GAP173 necesita mantenimiento de: filtro de aceite, y chequeo general.', 12),
-(158, 0, '2022-08-10', 'Mantenimiento preventivo requerido para ANA123', 'El vehículo ANA123 necesita mantenimiento de: filtro de aceite, y chequeo general.', 13),
-(159, 0, '2022-08-10', 'Mantenimiento preventivo requerido para SANTI03', 'El vehículo SANTI03 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 14),
-(160, 0, '2022-08-10', 'Mantenimiento preventivo requerido para ROA126', 'El vehículo ROA126 necesita mantenimiento de: filtro de aceite, y chequeo general.', 15),
-(161, 0, '2022-08-10', 'Mantenimiento preventivo requerido para 6265541', 'El vehículo 6265541 necesita mantenimiento de: filtro de aceite, y chequeo general.', 30),
-(162, 0, '2022-08-10', 'Mantenimiento preventivo requerido para LALI2300', 'El vehículo LALI2300 necesita mantenimiento de: filtro de aceite, y chequeo general.', 31),
-(163, 0, '2022-08-10', 'Mantenimiento preventivo requerido para LALI23001', 'El vehículo LALI23001 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 32),
-(164, 0, '2022-08-10', 'Mantenimiento preventivo requerido para 117788232', 'El vehículo 117788232 necesita mantenimiento de: filtro de aceite, y chequeo general.', 33),
-(165, 0, '2022-08-10', 'Mantenimiento preventivo requerido para ALA147', 'El vehículo ALA147 necesita mantenimiento de: filtro de aceite, y chequeo general.', 34),
-(166, 0, '2022-08-10', 'Mantenimiento preventivo requerido para PAP555', 'El vehículo PAP555 necesita mantenimiento de: filtro de aceite, y chequeo general.', 35),
-(167, 0, '2022-08-10', 'Mantenimiento preventivo requerido para HAN788', 'El vehículo HAN788 necesita mantenimiento de: filtro de aceite, y chequeo general.', 36),
-(168, 0, '2022-08-10', 'Mantenimiento preventivo requerido para QQQ778', 'El vehículo QQQ778 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, y chequeo general.', 37),
-(169, 0, '2022-08-10', 'Mantenimiento preventivo requerido para ELI778', 'El vehículo ELI778 necesita mantenimiento de: filtro de aceite, y chequeo general.', 39),
-(170, 0, '2022-08-10', 'Mantenimiento preventivo requerido para 445444', 'El vehículo 445444 necesita mantenimiento de: filtro de aceite, y chequeo general.', 40),
-(171, 0, '2022-08-10', 'Mantenimiento preventivo requerido para 699PAV', 'El vehículo 699PAV necesita mantenimiento de: filtro de aceite, y chequeo general.', 41),
-(172, 0, '2022-08-10', 'Mantenimiento preventivo requerido para 555TRB', 'El vehículo 555TRB necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, y chequeo general.', 42),
-(173, 0, '2022-08-10', 'Mantenimiento preventivo requerido para DFGDF', 'El vehículo DFGDF necesita mantenimiento de: filtro de aceite, y chequeo general.', 43),
-(174, 0, '2022-08-10', 'Mantenimiento preventivo requerido para AKA878', 'El vehículo AKA878 necesita mantenimiento de: filtro de aceite, y chequeo general.', 44),
-(175, 0, '2022-08-10', 'Mantenimiento preventivo requerido para PPA990', 'El vehículo PPA990 necesita mantenimiento de: filtro de aceite, y chequeo general.', 45),
-(176, 0, '2022-08-10', 'Mantenimiento preventivo requerido para RTS000', 'El vehículo RTS000 necesita mantenimiento de: filtro de aceite, y chequeo general.', 46),
-(177, 0, '2022-08-10', 'Mantenimiento preventivo requerido para PPO777', 'El vehículo PPO777 necesita mantenimiento de: filtro de aceite, y chequeo general.', 47);
+(178, 0, '2022-08-22', 'Mantenimiento preventivo VAS654', 'El vehículo VAS654 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, se sugiere chequeo general.', 9),
+(256, 0, '2022-08-22', 'Mantenimiento preventivo requerido para VAS654', 'El vehículo VAS654 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, se sugiere chequeo general.', 9),
+(257, 0, '2022-08-22', 'Mantenimiento preventivo requerido para ANL123', 'El vehículo ANL123 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 13),
+(258, 0, '2022-08-22', 'Mantenimiento preventivo requerido para ROA126', 'El vehículo ROA126 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 15),
+(259, 0, '2022-08-22', 'Mantenimiento preventivo requerido para LALI2300', 'El vehículo LALI2300 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 31),
+(260, 0, '2022-08-22', 'Mantenimiento preventivo requerido para PAP555', 'El vehículo PAP555 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 35),
+(261, 0, '2022-08-22', 'Mantenimiento preventivo requerido para QQQ778', 'El vehículo QQQ778 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, se sugiere chequeo general.', 37),
+(262, 0, '2022-08-22', 'Mantenimiento preventivo requerido para 445444', 'El vehículo 445444 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 40),
+(263, 0, '2022-08-22', 'Mantenimiento preventivo requerido para 555TRB', 'El vehículo 555TRB necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 42),
+(264, 0, '2022-08-22', 'Mantenimiento preventivo requerido para 898PAJ4', 'El vehículo 898PAJ4 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, se sugiere chequeo general.', 8),
+(265, 0, '2022-08-22', 'Mantenimiento preventivo requerido para YYA891', 'El vehículo YYA891 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 11),
+(266, 0, '2022-08-22', 'Mantenimiento preventivo requerido para GAP173', 'El vehículo GAP173 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 12),
+(267, 0, '2022-08-22', 'Mantenimiento preventivo requerido para SAN103', 'El vehículo SAN103 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, se sugiere chequeo general.', 14),
+(268, 0, '2022-08-22', 'Mantenimiento preventivo requerido para LALI23001', 'El vehículo LALI23001 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, se sugiere chequeo general.', 32),
+(269, 0, '2022-08-22', 'Mantenimiento preventivo requerido para HAN788', 'El vehículo HAN788 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 36),
+(270, 0, '2022-08-22', 'Mantenimiento preventivo requerido para ELI778', 'El vehículo ELI778 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 39),
+(271, 0, '2022-08-22', 'Mantenimiento preventivo requerido para 699PAV', 'El vehículo 699PAV necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 41),
+(272, 0, '2022-08-22', 'Mantenimiento preventivo requerido para DFGDF', 'El vehículo DFGDF necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 43),
+(273, 0, '2022-08-22', 'Mantenimiento preventivo requerido para AKA878', 'El vehículo AKA878 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 44),
+(274, 0, '2022-08-22', 'Mantenimiento preventivo requerido para PPA990', 'El vehículo PPA990 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 45),
+(275, 0, '2022-08-22', 'Mantenimiento preventivo requerido para RTS000', 'El vehículo RTS000 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 46),
+(276, 0, '2022-08-22', 'Mantenimiento preventivo requerido para PPO777', 'El vehículo PPO777 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 47),
+(277, 0, '2022-08-22', 'Mantenimiento preventivo requerido para UUY887', 'El vehículo UUY887 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 49),
+(278, 0, '2022-08-22', 'Mantenimiento preventivo requerido para KKK778', 'El vehículo KKK778 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 50);
 
 -- --------------------------------------------------------
 
@@ -584,8 +557,9 @@ INSERT INTO `roles` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (2, 'Secretaria', 'permiso para ver y editar menos la seguridad, incluye usuari', 1),
 (3, 'UsuarioEstandar', 'Solo puede consultar', 1),
 (4, 'Chofer', 'solo consulta rutas y vehiculos', 1),
-(5, 'Prueba', 'permiso de perrearaaa', 1),
-(6, 'administradorl', 'permiso de perrear', 1);
+(5, 'Prueba', 'pruebas', 1),
+(6, 'administradorl', 'permiso de perrear', 0),
+(7, 'Asistente', 'puede imprimir todo', 1);
 
 --
 -- Disparadores `roles`
@@ -634,7 +608,6 @@ INSERT INTO `roles_permisos` (`rol_id`, `permisos_id`, `creado`, `modificado`) V
 (4, 7, '0000-00-00', '0000-00-00'),
 (4, 13, '0000-00-00', '0000-00-00'),
 (4, 22, '0000-00-00', '0000-00-00'),
-(5, 30, '0000-00-00', '0000-00-00'),
 (2, 1, '0000-00-00', '0000-00-00'),
 (2, 3, '0000-00-00', '0000-00-00'),
 (2, 5, '0000-00-00', '0000-00-00'),
@@ -657,7 +630,6 @@ INSERT INTO `roles_permisos` (`rol_id`, `permisos_id`, `creado`, `modificado`) V
 (4, 7, '0000-00-00', '0000-00-00'),
 (4, 13, '0000-00-00', '0000-00-00'),
 (4, 22, '0000-00-00', '0000-00-00'),
-(5, 30, '0000-00-00', '0000-00-00'),
 (2, 1, '0000-00-00', '0000-00-00'),
 (2, 3, '0000-00-00', '0000-00-00'),
 (2, 5, '0000-00-00', '0000-00-00'),
@@ -695,7 +667,9 @@ INSERT INTO `roles_permisos` (`rol_id`, `permisos_id`, `creado`, `modificado`) V
 (1, 27, '0000-00-00', '0000-00-00'),
 (1, 28, '0000-00-00', '0000-00-00'),
 (1, 29, '0000-00-00', '0000-00-00'),
-(1, 30, '0000-00-00', '0000-00-00');
+(1, 30, '0000-00-00', '0000-00-00'),
+(5, 27, '0000-00-00', '0000-00-00'),
+(5, 30, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -777,13 +751,14 @@ CREATE TABLE `seguridad_preguntas` (
 INSERT INTO `seguridad_preguntas` (`id_s_pregunta`, `preguntauno`, `respuestauno`, `id_usuario`, `img`, `img_encriptada`) VALUES
 (16, '¿Dulce favorito?', 'torta', 8, '', '0'),
 (22, '¿Donde estudiaste?', 'Jose M. Dominguez', 9, '', '0'),
-(23, '¿Cuál era el nombre de tu mejor amigo?', '', 2, 'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.jpg', ''),
+(23, '¿Cuál era el nombre de tu mejor amigo?', 'Javier', 2, 'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.jpg', ''),
 (27, '¿Donde estudiaste?', 'por ahi', 3, 'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png', 'TERaWkI2MzZmMTFaTUJSaU9PbkpGdz09'),
 (30, '¿Donde estudiaste?', 'uptaeb', 14, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'TWx1djdRZm9pSW5IdzdlcDNHWHpsdz09.png'),
 (31, '¿Donde estudiaste?', 'hno juan', 36, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'MUZvU3hiUmlpZ2RxRnFRb3FWOENadz09.png'),
 (32, '¿Donde naciste?', 'Rick', 18, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'eHlyS0lCKzRkTUpKZ3Z4MjQrU2cxZz09.png'),
 (38, '¿Donde estudiaste?', 'ccs', 40, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'YXI2MldZWWpaZEJwRHRweWltQ3FUQT09.png'),
-(39, '¿Cómo se llama tu perro?', 'chispitas', 41, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'NmZSaGNKRlpoL0QxWEtiQU5uQklHUT09.png');
+(39, '¿Cómo se llama tu perro?', 'chispitas', 41, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'NmZSaGNKRlpoL0QxWEtiQU5uQklHUT09.png'),
+(40, '¿Dulce favorito?', 'duranzo', 42, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'bmg1NzFvQm5uTTkwVnFWdGFZZ3h6Zz09.png');
 
 -- --------------------------------------------------------
 
@@ -898,7 +873,8 @@ INSERT INTO `usuarios` (`id_usuario`, `cedula`, `usuario`, `nombre`, `apellido`,
 (31, '417452224', 'cjimenez14', 'Cristian', 'Gimenez', '$2y$08$YROnSjN1uS9hcXLZTKtX6extxO8dtjgCg0sQs4E.wmxV3AOLUQa7K', 1, 1, 'armasoriana41745222498@gmail.c'),
 (36, '98473354', 'ANA12', 'Anas', 'Noguera', '$2y$08$cp49AgvdyEZrfWhPIZnrV.aAIBOzOb1fMSaUB1DURVmlv54npj0wi', 2, 1, 'anasantiaganoguera@gmail.com'),
 (40, '26561377', 'eliasR55', 'Elias', 'Ramos', '$2y$08$/R8oLb6gjqAqa2oooAcGS.N2b7/vMRJY0pFStRuHeikUOT4pDsNvK', 2, 1, 'armasorianaaaa98@gmail.com'),
-(41, '886657422', 'dani1717', 'Martinez', 'Diaz', '$2y$08$h9gY5g.iRl2NVbYthmlc/eAImjRwqqD/Jj3e1bhZLONu2f3eBqBe2', 1, 1, 'daniel1717@gmail.com');
+(41, '886657422', 'dani1717', 'Martinez', 'Diaz', '$2y$08$h9gY5g.iRl2NVbYthmlc/eAImjRwqqD/Jj3e1bhZLONu2f3eBqBe2', 1, 1, 'daniel1717@gmail.com'),
+(42, '35457852', 'mafer', 'Maria', 'Fernanda', '$2y$08$FRs95IQwfJNWWmvUUyBtveCyPjYdTma8vNnxBAnNshwlOuSBr86jy', 1, 1, 'usuario@gmail.com');
 
 --
 -- Disparadores `usuarios`
@@ -927,7 +903,6 @@ CREATE TABLE `vehiculos` (
   `placa` varchar(100) COLLATE utf8_bin NOT NULL,
   `modelo` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   `funcionamiento` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `nombre_tipo` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `kilometraje` varchar(30) COLLATE utf8_bin NOT NULL,
   `id_mantenimiento` int(11) DEFAULT NULL,
   `status` int(11) DEFAULT NULL
@@ -937,36 +912,38 @@ CREATE TABLE `vehiculos` (
 -- Volcado de datos para la tabla `vehiculos`
 --
 
-INSERT INTO `vehiculos` (`id_vehiculo`, `placa`, `modelo`, `funcionamiento`, `nombre_tipo`, `kilometraje`, `id_mantenimiento`, `status`) VALUES
-(6, 'EAP685', 'Dodge', 'Operativo', NULL, '5000,00', NULL, 0),
-(7, 'KVT47V', 'BEDFORD', 'Operativo', NULL, '2000', NULL, 1),
-(8, '898PAJ4', 'Dodge', 'Operativo', NULL, '10000', NULL, 1),
-(9, 'VAS654', 'Caio', 'Operativo', NULL, '20000', NULL, 1),
-(10, 'KOWP145', 'Encava', 'Operativo', NULL, '45000', NULL, 0),
-(11, 'YYA891', 'Kia', 'Operativo', NULL, '1500', NULL, 1),
-(12, 'GAP173', 'BEDFORD', 'Operativo', NULL, '5000', NULL, 1),
-(13, 'ANA123', 'Encava', 'Operativo', NULL, '9000', NULL, 1),
-(14, 'SANTI03', 'Kia', 'Operativo', NULL, '35000', NULL, 1),
-(15, 'ROA126', 'BEDFORD', 'Operativo', NULL, '6900', NULL, 1),
-(30, '6265541', NULL, NULL, 'preventivo', '3004', 1, 0),
-(31, 'LALI2300', 'Encava', 'Operativo', NULL, '6000', NULL, 1),
-(32, 'LALI23001', 'Encava', 'Operativo', NULL, '47900', NULL, 1),
-(33, '117788232', 'Otro', 'Operativo', NULL, '8000', NULL, 1),
-(34, 'ALA147', 'BEDFORD', 'Operativo', NULL, '6000', NULL, 1),
-(35, 'PAP555', 'Caio', 'Inoperativo', NULL, '2000', NULL, 1),
-(36, 'HAN788', 'Kia', 'Operativo', NULL, '1500', NULL, 1),
-(37, 'QQQ778', 'Kia', 'Operativo', NULL, '98000', NULL, 1),
-(38, 'TOR126', 'Caio', 'Inoperativo', NULL, '14,5', NULL, 1),
-(39, 'ELI778', 'BEDFORD', 'Operativo', NULL, '4000', NULL, 1),
-(40, '445444', 'Caio', 'Inoperativo', NULL, '4500', NULL, 1),
-(41, '699PAV', 'Yutong', 'Operativo', NULL, '1457', NULL, 1),
-(42, '555TRB', 'Caio', 'Operativo', NULL, '10000', NULL, 1),
-(43, 'DFGDF', 'BEDFORD', 'Inoperativo', NULL, '4000', NULL, 1),
-(44, 'AKA878', 'Caio', 'Inoperativo', NULL, '1500,0', NULL, 1),
-(45, 'PPA990', 'Autopago', 'Inoperativo', NULL, '75,0', NULL, 1),
-(46, 'RTS000', 'Dodge', 'Inoperativo', NULL, '45,00', NULL, 1),
-(47, 'PPO777', 'Caio', 'Operativo', NULL, '145,00', NULL, 1),
-(48, 'LPB142', 'Encava', 'Operativo', NULL, '6,00', NULL, 1);
+INSERT INTO `vehiculos` (`id_vehiculo`, `placa`, `modelo`, `funcionamiento`, `kilometraje`, `id_mantenimiento`, `status`) VALUES
+(1, 'KVT47V', 'BEDFORD', 'Operativo', '2000', NULL, 0),
+(6, 'EAP685', 'Dodge', 'Operativo', '5000,00', NULL, 0),
+(8, '898PAJ4', 'Dodge', 'Operativo', '10000', NULL, 0),
+(9, 'VAS654', 'Caio', 'Operativo', '20000,00', NULL, 1),
+(10, 'KOWP145', 'Encava', 'Operativo', '45000', NULL, 0),
+(11, 'YYA891', 'Kia', 'Operativo', '1500,00', NULL, 1),
+(12, 'GAP173', 'BEDFORD', 'Operativo', '5000', NULL, 1),
+(13, 'ANL123', 'Encava', 'Operativo', '9000,00', NULL, 1),
+(14, 'SAN103', 'Kia', 'Operativo', '35000,00', NULL, 1),
+(15, 'ROA126', 'BEDFORD', 'Operativo', '6900', NULL, 1),
+(30, '6265541', NULL, NULL, '3004', 1, 0),
+(31, 'LAL230', 'Encava', 'Operativo', '6000,00', NULL, 1),
+(32, 'IAL001', 'Encava', 'Operativo', '1000,00', NULL, 1),
+(33, '117788232', 'Otro', 'Operativo', '8000', NULL, 0),
+(34, 'ALA147', 'BEDFORD', 'Operativo', '6000', NULL, 1),
+(35, 'PAP555', 'Caio', 'Inoperativo', '2000', NULL, 1),
+(36, 'HAN788', 'Kia', 'Operativo', '1500', NULL, 1),
+(37, 'QQQ778', 'Kia', 'Operativo', '98000', NULL, 1),
+(38, 'TOR126', 'Caio', 'Inoperativo', '14,5', NULL, 1),
+(39, 'ELI778', 'BEDFORD', 'Operativo', '4000', NULL, 1),
+(40, 'YYY444', 'Caio', 'Inoperativo', '4500,00', NULL, 1),
+(41, '699PAV', 'Yutong', 'Operativo', '1457', NULL, 1),
+(42, '555TRB', 'Caio', 'Operativo', '10000', NULL, 1),
+(43, 'DFGDF', 'BEDFORD', 'Inoperativo', '4000', NULL, 1),
+(44, 'AKA878', 'Caio', 'Inoperativo', '1500,0', NULL, 1),
+(45, 'PPA990', 'Autopago', 'Inoperativo', '75,0', NULL, 1),
+(46, 'RTS000', 'Dodge', 'Inoperativo', '45,00', NULL, 1),
+(47, 'PPO777', 'Caio', 'Operativo', '145,00', NULL, 1),
+(48, 'LPB142', 'Encava', 'Operativo', '6,00', NULL, 1),
+(49, 'UUY887', 'Autopago', 'Operativo', '4000,00', NULL, 1),
+(50, 'KKK778', 'Autopago', 'Operativo', '4000,00', NULL, 1);
 
 --
 -- Índices para tablas volcadas
@@ -1071,7 +1048,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1068;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1073;
 
 --
 -- AUTO_INCREMENT de la tabla `choferes`
@@ -1089,7 +1066,7 @@ ALTER TABLE `mantenimientos`
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id_notificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `id_notificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
 
 --
 -- AUTO_INCREMENT de la tabla `reparaciones`
@@ -1101,13 +1078,13 @@ ALTER TABLE `reparaciones`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `seguridad_preguntas`
 --
 ALTER TABLE `seguridad_preguntas`
-  MODIFY `id_s_pregunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_s_pregunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Restricciones para tablas volcadas

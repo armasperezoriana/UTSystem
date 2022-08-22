@@ -292,7 +292,7 @@
 
 		public function ModificarPassword(){
 			try{
-				$query = parent::prepare("UPDATE usuarios SET  usuario = '$this->username', contrasena = '$this->password'
+				$query = parent::prepare("UPDATE usuarios SET contrasena = '$this->password'
 					WHERE id_usuario = '$this->id_usuario'");
 				$respuestaArreglo = '';
 				$query->execute();

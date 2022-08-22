@@ -1,46 +1,29 @@
 $(document).ready(function() {
-    $("#recuperar").on("submit", function (e) {
-        e.preventDefault();
-        //let data = new FormData(this);
-        $.ajax({
-          type: "POST",
-          url: "login/recuperarClave",
-          cache: false,
-         // data: data,
-          contentType: false,
-          processData: false,
-          success: function (response) {
-            console.log("paso");
-            let res = JSON.parse(response);
-            if (res.tipo == 'success') {
-              window.location.reload();
-            }
-            else {
-              Swal.fire(
-                res.titulo,
-                res.mensaje,
-                res.tipo
-              );
-            }
-          },
-          error: (response) => {
-            console.log(response);
-            Swal.fire("¡Error!", "Ocurrió un problema al verificar su correo", "error");
-          },
-        });
-        Toast.fire({
-          title: 'Espere!',
-          html: 'Se estan verificando los datos con los registrados en el sistema',// add html attribute if you want or remove
-          allowOutsideClick: false,
-          onBeforeOpen: () => {
-            Swal.showLoading()
-          },
-        });
-      });
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'bottom-start',
-        showConfirmButton: false,
-      });
-  });
+  $("#recuperarClave").on("submit", function (e) {
+      e.preventDefault();
   
+           var pass = $("#recuperarClave").find("#pass").val();
+           console.log(pass);
+                  $.ajax({
+                      url: './Login/modificarClaveUsuario',
+                      type: 'POST',
+                      data: {
+                          pass: pass,
+
+                      },
+                      success: function(response) {
+                          swal.fire({
+                              type: 'success',
+                             title: 'Contrasena modificada correctamente',
+                          }).then((isConfirm) => {
+                             location.href = './Login';
+                          });
+                      },
+                      error: (response) => {
+                          console.log(response);
+                          Swal.fire("¡Error!",  "Verifique el codigo porfavor", "error");
+                        }
+                  });
+              } )
+                  });
+//}

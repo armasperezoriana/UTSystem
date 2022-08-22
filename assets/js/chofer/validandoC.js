@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $(".EnviarChoferRegistrar").click(function() {
         var valido = validar();
         if (valido == true) {
@@ -9,11 +8,7 @@ $(document).ready(function() {
             var cedula =$("#AgregarChoferModal").find("#cedula").val();;
             var telefono = $("#AgregarChoferModal").find("#telefono").val();
             var placa = $("#AgregarChoferModal").find("#placa").val();
-            // alert(nombre);
-            // alert(apellido);
-            // alert(cedula);
-            // alert(telefono);
-            // alert(placa);
+
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
@@ -73,12 +68,8 @@ $(document).ready(function() {
         }
 
     });
-<<<<<<< HEAD
-$(".ModificarChofer").click(function() {
-=======
-
+});
     $(".ModificarChofer").click(function() {
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
         var validoM = validarM(true);
         if (validoM == true) {
 
@@ -152,21 +143,17 @@ $(".ModificarChofer").click(function() {
 
     });
 
-<<<<<<< HEAD
+
     function validar(modificar = false) {
-        var form = "";
-    
-=======
-    function validarM(modificar = true) {
+  
         var form = "";
 
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
         var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
         var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
         var expCedula =/^\d{7,14}$/;
         var expTelefono = /^\d{11,12}$/;
         
-<<<<<<< HEAD
+
         if(!modificar){
             form = "#AgregarChoferModal";
         }
@@ -242,7 +229,7 @@ $(".ModificarChofer").click(function() {
     
             }
         return true;
-    }
+        }
     }
 
 
@@ -274,37 +261,11 @@ $(".ModificarChofer").click(function() {
         var rtelefono = false;
     
         var placa = $(form).find("#placa").val();
-        var rplaca = false;
-    
-       //revisar errores
-        if (nombre == ""|apellido == ""|cedula == ""|placa == ""|telefono == "") {
-       swal.fire({
-=======
-        if(modificar==true){
-            form = "#modificarChofer";
-        }
-        else{
-            form = "#AgregarChoferModal";
-        }
-        var nombre = $(form).find("#nombre").val();
-        var rnombreM = false;
-        
-        var apellido = $(form).find("#apellido").val();
-        var rapellido = false;
-        
-        var cedula = $(form).find("#cedula").val();
-        var rcedulaM = false;
-        
-        var telefono = $(form).find("#telefono").val();
-        var rtelefonoM = false;
-        
-        var placa = $(form).find("#placa").val();
-        var rplacaM = false;
-        
+        var rplaca = false;      
         //revisar errores
         if (nombre == ""|apellido == ""|cedula == ""|placa == ""|telefono == ""){
         swal.fire({
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
+
                                         type: 'warning',
                                         title: 'Campos obligatorios',
                                         text: 'Asegurate de llenar todos los campos',
@@ -313,99 +274,55 @@ $(".ModificarChofer").click(function() {
             $(form).find(".errorApellidoM").html("Debe ingresar su apellido");
             $(form).find(".errorCedulaM").html("Debe ingresar su cedula");
             $(form).find(".errorPlacaM").html("Debe seleccionar su placa");
-            $(form).find(".errortelefonoM").html("Debe ingresar un telefono");
+            $(form).find(".errorTelefonoM").html("Debe ingresar un telefono");
                return false;
-<<<<<<< HEAD
+
     
         }else{
                if(!expNombre.test(nombre)){
                         $(".errorNombreM").html("El campo nombre solo acepta caracteres, minimo 3");
                             rnombre = false;
-                            preventDefault();
+                            return false;
+
                 } else {
                         $(".errorNombreM").html("Campo validado");
                         $(".errorNombreM").attr("style", "color:green");
                         rnombre = true;
                     } if(!expApellido.test(apellido)){
-                $(".errorApellidoM").html("El campo apellido solo acepta caracteres, minimo 3");
+               $(".errorApellidoM").html("El campo apellido solo acepta caracteres, minimo 3");
                     rapellido = false;
-                    preventDefault();
-        } else {
-                $(".errorApellidoM").html("Campo validado");
-                $(".errorApellidoM").attr("style", "color:green");
-                rapellido = true;
-            }if(!expCedula.test(cedula)){
-                $(".errorCedulaM").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
-                   rcedula = false;
-                   preventDefault();
-        } else {
-                $(".errorCedulaM").html("");
-               rcedula = true;
-                         $(".errorCedulaM").html("Cédula valida");
-                       $(".errorCedulaM").attr("style", "color:green");
-    
-            }if(!expTelefono.test(telefono)){
-                $(".errorTelefonoM").html("El campo telefono solo acepta al menos 10 numeros, sino puede registrar el campo no coincide con el dato esperado");
-                rtelefono = false;
-                  
-        } else {
-                         $(".errorTelefonoM").html("Telefono valido");
-                       $(".errorTelefonoM").attr("style", "color:green");
-                       rtelefono = true;
-            }
+                    return false;
+
+                } else {
+                        $(".errorApellidoM").html("Campo validado");
+                        $(".errorApellidoM").attr("style", "color:green");
+                        rapellido = true;
+                    }if(!expCedula.test(cedula)){
+                        $(".errorCedulaM").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
+                        rcedula = false;
+                        return false;
+
+                } else {
+                                $(".errorCedulaM").html("Cédula valida");
+                            $(".errorCedulaM").attr("style", "color:green");              
+                                rcedula = true;
+            
+                    }if(!expTelefono.test(telefono)){
+                        $(".errorTelefonoM").html("El campo telefono solo acepta al menos 10 numeros, sino puede registrar el campo no coincide con el dato esperado");
+                        rtelefono = false;
+                        return false;
+                        
+                } else {
+                                $(".errorTelefonoM").html("Telefono valido");
+                            $(".errorTelefonoM").attr("style", "color:green");
+                            rtelefono = true;
+                    } 
+
         return true;
         }
     }
 
-=======
-        
-        }else{
-               if(!expNombre.test(nombre)){
-                        $(".errorNombreM").html("El campo nombre solo acepta caracteres, minimo 3");
-                            rnombreM = false;
-                            //return false;
-                            preventDefault();
-                }else {
-                        $(".errorNombreM").html("Campo validado");
-                        $(".errorNombreM").attr("style", "color:green");
-                        rnombreM = true;
-                    } if(!expApellido.test(apellido)){
-                $(".errorApellidoM").html("El campo apellido solo acepta caracteres, al menos 3");
-                    rapellidoM = false;
-                   // return false;
-                   preventDefault();
-                }else {
-                        $(".errorApellidoM").html("Campo validado");
-                        $(".errorApellidoM").attr("style", "color:green");
-                        rapellidoM = true;
-                    }if(!expCedula.test(cedula)){
-                        $(".errorCedulaM").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
-                        rcedulaM = false;
-                       // return false;
-                       preventDefault();
-                } else{
-                        $(".errorCedulaM").html("");
-                    rcedulaM = true;
-                                $(".errorCedulaM").html("Cédula valida");
-                            $(".errorCedulaM").attr("style", "color:green");
-                
-                }if(!expTelefono.test(telefono)){
-                            $(".errorTelefonoM").html("El campo telefono solo acepta numeros, al menos 10");
-                            rtelefonoM = false;
-                            preventDefault();
-                        // return false;
-                    }else{
-                            $(".errorTelefonoM").html("");
-                            rtelefonoM = true;
-                                        $(".errorTelefonoM").html("Telefono valido");
-                                    $(".errorTelefonoM").attr("style", "color:green");
-                        
-                        }
-               // return true;
-            }
-        }
-    //
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
+
     $('.editar').click(function(e){
         e.preventDefault();
         mostrar($(this).attr('data-id'), "#modificarChofer", "#ModificarChoferModal");
@@ -415,10 +332,6 @@ $(".ModificarChofer").click(function() {
         mostrar($(this).attr('data-id'), "#consultarChofer", "#ConsultarChoferModal");
     })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
     // Inhabilitar Chofer
     $('body').on('click', '.inhabilitar', function(e) {
         e.preventDefault();
@@ -457,96 +370,6 @@ $(".ModificarChofer").click(function() {
             }
         })
     });
-
-
-<<<<<<< HEAD
-=======
-function validar(modificar = false) {
-    var form = "";
-
-    var expNombre = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
-    var expApellido = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
-    var expCedula =/^\d{7,14}$/;
-    var expTelefono = /^\d{11,12}$/;
-    
-    if(!modificar){
-        form = "#AgregarChoferModal";
-    }
-    else{
-        form = "#modificarChofer";
-    }
-    var expNombre = /^[A-Za-z]{3,50}$/;
-    var nombre = $(form).find("#nombre").val();
-    var rnombre = false;
-
-    var apellido = $(form).find("#apellido").val();
-    var rapellido = false;
-
-    var cedula = $(form).find("#cedula").val();
-    var rcedula = false;
-
-    var telefono = $(form).find("#telefono").val();
-    var rtelefono = false;
-
-    var placa = $(form).find("#placa").val();
-    var rplaca = false;
-
-   //revisar errores
-    if (nombre == ""|apellido == ""|cedula == ""|placa == ""|telefono == "") {
-   swal.fire({
-                                    type: 'warning',
-                                    title: 'Campos obligatorios',
-                                    text: 'Asegurate de llenar todos los campos',
-                                });
-        $(form).find(".errorNombre").html("Debe ingresar su nombre");
-        $(form).find(".errorApellido").html("Debe ingresar su apellido");
-        $(form).find(".errorCedula").html("Debe ingresar su cedula");
-        $(form).find(".errorPlaca").html("Debe seleccionar su placa");
-        $(form).find(".errortelefono").html("Debe ingresar un telefono");
-           return false;
-
-    }else{
-           if(!expNombre.test(nombre)){
-                    $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 3");
-                        rnombre = false;
-                        preventDefault();
-            } else {
-                    $(".errorNombre").html("Campo validado");
-                    $(".errorNombre").attr("style", "color:green");
-                    rnombre = true;
-                } if(!expApellido.test(apellido)){
-            $(".errorApellido").html("El campo apellido solo acepta caracteres, minimo 3");
-                rapellido = false;
-                preventDefault();
-    } else {
-            $(".errorApellido").html("Campo validado");
-            $(".errorApellido").attr("style", "color:green");
-            rapellido = true;
-        }if(!expCedula.test(cedula)){
-            $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
-               rcedula = false;
-               preventDefault();
-    } else {
-            $(".errorCedula").html("");
-           rcedula = true;
-                     $(".errorCedula").html("Cédula valida");
-                   $(".errorCedula").attr("style", "color:green");
-
-        }if(!expTelefono.test(telefono)){
-            $(".errorTelefono").html("El campo telefono solo acepta al menos 10 numeros, sino puede registrar el campo no coincide con el dato esperado");
-               rtelefono = false;
-               preventDefault();
-    } else {
-            $(".errorTelefono").html("");
-           rtelefono = true;
-                     $(".errorTelefono").html("Telefono valido");
-                   $(".errorTelefono").attr("style", "color:green");
-
-        }
-    return true;
-}
-}
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
 
 const mostrar = (id, formulario, modal) => {
     $.ajax({
@@ -608,14 +431,5 @@ const habilitar = (id) => {
         error: function(response) {
             console.log(response);
         }
-<<<<<<< HEAD
-    })
-}    
- });
-=======
     });
 }
-
-
-});
->>>>>>> 73d30ba60047effe9a57b76737440d49eba42dd1
