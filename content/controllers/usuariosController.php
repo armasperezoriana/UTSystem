@@ -158,6 +158,7 @@ public function encriptarS($palabra){
 						//$this->esteganografia->setImgEncriptada($ImgEncriptada);
 						$this->esteganografia->setIdUsuario($id);
 						$execute = $this->esteganografia->Agregar();
+						//var_dump($id,$img,$preguntauno,$respuestauno);
 						echo '1';
 					} else {
 						echo "2";
@@ -177,9 +178,8 @@ public function encriptarS($palabra){
 			http_response_code(404);
 			return false;
 		}
-
+		$id_usuario = $_POST['id_usuario'];
 		if (!empty($_POST['nombre']) && !empty($_POST['apellido'])) {
-			$id_usuario = $_POST['id_usuario'];
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
 			$cedula = $_POST['cedula'];
@@ -200,6 +200,7 @@ public function encriptarS($palabra){
 			$this->usuario->setPassword($pass);
 			$this->usuario->setCorreo($correo);		
 			$execute = $this->usuario->Modificar();
+			//$execute = $this->esteganografia->ModificarS();
 			if ($execute['ejecucion'] == true) {
 				$usu = $this->usuario->ObtenerUsuario($username);
 						$id = $usu['resultado']['id_usuario'];
@@ -213,10 +214,10 @@ public function encriptarS($palabra){
 						$this->esteganografia->setRespuestaUno($respuestauno);
 						$this->esteganografia->setImg($img);
 						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
-						//$this->esteganografia->setImgEncriptada($ImgEncriptada);
-						$this->esteganografia->setIdUsuario($id);
-						//$execute = $this->esteganografia->Agregar();
-						$execute = $this->esteganografia->Modificar();
+						//$this->esteganografia->setIdUsuario($id);
+						$this->esteganografia->setIdUsuario($this->usuario->ConsultarUsuarioId());
+						$execute = $this->esteganografia->ModificarS();
+						//var_dump($id,$img,$preguntauno,$respuestauno);
 				echo '1';
 
 			} else {

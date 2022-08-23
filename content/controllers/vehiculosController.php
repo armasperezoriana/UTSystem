@@ -59,12 +59,7 @@ public function Mostrar($param)
 			$this->vehiculo->setModelo($modelo);
 			$this->vehiculo->setFuncionamiento($funcionamiento);
 			$this->vehiculo->setKilometraje($kilometraje);
-			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
-			// $result = $this->vehiculo->ConsultarOne();
-			// if ($result['ejecucion'] == true) {
-				// if (count($result) > 1) {
-				// 	echo "3";
-				// } else {
+			
 					$execute = $this->vehiculo->Agregar();
 					//Codigo de bitacora sobre Agregar Usuario
 					if ($execute['ejecucion'] == true) {
@@ -72,10 +67,7 @@ public function Mostrar($param)
 					} else {
 						echo "2";
 					}
-				// }
-			// } else {
-			// 	echo "2";
-			// }
+				
 		}
 	}
 

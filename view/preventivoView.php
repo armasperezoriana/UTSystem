@@ -113,12 +113,10 @@
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
-                                    
+                                    <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
+                            <font color="white">Exportar PDF</font></a><i class="fas fa-check fa-1x text-gray-250"></i> </button>  
                                 </div>
                             </div>
-                            <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
-                            <font color="white">Exportar PDF</font></a>
-                                                                <i class="fas fa-check fa-1x text-gray-250"></i> </button
                             </table>
                         </div>
 
@@ -485,10 +483,8 @@
                                                                 id="estado">
                                                                 <option value="">...</option>
                                                                 <option value="1">Generada</option>
-                                                                <option value="2">En proceso</option>
-                                                                <option value="3">Cancelada</option>
-
-
+                                                                <option value="0">En proceso</option>
+                                                            
                                                             </select>
 
                                                             <span class="errorEstado" style="color:red"></span>
@@ -548,6 +544,10 @@
             <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
                 Ayuda
             </span>
+
+            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+    Seguridad
+</button>
 
         </div>
 
@@ -675,8 +675,8 @@
                                         class="form-control select2" name="estado" id="estado">
                                         <option value="">...</option>
                                         <option value="1">Generada</option>
-                                        <option value="2">En proceso</option>
-                                        <option value="3">Cancelada</option>
+                                        <option value="0">En proceso</option>
+            
 
                                     </select>
 
@@ -696,7 +696,41 @@
     </div>
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="modalForm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="confirmar"><center><h3>Confirme la acción</center></h3></label>
+                        <input type="text" class="form-control" id="pass" placeholder="Contrasena"/>
+                        <br>
+                        <p>Nota: Debe ingresar su clave de Superusuario para modificar un registro</p>
+                    </div>
+                
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- MODULo de AYUDA -->
 
@@ -763,6 +797,9 @@
                     </div>
                 </div>
             </div>
+
+
+
 
 
 

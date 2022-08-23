@@ -11,6 +11,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'vendor/autoload.php';
+
 class loginController
 {
 	use Utility;
@@ -104,7 +110,7 @@ public function emailValidation(){
 	//header('Content-Type: application/json; charset=utf-8');
 	$correo = isset($_REQUEST['correo']) ? $_REQUEST['correo'] : null;
 	$response =	$this->login->buscarCorreo($correo);
-	// var_dump($response);
+	// json_encode($response);
 	if(!empty($response)){
 		http_response_code(200);
 	}else{
@@ -116,90 +122,100 @@ public function emailValidation(){
 }
 
 public function modificarClaveUsuario(){
+	require_once("view/recuperarUsuarioView.php");
 	if(isset($_POST['pass']))
 {
-$clave =  $this->encriptar($_POST['pass']);
-if(isset($_COOKIE['pass'])==$clave){
-	if(!empty($response)){
-		//http_response_code(200);
+	$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
+	$this->usuario->setPassword($pass);
 		echo 'Cambio de clave exitosa';
 	}else{
-      echo "Error";
-		//http_response_code(404);
+      echo "Error al vericar su clave";
 	}
-
-	}
-}
 }
 
 
 
 public function mailReset(){
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
 
-require 'vendor/autoload.php';
-
-$longitud ='7';
-$caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
-$miclave = substr(($caracteres), rand (0,65), $longitud);
-$clave = $miclave;
-$value = $clave;
+		$longitud ='7';
+		$caracteres='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#?*-';
+		$miclave = substr(($caracteres), rand (0,66), $longitud);
+		$clave = $miclave;
+		$value = password_hash($clave, PASSWORD_BCRYPT, ['cost' => 8]);
 
 
-setcookie("pass", $value, time()+3600);  /* expira en 1 hora */
-$value = $this->encriptar($clave);
 
-$mail = new PHPMailer(true);
-try {
-    //Server settings
-    $mail->SMTPDebug = 0;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'armasoriana98@gmail.com';                     //SMTP username
-    $mail->Password   = 'tljsgfwvgglekuwl';                               //SMTP password
-    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+		$correo = isset($_REQUEST['correo']) ? $_REQUEST['correo'] : null;
+		$usuario = $this->login->userByCorreo($correo);
+		$response = $this->usuario->ModificarPassword($usuario['id_usuario'],$value);
 
-    //Recipients
-    $mail->setFrom($mail->Username, 'SISTEMA UT');
-   $mail->addAddress('armasoriana98@gmail.com', 'Usuario ');     //a quien se le va enviar
-	//$mail->addAddress($usuario['correo']);    
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Restablecer password SISTEMA UT';
-    $mail->Body    = '<b>SISTEMA UNIDAD DE TRANSPORTE-RECUPERACIÓN DE USUARIO</b>
-		<center>Correo automático de recuperación</center>
-	Si solicitaste la recuperación de acceso para tu usuario, usa el codigo que aparece a 
-                    continuación 
-					<b>Nueva clave: '.$clave.'</b>
-					para completar el proceso. Esta es una clave temporal y te recomendamos modificarla al ingresar al sistema.<br>
-					Si no solicitaste esto, puedes ignorar este correo. <br>
-                   <br>';
-	
+		if ($response){
 		
-   $mail->send();
-   require_once("view/recuperarUsuarioView.php");
-    echo 'Correo enviado.';
+		setcookie("pass", $value, time()+3600);  /* expira en 1 hora */
+		$value =  password_hash($clave, PASSWORD_BCRYPT, ['cost' => 8]);
+		//var_dump($correo);
+			
 	
-	
-} catch (Exception $e) {
-    echo "Message no pudo enviarse.Intentelo nuevamente. Error: {$mail->ErrorInfo}";
-	}
-}
+			$mail = new PHPMailer(true);
+			try {
+				//Server settings
+				$mail->SMTPDebug = 0;                      //Enable verbose debug output
+				$mail->isSMTP();                                            //Send using SMTP
+				$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+				$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+				$mail->Username   = 'armasoriana98@gmail.com';                     //SMTP username
+				$mail->Password   = 'sgsnkewqzajegxgr';                               //SMTP password
+				$mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+				$mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+				//Recipients
+				$mail->setFrom($mail->Username, 'SISTEMA UT');
+			$mail->addAddress($usuario['correo'], 'Usuario ');     //a quien se le va enviar
+				
+				//Content
+				$mail->isHTML(true);                                  //Set email format to HTML
+				$mail->Subject = 'Restablecer password SISTEMA UT';
+				$mail->Body    = '<b>SISTEMA UNIDAD DE TRANSPORTE-RECUPERACIÓN DE USUARIO</b>
+					<center>Correo automático de recuperación</center>
+					<h2>Hola! '.$usuario['nombre'].'   '.$usuario['apellido'].'</h2>
+				Si solicitaste la recuperación de acceso para tu usuario:
+								<h4> '.$usuario['usuario'].'</h4>, usa el codigo que aparece a continuación 
+								<b>Nueva clave:</b>. '.$clave.'
+								Ingresa en el formulario de modificación para completar el proceso. Esta es una clave temporal y te recomendamos modificarla al ingresar al sistema.<br>
+								Si no solicitaste esto, puedes ignorar este correo. <br>
+							<br>';
+			$mail->send();
+			echo json_encode([
+				'tipo' => 'success', 'mensaje' =>  'Enlace enviado al correo '.$usuario['correo'],
+			]); 
+			require_once("view/recuperarUsuarioView.php");
+			return true;
+			} catch (Exception $e) {
+				echo json_encode([
+					'error' => true,
+					'message' => 'No se pudo enviar el correo. Lo sentimos! Intente de nuevo.',
+				]);
+				return false;
+			}
+		}else{
+				echo json_encode([
+					'error' => true,
+					'message' => 'Correo no registrado.',
+				]);
+			}
+		}
+
 
 
 public function OlvidoClave(){
 
-	if(empty($_SESSION['ut_usuario'])){
+	//if(empty($_SESSION['ut_usuario'])&&($_SESSION['clave'])){
 	require_once("view/recuperarUsuarioView.php");
-	}else{
+	//}else{
 
-	require_once("view/loginView.php");
+	//require_once("view/loginView.php");
 
-	}
+//	}
 
 }
 	public function Iniciar($username, $pass)

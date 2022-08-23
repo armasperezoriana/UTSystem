@@ -119,7 +119,7 @@
                                 fecha_inicio: fecha_inicio,
                             },
                             success: function(respuesta) {
-                                alert(respuesta);
+                                //alert(respuesta);
                                     if (respuesta == "1") {
                                     swal.fire({
                                         type: 'success',

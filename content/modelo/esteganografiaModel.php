@@ -10,11 +10,8 @@
 		private $con;
     private $id_usuario;
     private $preguntauno;
-    private $preguntados;
-    private $preguntatres;
     private $respuestauno;
-    private $respuestados;
-    private $respuestatres;
+    private $id_s_pregunta;
     private $img;
     private $img_encriptada;
 
@@ -84,22 +81,10 @@
 			}
 		}
 
-    public function Modificar(){
-      $id=0;
-			try {
-				$query = parent::prepare('SELECT MAX(id_s_pregunta) as max FROM seguridad_preguntas WHERE id_s_pregunta');
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$result = $query->fetchAll(parent::FETCH_ASSOC); 
-				foreach($result as $row){
-					if(!empty($row['max'])){
-						$id = $row['max']+1;
-					}else{
-						$id++;
-					}
-				}
+    public function ModificarS(){
+     try{
         $query = parent::prepare("UPDATE seguridad_preguntas SET preguntauno = '$this->preguntauno', respuestauno = '$this->respuestauno', 
-        img = '$this->img', img_encriptada = '$this->img_encriptada'  WHERE id_usuario = '$this->id_usuario'");
+        img = '$this->img', img_encriptada = '$this->img_encriptada'  WHERE id_s_pregunta = '$this->id_s_pregunta'");
         $respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -261,6 +246,9 @@ public function desencriptar($imgSrc){
     $this->respuestauno = $respuestauno;
   }
   
+  public function setId_s_pregunta($id_s_pregunta){
+    $this->id_s_pregunta = $id_s_pregunta;
+  }
 }
 
 ?>

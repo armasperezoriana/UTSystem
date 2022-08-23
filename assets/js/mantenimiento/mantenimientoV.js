@@ -11,6 +11,7 @@ $(document).ready(function () {
             var placa = $("#AgregarMantenimientoModal").find("#id_vehiculo").val();
             var costo = $("#AgregarMantenimientoModal").find("#costo").val();
             var estado = $("#AgregarMantenimientoModal").find("#estado").val();
+            var tiempo = $("#AgregarMantenimientoModal").find("#tiempo").val();
 
             // alert( nombre + ' ' + intervalo + ' ' + kilometraje + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + tiempo + ' ' );
             swal.fire({
@@ -36,6 +37,7 @@ $(document).ready(function () {
                             id_vehiculo: placa,
                             costo: costo,
                             estado: estado,
+                            tiempo: tiempo,
                         
                         },
                         success: function (respuesta){
@@ -73,7 +75,73 @@ $(document).ready(function () {
 
         }
     });
-    // Modificar mantenimiento
+    // PIDIENDO CLAVE PARA Modificar mantenimiento
+    $(".EnviarMantenimientoModificar").remove();
+    $('#modalForm').modal('show');
+    $('#modalForm').submit(function (e) {
+    $('#modalForm').modal('show');
+    e.preventDefault();
+            $('#modalForn').modal('hide'); Swal.fire({
+                title: 'Confirme la acción',
+                input: 'password',
+                inputPlaceholder: 'Contraseña',
+                inputAttributes: {
+                    autocapitalize: 'off'
+                },
+                showCancelButton: true,
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'Cancelar',
+                showLoaderOnConfirm: true,
+                preConfirm: (login) => {
+                    Toast.fire({
+                        title: 'Espere!',
+                        html: 'Los datos están siendo procesados',// add html attribute if you want or remove
+                        allowOutsideClick: false,
+                        onBeforeOpen: () => {
+                            Swal.showLoading()
+                        },
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: "respaldo/verificarPassword",
+                        data: { 'password': login },
+                        success: function (response) {
+                            console.log(response);
+                            if (response.success) {
+                                restaurar();
+                            }
+                            else {
+                                Swal.fire(
+                                    "Incorrecto!",
+                                    "Contraseña incorrecta",
+                                    "warning"
+                                );
+                                $('#formularioRestaurar').submit();
+                                Swal.showValidationMessage(
+                                    `Contraseña Incorrecta`
+                                )
+                            }
+
+                        },
+                        error: (response) => {
+                            console.log("Error: " + response);
+                            Swal.fire(
+                                "Error!",
+                                "Ocurrió un error durante la verificación",
+                                "error"
+                            );
+                        }
+                    });
+
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            }).then((result) => {
+                console.log(result.isConfirmed);
+            });
+            $(".swal2-content").append(`<span class="text-center spanRespaldar">Nota: Al restaurar la 
+                Base de Datos perderá todos los cambios realizados después de la fecha del respaldo</span>`);
+        });
+    });
 
     $(".EnviarMantenimientoModificar").click(function() {
         var id = $(this).attr("id");
@@ -88,8 +156,7 @@ $(document).ready(function () {
             var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculo").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costo").val();
             var estado = $("#ModificarMantenimientoModal"+id).find("#estado").val();
-
-           //alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
+           
             swal.fire({
                 title: "¿Desea guardar los datos que han sido modificados?",
                 text: "Estos datos serán guardados.",

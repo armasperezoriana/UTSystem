@@ -290,10 +290,10 @@
 		}
 
 
-		public function ModificarPassword(){
+		public function ModificarPassword($id,$clave){
 			try{
-				$query = parent::prepare("UPDATE usuarios SET contrasena = '$this->password'
-					WHERE id_usuario = '$this->id_usuario'");
+				$query = parent::prepare("UPDATE usuarios SET contrasena = '$clave'
+					WHERE id_usuario = '$id'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

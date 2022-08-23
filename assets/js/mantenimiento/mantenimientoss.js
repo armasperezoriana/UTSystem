@@ -11,6 +11,7 @@ $(document).ready(function () {
             var placa = $("#AgregarMantenimientoModal").find("#id_vehiculo").val();
             var costo = $("#AgregarMantenimientoModal").find("#costo").val();
             var estado = $("#AgregarMantenimientoModal").find("#estado").val();
+            var tiempo = $("#AgregarMantenimientoModal").find("#tiempo").val();
 
             // alert( nombre + ' ' + intervalo + ' ' + kilometraje + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + tiempo + ' ' );
             swal.fire({
@@ -36,6 +37,7 @@ $(document).ready(function () {
                             id_vehiculo: placa,
                             costo: costo,
                             estado: estado,
+                            tiempo: tiempo,
                         
                         },
                         success: function (respuesta){
@@ -78,8 +80,8 @@ $(document).ready(function () {
     $(".EnviarMantenimientoModificar").click(function() {
         var id = $(this).attr("id");
         var valido = validar(true, id);
-        //var validarS = validarSeguridad();
-       if (valido == true && validarS) {
+       // var validarS = validarSeguridad();
+       if (valido == true) {
 
             var nombre = $("#ModificarMantenimientoModal"+id).find("#nombre").val();
             var intervalo = $("#ModificarMantenimientoModal"+id).find("#intervalo").val();
@@ -88,8 +90,7 @@ $(document).ready(function () {
             var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculo").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costo").val();
             var estado = $("#ModificarMantenimientoModal"+id).find("#estado").val();
-
-           //alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
+           
             swal.fire({
                 title: "¿Desea guardar los datos que han sido modificados?",
                 text: "Estos datos serán guardados.",

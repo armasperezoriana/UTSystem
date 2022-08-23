@@ -43,28 +43,12 @@
                             <div class="contenedor" id="pasouno">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">
-                                        Seguridad de Usuarios</h1>
-                                          <p class="mb-4">Verifique Su correo e ingrese el correo enviado </p>
+                                        Excelente! Hemos recuperado tu cuenta</h1>
+                                          <p class="mb-4">Verifique su correo e ingrese el codigo que fue enviado </p>
                                     </div>
-                                    <form class="recuperarClave" id="recuperarClave">
-                                                <label for="clave"><b>Introduzca su nueva clave</b></label>
-                                                 
-                                                                    <br>
-                                                <input type="text" class="form-control form-control-user"
-                                                id="pass" aria-describedby="emailHelp" required
-                                                placeholder="Ingrese una contrasena nueva..">
-                                        
-                                         <br>
-                                         <button class="btn btn-secondary btn-user btn-block" type="submit">
-                                           Guardar
-                                        </button>
-                                        </div>
-                                    </form>
+                                   <h2> <a class="small" href="<?= _ROUTE_ ?>Login">Ingresa a tu cuenta con la nueva clave!</a></h2>
                                     <hr>
                                     <br>  <br> 
-                                    <div class="text-center">
-                                        <a class="small" href="<?= _ROUTE_ ?>Login">¿Ya tienes una? Inicia Sesion!</a>
-                            </div>
                             </div>
                         </div>
                         </div>

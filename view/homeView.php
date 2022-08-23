@@ -115,7 +115,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             
-                                                <a  href="<?=__ROUTE_?>Rutas"><h5>RUTAS</h5></a></div>
+                                            <a href="<?=_ROUTE_ ?>Ruta"><h5>RUTAS</h5></a></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col-auto">

@@ -10,6 +10,8 @@
 	use content\modelo\talleresModel as talleresModel;
 	use content\modelo\tiposModel as tiposModel;
 	use content\modelo\rutaModel as rutaModel;
+	use content\modelo\usuariosModel as usuariosModel;
+	use content\modelo\rolesModel as rolesModel;
 
 
 	class mantenimientoController{
@@ -17,7 +19,8 @@
 		private $mantenimiento;
 		private $vehiculo;
 		private $taller;
-		private $tipo;
+		private $usuario;
+		private $rol;
 
 		function __construct($url){
 			$this->url = $url;
@@ -26,6 +29,9 @@
 			$this->taller = new talleresModel();
 			$this->tipos = new tiposModel();
 			$this->rutas= new rutaModel();
+			$this->usuario = new usuariosModel();
+			$this->rol = new rolesModel();
+
 		}
 		
 		public function Consultar(){
@@ -93,6 +99,7 @@
 			$tiempo_llantas=29500; //Km
 			$vehiculos=$this->vehiculo->Consultar();
 			$rutas=$this->rutas->Consultar();
+			//$this->mantenimiento->setEstado($estado);
 			$notificaciones=$this->mantenimiento->Consultar_notificaciones();
             $vehiculos_sin_mantenimiento=[];
 			$vehiculos_mantenimiento=[];	
@@ -175,6 +182,7 @@
 								"titulo"=>"Mantenimiento preventivo ".$vn['placa'],
 								"contenido"=>$vn['texto_notificacion'],
 								"id_vehiculo"=>$vn['id_vehiculo']
+						
 							]);
 						}
 					 }
@@ -226,7 +234,7 @@
 				$taller = $_POST['id_taller'];
 				$vehiculo= $_POST['id_vehiculo'];
 				$costo = $_POST['costo'];
-				//$estado = $_POST['estado'];
+				$estado = $_POST['estado'];
 
 				$this->mantenimiento->setIdMantenimiento($id_mantenimiento);
 				$this->mantenimiento->setNombre($nombre);
@@ -235,7 +243,7 @@
 				$this->mantenimiento->setIdTaller($taller);
 				$this->mantenimiento->setIdVehiculo($vehiculo);
 				$this->mantenimiento->setCosto($costo);
-				//$this->mantenimiento->setEstado($estado);
+				$this->mantenimiento->setEstado($estado);
 				//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 				
 				$execute = $this->mantenimiento->Modificar();

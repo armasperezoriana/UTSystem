@@ -81,6 +81,27 @@
 		}
 	}
 
+	public function userByCorreo($correo){
+		try {
+			$usuario = array();
+			$query = parent::prepare("SELECT * FROM usuarios WHERE correo = :correo");
+			$query->execute(['correo' => $correo]);
+			while($row = $query->fetch()){
+				 $usuario['id_usuario'] = ($row['id_usuario']);
+				 $usuario['cedula'] = ($row['cedula']);
+				 $usuario['usuario'] = ($row['usuario']);
+				 $usuario['nombre'] = ($row['nombre']);
+				 $usuario['apellido'] = ($row['apellido']);
+				 $usuario['cedula'] = ($row['cedula']);
+				 $usuario['correo'] = ($row['correo']);
+			   }
+			return $usuario;
+		} catch (Exception $e) {
+			return $e->getMessage();
+		}
+	}
+
+
 	
 	public function setId($id){
 		$this->id_usuario = $id;

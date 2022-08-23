@@ -14,9 +14,9 @@ $(document).ready(function() {
                       success: function(response) {
                           swal.fire({
                               type: 'success',
-                             title: 'Contrasena modificada correctamente',
+                             title: 'Clave modificada, puedes entrar',
                           }).then((isConfirm) => {
-                             location.href = './Login';
+                             location.href = './Home';
                           });
                       },
                       error: (response) => {
