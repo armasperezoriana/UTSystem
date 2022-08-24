@@ -14,6 +14,7 @@
 	    private $rol;
 	    private $password;
 	    private $correo;
+		private $clave_especial;
 
 
 		public function __construct(){
@@ -126,6 +127,23 @@
 				return $errorReturn;
 			}
 		}
+
+		public function ObtenerClaveEspecial($clave_especial,$usuario){
+			try {
+				$query = parent::prepare("SELECT usuario, clave_especial FROM usuarios WHERE clave_especial = '$clave_especial' AND usuario ='$usuario' LIMIT 1");
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
+				//var_dump($respuesta);
+				return $respuesta;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
+
 
 		public function BuscarDatos(){
 			try {
@@ -275,7 +293,7 @@
 						$id++;
 					}
 				}
-				$query = parent::prepare("INSERT INTO usuarios (id_usuario, cedula, usuario, nombre, apellido, contrasena, rol, correo, status) VALUES ($id, '{$this->cedula}', '{$this->username}', '{$this->nombre}', '{$this->apellido}', '{$this->password}', '{$this->rol}', '{$this->correo}', 1)");
+				$query = parent::prepare("INSERT INTO usuarios (id_usuario, cedula, usuario, nombre, apellido, contrasena, rol, correo, clave_especial, status) VALUES ($id, '{$this->cedula}', '{$this->username}', '{$this->nombre}', '{$this->apellido}', '{$this->password}', '{$this->rol}', '{$this->correo}', '{$this->clave_especial}', 1)");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -311,7 +329,8 @@
 		public function Modificar(){
 			try{
 				$query = parent::prepare("UPDATE usuarios SET cedula = '$this->cedula', usuario = '$this->username', 
-					nombre = '$this->nombre', apellido = '$this->apellido', contrasena = '$this->password', rol = '$this->rol', correo = '$this->correo'
+					nombre = '$this->nombre', apellido = '$this->apellido', contrasena = '$this->password', rol = '$this->rol', 
+					correo = '$this->correo', clave_especial ='$this->clave_especial'
 					WHERE id_usuario = '$this->id_usuario'");
 				$respuestaArreglo = '';
 				$query->execute();
@@ -429,6 +448,10 @@
 		public function setCorreo($correo){
 			$this->correo = $correo;
 		}
+		public function setClaveEspecial($clave_especial){
+			$this->clave_especial = $clave_especial;
+		}
+
 
 
 

@@ -304,6 +304,14 @@
                                             <span class="errorCorreo" style="color:red"></span>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-12 col-md-12">
+                                            <label for="clave_especial"><b>Clave especial</b></label>
+                                            <input style="width: 50%;" type="password" class="form-control" name="clave_especial"
+                                                id="clave_especial" placeholder="Introduce una clave especial">
+                                            <span class="errorClave" style="color:red"></span>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
@@ -581,7 +589,7 @@
     </a>
     <style type="text/css">
     .modal {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
     </style>
     <div class="modal fade" id="AyudaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -719,8 +727,8 @@
                                                 <div class="row">
                                                     <div class="form-group col-sm-12 col-md-6">
                                                         <label for="Contraseña<"><b>Contraseña</b></label>
-                                                        <input type="password" class="form-control" name="pass1"
-                                                            id="pass1" placeholder="Ingrese su contraseña" required>
+                                                        <input type="password" class="form-control" name="pass1" 
+                                                            id="pass1" value="<?= $value['pass1'] ?>" placeholder="Ingrese su contraseña" required>
                                                         <span class="errorPassM" style="color:red"></span>
                                                     </div>
                                                     <br> <br>
@@ -732,6 +740,14 @@
                                                             name="correo" id="correo" value="<?= $value['correo'] ?>"
                                                             placeholder="example@gmail.com">
                                                         <span class="errorCorreoM" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                                    <div class="row">
+                                                    <div class="form-group col-sm-12 col-md-12">
+                                                        <label for="clave_especial"><b>Clave especial</b></label>
+                                                        <input style="width: 50%;" type="password" class="form-control" name="clave_especial"
+                                                            id="clave_especial" placeholder="Introduce una clave especial" value="<?= $value['clave_especial'] ?>">
+                                                        <span class="errorClaveEM" style="color:red"></span>
                                                     </div>
                                                 </div>
                                                 <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->

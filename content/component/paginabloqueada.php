@@ -22,11 +22,15 @@
 
             <!-- Main Content -->
             <div id="content">
+            <div class="text-center">
+            <div class="error mx-auto"><h3>Página bloqueada</h3></div>
+            <p class="text-gray-500 mb-0"> Su usuario no tiene permisos de ver esta pagina... Consulte con su administrador</p>
+            
+            <a href="index.php">&larr; <h2>Volver</h2> </a>
+      
 	</script>
 	    
-                    <div class="text-center">
-                        <div class="error mx-auto">Página bloqueada</div>
-                  
+                   
 	<style>
 
 	body{
@@ -42,9 +46,9 @@
 
 
 
-                        <p class="text-gray-500 mb-0">, consulte con su administrador...</p>
-                        <a href="index.php">&larr; <h2>Volver</h2> </a>
+                        
                     </div>
+
 
                 </div>
 

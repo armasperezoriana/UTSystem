@@ -13,7 +13,7 @@ $(document).ready(function() {
             var rol = $("#AgregarUsuarioModal").find("#rol").val();
             var pass = $("#AgregarUsuarioModal").find("#pass2").val();
              var correo = $("#AgregarUsuarioModal").find("#correo").val();
-             
+             var clave_especial = $("#AgregarUsuarioModal").find("#clave_especial").val();
 
              if(seguridadImg == ""){
                 swal.fire({
@@ -26,7 +26,7 @@ $(document).ready(function() {
             var preguntauno = $("#AgregarUsuarioModal").find("#preguntauno").val();  
           
             var respuestauno = $("#AgregarUsuarioModal").find("#respuestauno").val();        
-           //console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+           //console.log(clave_especial+ - +id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
 
             swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
@@ -52,9 +52,12 @@ $(document).ready(function() {
                             preguntauno: preguntauno,
                             img: seguridadImg,
                             respuestauno: respuestauno,
+                            clave_especial: clave_especial,
                         },
                         success: function(respuesta) {
-                            console.log(respuesta);
+                           console.log(respuesta + clave_especial);
+                           // console.log(clave_especial+ - +id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+
                             if (respuesta == "1") {
 
                             swal.fire({
@@ -76,7 +79,7 @@ $(document).ready(function() {
                                 swal.fire({
                                     type: 'warning',
                                     title: 'Datos repetidos',
-                                    text: 'Cédula, correo y/o nombre de usuario ya existen',
+                                    text: 'Cédula y/o correo ya existen',
                                 });
                             }
                         }
@@ -106,6 +109,7 @@ $(document).ready(function() {
             var rol = $("#modificarUsuario").find("#rol").val();
             var pass = $("#modificarUsuario").find("#pass1").val();
             var correo = $("#modificarUsuario").find("#correo").val();
+            var clave_especial = $("#modificarUsuario").find("#clave_especial").val();
             if(seguridadImg == ""){
                 swal.fire({
                     type: 'warning',
@@ -144,6 +148,7 @@ $(document).ready(function() {
                             preguntauno: preguntauno,
                             img: seguridadImg,
                             respuestauno: respuestauno,
+                            clave_especial: clave_especial,
                        
                         },
                         success: function(respuesta) {
@@ -332,7 +337,7 @@ $(document).ready(function() {
                 $(formulario).find("#rol").val(usuario.rol);
                 $(formulario).find("#pass1").val(usuario.pass);
                 $(formulario).find("#correo").val(usuario.correo);
-               
+                $(formulario).find("#clave_especial").val(usuario.clave_especial);
                 $(modal).modal('show');
             },
             error: function (response) {
@@ -390,6 +395,7 @@ function validar(modificar = false) {
     var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     var expPass = /^.{6,12}$/;
     var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
+    var expClaveEspecial =/^[a-zA-ZÀ-ÿ\s]{5,7}$/;
 
         form = "#AgregarUsuarioModal";
   
@@ -418,7 +424,10 @@ function validar(modificar = false) {
     var correo = $(form).find("#correo").val();
     var rcorreo = false;
 
-if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""){
+    var clave_especial = $(form).find("#clave_especial").val();
+    var rclave_especial = false;
+
+if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""|clave_especial==""){
 
      swal.fire({
                                     type: 'warning',
@@ -434,6 +443,7 @@ if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|c
              $(".errorpass").html("La clave acepta de 6 a 12 digitos y solo numeros");
                $(".errorPass2").html("Confirmar Contraseña");
                   $(".errorCorreo").html("Debe ingresar un correo electronico valido");
+                  $(".errorClave").html("Debe ingresar una clave especial");
                
 }
 
@@ -470,10 +480,9 @@ if(!expCedula.test(cedula)){
                rusername = false;
                return false;
     } else {
-            $(".errorUsername").html("");
-           rusername = true;
             $(".errorUsername").html("Usuario valido");
              $(".errorUsername").attr("style", "color:green");
+           rusername = true;
         }if(!expPass.test(pass1)){
             $(".errorpass").html("La clave acepta de 6 a 12 digitos,pueden ser numeros, signos especiales y letras");
                rpass = false;
@@ -490,6 +499,14 @@ if(!expCedula.test(cedula)){
             $(".errorCorreo").html("Correo valido");
             $(".errorCorreo").attr("style", "color:green");
            rcorreo = true;
+        }if(!expClaveEspecial.test(clave_especial)){
+            $(".errorClave").html("Este campo solo acepta caracteres minimo 5, maximo 7");
+               rclave_especial = false;
+               return false;
+    } else {
+            $(".errorClave").html("Clave especial valida");
+            $(".errorClave").attr("style", "color:green");
+           rclave_especial = true;
         }
 
  }
@@ -514,6 +531,7 @@ function validarM(modificar = true) {
     var expCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     var expPass = /^.{6,12}$/;
     var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
+    var expClaveEspecial =/^[a-zA-ZÀ-ÿ\s]{5,7}$/;
 
     
     var nombre = $(form).find("#nombre").val();
@@ -541,7 +559,10 @@ function validarM(modificar = true) {
     var correo = $(form).find("#correo").val();
     var rcorreo = false;
 
-if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""){
+    var clave_especial = $(form).find("#clave_especial").val();
+    var rclave_especial = false;
+
+if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|correo==""|clave_especial==""){
 
      swal.fire({
                                     type: 'warning',
@@ -555,6 +576,7 @@ if(nombre==""|apellido==""|cedula==""|username==""|rol==""|pass1==""|pass2==""|c
           $(".errorRolM").html("Debe seleccionar su rol");
                $(".errorPassM").html("Confirmar Contraseña");
                   $(".errorCorreoM").html("Debe ingresar un correo electronico valido");
+                  $(".errorClaveEM").html("Debe ingresar una clave especial");
                   
                
 }
@@ -612,6 +634,14 @@ if(!expCedula.test(cedula)){
             $(".errorCorreoM").html("Correo valido");
             $(".errorCorreoM").attr("style", "color:green");
            rcorreo = true;
+        }if(!expClaveEspecial.test(clave_especial)){
+            $(".errorClaveEM").html("Este campo solo acepta caracteres minimo 5, maximo 7");
+               rclave_especial = false;
+               return false;
+    } else {
+            $(".errorClaveEM").html("Clave especial valida");
+            $(".errorClaveEM").attr("style", "color:green");
+           rclave_especial = true;
         }
  return true;
 

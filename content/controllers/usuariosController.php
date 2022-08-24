@@ -71,48 +71,6 @@ class usuariosController
         ]);
     }
 
-public function encriptarS($palabra){
-			$valor=unpack('H*',$palabra);
-			$nivel1=base_convert($valor[1],16,2);
-			$parte1="";
-			$parte2="";
-		
-			for($n=0;$n<strlen($nivel1);$n++){
-			  if($n<(strlen($nivel1)/2)){
-				$parte1.=$nivel1[$n];
-			  }
-			  else{
-				$parte2.=$nivel1[$n];
-			  }
-			}
-		
-			$parte1Encriptada="";
-			for($n=0;$n<strlen($parte1);$n++){
-			  if($parte1[$n]==1){
-				$parte1Encriptada.="%";
-			  }
-			  else{
-				$parte1Encriptada.="$";
-			  }
-			}
-		
-			$parte2Encriptada="";
-			for($n=0;$n<strlen($parte2);$n++){
-			  if($parte2[$n]==1){
-				$parte2Encriptada.="%";
-			  }
-			  else{
-				$parte2Encriptada.="$";
-			  }
-			}
-		
-			$nivel2=$parte2Encriptada."/".$parte1Encriptada;
-		
-			return $nivel2;
-		
-		
-		  }
-
 
 	public function Registrar()
 	{
@@ -124,7 +82,9 @@ public function encriptarS($palabra){
 			$id_rol = $_POST['rol'];
 			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
-			//$correo = $this->encriptarS(($_POST['correo']));
+			$clave_especial = $_POST['clave_especial'];
+			
+			$clave_especial = $this->encriptar(($_POST['clave_especial']));
 
 			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
 			//cadena que encripta
@@ -136,6 +96,8 @@ public function encriptarS($palabra){
 			$this->usuario->setRol($id_rol);
 			$this->usuario->setPassword($pass);
 			$this->usuario->setCorreo($correo);
+			$this->usuario->setClaveEspecial($clave_especial);
+			//var_dump($clave_especial);
 			//Agregar un Consultar para ver si existe Antes de Guardar o Rechazar;
 			$result = $this->usuario->ConsultarOne();
 			if ($result['ejecucion'] == true) {
@@ -171,6 +133,27 @@ public function encriptarS($palabra){
 	}
 	
 
+
+	public function ConsultarClaveEspecial()
+	{
+		$clave_especial = isset($_REQUEST['clave_especial']) ? $_REQUEST['clave_especial'] : null;
+		$usuario = isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : null;
+		$result = $this->usuario->ObtenerUsuario($usuario);
+		//var_dump($clave_especial);
+		$response= $this->usuario->ObtenerClaveEspecial($clave_especial,$usuario);
+		if(!empty($response)){
+			//var_dump($response);
+			echo "1";
+		}else{
+			echo "2";
+			//var_dump($response);
+	
+		}
+	}
+	
+	
+
+
 	public function Modificar()
 	{
 		$method = $_SERVER['REQUEST_METHOD'];
@@ -187,6 +170,9 @@ public function encriptarS($palabra){
 			$id_rol = $_POST['rol'];
 			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
+			$clave_especial = $_POST['clave_especial'];
+			$clave_especial = $this->encriptar(($_POST['clave_especial']));
+			
 			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);	
 			$this->usuario->setId($id_usuario);
 			$this->usuario->setNombre($nombre);
@@ -196,6 +182,9 @@ public function encriptarS($palabra){
 			$this->usuario->setRol($id_rol);
 			$this->usuario->setPassword($pass);
 			$this->usuario->setCorreo($correo);	
+			$this->usuario->setClaveEspecial($clave_especial);
+			
+			
 			$execute =  $this->usuario->ConsultarOne();
 			 //$result = $this->login->ObtenerOne($id_usuario);
 			if ($execute['ejecucion'] == true) {

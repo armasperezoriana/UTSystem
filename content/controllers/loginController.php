@@ -209,13 +209,7 @@ public function mailReset(){
 
 public function OlvidoClave(){
 
-	//if(empty($_SESSION['ut_usuario'])&&($_SESSION['clave'])){
 	require_once("view/recuperarUsuarioView.php");
-	//}else{
-
-	//require_once("view/loginView.php");
-
-//	}
 
 }
 	public function Iniciar($username, $pass)
@@ -227,7 +221,6 @@ public function OlvidoClave(){
 
 			$pass = ($_POST['pass'] !== "") ? $_POST['pass'] : NULL;
 
-			//$pass = $this->desencriptarS($pass);
 		} else {
 
 			echo "Datos equivocados";

@@ -21,7 +21,7 @@
 	define("_DB_USER_", "root");									/* nombre del usuario de la BD */
 	define("_DB_PASS_", "");										/* contraseña de la base de datos  */
 	define("_COMPLEMENT_" , "/systemUT/view/assets/");					/* direccion del proyecto */
-
+	define("_JS_" , "/dashboard/systemUT/content/assets/js/");		/* direccion de js*/
 	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
 	define("_IMG_SEGURIDAD_" , "/dashboard/systemUT/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
 		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
@@ -54,6 +54,7 @@
 		protected function _DIRECTORY_()	{return _DIRECTORY_;}
 		protected function _MODEL_()		{return _MODEL_;}
 		protected function _CONTROLLER_()	{return _CONTROLLER_;}
+		protected function _JS_()	        {return _JS_;}
 		protected function _DB_SERVER_()	{return _DB_SERVER_;}
 		protected function _DB_MANAGER_()	{return _DB_MANAGER_;}
 		protected function _DB_WEB_()		{return _DB_WEB_;}

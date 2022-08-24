@@ -76,28 +76,9 @@
                         
                             <div class="col-sm-20" style='text-align:right; '>
 
-                                
-                            
-                              
-
 
                             </div>
-                               <!--      
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            <a href="<?=_REPORTS_?>Orden" target="blank">
-                                                <h6>Orden de Servicio General</h6>
-                                            </a>
-                                        </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-check fa-2x text-gray-300"></i>
-                                    </div>
-                                </div>
-                            </div>-->
-
+                    
                         </div>
                        
 
@@ -181,7 +162,9 @@
                                                         <a href="#" class="btn btn-warning btn-icon-split editarbtn"
                                                             name="editar" id="'$value['id_vehiculo']'" href="#"
                                                             data-toggle="modal"
+                                                           
                                                             data-target="#ModificarMantenimientoModal<?=$preventivo['id_mantenimiento']?>">
+                                                    
                                                             <span class="icon text-white-40">
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
@@ -697,14 +680,14 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="modalForm" role="dialog">
+<div class="modal fade" id="modalForm" role="dialog" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false">>
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">×</span>
-                    <span class="sr-only">Close</span>
+                <!--     <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>-->
                 </button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
@@ -714,10 +697,18 @@
                 <p class="statusMsg"></p>
                 <form role="form">
                     <div class="form-group">
-                        <label for="confirmar"><center><h3>Confirme la acción</center></h3></label>
-                        <input type="text" class="form-control" id="pass" placeholder="Contraseña"/>
+                    <label for="confirmar"><center><h3>Confirme la acción</center></h3></label>
                         <br>
-                        <p>Nota: Debe ingresar su clave de Superusuario para modificar un registro</p>
+                        <p>Verifica tus datos</p>
+                        <br>
+                        <input type="text"  class="form-control" id="usuario" placeholder="Usuario" required/>
+                        <span class="errorUsername" style="color:red"></span>
+
+                        <br>
+                        <input type="pass" class="form-control" id="clave_especial" placeholder="Contraseña" />
+                        <span class="erroClaveEspecial" style="color:red"></span>
+                        <br>
+                        <p>Nota: Debe ingresar su clave especial para modificar un registro en este módulo</p>
                     </div>
                 
                 </form>
@@ -725,7 +716,6 @@
             
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <a class="confirmarClaveEspecial btn btn-primary" href="#">Confirmar</a>
                 <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
             </div>
@@ -806,6 +796,7 @@
 
 
 </body>
+<script type="text/javascript" src="'../../assets/js/usuario/verificar_clave.js"></script>
 <script type="text/javascript" src="'../../assets/js/seguridad/modalseguridad.js"></script>
 <script type="text/javascript" src="'../../assets/js/mantenimiento/mantenimientoV.js"></script>
 </html>
