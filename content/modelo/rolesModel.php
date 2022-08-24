@@ -3,7 +3,7 @@
 	namespace content\modelo;
 
 	use content\config\conection\database as database;
-
+	use PDOException;
 	class rolesModel extends database{
 
 	    private $rol;

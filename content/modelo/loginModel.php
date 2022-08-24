@@ -4,6 +4,7 @@
 
 	use content\config\conection\database as database;
 	use content\traits\Utility;
+	use PDOException;
 	use Exception;
 
 	class loginModel extends database{

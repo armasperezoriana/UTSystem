@@ -4,7 +4,7 @@
 
 	use content\config\conection\database as database;
 	use content\modelo\vehiculosModel as vehiculosModel;
-
+	use PDOException;
 	class choferesModel extends database{
 
 		private $id_choferes;

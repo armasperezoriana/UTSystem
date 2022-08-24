@@ -15,7 +15,7 @@ use PHPMailer\PHPMailer\SMTP;
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 
 class loginController
 {

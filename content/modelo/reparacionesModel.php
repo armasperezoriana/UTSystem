@@ -3,7 +3,8 @@
 	namespace content\modelo;
 
 	use content\config\conection\database as database;
-
+	use PDOException;
+	
 	class reparacionesModel extends database{
 
 		private $id_reparaciones;

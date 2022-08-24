@@ -10,6 +10,7 @@
 	use content\modelo\mantenimientoModel as mantenimientoModel;
 	use content\modelo\reparacionesModel as reparacionesModel;
 use content\modelo\talleresModel as talleresModel;
+use PDOException;
 
 	use content\modelo\rutaModel as rutaModel;
 

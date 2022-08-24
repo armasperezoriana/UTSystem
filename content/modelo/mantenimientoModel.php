@@ -1,7 +1,7 @@
 <?php
 
 	namespace content\modelo;
-
+	use PDOException;
 	use content\config\conection\database as database;
 
 

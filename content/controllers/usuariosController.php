@@ -10,6 +10,7 @@ use content\modelo\rolesModel as rolesModel;
 use content\modelo\esteganografiaModel as esteganografiaModel;
 use content\traits\Utility;
 
+
 class usuariosController
 {
 	use Utility;
@@ -126,7 +127,6 @@ public function encriptarS($palabra){
 			//$correo = $this->encriptarS(($_POST['correo']));
 
 			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
-			//echo $pass;
 			//cadena que encripta
 			
 			$this->usuario->setNombre($nombre);
@@ -187,10 +187,7 @@ public function encriptarS($palabra){
 			$id_rol = $_POST['rol'];
 			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
-		
-		
-			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
-			
+			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);	
 			$this->usuario->setId($id_usuario);
 			$this->usuario->setNombre($nombre);
 			$this->usuario->setApellido($apellido);
@@ -198,13 +195,13 @@ public function encriptarS($palabra){
 			$this->usuario->setUsername($username);
 			$this->usuario->setRol($id_rol);
 			$this->usuario->setPassword($pass);
-			$this->usuario->setCorreo($correo);		
-			$execute = $this->usuario->Modificar();
-			//$execute = $this->esteganografia->ModificarS();
+			$this->usuario->setCorreo($correo);	
+			$execute =  $this->usuario->ConsultarOne();
+			 //$result = $this->login->ObtenerOne($id_usuario);
 			if ($execute['ejecucion'] == true) {
-				$usu = $this->usuario->ObtenerUsuario($username);
-						$id = $usu['resultado']['id_usuario'];
-						$usu = $this->usuario->ObtenerUsuario($username);
+						$execute = $this->usuario->Modificar();
+					$usu = $this->usuario->ObtenerUsuario($username);
+					$id = $usu['resultado']['id_usuario'];
 						$id = $usu['resultado']['id_usuario'];
 						$respuestauno = $_POST['respuestauno'];
 						$preguntauno = $_POST['preguntauno'];
@@ -214,17 +211,16 @@ public function encriptarS($palabra){
 						$this->esteganografia->setRespuestaUno($respuestauno);
 						$this->esteganografia->setImg($img);
 						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
-						//$this->esteganografia->setIdUsuario($id);
-						$this->esteganografia->setIdUsuario($this->usuario->ConsultarUsuarioId());
-						$execute = $this->esteganografia->ModificarS();
-						//var_dump($id,$img,$preguntauno,$respuestauno);
-				echo '1';
-
-			} else {
-				echo "2";
-			}
+						$execute = $this->esteganografia->ModificarS($id);	
+							
+			//var_dump($respuestauno, $img, $id, $img_encriptada);
+			echo '1';
+		} else {
+			echo "2";
 		}
 	}
+}
+	
 
 	public function Inhabilitar($id)
 	{

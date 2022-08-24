@@ -386,7 +386,7 @@
                                 </div>
 
                            <div class="modal-body">
-                            <div class="table-responsive">
+                            <div class="table">
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         
@@ -426,7 +426,7 @@
                                     </div>
                                     
                             <div class="modal-footer">
-                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
                             
                             </div>
                              </form> 

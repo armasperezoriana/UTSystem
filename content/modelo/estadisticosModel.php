@@ -1,7 +1,7 @@
 <?php
 
 	namespace content\estadisticos;
-
+	use PDOException;
 	use content\config\conection\database as database;
 
 	class estadisticosModel extends database{

@@ -6,7 +6,8 @@
 	use content\component\headElement as headElement;
 	use content\modelo\homeModel as homeModel;
 	use content\modelo\rutaModel as rutaModel;
-		use content\modelo\vehiculosModel as vehiculosModel;
+	use content\modelo\vehiculosModel as vehiculosModel;
+	
 
 	class rutaController{
 		private $url;

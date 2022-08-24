@@ -715,7 +715,7 @@
                 <form role="form">
                     <div class="form-group">
                         <label for="confirmar"><center><h3>Confirme la acción</center></h3></label>
-                        <input type="text" class="form-control" id="pass" placeholder="Contrasena"/>
+                        <input type="text" class="form-control" id="pass" placeholder="Contraseña"/>
                         <br>
                         <p>Nota: Debe ingresar su clave de Superusuario para modificar un registro</p>
                     </div>
@@ -726,7 +726,8 @@
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>
+                <a class="confirmarClaveEspecial btn btn-primary" href="#">Confirmar</a>
+                <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
             </div>
         </div>
     </div>

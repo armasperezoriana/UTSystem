@@ -81,11 +81,14 @@
 			}
 		}
 
-    public function ModificarS(){
-     try{
-        $query = parent::prepare("UPDATE seguridad_preguntas SET preguntauno = '$this->preguntauno', respuestauno = '$this->respuestauno', 
-        img = '$this->img', img_encriptada = '$this->img_encriptada'  WHERE id_s_pregunta = '$this->id_s_pregunta'");
+    public function ModificarS($id){
+			try {
+	
+        $query = parent::prepare("UPDATE seguridad_preguntas SET  preguntauno = '$this->preguntauno', 
+        respuestauno = '$this->respuestauno', 
+        img = '$this->img', img_encriptada = '$this->img_encriptada'  WHERE id_usuario = '$id'");
         $respuestaArreglo = '';
+       //var_dump($query);
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 

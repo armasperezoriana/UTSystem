@@ -1,18 +1,3 @@
-<?php
-use content\config\conection\database as database;
-
-$mysqli = new mysqli("localhost", "root", "", "ut");
-
-//$query = prepare("SELECT * FROM usuarios");
-//$query->bindParam("correo",$correo, PDO::PARAM_STR);
-//$query->bindParam("contrasena", $contrasena, PDO::PARAM_STR);
-  //  $query->execute();
-    //$registro = $query->fetch(FETCH_ASSOC);
-
-//    print_r($registro);
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
