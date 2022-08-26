@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +20,19 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo _ROUTE_ ?>/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="view/vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="view/vendor/plugins/sweetalert/sweet-alert.js"></script>
+    <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
+    <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+
+    <script type="text/javascript" src="'../../assets/js/login/recuperar.js"></script>
 </head>
 
 <body class="bg-gradient-primary"
@@ -71,6 +83,13 @@
 
                                     <hr>
                                     <div class="text-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#modalForm">
+                                            Seguridad
+                                        </button>
+                                        <br> <br>
+
                                         <input type="hidden" name="token-r" id="token-r">
                                         <input type="button" value="Recuperar" onclick="Mostrar()"
                                             class="btn btn-secondary" />
@@ -117,7 +136,7 @@
                         <button class="btn btn-secondary btn-user btn-block" type="submit">
                             Recuperar
                         </button>
-                     
+
                     </div>
 
                 </form>
@@ -131,10 +150,10 @@
         </div>
     </div>
 
-
-    <!-- Modal content-->
-    <div class="modal-content" style="display:none">
-        <div class="modal-header">
+    <!-- Modal seguridad-->
+    <div class="modal-content"  class="modal fade" id="modalForm" style="display:none" role="dialog" aria-hidden="true" data-controls-modal="your_div_id"
+        data-backdrop="static" data-keyboard="false" >
+        <div class="modal-header" aria-hidden="true">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title"></h4>
         </div>
@@ -148,7 +167,7 @@
         <div class="container">
             <div>
                 <div class="" role="document">
-                    <TABLE >
+                    <TABLE>
                         <TR>
                             <TH>
                                 <center> IMAGEN 1</center>
@@ -160,11 +179,11 @@
                                 <center> IMAGEN 3</center>
                             </TH>
                             <TH>
-                               IMAGEN 4
+                                IMAGEN 4
                             </TH>
                         </TR>
                         <TR>
-                           
+
                             <TD><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                     class="card p-2 card-seguridad-img" data-action="modificar"
                                     data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" style="width:100%; height:100%;">
@@ -180,79 +199,80 @@
                             </TD>
                             <TD> <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                     class="card p-2 card-seguridad-img" data-action="modificar"
-                                    data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" style="width:60%; height:50%; position:;">
+                                    data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                    style="width:60%; height:50%; position:;">
                             </TD>
                         </TR>
-                    <br><br>
-                    <!--- PREGUNTA 1 --->
-            </div>
-            </table>
-            <label for="pregunta"><b>Pregunta
-                            1:</b></label>
-                    <div class="form-group col-sm-12 col-md-12">
-                        <select class="form-control select2" name="pregunta" id="preguntauno">
-
-                            <option value="">
-                                ...
-                            </option>
-                            <option value="¿Cuál era el nombre de tu mejor amigo?">
-                                ¿Cuál
-                                era el
-                                nombre
-                                de tu
-                                mejor
-                                amigo?
-                            </option>
-                            <option value="¿Cuál es tu color favorito?">
-                                ¿Cuál es
-                                tu
-                                color
-                                favorito?
-                            </option>
-                            <option value="¿Cómo se llama tu perro?">
-                                ¿Cómo se
-                                llama tu
-                                perro?
-                            </option>
-                            <option value="¿Donde estudiaste?">
-                                ¿Donde
-                                estudiaste?
-                            </option>
-                            <option value="¿Donde naciste?">
-                                ¿Donde
-                                naciste?
-                            </option>
-                            <option value="¿Cuál es tu apodo?">
-                                ¿Cuál es
-                                tu
-                                apodo?
-                            </option>
-                            <option value="¿Segundo nombre de tu padre?">
-                                ¿Segundo
-                                nombre
-                                de tu
-                                padre?
-                            </option>
-                            <option value="¿Dulce favorito?">
-                                ¿Dulce
-                                Favorito?
-                            </option>
-                            <option value="¿Donde estudiaste?">
-                                ¿Donde
-                                estudiaste?
-                            </option>
-                            <option value="¿Gatos o perros?">
-                                ¿Gatos o
-                                perros?
-                            </option>
-                        </select>
-                        <span class="errorPreguntauno" style="color:red"></span>
-                    </div>
-
-                    <label for="respuesta"><b>Respuesta</b></label>
-                    <input type="text" class="form-control" name="respuestauno" id="respuestauno">
-                    <span class="errorrespuesta" style="color:red"></span>
+                        <br><br>
+                        <!--- PREGUNTA 1 --->
                 </div>
+                </table>
+                <label for="pregunta"><b>Pregunta
+                        1:</b></label>
+                <div class="form-group col-sm-12 col-md-12">
+                    <select class="form-control select2" name="pregunta" id="preguntauno">
+
+                        <option value="">
+                            ...
+                        </option>
+                        <option value="¿Cuál era el nombre de tu mejor amigo?">
+                            ¿Cuál
+                            era el
+                            nombre
+                            de tu
+                            mejor
+                            amigo?
+                        </option>
+                        <option value="¿Cuál es tu color favorito?">
+                            ¿Cuál es
+                            tu
+                            color
+                            favorito?
+                        </option>
+                        <option value="¿Cómo se llama tu perro?">
+                            ¿Cómo se
+                            llama tu
+                            perro?
+                        </option>
+                        <option value="¿Donde estudiaste?">
+                            ¿Donde
+                            estudiaste?
+                        </option>
+                        <option value="¿Donde naciste?">
+                            ¿Donde
+                            naciste?
+                        </option>
+                        <option value="¿Cuál es tu apodo?">
+                            ¿Cuál es
+                            tu
+                            apodo?
+                        </option>
+                        <option value="¿Segundo nombre de tu padre?">
+                            ¿Segundo
+                            nombre
+                            de tu
+                            padre?
+                        </option>
+                        <option value="¿Dulce favorito?">
+                            ¿Dulce
+                            Favorito?
+                        </option>
+                        <option value="¿Donde estudiaste?">
+                            ¿Donde
+                            estudiaste?
+                        </option>
+                        <option value="¿Gatos o perros?">
+                            ¿Gatos o
+                            perros?
+                        </option>
+                    </select>
+                    <span class="errorPreguntauno" style="color:red"></span>
+                </div>
+
+                <label for="respuesta"><b>Respuesta</b></label>
+                <input type="text" class="form-control" name="respuestauno" id="respuestauno">
+                <span class="errorrespuesta" style="color:red"></span>
+            </div>
         </div>
 
     </div>
@@ -271,19 +291,7 @@
 
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="view/vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lenol0aAAAAAL58P1eQFRe6yfLmR8EEDBnXe4P_"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="view/vendor/plugins/sweetalert/sweet-alert.js"></script>
-    <script type="text/javascript" src="'../../assets/js/login/login.js"></script>
-    <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
 
-    <script type="text/javascript" src="'../../assets/js/login/recuperar.js"></script>
 </body>
 
 

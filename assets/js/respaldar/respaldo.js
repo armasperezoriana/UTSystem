@@ -11,7 +11,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "POST",
-            url: "respaldo/respaldar",
+            url: "respaldar/respaldar",
             data: { 'respaldo': "respaldar" },
             success: function (response) {
                 // console.log(response);
@@ -57,7 +57,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "POST",
-            url: "respaldo/restaurar",
+            url: "respaldar/restaurar",
             data: { 'respaldo': $('[name="respaldo"]').val() },
             success: function (response) {
                 // console.log(response);
@@ -101,7 +101,7 @@ $(document).ready(function () {
     const controlarMax = () => {
         $.ajax({
             type: "POST",
-            url: "respaldo/controlarMax",
+            url: "respaldar/controlarMax",
             data: { 'respaldo': "controlarMax" },
             success: function (response) {
                 console.log(response);
@@ -119,11 +119,8 @@ $(document).ready(function () {
 
     $('body').on('click', '#respaldar', async function (e) {
         e.preventDefault();
-      //let sesionAutenticada = await getSesionAutenticada();
-        //if (!sesionAutenticada) {
-          //  iniciarAutenticacion();
-           // return 0;
-       // }
+         var usuario = $("#modalForm").find("#usuario").val();  
+       // var clave_especial = $("#modalForm").find("#clave_especial").val();
         Swal.fire({
             title: 'Confirme la acción',
             input: 'password',
@@ -146,8 +143,8 @@ $(document).ready(function () {
                 });
                 $.ajax({
                     type: "POST",
-                    url: "respaldo/verificarPassword",
-                    data: { 'password': login },
+                    url: './Usuarios/ConsultarClaveEspecial',
+                    data: { clave_especial: clave_especial},
                     success: function (response) {
                         console.log(response);
                         if (response.success) {

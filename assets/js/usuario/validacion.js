@@ -120,7 +120,7 @@ $(document).ready(function() {
             }
            var preguntauno= $("#modificarUsuario").find("#preguntauno").val();
             var respuestauno= $("#modificarUsuario").find("#respuestauno").val();
-             var img=$(this).attr('data-img');
+             var img = $(this).attr('data-img');
             // console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
               swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
@@ -154,7 +154,7 @@ $(document).ready(function() {
                         success: function(respuesta) {
                           // console.log(respuesta);
                             if (respuesta == "1") {
-                         console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+                       //  console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
@@ -197,7 +197,6 @@ $(document).ready(function() {
         else {
             seguridadImgActu = $(this).attr('data-img');
         }
-        console.log($(this).attr('data-img'))
         $('.card-seguridad-img').removeClass('bg-primary');
         $(this).addClass('bg-primary');
     })
@@ -210,11 +209,25 @@ $(document).ready(function() {
         else {
             seguridadImgActu = $(this).attr('data-img');
         }
-        console.log($(this).attr('data-img'))
+       //console.log($(this).attr('data-img'))
         $('.card-seguridad-img').removeClass('bg-primary');
         $(this).addClass('bg-primary');
     })
 
+           
+   //Selección de imagen de seguridad Consultar
+   $('.card-seguridad-img').on('click', function (e) {
+      if ($(this).attr('data-action') == "consultar") {
+          seguridadImg = $(this).attr('data-img');
+      }
+      else {
+          seguridadImgActu = $(this).attr('data-img');
+      }
+   //  console.log($(this).attr('data-img'));
+      $('.card-seguridad-img').removeClass('bg-primary');
+      $(this).addClass('bg-primary');
+  })
+  
  
 
     function validarSeguridad(modificar = false){
@@ -657,7 +670,6 @@ if(!expCedula.test(cedula)){
     }
     return retorno;
 }
-
    //VALIDANDO QUE LAS CONTRASEÑAS SEAN IGUALES
 
    $("#pass1").keyup(function() {

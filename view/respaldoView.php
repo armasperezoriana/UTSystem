@@ -64,6 +64,7 @@
 			<h2>Respaldar/Restaurar la Base de Datos</h2>
 		</div>
 		<div class="card-body">
+			
 			<div class="row text-center">
 				
 				<div class="col-md border-right py-1 btn btn-light " id="respaldar">					
@@ -72,7 +73,10 @@
 						<i class="fa fa-file-archive fa-stack-1x fa-inverse"></i>
 					</span>
 					<h3>Respaldar</h3>
-					<p>Crear un archivo de respaldo para la Base de Datos</p>					
+					<p>Crear un archivo de respaldo para la Base de Datos</p>
+				
+					<a class="respaldar btn btn-primary" href="#">Respaldo</a>
+									
 				</div>
 				<div class="col-md border-left py-1 btn btn-light " id="restaurar">					
 					<span class="fa-stack fa-4x mb-4">
@@ -82,7 +86,7 @@
 					<h3>Restaurar</h3>
 					<p>Restaurar la Base de Datos a un punto anterior</p>					
 				</div>
-				
+			
 			</div>
 		</div>
 	</div>

@@ -36,7 +36,7 @@
 		}
     public function ObtenerOne($id_usuario){
 			try {
-				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE id_usuario = $id_usuario");
+				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE id_usuario = '$id_usuario'");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
@@ -80,6 +80,23 @@
 				return $errorReturn;
 			}
 		}
+
+    public function RevisarImgSeguridad($id_usuario){
+			try {
+				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE id_usuario = '$id_usuario' LIMIT 1");
+        $query->execute();
+        var_dump($query);
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
+				//var_dump($respuesta);
+				return $respuesta;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
 
     public function ModificarS($id){
 			try {

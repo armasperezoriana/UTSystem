@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+    <script type="text/javascript" src="'../../assets/js/usuario/imagen_seguridad.js"></script>
 </head>
 
 <body id="page-top">
@@ -193,277 +194,435 @@
                     </div>
                 </div>
 
-            </div> <!-- MODAL DE ayuda-->
-
-            <div class="col-sm-7" style='text-align:right;'>
-                <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
-                    Ayuda
-                </span>
-
             </div>
 
 
-            <?php require_once 'view/assets/footer.php'; ?>
+
+            <!-- MODAL IMAGEN DE SEGURIDAD -->
+            <div class="modal fade" id="modalForm" role="dialog" data-controls-modal="your_div_id"
+                data-backdrop="static" data-keyboard="false">>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <p class="statusMsg"></p>
+                            <form role="form__pr">
+                                <input type="hidden" id="id_usuario" name="id_usuario">
+                                <div class="form-group">
+                                    <div class="modal-header bg-primary" style="color:#FFF">
+                                        <center>
+                                            <p>
+                                            <h4><b>Seleccione su imagen de seguridad</b></h4>
+                                            </p>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div>
+                                        <div class="" role="document">
+                                            <TABLE>
+                                                <TR>
+                                                    <TH>
+                                                        <center> IMAGEN 1</center>
+                                                    </TH>
+                                                    <TH>
+                                                        <center> IMAGEN 2</center>
+                                                    </TH>
+                                                    <TH>
+                                                        <center> IMAGEN 3</center>
+                                                    </TH>
+                                                    <TH>
+                                                        IMAGEN 4
+                                                    </TH>
+                                                </TR>
+                                                <TR>
+
+                                                    <TD><img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                            class="card p-2 card-seguridad-img" data-action="consultar"
+                                                            data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                            style="width:75%; height:100%;">
+
+                                                    </TD>
+                                                    <TD><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                            class="card p-2 card-seguridad-img" data-action="consultar"
+                                                            data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                            style="width:100%; height:100%;">
+                                                    </td>
+                                                    </TD>
+                                                    <TD> <img
+                                                            src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                            class="card p-2 card-seguridad-img" data-action="consultar"
+                                                            data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                            style="width:100%; height:100%;">
+                                                    </TD>
+                                                    <TD> <img
+                                                            src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                            class="card p-2 card-seguridad-img" data-action="consultar"
+                                                            data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                            style="width:100%; height:100%;">
+                                                    </TD>
+                                                </TR>
+                                                <br><br>
+                                        </div>
+                                        </table>
+                                        <!--- PREGUNTA 1 --->
+                                        <label for="pregunta"><b>Pregunta
+                                                1:</b></label>
+                                        <div class="form-group col-sm-12 col-md-12">
+                                            <select class="form-control select2" name="pregunta" id="preguntauno">
+
+                                                <option value="">
+
+                                                </option>
+                                                <option value="¿Cuál era el nombre de tu mejor amigo?">
+                                                    ¿Cuál
+                                                    era el
+                                                    nombre
+                                                    de tu
+                                                    mejor
+                                                    amigo?
+                                                </option>
+                                                <option value="¿Cuál es tu color favorito?">
+                                                    ¿Cuál es
+                                                    tu
+                                                    color
+                                                    favorito?
+                                                </option>
+                                                <option value="¿Cómo se llama tu perro?">
+                                                    ¿Cómo se
+                                                    llama tu
+                                                    perro?
+                                                </option>
+                                                <option value="¿Donde estudiaste?">
+                                                    ¿Donde
+                                                    estudiaste?
+                                                </option>
+                                                <option value="¿Donde naciste?">
+                                                    ¿Donde
+                                                    naciste?
+                                                </option>
+                                                <option value="¿Cuál es tu apodo?">
+                                                    ¿Cuál es
+                                                    tu
+                                                    apodo?
+                                                </option>
+                                                <option value="¿Segundo nombre de tu padre?">
+                                                    ¿Segundo
+                                                    nombre
+                                                    de tu
+                                                    padre?
+                                                </option>
+                                                <option value="¿Dulce favorito?">
+                                                    ¿Dulce
+                                                    Favorito?
+                                                </option>
+                                                <option value="¿Donde estudiaste?">
+                                                    ¿Donde
+                                                    estudiaste?
+                                                </option>
+                                                <option value="¿Gatos o perros?">
+                                                    ¿Gatos o
+                                                    perros?
+                                                </option>
+                                            </select>
+                                            <span style="color:red"></span>
+
+
+                                            <span class="errorPreguntauno" style="color:red"></span>
+                                        </div>
+
+                                        <label for="respuesta"><b>Respuesta</b></label>
+                                        <input type="text" class="form-control" name="respuestauno" id="respuestauno">
+                                        <span class="errorrespuesta" style="color:red"></span>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+
+                            <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="ConsultarSeguridad btn btn-primary" href="#">Verificar</a>
+                            <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
-        <!-- MODALES -->
-        <!-- MODAL DE REGISTRARSE-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-        <style type="text/css">
-        .modal {
-            font-size: 0.8em;
-        }
-        </style>
-        <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true"
-            style="padding:0;">
-            <div class="container">
-                <div class="modal-dialog">
-                    <div class="" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary" style="color:#FFF">
-                                <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div style="width:100%">
 
+        <!-- FOOTER-->
+
+        <div class="col-sm-7" style='text-align:right;'>
+            <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
+                Ayuda
+            </span>
+            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+                Seguridad
+            </button>
+
+
+        </div>
+        <?php require_once 'view/assets/footer.php'; ?>
+    </div>
+
+    <!-- MODALES -->
+    <!-- MODAL DE REGISTRARSE-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <style type="text/css">
+    .modal {
+        font-size: 0.8em;
+    }
+    </style>
+    <div class="modal fade" id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" style="padding:0;">
+        <div class="container">
+            <div class="modal-dialog">
+                <div class="" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary" style="color:#FFF">
+                            <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div style="width:100%">
+
+                            </div>
+                            <br>
+                            <div class="contenedor" id="pasouno">
+                                <div class="row">
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="cedula"><b>Cédula</b></label>
+                                        <input type="text" class="form-control" name="cedula" id="cedula"
+                                            placeholder="Ingrese su cedula"
+                                            title="Solo puede ingresar de 7 a 10 numeros" maxlength="9" required>
+                                        <span class="errorCedula" style="color:red"></span>
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="nombre"><b>Nombre</b></label>
+                                        <input type="text" class="form-control" name="nombre" id="nombre"
+                                            pattern="^[a-zA-Z]{3,20}$" placeholder="Ingrese su nombre" required>
+                                        <span class="errorNombre" style="color:red"></span>
+                                    </div>
                                 </div>
-                                <br>
-                                <div class="contenedor" id="pasouno">
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <label for="cedula"><b>Cédula</b></label>
-                                            <input type="text" class="form-control" name="cedula" id="cedula"
-                                                placeholder="Ingrese su cedula"
-                                                title="Solo puede ingresar de 7 a 10 numeros" maxlength="9" required>
-                                            <span class="errorCedula" style="color:red"></span>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <label for="nombre"><b>Nombre</b></label>
-                                            <input type="text" class="form-control" name="nombre" id="nombre"
-                                                pattern="^[a-zA-Z]{3,20}$" placeholder="Ingrese su nombre" required>
-                                            <span class="errorNombre" style="color:red"></span>
-                                        </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="apellido"><b>Apellido</b></label>
+                                        <input type="text" class="form-control" name="apellido" id="apellido"
+                                            placeholder="Ingrese su Apellido" required>
+                                        <span class="errorApellido" style="color:red"></span>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <label for="apellido"><b>Apellido</b></label>
-                                            <input type="text" class="form-control" name="apellido" id="apellido"
-                                                placeholder="Ingrese su Apellido" required>
-                                            <span class="errorApellido" style="color:red"></span>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-md-6">
-                                            <label for="username"><b>Usuario</b></label>
-                                            <input type="text" class="form-control" name="username" id="username"
-                                                placeholder="Nombre de usuario" required>
-                                            <span class="errorUsername" style="color:red"></span>
-                                        </div>
+                                    <div class="form-group col-sm-12 col-md-6">
+                                        <label for="username"><b>Usuario</b></label>
+                                        <input type="text" class="form-control" name="username" id="username"
+                                            placeholder="Nombre de usuario" required>
+                                        <span class="errorUsername" style="color:red"></span>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-md-12">
-                                            <label for="rol"><b>Rol</b></label>
-                                            <select class="form-control select2" name="rol" id="rol"
-                                                placeholder="Selecciona un rol">
-                                                <option></option>
-                                                <?php foreach ($roles as $rols) : ?>
-                                                <?php if (!empty($rols['id_rol'])) : ?>
-                                                <option value="<?= $rols['id_rol'] ?>"><?= $rols['nombre_rol'] ?>
-                                                </option>
-                                                <?php endif ?>
-                                                <?php endforeach ?>
-                                            </select>
-                                            <span class="errorRol" style="color:red"></span>
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12 col-md-12">
+                                        <label for="rol"><b>Rol</b></label>
+                                        <select class="form-control select2" name="rol" id="rol"
+                                            placeholder="Selecciona un rol">
+                                            <option></option>
+                                            <?php foreach ($roles as $rols) : ?>
+                                            <?php if (!empty($rols['id_rol'])) : ?>
+                                            <option value="<?= $rols['id_rol'] ?>"><?= $rols['nombre_rol'] ?>
+                                            </option>
+                                            <?php endif ?>
+                                            <?php endforeach ?>
+                                        </select>
+                                        <span class="errorRol" style="color:red"></span>
                                     </div>
-                                    <div class="row">
+                                </div>
+                                <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="pass1"><b>Contraseña</b></label>
-                                        <input type="password" class="form-control" name="pass1" id="pass1" placeholder="Ingrese su contraseña"  required>
+                                        <input type="password" class="form-control" name="pass1" id="pass1"
+                                            placeholder="Ingrese su contraseña" required>
                                         <span class="errorPass1" style="color:red"></span>
                                         <div class="input-group-append">
                                             <center>
-                                                <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon password"></span> </button>
+                                                <button id="show_password" class="btn btn-primary" type="button"
+                                                    onclick="mostrarPassword()"> <span
+                                                        class="fa fa-eye-slash icon password"></span> </button>
                                             </center>
                                         </div>
                                     </div>
                                     <div class="form-group col-sm-12 col-md-6">
                                         <label for="pass2"><b>Repite la Contraseña</b></label>
-                                        <input type="password" class="form-control" name="pass2" id="pass2" placeholder="Repite tu clave" required>
+                                        <input type="password" class="form-control" name="pass2" id="pass2"
+                                            placeholder="Repite tu clave" required>
                                         <span class="errorPass2" style="color:red"></span>
                                     </div>
                                 </div>
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-md-12">
-                                            <label for="correo"><b>Correo</b></label>
-                                            <input style="width: 100%;" type="email" class="form-control" name="correo"
-                                                id="correo" value="" placeholder="example@gmail.com">
-                                            <span class="errorCorreo" style="color:red"></span>
-                                        </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12 col-md-12">
+                                        <label for="correo"><b>Correo</b></label>
+                                        <input style="width: 100%;" type="email" class="form-control" name="correo"
+                                            id="correo" value="" placeholder="example@gmail.com">
+                                        <span class="errorCorreo" style="color:red"></span>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-md-12">
-                                            <label for="clave_especial"><b>Clave especial</b></label>
-                                            <input style="width: 50%;" type="password" class="form-control" name="clave_especial"
-                                                id="clave_especial" placeholder="Introduce una clave especial">
-                                            <span class="errorClave" style="color:red"></span>
-                                        </div>
-                                    </div>
-
                                 </div>
-                                <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
-                                <div id="pasodos" style="">
+                                <div class="row">
+                                    <div class="form-group col-sm-12 col-md-12">
+                                        <label for="clave_especial"><b>Clave especial</b></label>
+                                        <input style="width: 50%;" type="password" class="form-control"
+                                            name="clave_especial" id="clave_especial"
+                                            placeholder="Introduce una clave especial">
+                                        <span class="errorClave" style="color:red"></span>
+                                    </div>
+                                </div>
 
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-secondary" style="color:#FFF">
-                                                <h5 id="exampleModalLabel">Preguntas de Seguridad</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <a class="scroll-to-top rounded" href="#page-top">
-                                                    <i class="fas fa-angle-up"></i>
-                                                </a>
-                                                <style type="text/css">
-                                                .modal {
-                                                    font-size: 0.8em;
-                                                }
-                                                </style>
-                                                <div id="AgregarUsuarioModal" tabindex="-1" role="dialog"
-                                                    aria-hidden="true" style="padding:0;">
-                                                    <div class="container">
-                                                        <div>
-                                                            <div class="" role="document">
+                            </div>
+                            <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
+                            <div id="pasodos" style="">
+
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-secondary" style="color:#FFF">
+                                            <h5 id="exampleModalLabel">Preguntas de Seguridad</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <a class="scroll-to-top rounded" href="#page-top">
+                                                <i class="fas fa-angle-up"></i>
+                                            </a>
+                                            <style type="text/css">
+                                            .modal {
+                                                font-size: 0.8em;
+                                            }
+                                            </style>
+                                            <div id="AgregarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true"
+                                                style="padding:0;">
+                                                <div class="container">
+                                                    <div>
+                                                        <div class="" role="document">
+                                                            <div>
                                                                 <div>
-                                                                    <div>
-                                                                        <div class="row">
-                                                                            <div class="form-group col-sm-12 col-md-6">
-                                                                                <div class="form__pr">
-                                                                                    <table class="table">
-                                                                                        <tr>
-                                                                                            <th>Imagen 1</th>
-                                                                                            <th>Imagen 2</th>
-                                                                                            <th>Imagen 3</th>
-                                                                                            <th>Imagen 4</th>
+                                                                    <div class="row">
+                                                                        <div class="form-group col-sm-12 col-md-6">
+                                                                            <div class="form__pr">
+                                                                                <table class="table">
+                                                                                    <tr>
+                                                                                        <th>Imagen 1</th>
+                                                                                        <th>Imagen 2</th>
+                                                                                        <th>Imagen 3</th>
+                                                                                        <th>Imagen 4</th>
 
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
 
-                                                                                                <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
-                                                                                                    class="card p-2 card-seguridad-img"
-                                                                                                    data-action="registrar"
-                                                                                                    data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
-                                                                                                    style="width:100%; height:100%;">
-                                                                                            </td>
-                                                                                            <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
-                                                                                                    class="card p-2 card-seguridad-img"
-                                                                                                    data-action="registrar"
-                                                                                                    data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
-                                                                                                    style="width:100%; height:100%;">
-                                                                                            </td>
-                                                                                            <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
-                                                                                                    class="card p-2 card-seguridad-img"
-                                                                                                    data-action="registrar"
-                                                                                                    data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
-                                                                                                    style="width:100%; height:100%;">
-                                                                                            </td>
-                                                                                            <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
-                                                                                                    class="card p-2 card-seguridad-img"
-                                                                                                    data-action="registrar"
-                                                                                                    data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
-                                                                                                    style="width:100%; height:100%;">
-                                                                                            </td>
+                                                                                            <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                                                                class="card p-2 card-seguridad-img"
+                                                                                                data-action="registrar"
+                                                                                                data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                                                                style="width:100%; height:100%;">
+                                                                                        </td>
+                                                                                        <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                                                                class="card p-2 card-seguridad-img"
+                                                                                                data-action="registrar"
+                                                                                                data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                                                                style="width:100%; height:100%;">
+                                                                                        </td>
+                                                                                        <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                                                                class="card p-2 card-seguridad-img"
+                                                                                                data-action="registrar"
+                                                                                                data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                                                                style="width:100%; height:100%;">
+                                                                                        </td>
+                                                                                        <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                                                                class="card p-2 card-seguridad-img"
+                                                                                                data-action="registrar"
+                                                                                                data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                                                                style="width:100%; height:100%;">
+                                                                                        </td>
 
 
-                                                                                        </tr>
+                                                                                    </tr>
 
-                                                                                    </table>
-                                                                                    <!--- PREGUNTA 1 --->
-                                                                                    <label for="pregunta"><b>Pregunta
-                                                                                            1:</b></label>
-                                                                                    <select class="form-control select2"
-                                                                                        name="pregunta"
-                                                                                        id="preguntauno">
-                                                                                        <option value="">...
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Cuál era el nombre de tu mejor amigo?">
-                                                                                            ¿Cuál era el nombre
-                                                                                            de tu mejor amigo?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Cuál es tu color favorito?">
-                                                                                            ¿Cuál es tu color
-                                                                                            favorito?</option>
-                                                                                        <option
-                                                                                            value="¿Cómo se llama tu perro?">
-                                                                                            ¿Cómo se llama tu
-                                                                                            perro?</option>
-                                                                                        <option
-                                                                                            value="¿Donde estudiaste?">
-                                                                                            ¿Donde estudiaste?
-                                                                                        </option>
-                                                                                        <option value="¿Donde naciste?">
-                                                                                            ¿Donde naciste?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Cuál es tu apodo?">
-                                                                                            ¿Cuál es tu apodo?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Segundo nombre de tu padre?">
-                                                                                            ¿Segundo nombre de tu padre?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Dulce favorito?">
-                                                                                            ¿Dulce Favorito?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Donde estudiaste?">
-                                                                                            ¿Donde estudiaste?
-                                                                                        </option>
-                                                                                        <option
-                                                                                            value="¿Gatos o perros?">
-                                                                                            ¿Gatos o perros?
-                                                                                        </option>
-                                                                                    </select>
-                                                                                    <span class="errorPreguntauno"
-                                                                                        style="color:red"></span>
-                                                                                </div>
-
-                                                                                <label
-                                                                                    for="respuesta"><b>Respuesta</b></label>
-                                                                                <input type="text" class="form-control"
-                                                                                    name="respuestauno"
-                                                                                    id="respuestauno">
-                                                                                <span class="errorrespuesta"
+                                                                                </table>
+                                                                                <!--- PREGUNTA 1 --->
+                                                                                <label for="pregunta"><b>Pregunta
+                                                                                        1:</b></label>
+                                                                                <select class="form-control select2"
+                                                                                    name="pregunta" id="preguntauno">
+                                                                                    <option value="">...
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="¿Cuál era el nombre de tu mejor amigo?">
+                                                                                        ¿Cuál era el nombre
+                                                                                        de tu mejor amigo?
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="¿Cuál es tu color favorito?">
+                                                                                        ¿Cuál es tu color
+                                                                                        favorito?</option>
+                                                                                    <option
+                                                                                        value="¿Cómo se llama tu perro?">
+                                                                                        ¿Cómo se llama tu
+                                                                                        perro?</option>
+                                                                                    <option value="¿Donde estudiaste?">
+                                                                                        ¿Donde estudiaste?
+                                                                                    </option>
+                                                                                    <option value="¿Donde naciste?">
+                                                                                        ¿Donde naciste?
+                                                                                    </option>
+                                                                                    <option value="¿Cuál es tu apodo?">
+                                                                                        ¿Cuál es tu apodo?
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="¿Segundo nombre de tu padre?">
+                                                                                        ¿Segundo nombre de tu padre?
+                                                                                    </option>
+                                                                                    <option value="¿Dulce favorito?">
+                                                                                        ¿Dulce Favorito?
+                                                                                    </option>
+                                                                                    <option value="¿Donde estudiaste?">
+                                                                                        ¿Donde estudiaste?
+                                                                                    </option>
+                                                                                    <option value="¿Gatos o perros?">
+                                                                                        ¿Gatos o perros?
+                                                                                    </option>
+                                                                                </select>
+                                                                                <span class="errorPreguntauno"
                                                                                     style="color:red"></span>
                                                                             </div>
 
+                                                                            <label
+                                                                                for="respuesta"><b>Respuesta</b></label>
+                                                                            <input type="text" class="form-control"
+                                                                                name="respuestauno" id="respuestauno">
+                                                                            <span class="errorrespuesta"
+                                                                                style="color:red"></span>
                                                                         </div>
+
                                                                     </div>
-
                                                                 </div>
-                                                            </div>
-                                                            <div class="modal-footer">
 
-                                                                <!--ESTE BOTON ENVIA TODO!--->
-                                                                <div class="modal-footer">
-                                                                    <button class=" btn btn-secondary" type="button"
-                                                                        data-dismiss="modal">Cancelar</button>
-                                                                    <a class="EnviarUsuariosRegistrar btn btn-primary"
-                                                                        href="#">Agregar</a>
-                                                                </div>
                                                             </div>
-
                                                         </div>
+                                                        <div class="modal-footer">
+
+                                                            <!--ESTE BOTON ENVIA TODO!--->
+                                                            <div class="modal-footer">
+                                                                <button class=" btn btn-secondary" type="button"
+                                                                    data-dismiss="modal">Cancelar</button>
+                                                                <a class="EnviarUsuariosRegistrar btn btn-primary"
+                                                                    href="#">Agregar</a>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -476,99 +635,98 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <!-- MODAL DE CONSULTAR-->
+    <!-- MODAL DE CONSULTAR-->
 
-        <div class="modal fade" id="ConsultarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
+    <div class="modal fade" id="ConsultarUsuarioModal" tabindex="-1" role="dialog" aria-hidden="true" value="<? const id = $usuario->id;  ?>
 " style="padding:0;">
-            <form id="consultarUsuario" method="POST">
-                <input type="hidden" id="id_usuario" name="id_usuario">
-                <div class="container">
-                    <div class="modal-dialog">
-                        <div class="" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header bg-primary" style="color:#FFF">
-                                    <h5 class="modal-title">
-                                        <center>Consultar Usuario</center>
-                                    </h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+        <form id="consultarUsuario" method="POST">
+            <input type="hidden" id="id_usuario" name="id_usuario">
+            <div class="container">
+                <div class="modal-dialog">
+                    <div class="" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary" style="color:#FFF">
+                                <h5 class="modal-title">
+                                    <center>Consultar Usuario</center>
+                                </h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
 
-                                <div class="col-sm-7" style='text-align:right;'>
-                                    <span href="#" data-toggle="modal" data-target="ModificarUsuarioModal">
+                            <div class="col-sm-7" style='text-align:right;'>
+                                <span href="#" data-toggle="modal" data-target="ModificarUsuarioModal">
 
-                                    </span>
-                                </div>
+                                </span>
+                            </div>
 
-                                <div class="modal-body">
-                                    <div class="table-responsive">
-                                        <div class="card-body">
-                                            <div class="row" style='font-size:0.9em;'>
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-6">
+                            <div class="modal-body">
+                                <div class="table-responsive">
+                                    <div class="card-body">
+                                        <div class="row" style='font-size:0.9em;'>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="form-group col-sm-12 col-md-6">
 
-                                                            <label for="nombre"><b>Nombre</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled
-                                                                name="nombre" id="nombre">
+                                                        <label for="nombre"><b>Nombre</b></label>
+                                                        <input type="text" class="form-control-plaintext" disabled
+                                                            name="nombre" id="nombre">
 
-                                                        </div>
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="apellido"><b>Apellido</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled
-                                                                name="apellido" id="apellido">
-
-                                                        </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="cedula"><b>Cedula</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled
-                                                                name="cedula" id="cedula">
+                                                    <div class="form-group col-sm-12 col-md-6">
+                                                        <label for="apellido"><b>Apellido</b></label>
+                                                        <input type="text" class="form-control-plaintext" disabled
+                                                            name="apellido" id="apellido">
 
-                                                        </div>
-                                                        <div class="form-group col-sm-12 col-md-6">
-                                                            <label for="username"><b>Usuario</b></label>
-                                                            <input type="text" class="form-control-plaintext" disabled
-                                                                name="username" id="username">
-
-                                                        </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="rol"><b>Rol</b></label>
-                                                            <select style="width: 100%;"
-                                                                class="form-control-plaintext select2" disabled
-                                                                name="rol" id="rol">
-                                                                <option></option>
-                                                                <?php foreach ($roles as $rols) : ?>
-                                                                <?php if (!empty($rols['id_rol'])) : ?>
-                                                                <option value="<?= $rols['id_rol'] ?>">
-                                                                    <?= $rols['nombre_rol'] ?></option>
-                                                                <?php endif ?>
-                                                                <?php endforeach ?>
-                                                            </select>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-sm-12 col-md-6">
+                                                        <label for="cedula"><b>Cedula</b></label>
+                                                        <input type="text" class="form-control-plaintext" disabled
+                                                            name="cedula" id="cedula">
 
-                                                        </div>
                                                     </div>
+                                                    <div class="form-group col-sm-12 col-md-6">
+                                                        <label for="username"><b>Usuario</b></label>
+                                                        <input type="text" class="form-control-plaintext" disabled
+                                                            name="username" id="username">
 
-                                                    <div class="row">
-                                                        <div class="form-group col-sm-12 col-md-12">
-                                                            <label for="correo"><b>Correo</b></label>
-                                                            <input style="width: 100%;" type="email"
-                                                                class="form-control" name="correo" id="correo"
-                                                                class="form-control-plaintext" disabled
-                                                                placeholder="example@gmail.com">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-sm-12 col-md-12">
+                                                        <label for="rol"><b>Rol</b></label>
+                                                        <select style="width: 100%;"
+                                                            class="form-control-plaintext select2" disabled name="rol"
+                                                            id="rol">
+                                                            <option></option>
+                                                            <?php foreach ($roles as $rols) : ?>
+                                                            <?php if (!empty($rols['id_rol'])) : ?>
+                                                            <option value="<?= $rols['id_rol'] ?>">
+                                                                <?= $rols['nombre_rol'] ?></option>
+                                                            <?php endif ?>
+                                                            <?php endforeach ?>
+                                                        </select>
 
-                                                        </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button class=" btn btn-secondary" type="button"
-                                                            data-dismiss="modal">Cerrar</button>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="form-group col-sm-12 col-md-12">
+                                                        <label for="correo"><b>Correo</b></label>
+                                                        <input style="width: 100%;" type="email" class="form-control"
+                                                            name="correo" id="correo" class="form-control-plaintext"
+                                                            disabled placeholder="example@gmail.com">
+
                                                     </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class=" btn btn-secondary" type="button"
+                                                        data-dismiss="modal">Cerrar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -578,10 +736,10 @@
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-    <!-- MODALES -->
+    </div>
     <!-- MODULo de AYUDA -->
 
     <a class="scroll-to-top rounded" href="#page-top">
@@ -727,8 +885,9 @@
                                                 <div class="row">
                                                     <div class="form-group col-sm-12 col-md-6">
                                                         <label for="Contraseña<"><b>Contraseña</b></label>
-                                                        <input type="password" class="form-control" name="pass1" 
-                                                            id="pass1" value="<?= $value['pass1'] ?>" placeholder="Ingrese su contraseña" required>
+                                                        <input type="password" class="form-control" name="pass1"
+                                                            id="pass1" value="<?= $value['pass1'] ?>"
+                                                            placeholder="Ingrese su contraseña" required>
                                                         <span class="errorPassM" style="color:red"></span>
                                                     </div>
                                                     <br> <br>
@@ -742,16 +901,18 @@
                                                         <span class="errorCorreoM" style="color:red"></span>
                                                     </div>
                                                 </div>
-                                                    <div class="row">
+                                                <div class="row">
                                                     <div class="form-group col-sm-12 col-md-12">
                                                         <label for="clave_especial"><b>Clave especial</b></label>
-                                                        <input style="width: 50%;" type="password" class="form-control" name="clave_especial"
-                                                            id="clave_especial" placeholder="Introduce una clave especial" value="<?= $value['clave_especial'] ?>">
+                                                        <input style="width: 50%;" type="password" class="form-control"
+                                                            name="clave_especial" id="clave_especial"
+                                                            placeholder="Introduce una clave especial"
+                                                            value="<?= $value['clave_especial'] ?>">
                                                         <span class="errorClaveEM" style="color:red"></span>
                                                     </div>
                                                 </div>
                                                 <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
-                                                <div id="pasodos" style="">
+                                                <div id="pasodos">
 
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
@@ -834,6 +995,7 @@
                                                                                                             1:</b></label>
                                                                                                     <div
                                                                                                         class="form-group col-sm-12 col-md-12">
+
                                                                                                         <select
                                                                                                             class="form-control select2"
                                                                                                             name="pregunta"
@@ -948,15 +1110,8 @@
                                                 </div>
                                             </div>
         </form>
-    </div>
 
-
-    <script type="text/javascript" src="'../../assets/js/select2.min.js"></script>
-    <!-- <script type="text/javascript">
-        $(document).ready(function() {
-            $('.select2').select2();
-        }); 
-    </script>                                                  -->
+        <script type="text/javascript" src="'../../assets/js/select2.min.js"></script> -->
 </body>
 <script type="text/javascript">
 function mostrarPassword() {
