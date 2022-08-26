@@ -165,6 +165,6 @@
 </div>
 
 </body>
-<script type="text/javascript" src="'../../assets/js/notificaciones/cambiarestado.js"></script>
+
 
 </html>

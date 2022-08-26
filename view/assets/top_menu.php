@@ -105,6 +105,44 @@
 
     </ul>
 
+
+    <!-- Modal -->
+<div class="modal fade" id="notificacion_individual" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary" style="color:#FFF">
+        <h5 class="modal-title" id="exampleModalLabel">Notificación</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+      <div class="form-group col-sm-12">
+                           <label><b>Fecha</b></label>
+                           <input type="date"  class="form-control" id="fecha" placeholder="fecha" disabled/>
+                        <span class="errorFecha" style="color:red"></span>
+
+                           <label><b>Contenido</b></label>
+                           <textarea  class="form-control" rows="4" id="contenido" placeholder="contenido" disabled></textarea>
+                        <span class="errorFecha" style="color:red"></span>
+
+
+                           <label>Estado</label>
+                         
+                        <span class="errorFecha" style="color:red"></span>
+                        
+                        <input type="text"  class="form-control" id="estado" placeholder="estado" disabled/>
+                    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script src="assets/js/notificaciones/verificar-notificaciones.js"></script>
     <script type="text/javascript" src="assets/js/notificaciones/notificacion_individual.js"></script>
 

@@ -13,7 +13,7 @@ function consulta_alertas(){
            for(var i=0;i<arreglo.length;i++){
             if(arreglo[i]['estado']==0){
                 cont++;
-                texto_notificaciones+="<a class='dropdown-item d-flex align-items-center' title='"+arreglo[i]['contenido']+"' href='#'>";
+                texto_notificaciones+="<a  onclick='individualModal(`"+JSON.stringify(arreglo[i])+"`);' class='dropdown-item d-flex align-items-center' title='"+arreglo[i]['contenido']+"' href='#'>";
                 texto_notificaciones+="<div class='mr-3'><div class='icon-circle bg-primary'>";
                 texto_notificaciones+="<i class='fas fa-file-alt text-white'></i>";
                 texto_notificaciones+="<i class='fas fa-file-alt text-white'></i> </div></div>";

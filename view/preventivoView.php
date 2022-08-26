@@ -718,7 +718,7 @@
                         <input type="password" class="form-control" id="clave_especial" placeholder="Contraseña" />
                         <span class="erroClaveEspecial" style="color:red"></span>
                         <br>
-                        <p>Nota: Debe ingresar su clave especial para modificar un registro en este módulo</p>
+                        <p>Nota: Debe ingresar clave de Super Usuario para modificar un registro en este módulo</p>
                     </div>
                 
                 </form>

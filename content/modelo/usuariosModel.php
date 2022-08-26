@@ -130,7 +130,7 @@
 
 		public function ObtenerClaveEspecial($clave_especial,$usuario){
 			try {
-				$query = parent::prepare("SELECT usuario, clave_especial FROM usuarios WHERE clave_especial = '$clave_especial' AND usuario ='$usuario' LIMIT 1");
+				$query = parent::prepare("SELECT usuario, clave_especial FROM usuarios WHERE clave_especial = '$clave_especial' AND usuario ='$usuario' AND rol ='1' LIMIT 1");
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuesta = $query->fetch(parent::FETCH_ASSOC); 

@@ -1,6 +1,6 @@
 function individualModal(info){
     info=JSON.parse(info);
-    console.log(info['id_notificacion']);
+   // console.log(info['id_notificacion']);
     $("#notificacion_individual").modal('show');
     $(notificacion_individual).find("#fecha").val(info['fecha']);      
     $(notificacion_individual).find("#contenido").val(info['contenido']); 

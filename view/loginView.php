@@ -84,11 +84,7 @@
                                     <hr>
                                     <div class="text-center">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#modalForm">
-                                            Seguridad
-                                        </button>
-                                        <br> <br>
+                                       
 
                                         <input type="hidden" name="token-r" id="token-r">
                                         <input type="button" value="Recuperar" onclick="Mostrar()"
@@ -151,7 +147,7 @@
     </div>
 
     <!-- Modal seguridad-->
-    <div class="modal-content"  class="modal fade" id="modalForm" style="display:none" role="dialog" aria-hidden="true" data-controls-modal="your_div_id"
+    <div class="modal-content"  class="modal fade" id="modalForm"  role="dialog" aria-hidden="true" data-controls-modal="your_div_id"
         data-backdrop="static" data-keyboard="false" >
         <div class="modal-header" aria-hidden="true">
             <button type="button" class="close" data-dismiss="modal">&times;</button>

@@ -48,8 +48,8 @@ var currentID='';
                             if (respuesta == "2") {
                                 swal.fire({
                                     type: 'error',
-                                    title: 'Error al consultar los datos',
-                                    text: 'Usuario o clave especial incorrecto',
+                                    title: 'Error al verificar información',
+                                    text: 'Este usuario no posee permisos de administrador',
                                 });
                             }
                         }
