@@ -106,5 +106,7 @@
     </ul>
 
     <script src="assets/js/notificaciones/verificar-notificaciones.js"></script>
+    <script type="text/javascript" src="assets/js/notificaciones/notificacion_individual.js"></script>
+
 
 </nav>

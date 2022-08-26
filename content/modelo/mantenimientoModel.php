@@ -234,6 +234,20 @@
 			}
 		}
 
+		public function eliminarNull(){    //Método que habilita logicamente un registro
+			try{
+				$consulta = parent::prepare("DELETE FROM notificaciones WHERE fecha = '0000-00-00'");
+				$consulta->execute();
+				$respuestaArreglo = ['ejecucion' => true];
+				return $respuestaArreglo;
+	
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
 		
 		public function setIdMantenimiento($id_mantenimiento){
 			$this->id_mantenimiento = $id_mantenimiento;

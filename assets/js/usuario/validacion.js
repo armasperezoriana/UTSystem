@@ -340,6 +340,7 @@ $(document).ready(function() {
             type: "POST",
             url: "Usuarios/Mostrar/"+id,
             success: function (response) {
+                console.log(response);
                 let json = JSON.parse(response);
                 let usuario = json.data;
                 $(formulario).find("#id_usuario").val(usuario.id_usuario);

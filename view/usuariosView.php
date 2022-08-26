@@ -361,9 +361,11 @@
             <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
                 Ayuda
             </span>
+                
             <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
                 Seguridad
             </button>
+       
 
 
         </div>

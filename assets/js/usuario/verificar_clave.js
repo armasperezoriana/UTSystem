@@ -1,5 +1,13 @@
 //$('body').on('click', '#modalForm', async function (e) {
     //   e.preventDefault();
+var currentID='';
+   function openModal(id){
+    currentID=id;
+    $('#modalForm').modal('show');
+   }
+
+
+
     $(".confirmarClaveEspecial").click(function() {
         var validarClave = validarClaveEspecial();
             if(validarClave==true){
@@ -12,7 +20,7 @@
                 showCancelButton: true,
                 confirmButtonText: "Guardar",
                 cancelButtonText: "Cancelar",
-                closeOnConfirm: false,
+                closeOnConfirm: true
             }).then((isConfirm) => {
                 if (isConfirm.value) {
                     $.ajax({
@@ -30,7 +38,10 @@
                                  type: 'success',
                                 title: 'Acceso correcto',
                              }).then((isConfirm) => {
-                                location.href = './Mantenimiento';
+                               // location.href = './Mantenimiento';
+                               console.log(currentID);
+                               $('#modalForm').modal('hide');
+                               $("#ModificarMantenimientoModal"+currentID).modal('show');
                              });
 
                             }

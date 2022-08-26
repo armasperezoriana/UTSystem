@@ -119,7 +119,7 @@
 			foreach($rutas as $r){
                 for($i=0;$i<count($vehiculos_sin_mantenimiento);$i++){
                      if($vehiculos_sin_mantenimiento[$i]['placa']==$r['placa']){
-						$vehiculos_sin_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_sin_mantenimiento[$i]['kilometraje']) + floatval($r['kilometraje']);
+						$vehiculos_sin_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_sin_mantenimiento[$i]['kilometraje']) + (floatval($r['kilometraje'])*$r['cantidad']);
 					 }
 					 else{
 						$vehiculos_sin_mantenimiento[$i]['kilometraje_notificacion']=$vehiculos_sin_mantenimiento[$i]['kilometraje'];
@@ -131,7 +131,7 @@
 			foreach($rutas as $r){
                 for($i=0;$i<count($vehiculos_mantenimiento);$i++){
                      if($vehiculos_mantenimiento[$i]['placa']==$r['placa']){
-						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + floatval($r['kilometraje']);
+						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + (floatval($r['kilometraje'])*$r['cantidad']);
 					 }
 					 else{
 					 	$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']);
@@ -148,7 +148,7 @@
 
            for($i=0;$i<count($vehiculos_notificacion);$i++){
 			$texto="El vehículo ".$vehiculos_notificacion[$i]['placa']." necesita mantenimiento de: ";
-			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=45){
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=$tiempo_aceite_filtro){
 				$texto.="filtro de aceite, ";
 			}
 			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])>=$tiempo_frenos_refri_electro){
@@ -165,7 +165,7 @@
 
 			$texto.="se sugiere chequeo general.";
 
-			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])<45){
+			if(floatval($vehiculos_notificacion[$i]['kilometraje_notificacion'])<$tiempo_aceite_filtro){
 				$texto="";
 			}
 
@@ -214,7 +214,7 @@
 				}
 			 }
 		   }
-
+           $notificaciones=$this->mantenimiento->eliminarNull();
 		   $notificaciones=$this->mantenimiento->Consultar_notificaciones();
 		   echo json_encode($notificaciones);
 

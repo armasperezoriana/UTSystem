@@ -54,6 +54,7 @@ class usuariosController
 	public function Mostrar($param)
     {
         $usuario = $this->usuario->ObtenerOne($param);
+		$usuario['clave_especial']=$this->usuario->desencriptarS($usuario['clave_especial']);
         http_response_code(200);
         echo json_encode([
             'data' => $usuario
@@ -84,7 +85,7 @@ class usuariosController
 			$correo = $_POST['correo'];
 			$clave_especial = $_POST['clave_especial'];
 			
-			$clave_especial = $this->encriptar(($_POST['clave_especial']));
+			$clave_especial = $this->usuario->encriptarS(($_POST['clave_especial']));
 
 			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);
 			//cadena que encripta
@@ -140,6 +141,8 @@ class usuariosController
 		$usuario = isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : null;
 		$result = $this->usuario->ObtenerUsuario($usuario);
 		//var_dump($clave_especial);
+		$clave_especial = $this->usuario->encriptarS(($_POST['clave_especial']));
+
 		$response= $this->usuario->ObtenerClaveEspecial($clave_especial,$usuario);
 		if(!empty($response)){
 			//var_dump($response);
@@ -193,8 +196,9 @@ class usuariosController
 			$pass = $_POST['pass'];
 			$correo = $_POST['correo'];
 			$clave_especial = $_POST['clave_especial'];
-			$clave_especial = $this->encriptar(($_POST['clave_especial']));
 			
+			$clave_especial = $this->usuario->encriptarS(($_POST['clave_especial']));
+
 			$pass = password_hash($pass, PASSWORD_BCRYPT, ['cost' => 8]);	
 			$this->usuario->setId($id_usuario);
 			$this->usuario->setNombre($nombre);

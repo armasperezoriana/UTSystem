@@ -159,17 +159,26 @@
                                                 </td>
                                                 <td>
                                                     <div class="col-sm-4" style='text-align:right;'>
-                                                        <a href="#" class="btn btn-warning btn-icon-split editarbtn"
-                                                            name="editar" id="'$value['id_vehiculo']'" href="#"
-                                                            data-toggle="modal"
-                                                           
-                                                            data-target="#ModificarMantenimientoModal<?=$preventivo['id_mantenimiento']?>">
+                                                        <a style='color:white' class="btn btn-warning btn-icon-split editarbtn"
+                                                            name="editar" id="'$value['id_vehiculo']'" 
+                                                            onclick='openModal(<?=$preventivo["id_mantenimiento"] ?>);'>
                                                     
                                                             <span class="icon text-white-40">
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
                                                             <span class="text"></span>
                                                         </a>
+                                                        <!-- <a href="#" class="btn btn-warning btn-icon-split editarbtn"
+                                                            name="editar" id="'$value['id_vehiculo']'" href="#"
+                                                            data-toggle="modal"
+                                                           
+                                                           data-target="#modalForm">
+                                                    
+                                                            <span class="icon text-white-40">
+                                                                <i class="fas fa-edit"></i>
+                                                            </span>
+                                                            <span class="text"></span>
+                                                        </a> -->
                                                 </td>
 
 
@@ -527,10 +536,11 @@
             <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
                 Ayuda
             </span>
-
+             <!-- boton de seguridad
             <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
     Seguridad
 </button>
+-->
 
         </div>
 
@@ -705,7 +715,7 @@
                         <span class="errorUsername" style="color:red"></span>
 
                         <br>
-                        <input type="pass" class="form-control" id="clave_especial" placeholder="Contraseña" />
+                        <input type="password" class="form-control" id="clave_especial" placeholder="Contraseña" />
                         <span class="erroClaveEspecial" style="color:red"></span>
                         <br>
                         <p>Nota: Debe ingresar su clave especial para modificar un registro en este módulo</p>
