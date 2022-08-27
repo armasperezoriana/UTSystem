@@ -6,10 +6,12 @@ $(document).ready(function() {
       //var validarImagen= validarImagenSeguridad();
       var validarS= validarSeguridad();
       if (validarS== true) {
-        //  var id_usuario = $("#modalForm").find("#id_usuario").val();
+          var id_usuario = $("#modalForm").find("#id_usuario").val();
             var preguntauno = $("#modalForm").find("#preguntauno").val();       
             var respuestauno = $("#modalForm").find("#respuestauno").val(); 
-            var img = $("#modalForm").find("#img").val();
+           // var img = $("#modalForm").find("#img").val();
+           // var img = $(this).attr('data-img');
+     
             swal.fire({
                 title: "¿Esta seguro de su datos de seguridad?",
                 text: "Estos datos serán verificados",
@@ -24,13 +26,13 @@ $(document).ready(function() {
                         url: './Usuarios/ConsultarImagen',
                         type: 'POST',
                         data: {
-                         //   id_usuario: id_usuario,
+                           id_usuario: id_usuario,
                             preguntauno: preguntauno,
                             img: seguridadImg,
                             respuestauno: respuestauno,
                         },
                         success: function(respuesta) {
-                          console.log(seguridadImg);
+                        //  console.log(seguridadImg);
                            // console.log(clave_especial+ - +id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
                             if (respuesta == "1") {
                             swal.fire({

@@ -15,7 +15,7 @@
 		}
 		public function Consultar(){
 			try {
-				$query = parent::prepare('SELECT * FROM notificaciones ORDER BY fecha');
+				$query = parent::prepare("SELECT * FROM notificaciones WHERE estado = '0' ORDER BY fecha");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

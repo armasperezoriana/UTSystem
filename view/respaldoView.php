@@ -74,8 +74,7 @@
 					</span>
 					<h3>Respaldar</h3>
 					<p>Crear un archivo de respaldo para la Base de Datos</p>
-				
-					<a class="respaldar btn btn-primary" href="#">Respaldo</a>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">Respaldo</button>
 									
 				</div>
 				<div class="col-md border-left py-1 btn btn-light " id="restaurar">					
@@ -92,7 +91,7 @@
 	</div>
 	
 </div>
-
+	<!--
 <div class="modal fade" id="modalRestaurar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog d-flex">
         <div class="modal-content">
@@ -109,6 +108,7 @@
 						
 						<select name="respaldo" class="form-control col-md-10" required>
 							<option value="" disabled="" selected="">--Seleccionar--</option>
+								
 							<?php
 								$ruta="../../assets/respaldo/";
 								if(is_dir($ruta)){
@@ -145,10 +145,55 @@
     </div>
 </div>
     </div>
+							-->
 
+							
+							<!-- Modal -->
+<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+       <!-- Modal Body -->
+	   <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form role="form">
+                    <div class="form-group">
+                    <label for="confirmar"><center><h3>Confirme la acción</center></h3></label>
+                        <br>
+                        <p>Verifica tus datos</p>
+                        <br>
+                        <input type="text"  class="form-control" id="usuario" placeholder="Usuario" required/>
+                        <span class="errorUsername" style="color:red"></span>
+
+                        <br>
+                        <input type="password" class="form-control" id="clave_especial" placeholder="Contraseña" />
+                        <span class="erroClaveEspecial" style="color:red"></span>
+                        <br>
+                        <p>Nota: Debe ingresar clave de Super Usuario para modificar un registro en este módulo</p>
+                    </div>
+                
+                </form>
+            </div>
+            
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <a class="confirmarClaveEspecial btn btn-primary" href="#">Confirmar</a>
+                <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
 
             <?php require_once 'view/assets/footer.php'; ?>
 </body>
-<script type="text/javascript" src="'../../assets/js/respaldar/respaldo.js"></script>
+<script type="text/javascript" src="'../../assets/js/respaldar/recuperarbd.js"></script>
 
 </html>

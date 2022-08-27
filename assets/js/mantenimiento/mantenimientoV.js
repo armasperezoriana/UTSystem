@@ -90,7 +90,7 @@ $(document).ready(function () {
             var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculo").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costo").val();
             var estado = $("#ModificarMantenimientoModal"+id).find("#estado").val();
-           
+           console.log(estado);
             swal.fire({
                 title: "¿Desea guardar los datos que han sido modificados?",
                 text: "Estos datos serán guardados.",
@@ -101,7 +101,7 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
-                  //alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo);
+              //  console.log(estado+"- "+placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+" "+costo+" "+tiempo);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Modificar',
@@ -119,7 +119,7 @@ $(document).ready(function () {
                         },
                         success: function(respuesta) {
                            // alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo);
-                          //  alert(respuesta);
+                          //  console.log(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',

@@ -24,7 +24,7 @@ class vehiculosController
 		$objModel = new homeModel;
 		$_css = new headElement;
 		$_css->Heading();
-if (in_array('vehiculos', $_SESSION['ut_permisos']))
+	if (in_array('vehiculos', $_SESSION['ut_permisos']))
             {
 		$vehiculo = $this->vehiculo->Consultar();
 		$url = $this->url;

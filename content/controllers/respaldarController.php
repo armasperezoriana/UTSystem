@@ -35,7 +35,8 @@
         }
 
         public function respaldar()
-        {
+        {var_dump("funciona");
+
             $method = $_SERVER['REQUEST_METHOD'];
     
             if( $method != 'POST'){
@@ -49,7 +50,8 @@
             $hora=date("H-i-s");
             $fecha=$day.'_'.$mont.'_'.$year;
             $errores = false;
-            $con=mysqli_connect(SERVER, USER, PASS, BD);
+            //$con = mysqli_connect("localhost", "root", "", "ut");
+           $con=mysqli_connect(SERVER, USER, PASS, BD);
             $r = $con->query("SELECT NOW() AS f_actual");
             $a = $r->fetch_assoc();
             $fechaA = $a['f_actual'];

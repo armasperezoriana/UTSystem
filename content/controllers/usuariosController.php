@@ -150,7 +150,7 @@ class usuariosController
 		}else{
 			echo "2";
 			//var_dump($response);
-	
+	0
 		}
 	}
 	

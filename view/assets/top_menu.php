@@ -133,11 +133,12 @@
                         <span class="errorFecha" style="color:red"></span>
                         
                         <input type="text"  class="form-control" id="estado" placeholder="estado" disabled/>
-                    
+                        <br>
+                        <p>Para modificar el estado de la notificación debes ingresar al módulo de mantenimientos y registrar que hizo la reparación</p>         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
+    
       </div>
     </div>
   </div>

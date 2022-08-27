@@ -120,10 +120,10 @@ $(document).ready(function () {
     $('body').on('click', '#respaldar', async function (e) {
         e.preventDefault();
          var usuario = $("#modalForm").find("#usuario").val();  
-       // var clave_especial = $("#modalForm").find("#clave_especial").val();
+        var clave_especial = $("#modalForm").find("#clave_especial").val();
         Swal.fire({
             title: 'Confirme la acción',
-            input: 'password',
+            input: 'password','text',
             inputPlaceholder: 'Contraseña',
             inputAttributes: {
                 autocapitalize: 'off'

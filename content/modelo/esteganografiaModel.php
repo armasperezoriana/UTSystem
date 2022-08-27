@@ -83,7 +83,7 @@
 
     public function RevisarImgSeguridad($id_usuario){
 			try {
-				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE id_usuario = '$id_usuario' LIMIT 1");
+				$query = parent::prepare("SELECT preguntauno, respuestauno FROM seguridad_preguntas WHERE id_usuario = '$id_usuario' LIMIT 1");
         $query->execute();
         var_dump($query);
 				$query->setFetchMode(parent::FETCH_ASSOC);

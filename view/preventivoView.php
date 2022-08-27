@@ -472,10 +472,11 @@
                                                         <div class="form-group col-sm-12 col-md-6">
                                                             <label for="Estado"><b>Estado de la orden :</b></label>
                                                             <select class="form-control select2" name="estado"
-                                                                id="estado">
+                                                                id="estado"  value="<?=$preventivo['estado']?>">
+                                                                
                                                                 <option value="">...</option>
-                                                                <option value="1">Generada</option>
-                                                                <option value="0">En proceso</option>
+                                                                <option value="Generada">Generada</option>
+                                                                <option value="En proceso">En proceso</option>
                                                             
                                                             </select>
 
@@ -667,8 +668,8 @@
                                     <label for="Estado"><b>Estado de la orden :</b></label> <select
                                         class="form-control select2" name="estado" id="estado">
                                         <option value="">...</option>
-                                        <option value="1">Generada</option>
-                                        <option value="0">En proceso</option>
+                                        <option value="Generada">Generada</option>
+                                        <option value="En proceso">En proceso</option>
             
 
                                     </select>
@@ -696,8 +697,8 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
-                <!--     <span aria-hidden="true">×</span>
-                    <span class="sr-only">Close</span>-->
+                 <span aria-hidden="true">×</span>
+                    <span class="sr-only">Cerrar</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
