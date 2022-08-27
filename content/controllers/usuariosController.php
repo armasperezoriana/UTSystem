@@ -150,10 +150,51 @@ class usuariosController
 		}else{
 			echo "2";
 			//var_dump($response);
-	0
+	
 		}
 	}
 	
+
+	public function ConsultarClaveEspecialRespaldar()
+	{
+		$clave_especial = isset($_REQUEST['clave_especial']) ? $_REQUEST['clave_especial'] : null;
+		$usuario = isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : null;
+		$result = $this->usuario->ObtenerUsuario($usuario);
+		//var_dump($clave_especial);
+		$clave_especial = $this->usuario->encriptarS(($_POST['clave_especial']));
+
+		$response= $this->usuario->ObtenerClaveEspecial($clave_especial,$usuario);
+		if(!empty($response)){
+			//var_dump($response);
+			echo "1";
+		}else{
+			echo "2";
+			//var_dump($response);
+	
+		}
+	}
+
+
+	public function ConsultarClaveEspecialRestaurar()
+	{
+		$clave_especial = isset($_REQUEST['clave_especial']) ? $_REQUEST['clave_especial'] : null;
+		$usuario = isset($_REQUEST['usuario']) ? $_REQUEST['usuario'] : null;
+		$result = $this->usuario->ObtenerUsuario($usuario);
+		//var_dump($clave_especial);
+		$clave_especial = $this->usuario->encriptarS(($_POST['clave_especial']));
+
+		$response= $this->usuario->ObtenerClaveEspecial($clave_especial,$usuario);
+		if(!empty($response)){
+			//var_dump($response);
+			echo "1";
+		}else{
+			echo "2";
+			//var_dump($response);
+	
+		}
+	}
+
+
 	public function ConsultarImagen()
 	{
 		$preguntauno= isset($_REQUEST['preguntauno']) ? $_REQUEST['preguntauno'] : null;

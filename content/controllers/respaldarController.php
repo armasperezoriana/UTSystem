@@ -35,23 +35,19 @@
         }
 
         public function respaldar()
-        {var_dump("funciona");
+        {
+        
+            //var_dump("funciona");
 
-            $method = $_SERVER['REQUEST_METHOD'];
-    
-            if( $method != 'POST'){
-                http_response_code(404);
-                return false;
-            }
-            $dir = "/assets/respaldo/";
+            $dir = "assets/respaldo/";
             $day=date("d");
             $mont=date("m");
             $year=date("Y");
             $hora=date("H-i-s");
             $fecha=$day.'_'.$mont.'_'.$year;
             $errores = false;
-            //$con = mysqli_connect("localhost", "root", "", "ut");
-           $con=mysqli_connect(SERVER, USER, PASS, BD);
+            $con = mysqli_connect("localhost", "root", "", "ut");
+           //$con=mysqli_connect(SERVER, USER, PASS, BD);
             $r = $con->query("SELECT NOW() AS f_actual");
             $a = $r->fetch_assoc();
             $fechaA = $a['f_actual'];
@@ -113,7 +109,7 @@
                 if($error==1){
                     $errores = true;
                 }else{
-                    chmod($dir, 0777);
+                    //chmod($dir, 0777);
                     $sql.='SET FOREIGN_KEY_CHECKS=1;';
                     $sql.="\n";
                     $sql.='DELETE FROM bitacora WHERE fecha > "'.$fechaA.'";';
@@ -130,34 +126,31 @@
             }
             mysqli_free_result($result);
             if (!$errores) {
-                echo json_encode([
-                    'success' => true,
-                    'file' => ROOT.$dir.$DataBASE
-                ]);
+                require_once("view/respaldoExitosoView.php");
+               // echo 'Se creo el respaldo de la BD'; //json_encode([
+                    //'success' => true,
+                   // 'file' => $dir.$DataBASE,
+                  //  'message' => 'Se creo el respaldo de la BD'
+              //  ]);
                 return 0;
             }
             else{
                 echo 'Ocurrio un error inesperado al crear la copia de seguridad';
-                echo json_encode([
-                    'success' => false,
-                    'message' => 'Ocurrió un error inesperado al crear la copia de seguridad'
-                ]);
+               // echo json_encode([
+                //    'success' => false,
+              //      'message' => 'Ocurrió un error inesperado al crear la copia de seguridad'
+              //  ]);
             }
         }
         public function restaurar()
-        {
-            $method = $_SERVER['REQUEST_METHOD'];
-    
-            if( $method != 'POST'){
-                http_response_code(404);
-                return false;
-            }
+        {  
             $restorePoint=$this->limpiaCadena($_POST['respaldo']);
             $restorePoint=$_POST['respaldo'];
+           // var_dump($restorePoint);
             $sql=explode(";",file_get_contents($restorePoint));
             $totalErrors=0;
             set_time_limit (300);
-            $con=mysqli_connect(SERVER, USER, PASS, BD);
+            $con = mysqli_connect("localhost", "root", "", "ut");
             $con->query("SET FOREIGN_KEY_CHECKS=0");
             for($i = 0; $i < (count($sql)-1); $i++){
                 if(!$con->query($sql[$i].";")){
@@ -168,9 +161,7 @@
             $con->query("SET FOREIGN_KEY_CHECKS=1");
             $con->close();
             if($totalErrors<=0){
-                echo json_encode([
-                    'success' => true
-                ]);
+              require_once("view/restauracionExitosaView.php");
                 return 0;
             }else{
                 echo json_encode([
@@ -185,6 +176,8 @@
             ]);
             return 0;
         }
+
+
         public function verificarPassword()
         {
             $usuario = new usuariosModel();
@@ -213,7 +206,7 @@
     
         public function controlarMax()
         {
-            $ruta="/assets/respaldo/";
+            $ruta="assets/respaldo/";
             $nArchivos = 0;
             $maxArchivos = 10;
             if(is_dir($ruta)){

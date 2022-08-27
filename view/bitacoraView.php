@@ -56,9 +56,9 @@
                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
-                                        <button type="button" class="btn btn-secondary"  id="respaldo"><a href="<?=_ROUTE_ ?>Respaldar">
+                                        <button type="button" class="btn btn-secondary"  id="respaldo"><a href="<?=_ROUTE_ ?>Respaldar"><font color="white">
                                                        Respaldo de la BD
-                                                       
+                                                       </font>
                                                     </button>
                                                    <!-- <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Esteganografia"
                        
