@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="'../../assets/js/usuario/imagen_seguridad.js"></script>
     <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
-    <script type="text/javascript" src="'../../assets/js/usuario/imagen_seguridad.js"></script>
 </head>
 
 <body id="page-top">
@@ -143,9 +143,9 @@
 
                                                 <div class="col-sm-7" style='text-align:right;'>
 
-                                                    <a href="#" data-id="<?= $value['id_usuario'] ?>"
-                                                        class="btn btn-warning btn-icon-split editar" name="editar">
-                                                        <span class="icon text-white-50">
+                                                    <a href="#" data-id="<?= $value['id_usuario'] ?>"  id="'$value['id_usuario']'" 
+                                                        class="btn btn-warning btn-icon-split editar" name="editar" onclick='openModal(<?=$value["id_usuario"] ?>);'>
+                                                        <span class="icon text-white-50" >
                                                             <i class="fas fa-edit"></i>
                                                         </span>
                                                         <span class="text"></span>
@@ -236,12 +236,6 @@
                                     </TR>
                                     <TR>
 
-                                        <TD><img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
-                                                class="card p-2 card-seguridad-img" data-action="consultar"
-                                                data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" id="img"
-                                                style="width:75%; height:100%;">
-
-                                        </TD>
                                         <TD><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                 class="card p-2 card-seguridad-img" data-action="consultar"
                                                 data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" id="img"
@@ -260,6 +254,12 @@
                                                 data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" id="img"
                                                 style="width:100%; height:100%;">
                                         </TD>
+                                        <TD><img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                class="card p-2 card-seguridad-img" data-action="consultar"
+                                                data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" id="img"
+                                                style="width:75%; height:100%;">
+
+                                        </TD>
                                     </TR>
                                     <br><br>
                             </div>
@@ -268,7 +268,7 @@
                             <label for="pregunta"><b>Pregunta
                                     1:</b></label>
                             <div class="form-group col-sm-12 col-md-12">
-                                <select class="form-control select2" name="pregunta" id="preguntauno" style="width:100%;">
+                                <select class="form-control select2" name="pregunta" id="preguntauno" style="width:100%;" required>
 
                                     <option value="">
 
@@ -327,13 +327,15 @@
                                 <span style="color:red"></span>
 
 
-                                <span class="errorPreguntauno" style="color:red"></span>
+                                <span class="errorPreguntaunoI" style="color:red"></span>
                             </div>
 
                             <label for="respuesta"><b>Respuesta</b></label>
-                            <input type="text" class="form-control" name="respuestauno" id="respuestauno">
-                            <span class="errorrespuesta" style="color:red"></span>
+                            <input type="text" class="form-control" name="respuestauno" id="respuestauno" required>
+                            <span class="errorrespuestaI" style="color:red"></span>
                         </div>
+                        <br>
+                        <p>Nota: El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</p>
                     </div>
 
                 </form>
@@ -360,15 +362,16 @@
             <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
                 Ayuda
             </span>
-                
-            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
-                Seguridad
-            </button>
-       
+            
 
 
         </div>
         <?php require_once 'view/assets/footer.php'; ?>
+
+        <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+                Seguridad
+            </button>
+       
     </div>
 
     <!-- MODALES -->
@@ -484,7 +487,7 @@
 
                             </div>
                             <!-- MODAL DE PREGUNTAS DE SEGURIDAD-->
-                            <div id="pasodos" style="">
+                            <div>
 
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -879,8 +882,7 @@
                                                             <?php endif ?>
                                                             <?php endforeach ?>
                                                         </select>
-                                                        <!-- <span class="errorRoLM" style="color:red"></span>
-                                                       --->
+                                                     
                                                     </div>
                                                 </div>
                                                 <div class="row">

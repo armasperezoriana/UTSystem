@@ -168,17 +168,7 @@
                                                             </span>
                                                             <span class="text"></span>
                                                         </a>
-                                                        <!-- <a href="#" class="btn btn-warning btn-icon-split editarbtn"
-                                                            name="editar" id="'$value['id_vehiculo']'" href="#"
-                                                            data-toggle="modal"
-                                                           
-                                                           data-target="#modalForm">
-                                                    
-                                                            <span class="icon text-white-40">
-                                                                <i class="fas fa-edit"></i>
-                                                            </span>
-                                                            <span class="text"></span>
-                                                        </a> -->
+                                              
                                                 </td>
 
 

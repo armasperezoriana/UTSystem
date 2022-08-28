@@ -60,11 +60,7 @@
                                                        Respaldo de la BD
                                                        </font>
                                                     </button>
-                                                   <!-- <a class="nav-link collapsed"  href="<?=_ROUTE_ ?>Esteganografia"
-                       
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Imagen de Seguridad</span>
-                </a>-->
+                                                
 
                         </a>
                     </div>

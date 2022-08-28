@@ -75,7 +75,7 @@
                                             <h3>Respaldar</h3>
                                             <p>Crear un archivo de respaldo para la Base de Datos</p>
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#modalForm">Respaldo</button>
+                                                data-target="#modalForm">Respaldar</button>
 
                                         </div>
                                         <div class="col-md border-left py-1 btn btn-light " id="restaurar">
@@ -193,12 +193,12 @@
                                             <br>
                                             <input type="text" class="form-control" id="usuario" placeholder="Usuario"
                                                 required />
-                                            <span class="errorUsername" style="color:red"></span>
+                                            <span class="errorUsernameE" style="color:red"></span>
 
                                             <br>
                                             <input type="password" class="form-control" id="clave_especial"
                                                 placeholder="Contraseña" />
-                                            <span class="erroClaveEspecial" style="color:red"></span>
+                                            <span class="erroClaveEspecialE" style="color:red"></span>
                                             <br>
                                             <p>Nota: Debe ingresar clave de Super Usuario para restaurar la bd a un
                                                 estado anterior</p>

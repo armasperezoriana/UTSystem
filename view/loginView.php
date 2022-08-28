@@ -78,7 +78,6 @@
                                                     Iniciar Sesión
                                                 </button>
                                                 <hr>
-
                                     </form>
 
                                     <hr>
@@ -89,6 +88,11 @@
                                         <input type="hidden" name="token-r" id="token-r">
                                         <input type="button" value="Recuperar" onclick="Mostrar()"
                                             class="btn btn-secondary" />
+
+                                            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+                Seguridad
+            </button>
+       
 
                                     </div>
                                 </div>
@@ -145,146 +149,164 @@
             </div>
         </div>
     </div>
+<!-- MODAL IMAGEN DE SEGURIDAD -->
+<div class="modal fade" id="modalForm" role="dialog" data-controls-modal="your_div_id"
+    data-backdrop="static" data-keyboard="false">>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form id="modalForm">
+                    <input type="hidden" id="id_usuario" name="id_usuario">
+                    <div class="form-group">
+                        <div class="modal-header bg-primary" style="color:#FFF">
+                            <center>
+                                <p>
+                                <h4><b>Seleccione su imagen de seguridad</b></h4>
+                                </p>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div>
+                            <div class="" role="document">
+                                <TABLE>
+                                    <TR>
+                                        <TH>
+                                            <center> IMAGEN 1</center>
+                                        </TH>
+                                        <TH>
+                                            <center> IMAGEN 2</center>
+                                        </TH>
+                                        <TH>
+                                            <center> IMAGEN 3</center>
+                                        </TH>
+                                        <TH>
+                                            IMAGEN 4
+                                        </TH>
+                                    </TR>
+                                    <TR>
 
-    <!-- Modal seguridad-->
-    <div class="modal-content"  class="modal fade" id="modalForm"  role="dialog" aria-hidden="true" data-controls-modal="your_div_id"
-        data-backdrop="static" data-keyboard="false" >
-        <div class="modal-header" aria-hidden="true">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"></h4>
-        </div>
-        <div class="modal-body">
-            <center>
-                <p>
-                <h4><b>Seleccione su imagen de seguridad</b></h4>
-                </p>
-            </center>
-        </div>
-        <div class="container">
-            <div>
-                <div class="" role="document">
-                    <TABLE>
-                        <TR>
-                            <TH>
-                                <center> IMAGEN 1</center>
-                            </TH>
-                            <TH>
-                                <center> IMAGEN 2</center>
-                            </TH>
-                            <TH>
-                                <center> IMAGEN 3</center>
-                            </TH>
-                            <TH>
-                                IMAGEN 4
-                            </TH>
-                        </TR>
-                        <TR>
+                                        <TD><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
+                                                class="card p-2 card-seguridad-img" data-action="consultar"
+                                                data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" id="img"
+                                                style="width:100%; height:100%;">
+                                        </td>
+                                        </TD>
+                                        <TD> <img
+                                                src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
+                                                class="card p-2 card-seguridad-img" data-action="consultar"
+                                                data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png" id="img"
+                                                style="width:100%; height:100%;">
+                                        </TD>
+                                        <TD> <img
+                                                src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
+                                                class="card p-2 card-seguridad-img" data-action="consultar"
+                                                data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" id="img"
+                                                style="width:100%; height:100%;">
+                                        </TD>
+                                        <TD><img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
+                                                class="card p-2 card-seguridad-img" data-action="consultar"
+                                                data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png" id="img"
+                                                style="width:75%; height:100%;">
 
-                            <TD><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
-                                    class="card p-2 card-seguridad-img" data-action="modificar"
-                                    data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" style="width:100%; height:100%;">
-                            </TD>
-                            <TD><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
-                                    class="card p-2 card-seguridad-img" data-action="modificar"
-                                    data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png" style="width:100%; height:100%;">
-                            </td>
-                            </TD>
-                            <TD><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
-                                    class="card p-2 card-seguridad-img" data-action="modificar"
-                                    data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" style="width:100%; height:100%;">
-                            </TD>
-                            <TD> <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
-                                    class="card p-2 card-seguridad-img" data-action="modificar"
-                                    data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
-                                    style="width:60%; height:50%; position:;">
-                            </TD>
-                        </TR>
-                        <br><br>
-                        <!--- PREGUNTA 1 --->
-                </div>
-                </table>
-                <label for="pregunta"><b>Pregunta
-                        1:</b></label>
-                <div class="form-group col-sm-12 col-md-12">
-                    <select class="form-control select2" name="pregunta" id="preguntauno">
+                                        </TD>
+                                    </TR>
+                                    <br><br>
+                            </div>
+                            </table>
+                            <!--- PREGUNTA 1 --->
+                            <label for="pregunta"><b>Pregunta
+                                    1:</b></label>
+                            <div class="form-group col-sm-12 col-md-12">
+                                <select class="form-control select2" name="pregunta" id="preguntauno" style="width:100%;" required>
 
-                        <option value="">
-                            ...
-                        </option>
-                        <option value="¿Cuál era el nombre de tu mejor amigo?">
-                            ¿Cuál
-                            era el
-                            nombre
-                            de tu
-                            mejor
-                            amigo?
-                        </option>
-                        <option value="¿Cuál es tu color favorito?">
-                            ¿Cuál es
-                            tu
-                            color
-                            favorito?
-                        </option>
-                        <option value="¿Cómo se llama tu perro?">
-                            ¿Cómo se
-                            llama tu
-                            perro?
-                        </option>
-                        <option value="¿Donde estudiaste?">
-                            ¿Donde
-                            estudiaste?
-                        </option>
-                        <option value="¿Donde naciste?">
-                            ¿Donde
-                            naciste?
-                        </option>
-                        <option value="¿Cuál es tu apodo?">
-                            ¿Cuál es
-                            tu
-                            apodo?
-                        </option>
-                        <option value="¿Segundo nombre de tu padre?">
-                            ¿Segundo
-                            nombre
-                            de tu
-                            padre?
-                        </option>
-                        <option value="¿Dulce favorito?">
-                            ¿Dulce
-                            Favorito?
-                        </option>
-                        <option value="¿Donde estudiaste?">
-                            ¿Donde
-                            estudiaste?
-                        </option>
-                        <option value="¿Gatos o perros?">
-                            ¿Gatos o
-                            perros?
-                        </option>
-                    </select>
-                    <span class="errorPreguntauno" style="color:red"></span>
-                </div>
+                                    <option value="">
 
-                <label for="respuesta"><b>Respuesta</b></label>
-                <input type="text" class="form-control" name="respuestauno" id="respuestauno">
-                <span class="errorrespuesta" style="color:red"></span>
+                                    </option>
+                                    <option value="¿Cuál era el nombre de tu mejor amigo?">
+                                        ¿Cuál
+                                        era el
+                                        nombre
+                                        de tu
+                                        mejor
+                                        amigo?
+                                    </option>
+                                    <option value="¿Cuál es tu color favorito?">
+                                        ¿Cuál es
+                                        tu
+                                        color
+                                        favorito?
+                                    </option>
+                                    <option value="¿Cómo se llama tu perro?">
+                                        ¿Cómo se
+                                        llama tu
+                                        perro?
+                                    </option>
+                                    <option value="¿Donde estudiaste?">
+                                        ¿Donde
+                                        estudiaste?
+                                    </option>
+                                    <option value="¿Donde naciste?">
+                                        ¿Donde
+                                        naciste?
+                                    </option>
+                                    <option value="¿Cuál es tu apodo?">
+                                        ¿Cuál es
+                                        tu
+                                        apodo?
+                                    </option>
+                                    <option value="¿Segundo nombre de tu padre?">
+                                        ¿Segundo
+                                        nombre
+                                        de tu
+                                        padre?
+                                    </option>
+                                    <option value="¿Dulce favorito?">
+                                        ¿Dulce
+                                        Favorito?
+                                    </option>
+                                    <option value="¿Donde estudiaste?">
+                                        ¿Donde
+                                        estudiaste?
+                                    </option>
+                                    <option value="¿Gatos o perros?">
+                                        ¿Gatos o
+                                        perros?
+                                    </option>
+                                </select>
+                                <span style="color:red"></span>
+
+
+                                <span class="errorPreguntaunoI" style="color:red"></span>
+                            </div>
+
+                            <label for="respuesta"><b>Respuesta</b></label>
+                            <input type="text" class="form-control" name="respuestauno" id="respuestauno" required>
+                            <span class="errorrespuestaI" style="color:red"></span>
+                        </div>
+                        <br>
+                        <p>Nota: El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</p>
+                    </div>
+
+                </form>
             </div>
+
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+
+                            <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="ConsultarSeguridad btn btn-primary" href="#">Verificar</a>
+                            <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
-
-    </div>
-    <div class="modal-footer">
-
-        <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <a class="ModificarUsuarios btn btn-primary" href="#">Verificar</a>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    </div>
-    </div>
-
-
 
 
 

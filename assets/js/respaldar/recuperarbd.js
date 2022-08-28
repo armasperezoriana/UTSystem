@@ -56,8 +56,8 @@
 
 ///RESTAURAR 
      $(".confirmarClaveEspecialRestaurar").click(function() {
-        //var validarClave = validarClaveEspecial();
-       //     if(validarClave==true){
+        var validarClaveE = validarClaveEspecialE();
+         if(validarClaveE ==true){
                 
             var usuario = $("#exampleModal").find("#usuario").val();               
              var clave_especial = $("#exampleModal").find("#clave_especial").val();
@@ -106,7 +106,7 @@
                     });
                 }
             });
-      //    }
+          }
         });
 
     //});
@@ -123,7 +123,7 @@
                  swal.fire({
                      type: 'info',
                      title: 'Campos obligatorios',
-                     text: 'Para modificar debes llenar los datos solicitados',
+                     text: 'Para respaldar la BD debes llenar los datos solicitados',
                  });
         
              $(".errorUsername").html("Ingresa tu usuario");
@@ -133,3 +133,24 @@
              return true;     
      }
        
+     function validarClaveEspecialE(){
+ 
+        var usuario = $("#exampleModal").find("#usuario").val();               
+        var clave_especial = $("#exampleModal").find("#clave_especial").val();
+    
+        var expUsername = /^[a-zA-Z0-9\_\-]{4,16}$/;
+       
+    
+        if(usuario==""|clave_especial==""){
+                swal.fire({
+                    type: 'info',
+                    title: 'Campos obligatorios',
+                    text: 'Para restaurar debes llenar los datos solicitados',
+                });
+       
+            $(".errorUsernameE").html("Ingresa tu usuario");
+            $(".erroClaveEspecialE").html("Ingrese tu clave especial");
+                 return false;
+        }
+            return true;     
+    }

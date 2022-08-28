@@ -201,12 +201,13 @@ class usuariosController
 		$respuestauno = isset($_REQUEST['respuestauno']) ? $_REQUEST['respuestauno'] : null;
 		$id_usuario = isset($_REQUEST['id_usuario ']) ? $_REQUEST['id_usuario'] : null;
 		$img = isset($_REQUEST['img']) ? $_REQUEST['img'] : null;
+
 		$this->esteganografia->setImg($img);
-		//$img_encriptada = $this->cifrarEnImagen($respuestauno, $img, $id_usuario);
-		//$this->esteganografia->setImg_encriptada($img_encriptada.".png");
 		//var_dump($img);
+	
 		$usu = $this->esteganografia->ObtenerOne($id_usuario);
-		$response= $this->esteganografia->RevisarImgSeguridad($id_usuario);
+		$response= $this->esteganografia->RevisarImgSeguridad($respuestauno,$img);
+		
 		if(!empty($response)){
 			//var_dump($response);
 			echo "1";

@@ -1,13 +1,9 @@
-//$('body').on('click', '#modalForm', async function (e) {
-    //   e.preventDefault();
+
 var currentID='';
    function openModal(id){
     currentID=id;
     $('#modalForm').modal('show');
    }
-
-
-
     $(".confirmarClaveEspecial").click(function() {
         var validarClave = validarClaveEspecial();
             if(validarClave==true){
