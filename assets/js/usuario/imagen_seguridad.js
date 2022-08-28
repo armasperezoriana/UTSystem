@@ -26,7 +26,7 @@ $(document).ready(function() {
                         url: './Usuarios/ConsultarImagen',
                         type: 'POST',
                         data: {
-                           id_usuario: id_usuario,
+                           //id_usuario: id_usuario,
                             preguntauno: preguntauno,
                             img: seguridadImg,
                             respuestauno: respuestauno,

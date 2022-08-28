@@ -81,14 +81,14 @@
 			}
 		}
 
-    public function RevisarImgSeguridad($respuestauno,$img){
+    public function RevisarImgSeguridad($respuestauno){
 			try {
-				$query = parent::prepare("SELECT preguntauno, respuestauno, img  FROM seguridad_preguntas WHERE respuestauno = '$respuestauno'  AND img = '$img' LIMIT 1");
+				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE respuestauno = '$respuestauno'  LIMIT 1");
         $query->execute();
         //var_dump($query);
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
-			//	var_dump($respuesta);
+				//var_dump($respuesta);
 				return $respuesta;
 			} catch (PDOException $e) {
 				$errorReturn = ['ejecucion' => false];

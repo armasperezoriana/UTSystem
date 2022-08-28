@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $(".EnviarMantenimientoRegistrar").click(function () {
-        // alert("asd");
+
         var valido = validar(modificar = false);
         if (valido == true) {
             var nombre = $("#AgregarMantenimientoModal").find("#nombre").val();
@@ -12,9 +12,7 @@ $(document).ready(function () {
             var costo = $("#AgregarMantenimientoModal").find("#costo").val();
             var estado = $("#AgregarMantenimientoModal").find("#estado").val();
             var tiempo = $("#AgregarMantenimientoModal").find("#tiempo").val();
-
-            // alert( nombre + ' ' + intervalo + ' ' + kilometraje + ' ' + taller + ' ' + placa + ' ' + costo + ' ' + tiempo + ' ' );
-            swal.fire({
+             swal.fire({
                 title: "¿Desea guardar los datos del vehiculo ingresados?",
                 text: "Estos datos serán guardados.",
                 type: "question",
@@ -24,7 +22,7 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
-              alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo+""+estado);
+              //alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo+" "+tiempo+""+estado);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Registrar',
@@ -100,7 +98,6 @@ $(document).ready(function () {
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false,
             }).then((isConfirm) => {
-              //  console.log(estado+"- "+placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+" "+costo+" "+tiempo);
                 if (isConfirm.value) {
                     $.ajax({
                         url: './mantenimiento/Modificar',
@@ -117,8 +114,6 @@ $(document).ready(function () {
             
                         },
                         success: function(respuesta) {
-                           // alert(placa+" "+nombre+" "+intervalo+" "+kilometraje+" "+taller+" "+placa+" "+costo);
-                          //  console.log(respuesta);
                             if (respuesta == "1") {
                                 swal.fire({
                                     type: 'success',

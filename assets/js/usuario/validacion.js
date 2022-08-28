@@ -3,82 +3,6 @@ var currentID='';
      currentID=id;
      $('#modalForm').modal('show');
     }
-    //CONSULTAR IMAGEN DE SEGURIDAD
-    $(".ConsultarSeguridad").click(function() {
-        var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
-           var preguntauno= $("#modalForm").find("#preguntauno").val();
-            var respuestauno= $("#modalForm").find("#respuestauno").val();
-             var img = $(this).attr('data-img');
-            // console.log(img); 
-           var pregunta = preguntasSeguridad();
-           if(pregunta == true){
-            if(seguridadImg == ""){
-                swal.fire({
-                    type: 'warning',
-                    title: 'Seleccione una imagen de seguridad',
-                    text: 'Imagen obligatoria para modificar',
-                });
-                return 0;
-            }
-              swal.fire({
-                title: "¿Esta seguro de su respuesta?",
-                text: "Estos datos serán verificados.",
-                type: "question",
-                showCancelButton: true,
-               
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                closeOnConfirm: false,
-            }).then((isConfirm) => {
-                if (isConfirm.value) {
-                    $.ajax({
-                        url: './Usuarios/ConsultarImagen',
-                        type: 'POST',
-                        data: {
-                           // id_usuario:id_usuario,
-                            preguntauno: preguntauno,
-                            img: seguridadImg,
-                            respuestauno: respuestauno,
-                       
-                        },
-                        success: function(respuesta) {
-                           console.log(respuesta);
-                            if (respuesta == "1") {
-                         swal.fire({
-                                    type: 'success',
-                                    title: 'Usuario Autenticado',
-                                }).then((isConfirm) => {
-                                console.log(currentID);
-                               $('#modalForm').modal('hide');
-                               $("#ModificarUsuariosModal"+currentID).modal('show');
-                             });
-                            }
-                            if (respuesta == "2") {
-                                swal.fire({
-                                    type: 'error',
-                                    title: 'Datos incorrectos',
-                                    text: 'Revise la información, no coincide con  nuestros registros',
-                                });
-                            }
-                            if (respuesta == "3") {
-                                swal.fire({
-                                    type: 'warning',
-                                    title: 'Ha ocurrido un error',
-                                    text: 'Intentelo de nuevo',
-                                });
-                            }
-                        }
-                    });
-                } else {
-                    swal.fire({
-                        type: 'error',
-                        title: '¡Proceso cancelado!',
-                    });
-                }
-            });
-       }
-    });
-    
 
 $(document).ready(function() {
     var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
@@ -180,8 +104,8 @@ $(document).ready(function() {
 
     $(".ModificarUsuarios").click(function() {
         var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
-        var id = $(this).attr("id");
-        var valido = validar(true, id);
+        // var id = $(this).attr("id");
+        // var valido = validar(true, id);
     var valido = validarM();
       var validarS = validarSeguridadM();
         if (validarS == true && valido == true) {
@@ -273,6 +197,80 @@ $(document).ready(function() {
 
     });
 
+    $(".ConsultarSeguridad").click(function() {
+        var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
+           var preguntauno= $("#modalForm").find("#preguntauno").val();
+            var respuestauno= $("#modalForm").find("#respuestauno").val();
+           // var img = $("#modalForm").find("#img").val();
+            // var img = $("#modalForm").attr('data-img');
+             console.log($(this).attr('data-img'));
+            // console.log($img);
+            var pregunta = preguntasSeguridad();
+            if(pregunta == true){
+                        // if(seguridadImg == ""){
+                        //     swal.fire({
+                        //         type: 'warning',
+                        //         title: 'Seleccione una imagen de seguridad',
+                        //         text: 'Imagen obligatoria para modificar',
+                        //     });
+                        //     return 0;
+                        // }
+             swal.fire({
+                title: "¿Esta seguro de sus respuestas ingresados?",
+                text: "Estos datos serán verificados.",
+                type: "question",
+                showCancelButton: true,
+                confirmButtonText: "Guardar",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false,
+            }).then((isConfirm) => {
+                if (isConfirm.value) {
+                    $.ajax({
+                        url: './Usuarios/ConsultarImagen',
+                        type: 'POST',
+                        data: {
+                           
+                            preguntauno: preguntauno,
+                           // img : seguridadImg,
+                            respuestauno: respuestauno,
+                       
+                        },
+                        success: function(respuesta) {
+                          // console.log(respuesta);
+                            if (respuesta == "1") {
+                             swal.fire({
+                                    type: 'success',
+                                    title: 'Acceso correcto',
+                                }).then((isConfirm) => {
+                                    location.href = './Usuarios';
+                                });
+                            }
+                            if (respuesta == "2") {
+                                swal.fire({
+                                    type: 'error',
+                                    title: 'Error al verificar los datos',
+                                    text: 'Los datos no coinciden con los registrados',
+                                });
+                            }
+                            if (respuesta == "3") {
+                                swal.fire({
+                                    type: 'warning',
+                                    title: 'Ha ocurrido un error',
+                                    text: 'Contacta con el soporte',
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    swal.fire({
+                        type: 'error',
+                        title: '¡Proceso cancelado!',
+                    });
+                }
+            });
+         }
+
+    });
       //Selección de imagen de seguridad
       $('.card-seguridad-img').on('click', function (e) {
         if ($(this).attr('data-action') == "registrar") {
@@ -311,8 +309,8 @@ $(document).ready(function() {
       $('.card-seguridad-img').removeClass('bg-primary');
       $(this).addClass('bg-primary');
   })
-  
- 
+
+
 //validar registrar
     function validarSeguridad(modificar = false){
         var form = "";

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="'../../assets/js/usuario/imagen_seguridad.js"></script>
     <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
     <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
 </head>
@@ -218,7 +217,7 @@
                     </div>
                     <div class="container">
                         <div>
-                            <div class="" role="document">
+                            <div class="" role="document"  id="modalForm">
                                 <TABLE>
                                     <TR>
                                         <TH>
@@ -234,24 +233,24 @@
                                             IMAGEN 4
                                         </TH>
                                     </TR>
-                                    <TR>
+                                    <TR >
 
                                         <TD><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                 class="card p-2 card-seguridad-img" data-action="consultar"
-                                                data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png" id="img"
+                                                data-img='QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png' id="img"
                                                 style="width:100%; height:100%;">
                                         </td>
                                         </TD>
                                         <TD> <img
                                                 src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                 class="card p-2 card-seguridad-img" data-action="consultar"
-                                                data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png" id="img"
+                                                data-img='ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png' id="img"
                                                 style="width:100%; height:100%;">
                                         </TD>
                                         <TD> <img
                                                 src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                 class="card p-2 card-seguridad-img" data-action="consultar"
-                                                data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png" id="img"
+                                                data-img='YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png' id="img"
                                                 style="width:100%; height:100%;">
                                         </TD>
                                         <TD><img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
@@ -336,10 +335,10 @@
                         </div>
                         <br>
                         <p>Nota: El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</p>
-                    </div>
+                                </div>
 
-                </form>
-            </div>
+                            </form>
+                        </div>
 
                         <!-- Modal Footer -->
                         <div class="modal-footer">
@@ -364,13 +363,14 @@
             </span>
             
 
-
-        </div>
-        <?php require_once 'view/assets/footer.php'; ?>
-
-        <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
                 Seguridad
             </button>
+        </div>
+     
+        <?php require_once 'view/assets/footer.php'; ?>
+
+        
        
     </div>
 

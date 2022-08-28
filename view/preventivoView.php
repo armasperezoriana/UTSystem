@@ -84,7 +84,7 @@
 
                         <div class="col-sm-20" style='text-align:right;'>
 
-                            <div class="card-body">
+                            <!-- <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -97,9 +97,27 @@
                                     <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
                             <font color="white">Exportar PDF</font></a><i class="fas fa-check fa-1x text-gray-250"></i> </button>  
                                 </div>
-                            </div>
+                            </div> -->
+                            <label for="fecha"><b>Fecha Inicio</b></label>
+                            <input type="date" id="inicio">
+                            <label for="fecha"><b>Fecha Fin</b></label>
+                            <input type="date" id="fin">
+                            <br><br>
+                            <button class=" btn btn-info" type="submit"  ><a href="<?=_REPORTS_?>Mantenimientos/busquedaporfechas.php" target="blank">
+                            <font color="white">Buscar</font></a><i class="fas fa-search fa-1x text-gray-250"></i> </button>  
+                            <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
+                            <font color="white">Exportar PDF</font></a><i class="fas fa-check fa-1x text-gray-250"></i> </button>  
+                               
+
+
+
                             </table>
+
+
+
                         </div>
+
+                    
 
 
 
