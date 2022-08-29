@@ -249,6 +249,9 @@
 				$execute = $this->mantenimiento->Modificar();
 				//Codigo de bitacora sobre Agregar Usuario
 				if ($execute['ejecucion'] == true) {
+					if($estado == 'Generada'){
+						$this->mantenimiento->cambioNotificacion(1,$vehiculo);
+					}
 					echo '1';
 				} else {
 					echo "2";
