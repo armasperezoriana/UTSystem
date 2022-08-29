@@ -94,7 +94,7 @@
                                             <th>Cédula</th>
                                             <th>Usuario</th>
                                             <th>Nombres</th>
-                                            <th></th>
+                                            <th>Correo</th>
                                             <th></th>
                                             <th></th>
                                             <th>
@@ -113,8 +113,8 @@
                                             <td><?= $value['cedula'] ?></td>
                                             <td><?= $value['usuario'] ?></td>
                                             <td><?= $value['nombre'].' '.$value['apellido']?></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?= $value['correo'] ?></td>
+                                            <td> </td>
                                             <td></td>
                                             <td>
 
@@ -143,7 +143,7 @@
                                                 <div class="col-sm-7" style='text-align:right;'>
 
                                                     <a href="#" data-id="<?= $value['id_usuario'] ?>"  id="'$value['id_usuario']'" 
-                                                        class="btn btn-warning btn-icon-split editar" name="editar" onclick='openModal(<?=$value["id_usuario"] ?>);'>
+                                                        class="btn btn-warning btn-icon-split editar" name="editar">
                                                         <span class="icon text-white-50" >
                                                             <i class="fas fa-edit"></i>
                                                         </span>
@@ -964,25 +964,25 @@
 
                                                                                                                 <img src="assets/img/seguridad/eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="modificar"
+                                                                                                                    data-action="modificar"  data-name="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                                                                                                     data-img="eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
                                                                                                             <td><img src="assets/img/seguridad/QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="modificar"
+                                                                                                                    data-action="modificar" data-name="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     data-img="QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
                                                                                                             <td><img src="assets/img/seguridad/ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="modificar"
+                                                                                                                    data-action="modificar" data-name="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     data-img="ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
                                                                                                             <td><img src="assets/img/seguridad/YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                                                                                     class="card p-2 card-seguridad-img"
-                                                                                                                    data-action="modificar"
+                                                                                                                    data-action="modificar" data-name="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                                                                                     data-img="YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png"
                                                                                                                     style="width:100%; height:100%;">
                                                                                                             </td>
@@ -1114,7 +1114,7 @@
                                             </div>
         </form>
 
-        <script type="text/javascript" src="'../../assets/js/select2.min.js"></script> -->
+        <script type="text/javascript" src="'../../assets/js/select2.min.js"></script>
 </body>
 <script type="text/javascript">
 function mostrarPassword() {

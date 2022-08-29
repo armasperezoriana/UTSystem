@@ -42,6 +42,44 @@ use content\modelo\rolesModel as rolesModel;
         ]);
     }
 
+
+	public function Modificar()
+	{
+		$method = $_SERVER['REQUEST_METHOD'];
+		if ($method != 'POST') {
+			http_response_code(404);
+			return false;
+		}
+		$id_usuario = $_POST['id_usuario'];
+		if (!empty($_POST['nombre']) && !empty($_POST['apellido'])) {
+			$nombre = $_POST['nombre'];
+			$apellido = $_POST['apellido'];
+			$cedula = $_POST['cedula'];
+			$username = $_POST['username'];
+			$correo = $_POST['correo'];
+		
+			
+			$this->usuario->setId($id_usuario);
+			$this->usuario->setNombre($nombre);
+			$this->usuario->setApellido($apellido);
+			$this->usuario->setCedula($cedula);
+			$this->usuario->setUsername($username);
+			
+			$this->usuario->setCorreo($correo);	
+			
+			
+			$execute =  $this->usuario->ConsultarOne();
+			// $execute = $this->usuario->ObtenerOne($id_usuario);
+			if ($execute == true) {
+						$execute = $this->usuario->Modificar();
+				
+			echo '1';
+		} else {
+			echo "2";
+		}
+	}
+}
+
 	}
 		
 

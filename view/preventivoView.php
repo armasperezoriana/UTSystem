@@ -11,6 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link href="../../assets/css/select2.min.css" rel="stylesheet" />
     <script src="../../assets/js/select2.min.js"></script>
+    <script src="../../assets/js/mantenimiento/busquedafecha.js"></script>
 
 
 </head>
@@ -84,7 +85,7 @@
 
                         <div class="col-sm-20" style='text-align:right;'>
 
-                            <!-- <div class="card-body">
+                            <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -95,21 +96,10 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
-                            <font color="white">Exportar PDF</font></a><i class="fas fa-check fa-1x text-gray-250"></i> </button>  
+                            <font color="white">Exportar PDF</font></a><i class="fas fa-print fa-1x text-gray-250"></i> </button>  
                                 </div>
-                            </div> -->
-                            <label for="fecha"><b>Fecha Inicio</b></label>
-                            <input type="date" id="inicio">
-                            <label for="fecha"><b>Fecha Fin</b></label>
-                            <input type="date" id="fin">
-                            <br><br>
-                            <button class=" btn btn-info" type="submit"  ><a href="<?=_REPORTS_?>Mantenimientos/busquedaporfechas.php" target="blank">
-                            <font color="white">Buscar</font></a><i class="fas fa-search fa-1x text-gray-250"></i> </button>  
-                            <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Mantenimientos/Actualizar.php" target="blank">
-                            <font color="white">Exportar PDF</font></a><i class="fas fa-check fa-1x text-gray-250"></i> </button>  
-                               
-
-
+                            </div>
+                
 
                             </table>
 
@@ -133,6 +123,7 @@
                                                 <th>Taller</th>
                                                 <th>Rif</th>
                                                 <th>Fecha</th>
+                                                <th></th>
                                                 <th></th>
                                                 <th>
                                                     <center>Acción</center>
@@ -162,6 +153,13 @@
 
                                                 </td>
                                                 <td>
+                                                    <div class="col-sm-4" style='text-align:right;'>
+                                                    <button class=" btn btn-danger" type="submit" onclick="reportarPDF();" ><a href="<?=_REPORTS_?>Orden/ordenservicio_unidad.php?id=<?=$preventivo['id_mantenimiento'] ?>"
+                                                                                                target="blank">
+                            <font color="white">   PDF  </font></a><i class="fas fa-print fa-1x text-gray-250"></i> </button>  
+                                              
+                                                </td>
+                                                <td>
                                                     <div class="col-sm-7" style='text-align:right;'>
                                                         <a href="#" data-id="<?= $value['id_vehiculo'] ?>"
                                                             class="btn btn-info btn-icon-split consultar"
@@ -188,6 +186,8 @@
                                                         </a>
                                               
                                                 </td>
+                                               
+
 
 
 
@@ -359,15 +359,16 @@
                                                                                     </div>
                                                                                     <div class="col-auto">
                                                                                         <i
-                                                                                            class="fas fa-check fa-2x text-gray-300"></i>
+                                                                                            class="fas fa-print fa-2x text-gray-300"></i>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
 
                                                                         </div>
-                                                                    </div>
-                                                                    <button class=" btn btn-secondary" type="button"
+                                                                        <button class=" btn btn-secondary" type="button"
                                                                         data-dismiss="modal">Cancelar</button>
+                                                                    </div>
+                                                                   
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -511,7 +512,7 @@
                                     <a href="#" data-id="<?= $preventivo['id_mantenimiento'] ?>"
                                         class="btn btn-danger btn-icon-split inhabilitar" data-toggle="modal"
                                         data-target="">
-                                        <span class="icon text-white-50">
+                                        <span class="icon text-white-40">
                                             <i class="fas fa-trash"></i>
                                         </span>
                                         <span class="text"></span>

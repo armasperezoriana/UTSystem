@@ -199,14 +199,14 @@ class usuariosController
 	{
 		$preguntauno= isset($_REQUEST['preguntauno']) ? $_REQUEST['preguntauno'] : null;
 		$respuestauno = isset($_REQUEST['respuestauno']) ? $_REQUEST['respuestauno'] : null;
-		//$id_usuario = isset($_REQUEST['id_usuario ']) ? $_REQUEST['id_usuario'] : null;
-		//$img = isset($_REQUEST['img']) ? $_REQUEST['img'] : null;
+		// $id_usuario = isset($_REQUEST['id_usuario ']) ? $_REQUEST['id_usuario'] : null;
+		// $img = isset($_REQUEST['img']) ? $_REQUEST['img'] : null;
 
-		//$this->esteganografia->setImg($img);
-		//var_dump($img);
+		// $this->esteganografia->setImg($img);
+		// var_dump($img);
 		//$respuestauno = $this->usuario->encriptar(($_POST['respuestauno']));
-		//$usu = $this->esteganografia->ObtenerOne($id_usuario);
-		$response= $this->esteganografia->RevisarImgSeguridad($respuestauno);
+		// $usu = $this->esteganografia->ObtenerOne($id_usuario);
+		$response= $this->esteganografia->RevisarImgSeguridad($respuestauno,$preguntauno);
 		
 		if(!empty($response)){
 			//var_dump($response);
@@ -252,10 +252,9 @@ class usuariosController
 			$this->usuario->setCorreo($correo);	
 			$this->usuario->setClaveEspecial($clave_especial);
 			
-			
 			$execute =  $this->usuario->ConsultarOne();
-			 //$result = $this->login->ObtenerOne($id_usuario);
-			if ($execute['ejecucion'] == true) {
+			// $execute = $this->usuario->ObtenerOne($id_usuario);
+			if ($execute == true) {
 						$execute = $this->usuario->Modificar();
 					$usu = $this->usuario->ObtenerUsuario($username);
 					$id = $usu['resultado']['id_usuario'];
@@ -270,7 +269,7 @@ class usuariosController
 						$this->esteganografia->setImg_encriptada($img_encriptada.".png");
 						$execute = $this->esteganografia->ModificarS($id);	
 							
-			//var_dump($respuestauno, $img, $id, $img_encriptada);
+		//var_dump($respuestauno, $img, $id, $img_encriptada);
 			echo '1';
 		} else {
 			echo "2";

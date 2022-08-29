@@ -60,10 +60,8 @@ $(document).ready(function() {
                             clave_especial: clave_especial,
                         },
                         success: function(respuesta) {
-                           console.log(respuesta + clave_especial);
-                           // console.log(clave_especial+ - +id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
-
-                            if (respuesta == "1") {
+                           //console.log(respuesta + clave_especial);
+                          if (respuesta == "1") {
 
                             swal.fire({
                                  type: 'success',
@@ -101,13 +99,22 @@ $(document).ready(function() {
         }
 
     });
+    //Selección de imagen de seguridad MODIFICAR
+    $('.card-seguridad-img').on('click', function (e) {
+        if ($(this).attr('data-action') == "modificar") {
+            seguridadImg = $(this).attr('data-img');
+        }
+        else {
+            seguridadImgActu = $(this).attr('data-img');
+        }
+        $('.card-seguridad-img').removeClass('bg-primary');
+        $(this).addClass('bg-primary');
+    })
 
     $(".ModificarUsuarios").click(function() {
         var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
-        // var id = $(this).attr("id");
-        // var valido = validar(true, id);
-    var valido = validarM();
-      var validarS = validarSeguridadM();
+         var valido = validarM();
+        var validarS = validarSeguridadM();
         if (validarS == true && valido == true) {
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
             var nombre = $("#modificarUsuario").find("#nombre").val();
@@ -118,7 +125,7 @@ $(document).ready(function() {
             var pass = $("#modificarUsuario").find("#pass1").val();
             var correo = $("#modificarUsuario").find("#correo").val();
             var clave_especial = $("#modificarUsuario").find("#clave_especial").val();
-            if(seguridadImg == ""){
+            if( (seguridadImg =="")){
                 swal.fire({
                     type: 'warning',
                     title: 'Seleccione una imagen de seguridad',
@@ -128,9 +135,9 @@ $(document).ready(function() {
             }
            var preguntauno= $("#modificarUsuario").find("#preguntauno").val();
             var respuestauno= $("#modificarUsuario").find("#respuestauno").val();
-             var img = $(this).attr('data-img');
-            // console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
-              swal.fire({
+            seguridadImg = $(this).attr('data-img');
+            
+               swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
                 text: "Estos datos serán guardados.",
                 type: "question",
@@ -160,9 +167,8 @@ $(document).ready(function() {
                        
                         },
                         success: function(respuesta) {
-                          // console.log(respuesta);
                             if (respuesta == "1") {
-                       //  console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+seguridadImg+"");
+                        console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+img+"");
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
@@ -196,6 +202,9 @@ $(document).ready(function() {
          }
 
     });
+  
+
+    //CONSULTAR ESTEGANOGRAFIA
 
     $(".ConsultarSeguridad").click(function() {
         var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
@@ -203,7 +212,7 @@ $(document).ready(function() {
             var respuestauno= $("#modalForm").find("#respuestauno").val();
            // var img = $("#modalForm").find("#img").val();
             // var img = $("#modalForm").attr('data-img');
-             console.log($(this).attr('data-img'));
+            // console.log($(this).attr('data-img'));
             // console.log($img);
             var pregunta = preguntasSeguridad();
             if(pregunta == true){
@@ -283,19 +292,6 @@ $(document).ready(function() {
         $(this).addClass('bg-primary');
     })
 
- //Selección de imagen de seguridad MODIFICAR
-      $('.card-seguridad-img').on('click', function (e) {
-        if ($(this).attr('data-action') == "modificar") {
-            seguridadImg = $(this).attr('data-img');
-        }
-        else {
-            seguridadImgActu = $(this).attr('data-img');
-        }
-       //console.log($(this).attr('data-img'))
-        $('.card-seguridad-img').removeClass('bg-primary');
-        $(this).addClass('bg-primary');
-    })
-
            
    //Selección de imagen de seguridad Consultar
    $('.card-seguridad-img').on('click', function (e) {
@@ -305,7 +301,7 @@ $(document).ready(function() {
       else {
           seguridadImgActu = $(this).attr('data-img');
       }
-     console.log($(this).attr('data-img'));
+    // console.log($(this).attr('data-img'));
       $('.card-seguridad-img').removeClass('bg-primary');
       $(this).addClass('bg-primary');
   })

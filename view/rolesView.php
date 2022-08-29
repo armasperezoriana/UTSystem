@@ -67,10 +67,7 @@
                             </span>
                             <span class="text">Nuevo Rol</span>
 
-                        </a>
-
-                        <div class="col-sm-15" style='text-align:right;'>
-                        <a class="nav-link collapsed" class="card shadow mb-4"  href="<?=_ROUTE_ ?>Esteganografia">
+                                                </a>
                                                          
                                     
                         </div>
@@ -167,66 +164,11 @@
                     </div>
                 </div>
 
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                        role="dialog" aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header bg-secondary" style="color:#FFF">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Elige
-                                                                        tu imagen de seguridad:</h5>
-                                                                    <button type="button" class="close"
-                                                                        data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Imagen 1</th>
-                                                                            <th>Imagen 2</th>
-                                                                            <th>Imagen 3</th>
-                                                                            <th>Imagen 4</th>
-                                                                            
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/img/seguridad/1.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/2.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/3.png" style="width:100%; height:100%;"></td>
-                                                                            <td><img src="assets/img/seguridad/4.png" style="width:100%; height:100%;"></td>
-                                                                        </tr>
-                                                                      
-                                                                    </table>
-
-                                                                    <input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Digita tu palabra de seguridad">
-
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Cerrar</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary">Guardar cambios</button>
-                                                                                                        <!-- Button trigger modal -->
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>                                     
-            </div>
-
-            
-            <div class="col-sm-7" style='text-align:right;'>
-                <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModal">
+                <div class="col-sm-7" style='text-align:right;'>
+                <span class="btn btn-primary" href="#" data-toggle="modal" data-target="#AyudaModalddddddd">
                     Ayuda
                 </span>
+                        
             <!-- End of Content Wrapper -->
         </div>
 
@@ -638,8 +580,7 @@
             </form>
         </div>
 
-
-                                            
+                            
 
     <!-- MODULo de AYUDA -->
 

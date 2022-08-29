@@ -67,12 +67,12 @@
 
 				$query = parent::prepare("INSERT INTO seguridad_preguntas (id_usuario, preguntauno, respuestauno, img, img_encriptada) 
           VALUES ('{$this->id}','{$this->preguntauno}', '{$this->respuestauno}', '{$this->img}', '{$this->img_encriptada}')");
-       // $query = parent::prepare("INSERT INTO seguridad_respuestas (respuestauno, respuestados, respuestatres) VALUES ('{$this->respuestauno}', '{$this->respuestados}', '{$this->respuestatres}')");
-        $respuestaArreglo = '';
+         $respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
 				$respuestaArreglo += ['ejecucion' => true];
+       // var_dump($respuestaArreglo);
 				return $respuestaArreglo;
 			} catch (PDOException $e) {
 				$errorReturn = ['ejecucion' => false];
@@ -81,9 +81,9 @@
 			}
 		}
 
-    public function RevisarImgSeguridad($respuestauno){
+    public function RevisarImgSeguridad($respuestauno,$preguntauno){
 			try {
-				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE respuestauno = '$respuestauno'  LIMIT 1");
+				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE respuestauno = '$respuestauno' AND preguntauno='$preguntauno' LIMIT 1");
         $query->execute();
         //var_dump($query);
 				$query->setFetchMode(parent::FETCH_ASSOC);

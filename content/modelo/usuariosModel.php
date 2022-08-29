@@ -104,6 +104,8 @@
 				$query->setFetchMode(parent::FETCH_ASSOC);
 				$respuesta = $query->fetch(parent::FETCH_ASSOC); 
 				return $respuesta;
+				//$respuestaArreglo += ['ejecucion' => true];
+				//return $respuestaArreglo;
 			} catch (PDOException $e) {
 				$errorReturn = ['ejecucion' => false];
 				$errorReturn += ['info' => "error sql:{$e}"];
