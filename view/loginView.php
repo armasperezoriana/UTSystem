@@ -146,14 +146,14 @@
         </div>
     </div>
 <!-- MODAL IMAGEN DE SEGURIDAD -->
-<div class="modal fade" id="modalForm" role="dialog" data-controls-modal="your_div_id"
-    data-backdrop="static" data-keyboard="false">>
+<div class="modal fade" id="modalSeguridad" role="dialog" data-controls-modal="your_div_id"
+    data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
-                <form id="modalForm">
+                <form id="modalSeguridad">
                     <input type="hidden" id="id_usuario" name="id_usuario">
                     <div class="form-group">
                         <div class="modal-header bg-primary" style="color:#FFF">
@@ -294,34 +294,11 @@
 
                             <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                             <a class="ConsultarSeguridad btn btn-primary" href="#">Verificar</a>
-                            <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
+                            <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactSeguridad()">Confirmar</button>-->
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 

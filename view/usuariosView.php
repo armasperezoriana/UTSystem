@@ -195,16 +195,15 @@
 
             </div>
 
-
 <!-- MODAL IMAGEN DE SEGURIDAD -->
-<div class="modal fade" id="modalForm" role="dialog" data-controls-modal="your_div_id"
+ <div class="modal fade" id="modalSeguridad" role="dialog" data-controls-modal="your_div_id"
     data-backdrop="static" data-keyboard="false">>
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
-                <form id="modalForm">
+                <form id="modalSeguridad"">
                     <input type="hidden" id="id_usuario" name="id_usuario">
                     <div class="form-group">
                         <div class="modal-header bg-primary" style="color:#FFF">
@@ -217,7 +216,7 @@
                     </div>
                     <div class="container">
                         <div>
-                            <div class="" role="document"  id="modalForm">
+                            <div class="" role="document"  id="modalSeguridad">
                                 <TABLE>
                                     <TR>
                                         <TH>
@@ -345,11 +344,11 @@
 
                             <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                             <a class="ConsultarSeguridad btn btn-primary" href="#">Verificar</a>
-                            <!-- <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Confirmar</button>-->
+                          
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
 
 
 
@@ -363,9 +362,9 @@
             </span>
             
 
-            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalForm">
+            <!-- <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalSeguridad">
                 Seguridad
-            </button>
+            </button> -->
         </div>
      
         <?php require_once 'view/assets/footer.php'; ?>

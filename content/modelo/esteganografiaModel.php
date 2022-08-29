@@ -81,9 +81,9 @@
 			}
 		}
 
-    public function RevisarImgSeguridad($respuestauno,$preguntauno){
+    public function RevisarImgSeguridad($respuestauno,$img){
 			try {
-				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE respuestauno = '$respuestauno' AND preguntauno='$preguntauno' LIMIT 1");
+				$query = parent::prepare("SELECT * FROM seguridad_preguntas WHERE respuestauno = '$respuestauno' AND img ='$img' LIMIT 1");
         $query->execute();
         //var_dump($query);
 				$query->setFetchMode(parent::FETCH_ASSOC);

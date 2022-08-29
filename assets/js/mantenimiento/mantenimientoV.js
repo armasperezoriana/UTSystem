@@ -88,7 +88,7 @@ $(document).ready(function () {
             var placa = $("#ModificarMantenimientoModal"+id).find("#id_vehiculo").val();
             var costo = $("#ModificarMantenimientoModal"+id).find("#costo").val();
             var estado = $("#ModificarMantenimientoModal"+id).find("#estado").val();
-          // console.log(estado);
+           console.log(estado);
             swal.fire({
                 title: "¿Desea guardar los datos que han sido modificados?",
                 text: "Estos datos serán guardados.",

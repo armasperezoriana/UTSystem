@@ -112,8 +112,7 @@ $(document).ready(function() {
     })
 
     $(".ModificarUsuarios").click(function() {
-        var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
-         var valido = validarM();
+        var valido = validarM();
         var validarS = validarSeguridadM();
         if (validarS == true && valido == true) {
             var id_usuario = $("#modificarUsuario").find("#id_usuario").val();
@@ -135,7 +134,6 @@ $(document).ready(function() {
             }
            var preguntauno= $("#modificarUsuario").find("#preguntauno").val();
             var respuestauno= $("#modificarUsuario").find("#respuestauno").val();
-            seguridadImg = $(this).attr('data-img');
             
                swal.fire({
                 title: "¿Desea guardar los datos ingresados?",
@@ -168,7 +166,7 @@ $(document).ready(function() {
                         },
                         success: function(respuesta) {
                             if (respuesta == "1") {
-                        console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+img+"");
+                      // console.log(id_usuario+"-"+nombre+"-"+apellido+"-"+cedula+"-"+username+""+rol+"-"+pass+""+correo+""+preguntauno+"-"+respuestauno+"-"+img+"");
                                 swal.fire({
                                     type: 'success',
                                     title: 'Registro modificado exitosamente',
@@ -207,23 +205,18 @@ $(document).ready(function() {
     //CONSULTAR ESTEGANOGRAFIA
 
     $(".ConsultarSeguridad").click(function() {
-        var seguridadImg = "", seguridadImgActu = "", seguridadPreguntaActu = "";
-           var preguntauno= $("#modalForm").find("#preguntauno").val();
-            var respuestauno= $("#modalForm").find("#respuestauno").val();
-           // var img = $("#modalForm").find("#img").val();
-            // var img = $("#modalForm").attr('data-img');
-            // console.log($(this).attr('data-img'));
-            // console.log($img);
+           var preguntauno= $("#modalSeguridad").find("#preguntauno").val();
+            var respuestauno= $("#modalSeguridad").find("#respuestauno").val();
             var pregunta = preguntasSeguridad();
             if(pregunta == true){
-                        // if(seguridadImg == ""){
-                        //     swal.fire({
-                        //         type: 'warning',
-                        //         title: 'Seleccione una imagen de seguridad',
-                        //         text: 'Imagen obligatoria para modificar',
-                        //     });
-                        //     return 0;
-                        // }
+                        if(seguridadImg == ""){
+                            swal.fire({
+                                type: 'warning',
+                                title: 'Seleccione una imagen de seguridad',
+                                text: 'Imagen obligatoria para modificar',
+                            });
+                            return 0;
+                        }
              swal.fire({
                 title: "¿Esta seguro de sus respuestas ingresados?",
                 text: "Estos datos serán verificados.",
@@ -240,12 +233,12 @@ $(document).ready(function() {
                         data: {
                            
                             preguntauno: preguntauno,
-                           // img : seguridadImg,
+                            img : seguridadImg,
                             respuestauno: respuestauno,
                        
                         },
                         success: function(respuesta) {
-                          // console.log(respuesta);
+                              //alert(seguridadImg);
                             if (respuesta == "1") {
                              swal.fire({
                                     type: 'success',

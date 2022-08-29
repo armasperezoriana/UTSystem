@@ -156,6 +156,25 @@
 			}
 		}
 
+
+		public function modificarEstadoNotificacion($datos){
+			try {
+				$query = parent::prepare("UPDATE mantenimientos SET estado VALUES (0) WHERE id_mantenimiento = $this->id_mantenimiento");
+				$respuestaArreglo = '';
+				$query = parent::prepare("DELETE * notificaciones  WHERE  id_mantenimiento = $this->id_mantenimiento AND estado ='0'");
+				$query->execute();
+				$query->setFetchMode(parent::FETCH_ASSOC);
+				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
+
+				$respuestaArreglo += ['ejecucion' => true];
+				return $respuestaArreglo;
+			} catch (PDOException $e) {
+				$errorReturn = ['ejecucion' => false];
+				$errorReturn += ['info' => "error sql:{$e}"];
+				return $errorReturn;
+			}
+		}
+
 		public function Agregar_notificacion($datos){
 			try {
 				$query = parent::prepare("INSERT INTO notificaciones (estado, fecha, titulo, contenido,id_vehiculo) VALUES (0,'".$datos['fecha']."','".$datos['titulo']."', '".$datos['contenido']."', '".$datos['id_vehiculo']."')");
@@ -191,7 +210,7 @@
 
 		public function Modificar(){
 			try{
-				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', kilometraje = '$this->kilometraje',id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller' WHERE id_mantenimiento = $this->id_mantenimiento");
+				$query = parent::prepare("UPDATE mantenimientos SET nombre = '{$this->nombre}', kilometraje = '$this->kilometraje',id_vehiculo='$this->id_vehiculo', nombre='$this->nombre', costo='$this->costo', fecha='$this->fecha', id_taller='$this->id_taller', estado ='$this->estado' WHERE id_mantenimiento = $this->id_mantenimiento");
 				$respuestaArreglo = '';
 				$query->execute();
 				$query->setFetchMode(parent::FETCH_ASSOC);

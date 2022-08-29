@@ -199,14 +199,10 @@ class usuariosController
 	{
 		$preguntauno= isset($_REQUEST['preguntauno']) ? $_REQUEST['preguntauno'] : null;
 		$respuestauno = isset($_REQUEST['respuestauno']) ? $_REQUEST['respuestauno'] : null;
-		// $id_usuario = isset($_REQUEST['id_usuario ']) ? $_REQUEST['id_usuario'] : null;
-		// $img = isset($_REQUEST['img']) ? $_REQUEST['img'] : null;
+		 $img = isset($_REQUEST['img']) ? $_REQUEST['img'] : null;
 
-		// $this->esteganografia->setImg($img);
-		// var_dump($img);
-		//$respuestauno = $this->usuario->encriptar(($_POST['respuestauno']));
-		// $usu = $this->esteganografia->ObtenerOne($id_usuario);
-		$response= $this->esteganografia->RevisarImgSeguridad($respuestauno,$preguntauno);
+		 $this->esteganografia->setImg($img);
+		$response= $this->esteganografia->RevisarImgSeguridad($respuestauno,$img);
 		
 		if(!empty($response)){
 			//var_dump($response);
