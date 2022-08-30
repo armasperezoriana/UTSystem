@@ -70,8 +70,8 @@ $(document).ready(function() {
     });
 });
     $(".ModificarChofer").click(function() {
-        var validoM = validarM(true);
-        if (validoM == true) {
+        // var validoM = validarM(true);
+        // if (validoM == true) {
 
             // var id_choferes = $("#modificarChofer").find("#id_choferes").val();
             var id_choferes = $(this).attr("id");
@@ -139,7 +139,7 @@ $(document).ready(function() {
             });
 
 
-        }
+      // }
 
     });
 
@@ -194,15 +194,17 @@ $(document).ready(function() {
                if(!expNombre.test(nombre)){
                         $(".errorNombre").html("El campo nombre solo acepta caracteres, minimo 3");
                             rnombre = false;
-                            preventDefault();
+                            return false;
+                            
                 } else {
                         $(".errorNombre").html("Campo validado");
                         $(".errorNombre").attr("style", "color:green");
                         rnombre = true;
+                        
                     } if(!expApellido.test(apellido)){
                 $(".errorApellido").html("El campo apellido solo acepta caracteres, minimo 3");
                     rapellido = false;
-                    preventDefault();
+                    return false;
         } else {
                 $(".errorApellido").html("Campo validado");
                 $(".errorApellido").attr("style", "color:green");
@@ -210,7 +212,7 @@ $(document).ready(function() {
             }if(!expCedula.test(cedula)){
                 $(".errorCedula").html("El campo cedula no coincide con el formato esperado 7 a 10 numeros");
                    rcedula = false;
-                   preventDefault();
+                   return false;
         } else {
                 $(".errorCedula").html("");
                rcedula = true;
@@ -220,7 +222,8 @@ $(document).ready(function() {
             }if(!expTelefono.test(telefono)){
                 $(".errorTelefono").html("El campo telefono solo acepta al menos 10 numeros, sino puede registrar el campo no coincide con el dato esperado");
                    rtelefono = false;
-                   preventDefault();
+                   return false;
+
         } else {
                 $(".errorTelefono").html("");
                rtelefono = true;
@@ -388,48 +391,6 @@ const mostrar = (id, formulario, modal) => {
         },
         error: function (response) {
             console.log(response.getAllResponseHeaders())
-        }
-    });
-}
-const inhabilitar = (id) => {
-    $.ajax({
-        type: "POST",
-        url: "choferes/Inhabilitar/" + id,
-        success: function(response) {
-            const json = JSON.parse(response);
-            Swal.fire(
-                json.titulo,
-                json.mensaje,
-                json.tipo
-            ).then((isConfirm) => {
-                if (json.tipo == 'success') {
-                    location.reload();
-                }
-            });
-        },
-        error: function(response) {
-            console.log(response);
-        }
-    });
-}
-const habilitar = (id) => {
-    $.ajax({
-        type: "POST",
-        url: "choferes/Habilitar/" + id,
-        success: function(response) {
-            const json = JSON.parse(response);
-            Swal.fire(
-                json.titulo,
-                json.mensaje,
-                json.tipo
-            ).then((isConfirm) => {
-                if (json.tipo == 'success') {
-                    location.reload();
-                }
-            });
-        },
-        error: function(response) {
-            console.log(response);
         }
     });
 }

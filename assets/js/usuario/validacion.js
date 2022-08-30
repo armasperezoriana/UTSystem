@@ -202,7 +202,7 @@ $(document).ready(function() {
     });
   
 
-    //CONSULTAR ESTEGANOGRAFIA
+    //CONSULTAR ESTEGANOGRAFIA USUARIOS
 
     $(".ConsultarSeguridad").click(function() {
            var preguntauno= $("#modalSeguridad").find("#preguntauno").val();
@@ -213,7 +213,7 @@ $(document).ready(function() {
                             swal.fire({
                                 type: 'warning',
                                 title: 'Seleccione una imagen de seguridad',
-                                text: 'Imagen obligatoria para modificar',
+                                text: 'Imagen obligatoria',
                             });
                             return 0;
                         }
@@ -273,6 +273,154 @@ $(document).ready(function() {
          }
 
     });
+
+
+
+    //CONSULTAR ESTEGANOGRAFIA MANTENIMIENTOS
+
+    $(".ConsultarSeguridadMantenimientos").click(function() {
+        var preguntauno= $("#modalSeguridadMantenimientos").find("#preguntauno").val();
+         var respuestauno= $("#modalSeguridadMantenimientos").find("#respuestauno").val();
+         var preguntaM = preguntasSeguridadM();
+         if(preguntaM == true){
+                     if(seguridadImg == ""){
+                         swal.fire({
+                             type: 'warning',
+                             title: 'Seleccione una imagen de seguridad',
+                             text: 'Imagen obligatoria',
+                         });
+                         return 0;
+                     }
+          swal.fire({
+             title: "¿Esta seguro de sus respuestas ingresados?",
+             text: "Estos datos serán verificados.",
+             type: "question",
+             showCancelButton: true,
+             confirmButtonText: "Guardar",
+             cancelButtonText: "Cancelar",
+             closeOnConfirm: false,
+         }).then((isConfirm) => {
+             if (isConfirm.value) {
+                 $.ajax({
+                     url: './Usuarios/ConsultarImagen',
+                     type: 'POST',
+                     data: {
+                        
+                         preguntauno: preguntauno,
+                         img : seguridadImg,
+                         respuestauno: respuestauno,
+                    
+                     },
+                     success: function(respuesta) {
+                           //alert(seguridadImg);
+                         if (respuesta == "1") {
+                          swal.fire({
+                                 type: 'success',
+                                 title: 'Acceso correcto',
+                             }).then((isConfirm) => {
+                                 location.href = './Mantenimiento';
+                             });
+                         }
+                         if (respuesta == "2") {
+                             swal.fire({
+                                 type: 'error',
+                                 title: 'Error al verificar los datos',
+                                 text: 'Los datos no coinciden con los registrados',
+                             });
+                         }
+                         if (respuesta == "3") {
+                             swal.fire({
+                                 type: 'warning',
+                                 title: 'Ha ocurrido un error',
+                                 text: 'Contacta con el soporte',
+                             });
+                         }
+                     }
+                 });
+             } else {
+                 swal.fire({
+                     type: 'error',
+                     title: '¡Proceso cancelado!',
+                 });
+             }
+         });
+      }
+
+ });
+
+
+
+  //CONSULTAR ESTEGANOGRAFIA MANTENIMIENTOS
+
+  $(".ConsultarSeguridadRoles").click(function() {
+    var preguntauno= $("#modalSeguridadRoles").find("#preguntauno").val();
+     var respuestauno= $("#modalSeguridadRoles").find("#respuestauno").val();
+     var preguntaR = preguntasSeguridadR();
+     if(preguntaR == true){
+                 if(seguridadImg == ""){
+                     swal.fire({
+                         type: 'warning',
+                         title: 'Seleccione una imagen de seguridad',
+                         text: 'Imagen obligatoria',
+                     });
+                     return 0;
+                 }
+      swal.fire({
+         title: "¿Esta seguro de sus respuestas ingresados?",
+         text: "Estos datos serán verificados.",
+         type: "question",
+         showCancelButton: true,
+         confirmButtonText: "Guardar",
+         cancelButtonText: "Cancelar",
+         closeOnConfirm: false,
+     }).then((isConfirm) => {
+         if (isConfirm.value) {
+             $.ajax({
+                 url: './Usuarios/ConsultarImagen',
+                 type: 'POST',
+                 data: {
+                    
+                     preguntauno: preguntauno,
+                     img : seguridadImg,
+                     respuestauno: respuestauno,
+                
+                 },
+                 success: function(respuesta) {
+                       //alert(seguridadImg);
+                     if (respuesta == "1") {
+                      swal.fire({
+                             type: 'success',
+                             title: 'Acceso correcto',
+                         }).then((isConfirm) => {
+                             location.href = './Roles';
+                         });
+                     }
+                     if (respuesta == "2") {
+                         swal.fire({
+                             type: 'error',
+                             title: 'Error al verificar los datos',
+                             text: 'Los datos no coinciden con los registrados',
+                         });
+                     }
+                     if (respuesta == "3") {
+                         swal.fire({
+                             type: 'warning',
+                             title: 'Ha ocurrido un error',
+                             text: 'Contacta con el soporte',
+                         });
+                     }
+                 }
+             });
+         } else {
+             swal.fire({
+                 type: 'error',
+                 title: '¡Proceso cancelado!',
+             });
+         }
+     });
+  }
+
+});
       //Selección de imagen de seguridad
       $('.card-seguridad-img').on('click', function (e) {
         if ($(this).attr('data-action') == "registrar") {
@@ -348,12 +496,51 @@ $(document).ready(function() {
         }
       }
      
-      //ESTEGANOGRAFIA
+      //ESTEGANOGRAFIA USUARIOS
     function preguntasSeguridad(){
-        var respuesta = $("#modalForm").find("#respuestauno").val();
+        var respuesta = $("#modalSeguridad").find("#respuestauno").val();
         var rrespuesta = false;
-        var pregunta = $("#modalForm").find("#pregunta").val();
-        var img = $("#modalForm").find("#img").val();
+        var pregunta = $("#modalSeguridad").find("#pregunta").val();
+        var img = $("#modalSeguridad").find("#img").val();
+        var rimg = false;
+    
+         var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
+       
+        if(respuesta==""|pregunta==""){
+          
+           swal.fire({
+                                            type: 'info',
+                                            title: 'Opss! falta responder las preguntas de seguridad',
+                                            text: 'Es necesario completar todos los campos',
+                                        });
+            $(".errorRespuestaI").html("Debe responder la pregunta");
+            $(".errorPreguntaunoI").html("Debe seleccionar una pregunta");
+                 return false;
+        }else{
+             if(!expRespuesta.test(respuesta)){
+                    $(".errorRespuestaI").html("Este campo solo acepta caracteres, minimo 3");
+                    
+                               return false;
+                    }else{
+                            $(".errorRespuestaI").html("Campo validado");
+                            $(".errorRespuestaI").attr("style", "color:green");
+                }
+                if(pregunta !=""){
+                    $(".errorPreguntaunoI").html("Campo validado");
+                    $(".errorPreguntaunoI").attr("style", "color:green");
+                    return true;
+                }
+            return true;     
+        }
+      }
+
+
+       //ESTEGANOGRAFIA MANTENIMIENTOS
+    function preguntasSeguridadM(){
+        var respuesta = $("#modalSeguridadMantenimientos").find("#respuestauno").val();
+        var rrespuesta = false;
+        var pregunta = $("#modalSeguridadMantenimientos").find("#pregunta").val();
+        var img = $("#modalSeguridadMantenimientos").find("#img").val();
         var rimg = false;
     
          var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
@@ -387,6 +574,45 @@ $(document).ready(function() {
       }
 
       
+
+ //ESTEGANOGRAFIA ROLES
+ function preguntasSeguridadR(){
+    var respuesta = $("#modalSeguridadRoles").find("#respuestauno").val();
+    var rrespuesta = false;
+    var pregunta = $("#modalSeguridadRoles").find("#pregunta").val();
+    var img = $("#modalSeguridadRoles").find("#img").val();
+    var rimg = false;
+
+     var expRespuesta = /^[a-zA-ZÀ-ÿ\s]{3,40}$/; // Letras, mayusculas minisculas y acentos
+   
+    if(respuesta==""|pregunta==""){
+      
+       swal.fire({
+                                        type: 'info',
+                                        title: 'Opss! falta responder las preguntas de seguridad',
+                                        text: 'Es necesario completar todos los campos',
+                                    });
+        $(".errorRespuestaI").html("Debe responder la pregunta");
+        $(".errorPreguntaunoI").html("Debe seleccionar una pregunta");
+             return false;
+    }else{
+         if(!expRespuesta.test(respuesta)){
+                $(".errorRespuestaI").html("Este campo solo acepta caracteres, minimo 3");
+                
+                           return false;
+                }else{
+                        $(".errorRespuestaI").html("Campo validado");
+                        $(".errorRespuestaI").attr("style", "color:green");
+            }
+            if(pregunta !=""){
+                $(".errorPreguntaunoI").html("Campo validado");
+                $(".errorPreguntaunoI").attr("style", "color:green");
+                return true;
+            }
+        return true;     
+    }
+  }
+
       function validarSeguridadM(modificar=true){
 
         var form = "";

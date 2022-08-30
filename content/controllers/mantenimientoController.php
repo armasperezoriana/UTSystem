@@ -127,14 +127,14 @@
 				}
 			}
 
-
+//AQUI CAMBIE EL SIGNO POR POSITIVO ESTABA MENOS DESPUES DE KILOMETRAJE
 			foreach($rutas as $r){
                 for($i=0;$i<count($vehiculos_mantenimiento);$i++){
                      if($vehiculos_mantenimiento[$i]['placa']==$r['placa']){
-						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + (floatval($r['kilometraje'])*$r['cantidad']);
+						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])+floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + (floatval($r['kilometraje'])*$r['cantidad']);
 					 }
 					 else{
-					 	$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_mantenimiento[$i]['kilometraje'])-floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']);
+					 	$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_mantenimiento[$i]['kilometraje'])+floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']);
 					  }
 				}
 			}
@@ -214,7 +214,7 @@
 				}
 			 }
 		   }
-           $notificaciones=$this->mantenimiento->eliminarNull();
+          // $notificaciones=$this->mantenimiento->eliminarNull();
 		   $notificaciones=$this->mantenimiento->Consultar_notificaciones();
 		   echo json_encode($notificaciones);
 

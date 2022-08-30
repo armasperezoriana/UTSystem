@@ -6,7 +6,6 @@ use config\settings\sysConfig as sysConfig;
 use content\component\headElement as headElement;
 use content\modelo\loginModel as loginModel;
 use content\modelo\usuariosModel as usuariosModel;
-use content\traits\Utility;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -19,7 +18,7 @@ require 'PHPMailer/SMTP.php';
 
 class loginController
 {
-	use Utility;
+	//use Utility;
 	private $url;
 	private $login;
 
