@@ -48,6 +48,7 @@
                         <div class="card-header py-3">
                          <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Vehiculos</h6></center> 
                         </div>
+                        <center> <img src="assets/img/bus.jpg" class="img-profile" width="40%"  right="500%" > </center> 
                       
                          <?php
               

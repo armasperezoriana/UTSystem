@@ -47,8 +47,9 @@
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                              <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Choferes</h6></center> 
-                            </div>
-                         <!--  <img src="assets/img/conductor.png" class="img-profile rounded-circle" width="20%"  right="100%">  DataTales Example -->  
+                        
+                            <center> <img src="assets/img/chofer.png" class="img-profile" width="20%"  right="500%" > </center> 
+                    
                             
                             <div class="col-sm-3" style='text-align:right;'>
                                 <span class="icon text-white-50"><i class="fas fa-check"></i></span>

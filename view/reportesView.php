@@ -38,7 +38,10 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <center>
                             <h1 class="h3 mb-0 text-gray-800">Gestión de Reportes</h1>
-
+                       <br><br>
+                            <!-- 
+                            <center> <img src="assets/img/PDF.png" class="img-profile" width="15%"  right="20%" > </center> 
+                            <br><br> -->
                             <!-- REPORTES PDF -->
                             <div class="row">
 
@@ -193,6 +196,9 @@
                                 <h1 class="h3 mb-0 text-gray-800">Gestión de Reportes Estadisticos</h1>
                             </center>
                             <br>
+                            <!-- <br><br>
+                            <center> <img src="assets/img/estadisticas.png" class="img-profile" width="20%"  right="20%" > </center> 
+                            <br><br> -->
                             <!-- Area Chart -->
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-4">

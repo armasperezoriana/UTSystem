@@ -50,9 +50,11 @@
                                 <center>
                                     <h6 class="m-0 font-weight-bold text-primary">Bitácora del Sistema</h6>
                                 </center>
-                            </div>
+                                <br>
+                                <center> <img src="assets/img/bitacora.png" class="img-profile" width="20%"  right="500%" > </center> 
+                        
 
-                        </div>
+                    
                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>

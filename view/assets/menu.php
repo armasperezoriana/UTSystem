@@ -506,11 +506,8 @@
                 <a class="nav-link" href="<?=_ROUTE_ ?>Reportes">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Reportes</span></a>
-            </li>
-   <?php } ?>
 
- 
-<!-- MODAL IMAGEN DE SEGURIDAD -->
+                    <!-- MODAL IMAGEN DE SEGURIDAD -->
 <div class="modal fade" id="modalSeguridad" role="dialog" data-controls-modal="your_div_id"
     data-backdrop="static" data-keyboard="false">>
     <div class="modal-dialog">
@@ -518,7 +515,7 @@
             <!-- Modal Body -->
             <div class="modal-body">
                 <p class="statusMsg"></p>
-                <form id="modalSeguridad"">
+                <form id="modalSeguridad">
                     <input type="hidden" id="id_usuario" name="id_usuario">
                     <div class="form-group">
                         <div class="modal-header bg-primary" style="color:#FFF">
@@ -665,6 +662,10 @@
                 </div>
             </div> 
 
+            </li>
+   <?php } ?>
+
+
            
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -675,6 +676,5 @@
                 <img class="sidebar-card-illustration mb-2" src="assets/img/undraw_rocket.svg" alt="...">
             
             </div>
-
 
         </ul>

@@ -34,7 +34,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Gestión de Talleres</h1>
-                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reportes</a> -->
+                    
                     </div>
 
                     <div class="container-fluid">
@@ -45,13 +45,16 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                         <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Talleres</h6></center> 
-                        </div>
+                      
+                         <center>   <h6 class="m-0 font-weight-bold text-primary">Mdddddódulo de Talleres</h6></center> 
+                        <br>
+                    </div>
+                         <center> <img src="assets/img/taller.png" class="img-profile" width="15%"  right="500%" > </center> 
+                        
                          
             
 
-                        </div>
+                  
                                <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
@@ -62,7 +65,8 @@
                                         <span class="text">Registrar Taller</span>
 
                                     </a>
-                        </div>
+                            
+                    </div>
                         <br>
                         <div class="table-responsive">
                         <div class="card-body" style='background:;'>
@@ -72,7 +76,7 @@
                                         <tr>
                                             <th>Rif</th>
                                             <th>Nombre</th>
-                                            <th></th>
+                                            <th>Dirección</th>
                                             <th></th>
                                           
                                              <th><center>Accion</center></th>
@@ -87,7 +91,7 @@
                                         <tr>
                                             <td><?=$value['rif']?></td>
                                             <td><?=$value['nombre']?></td>
-                                            <td></td>
+                                            <td><?=$value['direccion']?></td>
                                              <td></td>
                                             <td>
                                                     <div class="col-sm-7" style='text-align:right;'>
@@ -162,7 +166,7 @@
           <?php require_once'view/assets/footer.php'; ?>
         <!-- End of Content Wrapper -->
     </div>
-    <!-- End of Page Wrapper -->
+
 
     <!-- MODAL DE REGISTRARSE-->
                    <a class="scroll-to-top rounded" href="#page-top">
@@ -337,7 +341,7 @@
                                 </div>
                                 <div class="modal-footer">
                 
-                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                <button class=" btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button></div>
                             
                             </div>
                             </form>

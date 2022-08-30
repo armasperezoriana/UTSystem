@@ -62,6 +62,8 @@
                                 <center>
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Usuarios</h6>
                                 </center>
+                                <center> <img src="assets/img/roles.jpg" class="img-profile" width="30%"  right="500%" > </center> 
+                      
                             </div>
 
                         </div>

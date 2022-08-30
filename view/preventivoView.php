@@ -58,6 +58,7 @@
                                 <center>
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Mantenimientos</h6>
                                 </center>
+                                <center> <img src="assets/img/mantenimientos.png" class="img-profile" width="20%"  right="500%" > </center> 
                             </div>
                             <div class="col-sm-4" style='text-align:right;top:100px;'>
                                 <span class="icon text-white-50">

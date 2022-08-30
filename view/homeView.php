@@ -165,11 +165,25 @@
                             </div>
                         </div>
                          </div> 
-
+                                        <TABLE width="100%">
+                    <TR>
+                        <TH></TH> <TH></TH> <TH></TH>
+                    </TR>
+                    <TR>
+                        <TD><center> <img src="assets/img/7.jpg" class="img-profile"  width="80%"   right="20%" > </center> </TD> <TD><center> <img src="assets/img/8.jpg" class="img-profile" width="100%"   right="20%" > </center> </TD> <TD><center> <img src="assets/img/6.jpg" class="img-profile" width="80%"  right="20%" > </center> </TD>
+                    </TR>
+                    <TR>
+		<TD><center> <img src="assets/img/5.jpg" class="img-profile"  width="80%"   right="20%" > </center> </TD> <TD><center> <img src="assets/img/2.jpg" class="img-profile"  width="80%"   right="20%" > </center> </TD> <TD><center> <img src="assets/img/3.jpg" class="img-profile"  width="80%"   right="20%" > </center> </TD>
+	</TR>
+                    
+                </TABLE>
+                <br><br>	
+                         
                          <center>
                                 <h1 class="h3 mb-0 text-gray-800">Gráficos para la toma de decisiones</h1>
                             </center>
-                            <br>
+                            <br><br>
+                           
                             <!-- Area Chart -->
                             <div class="row">
                                 <div class="col-xl-3 col-md-6 mb-4">
@@ -240,8 +254,7 @@
                                     </div>
                                 </div>
                             </div>
-         
-                                     <!--ESTADISTICAS -->
+                                    <!--ESTADISTICAS -->
                                 </div>
 
         

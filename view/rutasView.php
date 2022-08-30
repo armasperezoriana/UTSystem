@@ -48,7 +48,7 @@
                         <div class="card-header py-3">
                          <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Rutas</h6></center> 
                         </div>
-                      <!--   <img src="assets/img/rutas.jpg" class="img-profile rounded-circle" width="20%"  right="100%">  -->
+                    <center> <img src="assets/img/ruta.png" class="img-profile" width="20%"  right="500%" > </center> 
                            <?php
        if (in_array('registrar ruta', $_SESSION['ut_permisos']))
             {
@@ -159,23 +159,25 @@
                                     <label for="kilometraje"><b>Kilometraje</b></label>
                                     <br><br>
                                     <input type="text" class="form-control kilometraje kilometraje value="<?=$value['kilometraje'];?>" style='background:none;border:none;width:100%;' disabled value="<?=$value['kilometraje'];?> kilometros" name="kilometraje" id="kilometraje" placeholder="kilometros en metros">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-6">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125710.5162316898!2d-69.36284785000001!3d10.061866349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e87671d783e8671%3A0x972fe1e11519c3db!2sBarquisimeto%203001%2C%20Lara!5e0!3m2!1ses!2sve!4v1654746367020!5m2!1ses!2sve" width="200" height="200"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <br><br>
                                     <label for="cantidad"><b>Cantidad de veces que recorre la ruta a la semana</b></label>
                                     <input type="number"  disabled  class="form-control cantidad<?=$value['id_ruta'];?>"  value="<?=$value['cantidad'];?>"  style="width:100%;" name="cantidad" id="cantidad">
                                     <span class="errorCantidad" style="color:red"></span>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-6">
                                
                                     <label for="date"><b>Fecha de asignación de la ruta</b></label>
                                     <input type="date"  disabled  class="form-control fecha_inicio<?=$value['id_ruta'];?>" value="<?=$value['fecha_inicio'];?>"  style="width:100%;" name="fecha_inicio" id="fecha_inicio">
                                     <span class="errorDate" style="color:red"></span>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-6">
+                            
                                     <label for="date"><b>Fecha de culminacion de la ruta</b></label>
                                     <input type="date" disabled  class="form-control fecha_fin<?=$value['id_ruta'];?>" value="<?=$value['fecha_fin'];?>"  style="width:100%;" name="fecha_fin" id="fecha_fin">
                                     <span class="errorDate" style="color:red"></span>
                                 </div>
                                 
                             <br><br>
+                           
                         </div>
                         <br>
                         <div class="modal-footer">
@@ -290,7 +292,8 @@
                                     <input type="number" class="form-control cantidad cantidad<?=$value['id_ruta'];?>"  value="<?=$value['cantidad'];?>" style="width:100%;" name="cantidad" id="cantidad">
                                     <span class="errorCantidad" style="color:red"></span>
                                 </div>
-                            <br><br>
+                            <br><br> <br><br>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125710.5162316898!2d-69.36284785000001!3d10.061866349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e87671d783e8671%3A0x972fe1e11519c3db!2sBarquisimeto%203001%2C%20Lara!5e0!3m2!1ses!2sve!4v1654746367020!5m2!1ses!2sve" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
                             
                         <br>

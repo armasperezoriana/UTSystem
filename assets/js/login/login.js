@@ -13,9 +13,9 @@ $(document).ready(function() {
         success: function (response) {
           let res = JSON.parse(response);
           if (res.tipo == 'success') {
-            $('#login').modal('hide');
-            $('#modalForm').modal('show');
-            //window.location.reload();
+            //$('#login').modal('hide');
+           // $('#modalForm').modal('show');
+            window.location.reload();
           }
           else {
             Swal.fire(

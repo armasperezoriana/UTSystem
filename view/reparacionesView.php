@@ -54,6 +54,8 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Mantenimientos Correctivos
                                     </h6>
                                 </center>
+                                <br>
+                                <center> <img src="assets/img/reparacion.png" class="img-profile" width="20%"  right="500%" > </center> 
                             </div>
 
 
