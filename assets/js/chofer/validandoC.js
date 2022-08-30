@@ -70,8 +70,8 @@ $(document).ready(function() {
     });
 });
     $(".ModificarChofer").click(function() {
-        // var validoM = validarM(true);
-        // if (validoM == true) {
+        var validoM = validarM(true);
+        if (validoM == true) {
 
             // var id_choferes = $("#modificarChofer").find("#id_choferes").val();
             var id_choferes = $(this).attr("id");
@@ -137,9 +137,7 @@ $(document).ready(function() {
                     });
                 }
             });
-
-
-      // }
+         }
 
     });
 
@@ -285,16 +283,15 @@ $(document).ready(function() {
                if(!expNombre.test(nombre)){
                         $(".errorNombreM").html("El campo nombre solo acepta caracteres, minimo 3");
                             rnombre = false;
-                            return false;
-
+                           // return false;
                 } else {
                         $(".errorNombreM").html("Campo validado");
                         $(".errorNombreM").attr("style", "color:green");
                         rnombre = true;
                     } if(!expApellido.test(apellido)){
-               $(".errorApellidoM").html("El campo apellido solo acepta caracteres, minimo 3");
-                    rapellido = false;
-                    return false;
+                    $(".errorApellidoM").html("El campo apellido solo acepta caracteres, minimo 3");
+                            rapellido = false;
+                            return false;
 
                 } else {
                         $(".errorApellidoM").html("Campo validado");

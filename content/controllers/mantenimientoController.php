@@ -131,7 +131,7 @@
 			foreach($rutas as $r){
                 for($i=0;$i<count($vehiculos_mantenimiento);$i++){
                      if($vehiculos_mantenimiento[$i]['placa']==$r['placa']){
-						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])+floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + (floatval($r['kilometraje'])*$r['cantidad']);
+						$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=( floatval($vehiculos_mantenimiento[$i]['kilometraje'])+floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']) ) + (floatval($r['kilometraje'])*$r['cantidad']*7);
 					 }
 					 else{
 					 	$vehiculos_mantenimiento[$i]['kilometraje_notificacion']=floatval($vehiculos_mantenimiento[$i]['kilometraje'])+floatval($vehiculos_mantenimiento[$i]['kilometraje_mantenimiento']);
