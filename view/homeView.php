@@ -165,6 +165,10 @@
                             </div>
                         </div>
                          </div> 
+
+
+                         
+                         <!--TABLA DE IMAGENES-->
                                         <TABLE width="100%">
                     <TR>
                         <TH></TH> <TH></TH> <TH></TH>

@@ -57,7 +57,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Módulo de Gestión Roles</h6>
                                 </center>
                             
-                            <center> <img src="assets/img/usuario1.png" class="img-profile" width="28%"  right="400%" > </center> 
+                            <center> <img src="assets/img/usuario1.png" class="img-profile" width="20%"  right="400%" > </center> 
                         
                         <span class="icon text-white-50">
                             <i class="fas fa-check"></i>

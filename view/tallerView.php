@@ -46,7 +46,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                       
-                         <center>   <h6 class="m-0 font-weight-bold text-primary">Mdddddódulo de Talleres</h6></center> 
+                         <center>   <h6 class="m-0 font-weight-bold text-primary">Módulo de Talleres</h6></center> 
                         <br>
                     </div>
                          <center> <img src="assets/img/taller.png" class="img-profile" width="15%"  right="500%" > </center> 

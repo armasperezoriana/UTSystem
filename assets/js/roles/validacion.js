@@ -1,8 +1,8 @@
   $(document).ready(function() {
 
         $(".EnviarUsuariosRegistrar").click(function() {
-          //  var valido = validar();
-           // if (valido == true) {
+           var valido = validar();
+           if (valido == true) {
 
                 var nombre_rol = $("#AgregarUsuarioModal").find("#nombre_rol").val();                
                 var descripcion= $("#AgregarUsuarioModal").find("#descripcion").val();
@@ -58,7 +58,7 @@
                         });
                     }
                 });
-          //  }
+           }
 
         });
         
@@ -239,7 +239,7 @@
     function validar(modificar = false){
         var form = "";
         var expDescripcion = /^[a-zA-ZÀ-ÿ\s]{6,40}$/;
-        var expNombre = /^[a-zA-ZÀ-ÿ\s]{,40}$/;
+        var expNombre = /^[a-zA-ZÀ-ÿ\s]{4,40}$/;
         if(!modificar){
             form = "#AgregarUsuarioModal";
         }
@@ -252,7 +252,7 @@
 
         var descripcion = $(form).find("#descripcion").val();
         var rdescripcion = false;
-        if (nombre_rol == ""|descripcion == ""|id_rol == ""){
+        if (nombre_rol == ""|descripcion == ""){
             swal.fire({
                                         type: 'warning',
                                         title: 'Campos obligatorios',
@@ -321,46 +321,46 @@
             }
         });
     }
-    const inhabilitar = (id) => {
-        $.ajax({
-            type: "POST",
-            url: "Roles/Inhabilitar/" + id,
-            success: function(response) {
-                const json = JSON.parse(response);
-                Swal.fire(
-                    json.titulo,
-                    json.mensaje,
-                    json.tipo
-                )
-                if (json.tipo == 'success') {
-                    // table.ajax.reload();
-                    location.reload();
-                }
-            },
-            error: function(response) {
-                console.log(response);
-            }
-        });
-    }
-    const habilitar = (id) => {
-        $.ajax({
-            type: "POST",
-            url: "Roles/Habilitar/" + id,
-            success: function(response) {
-                const json = JSON.parse(response);
-                Swal.fire(
-                    json.titulo,
-                    json.mensaje,
-                    json.tipo
-                )
-                if (json.tipo == 'success') {
-                    // table.ajax.reload();
-                    location.reload();
-                }
-            },
-            error: function(response) {
-                console.log(response);
-            }
-        });
-    }
+    // const inhabilitar = (id) => {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "Roles/Inhabilitar/" + id,
+    //         success: function(response) {
+    //             const json = JSON.parse(response);
+    //             Swal.fire(
+    //                 json.titulo,
+    //                 json.mensaje,
+    //                 json.tipo
+    //             )
+    //             if (json.tipo == 'success') {
+    //                 // table.ajax.reload();
+    //                 location.reload();
+    //             }
+    //         },
+    //         error: function(response) {
+    //             console.log(response);
+    //         }
+    //     });
+    // }
+    // const habilitar = (id) => {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "Roles/Habilitar/" + id,
+    //         success: function(response) {
+    //             const json = JSON.parse(response);
+    //             Swal.fire(
+    //                 json.titulo,
+    //                 json.mensaje,
+    //                 json.tipo
+    //             )
+    //             if (json.tipo == 'success') {
+    //                 // table.ajax.reload();
+    //                 location.reload();
+    //             }
+    //         },
+    //         error: function(response) {
+    //             console.log(response);
+    //         }
+    //     });
+    // }
 
