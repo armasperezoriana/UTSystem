@@ -52,15 +52,15 @@
                                 if (respuesta == "2") {
                                     swal.fire({
                                         type: 'error',
-                                        title: 'Error al guardar los datos',
-                                        text: 'Contacte con el soporte',
+                                        title: 'Ha ocurrido un error',
+                                        text: 'Verifique los datos',
                                     });
                                 }
                                 if (respuesta == "3") {
                                     swal.fire({
                                         type: 'warning',
-                                        title: 'Datos repetidos',
-                                        text: 'Vuelva a intentar',
+                                        title: 'Esta unidad ya tiene ruta asignada',
+                                        text: 'Vuelva a intentar con otra',
                                     });
                                 }
                             }
@@ -131,14 +131,14 @@
                                 if (respuesta == "2") {
                                     swal.fire({
                                         type: 'error',
-                                        title: 'Error al guardar los datos',
-                                        text: 'Contacte con el soporte',
+                                        title: 'Ha ocurrido un error',
+                                        text: 'verifique los datos',
                                     });
                                 }
                                 if (respuesta == "3") {
                                     swal.fire({
                                         type: 'warning',
-                                        title: 'Datos repetidos',
+                                        title: 'Esta unidad ya tiene ruta asignada en ese horario',
                                         text: 'Vuelva a intentar',
                                     });
                                 }

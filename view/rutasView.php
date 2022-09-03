@@ -531,7 +531,7 @@
 
 </body>
 
-<script type="text/javascript" src="'../../assets/js/ruta/validarR.js"></script> 
+<script type="text/javascript" src="'../../assets/js/ruta/validar.js"></script> 
  
 
 </script> 

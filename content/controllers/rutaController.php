@@ -64,10 +64,6 @@
 				$result = $this->ruta->ConsultarOne();
 				// print_r($result);
 				if ($result['ejecucion'] == true) {
-					
-					if (count($result) > 1) {
-						echo "3";
-					} else {
 						$execute = $this->ruta->Agregar();
 						//Codigo de bitacora sobre Agregar Usuario
 						if ($execute['ejecucion'] == true) {
@@ -75,7 +71,7 @@
 						} else {
 							echo "2";
 						}
-					}
+					
 				} else {
 					echo "2";
 				}
@@ -111,7 +107,7 @@
 				if ($execute['ejecucion'] == true) {
 					echo '1';
 				} else {
-					echo "2";
+					echo "3";
 				}
 			}
 		}
