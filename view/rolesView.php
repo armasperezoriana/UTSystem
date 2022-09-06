@@ -64,9 +64,9 @@
                         </span>
                         <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarUsuarioModal" data-toggle="modal" data-target="#AgregarUsuarioModal">
                             <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
+                                <i class="fas fa-plus"></i>
                             </span>
-                            <span class="text">Nuevo Rol</span>
+                            <span class="text">Rol</span>
 
                                                 </a>
                                                          

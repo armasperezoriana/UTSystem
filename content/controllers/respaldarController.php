@@ -144,9 +144,9 @@
         }
         public function restaurar()
         {  
-            $restorePoint=$this->limpiaCadena($_POST['respaldo']);
+           
             $restorePoint=$_POST['respaldo'];
-           // var_dump($restorePoint);
+            var_dump($restorePoint);
             $sql=explode(";",file_get_contents($restorePoint));
             $totalErrors=0;
             set_time_limit (300);
@@ -161,7 +161,10 @@
             $con->query("SET FOREIGN_KEY_CHECKS=1");
             $con->close();
             if($totalErrors<=0){
-              require_once("view/restauracionExitosaView.php");
+                // echo json_encode([
+                //     'success' => true
+                // ]);
+             require_once("view/restauracionExitosaView.php");
                 return 0;
             }else{
                 echo json_encode([

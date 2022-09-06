@@ -1,5 +1,7 @@
+
 $(document).ready(function() {
   $("#formLogin").on("submit", function (e) {
+   
       e.preventDefault();
       let data = new FormData(this);
   
@@ -13,9 +15,8 @@ $(document).ready(function() {
         success: function (response) {
           let res = JSON.parse(response);
           if (res.tipo == 'success') {
-            //$('#login').modal('hide');
-           // $('#modalForm').modal('show');
             window.location.reload();
+          
           }
           else {
             Swal.fire(

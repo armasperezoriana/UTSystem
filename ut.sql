@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-08-2022 a las 19:35:07
+-- Tiempo de generación: 06-09-2022 a las 20:50:06
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -714,7 +714,409 @@ INSERT INTO `bitacora` (`id_bitacora`, `cedula`, `usuario`, `operacion`, `host`,
 (1483, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-26', '12:14:50', 'Usuario', NULL),
 (1484, '96875412', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-26', '12:15:18', 'Usuario', NULL),
 (1485, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-26', '12:21:15', 'Mantenimiento', NULL),
-(1486, '2', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-26', '12:22:06', 'Mantenimiento', NULL);
+(1486, '2', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-26', '12:22:06', 'Mantenimiento', NULL),
+(1487, '2', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-26', '14:04:19', 'Ruta', NULL),
+(1488, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-26', '14:05:24', 'Ruta', NULL),
+(1489, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-26', '14:14:18', 'Usuario', NULL),
+(1490, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-26', '14:20:31', 'Usuario', NULL),
+(1491, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-26', '14:21:16', 'Usuario', NULL),
+(1492, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-26', '14:24:40', 'Usuario', NULL),
+(1493, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:17:11', 'Mantenimiento', NULL),
+(1494, '2', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:17:17', 'Mantenimiento', NULL),
+(1495, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:18:35', 'Mantenimiento', NULL),
+(1496, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:28:01', 'Mantenimiento', NULL),
+(1497, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:30:46', 'Mantenimiento', NULL),
+(1498, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:32:50', 'Mantenimiento', NULL),
+(1499, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:34:05', 'Mantenimiento', NULL),
+(1500, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '10:35:03', 'Mantenimiento', NULL),
+(1501, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-27', '10:48:31', 'Usuario', NULL),
+(1502, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-27', '15:10:01', 'Usuario', NULL),
+(1503, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '15:18:38', 'Mantenimiento', NULL),
+(1504, '2', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '15:21:41', 'Mantenimiento', NULL),
+(1505, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-27', '15:38:13', 'Usuario', NULL),
+(1506, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-27', '15:46:03', 'Usuario', NULL),
+(1507, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-27', '18:17:08', 'Mantenimiento', NULL),
+(1508, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-27', '23:13:17', 'Usuario', NULL),
+(1509, '96875412', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-27', '23:14:42', 'Usuario', NULL),
+(1513, '3', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-28', '13:27:59', 'Mantenimiento', NULL),
+(1514, '4', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-28', '13:30:54', 'Mantenimiento', NULL),
+(1515, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:41:52', 'Usuario', NULL),
+(1516, '96875412', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:42:51', 'Usuario', NULL),
+(1517, '96875412', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:43:36', 'Usuario', NULL),
+(1518, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:44:55', 'Usuario', NULL),
+(1519, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:58:15', 'Usuario', NULL),
+(1520, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:58:19', 'Usuario', NULL),
+(1521, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:58:45', 'Usuario', NULL),
+(1522, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '21:59:45', 'Usuario', NULL),
+(1523, '65747800', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-08-28', '22:01:19', 'Usuario', NULL),
+(1524, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:04:38', 'Usuario', NULL),
+(1525, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:05:04', 'Usuario', NULL),
+(1526, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:07:08', 'Usuario', NULL),
+(1527, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:09:28', 'Usuario', NULL),
+(1528, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:12:17', 'Usuario', NULL),
+(1529, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:12:36', 'Usuario', NULL),
+(1530, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:12:52', 'Usuario', NULL),
+(1531, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:13:37', 'Usuario', NULL),
+(1532, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:13:54', 'Usuario', NULL),
+(1533, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:28:47', 'Usuario', NULL),
+(1534, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:29:27', 'Usuario', NULL),
+(1535, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:33:45', 'Usuario', NULL),
+(1536, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:34:24', 'Usuario', NULL),
+(1537, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:39:24', 'Usuario', NULL),
+(1538, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:41:28', 'Usuario', NULL),
+(1539, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:44:50', 'Usuario', NULL),
+(1540, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:44:53', 'Usuario', NULL),
+(1541, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '22:46:15', 'Usuario', NULL),
+(1542, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:02:10', 'Usuario', NULL),
+(1543, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:02:19', 'Usuario', NULL),
+(1544, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:02:48', 'Usuario', NULL),
+(1545, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:04:07', 'Usuario', NULL),
+(1546, '96587422', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-08-28', '23:05:21', 'Usuario', NULL),
+(1547, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:30:37', 'Usuario', NULL),
+(1548, '1', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-08-28', '23:44:45', 'Seguridad Roles', NULL),
+(1549, '2', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-08-28', '23:45:29', 'Seguridad Roles', NULL),
+(1550, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:53:37', 'Usuario', NULL),
+(1551, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:53:51', 'Usuario', NULL),
+(1552, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-28', '23:56:22', 'Usuario', NULL),
+(1553, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '00:00:29', 'Usuario', NULL),
+(1554, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '00:34:32', 'Mantenimiento', NULL),
+(1555, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '00:34:39', 'Mantenimiento', NULL),
+(1556, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '03:10:53', 'Mantenimiento', NULL),
+(1557, '2', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '03:10:58', 'Mantenimiento', NULL),
+(1558, '3', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '03:11:02', 'Mantenimiento', NULL),
+(1559, '4', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '03:11:21', 'Mantenimiento', NULL),
+(1560, '3', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '03:11:31', 'Mantenimiento', NULL),
+(1561, '5', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-29', '03:17:37', 'Mantenimiento', NULL),
+(1565, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '03:37:33', 'Mantenimiento', NULL),
+(1566, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '11:05:25', 'Usuario', NULL),
+(1567, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '11:07:33', 'Usuario', NULL),
+(1568, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '11:10:41', 'Usuario', NULL),
+(1569, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '11:11:48', 'Usuario', NULL),
+(1570, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '11:15:53', 'Usuario', NULL),
+(1571, '96875412', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '11:16:50', 'Usuario', NULL),
+(1572, '5', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '14:42:51', 'Mantenimiento', NULL),
+(1573, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '14:53:59', 'Mantenimiento', NULL),
+(1574, '5', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '14:54:24', 'Mantenimiento', NULL),
+(1575, '5', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '14:54:51', 'Mantenimiento', NULL),
+(1576, '5', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '14:55:32', 'Mantenimiento', NULL),
+(1577, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-29', '23:02:13', 'Usuario', NULL),
+(1578, '6', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-29', '23:34:42', 'Mantenimiento', NULL),
+(1579, '6', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-29', '23:35:17', 'Mantenimiento', NULL),
+(1580, '3', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-29', '23:37:11', 'Ruta', NULL),
+(1581, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:38:28', 'Ruta', NULL),
+(1582, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:38:53', 'Ruta', NULL),
+(1583, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:39:27', 'Ruta', NULL),
+(1584, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:39:42', 'Ruta', NULL),
+(1585, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:39:52', 'Ruta', NULL),
+(1586, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:41:07', 'Ruta', NULL),
+(1587, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:42:31', 'Ruta', NULL),
+(1588, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-29', '23:58:42', 'Ruta', NULL),
+(1589, '4', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-30', '00:06:24', 'Ruta', NULL),
+(1590, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '00:08:06', 'Ruta', NULL),
+(1591, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '00:09:37', 'Ruta', NULL),
+(1592, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '00:19:33', 'Ruta', NULL),
+(1593, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '00:20:02', 'Ruta', NULL),
+(1594, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '00:21:01', 'Ruta', NULL),
+(1595, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '00:22:32', 'Ruta', NULL),
+(1596, '15', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-08-30', '00:29:43', 'taller', NULL),
+(1597, '5', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-30', '00:38:12', 'Ruta', NULL),
+(1598, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '09:06:06', 'Ruta', NULL),
+(1599, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '09:06:30', 'Ruta', NULL),
+(1600, '6', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-30', '09:07:10', 'Ruta', NULL),
+(1601, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '09:15:08', 'Ruta', NULL),
+(1602, '15', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-08-30', '09:30:44', 'taller', NULL),
+(1603, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '10:17:57', 'Usuario', NULL),
+(1604, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '10:23:36', 'Usuario', NULL),
+(1605, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '10:24:03', 'Usuario', NULL),
+(1606, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '10:24:52', 'Usuario', NULL),
+(1607, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '16:23:18', 'Usuario', NULL),
+(1608, '7', 'root@localhost', 'Se inserto un nuevo mantenimiento', 'localhost', '2022-08-30', '16:25:55', 'Mantenimiento', NULL),
+(1609, '7', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-30', '16:26:33', 'Mantenimiento', NULL),
+(1610, '6', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:27:25', 'Ruta', NULL),
+(1611, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:27:40', 'Ruta', NULL),
+(1612, '5', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:33:04', 'Ruta', NULL),
+(1613, '5', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:33:20', 'Ruta', NULL),
+(1614, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:33:44', 'Ruta', NULL),
+(1615, '7', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-30', '16:39:20', 'Ruta', NULL),
+(1616, '7', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:40:11', 'Ruta', NULL),
+(1617, '7', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:40:34', 'Ruta', NULL);
+INSERT INTO `bitacora` (`id_bitacora`, `cedula`, `usuario`, `operacion`, `host`, `fecha`, `hora`, `tabla`, `status`) VALUES
+(1618, '8', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-30', '16:43:26', 'Ruta', NULL),
+(1619, '7', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:50:21', 'Ruta', NULL),
+(1620, '7', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:55:17', 'Ruta', NULL),
+(1621, '9', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-30', '16:56:50', 'Ruta', NULL),
+(1622, '7', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:56:58', 'Ruta', NULL),
+(1623, '9', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-30', '16:57:34', 'Ruta', NULL),
+(1624, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-30', '19:09:54', 'Mantenimiento', NULL),
+(1625, '1', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-30', '19:37:01', 'Mantenimiento', NULL),
+(1626, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '21:02:25', 'Usuario', NULL),
+(1627, '8', 'root@localhost', 'Se creo un nuevo rol', 'localhost', '2022-08-30', '21:05:28', ' Seguridad Roles', NULL),
+(1628, '1', 'root@localhost', 'Se modifico un rol', 'localhost', '2022-08-30', '21:08:12', 'Seguridad Roles', NULL),
+(1629, '7', 'root@localhost', 'Se modifico un mantenimiento', 'localhost', '2022-08-30', '21:50:52', 'Mantenimiento', NULL),
+(1630, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-30', '22:06:39', 'Usuario', NULL),
+(1637, '65747800', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-08-31', '20:46:57', 'Usuario', NULL),
+(1638, '9', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-31', '20:53:26', 'Ruta', NULL),
+(1639, '10', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '21:21:49', 'Ruta', NULL),
+(1640, '3', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1641, '8', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1642, '7', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1643, '4', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1644, '1', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1645, '5', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1646, '2', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1647, '9', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1648, '6', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1649, '10', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '21:34:54', 'Ruta', NULL),
+(1650, '1', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1651, '2', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1652, '3', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1653, '4', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1654, '5', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1655, '6', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1656, '7', 'root@localhost', 'Se elimino un mantenimiento asociado a la placa señalada', 'localhost', '2022-08-31', '21:36:14', 'Mantenimientos', NULL),
+(1657, '1', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '21:44:23', 'Ruta', NULL),
+(1658, '2', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '21:48:16', 'Ruta', NULL),
+(1659, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-31', '21:49:25', 'Ruta', NULL),
+(1660, '3', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '21:52:36', 'Ruta', NULL),
+(1661, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-31', '21:53:14', 'Ruta', NULL),
+(1662, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-31', '21:54:19', 'Ruta', NULL),
+(1663, '4', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '21:59:28', 'Ruta', NULL),
+(1664, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-31', '21:59:41', 'Ruta', NULL),
+(1665, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-08-31', '22:04:25', 'Ruta', NULL),
+(1666, '4', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:05:33', 'Ruta', NULL),
+(1667, '1', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:05:33', 'Ruta', NULL),
+(1668, '3', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:05:33', 'Ruta', NULL),
+(1669, '2', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:05:33', 'Ruta', NULL),
+(1670, '1', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '22:11:25', 'Ruta', NULL),
+(1671, '2', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '22:25:01', 'Ruta', NULL),
+(1672, '3', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '22:27:24', 'Ruta', NULL),
+(1673, '3', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:29:32', 'Ruta', NULL),
+(1674, '1', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:29:32', 'Ruta', NULL),
+(1675, '2', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-08-31', '22:29:32', 'Ruta', NULL),
+(1676, '1', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-08-31', '22:30:05', 'Ruta', NULL),
+(1677, '2', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-01', '16:23:42', 'Ruta', NULL),
+(1678, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '19:47:39', 'Usuario', NULL),
+(1679, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '19:56:16', 'Usuario', NULL),
+(1680, '9601788', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:03:11', 'Usuario', NULL),
+(1681, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:05:03', 'Usuario', NULL),
+(1682, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:05:26', 'Usuario', NULL),
+(1683, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:05:42', 'Usuario', NULL),
+(1684, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:06:06', 'Usuario', NULL),
+(1685, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:07:25', 'Usuario', NULL),
+(1686, '96587422', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:08:14', 'Usuario', NULL),
+(1687, '96875412', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:08:41', 'Usuario', NULL),
+(1688, '65747800', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:09:18', 'Usuario', NULL),
+(1689, '65747800', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:10:22', 'Usuario', NULL),
+(1690, '65747800', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-01', '20:11:16', 'Usuario', NULL),
+(1691, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '11:17:37', 'Usuario', NULL),
+(1692, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '11:17:56', 'Usuario', NULL),
+(1693, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '11:18:01', 'Usuario', NULL),
+(1694, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '11:21:24', 'Usuario', NULL),
+(1695, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '11:21:28', 'Usuario', NULL),
+(1696, '3', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-02', '13:22:38', 'Ruta', NULL),
+(1699, '3', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-02', '13:23:43', 'Ruta', NULL),
+(1702, '4', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-02', '13:27:18', 'Ruta', NULL),
+(1706, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-02', '13:29:04', 'Ruta', NULL),
+(1707, '5', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-02', '13:29:42', 'Ruta', NULL),
+(1721, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-02', '14:12:41', 'Ruta', NULL),
+(1725, '5', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-02', '14:16:26', 'Ruta', NULL),
+(1726, '6', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-02', '14:17:11', 'Ruta', NULL),
+(1730, '47528100', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-09-02', '15:34:57', 'Usuario', NULL),
+(1734, '2659088', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-09-02', '15:51:38', 'Usuario', NULL),
+(1735, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '16:24:21', 'Usuario', NULL),
+(1736, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '16:24:28', 'Usuario', NULL),
+(1737, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '16:26:49', 'Usuario', NULL),
+(1738, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:02:13', 'Usuario', NULL),
+(1739, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:02:16', 'Usuario', NULL),
+(1740, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:02:24', 'Usuario', NULL),
+(1741, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:20:44', 'Usuario', NULL),
+(1742, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:20:52', 'Usuario', NULL),
+(1743, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:20:53', 'Usuario', NULL),
+(1744, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:21:43', 'Usuario', NULL),
+(1745, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:21:49', 'Usuario', NULL),
+(1746, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:23:22', 'Usuario', NULL),
+(1747, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:23:38', 'Usuario', NULL),
+(1748, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:23:40', 'Usuario', NULL),
+(1749, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:23:43', 'Usuario', NULL),
+(1750, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:24:36', 'Usuario', NULL),
+(1751, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:25:52', 'Usuario', NULL),
+(1752, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:26:28', 'Usuario', NULL),
+(1753, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:27:02', 'Usuario', NULL),
+(1754, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:27:04', 'Usuario', NULL),
+(1755, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:28:30', 'Usuario', NULL),
+(1756, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:28:32', 'Usuario', NULL),
+(1757, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:29:28', 'Usuario', NULL),
+(1758, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:29:31', 'Usuario', NULL),
+(1759, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:29:33', 'Usuario', NULL),
+(1760, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:06', 'Usuario', NULL),
+(1761, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:11', 'Usuario', NULL),
+(1762, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:23', 'Usuario', NULL),
+(1763, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:27', 'Usuario', NULL),
+(1764, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:30', 'Usuario', NULL),
+(1765, '47528100', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:41', 'Usuario', NULL),
+(1766, '2659088', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:30:44', 'Usuario', NULL),
+(1767, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:31:05', 'Usuario', NULL),
+(1768, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:31:24', 'Usuario', NULL),
+(1769, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:31:54', 'Usuario', NULL),
+(1770, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:31:57', 'Usuario', NULL),
+(1771, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:32:52', 'Usuario', NULL),
+(1772, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:33:06', 'Usuario', NULL),
+(1773, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:33:37', 'Usuario', NULL),
+(1774, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:33:45', 'Usuario', NULL),
+(1775, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:34:18', 'Usuario', NULL),
+(1776, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:34:44', 'Usuario', NULL),
+(1777, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:35:43', 'Usuario', NULL),
+(1778, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:36:12', 'Usuario', NULL),
+(1779, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:38:54', 'Usuario', NULL),
+(1780, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:41:01', 'Usuario', NULL),
+(1781, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:41:01', 'Usuario', NULL),
+(1782, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:41:14', 'Usuario', NULL),
+(1783, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:41:17', 'Usuario', NULL),
+(1784, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:43:49', 'Usuario', NULL),
+(1785, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:44:04', 'Usuario', NULL),
+(1786, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:44:14', 'Usuario', NULL),
+(1787, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:44:40', 'Usuario', NULL),
+(1788, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:48:11', 'Usuario', NULL),
+(1789, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:48:18', 'Usuario', NULL),
+(1790, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:51:24', 'Usuario', NULL),
+(1791, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:51:37', 'Usuario', NULL),
+(1792, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:51:43', 'Usuario', NULL),
+(1793, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:54:54', 'Usuario', NULL),
+(1794, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:54:56', 'Usuario', NULL),
+(1795, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:55:24', 'Usuario', NULL),
+(1796, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:55:27', 'Usuario', NULL),
+(1797, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:55:39', 'Usuario', NULL),
+(1798, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:56:30', 'Usuario', NULL),
+(1799, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '18:56:36', 'Usuario', NULL),
+(1800, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:14:15', 'Usuario', NULL),
+(1801, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:14:24', 'Usuario', NULL),
+(1802, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:14:26', 'Usuario', NULL),
+(1803, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:19:52', 'Usuario', NULL),
+(1804, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:19:55', 'Usuario', NULL),
+(1805, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:20:17', 'Usuario', NULL),
+(1806, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:20:33', 'Usuario', NULL),
+(1807, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:20:39', 'Usuario', NULL),
+(1808, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:20:42', 'Usuario', NULL),
+(1809, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:20:59', 'Usuario', NULL),
+(1810, '26577823', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:21:16', 'Usuario', NULL),
+(1811, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:21:18', 'Usuario', NULL),
+(1812, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:21:25', 'Usuario', NULL),
+(1813, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:21:27', 'Usuario', NULL),
+(1814, '30868382', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:21:39', 'Usuario', NULL),
+(1815, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:28:06', 'Usuario', NULL),
+(1816, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:32:19', 'Usuario', NULL),
+(1817, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:32:27', 'Usuario', NULL),
+(1818, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:32:30', 'Usuario', NULL),
+(1819, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:32:31', 'Usuario', NULL),
+(1820, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:33:04', 'Usuario', NULL),
+(1821, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:33:06', 'Usuario', NULL),
+(1822, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:33:06', 'Usuario', NULL),
+(1823, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:33:06', 'Usuario', NULL),
+(1824, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:33:11', 'Usuario', NULL),
+(1825, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:33:47', 'Usuario', NULL),
+(1826, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:36:22', 'Usuario', NULL),
+(1827, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:36:36', 'Usuario', NULL),
+(1828, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:36:49', 'Usuario', NULL),
+(1829, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:14', 'Usuario', NULL),
+(1830, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:21', 'Usuario', NULL),
+(1831, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:31', 'Usuario', NULL),
+(1832, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:40', 'Usuario', NULL),
+(1833, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:43', 'Usuario', NULL),
+(1834, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:45', 'Usuario', NULL),
+(1835, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:38:52', 'Usuario', NULL),
+(1836, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:39:03', 'Usuario', NULL),
+(1837, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:39:07', 'Usuario', NULL),
+(1838, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '19:39:11', 'Usuario', NULL),
+(1839, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:11:46', 'Usuario', NULL),
+(1840, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:11:51', 'Usuario', NULL),
+(1841, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:11:58', 'Usuario', NULL),
+(1842, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:13:04', 'Usuario', NULL),
+(1843, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:13:06', 'Usuario', NULL),
+(1844, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:13:08', 'Usuario', NULL),
+(1845, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:14:08', 'Usuario', NULL),
+(1846, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:14:11', 'Usuario', NULL),
+(1847, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:14:15', 'Usuario', NULL),
+(1848, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:15:14', 'Usuario', NULL),
+(1849, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:15:16', 'Usuario', NULL),
+(1850, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:15:38', 'Usuario', NULL),
+(1851, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:16:10', 'Usuario', NULL),
+(1852, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:23:34', 'Usuario', NULL),
+(1853, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:23:34', 'Usuario', NULL),
+(1854, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:24:58', 'Usuario', NULL),
+(1855, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:25:05', 'Usuario', NULL),
+(1856, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:25:20', 'Usuario', NULL),
+(1857, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:26:46', 'Usuario', NULL),
+(1858, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:27:49', 'Usuario', NULL),
+(1859, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:02', 'Usuario', NULL),
+(1860, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:08', 'Usuario', NULL),
+(1861, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:10', 'Usuario', NULL),
+(1862, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:19', 'Usuario', NULL),
+(1863, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:21', 'Usuario', NULL),
+(1864, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:27', 'Usuario', NULL),
+(1865, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:28:32', 'Usuario', NULL),
+(1866, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:29:41', 'Usuario', NULL),
+(1867, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:29:48', 'Usuario', NULL),
+(1868, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:30:00', 'Usuario', NULL),
+(1869, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:48:15', 'Usuario', NULL),
+(1870, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:58:13', 'Usuario', NULL),
+(1871, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:59:55', 'Usuario', NULL),
+(1872, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:59:57', 'Usuario', NULL),
+(1873, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:59:58', 'Usuario', NULL),
+(1874, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:59:58', 'Usuario', NULL),
+(1875, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '20:59:58', 'Usuario', NULL),
+(1876, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '21:00:02', 'Usuario', NULL),
+(1877, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '21:00:02', 'Usuario', NULL),
+(1878, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '21:00:02', 'Usuario', NULL),
+(1879, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '21:00:12', 'Usuario', NULL),
+(1880, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '21:01:03', 'Usuario', NULL),
+(1881, '9658963', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-09-02', '22:49:43', 'Usuario', NULL),
+(1882, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-02', '22:59:41', 'Usuario', NULL),
+(1883, '96478200', 'root@localhost', 'Se inserto un nuevo usuario', 'localhost', '2022-09-02', '23:07:33', 'Usuario', NULL),
+(1884, '7', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:11:24', 'Ruta', NULL),
+(1885, '7', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-03', '07:11:54', 'Ruta', NULL),
+(1886, '1', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-03', '07:14:37', 'Ruta', NULL),
+(1887, '1', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:16:46', 'Ruta', NULL),
+(1888, '8', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:16:57', 'Ruta', NULL),
+(1889, '4', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-03', '07:18:04', 'Ruta', NULL),
+(1890, '4', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:26:39', 'Ruta', NULL),
+(1891, '2', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:26:42', 'Ruta', NULL),
+(1892, '3', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:26:54', 'Ruta', NULL),
+(1893, '9', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:27:05', 'Ruta', NULL),
+(1894, '9', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-03', '07:27:26', 'Ruta', NULL),
+(1895, '6', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:29:05', 'Ruta', NULL),
+(1896, '10', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:31:02', 'Ruta', NULL),
+(1897, '11', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:33:24', 'Ruta', NULL),
+(1898, '7', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:34:29', 'Ruta', NULL),
+(1899, '12', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:35:02', 'Ruta', NULL),
+(1900, '11', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:35:59', 'Ruta', NULL),
+(1901, '12', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:35:59', 'Ruta', NULL),
+(1902, '9', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:35:59', 'Ruta', NULL),
+(1903, '5', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:35:59', 'Ruta', NULL),
+(1904, '10', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:35:59', 'Ruta', NULL),
+(1905, '8', 'root@localhost', 'Se elimino una ruta', 'localhost', '2022-09-03', '07:35:59', 'Ruta', NULL),
+(1906, '1', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '07:36:36', 'Ruta', NULL),
+(1907, '2', 'root@localhost', 'Se inserto una nueva ruta', 'localhost', '2022-09-03', '21:13:16', 'Ruta', NULL),
+(1908, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '11:18:20', 'Usuario', NULL),
+(1909, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-04', '11:21:49', 'Ruta', NULL),
+(1910, '10', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-09-04', '11:41:28', 'taller', NULL),
+(1911, '4', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-09-04', '11:46:47', 'taller', NULL),
+(1912, '1', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-09-04', '12:53:42', 'taller', NULL),
+(1913, '13', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-09-04', '12:53:53', 'taller', NULL),
+(1914, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:00:13', 'Usuario', NULL),
+(1915, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:00:17', 'Usuario', NULL),
+(1916, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:00:19', 'Usuario', NULL),
+(1917, '2', 'root@localhost', 'Se Modifico una ruta', 'localhost', '2022-09-04', '13:00:32', 'Ruta', NULL),
+(1918, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:16:21', 'Usuario', NULL),
+(1919, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:16:25', 'Usuario', NULL),
+(1920, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:16:36', 'Usuario', NULL),
+(1921, '13547820', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:37:21', 'Usuario', NULL),
+(1922, '2659088', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '13:39:38', 'Usuario', NULL),
+(1923, '15', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-09-04', '13:50:29', 'taller', NULL),
+(1924, '14', 'root@localhost', 'Se modifico un taller', 'localhost', '2022-09-04', '13:50:43', 'taller', NULL),
+(1925, '2659088', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '17:07:22', 'Usuario', NULL),
+(1926, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '17:07:28', 'Usuario', NULL),
+(1927, '26561633', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '17:09:10', 'Usuario', NULL),
+(1928, '2659088', 'root@localhost', 'Se Modifico un campo de esta tabla', 'localhost', '2022-09-04', '23:39:01', 'Usuario', NULL);
 
 -- --------------------------------------------------------
 
@@ -732,6 +1134,17 @@ CREATE TABLE `choferes` (
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Volcado de datos para la tabla `choferes`
+--
+
+INSERT INTO `choferes` (`id_choferes`, `placa`, `nombre`, `apellido`, `cedula`, `telefono`, `status`) VALUES
+(1, 'PPA120', 'Rosa', 'Armas', '65747801', '04745448669', 0),
+(2, 'PPA120', 'Rosa', 'Armas', '9601788', '04745448669', 0),
+(3, 'GAO778', 'Ana', 'Rosales', '26561633', '04745448669', 0),
+(4, 'OGA170', 'Oriana ', 'Rosales', '889331440', '04145448669', 1),
+(5, 'OGA170', 'ASDSAD', 'DSFDS', '2659081', '04145448669', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -741,23 +1154,16 @@ CREATE TABLE `choferes` (
 CREATE TABLE `mantenimientos` (
   `id_mantenimiento` int(11) NOT NULL,
   `kilometraje` int(11) DEFAULT NULL,
-  `tiempo` date NOT NULL,
+  `tiempo` datetime NOT NULL,
   `id_vehiculo` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
   `costo` varchar(30) COLLATE utf8_bin NOT NULL,
   `fecha` date DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `id_taller` int(11) NOT NULL,
-  `estado` int(1) NOT NULL
+  `estado` varchar(30) COLLATE utf8_bin NOT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `mantenimientos`
---
-
-INSERT INTO `mantenimientos` (`id_mantenimiento`, `kilometraje`, `tiempo`, `id_vehiculo`, `nombre`, `costo`, `fecha`, `status`, `id_taller`, `estado`) VALUES
-(1, 4500, '0000-00-00', 2, 'Bujias', '4000,00', '2022-08-26', 1, 4, 1),
-(2, 450, '0000-00-00', 1, 'Bujias', '700', '2022-08-09', 1, 7, 1);
 
 --
 -- Disparadores `mantenimientos`
@@ -784,7 +1190,7 @@ DELIMITER ;
 CREATE TABLE `notificaciones` (
   `id_notificacion` int(11) NOT NULL,
   `estado` int(11) NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha` datetime DEFAULT current_timestamp(),
   `titulo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `id_vehiculo` int(11) NOT NULL
@@ -795,8 +1201,10 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id_notificacion`, `estado`, `fecha`, `titulo`, `contenido`, `id_vehiculo`) VALUES
-(823, 1, '2022-08-26', 'Mantenimiento preventivo requerido para PPO887', 'El vehículo PPO887 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, se sugiere chequeo general.', 1),
-(824, 0, '2022-08-26', 'Mantenimiento preventivo requerido para LLA091', 'El vehículo LLA091 necesita mantenimiento de: filtro de aceite, se sugiere chequeo general.', 2);
+(1506, 0, '2022-09-03 00:00:00', 'Mantenimiento preventivo requerido para GAO778', 'El vehículo GAO778 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, se sugiere chequeo general.', 2),
+(1507, 0, '2022-09-03 00:00:00', 'Mantenimiento preventivo requerido para PPA120', 'El vehículo PPA120 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, cauchos, se sugiere chequeo general.', 1),
+(1508, 0, '2022-09-04 00:00:00', 'Mantenimiento preventivo requerido para OGA170', 'El vehículo OGA170 necesita mantenimiento de: filtro de aceite, frenos, refrigeración, electroventilador, suspensión, se sugiere chequeo general.', 3),
+(1509, 0, '2022-09-04 00:00:00', 'Mantenimiento preventivo requerido para ELI000', 'El vehículo ELI000 necesita mantenimiento de: filtro de aceite, y chequeo general.', 4);
 
 -- --------------------------------------------------------
 
@@ -912,10 +1320,11 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (1, 'Administrador', 'Es el superusuario de este sistema.', 1),
-(2, 'Secretaria', 'permiso para ver y editar menos la seguridad, incluye usuari', 1),
+(2, 'Secretaria', 'permiso para ver y editar menos la seguridad menos usuarios', 1),
 (3, 'UsuarioEstandar', 'Solo puede consultar', 1),
 (4, 'Chofer', 'solo consulta rutas y vehiculos', 1),
-(5, 'Asistente', 'puede imprimir todo', 1);
+(5, 'Asistente', 'puede imprimir todo', 1),
+(8, 'Estudiante', 'solo ve las rutas', 1);
 
 --
 -- Disparadores `roles`
@@ -956,31 +1365,39 @@ INSERT INTO `roles_permisos` (`rol_id`, `permisos_id`, `creado`, `modificado`) V
 (4, 7, '0000-00-00', '0000-00-00'),
 (4, 13, '0000-00-00', '0000-00-00'),
 (4, 22, '0000-00-00', '0000-00-00'),
-(2, 1, '0000-00-00', '0000-00-00'),
-(2, 3, '0000-00-00', '0000-00-00'),
-(2, 5, '0000-00-00', '0000-00-00'),
-(2, 8, '0000-00-00', '0000-00-00'),
-(2, 11, '0000-00-00', '0000-00-00'),
-(2, 13, '0000-00-00', '0000-00-00'),
-(2, 15, '0000-00-00', '0000-00-00'),
-(2, 21, '0000-00-00', '0000-00-00'),
-(2, 30, '0000-00-00', '0000-00-00'),
 (4, 6, '0000-00-00', '0000-00-00'),
 (4, 8, '0000-00-00', '0000-00-00'),
 (4, 7, '0000-00-00', '0000-00-00'),
 (4, 13, '0000-00-00', '0000-00-00'),
 (4, 22, '0000-00-00', '0000-00-00'),
-(2, 1, '0000-00-00', '0000-00-00'),
-(2, 3, '0000-00-00', '0000-00-00'),
-(2, 5, '0000-00-00', '0000-00-00'),
-(2, 8, '0000-00-00', '0000-00-00'),
-(2, 11, '0000-00-00', '0000-00-00'),
-(2, 13, '0000-00-00', '0000-00-00'),
-(2, 15, '0000-00-00', '0000-00-00'),
-(2, 21, '0000-00-00', '0000-00-00'),
-(2, 30, '0000-00-00', '0000-00-00'),
 (5, 27, '0000-00-00', '0000-00-00'),
 (5, 30, '0000-00-00', '0000-00-00'),
+(3, 5, '0000-00-00', '0000-00-00'),
+(3, 9, '0000-00-00', '0000-00-00'),
+(3, 13, '0000-00-00', '0000-00-00'),
+(3, 18, '0000-00-00', '0000-00-00'),
+(3, 22, '0000-00-00', '0000-00-00'),
+(3, 30, '0000-00-00', '0000-00-00'),
+(2, 1, '0000-00-00', '0000-00-00'),
+(2, 5, '0000-00-00', '0000-00-00'),
+(2, 8, '0000-00-00', '0000-00-00'),
+(2, 7, '0000-00-00', '0000-00-00'),
+(2, 9, '0000-00-00', '0000-00-00'),
+(2, 11, '0000-00-00', '0000-00-00'),
+(2, 12, '0000-00-00', '0000-00-00'),
+(2, 13, '0000-00-00', '0000-00-00'),
+(2, 15, '0000-00-00', '0000-00-00'),
+(2, 16, '0000-00-00', '0000-00-00'),
+(2, 18, '0000-00-00', '0000-00-00'),
+(2, 21, '0000-00-00', '0000-00-00'),
+(2, 20, '0000-00-00', '0000-00-00'),
+(2, 22, '0000-00-00', '0000-00-00'),
+(2, 24, '0000-00-00', '0000-00-00'),
+(2, 25, '0000-00-00', '0000-00-00'),
+(2, 26, '0000-00-00', '0000-00-00'),
+(2, 28, '0000-00-00', '0000-00-00'),
+(2, 29, '0000-00-00', '0000-00-00'),
+(2, 30, '0000-00-00', '0000-00-00'),
 (1, 1, '0000-00-00', '0000-00-00'),
 (1, 2, '0000-00-00', '0000-00-00'),
 (1, 3, '0000-00-00', '0000-00-00'),
@@ -1009,13 +1426,7 @@ INSERT INTO `roles_permisos` (`rol_id`, `permisos_id`, `creado`, `modificado`) V
 (1, 27, '0000-00-00', '0000-00-00'),
 (1, 28, '0000-00-00', '0000-00-00'),
 (1, 29, '0000-00-00', '0000-00-00'),
-(1, 30, '0000-00-00', '0000-00-00'),
-(3, 5, '0000-00-00', '0000-00-00'),
-(3, 9, '0000-00-00', '0000-00-00'),
-(3, 13, '0000-00-00', '0000-00-00'),
-(3, 18, '0000-00-00', '0000-00-00'),
-(3, 22, '0000-00-00', '0000-00-00'),
-(3, 30, '0000-00-00', '0000-00-00');
+(1, 30, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -1041,7 +1452,8 @@ CREATE TABLE `rutas` (
 --
 
 INSERT INTO `rutas` (`id_ruta`, `placa`, `nombre_ruta`, `direccion_ruta`, `hora_salida`, `kilometraje`, `status`, `cantidad`, `fecha_inicio`, `fecha_fin`) VALUES
-(1, 'PPO887', 'Los horcones', 'Los horcones ', '00:02:00', '5000', 1, 2, '2022-08-27', '2022-08-27');
+(1, 'PPA120', 'JKSAJKASKJ', 'ASDSAD', '09:36:00', '7000', 1, 4, '2022-09-08', '2022-09-15'),
+(2, 'OGA170', 'SDSDA', 'KJAKJSJKsss', '12:10:00', '4500,00', 1, 5, '2022-09-02', '2022-09-09');
 
 --
 -- Disparadores `rutas`
@@ -1068,7 +1480,7 @@ DELIMITER ;
 CREATE TABLE `seguridad_preguntas` (
   `id_s_pregunta` int(11) NOT NULL,
   `preguntauno` varchar(50) COLLATE utf8mb4_bin NOT NULL,
-  `respuestauno` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `respuestauno` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `img` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `img_encriptada` varchar(100) COLLATE utf8mb4_bin NOT NULL
@@ -1079,12 +1491,17 @@ CREATE TABLE `seguridad_preguntas` (
 --
 
 INSERT INTO `seguridad_preguntas` (`id_s_pregunta`, `preguntauno`, `respuestauno`, `id_usuario`, `img`, `img_encriptada`) VALUES
-(1, '¿Donde estudiaste?', 'Hermano Juan', 1, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'SjdaM0RjU0xwMUlsQk4yb2IxVWR3Zz09.png'),
-(2, '¿Gatos o perros?', 'gatos', 2, 'ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png', 'bTNaTWVSekJzRXEvUlBReTZBbFIwUT09.png'),
-(45, '¿Donde naciste?', 'hospital', 3, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'M1JBS1JXaWFKQ1UzbTVZVjEweE5hdz09.png'),
-(46, '¿Cuál era el nombre de tu mejor amigo?', 'santi', 4, 'ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png', 'azdlWWNyaUp2MFF5TlQ0M0NhSGhsZz09.png'),
-(54, '¿Cuál es tu color favorito?', 'negro', 5, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'eXVxQ2lJUFZ6ZmxYdHh4VXdmZnphUT09.png'),
-(57, '¿Donde estudiaste?', 'marifer', 6, 'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png', 'QlREM1grVnVsRmliZDJGVkhXVnhKdz09.png');
+(1, '¿Cuál es tu color favorito?', 'morado', 1, 'eXgxR2trVEtzeXVueU9zdXBSRjNKZz09.png', 'SjdaM0RjU0xwMUlsQk4yb2IxVWR3Zz09.png'),
+(2, '¿Gatos o perros?', '%$$$%%$%%%%$%%%$$%%/%%$$%%%$%%$$$$%$%%%$', 2, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'bTNaTWVSekJzRXEvUlBReTZBbFIwUT09.png'),
+(45, '¿Donde estudiaste?', '%%$$$$%$%%$%%$$$%%$%%$$$%%$$%$%/%%$%%$$$%%$$$$%$$%', 3, 'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png', 'M1JBS1JXaWFKQ1UzbTVZVjEweE5hdz09.png'),
+(46, '¿Segundo nombre de tu padre?', '%$%$%%$%%%%$%%$%%%$/%%%$$%$$%%$$$$%$%%$%', 4, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'azdlWWNyaUp2MFF5TlQ0M0NhSGhsZz09.png'),
+(54, '¿Cuál era el nombre de tu mejor amigo?', '$%$$%%$%$$%$%%$%%%%/%%$%%$%$%%$$$$%$%%%$', 5, 'ZHRlVlJGQloyZEZWVS9BY05LL0U5UT09.png', 'eXVxQ2lJUFZ6ZmxYdHh4VXdmZnphUT09.png'),
+(57, '¿Cuál es tu color favorito?', '%%%$%$%$%%$%%$$/%%$$$$%$%%%%$%$$', 6, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'QlREM1grVnVsRmliZDJGVkhXVnhKdz09.png'),
+(58, '¿Cómo se llama tu perro?', '%%$$%%%$%$$$%%$%$$%/%%%$$%%$%%$$$$%$%%$%', 7, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'bXhCNFpnM1IrM2xic2g1dmhmeDRmQT09.png'),
+(59, '¿Gatos o perros?', '%%%$$%$$%%$%%%%$%%%$$%%/%%%$$$$$%%$$%$%$%%%$$%$$', 8, 'QVZqY3ZuempkRjNka1Bjc0NrcDVNdz09.png', 'ekdYOGpNS2EzMFdTenNnZzNTTXpqQT09.png'),
+(60, '¿Gatos o perros?', 'gatos', 9, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'WElDcGNickNEQ1lRcE14TVNrMmh1UT09.png'),
+(62, '¿Cuál es tu color favorito?', 'aaa', 11, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'T0tVeEMzbTB5NXhScHQvNzVzUUlEdz09.png'),
+(63, '¿Cuál era el nombre de tu mejor amigo?', 'RICK', 12, 'YXo0ZDdOM0lZZWhCaE8yczcvZDdFZz09.png', 'ZURQL0s4V25sNHZOTCtuOFZ4UEhDdz09.png');
 
 -- --------------------------------------------------------
 
@@ -1106,20 +1523,20 @@ CREATE TABLE `taller` (
 --
 
 INSERT INTO `taller` (`id_taller`, `rif`, `nombre`, `direccion`, `informacion_contacto`, `status`) VALUES
-(1, 'E-9601788 ', 'Mcqueen', 'Libertador con 37', '02514423626', 1),
+(1, 'E-9601788 ', 'Mcqueen', 'Libertador con 37', '02514423626', 0),
 (2, 'J-26561633', 'ORI', 'MACIAS', '04145448669', 0),
 (3, 'E-12348369-1', 'Michellin', 'calle cinco', '02512344581', 0),
-(4, 'J-17031998', 'Fernandez ', '60 con 13', '025144778869', 1),
+(4, 'J-17031998', 'Fernandez ', '60 con 13', '025144778869', 0),
 (6, 'J-30868368', 'Kiara', 'SantaIsabel', '02517786942', 1),
 (7, 'J-78455133', 'La Ingra', 'El araguaney', '04148756312', 1),
 (8, 'V-26561633', 'Las Shakiras', 'barrio Union', '04145448669', 0),
 (9, 'J-59745526', 'Twigns', 'Macias Mujica', '041454487922', 1),
-(10, 'J-12345678-7', 'El juancho', 'CALLE QUINTA', '04145448669', 1),
+(10, 'J-12345678-7', 'El juancho', 'CALLE QUINTA', '04145448669', 0),
 (11, 'G-96017881-6', 'Tarara', 'av Principal con dos', '14547788205', 1),
 (12, 'J-15010101-9', 'Los aprendices', 'Waikiki', '04127721353', 1),
-(13, 'J-14287821-9', 'El mar', 'Waikiki', '04127721353', 1),
-(14, 'J-00000001', 'Waikiki', 'Santos Luzardo', '02514423626', 1),
-(15, 'E-65893442-5', 'Gitana', 'JKHJKJ', '04127721353', 1),
+(13, 'J-14287821-9', 'El mar', 'Waikiki', '04127721353', 0),
+(14, 'J-00000001', 'Waikiki', 'Santos Luzardo', '02514423626', 0),
+(15, 'E-65893442-5', 'Gitana', 'Macias Mujica', '04127721353', 0),
 (16, 'J-78482212-1', 'Sabaracatiki', 'Santos Luzardo', '45555457474', 1),
 (17, 'P-87654321-0', 'YiaQ', 'VCFDBGFB', '025144477896', 1);
 
@@ -1177,12 +1594,18 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `cedula`, `usuario`, `nombre`, `apellido`, `contrasena`, `rol`, `status`, `correo`, `clave_especial`) VALUES
-(1, '26561633', 'ogap', 'Oriana ', 'Armas', '$2y$08$rdw9ihM57tle/PF.4PMhy.TgtHIg1pO2H.6O7CYEVhYX4mYe5pp6K', 1, 1, 'armasoriana98@gmail.com', '%%%$%$%$%%$$$$%/%%$$$$%$%%$$%%%$'),
-(2, '135478201', 'marifer10', 'Maria', 'Fernandez', '$2y$08$YL1Y2t0o3d.Opz7JdK7xXeoqEubnK/JdWX/tycPo4Lythogc/UcWK', 2, 1, 'marifer@gmail.com', '%%$$$$%$%%%$%$$$%%$%%%%/%%%%$%$$%%$$$$%$%%%$$$$$'),
-(3, '30868382', 'eliasA', 'Elias', 'Armas', '$2y$08$zRbwHEuaPpSPwkpYIw5zoOfnULdQbMluJH00jTp7FSqkTZ6HvcRdm', 3, 1, 'sailearmas0505@gmail.com', '%$$$%%$$$$%$%%$%%%$$%%$$$$%/%%%$%%$$%%$$%$%$%%$%%%$$%%%$'),
-(4, '968754120', 'nelsonp11', 'Nelson', 'Perez', '$2y$08$n5cmYmYaDofTLZxWzJj.hey3CkJbc8dySihm1ah1JqTsTP8ncddby', 4, 1, 'nelsonp11@gmail.com', '%%$$%%$$%$%$%%$%%$$$%%$$$$%/%%$$%%$$%%%$$%$$%%$$$$%$%%$%'),
-(5, '26577823', 'jcuicas', 'Jesus ', 'Cuicas', '$2y$08$hLSt3RjnupuhYjt3mbVEguQpL8sDdy.O9hCZ7BM/ho.C1IPSnubgy', 1, 1, 'jesuscuicas14@gmail.com', '%%$%%%%$%%%$$%$$%%$%%%%/%%$$%%$$%%$%%%%$%%%$$%$$'),
-(6, '9601788', 'EARMAS', 'Erwin', 'Armas', '$2y$08$OgZ59DATuf0wURqVeFmNA.IeRsAE58MOAfeWp3BxkpF5VtcJ9ZT1W', 1, 1, 'EARMAS@GMAIL.COM', '%%$$$$%$%%$$%$$$%%$%%%%/%%$%$$$$%%$$%$%$%%$%%$$$');
+(1, '26561633', 'ogap', 'Oriana ', 'Armas', '$2y$08$ZgHwFW6zic6/qn7q8JDpXunQQym8hb3iaDqSmf2.Y9haBpU1ocBf2', 1, 1, 'armasoriana98@gmail.com', '$%$$%%$%%%%$%%$%%$$/%%$$$$%$%%%$$%$$%%$$'),
+(2, '135478201', 'marifer10', 'Maria', 'Fernandez', '$2y$08$rbghjMcQOTyqbB.JppmjqeUB28U9Gn34XLvleTB20z3xOxTTk4DTC', 2, 0, 'marifer@gmail.com', '%%$$$$%$%%%$%$$$%%$%%%%/%%%%$%$$%%$$$$%$%%%$$$$$'),
+(3, '30868382', 'eliasA', 'Elias', 'Armas', '$2y$08$9SF0JRFIQMT67./xL6FXsezrcQnojHTRquUPMhoHyRJbKWtqwGp0e', 3, 1, 'sailearmas0505@gmail.com', '$$%$%%%$%$$$%%$%%%%$%%%$$%%/%%%%$%$$%%$$$$%$%%%$$$$$%%$$'),
+(4, '968754120', 'nelsonp11', 'Nelson', 'Perez', '$2y$08$q3e6SDQm6cvN2Jwx.rHEUutokXEd.CJ1ZvI5u8PLFyfeuHIcOkmli', 4, 1, 'nelsonp11@gmail.com', '%%$$%%$$%$%$%%$%%$$$%%$$$$%/%%$$%%$$%%%$$%$$%%$$$$%$%%$%'),
+(5, '26577823', 'jcuicas', 'Jesus ', 'Cuicas', '$2y$08$Hsz5ddIfSh7hJcBMCgRLGezJuVC5atS6hUZ6D9vu84aOKBwFU4I7y', 1, 1, 'jesuscuicas14@gmail.com', '%%$%%%%$%%%$$%$$%%$%%%%/%%$$%%$$%%$%%%%$%%%$$%$$'),
+(6, '9601788', 'EARMAS', 'Erwin', 'Armas', '$2y$08$ffWEkrp9DPXV25i9Lx6yRu.ZjsX18RaeOJk4wUQqplYDsciKJ9fF.', 1, 1, 'EARMAS@GMAIL.COM', '%%$$%%%$%$$$%%$%$$%/%%%$$%%$%%$$$$%$%%$%'),
+(7, '65747800', 'rosita44', 'Rosa', 'Rosales', '$2y$08$oSCDk2OPb0.IknMJN/1lBuuQkIC8R6NZD0YTyMSrM72mET9tybBvy', 5, 1, 'rosalesrosa@gmail.com', '%%$$$$%$%%$$%$$$%%$%%%%/%%%$$%$$%%$%%%%$%%%$$%%$'),
+(8, '96587422', 'pperez', 'Pedro', 'Perez', '$2y$08$L658iFXZ4rfPq7wU4NOhk.AJrugAbGCggSZTyysXbShPIWIy7V9vi', 2, 1, 'pedroperez@gmail.com', '$$%$%%$%%$%$%%$%$$%/%%$$%%$$%%$%%%%$%%$$'),
+(9, '47528100', 'PPAPAPA', 'PPAPAPA', 'PPAPAPA', '$2y$08$HNkG1vP8fBrF0B89nXanfuwIyy.zM7Dh2ze3JdDq0LPDI0BanDWlm', 1, 1, 'PPAPAPA@gmail.com', '%$$$$$%$%$%$%$$$%$$%%%%/%$%%$%$$%$$$$$%$%$%$$$$$'),
+(10, '2659088', 'ogap14', 'Gabriela         ', 'Rosales', '$2y$08$S7o3.qSpAwvja8/hjnPIBe1oRciTesZoTq9WMh3mgzh8Dktxg9PJC', 1, 1, 'duran@gmail.com', '$$%$%%%$%$$$%%$%%%%$%%%$$%%/%%%%$%$$%%$$$$%$%%%$$$$$%%$$'),
+(11, '9658963', 'GabrielaA', 'Gabriela         ', 'Durán', '$2y$08$QofO6EXqR39oYt2FT6RmT.jXu9AtfpHebrYzBGYjZGIw0ibOYR7Hy', 1, 1, 'ingligiaduranssss@gmail.com', '%%$$$$%$%%%$%$$$%%$%%%%/%%%%$%$$%%$$$$%$%%%$$$$$'),
+(12, '96478200', 'ggrosales', 'Gabriela         ', 'Rosales', '$2y$08$GZyIgF7/uI2KO1ydaT1MkeCaLGsjYdKmM7pGiAXACMCT3dD7QKg9.', 1, 1, 'ggrosales@gmail.com', '%%$$%$%$%$$$%$$%$$%/%$%$$%%$%$$$$$%$%$$%');
 
 --
 -- Disparadores `usuarios`
@@ -1221,9 +1644,11 @@ CREATE TABLE `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id_vehiculo`, `placa`, `modelo`, `funcionamiento`, `kilometraje`, `id_mantenimiento`, `status`) VALUES
-(1, 'PPO887', 'Encava', 'Operativo', '500,00', NULL, 1),
-(2, 'LLA091', 'BEDFORD', 'Operativo', '4500,00', NULL, 1),
-(3, 'OOL192', 'Envasa', 'Operativo', '300,00', NULL, 1);
+(1, 'PPA120', 'Encava', 'Operativo', '300,00', NULL, 0),
+(2, 'GAO778', 'BEDFORD', 'Operativo', '200,00', NULL, 0),
+(3, 'OGA170', 'Dodge', 'Operativo', '800,00', NULL, 1),
+(4, 'ELI000', 'Encava', 'Operativo', '600,00', NULL, 0),
+(5, 'AAS443', 'Encava', 'Operativo', '500,00', NULL, 1);
 
 --
 -- Índices para tablas volcadas
@@ -1287,7 +1712,7 @@ ALTER TABLE `roles_permisos`
 --
 ALTER TABLE `rutas`
   ADD PRIMARY KEY (`nombre_ruta`),
-  ADD KEY `placa` (`placa`);
+  ADD UNIQUE KEY `hora_salida` (`hora_salida`);
 
 --
 -- Indices de la tabla `seguridad_preguntas`
@@ -1327,7 +1752,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1487;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1929;
 
 --
 -- AUTO_INCREMENT de la tabla `choferes`
@@ -1339,13 +1764,13 @@ ALTER TABLE `choferes`
 -- AUTO_INCREMENT de la tabla `mantenimientos`
 --
 ALTER TABLE `mantenimientos`
-  MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_mantenimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `id_notificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=825;
+  MODIFY `id_notificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1510;
 
 --
 -- AUTO_INCREMENT de la tabla `reparaciones`
@@ -1357,13 +1782,13 @@ ALTER TABLE `reparaciones`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `seguridad_preguntas`
 --
 ALTER TABLE `seguridad_preguntas`
-  MODIFY `id_s_pregunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_s_pregunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Restricciones para tablas volcadas

@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="'../../assets/js/esteganografia/enviardatos.js"></script>
-    <script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -45,16 +44,14 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Gestión de Usuarios</h1>
+                      
                         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reportes</a> -->
                     </div>
 
                     <div class="container-fluid">
 
-                        <!-- LEYENDA DEL el MODULO -->
-                        <p class="mb-4">En este módulo podrá visualizar los usuarios que están registrados en el
-                            sistema a su vez registrar, eliminar y modificar <a target="_blank">
-                            </a></p>
+                    
+                       
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
@@ -78,9 +75,9 @@
                         <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarUsuarioModal"
                             data-toggle="modal" data-target="#AgregarUsuarioModal">
                             <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
+                                <i class="fas fa-plus"></i>
                             </span>
-                            <span class="text">Registrar</span>
+                            <span class="text">Usuario</span>
 
                         </a>
                         <?php } ?>

@@ -675,48 +675,7 @@ $(document).ready(function() {
         e.preventDefault();
         mostrar($(this).attr('data-id'), "#modalForm", "#modalForm");
     })
-    const inhabilitar = (id) => {
-        $.ajax({
-            type: "POST",
-            url: "Usuarios/Inhabilitar/" + id,
-            success: function(response) {
-                const json = JSON.parse(response);
-                Swal.fire(
-                    json.titulo,
-                    json.mensaje,
-                    json.tipo
-                )
-                if (json.tipo == 'success') {
-                    // table.ajax.reload();
-                    location.reload();
-                }
-            },
-            error: function(response) {
-                console.log(response);
-            }
-        });
-    }
-    const habilitar = (id) => {
-        $.ajax({
-            type: "POST",
-            url: "Usuarios/Habilitar/" + id,
-            success: function(response) {
-                const json = JSON.parse(response);
-                Swal.fire(
-                    json.titulo,
-                    json.mensaje,
-                    json.tipo
-                )
-                if (json.tipo == 'success') {
-                    // table.ajax.reload();
-                    location.reload();
-                }
-            },
-            error: function(response) {
-                console.log(response);
-            }
-        });
-    }
+
     const mostrar = (id, formulario, modal) => {
         $.ajax({
             type: "POST",
@@ -742,46 +701,46 @@ $(document).ready(function() {
         });
     }
 
-    // Inhabilitar Usuario
-    $('body').on('click', '.inhabilitar', function(e) {
-        e.preventDefault();
+//     // Inhabilitar Usuario
+//     $('body').on('click', '.inhabilitar', function(e) {
+//         e.preventDefault();
 
-        Swal.fire({
-            title: '¿Está Seguro?',
-            text: "El usuario sera eliminado del sistema",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Si, eliminar!'
-        }).then((result) => {
-            if (result.value) {
-                inhabilitar($(this).attr('data-id'));
-            }
-        })
-    });
-    // Habilitar Usuario
-    $('body').on('click', '.habilitar', function(e) {
-        e.preventDefault();
+//         Swal.fire({
+//             title: '¿Está Seguro?',
+//             text: "El usuario sera eliminado del sistema",
+//             type: 'warning',
+//             showCancelButton: true,
+//             confirmButtonColor: '#3085d6',
+//             cancelButtonColor: '#d33',
+//             cancelButtonText: 'Cancelar',
+//             confirmButtonText: 'Si, eliminar!'
+//         }).then((result) => {
+//             if (result.value) {
+//                 inhabilitar($(this).attr('data-id'));
+//             }
+//         })
+//     });
+//     // Habilitar Usuario
+//     $('body').on('click', '.habilitar', function(e) {
+//         e.preventDefault();
 
-        Swal.fire({
-            title: '¿Está Seguro?',
-            text: "El usuario será habilitado en el sistema",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Si!'
-        }).then((result) => {
-            if (result.value) {
-                habilitar($(this).attr('data-id'));
-            }
-        })
-    });
+//         Swal.fire({
+//             title: '¿Está Seguro?',
+//             text: "El usuario será habilitado en el sistema",
+//             type: 'warning',
+//             showCancelButton: true,
+//             confirmButtonColor: '#3085d6',
+//             cancelButtonColor: '#d33',
+//             cancelButtonText: 'Cancelar',
+//             confirmButtonText: 'Si!'
+//         }).then((result) => {
+//             if (result.value) {
+//                 habilitar($(this).attr('data-id'));
+//             }
+//         })
+//     });
 
-});
+// });
 
 function validar(modificar = false) {
     form = "#AgregarUsuarioModal";
@@ -1096,5 +1055,46 @@ $("#pass2").keyup(function() {
 });
 
 
-
-
+// const inhabilitar = (id) => {
+//     $.ajax({
+//         type: "POST",
+//         url: "Usuarios/Inhabilitar/" + id,
+//         success: function(response) {
+//             const json = JSON.parse(response);
+//             Swal.fire(
+//                 json.titulo,
+//                 json.mensaje,
+//                 json.tipo
+//             )
+//             if (json.tipo == 'success') {
+//                 // table.ajax.reload();
+//                 location.reload();
+//             }
+//         },
+//         error: function(response) {
+//             console.log(response);
+//         }
+//     });
+// }
+// const habilitar = (id) => {
+//     $.ajax({
+//         type: "POST",
+//         url: "Usuarios/Habilitar/" + id,
+//         success: function(response) {
+//             const json = JSON.parse(response);
+//             Swal.fire(
+//                 json.titulo,
+//                 json.mensaje,
+//                 json.tipo
+//             )
+//             if (json.tipo == 'success') {
+//                 // table.ajax.reload();
+//                 location.reload();
+//             }
+//         },
+//         error: function(response) {
+//             console.log(response);
+//         }
+//     });
+  }
+);

@@ -33,15 +33,14 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Gestión de Choferes</h1>
+                        
                         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reportes</a> -->
                     </div>
 
                     <div class="container-fluid">
 
                         <!-- LEYENDA DEL MODULO -->
-                        <p class="mb-4">En este módulo podrá visualizar los choferes que están registrados en el sistema conjunto a las unidades asignadas<a target="_blank"> 
-                               </a></p>
+                    
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
@@ -51,13 +50,13 @@
                             <center> <img src="assets/img/chofer.png" class="img-profile" width="20%"  right="500%" > </center> 
                     
                             
-                            <div class="col-sm-3" style='text-align:right;'>
+                            <div class="col-sm-2" style='text-align:right;'>
                                 <span class="icon text-white-50"><i class="fas fa-check"></i></span>
                                 <a href="#" class="btn btn-success btn-icon-split" data-target="#AgregarChoferModal" data-toggle="modal" >
                                     <span class="icon text-white-50">
-                                        <i class="fas fa-check"></i>
+                                        <i class="fas fa-plus"></i>
                                     </span>
-                                    <span class="text">Registrar Chofer</span>
+                                    <span class="text">Chofer</span>
                                 </a>
                             </div>
                             <br>

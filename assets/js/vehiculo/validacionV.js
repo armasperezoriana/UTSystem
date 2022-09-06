@@ -143,7 +143,48 @@ $(".ModificarVehiculos").click(function() {
 
         });
 
-
+        const inhabilitar = (id) => {
+            $.ajax({
+                type: "POST",
+                url: "Vehiculos/Inhabilitar/" + id,
+                success: function(response) {
+                    const json = JSON.parse(response);
+                    Swal.fire(
+                        json.titulo,
+                        json.mensaje,
+                        json.tipo
+                    )
+                    if (json.tipo == 'success') {
+                        // table.ajax.reload();
+                        location.reload();
+                    }
+                },
+                error: function(response) {
+                    console.log(response);
+                }
+            });
+        }
+         const habilitar = (id) => {
+            $.ajax({
+                type: "POST",
+                url: "Vehiculos/Habilitar/" + id,
+                success: function(response) {
+                    const json = JSON.parse(response);
+                    Swal.fire(
+                        json.titulo,
+                        json.mensaje,
+                        json.tipo
+                    )
+                    if (json.tipo == 'success') {
+                        // table.ajax.reload();
+                        location.reload();
+                    }
+                },
+                error: function(response) {
+                    console.log(response);
+                }
+            });
+        }
 // Inhabilitar Vehiculo
 $('body').on('click', '.inhabilitar', function (e) {
     e.preventDefault();
@@ -325,6 +366,8 @@ function validarM(modificar = true) {
             mostrar($(this).attr('data-id'), "#consultarVehiculo", "#ConsultarVehiculoModal");
         })
 
+
+    
   const mostrar = (id, formulario, modal) => {
         $.ajax({
             type: "POST",

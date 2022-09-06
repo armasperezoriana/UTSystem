@@ -85,10 +85,6 @@
 
                 if (in_array('seguridad', $_SESSION['ut_permisos'])) {
                 ?>
-                    <a class="dropdown-item" href="<?= _ROUTE_ ?>Roles">
-                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Seguridad
-                    </a>
                     <a class="dropdown-item" href="<?= _ROUTE_ ?>Bitacora">
                         <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                         Registro de Actividad

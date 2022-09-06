@@ -61,7 +61,6 @@
           $_SESSION['apellido'] = ($row['apellido']);
           $_SESSION['cedula'] = ($row['cedula']);
           $_SESSION['correo'] = ($row['correo']);
-		  $_SESSION['status'] = ($row['status']);
            $_SESSION['nombre_rol'] = ($row['nombre_rol']);
           $_SESSION['rol'] = ($row['rol']);
         }
@@ -77,18 +76,6 @@
 		try {
 			$query = parent::prepare("SELECT 1 FROM usuarios WHERE correo = :correo");
 			$query->execute(['correo' => $correo]);
-			return $query->fetchAll(parent::FETCH_OBJ); 
-		} catch (Exception $e) {
-			return $e->getMessage();
-		}
-	}
-
-
-
-	public function buscarID($id){
-		try {
-			$query = parent::prepare("SELECT 1 FROM usuarios WHERE id_usuario = :id_usuario");
-			$query->execute(['id_usuario' => $id]);
 			return $query->fetchAll(parent::FETCH_OBJ); 
 		} catch (Exception $e) {
 			return $e->getMessage();

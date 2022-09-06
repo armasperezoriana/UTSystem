@@ -5,9 +5,9 @@
 
 	/* Definimos las constantes que usaremos */
 	
-	define("_ROUTE_" , "/dashboard/systemUT/");					/* direccion del proyecto */
-	define("_THEME_" , "/dashboard/systemUT/assets");			/* Direccion de recursos y estilos */
-	define("_INDEX_FILE_" , "/dashboard/systemUT/index.php");	/* direccion del archivo index */
+	define("_ROUTE_" , "");					/* direccion del proyecto */
+	define("_THEME_" , "/assets");			/* Direccion de recursos y estilos */
+	define("_INDEX_FILE_" , "/index.php");	/* direccion del archivo index */
 
 	define('_DIRECTORY_', 'content/controllers/'); 					/* Direccion de controladores */
 	define("_MODEL_" , "content/modelo/");							/* direccion de los modelos */
@@ -20,12 +20,12 @@
 	define('_HOST_', 		'localhost');							/* nombre del host */
 	define("_DB_USER_", "root");									/* nombre del usuario de la BD */
 	define("_DB_PASS_", "");										/* contraseña de la base de datos  */
-	define("_COMPLEMENT_" , "/systemUT/view/assets/");					/* direccion del proyecto */
-	define("_JS_" , "/dashboard/systemUT/content/assets/js/");		/* direccion de js*/
-	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
-	define("_IMG_SEGURIDAD_" , "/dashboard/systemUT/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
-		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
-		define("_DIR_" , "/dashboard/systemUT/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
+	define("_COMPLEMENT_" , "/view/assets/");					/* direccion del proyecto */
+	define("_JS_" , "/content/assets/js/");		/* direccion de js*/
+	define("_REPORTS_" , "/content/controllers/reports/");					/* reportes pdf del proyecto */
+	define("_IMG_SEGURIDAD_" , "/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
+		define("_ESTADISTICOS_" , "/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
+		define("_DIR_" , "/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
    
 	/* Imagenes de seguridad */		

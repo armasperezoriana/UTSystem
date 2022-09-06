@@ -329,42 +329,6 @@
 			}
 		}
 
-		public function CambioEstado($id){
-			try{
-				$intento=0;
-				$query = parent::prepare("UPDATE usuarios SET intento = 1 WHERE id_usuario = '$id' ");
-				$intento++;
-				$respuestaArreglo = '';
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-				$respuestaArreglo += ['ejecucion' => true];
-				return $respuestaArreglo;
-			} 
-			 catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-
-		public function CambioEstadoCero($id){
-			try{
-				$query = parent::prepare("UPDATE usuarios SET intento = 0 WHERE id_usuario = '$id' ");
-				$respuestaArreglo = '';
-				$query->execute();
-				$query->setFetchMode(parent::FETCH_ASSOC);
-				$respuestaArreglo = $query->fetchAll(parent::FETCH_ASSOC); 
-				$respuestaArreglo += ['ejecucion' => true];
-				return $respuestaArreglo;
-			} 
-			 catch (PDOException $e) {
-				$errorReturn = ['ejecucion' => false];
-				$errorReturn += ['info' => "error sql:{$e}"];
-				return $errorReturn;
-			}
-		}
-
 		public function Modificar(){
 			try{
 				$query = parent::prepare("UPDATE usuarios SET cedula = '$this->cedula', usuario = '$this->username', 

@@ -33,15 +33,13 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Gestión de Talleres</h1>
-                    
+                       
                     </div>
 
                     <div class="container-fluid">
 
                     <!-- LEYENDA DEL MODULO -->
-                    <p class="mb-4">En este módulo podrá visualizar los talleres que están registrados en el sistema a su vez registrar, eliminar y modificar <a target="_blank"> 
-                           </a></p>
+                  
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -60,9 +58,9 @@
                                         </span>
                                    <a href="#" class="btn btn-success btn-icon-split" data-toggle="modal" data-target="#AgregarTallerModal">
                                         <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
+                                            <i class="fas fa-plus"></i>
                                         </span>
-                                        <span class="text">Registrar Taller</span>
+                                        <span class="text">Taller</span>
 
                                     </a>
                             

@@ -47,12 +47,33 @@ class loginController
 
 	public function IniciarSesion()
 	{
+		if(!preg_match("/^[a-zA-Z0-9\_\-]{4,16}$/",$_POST['username'])){
+
+			echo json_encode([
+				'titulo' => '¡Usuario incorrecto!',
+				'mensaje' => 'No coincide con el formato aceptado',
+				'tipo' => 'error',
+			]);
+
+			exit();
+		}if(!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/",$_POST['pass'])){
+
+			echo json_encode([
+				'titulo' => '¡Contraseña invalida!',
+				'mensaje' => 'La contraseña ingresada no cumple con el formato aceptado',
+				'tipo' => 'error',
+			]);
+			exit();
+		}
+
+
 		if (!empty($_POST['username']) || !empty($_POST['pass'])) {
 			$username = $_POST['username'];
 			$pass= $_POST['pass'];
 			 $this->usuario->setPassword($pass);
 			//Agregar un Consultar para ver si existe el registro; 
 			$result = $this->usuario->ObtenerUsuario($username);
+			
 			
 			if ($result['ejecucion'] == true) {
 				$res = $result['resultado'];

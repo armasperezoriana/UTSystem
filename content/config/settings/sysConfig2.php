@@ -5,9 +5,9 @@
 
 	/* Definimos las constantes que usaremos */
 	
-	define("_ROUTE_" , "/dashboard/systemUT/");					/* direccion del proyecto */
-	define("_THEME_" , "/dashboard/systemUT/assets");			/* Direccion de recursos y estilos */
-	define("_INDEX_FILE_" , "/dashboard/systemUT/index.php");	/* direccion del archivo index */
+	define("_ROUTE_" , "");					/* direccion del proyecto */
+	define("_THEME_" , "/assets");			/* Direccion de recursos y estilos */
+	define("_INDEX_FILE_" , "/index.php");	/* direccion del archivo index */
 
 	define('_DIRECTORY_', 'content/controllers/'); 					/* Direccion de controladores */
 	define("_MODEL_" , "content/modelo/");							/* direccion de los modelos */
@@ -16,16 +16,16 @@
 	define("_DB_SERVER_" , "http://localhost/");					/* nombre del servidor */
 
 	define('_DB_MANAGER_', 	'mysql');						        /* manejador de base de datos */
-	define("_DB_WEB_" , "b17_32333882_ut");								/* nombre de la base de datos */
-	define('_HOST_', 		'ftp.byethost17.com');							/* nombre del host */
-	define("_DB_USER_", "b17_32333882");									/* nombre del usuario de la BD */
-	define("_DB_PASS_", "oriana2022");										/* contraseña de la base de datos  */
-	define("_COMPLEMENT_" , "/dashboard/systemUT/view/assets/");					/* direccion del proyecto */
-
-	define("_REPORTS_" , "/dashboard/systemUT/content/controllers/reports/");					/* reportes pdf del proyecto */
-	define("_IMG_SEGURIDAD_" , "/dashboard/systemUT/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
-		define("_ESTADISTICOS_" , "/dashboard/systemUT/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
-		define("_DIR_" , "/dashboard/systemUT/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
+	define("_DB_WEB_" , "id16202188_utsystem");								/* nombre de la base de datos */
+	define('_HOST_', 		'files.000webhost.com');							/* nombre del host */
+	define("_DB_USER_", "id16202188_root");									/* nombre del usuario de la BD */
+	define("_DB_PASS_", "Oriana170398.");										/* contraseña de la base de datos  */
+	define("_COMPLEMENT_" , "/view/assets/");					/* direccion del proyecto */
+	define("_JS_" , "/content/assets/js/");		/* direccion de js*/
+	define("_REPORTS_" , "/content/controllers/reports/");					/* reportes pdf del proyecto */
+	define("_IMG_SEGURIDAD_" , "/content/controllers/esteganografia/");					/* ESTEGANOGRAFIA O IMAGEN DE SEGURIDAD */
+		define("_ESTADISTICOS_" , "/content/modelo/estadisticos/");					/* reportes estadisticos del proyecto */
+		define("_DIR_" , "/content/controller/vendor/");					/* VENDOR IMAGEN DE SEGURIDAD */
 	define("_NAMESYSTEM_" , "UT");					/* direccion del proyecto */
    
 	/* Imagenes de seguridad */		
@@ -54,6 +54,7 @@
 		protected function _DIRECTORY_()	{return _DIRECTORY_;}
 		protected function _MODEL_()		{return _MODEL_;}
 		protected function _CONTROLLER_()	{return _CONTROLLER_;}
+		protected function _JS_()	        {return _JS_;}
 		protected function _DB_SERVER_()	{return _DB_SERVER_;}
 		protected function _DB_MANAGER_()	{return _DB_MANAGER_;}
 		protected function _DB_WEB_()		{return _DB_WEB_;}

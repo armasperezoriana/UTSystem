@@ -1,4 +1,4 @@
-<script type="text/javascript" src="'../../assets/js/usuario/validacion.js"></script>
+<script type="text/javascript" src="'../../assets/js/seguridad/seguridadgeneral.js"></script>
 <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -23,7 +23,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?=_ROUTE_ ?>">
+                <a class="nav-link" href="<?=_ROUTE_ ?>Home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Panel de Control </span></a>
             </li>
@@ -181,16 +181,16 @@
                                 <TABLE>
                                     <TR>
                                         <TH>
-                                            <center> IMAGEN 1</center>
+                                            <center> </center>
                                         </TH>
                                         <TH>
-                                            <center> IMAGEN 2</center>
+                                            <center> </center>
                                         </TH>
                                         <TH>
-                                            <center> IMAGEN 3</center>
+                                            <center> </center>
                                         </TH>
                                         <TH>
-                                            IMAGEN 4
+                                            
                                         </TH>
                                     </TR>
                                     <TR >
@@ -294,7 +294,7 @@
                             <span class="errorrespuestaI" style="color:red"></span>
                         </div>
                         <br>
-                        <p>Nota: El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</p>
+                                                <font size="2"> <b>Nota:</b>El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</font></p>
                                 </div>
 
                             </form>
@@ -364,16 +364,16 @@
                                 <TABLE>
                                     <TR>
                                         <TH>
-                                            <center> IMAGEN 1</center>
+                                            <center>  </center>
                                         </TH>
                                         <TH>
-                                            <center> IMAGEN 2</center>
+                                            <center>  </center>
                                         </TH>
                                         <TH>
-                                            <center> IMAGEN 3</center>
+                                            <center>  </center>
                                         </TH>
                                         <TH>
-                                            IMAGEN 4
+                                             
                                         </TH>
                                     </TR>
                                     <TR >
@@ -477,9 +477,7 @@
                             <span class="errorrespuestaI" style="color:red"></span>
                         </div>
                         <br>
-                        <p>Nota: El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</p>
-                                </div>
-
+                        <font size="2"> <b>Nota:</b>El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</font></p>
                             </form>
                         </div>
 
@@ -532,16 +530,16 @@
                                 <TABLE>
                                     <TR>
                                         <TH>
-                                            <center> IMAGEN 1</center>
+                                            <center> </center>
                                         </TH>
                                         <TH>
-                                            <center> IMAGEN 2</center>
+                                            <center> </center>
                                         </TH>
                                         <TH>
-                                            <center> IMAGEN 3</center>
+                                            <center> </center>
                                         </TH>
                                         <TH>
-                                            IMAGEN 4
+                                            
                                         </TH>
                                     </TR>
                                     <TR >
@@ -645,7 +643,7 @@
                             <span class="errorrespuestaI" style="color:red"></span>
                         </div>
                         <br>
-                        <p>Nota: El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</p>
+                        <font size="2"> <b>Nota:</b>El sistema distingue entre mayúsculas y minúsculas, tome en cuenta como ingreso la información al registrarse</font></p>
                                 </div>
 
                             </form>

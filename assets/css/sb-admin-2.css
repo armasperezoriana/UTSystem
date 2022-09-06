@@ -10,6 +10,24 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ #carrusel {
+  float:left;
+  width:600px;
+  overflow:hidden;
+  height:203px;
+  position:relative;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#carrusel .left-arrow {
+  position:absolute;
+  left:10px;
+  z-index:1;
+  top:50%;
+  margin-top:-9px;
+}
+
 :root {
   --blue: #4e73df;
   --indigo: #6610f2;

@@ -75,6 +75,67 @@ class usuariosController
 
 	public function Registrar()
 	{
+		if(!preg_match("/^[a-zA-ZÀ-ÿ\s]{3,20}$/",$_POST['nombre'])){
+
+			echo json_encode([
+				'titulo' => '¡Nombre incorrecto!',
+				'mensaje' => 'No coincide con el formato aceptado',
+				'tipo' => 'error',
+			]);
+
+			exit();
+		}if(!preg_match("/^[a-zA-ZÀ-ÿ\s]{3,20}$/",$_POST['apellido'])){
+
+			echo json_encode([
+				'titulo' => '¡Apellido invalido!',
+				'mensaje' => 'El Apellido ingresada no cumple con el formato aceptado',
+				'tipo' => 'error',
+			]);
+			exit();
+		}if(!preg_match("/^\d{7,14}$/",$_POST['cedula'])){
+
+			echo json_encode([
+				'titulo' => '¡Cedula invalida!',
+				'mensaje' => 'No cumple con el formato aceptado',
+				'tipo' => 'error',
+			]);
+			exit();
+		}if(!preg_match("/^[a-zA-Z0-9\_\-]{4,16}$/",$_POST['username'])){
+
+			echo json_encode([
+				'titulo' => '¡Usuario incorrecto!',
+				'mensaje' => 'No coincide con el formato aceptado',
+				'tipo' => 'error',
+			]);
+
+			exit();
+		}if(!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/",$_POST['pass'])){
+
+			echo json_encode([
+				'titulo' => '¡Contraseña invalida!',
+				'mensaje' => 'La contraseña ingresada no cumple con el formato aceptado',
+				'tipo' => 'error',
+			]);
+			exit();
+		}if(!preg_match("/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/",$_POST['correo'])){
+
+			echo json_encode([
+				'titulo' => '¡Correo incorrecto!',
+				'mensaje' => 'No coincide con el formato aceptado',
+				'tipo' => 'error',
+			]);
+
+			exit();
+		}if(!preg_match("/^[a-zA-ZÀ-ÿ\s]{5,7}$/",$_POST['clave_especial'])){
+
+			echo json_encode([
+				'titulo' => '¡Clave especial invalida!',
+				'mensaje' => 'La clave especial no cumple con el formato aceptado',
+				'tipo' => 'error',
+			]);
+			exit();
+		}
+
 		if (!empty($_POST['nombre']) && !empty($_POST['apellido'])) {
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
